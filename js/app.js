@@ -162,26 +162,57 @@ const Translator = {
     return Math.abs(hash).toString(36);
   },
 
+  splitIntoChunks(text, maxLen = 450) {
+    if (text.length <= maxLen) return [text];
+    const chunks = [];
+    let remaining = text;
+    while (remaining.length > 0) {
+      if (remaining.length <= maxLen) {
+        chunks.push(remaining);
+        break;
+      }
+      let splitAt = -1;
+      for (let i = Math.min(maxLen, remaining.length) - 1; i >= maxLen * 0.5; i--) {
+        if ('. ? ! ; '.includes(remaining[i] + ' ')) {
+          splitAt = i + 1;
+          break;
+        }
+      }
+      if (splitAt === -1) {
+        const spaceAt = remaining.lastIndexOf(' ', maxLen);
+        splitAt = spaceAt > maxLen * 0.3 ? spaceAt + 1 : maxLen;
+      }
+      chunks.push(remaining.substring(0, splitAt).trim());
+      remaining = remaining.substring(splitAt).trim();
+    }
+    return chunks;
+  },
+
+  async translateChunk(chunk) {
+    const params = new URLSearchParams({ q: chunk, langpair: 'en|zh-CN' });
+    const resp = await fetch(`${this.API_URL}?${params.toString()}`);
+    const data = await resp.json();
+    if (data.responseStatus === 200 && data.responseData) {
+      return data.responseData.translatedText;
+    }
+    throw new Error('Translation failed');
+  },
+
   async translate(text) {
     const cached = this.getCached(text);
     if (cached) return cached;
 
-    const truncated = text.length > 450 ? text.substring(0, 450) + '...' : text;
-
     try {
-      const params = new URLSearchParams({
-        q: truncated,
-        langpair: 'en|zh-CN',
-      });
-      const resp = await fetch(`${this.API_URL}?${params.toString()}`);
-      const data = await resp.json();
-
-      if (data.responseStatus === 200 && data.responseData) {
-        const translated = data.responseData.translatedText;
-        this.setCache(text, translated);
-        return translated;
+      const chunks = this.splitIntoChunks(text);
+      const results = [];
+      for (const chunk of chunks) {
+        const translated = await this.translateChunk(chunk);
+        results.push(translated);
+        if (chunks.length > 1) await new Promise(r => setTimeout(r, 200));
       }
-      throw new Error('Translation failed');
+      const full = results.join('');
+      this.setCache(text, full);
+      return full;
     } catch (err) {
       console.warn('Translation error:', err);
       return null;
