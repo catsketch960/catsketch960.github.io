@@ -216,21 +216,20 @@ function createPaperCardHTML(paper, index) {
         <h3 class="paper-title">
           <a href="${paper.absUrl}" target="_blank" rel="noopener">${paper.title}</a>
         </h3>
+        <div class="paper-title-zh" id="title-zh-${index}">
+          <span class="translate-loading">翻译中 <span class="dot"></span><span class="dot"></span><span class="dot"></span></span>
+        </div>
       </div>
       <div class="paper-meta">
         <span>👤 ${authorsStr}</span>
         <span>📅 ${formatDate(paper.published)}</span>
       </div>
       <div class="paper-tags">${tagsHTML}</div>
-      <p class="paper-abstract collapsed" id="abs-${index}">${paper.abstract}</p>
-      <div id="abs-zh-${index}"></div>
+      <p class="paper-abstract" id="abs-${index}">${paper.abstract}</p>
+      <div class="paper-abstract-zh" id="abs-zh-${index}">
+        <span class="translate-loading">翻译中 <span class="dot"></span><span class="dot"></span><span class="dot"></span></span>
+      </div>
       <div class="paper-actions">
-        <button class="btn btn-sm btn-outline" onclick="toggleAbstract(${index})">
-          📖 展开摘要
-        </button>
-        <button class="btn btn-sm btn-translate" onclick="translateAbstract(${index}, this)" id="trans-btn-${index}">
-          🌐 翻译为中文
-        </button>
         <a class="btn btn-sm btn-outline" href="${paper.pdfUrl}" target="_blank" rel="noopener">
           📄 PDF
         </a>
@@ -242,50 +241,31 @@ function createPaperCardHTML(paper, index) {
   `;
 }
 
-function toggleAbstract(index) {
-  const el = document.getElementById(`abs-${index}`);
-  if (!el) return;
-  el.classList.toggle('collapsed');
-  const btn = el.closest('.paper-card').querySelector('.paper-actions button');
-  if (btn) {
-    btn.textContent = el.classList.contains('collapsed') ? '📖 展开摘要' : '📖 收起摘要';
+let currentPapers = [];
+
+async function autoTranslatePaper(index) {
+  const paper = currentPapers[index];
+  if (!paper) return;
+
+  const titleContainer = document.getElementById(`title-zh-${index}`);
+  const absContainer = document.getElementById(`abs-zh-${index}`);
+
+  const titleTranslation = await Translator.translate(paper.title);
+  if (titleContainer) {
+    titleContainer.innerHTML = titleTranslation || '<span style="color:var(--text-muted);">标题翻译暂不可用</span>';
+  }
+
+  const absTranslation = await Translator.translate(paper.abstract);
+  if (absContainer) {
+    absContainer.innerHTML = absTranslation || '<span style="color:var(--text-muted);">摘要翻译暂不可用</span>';
   }
 }
 
-let currentPapers = [];
-
-async function translateAbstract(index, btnEl) {
-  const paper = currentPapers[index];
-  if (!paper) return;
-  const container = document.getElementById(`abs-zh-${index}`);
-  if (!container) return;
-
-  if (container.innerHTML) {
-    container.innerHTML = '';
-    if (btnEl) btnEl.textContent = '🌐 翻译为中文';
-    return;
-  }
-
-  container.innerHTML = `
-    <div class="translate-loading">
-      翻译中 <span class="dot"></span><span class="dot"></span><span class="dot"></span>
-    </div>`;
-  if (btnEl) btnEl.disabled = true;
-
-  const translation = await Translator.translate(paper.abstract);
-
-  if (translation) {
-    container.innerHTML = `<div class="paper-abstract-zh">${translation}</div>`;
-    if (btnEl) {
-      btnEl.textContent = '🌐 隐藏翻译';
-      btnEl.disabled = false;
-    }
-  } else {
-    container.innerHTML = `<div class="paper-abstract-zh" style="border-left-color: var(--accent-pink);">
-      ⚠️ 翻译服务暂时不可用，请稍后再试。</div>`;
-    if (btnEl) {
-      btnEl.textContent = '🌐 重试翻译';
-      btnEl.disabled = false;
+async function autoTranslateAll() {
+  for (let i = 0; i < currentPapers.length; i++) {
+    autoTranslatePaper(i);
+    if (i < currentPapers.length - 1) {
+      await new Promise(r => setTimeout(r, 300));
     }
   }
 }
@@ -364,6 +344,7 @@ async function loadPapers(page = 0, searchText = '', category = 'all') {
     }
 
     setTimeout(initReveal, 100);
+    setTimeout(autoTranslateAll, 200);
   } catch (err) {
     console.error('Failed to fetch papers:', err);
     listEl.innerHTML = `
