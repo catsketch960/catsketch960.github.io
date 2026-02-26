@@ -29,26 +29,23 @@ const ArxivAPI = {
   ],
 
   buildQuery(searchText = '', category = 'all', start = 0, maxResults = 10) {
-    let query;
+    let searchQuery;
     if (searchText.trim()) {
-      query = `all:${searchText.trim().replace(/\s+/g, '+')}`;
+      const phrase = searchText.trim().replace(/\s+/g, '+');
+      searchQuery = `ti:%22${phrase}%22+OR+abs:%22${phrase}%22`;
     } else {
       const terms = this.SEARCH_TERMS
-        .map(t => `all:"${t}"`)
+        .map(t => {
+          const phrase = t.replace(/\s+/g, '+');
+          return `ti:%22${phrase}%22+OR+abs:%22${phrase}%22`;
+        })
         .join('+OR+');
-      query = `(${terms})`;
+      searchQuery = terms;
     }
     if (category !== 'all') {
-      query = `cat:${category}+AND+${query}`;
+      searchQuery = `cat:${category}+AND+(${searchQuery})`;
     }
-    const params = new URLSearchParams({
-      search_query: query,
-      sortBy: 'submittedDate',
-      sortOrder: 'descending',
-      start: start.toString(),
-      max_results: maxResults.toString(),
-    });
-    return `${this.BASE_URL}?${params.toString()}`;
+    return `${this.BASE_URL}?search_query=${searchQuery}&sortBy=submittedDate&sortOrder=descending&start=${start}&max_results=${maxResults}`;
   },
 
   parseEntry(entry) {
