@@ -120,7 +120,12 @@ const ArxivAPI = {
 
 const Translator = {
   CACHE_PREFIX: 'trans_',
-  API_URL: 'https://api.mymemory.translated.net/get',
+  GOOGLE_URL: 'https://translate.googleapis.com/translate_a/single',
+  MYMEMORY_URL: 'https://api.mymemory.translated.net/get',
+  CORS_PROXIES: [
+    'https://corsproxy.io/?url=',
+    'https://api.allorigins.win/raw?url=',
+  ],
 
   getCached(text) {
     const key = this.CACHE_PREFIX + this.hashCode(text);
@@ -133,7 +138,6 @@ const Translator = {
     try {
       localStorage.setItem(key, JSON.stringify(translation));
     } catch (e) {
-      // localStorage full, clear old entries
       this.clearOldCache();
     }
   },
@@ -157,7 +161,7 @@ const Translator = {
     return Math.abs(hash).toString(36);
   },
 
-  splitIntoChunks(text, maxLen = 450) {
+  splitIntoChunks(text, maxLen = 1800) {
     if (text.length <= maxLen) return [text];
     const chunks = [];
     let remaining = text;
@@ -183,14 +187,63 @@ const Translator = {
     return chunks;
   },
 
-  async translateChunk(chunk) {
+  parseGoogleResponse(data) {
+    if (!Array.isArray(data) || !Array.isArray(data[0])) return null;
+    return data[0]
+      .filter(seg => seg && seg[0])
+      .map(seg => seg[0])
+      .join('');
+  },
+
+  async googleTranslateChunk(chunk) {
+    const params = new URLSearchParams({
+      client: 'gtx', sl: 'en', tl: 'zh-CN', dt: 't',
+      q: chunk,
+    });
+    const targetUrl = `${this.GOOGLE_URL}?${params.toString()}`;
+
+    const fetchOne = (url) => {
+      const controller = new AbortController();
+      const tid = setTimeout(() => controller.abort(), 10000);
+      return fetch(url, { signal: controller.signal })
+        .then(r => { clearTimeout(tid); return r.ok ? r.json() : Promise.reject(new Error(`HTTP ${r.status}`)); })
+        .catch(e => { clearTimeout(tid); throw e; });
+    };
+
+    const attempts = this.CORS_PROXIES.map(proxy =>
+      fetchOne(proxy + encodeURIComponent(targetUrl))
+    );
+    attempts.push(fetchOne(targetUrl));
+
+    const data = await Promise.any(attempts);
+    const text = this.parseGoogleResponse(data);
+    if (!text) throw new Error('Failed to parse Google response');
+    return text;
+  },
+
+  async myMemoryChunk(chunk) {
     const params = new URLSearchParams({ q: chunk, langpair: 'en|zh-CN' });
-    const resp = await fetch(`${this.API_URL}?${params.toString()}`);
+    const resp = await fetch(`${this.MYMEMORY_URL}?${params.toString()}`);
+    if (!resp.ok) throw new Error(`HTTP ${resp.status}`);
     const data = await resp.json();
     if (data.responseStatus === 200 && data.responseData) {
       return data.responseData.translatedText;
     }
-    throw new Error('Translation failed');
+    throw new Error('MyMemory translation failed');
+  },
+
+  async translateChunk(chunk) {
+    try {
+      return await this.googleTranslateChunk(chunk);
+    } catch (err) {
+      console.warn('Google Translate failed, trying MyMemory:', err.message);
+      try {
+        return await this.myMemoryChunk(chunk);
+      } catch (err2) {
+        console.warn('MyMemory also failed:', err2.message);
+        throw err2;
+      }
+    }
   },
 
   async translate(text) {
@@ -203,7 +256,7 @@ const Translator = {
       for (const chunk of chunks) {
         const translated = await this.translateChunk(chunk);
         results.push(translated);
-        if (chunks.length > 1) await new Promise(r => setTimeout(r, 200));
+        if (chunks.length > 1) await new Promise(r => setTimeout(r, 300));
       }
       const full = results.join('');
       this.setCache(text, full);
@@ -297,9 +350,9 @@ async function autoTranslatePaper(index) {
 
 async function autoTranslateAll() {
   for (let i = 0; i < currentPapers.length; i++) {
-    autoTranslatePaper(i);
+    await autoTranslatePaper(i);
     if (i < currentPapers.length - 1) {
-      await new Promise(r => setTimeout(r, 300));
+      await new Promise(r => setTimeout(r, 500));
     }
   }
 }
@@ -316,7 +369,6 @@ async function retranslate(index, btnEl) {
   if (titleContainer) titleContainer.innerHTML = loadingHTML;
   if (absContainer) absContainer.innerHTML = loadingHTML;
 
-  // Clear cache to force re-translate
   const titleKey = Translator.CACHE_PREFIX + Translator.hashCode(paper.title);
   const absKey = Translator.CACHE_PREFIX + Translator.hashCode(paper.abstract);
   localStorage.removeItem(titleKey);
@@ -333,6 +385,19 @@ async function retranslate(index, btnEl) {
   }
 
   if (btnEl) { btnEl.disabled = false; btnEl.textContent = '🌐 翻译'; }
+}
+
+async function handleTranslateAll(btnEl) {
+  if (btnEl) { btnEl.disabled = true; btnEl.textContent = '🌐 翻译中...'; }
+  const loadingHTML = '<span class="translate-loading">翻译中 <span class="dot"></span><span class="dot"></span><span class="dot"></span></span>';
+  for (let i = 0; i < currentPapers.length; i++) {
+    const tc = document.getElementById(`title-zh-${i}`);
+    const ac = document.getElementById(`abs-zh-${i}`);
+    if (tc && !tc.textContent.trim()) tc.innerHTML = loadingHTML;
+    if (ac && !ac.textContent.trim()) ac.innerHTML = loadingHTML;
+  }
+  await autoTranslateAll();
+  if (btnEl) { btnEl.disabled = false; btnEl.textContent = '🌐 翻译本页'; }
 }
 
 /* ---- Navbar scroll effect ---- */
@@ -467,7 +532,7 @@ async function loadPapers(page = 0, searchText = '', category = 'all') {
     }
 
     setTimeout(initReveal, 100);
-    setTimeout(autoTranslateAll, 200);
+    setTimeout(autoTranslateAll, 300);
   } catch (err) {
     console.error('Failed to load papers:', err);
     listEl.innerHTML = `
