@@ -357,6 +357,55 @@ function initReveal() {
   document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
 }
 
+/* ---- Local JSON data loader ---- */
+let cachedData = null;
+
+async function loadLocalData() {
+  if (cachedData) return cachedData;
+  try {
+    const resp = await fetch('data/papers.json');
+    if (!resp.ok) throw new Error(`HTTP ${resp.status}`);
+    cachedData = await resp.json();
+    return cachedData;
+  } catch {
+    return null;
+  }
+}
+
+function showLastUpdated(lastUpdated) {
+  const el = document.getElementById('last-updated');
+  if (!el || !lastUpdated) return;
+  const d = new Date(lastUpdated);
+  el.textContent = d.toLocaleString('zh-CN', {
+    year: 'numeric', month: '2-digit', day: '2-digit',
+    hour: '2-digit', minute: '2-digit', timeZoneName: 'short',
+  });
+}
+
+function filterPapers(papers, searchText = '', category = 'all') {
+  let filtered = papers;
+  if (searchText.trim()) {
+    const kw = searchText.trim().toLowerCase();
+    filtered = filtered.filter(p =>
+      p.title.toLowerCase().includes(kw) ||
+      p.abstract.toLowerCase().includes(kw) ||
+      p.authors.some(a => a.toLowerCase().includes(kw))
+    );
+  }
+  if (category !== 'all') {
+    filtered = filtered.filter(p => p.categories.includes(category));
+  }
+  return filtered;
+}
+
+function normalizePaper(p) {
+  return {
+    ...p,
+    published: p.published ? new Date(p.published) : null,
+    updated: p.updated ? new Date(p.updated) : null,
+  };
+}
+
 /* ---- Papers page logic ---- */
 let currentPage = 0;
 let totalResults = 0;
@@ -370,16 +419,25 @@ async function loadPapers(page = 0, searchText = '', category = 'all') {
   listEl.innerHTML = `
     <div class="loading-container">
       <div class="spinner"></div>
-      <p class="loading-text">正在从 arXiv 获取最新论文...</p>
+      <p class="loading-text">正在加载论文数据...</p>
     </div>`;
 
   try {
-    const result = await ArxivAPI.fetchPapers(searchText, category, page * PAGE_SIZE, PAGE_SIZE);
-    currentPapers = result.papers;
-    totalResults = result.total;
+    const data = await loadLocalData();
+    if (!data || !data.papers.length) throw new Error('No local data');
+
+    showLastUpdated(data.lastUpdated);
+
+    const allPapers = data.papers.map(normalizePaper);
+    const filtered = filterPapers(allPapers, searchText, category);
+    totalResults = filtered.length;
     currentPage = page;
 
-    if (result.papers.length === 0) {
+    const start = page * PAGE_SIZE;
+    const pagePapers = filtered.slice(start, start + PAGE_SIZE);
+    currentPapers = pagePapers;
+
+    if (pagePapers.length === 0) {
       listEl.innerHTML = `
         <div class="empty-state">
           <div class="empty-icon">📭</div>
@@ -392,13 +450,13 @@ async function loadPapers(page = 0, searchText = '', category = 'all') {
     const statsEl = document.getElementById('total-count');
     if (statsEl) statsEl.textContent = totalResults.toLocaleString();
 
-    listEl.innerHTML = result.papers.map((p, i) => createPaperCardHTML(p, i)).join('');
+    listEl.innerHTML = pagePapers.map((p, i) => createPaperCardHTML(p, i)).join('');
 
     if (paginationEl) {
       const totalPages = Math.ceil(totalResults / PAGE_SIZE);
       paginationEl.innerHTML = `
         <button onclick="changePage(${page - 1})" ${page <= 0 ? 'disabled' : ''}>← 上一页</button>
-        <span class="page-info">第 ${page + 1} / ${Math.min(totalPages, 100)} 页</span>
+        <span class="page-info">第 ${page + 1} / ${totalPages} 页</span>
         <button onclick="changePage(${page + 1})" ${page >= totalPages - 1 ? 'disabled' : ''}>下一页 →</button>
       `;
     }
@@ -406,12 +464,12 @@ async function loadPapers(page = 0, searchText = '', category = 'all') {
     setTimeout(initReveal, 100);
     setTimeout(autoTranslateAll, 200);
   } catch (err) {
-    console.error('Failed to fetch papers:', err);
+    console.error('Failed to load papers:', err);
     listEl.innerHTML = `
       <div class="empty-state">
         <div class="empty-icon">⚠️</div>
-        <p>获取论文失败，请检查网络连接后重试。</p>
-        <button class="btn btn-sm btn-outline" onclick="loadPapers(${page}, '${searchText}', '${category}')" style="margin-top:1rem">
+        <p>论文数据加载失败，请稍后刷新页面。</p>
+        <button class="btn btn-sm btn-outline" onclick="loadPapers(${page})" style="margin-top:1rem">
           🔄 重试
         </button>
       </div>`;
@@ -444,10 +502,15 @@ async function loadPapersPreview() {
   if (!container) return;
 
   try {
-    const result = await ArxivAPI.fetchPapers('', 'all', 0, 6);
-    currentPapers = result.papers;
+    const data = await loadLocalData();
+    if (!data || !data.papers.length) throw new Error('No local data');
 
-    container.innerHTML = result.papers.map((paper, i) => {
+    showLastUpdated(data.lastUpdated);
+
+    const papers = data.papers.slice(0, 6).map(normalizePaper);
+    currentPapers = papers;
+
+    container.innerHTML = papers.map((paper, i) => {
       const authorsStr = paper.authors.slice(0, 2).join(', ');
       const tagsHTML = paper.categories.slice(0, 2)
         .map(c => `<span class="tag ${getCategoryClass(c)}">${c}</span>`)
