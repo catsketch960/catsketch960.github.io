@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>论文库 | AI RecPaper Hub</title>
+  <meta name="description" content="浏览来自 arXiv 的最新推荐系统与推荐算法研究论文，支持搜索、分类和中文翻译。">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🤖</text></svg>">
+</head>
+<body>
+  <div class="bg-mesh"></div>
+
+  <!-- Navigation -->
+  <nav class="navbar">
+    <a href="index.html" class="nav-logo">
+      <span class="logo-icon">🤖</span>
+      <span>RecPaper Hub</span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="index.html">首页</a></li>
+      <li><a href="papers.html" class="active">论文库</a></li>
+      <li><a href="https://arxiv.org/list/cs.IR/recent" target="_blank" rel="noopener">arXiv</a></li>
+      <li><a href="https://github.com/catsketch960" target="_blank" rel="noopener">GitHub</a></li>
+    </ul>
+    <button class="nav-toggle" onclick="toggleNav()" aria-label="Toggle navigation">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+  <!-- Page Header -->
+  <section style="padding-top: 100px;" class="section">
+    <div class="section-header">
+      <div class="section-divider"></div>
+      <h2>📚 推荐算法论文库</h2>
+      <p>从 arXiv 实时获取推荐系统领域的最新研究论文</p>
+    </div>
+
+    <!-- Stats -->
+    <div class="stats-bar">
+      <div class="stat-item">
+        <div class="stat-value" id="total-count">-</div>
+        <div class="stat-label">检索到的论文总数</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-value">6+</div>
+        <div class="stat-label">覆盖 arXiv 分类</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-value">🔄</div>
+        <div class="stat-label">实时更新</div>
+      </div>
+    </div>
+
+    <!-- Search & Filter -->
+    <div class="papers-controls">
+      <div class="search-box">
+        <span class="search-icon">🔍</span>
+        <input
+          type="text"
+          id="search-input"
+          placeholder="搜索论文... 例如：collaborative filtering, CTR, GNN"
+          oninput="onSearchInput()"
+          onkeydown="if(event.key==='Enter') handleSearch()"
+        >
+      </div>
+      <select class="category-filter" id="category-select" onchange="handleSearch()">
+        <option value="all">全部分类</option>
+        <option value="cs.IR">cs.IR · 信息检索</option>
+        <option value="cs.LG">cs.LG · 机器学习</option>
+        <option value="cs.AI">cs.AI · 人工智能</option>
+        <option value="cs.CL">cs.CL · 计算语言学</option>
+        <option value="cs.CV">cs.CV · 计算机视觉</option>
+      </select>
+    </div>
+
+    <!-- Papers List -->
+    <div class="papers-list" id="papers-list">
+      <div class="loading-container">
+        <div class="spinner"></div>
+        <p class="loading-text">正在从 arXiv 获取最新论文...</p>
+      </div>
+    </div>
+
+    <!-- Pagination -->
+    <div class="pagination" id="pagination"></div>
+  </section>
+
+  <!-- Tips -->
+  <section class="section" style="padding-top:0;">
+    <div class="feature-card" style="max-width:700px; margin:0 auto;">
+      <h3 style="margin-bottom:0.75rem;">💡 使用提示</h3>
+      <ul style="color:var(--text-secondary); font-size:0.92rem; padding-left:1.2rem; display:flex; flex-direction:column; gap:0.5rem;">
+        <li>输入关键词（如 <code style="background:rgba(139,92,246,0.15); padding:2px 6px; border-radius:4px; font-size:0.85rem;">sequential recommendation</code>）搜索特定方向的论文</li>
+        <li>点击「翻译为中文」可将摘要翻译为中文，翻译结果会缓存到本地</li>
+        <li>使用分类筛选器可以按 arXiv 分类快速过滤论文</li>
+        <li>所有论文数据直接来自 <a href="https://arxiv.org" target="_blank" style="color:var(--accent-cyan);">arXiv.org</a> 官方 API</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-links">
+      <a href="index.html">首页</a>
+      <a href="papers.html">论文库</a>
+      <a href="https://arxiv.org" target="_blank" rel="noopener">arXiv.org</a>
+      <a href="https://github.com/catsketch960" target="_blank" rel="noopener">GitHub</a>
+    </div>
+    <p>
+      © 2026 AI RecPaper Hub · 论文数据来源
+      <a href="https://arxiv.org" target="_blank" rel="noopener">arXiv.org</a>
+      · Powered by GitHub Pages
+    </p>
+  </footer>
+
+  <script src="js/app.js?v=3"></script>
+</body>
+</html>

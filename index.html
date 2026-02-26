@@ -1,10 +1,181 @@
 <!DOCTYPE html>
-<html>
+<html lang="zh-CN">
 <head>
-    <title>我的 GitHub 博客</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI RecPaper Hub | 推荐算法论文聚合</title>
+  <meta name="description" content="AI 驱动的推荐算法论文聚合平台，自动从 arXiv 抓取最新推荐系统研究论文，提供中文翻译。">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🤖</text></svg>">
 </head>
 <body>
-    <h1>欢迎来到我的博客！</h1>
-    <p>这是通过 GitHub Pages 部署的静态站点。</p>
+  <div class="bg-mesh"></div>
+
+  <!-- Navigation -->
+  <nav class="navbar">
+    <a href="index.html" class="nav-logo">
+      <span class="logo-icon">🤖</span>
+      <span>RecPaper Hub</span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="index.html" class="active">首页</a></li>
+      <li><a href="papers.html">论文库</a></li>
+      <li><a href="https://arxiv.org/list/cs.IR/recent" target="_blank" rel="noopener">arXiv</a></li>
+      <li><a href="https://github.com/catsketch960" target="_blank" rel="noopener">GitHub</a></li>
+    </ul>
+    <button class="nav-toggle" onclick="toggleNav()" aria-label="Toggle navigation">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="hero-content">
+      <div class="hero-badge">
+        <span class="pulse"></span>
+        持续追踪推荐系统前沿研究
+      </div>
+      <h1>
+        用 AI 连接<br>
+        <span class="gradient-text">推荐算法的最新研究</span>
+      </h1>
+      <p class="hero-desc">
+        自动聚合 arXiv 上最新的推荐系统论文，一键获取摘要与中文翻译，
+        让你不错过每一篇前沿研究。
+      </p>
+      <div class="hero-actions">
+        <a href="papers.html" class="btn btn-primary">📚 浏览最新论文</a>
+        <a href="#about" class="btn btn-outline">👋 了解更多</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section class="section" id="about">
+    <div class="about-grid reveal">
+      <div style="display:flex; justify-content:center;">
+        <div class="about-avatar">👨‍💻</div>
+      </div>
+      <div class="about-text">
+        <h3>关于我</h3>
+        <p>
+          你好！我是一名 <strong>AI 工程师</strong>，专注于将 AI 与机器学习技术应用到
+          <strong>推荐系统</strong>和<strong>推荐算法</strong>的研究与工程实践中。
+        </p>
+        <p>
+          我对协同过滤、深度推荐模型、CTR 预估、序列推荐、图神经网络推荐等方向有浓厚兴趣。
+          这个站点是我的个人工具——自动追踪 arXiv 上的最新推荐算法论文，
+          帮助自己和同行快速了解领域前沿。
+        </p>
+        <div class="tech-tags">
+          <span class="tech-tag">推荐系统</span>
+          <span class="tech-tag">深度学习</span>
+          <span class="tech-tag">CTR 预估</span>
+          <span class="tech-tag">协同过滤</span>
+          <span class="tech-tag">图神经网络</span>
+          <span class="tech-tag">NLP</span>
+          <span class="tech-tag">Python</span>
+          <span class="tech-tag">PyTorch</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- How It Works -->
+  <section class="section">
+    <div class="section-header reveal">
+      <div class="section-divider"></div>
+      <h2>工作原理</h2>
+      <p>三步获取最新推荐算法论文</p>
+    </div>
+    <div class="steps-container">
+      <div class="step reveal">
+        <div class="step-number">1</div>
+        <h3>抓取论文</h3>
+        <p>通过 arXiv API 实时检索推荐系统、协同过滤、CTR 预估等领域的最新论文。</p>
+        <span class="step-arrow">→</span>
+      </div>
+      <div class="step reveal">
+        <div class="step-number">2</div>
+        <h3>智能解析</h3>
+        <p>自动提取论文标题、作者、摘要、分类标签，结构化呈现关键信息。</p>
+        <span class="step-arrow">→</span>
+      </div>
+      <div class="step reveal">
+        <div class="step-number">3</div>
+        <h3>中文翻译</h3>
+        <p>一键将英文摘要翻译为中文，降低阅读门槛，快速掌握论文要点。</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Features -->
+  <section class="section">
+    <div class="section-header reveal">
+      <div class="section-divider"></div>
+      <h2>核心功能</h2>
+      <p>为推荐算法研究者打造的论文追踪工具</p>
+    </div>
+    <div class="features-grid">
+      <div class="feature-card reveal">
+        <div class="feature-icon blue">🔍</div>
+        <h3>实时检索</h3>
+        <p>直接从 arXiv 实时拉取最新论文，支持关键词搜索和分类筛选，始终保持信息最新。</p>
+      </div>
+      <div class="feature-card reveal">
+        <div class="feature-icon purple">🌐</div>
+        <h3>摘要翻译</h3>
+        <p>集成翻译 API，一键将英文摘要翻译为中文，翻译结果本地缓存，无需重复请求。</p>
+      </div>
+      <div class="feature-card reveal">
+        <div class="feature-icon cyan">📊</div>
+        <h3>分类浏览</h3>
+        <p>支持按 cs.IR、cs.LG、cs.AI 等 arXiv 分类筛选，精准定位感兴趣的研究方向。</p>
+      </div>
+      <div class="feature-card reveal">
+        <div class="feature-icon pink">⚡</div>
+        <h3>极速体验</h3>
+        <p>纯前端架构，无需后端服务器，GitHub Pages 免费托管，全球 CDN 加速访问。</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Recent Papers Preview -->
+  <section class="section">
+    <div class="section-header reveal">
+      <div class="section-divider"></div>
+      <h2>最新论文</h2>
+      <p>来自 arXiv 的推荐系统领域最新研究</p>
+    </div>
+    <div class="papers-preview" id="papers-preview">
+      <div class="loading-container" style="grid-column: 1 / -1;">
+        <div class="spinner"></div>
+        <p class="loading-text">正在从 arXiv 获取最新论文...</p>
+      </div>
+    </div>
+    <div style="text-align:center; margin-top:2rem;" class="reveal">
+      <a href="papers.html" class="btn btn-primary">查看全部论文 →</a>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-links">
+      <a href="index.html">首页</a>
+      <a href="papers.html">论文库</a>
+      <a href="https://arxiv.org" target="_blank" rel="noopener">arXiv.org</a>
+      <a href="https://github.com/catsketch960" target="_blank" rel="noopener">GitHub</a>
+    </div>
+    <p>
+      © 2026 AI RecPaper Hub · 论文数据来源
+      <a href="https://arxiv.org" target="_blank" rel="noopener">arXiv.org</a>
+      · Powered by GitHub Pages
+    </p>
+  </footer>
+
+  <script src="js/app.js?v=3"></script>
 </body>
 </html>
