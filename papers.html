@@ -35,8 +35,8 @@
   <section style="padding-top: 100px;" class="section">
     <div class="section-header">
       <div class="section-divider"></div>
-      <h2>📚 推荐算法论文库</h2>
-      <p>从 arXiv 实时获取推荐系统领域的最新研究论文</p>
+      <h2>📚 生成式推荐论文库</h2>
+      <p>从 arXiv 实时获取 Generative Recommendation 领域的最新研究论文</p>
     </div>
 
     <!-- Stats -->
@@ -62,7 +62,7 @@
         <input
           type="text"
           id="search-input"
-          placeholder="搜索论文... 例如：collaborative filtering, CTR, GNN"
+          placeholder="搜索论文... 例如：generative recommendation, LLM, diffusion"
           oninput="onSearchInput()"
           onkeydown="if(event.key==='Enter') handleSearch()"
         >
@@ -94,7 +94,7 @@
     <div class="feature-card" style="max-width:700px; margin:0 auto;">
       <h3 style="margin-bottom:0.75rem;">💡 使用提示</h3>
       <ul style="color:var(--text-secondary); font-size:0.92rem; padding-left:1.2rem; display:flex; flex-direction:column; gap:0.5rem;">
-        <li>输入关键词（如 <code style="background:rgba(139,92,246,0.15); padding:2px 6px; border-radius:4px; font-size:0.85rem;">sequential recommendation</code>）搜索特定方向的论文</li>
+        <li>输入关键词（如 <code style="background:rgba(139,92,246,0.15); padding:2px 6px; border-radius:4px; font-size:0.85rem;">generative retrieval</code>）搜索特定方向的论文</li>
         <li>点击「翻译为中文」可将摘要翻译为中文，翻译结果会缓存到本地</li>
         <li>使用分类筛选器可以按 arXiv 分类快速过滤论文</li>
         <li>所有论文数据直接来自 <a href="https://arxiv.org" target="_blank" style="color:var(--accent-cyan);">arXiv.org</a> 官方 API</li>
@@ -117,6 +117,6 @@
     </p>
   </footer>
 
-  <script src="js/app.js?v=5"></script>
+  <script src="js/app.js?v=6"></script>
 </body>
 </html>

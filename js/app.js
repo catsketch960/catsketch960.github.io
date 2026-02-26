@@ -20,14 +20,12 @@ const ArxivAPI = {
   },
 
   SEARCH_TERMS: [
-    'recommendation system',
-    'recommender system',
-    'collaborative filtering',
-    'click-through rate',
-    'CTR prediction',
-    'sequential recommendation',
-    'knowledge graph recommendation',
-    'graph neural network recommendation',
+    'generative recommendation',
+    'generative recommender',
+    'LLM recommendation',
+    'large language model recommendation',
+    'diffusion recommendation',
+    'generative retrieval recommendation',
   ],
 
   buildQuery(searchText = '', category = 'all', start = 0, maxResults = 10) {
@@ -35,7 +33,7 @@ const ArxivAPI = {
     if (searchText.trim()) {
       query = `all:${searchText.trim().replace(/\s+/g, '+')}`;
     } else {
-      const terms = this.SEARCH_TERMS.slice(0, 4)
+      const terms = this.SEARCH_TERMS
         .map(t => `all:"${t}"`)
         .join('+OR+');
       query = `(${terms})`;
