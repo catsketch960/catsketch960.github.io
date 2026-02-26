@@ -236,10 +236,15 @@ function createPaperCardHTML(paper, index) {
     .map(c => `<span class="tag ${getCategoryClass(c)}">${c}</span>`)
     .join('');
 
+  const industryBadge = paper.industrySource
+    ? `<span class="tag industry-tag">🏢 ${paper.industrySource}</span>`
+    : '';
+
   return `
-    <div class="paper-card reveal" style="animation-delay: ${index * 0.05}s">
+    <div class="paper-card reveal ${paper.industrySource ? 'industry-paper' : ''}" style="animation-delay: ${index * 0.05}s">
       <div class="paper-header">
         <h3 class="paper-title">
+          ${industryBadge}
           <a href="${paper.absUrl}" target="_blank" rel="noopener">${paper.title}</a>
         </h3>
         <div class="paper-title-zh" id="title-zh-${index}">

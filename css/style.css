@@ -622,6 +622,28 @@ body {
   border: 1px solid rgba(139, 92, 246, 0.2);
 }
 
+.tag.industry-tag {
+  background: rgba(250, 176, 5, 0.15);
+  color: #fab005;
+  border-color: rgba(250, 176, 5, 0.3);
+  font-weight: 600;
+}
+
+.paper-card.industry-paper {
+  border-color: rgba(250, 176, 5, 0.3);
+}
+
+.paper-card.industry-paper::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, #fab005, #fd7e14);
+  opacity: 1;
+}
+
 .tag.cs-ir { background: rgba(59, 130, 246, 0.12); color: var(--accent-blue); border-color: rgba(59, 130, 246, 0.2); }
 .tag.cs-lg { background: rgba(6, 182, 212, 0.12); color: var(--accent-cyan); border-color: rgba(6, 182, 212, 0.2); }
 .tag.cs-ai { background: rgba(236, 72, 153, 0.12); color: var(--accent-pink); border-color: rgba(236, 72, 153, 0.2); }
