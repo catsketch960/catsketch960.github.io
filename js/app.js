@@ -259,6 +259,9 @@ function createPaperCardHTML(paper, index) {
         <span class="translate-loading">翻译中 <span class="dot"></span><span class="dot"></span><span class="dot"></span></span>
       </div>
       <div class="paper-actions">
+        <button class="btn btn-sm btn-translate" onclick="retranslate(${index}, this)">
+          🌐 翻译
+        </button>
         <a class="btn btn-sm btn-outline" href="${paper.pdfUrl}" target="_blank" rel="noopener">
           📄 PDF
         </a>
@@ -297,6 +300,37 @@ async function autoTranslateAll() {
       await new Promise(r => setTimeout(r, 300));
     }
   }
+}
+
+async function retranslate(index, btnEl) {
+  const paper = currentPapers[index];
+  if (!paper) return;
+
+  const titleContainer = document.getElementById(`title-zh-${index}`);
+  const absContainer = document.getElementById(`abs-zh-${index}`);
+  if (btnEl) { btnEl.disabled = true; btnEl.textContent = '🌐 翻译中...'; }
+
+  const loadingHTML = '<span class="translate-loading">翻译中 <span class="dot"></span><span class="dot"></span><span class="dot"></span></span>';
+  if (titleContainer) titleContainer.innerHTML = loadingHTML;
+  if (absContainer) absContainer.innerHTML = loadingHTML;
+
+  // Clear cache to force re-translate
+  const titleKey = Translator.CACHE_PREFIX + Translator.hashCode(paper.title);
+  const absKey = Translator.CACHE_PREFIX + Translator.hashCode(paper.abstract);
+  localStorage.removeItem(titleKey);
+  localStorage.removeItem(absKey);
+
+  const titleTranslation = await Translator.translate(paper.title);
+  if (titleContainer) {
+    titleContainer.innerHTML = titleTranslation || '<span style="color:var(--text-muted);">标题翻译暂不可用</span>';
+  }
+
+  const absTranslation = await Translator.translate(paper.abstract);
+  if (absContainer) {
+    absContainer.innerHTML = absTranslation || '<span style="color:var(--text-muted);">摘要翻译暂不可用</span>';
+  }
+
+  if (btnEl) { btnEl.disabled = false; btnEl.textContent = '🌐 翻译'; }
 }
 
 /* ---- Navbar scroll effect ---- */
