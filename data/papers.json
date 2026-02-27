@@ -1,7 +1,53 @@
 {
-  "lastUpdated": "2026-02-26T05:00:12Z",
-  "totalResults": 525,
+  "lastUpdated": "2026-02-27T05:19:49Z",
+  "totalResults": 527,
   "papers": [
+    {
+      "id": "http://arxiv.org/abs/2602.22732v1",
+      "title": "Generative Recommendation for Large-Scale Advertising",
+      "authors": [
+        "Ben Xue",
+        "Dan Liu",
+        "Lixiang Wang",
+        "Mingjie Sun",
+        "Peng Wang",
+        "Pengfei Zhang",
+        "Shaoyun Shi",
+        "Tianyu Xu",
+        "Yunhao Sha",
+        "Zhiqiang Liu",
+        "Bo Kong",
+        "Bo Wang",
+        "Hang Yang",
+        "Jieting Xue",
+        "Junhao Wang",
+        "Shengyu Wang",
+        "Shuping Hui",
+        "Wencai Ye",
+        "Xiao Lin",
+        "Yongzhi Li",
+        "Yuhang Chen",
+        "Zhihui Yin",
+        "Quan Chen",
+        "Shiyang Wen",
+        "Wenjin Wu",
+        "Han Li",
+        "Guorui Zhou",
+        "Changcheng Li",
+        "Peng Jiang"
+      ],
+      "affiliations": [],
+      "abstract": "Generative recommendation has recently attracted widespread attention in industry due to its potential for scaling and stronger model capacity. However, deploying real-time generative recommendation in large-scale advertising requires designs beyond large-language-model (LLM)-style training and serving recipes. We present a production-oriented generative recommender co-designed across architecture, learning, and serving, named GR4AD (Generative Recommendation for ADdvertising). As for tokenization, GR4AD proposes UA-SID (Unified Advertisement Semantic ID) to capture complicated business information. Furthermore, GR4AD introduces LazyAR, a lazy autoregressive decoder that relaxes layer-wise dependencies for short, multi-candidate generation, preserving effectiveness while reducing inference cost, which facilitates scaling under fixed serving budgets. To align optimization with business value, GR4AD employs VSL (Value-Aware Supervised Learning) and proposes RSPO (Ranking-Guided Softmax Preference Optimization), a ranking-aware, list-wise reinforcement learning algorithm that optimizes value-based rewards under list-level metrics for continual online updates. For online inference, we further propose dynamic beam serving, which adapts beam width across generation levels and online load to control compute. Large-scale online A/B tests show up to 4.2% ad revenue improvement over an existing DLRM-based stack, with consistent gains from both model scaling and inference-time scaling. GR4AD has been fully deployed in Kuaishou advertising system with over 400 million users and achieves high-throughput real-time serving.",
+      "published": "2026-02-26T08:15:26Z",
+      "updated": "2026-02-26T08:15:26Z",
+      "categories": [
+        "cs.IR",
+        "cs.LG"
+      ],
+      "pdfUrl": "https://arxiv.org/pdf/2602.22732v1",
+      "absUrl": "https://arxiv.org/abs/2602.22732v1",
+      "industrySource": "Kuaishou"
+    },
     {
       "id": "http://arxiv.org/abs/2602.20558v1",
       "title": "From Logs to Language: Learning Optimal Verbalization for LLM-Based Recommendation in Production",
@@ -356,6 +402,59 @@
       "pdfUrl": "https://arxiv.org/pdf/2601.21452v3",
       "absUrl": "https://arxiv.org/abs/2601.21452v3",
       "industrySource": "Amazon"
+    },
+    {
+      "id": "http://arxiv.org/abs/2602.22913v1",
+      "title": "SIGMA: A Semantic-Grounded Instruction-Driven Generative Multi-Task Recommender at AliExpress",
+      "authors": [
+        "Yang Yu",
+        "Lei Kou",
+        "Huaikuan Yi",
+        "Bin Chen",
+        "Yayu Cao",
+        "Lei Shen",
+        "Chao Zhang",
+        "Bing Wang",
+        "Xiaoyi Zeng"
+      ],
+      "affiliations": [],
+      "abstract": "With the rapid evolution of Large Language Models, generative recommendation is gradually reshaping the paradigm of recommender systems. However, most existing methods are still confined to the interaction-driven next-item prediction paradigm, failing to rapidly adapt to evolving trends or address diverse recommendation tasks along with business-specific requirements in real-world scenarios. To this end, we present SIGMA, a Semantic-Grounded Instruction-Driven Generative Multi-Task Recommender at AliExpress. Specifically, we first ground item entities in general semantics via a unified latent space capturing both semantic and collaborative relations. Building upon this, we develop a hybrid item tokenization method for precise modeling and efficient generation. Moreover, we construct a large-scale multi-task SFT dataset to empower SIGMA to fulfill various recommendation demands via instruction-following. Finally, we design a three-step item generation procedure integrated with an adaptive probabilistic fusion mechanism to calibrate the output distributions based on task-specific requirements for recommendation accuracy and diversity. Extensive offline experiments and online A/B tests demonstrate the effectiveness of SIGMA.",
+      "published": "2026-02-26T12:00:46Z",
+      "updated": "2026-02-26T12:00:46Z",
+      "categories": [
+        "cs.IR",
+        "cs.LG"
+      ],
+      "pdfUrl": "https://arxiv.org/pdf/2602.22913v1",
+      "absUrl": "https://arxiv.org/abs/2602.22913v1",
+      "industrySource": ""
+    },
+    {
+      "id": "http://arxiv.org/abs/2602.22632v1",
+      "title": "Fine-grained Semantics Integration for Large Language Model-based Recommendation",
+      "authors": [
+        "Jiawen Feng",
+        "Xiaoyu Kong",
+        "Leheng Sheng",
+        "Bin Wu",
+        "Chao Yi",
+        "Feifang Yang",
+        "Xiang-Rong Sheng",
+        "Han Zhu",
+        "Xiang Wang",
+        "Jiancan Wu",
+        "Xiangnan He"
+      ],
+      "affiliations": [],
+      "abstract": "Recent advances in Large Language Models (LLMs) have shifted in recommendation systems from the discriminative paradigm to the LLM-based generative paradigm, where the recommender autoregressively generates sequences of semantic identifiers (SIDs) for target items conditioned on historical interaction. While prevalent LLM-based recommenders have demonstrated performance gains by aligning pretrained LLMs between the language space and the SID space, modeling the SID space still faces two fundamental challenges: (1) Semantically Meaningless Initialization: SID tokens are randomly initialized, severing the semantic linkage between the SID space and the pretrained language space at start point, and (2) Coarse-grained Alignment: existing SFT-based alignment tasks primarily focus on item-level optimization, while overlooking the semantics of individual tokens within SID sequences.To address these challenges, we propose TS-Rec, which can integrate Token-level Semantics into LLM-based Recommenders. Specifically, TS-Rec comprises two key components: (1) Semantic-Aware embedding Initialization (SA-Init), which initializes SID token embeddings by applying mean pooling to the pretrained embeddings of keywords extracted by a teacher model; and (2) Token-level Semantic Alignment (TS-Align), which aligns individual tokens within the SID sequence with the shared semantics of the corresponding item clusters. Extensive experiments on two real-world benchmarks demonstrate that TS-Rec consistently outperforms traditional and generative baselines across all standard metrics. The results demonstrate that integrating fine-grained semantic information significantly enhances the performance of LLM-based generative recommenders.",
+      "published": "2026-02-26T05:17:24Z",
+      "updated": "2026-02-26T05:17:24Z",
+      "categories": [
+        "cs.IR"
+      ],
+      "pdfUrl": "https://arxiv.org/pdf/2602.22632v1",
+      "absUrl": "https://arxiv.org/abs/2602.22632v1",
+      "industrySource": ""
     },
     {
       "id": "http://arxiv.org/abs/2602.21756v1",
@@ -1168,79 +1267,6 @@
       ],
       "pdfUrl": "https://arxiv.org/pdf/2601.17787v1",
       "absUrl": "https://arxiv.org/abs/2601.17787v1",
-      "industrySource": ""
-    },
-    {
-      "id": "http://arxiv.org/abs/2601.17438v1",
-      "title": "UniGRec: Unified Generative Recommendation with Soft Identifiers for End-to-End Optimization",
-      "authors": [
-        "Jialei Li",
-        "Yang Zhang",
-        "Yimeng Bai",
-        "Shuai Zhu",
-        "Ziqi Xue",
-        "Xiaoyan Zhao",
-        "Dingxian Wang",
-        "Frank Yang",
-        "Andrew Rabinovich",
-        "Xiangnan He"
-      ],
-      "affiliations": [],
-      "abstract": "Generative recommendation has recently emerged as a transformative paradigm that directly generates target items, surpassing traditional cascaded approaches. It typically involves two components: a tokenizer that learns item identifiers and a recommender trained on them. Existing methods often decouple tokenization from recommendation or rely on asynchronous alternating optimization, limiting full end-to-end alignment. To address this, we unify the tokenizer and recommender under the ultimate recommendation objective via differentiable soft item identifiers, enabling joint end-to-end training. However, this introduces three challenges: training-inference discrepancy due to soft-to-hard mismatch, item identifier collapse from codeword usage imbalance, and collaborative signal deficiency due to an overemphasis on fine-grained token-level semantics. To tackle these challenges, we propose UniGRec, a unified generative recommendation framework that addresses them from three perspectives. UniGRec employs Annealed Inference Alignment during tokenization to smoothly bridge soft training and hard inference, a Codeword Uniformity Regularization to prevent identifier collapse and encourage codebook diversity, and a Dual Collaborative Distillation mechanism that distills collaborative priors from a lightweight teacher model to jointly guide both the tokenizer and the recommender. Extensive experiments on real-world datasets demonstrate that UniGRec consistently outperforms state-of-the-art baseline methods. Our codes are available at https://github.com/Jialei-03/UniGRec.",
-      "published": "2026-01-24T12:20:29Z",
-      "updated": "2026-01-24T12:20:29Z",
-      "categories": [
-        "cs.IR",
-        "cs.LG"
-      ],
-      "pdfUrl": "https://arxiv.org/pdf/2601.17438v1",
-      "absUrl": "https://arxiv.org/abs/2601.17438v1",
-      "industrySource": ""
-    },
-    {
-      "id": "http://arxiv.org/abs/2601.16556v1",
-      "title": "PRISM: Purified Representation and Integrated Semantic Modeling for Generative Sequential Recommendation",
-      "authors": [
-        "Dengzhao Fang",
-        "Jingtong Gao",
-        "Yu Li",
-        "Xiangyu Zhao",
-        "Yi Chang"
-      ],
-      "affiliations": [],
-      "abstract": "Generative Sequential Recommendation (GSR) has emerged as a promising paradigm, reframing recommendation as an autoregressive sequence generation task over discrete Semantic IDs (SIDs), typically derived via codebook-based quantization. Despite its great potential in unifying retrieval and ranking, existing GSR frameworks still face two critical limitations: (1) impure and unstable semantic tokenization, where quantization methods struggle with interaction noise and codebook collapse, resulting in SIDs with ambiguous discrimination; and (2) lossy and weakly structured generation, where reliance solely on coarse-grained discrete tokens inevitably introduces information loss and neglects items' hierarchical logic. To address these issues, we propose a novel generative recommendation framework, PRISM, with Purified Representation and Integrated Semantic Modeling. Specifically, to ensure high-quality tokenization, we design a Purified Semantic Quantizer that constructs a robust codebook via adaptive collaborative denoising and hierarchical semantic anchoring mechanisms. To compensate for information loss during quantization, we further propose an Integrated Semantic Recommender, which incorporates a dynamic semantic integration mechanism to integrate fine-grained semantics and enforces logical validity through a semantic structure alignment objective. PRISM consistently outperforms state-of-the-art baselines across four real-world datasets, demonstrating substantial performance gains, particularly in high-sparsity scenarios.",
-      "published": "2026-01-23T08:50:16Z",
-      "updated": "2026-01-23T08:50:16Z",
-      "categories": [
-        "cs.IR",
-        "cs.AI",
-        "cs.LG"
-      ],
-      "pdfUrl": "https://arxiv.org/pdf/2601.16556v1",
-      "absUrl": "https://arxiv.org/abs/2601.16556v1",
-      "industrySource": ""
-    },
-    {
-      "id": "http://arxiv.org/abs/2601.15930v2",
-      "title": "MMGRid: Navigating Temporal-aware and Cross-domain Generative Recommendation via Model Merging",
-      "authors": [
-        "Tianjun Wei",
-        "Enneng Yang",
-        "Yingpeng Du",
-        "Huizhong Guo",
-        "Jie Zhang",
-        "Zhu Sun"
-      ],
-      "affiliations": [],
-      "abstract": "Model merging (MM) offers an efficient mechanism for integrating multiple specialized models without access to original training data or costly retraining. While MM has demonstrated success in domains like computer vision, its role in recommender systems (RSs) remains largely unexplored. Recently, Generative Recommendation (GR) has emerged as a new paradigm in RSs, characterized by rapidly growing model scales and substantial computational costs, making MM particularly appealing for cost-sensitive deployment scenarios. In this work, we present the first systematic study of MM in GR through a contextual lens. We focus on a fundamental yet underexplored challenge in real-world: how to merge generative recommenders specialized to different real-world contexts, arising from temporal evolving user behaviors and heterogeneous application domains. To this end, we propose a unified framework MMGRid, a structured contextual grid of GR checkpoints that organizes models trained under diverse contexts induced by temporal evolution and domain diversity. All checkpoints are derived from a shared base LLM but fine-tuned on context-specific data, forming a realistic and controlled model space for systematically analyzing MM across GR paradigms and merging algorithms. Our investigation reveals several key insights. First, training GR models from LLMs can introduce parameter conflicts during merging due to token distribution shifts and objective disparities; such conflicts can be alleviated by disentangling task-aware and context-specific parameter changes via base model replacement. Second, incremental training across contexts induces recency bias, which can be effectively balanced through weighted contextual merging. Notably, we observe that optimal merging weights correlate with context-dependent interaction characteristics, offering practical guidance for weight selection in real-world deployments.",
-      "published": "2026-01-22T13:09:16Z",
-      "updated": "2026-01-29T05:07:30Z",
-      "categories": [
-        "cs.IR",
-        "cs.AI"
-      ],
-      "pdfUrl": "https://arxiv.org/pdf/2601.15930v2",
-      "absUrl": "https://arxiv.org/abs/2601.15930v2",
       "industrySource": ""
     }
   ]
