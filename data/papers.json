@@ -1,7 +1,25 @@
 {
-  "lastUpdated": "2026-03-03T05:18:35Z",
-  "totalResults": 534,
+  "lastUpdated": "2026-03-04T05:13:20Z",
+  "totalResults": 536,
   "papers": [
+    {
+      "id": "http://arxiv.org/abs/2603.02709v1",
+      "title": "Sensory-Aware Sequential Recommendation via Review-Distilled Representations",
+      "authors": [
+        "Yeo Chan Yoon"
+      ],
+      "affiliations": [],
+      "abstract": "We propose a novel framework for sensory-aware sequential recommendation that enriches item representations with linguistically extracted sensory attributes from product reviews. Our approach, \\textsc{ASEGR} (Attribute-based Sensory Enhanced Generative Recommendation), introduces a two-stage pipeline in which a large language model is first fine-tuned as a teacher to extract structured sensory attribute--value pairs, such as \\textit{color: matte black} and \\textit{scent: vanilla}, from unstructured review text. The extracted structures are then distilled into a compact student transformer that produces fixed-dimensional sensory embeddings for each item. These embeddings encode experiential semantics in a reusable form and are incorporated into standard sequential recommender architectures as additional item-level representations. We evaluate our method on four Amazon domains and integrate the learned sensory embeddings into representative sequential recommendation models, including SASRec, BERT4Rec, and BSARec. Across domains, sensory-enhanced models consistently outperform their identifier-based counterparts, indicating that linguistically grounded sensory representations provide complementary signals to behavioral interaction patterns. Qualitative analysis further shows that the extracted attributes align closely with human perceptions of products, enabling interpretable connections between natural language descriptions and recommendation behavior. Overall, this work demonstrates that sensory attribute distillation offers a principled and scalable way to bridge information extraction and sequential recommendation through structured semantic representation learning.",
+      "published": "2026-03-03T08:00:34Z",
+      "updated": "2026-03-03T08:00:34Z",
+      "categories": [
+        "cs.CL",
+        "cs.AI"
+      ],
+      "pdfUrl": "https://arxiv.org/pdf/2603.02709v1",
+      "absUrl": "https://arxiv.org/abs/2603.02709v1",
+      "industrySource": "Amazon"
+    },
     {
       "id": "http://arxiv.org/abs/2603.00632v1",
       "title": "Stop Treating Collisions Equally: Qualification-Aware Semantic ID Learning for Recommendation at Industrial Scale",
@@ -435,6 +453,27 @@
       "pdfUrl": "https://arxiv.org/pdf/2601.21452v3",
       "absUrl": "https://arxiv.org/abs/2601.21452v3",
       "industrySource": "Amazon"
+    },
+    {
+      "id": "http://arxiv.org/abs/2603.02730v1",
+      "title": "APAO: Adaptive Prefix-Aware Optimization for Generative Recommendation",
+      "authors": [
+        "Yuanqing Yu",
+        "Yifan Wang",
+        "Weizhi Ma",
+        "Zhiqiang Guo",
+        "Min Zhang"
+      ],
+      "affiliations": [],
+      "abstract": "Generative recommendation has recently emerged as a promising paradigm in sequential recommendation. It formulates the task as an autoregressive generation process, predicting discrete tokens of the next item conditioned on user interaction histories. Existing generative recommendation models are typically trained with token-level likelihood objectives, such as cross-entropy loss, while employing multi-step beam search during inference to generate ranked item candidates. However, this leads to a fundamental training-inference inconsistency: standard training assumes ground-truth history is always available, ignoring the fact that beam search prunes low-probability branches during inference. Consequently, the correct item may be prematurely discarded simply because its initial tokens (prefixes) have low scores. To address this issue, we propose the Adaptive Prefix-Aware Optimization (APAO) framework, which introduces prefix-level optimization losses to better align the training objective with the inference setting. Furthermore, we design an adaptive worst-prefix optimization strategy that dynamically focuses on the most vulnerable prefixes during training, thereby enhancing the model's ability to retain correct candidates under beam search constraints. We provide theoretical analyses to demonstrate the effectiveness and efficiency of our framework. Extensive experiments on multiple datasets further show that APAO consistently alleviates the training-inference inconsistency and improves performance across various generative recommendation backbones. Our codes are publicly available at https://github.com/yuyq18/APAO.",
+      "published": "2026-03-03T08:29:15Z",
+      "updated": "2026-03-03T08:29:15Z",
+      "categories": [
+        "cs.IR"
+      ],
+      "pdfUrl": "https://arxiv.org/pdf/2603.02730v1",
+      "absUrl": "https://arxiv.org/abs/2603.02730v1",
+      "industrySource": ""
     },
     {
       "id": "http://arxiv.org/abs/2603.00980v1",
@@ -1232,55 +1271,6 @@
       ],
       "pdfUrl": "https://arxiv.org/pdf/2602.00632v1",
       "absUrl": "https://arxiv.org/abs/2602.00632v1",
-      "industrySource": ""
-    },
-    {
-      "id": "http://arxiv.org/abs/2601.20199v1",
-      "title": "MERGE: Next-Generation Item Indexing Paradigm for Large-Scale Streaming Recommendation",
-      "authors": [
-        "Jing Yan",
-        "Yimeng Bai",
-        "Zongyu Liu",
-        "Yahui Liu",
-        "Junwei Wang",
-        "Jingze Huang",
-        "Haoda Li",
-        "Sihao Ding",
-        "Shaohui Ruan",
-        "Yang Zhang"
-      ],
-      "affiliations": [],
-      "abstract": "Item indexing, which maps a large corpus of items into compact discrete representations, is critical for both discriminative and generative recommender systems, yet existing Vector Quantization (VQ)-based approaches struggle with the highly skewed and non-stationary item distributions common in streaming industry recommenders, leading to poor assignment accuracy, imbalanced cluster occupancy, and insufficient cluster separation. To address these challenges, we propose MERGE, a next-generation item indexing paradigm that adaptively constructs clusters from scratch, dynamically monitors cluster occupancy, and forms hierarchical index structures via fine-to-coarse merging. Extensive experiments demonstrate that MERGE significantly improves assignment accuracy, cluster uniformity, and cluster separation compared with existing indexing methods, while online A/B tests show substantial gains in key business metrics, highlighting its potential as a foundational indexing approach for large-scale recommendation.",
-      "published": "2026-01-28T02:56:30Z",
-      "updated": "2026-01-28T02:56:30Z",
-      "categories": [
-        "cs.IR"
-      ],
-      "pdfUrl": "https://arxiv.org/pdf/2601.20199v1",
-      "absUrl": "https://arxiv.org/abs/2601.20199v1",
-      "industrySource": ""
-    },
-    {
-      "id": "http://arxiv.org/abs/2601.19711v1",
-      "title": "Differentiable Semantic ID for Generative Recommendation",
-      "authors": [
-        "Junchen Fu",
-        "Xuri Ge",
-        "Alexandros Karatzoglou",
-        "Ioannis Arapakis",
-        "Suzan Verberne",
-        "Joemon M. Jose",
-        "Zhaochun Ren"
-      ],
-      "affiliations": [],
-      "abstract": "Generative recommendation provides a novel paradigm in which each item is represented by a discrete semantic ID (SID) learned from rich content. Most existing methods treat SIDs as predefined and train recommenders under static indexing. In practice, SIDs are typically optimized only for content reconstruction rather than recommendation accuracy. This leads to an objective mismatch: the system optimizes an indexing loss to learn the SID and a recommendation loss for interaction prediction, but because the tokenizer is trained independently, the recommendation loss cannot update it. A natural approach is to make semantic indexing differentiable so that recommendation gradients can directly influence SID learning, but this often causes codebook collapse, where only a few codes are used. We attribute this issue to early deterministic assignments that limit codebook exploration, resulting in imbalance and unstable optimization. In this paper, we propose DIGER (Differentiable Semantic ID for Generative Recommendation), a first step toward effective differentiable semantic IDs for generative recommendation. DIGER introduces Gumbel noise to explicitly encourage early-stage exploration over codes, mitigating codebook collapse and improving code utilization. To balance exploration and convergence, we further design two uncertainty decay strategies that gradually reduce the Gumbel noise, enabling a smooth transition from early exploration to exploitation of learned SIDs. Extensive experiments on multiple public datasets demonstrate consistent improvements from differentiable semantic IDs. These results confirm the effectiveness of aligning indexing and recommendation objectives through differentiable SIDs and highlight differentiable semantic indexing as a promising research direction.",
-      "published": "2026-01-27T15:34:11Z",
-      "updated": "2026-01-27T15:34:11Z",
-      "categories": [
-        "cs.IR"
-      ],
-      "pdfUrl": "https://arxiv.org/pdf/2601.19711v1",
-      "absUrl": "https://arxiv.org/abs/2601.19711v1",
       "industrySource": ""
     }
   ]
