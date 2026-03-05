@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-03-04T05:13:20Z",
+  "lastUpdated": "2026-03-05T05:16:13Z",
   "totalResults": 536,
   "papers": [
     {
@@ -54,7 +54,7 @@
       "industrySource": "Kuaishou"
     },
     {
-      "id": "http://arxiv.org/abs/2602.22732v1",
+      "id": "http://arxiv.org/abs/2602.22732v2",
       "title": "Generative Recommendation for Large-Scale Advertising",
       "authors": [
         "Ben Xue",
@@ -90,13 +90,13 @@
       "affiliations": [],
       "abstract": "Generative recommendation has recently attracted widespread attention in industry due to its potential for scaling and stronger model capacity. However, deploying real-time generative recommendation in large-scale advertising requires designs beyond large-language-model (LLM)-style training and serving recipes. We present a production-oriented generative recommender co-designed across architecture, learning, and serving, named GR4AD (Generative Recommendation for ADdvertising). As for tokenization, GR4AD proposes UA-SID (Unified Advertisement Semantic ID) to capture complicated business information. Furthermore, GR4AD introduces LazyAR, a lazy autoregressive decoder that relaxes layer-wise dependencies for short, multi-candidate generation, preserving effectiveness while reducing inference cost, which facilitates scaling under fixed serving budgets. To align optimization with business value, GR4AD employs VSL (Value-Aware Supervised Learning) and proposes RSPO (Ranking-Guided Softmax Preference Optimization), a ranking-aware, list-wise reinforcement learning algorithm that optimizes value-based rewards under list-level metrics for continual online updates. For online inference, we further propose dynamic beam serving, which adapts beam width across generation levels and online load to control compute. Large-scale online A/B tests show up to 4.2% ad revenue improvement over an existing DLRM-based stack, with consistent gains from both model scaling and inference-time scaling. GR4AD has been fully deployed in Kuaishou advertising system with over 400 million users and achieves high-throughput real-time serving.",
       "published": "2026-02-26T08:15:26Z",
-      "updated": "2026-02-26T08:15:26Z",
+      "updated": "2026-03-04T09:28:17Z",
       "categories": [
         "cs.IR",
         "cs.LG"
       ],
-      "pdfUrl": "https://arxiv.org/pdf/2602.22732v1",
-      "absUrl": "https://arxiv.org/abs/2602.22732v1",
+      "pdfUrl": "https://arxiv.org/pdf/2602.22732v2",
+      "absUrl": "https://arxiv.org/abs/2602.22732v2",
       "industrySource": "Kuaishou"
     },
     {
