@@ -1,6 +1,6 @@
 {
-  "lastUpdated": "2026-03-05T05:16:13Z",
-  "totalResults": 536,
+  "lastUpdated": "2026-03-07T04:51:03Z",
+  "totalResults": 537,
   "papers": [
     {
       "id": "http://arxiv.org/abs/2603.02709v1",
@@ -434,25 +434,26 @@
       "industrySource": "Kuaishou"
     },
     {
-      "id": "http://arxiv.org/abs/2601.21452v3",
-      "title": "SAGE: Sequence-level Adaptive Gradient Evolution for Generative Recommendation",
+      "id": "http://arxiv.org/abs/2603.04986v1",
+      "title": "Debiasing Sequential Recommendation with Time-aware Inverse Propensity Scoring",
       "authors": [
-        "Yu Xie",
-        "Xing Kai Ren",
-        "Ying Qi",
-        "Hu Yao"
+        "Sirui Huang",
+        "Jing Long",
+        "Qian Li",
+        "Guandong Xu",
+        "Qing Li"
       ],
       "affiliations": [],
-      "abstract": "Reinforcement learning-based preference optimization is increasingly used to align list-wise generative recommenders with complex, multi-objective user feedback, yet existing optimizers such as Gradient-Bounded Policy Optimization (GBPO) exhibit structural limitations in recommendation settings. We identify a Symmetric Conservatism failure mode in which symmetric update bounds suppress learning from rare positive signals (e.g., cold-start items), static negative-sample constraints fail to prevent diversity collapse under rejection-dominated feedback, and group-normalized multi-objective rewards lead to low-resolution training signals. To address these issues, we propose SAGE (Sequence-level Adaptive Gradient Evolution), a unified optimizer designed for list-wise generative recommendation. SAGE introduces sequence-level signal alignment via a geometric-mean importance ratio and a decoupled multi-objective advantage estimator to reduce token-level variance and mitigate reward collapse, together with asymmetric adaptive bounding that applies positive Boost updates to successful slates and an entropy-aware penalty to discourage low-diversity failures. Experiments on Amazon Product Reviews and the large-scale RecIF-Bench demonstrate consistent improvements in top-K accuracy, cold-start recall, and diversity across both Semantic-ID and native-text action spaces, while preserving numerical stability during training. These results suggest that asymmetric, sequence-aware policy optimization provides a principled and effective framework for addressing optimization failures in generative recommendation.",
-      "published": "2026-01-29T09:30:13Z",
-      "updated": "2026-02-13T03:06:35Z",
+      "abstract": "Sequential Recommendation (SR) predicts users next interactions by modeling the temporal order of their historical behaviors. Existing approaches, including traditional sequential models and generative recommenders, achieve strong performance but primarily rely on explicit interactions such as clicks or purchases while overlooking item exposures. This ignorance introduces selection bias, where exposed but unclicked items are misinterpreted as disinterest, and exposure bias, where unexposed items are treated as irrelevant. Effectively addressing these biases requires distinguishing between items that were \"not exposed\" and those that were \"not of interest\", which cannot be reliably inferred from correlations in historical data. Counterfactual reasoning provides a natural solution by estimating user preferences under hypothetical exposure, and Inverse Propensity Scoring (IPS) is a common tool for such estimation. However, conventional IPS methods are static and fail to capture the sequential dependencies and temporal dynamics of user behavior. To overcome these limitations, we propose Time aware Inverse Propensity Scoring (TIPS). Unlike traditional static IPS, TIPS effectively accounts for sequential dependencies and temporal dynamics, thereby capturing user preferences more accurately. Extensive experiments show that TIPS consistently enhances recommendation performance as a plug-in for various sequential recommenders. Our code will be publicly available upon acceptance.",
+      "published": "2026-03-05T09:25:19Z",
+      "updated": "2026-03-05T09:25:19Z",
       "categories": [
-        "cs.LG",
+        "cs.IR",
         "cs.AI"
       ],
-      "pdfUrl": "https://arxiv.org/pdf/2601.21452v3",
-      "absUrl": "https://arxiv.org/abs/2601.21452v3",
-      "industrySource": "Amazon"
+      "pdfUrl": "https://arxiv.org/pdf/2603.04986v1",
+      "absUrl": "https://arxiv.org/abs/2603.04986v1",
+      "industrySource": ""
     },
     {
       "id": "http://arxiv.org/abs/2603.02730v1",
