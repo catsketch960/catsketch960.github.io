@@ -1,6 +1,6 @@
 {
-  "lastUpdated": "2026-03-09T05:37:14Z",
-  "totalResults": 537,
+  "lastUpdated": "2026-03-11T05:16:19Z",
+  "totalResults": 539,
   "papers": [
     {
       "id": "http://arxiv.org/abs/2603.02709v1",
@@ -386,52 +386,31 @@
       "industrySource": "Google"
     },
     {
-      "id": "http://arxiv.org/abs/2601.21770v2",
-      "title": "OneMall: One Architecture, More Scenarios -- End-to-End Generative Recommender Family at Kuaishou E-Commerce",
+      "id": "http://arxiv.org/abs/2603.07725v1",
+      "title": "Verifiable Reasoning for LLM-based Generative Recommendation",
       "authors": [
-        "Kun Zhang",
-        "Jingming Zhang",
-        "Wei Cheng",
-        "Yansong Cheng",
-        "Jiaqi Zhang",
-        "Hao Lu",
-        "Xu Zhang",
-        "Haixiang Gan",
-        "Jiangxia Cao",
-        "Tenglong Wang",
-        "Ximing Zhang",
-        "Boyang Xia",
-        "Kuo Cai",
-        "Shiyao Wang",
-        "Hongjian Dou",
-        "Jinkai Yu",
-        "Mingxing Wen",
-        "Qiang Luo",
-        "Dongxu Liang",
-        "Chenyi Lei",
-        "Jun Wang",
-        "Runan Liu",
-        "Zhaojie Liu",
-        "Ruiming Tang",
-        "Tingting Gao",
-        "Shaoguo Liu",
-        "Yuqing Ding",
-        "Hui Kong",
-        "Han Li",
-        "Guorui Zhou",
-        "Wenwu Ou",
-        "Kun Gai"
+        "Xinyu Lin",
+        "Hanqing Zeng",
+        "Hanchao Yu",
+        "Yinglong Xia",
+        "Jiang Zhang",
+        "Aashu Singh",
+        "Fei Liu",
+        "Wenjie Wang",
+        "Fuli Feng",
+        "Tat-Seng Chua",
+        "Qifan Wang"
       ],
       "affiliations": [],
-      "abstract": "In the wave of generative recommendation, we present OneMall, an end-to-end generative recommendation framework tailored for e-commerce services at Kuaishou. Our OneMall systematically unifies the e-commerce's multiple item distribution scenarios, such as Product-card, short-video and live-streaming. Specifically, it comprises three key components, aligning the entire model training pipeline to the LLM's pre-training/post-training: (1) E-commerce Semantic Tokenizer: we provide a tokenizer solution that captures both real-world semantics and business-specific item relations across different scenarios; (2) Transformer-based Architecture: we largely utilize Transformer as our model backbone, e.g., employing Query-Former for long sequence compression, Cross-Attention for multi-behavior sequence fusion, and Sparse MoE for scalable auto-regressive generation; (3) Reinforcement Learning Pipeline: we further connect retrieval and ranking models via RL, enabling the ranking model to serve as a reward signal for end-to-end policy retrieval model optimization. Extensive experiments demonstrate that OneMall achieves consistent improvements across all e-commerce scenarios: +13.01\\% GMV in product-card, +15.32\\% Orders in Short-Video, and +2.78\\% Orders in Live-Streaming. OneMall has been deployed, serving over 400 million daily active users at Kuaishou.",
-      "published": "2026-01-29T14:22:39Z",
-      "updated": "2026-02-02T15:05:42Z",
+      "abstract": "Reasoning in Large Language Models (LLMs) has recently shown strong potential in enhancing generative recommendation through deep understanding of complex user preference. Existing approaches follow a {reason-then-recommend} paradigm, where LLMs perform step-by-step reasoning before item generation. However, this paradigm inevitably suffers from reasoning degradation (i.e., homogeneous or error-accumulated reasoning) due to the lack of intermediate verification, thus undermining the recommendation. To bridge this gap, we propose a novel \\textbf{\\textit{reason-verify-recommend}} paradigm, which interleaves reasoning with verification to provide reliable feedback, guiding the reasoning process toward more faithful user preference understanding. To enable effective verification, we establish two key principles for verifier design: 1) reliability ensures accurate evaluation of reasoning correctness and informative guidance generation; and 2) multi-dimensionality emphasizes comprehensive verification across multi-dimensional user preferences. Accordingly, we propose an effective implementation called VRec. It employs a mixture of verifiers to ensure multi-dimensionality, while leveraging a proxy prediction objective to pursue reliability. Experiments on four real-world datasets demonstrate that VRec substantially enhances recommendation effectiveness and scalability without compromising efficiency. The codes can be found at https://github.com/Linxyhaha/Verifiable-Rec.",
+      "published": "2026-03-08T16:55:45Z",
+      "updated": "2026-03-08T16:55:45Z",
       "categories": [
         "cs.IR"
       ],
-      "pdfUrl": "https://arxiv.org/pdf/2601.21770v2",
-      "absUrl": "https://arxiv.org/abs/2601.21770v2",
-      "industrySource": "Kuaishou"
+      "pdfUrl": "https://arxiv.org/pdf/2603.07725v1",
+      "absUrl": "https://arxiv.org/abs/2603.07725v1",
+      "industrySource": ""
     },
     {
       "id": "http://arxiv.org/abs/2603.04986v1",
@@ -1222,6 +1201,28 @@
       "industrySource": ""
     },
     {
+      "id": "http://arxiv.org/abs/2603.06589v1",
+      "title": "Isotonic Layer: A Universal Framework for Generic Recommendation Debiasing",
+      "authors": [
+        "Hailing Cheng",
+        "Yafang Yang",
+        "Hemeng Tao",
+        "Fengyu Zhang"
+      ],
+      "affiliations": [],
+      "abstract": "Model calibration and debiasing are fundamental to the reliability and fairness of large scale recommendation systems. We introduce the Isotonic Layer, a novel, differentiable framework that integrates piecewise linear fitting directly into neural architectures. By partitioning the feature space into discrete segments and optimizing non negative slopes via a constrained dot product mechanism, we enforce a global monotonic inductive bias. This ensures model outputs remain logically consistent with critical features such as latent relevance, recency, or quality scores. We further generalize this architecture by parameterizing segment wise slopes as learnable embeddings. This enables the model to adaptively capture context specific distortions, such as position based CTR bias through specialized isotonic profiles. Our approach utilizes a dual task formulation that decouples the recommendation objective into latent relevance estimation and bias aware calibration. A major contribution of this work is the ability to perform highly granular, customized calibration for arbitrary combinations of context features, a level of control difficult to achieve with traditional non parametric methods. We also extend this to Multi Task Learning environments with dedicated embeddings for distinct objectives. Extensive empirical evaluations on real world datasets and production AB tests demonstrate that the Isotonic Layer effectively mitigates systematic bias and enhances calibration fidelity, significantly outperforming production baselines in both predictive accuracy and ranking consistency.",
+      "published": "2026-02-02T20:44:57Z",
+      "updated": "2026-02-02T20:44:57Z",
+      "categories": [
+        "cs.IR",
+        "cs.AI",
+        "cs.LG"
+      ],
+      "pdfUrl": "https://arxiv.org/pdf/2603.06589v1",
+      "absUrl": "https://arxiv.org/abs/2603.06589v1",
+      "industrySource": ""
+    },
+    {
       "id": "http://arxiv.org/abs/2602.02338v1",
       "title": "Rethinking Generative Recommender Tokenizer: Recsys-Native Encoding and Semantic Quantization Beyond LLMs",
       "authors": [
@@ -1249,29 +1250,6 @@
       ],
       "pdfUrl": "https://arxiv.org/pdf/2602.02338v1",
       "absUrl": "https://arxiv.org/abs/2602.02338v1",
-      "industrySource": ""
-    },
-    {
-      "id": "http://arxiv.org/abs/2602.00632v1",
-      "title": "Towards Sample-Efficient and Stable Reinforcement Learning for LLM-based Recommendation",
-      "authors": [
-        "Hongxun Ding",
-        "Keqin Bao",
-        "Jizhi Zhang",
-        "Yi Fang",
-        "Wenxin Xu",
-        "Fuli Feng",
-        "Xiangnan He"
-      ],
-      "affiliations": [],
-      "abstract": "While Long Chain-of-Thought (Long CoT) reasoning has shown promise in Large Language Models (LLMs), its adoption for enhancing recommendation quality is growing rapidly. In this work, we critically examine this trend and argue that Long CoT is inherently ill-suited for the sequential recommendation domain. We attribute this misalignment to two primary factors: excessive inference latency and the lack of explicit cognitive reasoning patterns in user behavioral data. Driven by these observations, we propose pivoting away from the CoT structure to directly leverage its underlying mechanism: Reinforcement Learning (RL), to explore the item space. However, applying RL directly faces significant obstacles, notably low sample efficiency-where most actions fail to provide learning signals-and training instability. To overcome these limitations, we propose RISER, a novel Reinforced Item Space Exploration framework for Recommendation. RISER is designed to transform non-learnable trajectories into effective pairwise preference data for optimization. Furthermore, it incorporates specific strategies to ensure stability, including the prevention of redundant rollouts and the constraint of token-level update magnitudes. Extensive experiments on three real-world datasets show that RISER significantly outperforms competitive baselines, establishing a robust paradigm for RL-enhanced LLM recommendation. Our code will be available at https://anonymous.4open.science/r/RISER/.",
-      "published": "2026-01-31T10:02:43Z",
-      "updated": "2026-01-31T10:02:43Z",
-      "categories": [
-        "cs.IR"
-      ],
-      "pdfUrl": "https://arxiv.org/pdf/2602.00632v1",
-      "absUrl": "https://arxiv.org/abs/2602.00632v1",
       "industrySource": ""
     }
   ]
