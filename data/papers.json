@@ -1,6 +1,6 @@
 {
-  "lastUpdated": "2026-03-11T05:16:19Z",
-  "totalResults": 539,
+  "lastUpdated": "2026-03-12T05:20:17Z",
+  "totalResults": 541,
   "papers": [
     {
       "id": "http://arxiv.org/abs/2603.02709v1",
@@ -360,30 +360,43 @@
       "industrySource": "Meituan"
     },
     {
-      "id": "http://arxiv.org/abs/2602.02582v1",
-      "title": "Uncertainty and Fairness Awareness in LLM-Based Recommendation Systems",
+      "id": "http://arxiv.org/abs/2603.10369v1",
+      "title": "Beyond Interleaving: Causal Attention Reformulations for Generative Recommender Systems",
       "authors": [
-        "Chandan Kumar Sah",
-        "Xiaoli Lian",
-        "Li Zhang",
-        "Tony Xu",
-        "Syed Shazaib Shah"
+        "Hailing Cheng"
       ],
       "affiliations": [],
-      "abstract": "Large language models (LLMs) enable powerful zero-shot recommendations by leveraging broad contextual knowledge, yet predictive uncertainty and embedded biases threaten reliability and fairness. This paper studies how uncertainty and fairness evaluations affect the accuracy, consistency, and trustworthiness of LLM-generated recommendations. We introduce a benchmark of curated metrics and a dataset annotated for eight demographic attributes (31 categorical values) across two domains: movies and music. Through in-depth case studies, we quantify predictive uncertainty (via entropy) and demonstrate that Google DeepMind's Gemini 1.5 Flash exhibits systematic unfairness for certain sensitive attributes; measured similarity-based gaps are SNSR at 0.1363 and SNSV at 0.0507. These disparities persist under prompt perturbations such as typographical errors and multilingual inputs. We further integrate personality-aware fairness into the RecLLM evaluation pipeline to reveal personality-linked bias patterns and expose trade-offs between personalization and group fairness. We propose a novel uncertainty-aware evaluation methodology for RecLLMs, present empirical insights from deep uncertainty case studies, and introduce a personality profile-informed fairness benchmark that advances explainability and equity in LLM recommendations. Together, these contributions establish a foundation for safer, more interpretable RecLLMs and motivate future work on multi-model benchmarks and adaptive calibration for trustworthy deployment.",
-      "published": "2026-01-31T17:18:13Z",
-      "updated": "2026-01-31T17:18:13Z",
+      "abstract": "Generative Recommender Systems (GR) increasingly model user behavior as a sequence generation task by interleaving item and action tokens. While effective, this formulation introduces significant structural and computational inefficiencies: it doubles sequence length, incurs quadratic overhead, and relies on implicit attention to recover the causal relationship between an item and its associated action. Furthermore, interleaving heterogeneous tokens forces the Transformer to disentangle semantically incompatible signals, leading to increased attention noise and reduced representation efficiency.In this work, we propose a principled reformulation of generative recommendation that aligns sequence modeling with underlying causal structures and attention theory. We demonstrate that current interleaving mechanisms act as inefficient proxies for similarity-weighted action pooling. To address this, we introduce two novel architectures that eliminate interleaved dependencies to reduce sequence complexity by 50%: Attention-based Late Fusion for Actions (AttnLFA) and Attention-based Mixed Value Pooling (AttnMVP). These models explicitly encode the $i_n \\rightarrow a_n$ causal dependency while preserving the expressive power of Transformer-based sequence modeling.We evaluate our framework on large-scale product recommendation data from a major social network. Experimental results show that AttnLFA and AttnMVP consistently outperform interleaved baselines, achieving evaluation loss improvements of 0.29% and 0.80%, and significant gains in Normalized Entropy (NE). Crucially, these performance gains are accompanied by training time reductions of 23% and 12%, respectively. Our findings suggest that explicitly modeling item-action causality provides a superior design paradigm for scalable and efficient generative ranking.",
+      "published": "2026-03-11T03:30:49Z",
+      "updated": "2026-03-11T03:30:49Z",
       "categories": [
-        "cs.AI",
-        "cs.CL",
-        "cs.CY",
         "cs.IR",
-        "cs.LG",
-        "cs.SE"
+        "cs.AI"
       ],
-      "pdfUrl": "https://arxiv.org/pdf/2602.02582v1",
-      "absUrl": "https://arxiv.org/abs/2602.02582v1",
-      "industrySource": "Google"
+      "pdfUrl": "https://arxiv.org/pdf/2603.10369v1",
+      "absUrl": "https://arxiv.org/abs/2603.10369v1",
+      "industrySource": ""
+    },
+    {
+      "id": "http://arxiv.org/abs/2603.10279v1",
+      "title": "Robust Post-Training for Generative Recommenders: Why Exponential Reward-Weighted SFT Outperforms RLHF",
+      "authors": [
+        "Keertana Chidambaram",
+        "Sanath Kumar Krishnamurthy",
+        "Qiuling Xu",
+        "Ko-Jen Hsiao",
+        "Moumita Bhattacharya"
+      ],
+      "affiliations": [],
+      "abstract": "Aligning generative recommender systems to user preferences via post-training is critical for closing the gap between next-item prediction and actual recommendation quality. Existing post-training methods are ill-suited for production-scale systems: RLHF methods reward hack due to noisy user feedback and unreliable reward models, offline RL alternatives require propensity scores that are unavailable, and online interaction is infeasible. We identify exponential reward-weighted SFT with weights $w = \\exp(r/λ)$ as uniquely suited to this setting, and provide the theoretical and empirical foundations that explain why. By optimizing directly on observed rewards without querying a learned reward model, the method is immune to reward hacking, requires no propensity scores, and is fully offline. We prove the first policy improvement guarantees for this setting under noisy rewards, showing that the gap scales only logarithmically with catalog size and remains informative even for large item catalogs. Crucially, we show that temperature $λ$ explicitly and quantifiably controls the robustness-improvement tradeoff, providing practitioners with a single interpretable regularization hyperparameter with theoretical grounding. Experiments on three open-source and one proprietary dataset against four baselines confirm that exponential reward weighting is simple, scalable, and consistently outperforms RLHF-based alternatives.",
+      "published": "2026-03-10T23:48:25Z",
+      "updated": "2026-03-10T23:48:25Z",
+      "categories": [
+        "cs.LG"
+      ],
+      "pdfUrl": "https://arxiv.org/pdf/2603.10279v1",
+      "absUrl": "https://arxiv.org/abs/2603.10279v1",
+      "industrySource": ""
     },
     {
       "id": "http://arxiv.org/abs/2603.07725v1",
@@ -1220,36 +1233,6 @@
       ],
       "pdfUrl": "https://arxiv.org/pdf/2603.06589v1",
       "absUrl": "https://arxiv.org/abs/2603.06589v1",
-      "industrySource": ""
-    },
-    {
-      "id": "http://arxiv.org/abs/2602.02338v1",
-      "title": "Rethinking Generative Recommender Tokenizer: Recsys-Native Encoding and Semantic Quantization Beyond LLMs",
-      "authors": [
-        "Yu Liang",
-        "Zhongjin Zhang",
-        "Yuxuan Zhu",
-        "Kerui Zhang",
-        "Zhiluohan Guo",
-        "Wenhang Zhou",
-        "Zonqi Yang",
-        "Kangle Wu",
-        "Yabo Ni",
-        "Anxiang Zeng",
-        "Cong Fu",
-        "Jianxin Wang",
-        "Jiazhi Xia"
-      ],
-      "affiliations": [],
-      "abstract": "Semantic ID (SID)-based recommendation is a promising paradigm for scaling sequential recommender systems, but existing methods largely follow a semantic-centric pipeline: item embeddings are learned from foundation models and discretized using generic quantization schemes. This design is misaligned with generative recommendation objectives: semantic embeddings are weakly coupled with collaborative prediction, and generic quantization is inefficient at reducing sequential uncertainty for autoregressive modeling. To address these, we propose ReSID, a recommendation-native, principled SID framework that rethinks representation learning and quantization from the perspective of information preservation and sequential predictability, without relying on LLMs. ReSID consists of two components: (i) Field-Aware Masked Auto-Encoding (FAMAE), which learns predictive-sufficient item representations from structured features, and (ii) Globally Aligned Orthogonal Quantization (GAOQ), which produces compact and predictable SID sequences by jointly reducing semantic ambiguity and prefix-conditional uncertainty. Theoretical analysis and extensive experiments across ten datasets show the effectiveness of ReSID. ReSID consistently outperforms strong sequential and SID-based generative baselines by an average of over 10%, while reducing tokenization cost by up to 122x. Code is available at https://github.com/FuCongResearchSquad/ReSID.",
-      "published": "2026-02-02T17:00:04Z",
-      "updated": "2026-02-02T17:00:04Z",
-      "categories": [
-        "cs.IR",
-        "cs.AI"
-      ],
-      "pdfUrl": "https://arxiv.org/pdf/2602.02338v1",
-      "absUrl": "https://arxiv.org/abs/2602.02338v1",
       "industrySource": ""
     }
   ]
