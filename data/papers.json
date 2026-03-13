@@ -1,6 +1,6 @@
 {
-  "lastUpdated": "2026-03-12T05:20:17Z",
-  "totalResults": 541,
+  "lastUpdated": "2026-03-13T05:17:16Z",
+  "totalResults": 542,
   "papers": [
     {
       "id": "http://arxiv.org/abs/2603.02709v1",
@@ -358,6 +358,32 @@
       "pdfUrl": "https://arxiv.org/pdf/2602.04460v1",
       "absUrl": "https://arxiv.org/abs/2602.04460v1",
       "industrySource": "Meituan"
+    },
+    {
+      "id": "http://arxiv.org/abs/2603.11486v1",
+      "title": "Quantized Inference for OneRec-V2",
+      "authors": [
+        "Yi Su",
+        "Xinchen Luo",
+        "Hongtao Cheng",
+        "Ziteng Shu",
+        "Yunfeng Zhao",
+        "Fangyu Zhang",
+        "Jiaqiang Liu",
+        "Xiao Liang",
+        "Yiwu Liu",
+        "Ruiming Tang"
+      ],
+      "affiliations": [],
+      "abstract": "Quantized inference has demonstrated substantial system-level benefits in large language models while preserving model quality. In contrast, reliably applying low-precision quantization to recommender systems remains challenging in industrial settings. This difficulty arises from differences in training paradigms, architectural patterns, and computational characteristics, which lead to distinct numerical behaviors in weights and activations. Traditional recommender models often exhibit high-magnitude and high-variance weights and activations, making them more sensitive to quantization-induced perturbations. In addition, recommendation workloads frequently suffer from limited hardware utilization, limiting the practical gains of low-precision computation. In this work, we revisit low-precision inference in the context of generative recommendation. Through empirical distribution analysis, we show that the weight and activation statistics of OneRec-V2 are significantly more controlled and closer to those of large language models than traditional recommendation models. Moreover, OneRec-V2 exhibits a more compute-intensive inference pattern with substantially higher hardware utilization, enabling more end-to-end throughput gains with low-precision computation. Leveraging this property, we develop a FP8 post training quantization framework and integrate it into an optimized inference infrastructure. The proposed joint optimization achieves a 49\\% reduction in end-to-end inference latency and a 92\\% increase in throughput. Extensive online A/B testing further confirms that FP8 inference introduces no degradation in core metrics. These results suggest that as recommender systems evolve toward the paradigms of large language models, algorithm-level and system-level optimization techniques established in the LLM domain can be effectively adapted to large-scale recommendation workloads.",
+      "published": "2026-03-12T03:13:08Z",
+      "updated": "2026-03-12T03:13:08Z",
+      "categories": [
+        "cs.IR"
+      ],
+      "pdfUrl": "https://arxiv.org/pdf/2603.11486v1",
+      "absUrl": "https://arxiv.org/abs/2603.11486v1",
+      "industrySource": ""
     },
     {
       "id": "http://arxiv.org/abs/2603.10369v1",
@@ -1211,28 +1237,6 @@
       ],
       "pdfUrl": "https://arxiv.org/pdf/2602.03692v2",
       "absUrl": "https://arxiv.org/abs/2602.03692v2",
-      "industrySource": ""
-    },
-    {
-      "id": "http://arxiv.org/abs/2603.06589v1",
-      "title": "Isotonic Layer: A Universal Framework for Generic Recommendation Debiasing",
-      "authors": [
-        "Hailing Cheng",
-        "Yafang Yang",
-        "Hemeng Tao",
-        "Fengyu Zhang"
-      ],
-      "affiliations": [],
-      "abstract": "Model calibration and debiasing are fundamental to the reliability and fairness of large scale recommendation systems. We introduce the Isotonic Layer, a novel, differentiable framework that integrates piecewise linear fitting directly into neural architectures. By partitioning the feature space into discrete segments and optimizing non negative slopes via a constrained dot product mechanism, we enforce a global monotonic inductive bias. This ensures model outputs remain logically consistent with critical features such as latent relevance, recency, or quality scores. We further generalize this architecture by parameterizing segment wise slopes as learnable embeddings. This enables the model to adaptively capture context specific distortions, such as position based CTR bias through specialized isotonic profiles. Our approach utilizes a dual task formulation that decouples the recommendation objective into latent relevance estimation and bias aware calibration. A major contribution of this work is the ability to perform highly granular, customized calibration for arbitrary combinations of context features, a level of control difficult to achieve with traditional non parametric methods. We also extend this to Multi Task Learning environments with dedicated embeddings for distinct objectives. Extensive empirical evaluations on real world datasets and production AB tests demonstrate that the Isotonic Layer effectively mitigates systematic bias and enhances calibration fidelity, significantly outperforming production baselines in both predictive accuracy and ranking consistency.",
-      "published": "2026-02-02T20:44:57Z",
-      "updated": "2026-02-02T20:44:57Z",
-      "categories": [
-        "cs.IR",
-        "cs.AI",
-        "cs.LG"
-      ],
-      "pdfUrl": "https://arxiv.org/pdf/2603.06589v1",
-      "absUrl": "https://arxiv.org/abs/2603.06589v1",
       "industrySource": ""
     }
   ]
