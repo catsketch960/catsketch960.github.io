@@ -1,6 +1,6 @@
 {
-  "lastUpdated": "2026-03-16T06:11:08Z",
-  "totalResults": 543,
+  "lastUpdated": "2026-03-17T05:39:46Z",
+  "totalResults": 545,
   "papers": [
     {
       "id": "http://arxiv.org/abs/2603.02709v1",
@@ -358,6 +358,49 @@
       "pdfUrl": "https://arxiv.org/pdf/2602.04460v1",
       "absUrl": "https://arxiv.org/abs/2602.04460v1",
       "industrySource": "Meituan"
+    },
+    {
+      "id": "http://arxiv.org/abs/2603.14259v1",
+      "title": "Bringing Model Editing to Generative Recommendation in Cold-Start Scenarios",
+      "authors": [
+        "Chenglei Shen",
+        "Teng Shi",
+        "Weijie Yu",
+        "Xiao Zhang",
+        "Jun Xu"
+      ],
+      "affiliations": [],
+      "abstract": "Generative recommendation (GR) has shown strong potential for sequential recommendation in an end-to-end generation paradigm. However, existing GR models suffer from severe cold-start collapse: their recommendation accuracy on cold-start items can drop to near zero. Current solutions typically rely on retraining with cold-start interactions, which is hindered by sparse feedback, high computational cost, and delayed updates, limiting practical utility in rapidly evolving recommendation catalogs. Inspired by model editing in NLP, which enables training-free knowledge injection into large language models, we explore how to bring this paradigm to generative recommendation. This, however, faces two key challenges: GR lacks the explicit subject-object binding common in natural language, making targeted edits difficult; and GR does not exhibit stable token co-occurrence patterns, making the injection of multi-token item representations unreliable. To address these challenges, we propose GenRecEdit, a model editing framework tailored for generative recommendation. GenRecEdit explicitly models the relationship between the full sequence context and next-token generation, adopts iterative token-level editing to inject multi-token item representations, and introduces a one-to-one trigger mechanism to reduce interference among multiple edits during inference. Extensive experiments on multiple datasets show that GenRecEdit substantially improves recommendation performance on cold-start items while preserving the model's original recommendation quality. Moreover, it achieves these gains using only about 9.5% of the training time required for retraining, enabling more efficient and frequent model updates.",
+      "published": "2026-03-15T07:31:28Z",
+      "updated": "2026-03-15T07:31:28Z",
+      "categories": [
+        "cs.IR",
+        "cs.AI"
+      ],
+      "pdfUrl": "https://arxiv.org/pdf/2603.14259v1",
+      "absUrl": "https://arxiv.org/abs/2603.14259v1",
+      "industrySource": ""
+    },
+    {
+      "id": "http://arxiv.org/abs/2603.13934v1",
+      "title": "Iterative Semantic Reasoning from Individual to Group Interests for Generative Recommendation with LLMs",
+      "authors": [
+        "Xiaofei Zhu",
+        "Jinfei Chen",
+        "Feiyang Yuan",
+        "Zhou Yang"
+      ],
+      "affiliations": [],
+      "abstract": "Recommendation systems aim to learn user interests from historical behaviors and deliver relevant items. Recent methods leverage large language models (LLMs) to construct and integrate semantic representations of users and items for capturing user interests. However, user behavior theories suggest that truly understanding user interests requires not only semantic integration but also semantic reasoning from explicit individual interests to implicit group interests. To this end, we propose an Iterative Semantic Reasoning Framework (ISRF) for generative recommendation. ISRF leverages LLMs to bridge explicit individual interests and implicit group interests in three steps. First, we perform multi-step bidirectional reasoning over item attributes to infer semantic item features and build a semantic interaction graph capturing users' explicit interests. Second, we generate semantic user features based on the semantic item features and construct a similarity-based user graph to infer the implicit interests of similar user groups. Third, we adopt an iterative batch optimization strategy, where individual explicit interests directly guide the refinement of group implicit interests, while group implicit interests indirectly enhance individual modeling. This iterative process ensures consistent and progressive interest reasoning, enabling more accurate and comprehensive user interest learning. Extensive experiments on the Sports, Beauty, and Toys datasets demonstrate that ISRF outperforms state-of-the-art baselines. The code is available at https://github.com/htired/ISRF.",
+      "published": "2026-03-14T13:05:49Z",
+      "updated": "2026-03-14T13:05:49Z",
+      "categories": [
+        "cs.IR",
+        "cs.AI"
+      ],
+      "pdfUrl": "https://arxiv.org/pdf/2603.13934v1",
+      "absUrl": "https://arxiv.org/abs/2603.13934v1",
+      "industrySource": ""
     },
     {
       "id": "http://arxiv.org/abs/2603.12935v1",
@@ -1185,53 +1228,6 @@
       ],
       "pdfUrl": "https://arxiv.org/pdf/2602.06409v1",
       "absUrl": "https://arxiv.org/abs/2602.06409v1",
-      "industrySource": ""
-    },
-    {
-      "id": "http://arxiv.org/abs/2602.04278v1",
-      "title": "MiniRec: Data-Efficient Reinforcement Learning for LLM-based Recommendation",
-      "authors": [
-        "Lin Wang",
-        "Yang Zhang",
-        "Jingfan Chen",
-        "Xiaoyan Zhao",
-        "Fengbin Zhu",
-        "Qing Li",
-        "Tat-Seng Chua"
-      ],
-      "affiliations": [],
-      "abstract": "The integration of reinforcement learning (RL) into large language models (LLMs) has opened new opportunities for recommender systems by eliciting reasoning and improving user preference modeling. However, RL-based LLM recommendation faces significant efficiency challenges, making full-data training costly. Existing data selection methods define sample value based on learnability or representativeness, yet their loss- or gradient-driven or dataset coverage-driven criteria often misalign with RL learning dynamics, resulting in suboptimal performance. To address this, we propose MiniRec, a data selection framework tailored for RL-based LLM recommendation. MiniRec evaluates sample learnability using key RL signals -- rewards -- pruning samples that are too easy (too high reward) or too difficult (consistently low reward). It assesses representativeness by aligning sample gradients with the approximated \"ideal\" global RL optimization trajectory, selecting samples that mainly drive model updates, and it also enforces diversity to reduce redundancy. Combined with a curriculum learning strategy from easy to hard samples, MiniRec significantly reduces training cost while largely preserving performance. Extensive experiments demonstrate MiniRec's effectiveness, highlighting the importance of reward-aligned, trajectory-informed data selection in RL-based LLM recommendation.",
-      "published": "2026-02-04T07:15:49Z",
-      "updated": "2026-02-04T07:15:49Z",
-      "categories": [
-        "cs.IR"
-      ],
-      "pdfUrl": "https://arxiv.org/pdf/2602.04278v1",
-      "absUrl": "https://arxiv.org/abs/2602.04278v1",
-      "industrySource": ""
-    },
-    {
-      "id": "http://arxiv.org/abs/2602.03713v1",
-      "title": "Multimodal Generative Recommendation for Fusing Semantic and Collaborative Signals",
-      "authors": [
-        "Moritz Vandenhirtz",
-        "Kaveh Hassani",
-        "Shervin Ghasemlou",
-        "Shuai Shao",
-        "Hamid Eghbalzadeh",
-        "Fuchun Peng",
-        "Jun Liu",
-        "Michael Louis Iuzzolino"
-      ],
-      "affiliations": [],
-      "abstract": "Sequential recommender systems rank relevant items by modeling a user's interaction history and computing the inner product between the resulting user representation and stored item embeddings. To avoid the significant memory overhead of storing large item sets, the generative recommendation paradigm instead models each item as a series of discrete semantic codes. Here, the next item is predicted by an autoregressive model that generates the code sequence corresponding to the predicted item. However, despite promising ranking capabilities on small datasets, these methods have yet to surpass traditional sequential recommenders on large item sets, limiting their adoption in the very scenarios they were designed to address. To resolve this, we propose MSCGRec, a Multimodal Semantic and Collaborative Generative Recommender. MSCGRec incorporates multiple semantic modalities and introduces a novel self-supervised quantization learning approach for images based on the DINO framework. Additionally, MSCGRec fuses collaborative and semantic signals by extracting collaborative features from sequential recommenders and treating them as a separate modality. Finally, we propose constrained sequence learning that restricts the large output space during training to the set of permissible tokens. We empirically demonstrate on three large real-world datasets that MSCGRec outperforms both sequential and generative recommendation baselines and provide an extensive ablation study to validate the impact of each component.",
-      "published": "2026-02-03T16:39:35Z",
-      "updated": "2026-02-03T16:39:35Z",
-      "categories": [
-        "cs.IR"
-      ],
-      "pdfUrl": "https://arxiv.org/pdf/2602.03713v1",
-      "absUrl": "https://arxiv.org/abs/2602.03713v1",
       "industrySource": ""
     }
   ]
