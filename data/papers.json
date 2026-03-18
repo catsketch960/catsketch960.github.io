@@ -1,7 +1,33 @@
 {
-  "lastUpdated": "2026-03-17T05:39:46Z",
-  "totalResults": 545,
+  "lastUpdated": "2026-03-18T05:46:14Z",
+  "totalResults": 546,
   "papers": [
+    {
+      "id": "http://arxiv.org/abs/2603.16088v1",
+      "title": "RecBundle: A Next-Generation Geometric Paradigm for Explainable Recommender Systems",
+      "authors": [
+        "Hui Wang",
+        "Tianzhu Hu",
+        "Mingming Li",
+        "Xi Zhou",
+        "Chun Gan",
+        "Jiao Dai",
+        "Jizhong Han",
+        "Songlin Hu",
+        "Tao Guo"
+      ],
+      "affiliations": [],
+      "abstract": "Recommender systems are inherently dynamic feedback loops where prolonged local interactions accumulate into macroscopic structural degradation such as information cocoons. Existing representation learning paradigms are universally constrained by the assumption of a single flat space, forcing topologically grounded user associations and semantically driven historical interactions to be fitted within the same vector space. This excessive coupling of heterogeneous information renders it impossible for researchers to mechanistically distinguish and identify the sources of systemic bias. To overcome this theoretical bottleneck, we introduce Fiber Bundle from modern differential geometry and propose a novel geometric analysis paradigm for recommender systems. This theory naturally decouples the system space into two hierarchical layers: the base manifold formed by user interaction networks, and the fibers attached to individual user nodes that carry their dynamic preferences. Building upon this, we construct RecBundle, a framework oriented toward next-generation recommender systems that formalizes user collaboration as geometric connection and parallel transport on the base manifold, while mapping content evolution to holonomy transformations on fibers. From this foundation, we identify future application directions encompassing quantitative mechanisms for information cocoons and evolutionary bias, geometric meta-theory for adaptive recommendation, and novel inference architectures integrating large language models (LLMs). Empirical analysis on real-world MovieLens and Amazon Beauty datasets validates the effectiveness of this geometric framework.",
+      "published": "2026-03-17T03:25:05Z",
+      "updated": "2026-03-17T03:25:05Z",
+      "categories": [
+        "cs.IR",
+        "cs.AI"
+      ],
+      "pdfUrl": "https://arxiv.org/pdf/2603.16088v1",
+      "absUrl": "https://arxiv.org/abs/2603.16088v1",
+      "industrySource": "Meta"
+    },
     {
       "id": "http://arxiv.org/abs/2603.02709v1",
       "title": "Sensory-Aware Sequential Recommendation via Review-Distilled Representations",
@@ -333,31 +359,6 @@
       "pdfUrl": "https://arxiv.org/pdf/2602.04567v2",
       "absUrl": "https://arxiv.org/abs/2602.04567v2",
       "industrySource": "Meta"
-    },
-    {
-      "id": "http://arxiv.org/abs/2602.04460v1",
-      "title": "DOS: Dual-Flow Orthogonal Semantic IDs for Recommendation in Meituan",
-      "authors": [
-        "Junwei Yin",
-        "Senjie Kou",
-        "Changhao Li",
-        "Shuli Wang",
-        "Xue Wei",
-        "Yinqiu Huang",
-        "Yinhua Zhu",
-        "Haitao Wang",
-        "Xingxing Wang"
-      ],
-      "affiliations": [],
-      "abstract": "Semantic IDs serve as a key component in generative recommendation systems. They not only incorporate open-world knowledge from large language models (LLMs) but also compress the semantic space to reduce generation difficulty. However, existing methods suffer from two major limitations: (1) the lack of contextual awareness in generation tasks leads to a gap between the Semantic ID codebook space and the generation space, resulting in suboptimal recommendations; and (2) suboptimal quantization methods exacerbate semantic loss in LLMs. To address these issues, we propose Dual-Flow Orthogonal Semantic IDs (DOS) method. Specifically, DOS employs a user-item dual flow-framework that leverages collaborative signals to align the Semantic ID codebook space with the generation space. Furthermore, we introduce an orthogonal residual quantization scheme that rotates the semantic space to an appropriate orientation, thereby maximizing semantic preservation. Extensive offline experiments and online A/B testing demonstrate the effectiveness of DOS. The proposed method has been successfully deployed in Meituan's mobile application, serving hundreds of millions of users.",
-      "published": "2026-02-04T11:43:42Z",
-      "updated": "2026-02-04T11:43:42Z",
-      "categories": [
-        "cs.IR"
-      ],
-      "pdfUrl": "https://arxiv.org/pdf/2602.04460v1",
-      "absUrl": "https://arxiv.org/abs/2602.04460v1",
-      "industrySource": "Meituan"
     },
     {
       "id": "http://arxiv.org/abs/2603.14259v1",
