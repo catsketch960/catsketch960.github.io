@@ -1,7 +1,68 @@
 {
-  "lastUpdated": "2026-03-18T05:46:14Z",
-  "totalResults": 546,
+  "lastUpdated": "2026-03-19T05:40:19Z",
+  "totalResults": 548,
   "papers": [
+    {
+      "id": "http://arxiv.org/abs/2603.17540v1",
+      "title": "Deploying Semantic ID-based Generative Retrieval for Large-Scale Podcast Discovery at Spotify",
+      "authors": [
+        "Edoardo D'Amico",
+        "Marco De Nadai",
+        "Praveen Chandar",
+        "Divita Vohra",
+        "Shawn Lin",
+        "Max Lefarov",
+        "Paul Gigioli",
+        "Gustavo Penha",
+        "Ilya Kopysitsky",
+        "Ivo Joel Senese",
+        "Darren Mei",
+        "Francesco Fabbri",
+        "Oguz Semerci",
+        "Yu Zhao",
+        "Vincent Tang",
+        "Brian St. Thomas",
+        "Alexandra Ranieri",
+        "Matthew N. K. Smith",
+        "Aaron Bernkopf",
+        "Bryan Leung",
+        "Ghazal Fazelnia",
+        "Mark VanMiddlesworth",
+        "Timothy Christopher Heath",
+        "Petter Pehrson Skiden",
+        "Alice Y. Wang",
+        "Doug J. Cole",
+        "Andreas Damianou",
+        "Maya Hristakeva",
+        "Reid Wilbur",
+        "Tarun Chillara",
+        "Vladan Radosavljevic",
+        "Pooja Chitkara",
+        "Sainath Adapa",
+        "Juan Elenter",
+        "Bernd Huber",
+        "Jacqueline Wood",
+        "Saaketh Vedantam",
+        "Jan Stypka",
+        "Sandeep Ghael",
+        "Martin D. Gould",
+        "David Murgatroyd",
+        "Yves Raimond",
+        "Mounia Lalmas",
+        "Paul N. Bennett"
+      ],
+      "affiliations": [],
+      "abstract": "Podcast listening is often grounded in a set of favorite shows, while listener intent can evolve over time. This combination of stable preferences and changing intent motivates recommendation approaches that support both familiarity and exploration. Traditional recommender systems typically emphasize long-term interaction patterns, and are less explicitly designed to incorporate rich contextual signals or flexible, intent-aware discovery objectives. In this setting, models that can jointly reason over semantics, context, and user state offer a promising direction. Large Language Models (LLMs) provide strong semantic reasoning and contextual conditioning for discovery-oriented recommendation, but deploying them in production introduces challenges in catalog grounding, user-level personalization, and latency-critical serving. We address these challenges with GLIDE, a production-scale generative recommender for podcast discovery at Spotify. GLIDE formulates recommendation as an instruction-following task over a discretized catalog using Semantic IDs, enabling grounded generation over a large inventory. The model conditions on recent listening history and lightweight user context, while injecting long-term user embeddings as soft prompts to capture stable preferences under strict inference constraints. We evaluate GLIDE using offline retrieval metrics, human judgments, and LLM-based evaluation, and validate its impact through large-scale online A/B testing. Across experiments involving millions of users, GLIDE increases non-habitual podcast streaming on Spotify home surface by up to 5.4% and new-show discovery by up to 14.3%, while meeting production cost and latency constraints.",
+      "published": "2026-03-18T09:46:10Z",
+      "updated": "2026-03-18T09:46:10Z",
+      "categories": [
+        "cs.IR",
+        "cs.LG"
+      ],
+      "pdfUrl": "https://arxiv.org/pdf/2603.17540v1",
+      "absUrl": "https://arxiv.org/abs/2603.17540v1",
+      "industrySource": "Spotify"
+    },
     {
       "id": "http://arxiv.org/abs/2603.16088v1",
       "title": "RecBundle: A Next-Generation Geometric Paradigm for Explainable Recommender Systems",
@@ -312,53 +373,27 @@
       "industrySource": "Kuaishou"
     },
     {
-      "id": "http://arxiv.org/abs/2602.05663v1",
-      "title": "GLASS: A Generative Recommender for Long-sequence Modeling via SID-Tier and Semantic Search",
+      "id": "http://arxiv.org/abs/2603.17417v1",
+      "title": "Is Your LLM-as-a-Recommender Agent Trustable? LLMs' Recommendation is Easily Hacked by Biases (Preferences)",
       "authors": [
-        "Shiteng Cao",
-        "Junda She",
-        "Ji Liu",
-        "Bin Zeng",
-        "Chengcheng Guo",
-        "Kuo Cai",
-        "Qiang Luo",
-        "Ruiming Tang",
-        "Han Li",
-        "Kun Gai",
-        "Zhiheng Li",
-        "Cheng Yang"
+        "Zichen Tang",
+        "Zirui Zhang",
+        "Qian Wang",
+        "Zhenheng Tang",
+        "Bo Li",
+        "Xiaowen Chu"
       ],
       "affiliations": [],
-      "abstract": "Leveraging long-term user behavioral patterns is a key trajectory for enhancing the accuracy of modern recommender systems. While generative recommender systems have emerged as a transformative paradigm, they face hurdles in effectively modeling extensive historical sequences. To address this challenge, we propose GLASS, a novel framework that integrates long-term user interests into the generative process via SID-Tier and Semantic Search. We first introduce SID-Tier, a module that maps long-term interactions into a unified interest vector to enhance the prediction of the initial SID token. Unlike traditional retrieval models that struggle with massive item spaces, SID-Tier leverages the compact nature of the semantic codebook to incorporate cross features between the user's long-term history and candidate semantic codes. Furthermore, we present semantic hard search, which utilizes generated coarse-grained semantic ID as dynamic keys to extract relevant historical behaviors, which are then fused via an adaptive gated fusion module to recalibrate the trajectory of subsequent fine-grained tokens. To address the inherent data sparsity in semantic hard search, we propose two strategies: semantic neighbor augmentation and codebook resizing. Extensive experiments on two large-scale real-world datasets, TAOBAO-MM and KuaiRec, demonstrate that GLASS outperforms state-of-the-art baselines, achieving significant gains in recommendation quality. Our codes are made publicly available to facilitate further research in generative recommendation.",
-      "published": "2026-02-05T13:48:33Z",
-      "updated": "2026-02-05T13:48:33Z",
+      "abstract": "Current Large Language Models (LLMs) are gradually exploited in practically valuable agentic workflows such as Deep Research, E-commerce recommendation, and job recruitment. In these applications, LLMs need to select some optimal solutions from massive candidates, which we term as \\textit{LLM-as-a-Recommender} paradigm. However, the reliability of using LLM agents for recommendations is underexplored. In this work, we introduce a \\textbf{Bias} \\textbf{Rec}ommendation \\textbf{Bench}mark (\\textbf{BiasRecBench}) to highlight the critical vulnerability of such agents to biases in high-value real-world tasks. The benchmark includes three practical domains: paper review, e-commerce, and job recruitment. We construct a \\textsc{Bias Synthesis Pipeline with Calibrated Quality Margins} that 1) synthesizes evaluation data by controlling the quality gap between optimal and sub-optimal options to provide a calibrated testbed to elicit the vulnerability to biases; 2) injects contextual biases that are logical and suitable for option contexts. Extensive experiments on both SOTA (Gemini-{2.5,3}-pro, GPT-4o, DeepSeek-R1) and small-scale LLMs reveal that agents frequently succumb to injected biases despite having sufficient reasoning capabilities to identify the ground truth. These findings expose a significant reliability bottleneck in current agentic workflows, calling for specialized alignment strategies for LLM-as-a-Recommender. The complete code and evaluation datasets will be made publicly available shortly.",
+      "published": "2026-03-18T06:50:48Z",
+      "updated": "2026-03-18T06:50:48Z",
       "categories": [
-        "cs.IR"
+        "cs.CY",
+        "cs.MA"
       ],
-      "pdfUrl": "https://arxiv.org/pdf/2602.05663v1",
-      "absUrl": "https://arxiv.org/abs/2602.05663v1",
-      "industrySource": "Alibaba"
-    },
-    {
-      "id": "http://arxiv.org/abs/2602.04567v2",
-      "title": "VK-LSVD: A Large-Scale Industrial Dataset for Short-Video Recommendation",
-      "authors": [
-        "Aleksandr Poslavsky",
-        "Alexander D'yakonov",
-        "Yuriy Dorn",
-        "Andrey Zimovnov"
-      ],
-      "affiliations": [],
-      "abstract": "Short-video recommendation presents unique challenges, such as modeling rapid user interest shifts from implicit feedback, but progress is constrained by a lack of large-scale open datasets that reflect real-world platform dynamics. To bridge this gap, we introduce the VK Large Short-Video Dataset (VK-LSVD), the largest publicly available industrial dataset of its kind. VK-LSVD offers an unprecedented scale of over 40 billion interactions from 10 million users and almost 20 million videos over six months, alongside rich features including content embeddings, diverse feedback signals, and contextual metadata. Our analysis supports the dataset's quality and diversity. The dataset's immediate impact is confirmed by its central role in the live VK RecSys Challenge 2025. VK-LSVD provides a vital, open dataset to use in building realistic benchmarks to accelerate research in sequential recommendation, cold-start scenarios, and next-generation recommender systems.",
-      "published": "2026-02-04T13:54:52Z",
-      "updated": "2026-02-10T08:09:13Z",
-      "categories": [
-        "cs.IR",
-        "cs.CY"
-      ],
-      "pdfUrl": "https://arxiv.org/pdf/2602.04567v2",
-      "absUrl": "https://arxiv.org/abs/2602.04567v2",
-      "industrySource": "Meta"
+      "pdfUrl": "https://arxiv.org/pdf/2603.17417v1",
+      "absUrl": "https://arxiv.org/abs/2603.17417v1",
+      "industrySource": ""
     },
     {
       "id": "http://arxiv.org/abs/2603.14259v1",
