@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-03-19T05:40:19Z",
+  "lastUpdated": "2026-03-21T05:10:56Z",
   "totalResults": 548,
   "papers": [
     {
@@ -187,8 +187,8 @@
       "industrySource": "Kuaishou"
     },
     {
-      "id": "http://arxiv.org/abs/2602.20558v1",
-      "title": "From Logs to Language: Learning Optimal Verbalization for LLM-Based Recommendation in Production",
+      "id": "http://arxiv.org/abs/2602.20558v2",
+      "title": "From Logs to Language: Learning Optimal Verbalization for LLM-Based Recommendation at Industry Scale",
       "authors": [
         "Yucheng Shi",
         "Ying Li",
@@ -203,15 +203,15 @@
         "Linas Baltrunas"
       ],
       "affiliations": [],
-      "abstract": "Large language models (LLMs) are promising backbones for generative recommender systems, yet a key challenge remains underexplored: verbalization, i.e., converting structured user interaction logs into effective natural language inputs. Existing methods rely on rigid templates that simply concatenate fields, yielding suboptimal representations for recommendation. We propose a data-centric framework that learns verbalization for LLM-based recommendation. Using reinforcement learning, a verbalization agent transforms raw interaction histories into optimized textual contexts, with recommendation accuracy as the training signal. This agent learns to filter noise, incorporate relevant metadata, and reorganize information to improve downstream predictions. Experiments on a large-scale industrial streaming dataset show that learned verbalization delivers up to 93% relative improvement in discovery item recommendation accuracy over template-based baselines. Further analysis reveals emergent strategies such as user interest summarization, noise removal, and syntax normalization, offering insights into effective context construction for LLM-based recommender systems.",
+      "abstract": "Large language models (LLMs) are promising backbones for generative recommender systems, yet a key challenge remains underexplored: verbalization, i.e., converting structured user interaction logs into effective natural language inputs. Existing methods rely on rigid templates that simply concatenate fields, yielding suboptimal representations for recommendation. We propose a data-centric framework that learns verbalization for LLM-based recommendation. Using reinforcement learning, a verbalization agent transforms raw interaction histories into optimized textual contexts, with recommendation accuracy as the training signal. This agent learns to filter noise, incorporate relevant metadata, and reorganize information to improve downstream predictions. Experiments on a large-scale industrial streaming dataset from Netflix show that learned verbalization delivers up to 93% relative improvement in discovery item recommendation accuracy over template-based baselines. Further analysis reveals emergent strategies such as user interest summarization, noise removal, and syntax normalization, offering insights into effective context construction for LLM-based recommender systems.",
       "published": "2026-02-24T05:15:24Z",
-      "updated": "2026-02-24T05:15:24Z",
+      "updated": "2026-03-19T02:21:57Z",
       "categories": [
         "cs.AI",
         "cs.IR"
       ],
-      "pdfUrl": "https://arxiv.org/pdf/2602.20558v1",
-      "absUrl": "https://arxiv.org/abs/2602.20558v1",
+      "pdfUrl": "https://arxiv.org/pdf/2602.20558v2",
+      "absUrl": "https://arxiv.org/abs/2602.20558v2",
       "industrySource": "Meta"
     },
     {
