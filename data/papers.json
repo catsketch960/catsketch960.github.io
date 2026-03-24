@@ -1,7 +1,36 @@
 {
-  "lastUpdated": "2026-03-22T05:34:48Z",
-  "totalResults": 548,
+  "lastUpdated": "2026-03-24T05:40:44Z",
+  "totalResults": 554,
   "papers": [
+    {
+      "id": "http://arxiv.org/abs/2603.20131v1",
+      "title": "An Agentic Multi-Agent Architecture for Cybersecurity Risk Management",
+      "authors": [
+        "Ravish Gupta",
+        "Saket Kumar",
+        "Shreeya Sharma",
+        "Maulik Dang",
+        "Abhishek Aggarwal"
+      ],
+      "affiliations": [
+        "BigCommerce",
+        "University at Buffalo, The State University of New York, Buffalo, NY, USA",
+        "Microsoft",
+        "Amazon",
+        "Amazon"
+      ],
+      "abstract": "Getting a real cybersecurity risk assessment for a small organization is expensive -- a NIST CSF-aligned engagement runs $15,000 on the low end, takes weeks, and depends on practitioners who are genuinely scarce. Most small companies skip it entirely. We built a six-agent AI system where each agent handles one analytical stage: profiling the organization, mapping assets, analyzing threats, evaluating controls, scoring risks, and generating recommendations. Agents share a persistent context that grows as the assessment proceeds, so later agents build on what earlier ones concluded -- the mechanism that distinguishes this from standard sequential agent pipelines. We tested it on a 15-person HIPAA-covered healthcare company and compared outputs to independent assessments by three CISSP practitioners -- the system agreed with them 85% of the time on severity classifications, covered 92% of identified risks, and finished in under 15 minutes. We then ran 30 repeated single-agent assessments across five synthetic but sector-realistic organizational profiles in healthcare, fintech, manufacturing, retail, and SaaS, comparing a general-purpose Mistral-7B against a domain fine-tuned model. Both completed every run. The fine-tuned model flagged threats the baseline could not see at all: PHI exposure in healthcare, OT/IIoT vulnerabilities in manufacturing, platform-specific risks in retail. The full multi-agent pipeline, however, failed every one of 30 attempts on a Tesla T4 with its 4,096-token default context window -- context capacity, not model quality, turned out to be the binding constraint.",
+      "published": "2026-03-20T17:00:05Z",
+      "updated": "2026-03-20T17:00:05Z",
+      "categories": [
+        "eess.SY",
+        "cs.AI",
+        "cs.CR"
+      ],
+      "pdfUrl": "https://arxiv.org/pdf/2603.20131v1",
+      "absUrl": "https://arxiv.org/abs/2603.20131v1",
+      "industrySource": "Amazon"
+    },
     {
       "id": "http://arxiv.org/abs/2603.17540v1",
       "title": "Deploying Semantic ID-based Generative Retrieval for Large-Scale Podcast Discovery at Spotify",
@@ -328,52 +357,118 @@
       "industrySource": "Microsoft"
     },
     {
-      "id": "http://arxiv.org/abs/2602.08837v1",
-      "title": "AMEM4Rec: Leveraging Cross-User Similarity for Memory Evolution in Agentic LLM Recommenders",
+      "id": "http://arxiv.org/abs/2603.22231v1",
+      "title": "One Model, Two Markets: Bid-Aware Generative Recommendation",
       "authors": [
-        "Minh-Duc Nguyen",
-        "Hai-Dang Kieu",
-        "Dung D. Le"
+        "Yanchen Jiang",
+        "Zhe Feng",
+        "Christopher P. Mah",
+        "Aranyak Mehta",
+        "Di Wang"
       ],
       "affiliations": [],
-      "abstract": "Agentic systems powered by Large Language Models (LLMs) have shown strong potential in recommender systems but remain hindered by several challenges. Fine-tuning LLMs is parameter-inefficient, and prompt-based agentic reasoning is limited by context length and hallucination risk. Moreover, existing agentic recommendation systems predominantly leverages semantic knowledge while neglecting the collaborative filtering (CF) signals essential for implicit preference modeling. To address these limitations, we propose AMEM4Rec, an agentic LLM-based recommender that learns collaborative signals in an end-to-end manner through cross-user memory evolution. AMEM4Rec stores abstract user behavior patterns from user histories in a global memory pool. Within this pool, memories are linked to similar existing ones and iteratively evolved to reinforce shared cross-user patterns, enabling the system to become aware of CF signals without relying on a pre-trained CF model. Extensive experiments on Amazon and MIND datasets show that AMEM4Rec consistently outperforms state-of-the-art LLM-based recommenders, demonstrating the effectiveness of evolving memory-guided collaborative filtering.",
-      "published": "2026-02-09T16:06:55Z",
-      "updated": "2026-02-09T16:06:55Z",
+      "abstract": "Generative Recommender Systems using semantic ids, such as TIGER (Rajput et al., 2023), have emerged as a widely adopted competitive paradigm in sequential recommendation. However, existing architectures are designed solely for semantic retrieval and do not address concerns such as monetization via ad revenue and incorporation of bids for commercial retrieval. We propose GEM-Rec, a unified framework that integrates commercial relevance and monetization objectives directly into the generative sequence. We introduce control tokens to decouple the decision of whether to show an ad from which item to show. This allows the model to learn valid placement patterns directly from interaction logs, which inherently reflect past successful ad placements. Complementing this, we devise a Bid-Aware Decoding mechanism that handles real-time pricing, injecting bids directly into the inference process to steer the generation toward high-value items. We prove that this approach guarantees allocation monotonicity, ensuring that higher bids weakly increase an ad's likelihood of being shown without requiring model retraining. Experiments demonstrate that GEM-Rec allows platforms to dynamically optimize for semantic relevance and platform revenue.",
+      "published": "2026-03-23T17:27:59Z",
+      "updated": "2026-03-23T17:27:59Z",
       "categories": [
         "cs.IR",
+        "cs.AI",
+        "cs.GT",
         "cs.LG"
       ],
-      "pdfUrl": "https://arxiv.org/pdf/2602.08837v1",
-      "absUrl": "https://arxiv.org/abs/2602.08837v1",
-      "industrySource": "Amazon"
+      "pdfUrl": "https://arxiv.org/pdf/2603.22231v1",
+      "absUrl": "https://arxiv.org/abs/2603.22231v1",
+      "industrySource": ""
     },
     {
-      "id": "http://arxiv.org/abs/2602.08530v1",
-      "title": "PIT: A Dynamic Personalized Item Tokenizer for End-to-End Generative Recommendation",
+      "id": "http://arxiv.org/abs/2603.19944v1",
+      "title": "Large Language Models and Stock Investing: Is the Human Factor Required?",
       "authors": [
-        "Huanjie Wang",
-        "Xinchen Luo",
-        "Honghui Bao",
-        "Zhang Zixing",
-        "Lejian Ren",
-        "Yunfan Wu",
-        "Hongwei Zhang",
-        "Liwei Guan",
-        "Guang Chen"
+        "Ricardo Crisostomo",
+        "Diana Mykhalyuk"
       ],
       "affiliations": [],
-      "abstract": "Generative Recommendation has revolutionized recommender systems by reformulating retrieval as a sequence generation task over discrete item identifiers. Despite the progress, existing approaches typically rely on static, decoupled tokenization that ignores collaborative signals. While recent methods attempt to integrate collaborative signals into item identifiers either during index construction or through end-to-end modeling, they encounter significant challenges in real-world production environments. Specifically, the volatility of collaborative signals leads to unstable tokenization, and current end-to-end strategies often devolve into suboptimal two-stage training rather than achieving true co-evolution. To bridge this gap, we propose PIT, a dynamic Personalized Item Tokenizer framework for end-to-end generative recommendation, which employs a co-generative architecture that harmonizes collaborative patterns through collaborative signal alignment and synchronizes item tokenizer with generative recommender via a co-evolution learning. This enables the dynamic, joint, end-to-end evolution of both index construction and recommendation. Furthermore, a one-to-many beam index ensures scalability and robustness, facilitating seamless integration into large-scale industrial deployments. Extensive experiments on real-world datasets demonstrate that PIT consistently outperforms competitive baselines. In a large-scale deployment at Kuaishou, an online A/B test yielded a substantial 0.402% uplift in App Stay Time, validating the framework's effectiveness in dynamic industrial environments.",
-      "published": "2026-02-09T11:28:56Z",
-      "updated": "2026-02-09T11:28:56Z",
+      "abstract": "This paper investigates whether large language models (LLMs) can generate reliable stock market predictions. We evaluate four state-of-the-art models - ChatGPT, Gemini, DeepSeek, and Perplexity - across three prompting strategies: a naive query, a structured approach, and chain-of-thought reasoning. Our results show that LLM-generated recommendations are hindered by recurring reasoning failures, including financial misconceptions, carryover errors, and reliance on outdated or hallucinated information. When appropriately guided and supervised, LLMs demonstrate the capacity to outperform the market, but realizing LLMs' full potential requires substantial human oversight. We also find that grounding stock recommendations in official regulatory filings increases their forecasting accuracy. Overall, our findings underscore the need for robust safeguards and validation when deploying LLMs in financial markets.",
+      "published": "2026-03-20T13:47:13Z",
+      "updated": "2026-03-20T13:47:13Z",
+      "categories": [
+        "q-fin.TR",
+        "q-fin.ST"
+      ],
+      "pdfUrl": "https://arxiv.org/pdf/2603.19944v1",
+      "absUrl": "https://arxiv.org/abs/2603.19944v1",
+      "industrySource": ""
+    },
+    {
+      "id": "http://arxiv.org/abs/2603.19809v1",
+      "title": "How Well Does Generative Recommendation Generalize?",
+      "authors": [
+        "Yijie Ding",
+        "Zitian Guo",
+        "Jiacheng Li",
+        "Letian Peng",
+        "Shuai Shao",
+        "Wei Shao",
+        "Xiaoqiang Luo",
+        "Luke Simon",
+        "Jingbo Shang",
+        "Julian McAuley",
+        "Yupeng Hou"
+      ],
+      "affiliations": [],
+      "abstract": "A widely held hypothesis for why generative recommendation (GR) models outperform conventional item ID-based models is that they generalize better. However, there is few systematic way to verify this hypothesis beyond a superficial comparison of overall performance. To address this gap, we categorize each data instance based on the specific capability required for a correct prediction: either memorization (reusing item transition patterns observed during training) or generalization (composing known patterns to predict unseen item transitions). Extensive experiments show that GR models perform better on instances that require generalization, whereas item ID-based models perform better when memorization is more important. To explain this divergence, we shift the analysis from the item level to the token level and show that what appears to be item-level generalization often reduces to token-level memorization for GR models. Finally, we show that the two paradigms are complementary. We propose a simple memorization-aware indicator that adaptively combines them on a per-instance basis, leading to improved overall recommendation performance.",
+      "published": "2026-03-20T09:48:57Z",
+      "updated": "2026-03-20T09:48:57Z",
       "categories": [
         "cs.IR"
       ],
-      "pdfUrl": "https://arxiv.org/pdf/2602.08530v1",
-      "absUrl": "https://arxiv.org/abs/2602.08530v1",
-      "industrySource": "Kuaishou"
+      "pdfUrl": "https://arxiv.org/pdf/2603.19809v1",
+      "absUrl": "https://arxiv.org/abs/2603.19809v1",
+      "industrySource": ""
     },
     {
-      "id": "http://arxiv.org/abs/2603.17417v1",
+      "id": "http://arxiv.org/abs/2603.19693v1",
+      "title": "From Token to Item: Enhancing Large Language Models for Recommendation via Item-aware Attention Mechanism",
+      "authors": [
+        "Xiaokun Zhang",
+        "Bowei He",
+        "Jiamin Chen",
+        "Ziqiang Cui",
+        "Chen Ma"
+      ],
+      "affiliations": [],
+      "abstract": "Large Language Models (LLMs) have recently gained increasing attention in the field of recommendation. Existing LLM-based methods typically represent items as token sequences, and apply attention layers on these tokens to generate recommendations. However, by inheriting the standard attention mechanism, these methods focus on modeling token-level relations. This token-centric focus overlooks the item as the fundamental unit of recommendation, preventing existing methods from effectively capturing collaborative relations at the item level. In this work, we revisit the role of tokens in LLM-driven recommendation and categorize their relations into two types: (1) intra-item token relations, which present the content semantics of an item, e.g., name, color, and size; and (2) inter-item token relations, which encode collaborative relations across items. Building on these insights, we propose a novel framework with an item-aware attention mechanism (IAM) to enhance LLMs for recommendation. Specifically, IAM devises two complementary attention layers: (1) an intra-item attention layer, which restricts attention to tokens within the same item, modeling item content semantics; and (2) an inter-item attention layer, which attends exclusively to token relations across items, capturing item collaborative relations. Through this stacked design, IAM explicitly emphasizes items as the fundamental units in recommendation, enabling LLMs to effectively exploit item-level collaborative relations. Extensive experiments on several public datasets demonstrate the effectiveness of IAM in enhancing LLMs for personalized recommendation.",
+      "published": "2026-03-20T06:56:59Z",
+      "updated": "2026-03-20T06:56:59Z",
+      "categories": [
+        "cs.IR"
+      ],
+      "pdfUrl": "https://arxiv.org/pdf/2603.19693v1",
+      "absUrl": "https://arxiv.org/abs/2603.19693v1",
+      "industrySource": ""
+    },
+    {
+      "id": "http://arxiv.org/abs/2603.20287v1",
+      "title": "Report-based Recommendations for Policy Making and Agency Operations: Dataset and LLM Evaluation",
+      "authors": [
+        "Aleksandra Edwards",
+        "Thomas Edwards",
+        "Jose Camacho-Collados",
+        "Alun Preece"
+      ],
+      "affiliations": [],
+      "abstract": "Large Language Models (LLMs) are extensively used in text generation tasks. These generative capabilities bring us to a point where LLMs could potentially provide useful insights in policy making or agency operations. In this paper, we introduce a new task consisting of generating recommendations which can be used to inform future actions and improvements of agencies work within private and public organisations. In particular, we present the first benchmark and coherent evaluation for developing recommendation systems to inform organisation policies. This task is clearly different from usual product or user recommendation systems, but rather aims at providing a basis to suggest policy improvements based on the conclusions drawn from reports. Our results demonstrate that state-of-the-art LLMs have the potential to emphasize and reflect on key issues and learning points within generated recommendations.",
+      "published": "2026-03-18T09:15:33Z",
+      "updated": "2026-03-18T09:15:33Z",
+      "categories": [
+        "cs.IR"
+      ],
+      "pdfUrl": "https://arxiv.org/pdf/2603.20287v1",
+      "absUrl": "https://arxiv.org/abs/2603.20287v1",
+      "industrySource": ""
+    },
+    {
+      "id": "http://arxiv.org/abs/2603.17417v2",
       "title": "Is Your LLM-as-a-Recommender Agent Trustable? LLMs' Recommendation is Easily Hacked by Biases (Preferences)",
       "authors": [
         "Zichen Tang",
@@ -386,13 +481,13 @@
       "affiliations": [],
       "abstract": "Current Large Language Models (LLMs) are gradually exploited in practically valuable agentic workflows such as Deep Research, E-commerce recommendation, and job recruitment. In these applications, LLMs need to select some optimal solutions from massive candidates, which we term as \\textit{LLM-as-a-Recommender} paradigm. However, the reliability of using LLM agents for recommendations is underexplored. In this work, we introduce a \\textbf{Bias} \\textbf{Rec}ommendation \\textbf{Bench}mark (\\textbf{BiasRecBench}) to highlight the critical vulnerability of such agents to biases in high-value real-world tasks. The benchmark includes three practical domains: paper review, e-commerce, and job recruitment. We construct a \\textsc{Bias Synthesis Pipeline with Calibrated Quality Margins} that 1) synthesizes evaluation data by controlling the quality gap between optimal and sub-optimal options to provide a calibrated testbed to elicit the vulnerability to biases; 2) injects contextual biases that are logical and suitable for option contexts. Extensive experiments on both SOTA (Gemini-{2.5,3}-pro, GPT-4o, DeepSeek-R1) and small-scale LLMs reveal that agents frequently succumb to injected biases despite having sufficient reasoning capabilities to identify the ground truth. These findings expose a significant reliability bottleneck in current agentic workflows, calling for specialized alignment strategies for LLM-as-a-Recommender. The complete code and evaluation datasets will be made publicly available shortly.",
       "published": "2026-03-18T06:50:48Z",
-      "updated": "2026-03-18T06:50:48Z",
+      "updated": "2026-03-20T13:11:53Z",
       "categories": [
         "cs.CY",
         "cs.MA"
       ],
-      "pdfUrl": "https://arxiv.org/pdf/2603.17417v1",
-      "absUrl": "https://arxiv.org/abs/2603.17417v1",
+      "pdfUrl": "https://arxiv.org/pdf/2603.17417v2",
+      "absUrl": "https://arxiv.org/abs/2603.17417v2",
       "industrySource": ""
     },
     {
@@ -1159,111 +1254,6 @@
       ],
       "pdfUrl": "https://arxiv.org/pdf/2602.10249v1",
       "absUrl": "https://arxiv.org/abs/2602.10249v1",
-      "industrySource": ""
-    },
-    {
-      "id": "http://arxiv.org/abs/2602.08612v1",
-      "title": "OneLive: Dynamically Unified Generative Framework for Live-Streaming Recommendation",
-      "authors": [
-        "Shen Wang",
-        "Yusheng Huang",
-        "Ruochen Yang",
-        "Shuang Wen",
-        "Pengbo Xu",
-        "Jiangxia Cao",
-        "Yueyang Liu",
-        "Kuo Cai",
-        "Chengcheng Guo",
-        "Shiyao Wang",
-        "Xinchen Luo",
-        "Qiang Luo",
-        "Ruiming Tang",
-        "Shuang Yang",
-        "Zhaojie Liu",
-        "Guorui Zhou",
-        "Han Li",
-        "Kun Gai"
-      ],
-      "affiliations": [],
-      "abstract": "Live-streaming recommender system serves as critical infrastructure that bridges the patterns of real-time interactions between users and authors. Similar to traditional industrial recommender systems, live-streaming recommendation also relies on cascade architectures to support large-scale concurrency. Recent advances in generative recommendation unify the multi-stage recommendation process with Transformer-based architectures, offering improved scalability and higher computational efficiency. However, the inherent complexity of live-streaming prevents the direct transfer of these methods to live-streaming scenario, where continuously evolving content, limited lifecycles, strict real-time constraints, and heterogeneous multi-objectives introduce unique challenges that invalidate static tokenization and conventional model framework. To address these issues, we propose OneLive, a dynamically unified generative recommendation framework tailored for live-streaming scenario. OneLive integrates four key components: (i) A Dynamic Tokenizer that continuously encodes evolving real-time live content fused with behavior signal through residual quantization; (ii) A Time-Aware Gated Attention mechanism that explicitly models temporal dynamics for timely decision making; (iii) An efficient decoder-only generative architecture enhanced with Sequential MTP and QK Norm for stable training and accelerated inference; (iv) A Unified Multi-Objective Alignment Framework reinforces policy optimization for personalized preferences.",
-      "published": "2026-02-09T12:56:39Z",
-      "updated": "2026-02-09T12:56:39Z",
-      "categories": [
-        "cs.IR"
-      ],
-      "pdfUrl": "https://arxiv.org/pdf/2602.08612v1",
-      "absUrl": "https://arxiv.org/abs/2602.08612v1",
-      "industrySource": ""
-    },
-    {
-      "id": "http://arxiv.org/abs/2602.08124v1",
-      "title": "Gender and Race Bias in Consumer Product Recommendations by Large Language Models",
-      "authors": [
-        "Ke Xu",
-        "Shera Potka",
-        "Alex Thomo"
-      ],
-      "affiliations": [],
-      "abstract": "Large Language Models are increasingly employed in generating consumer product recommendations, yet their potential for embedding and amplifying gender and race biases remains underexplored. This paper serves as one of the first attempts to examine these biases within LLM-generated recommendations. We leverage prompt engineering to elicit product suggestions from LLMs for various race and gender groups and employ three analytical methods-Marked Words, Support Vector Machines, and Jensen-Shannon Divergence-to identify and quantify biases. Our findings reveal significant disparities in the recommendations for demographic groups, underscoring the need for more equitable LLM recommendation systems.",
-      "published": "2026-02-08T21:06:16Z",
-      "updated": "2026-02-08T21:06:16Z",
-      "categories": [
-        "cs.CL",
-        "cs.AI",
-        "cs.LG"
-      ],
-      "pdfUrl": "https://arxiv.org/pdf/2602.08124v1",
-      "absUrl": "https://arxiv.org/abs/2602.08124v1",
-      "industrySource": ""
-    },
-    {
-      "id": "http://arxiv.org/abs/2602.07847v1",
-      "title": "SimGR: Escaping the Pitfalls of Generative Decoding in LLM-based Recommendation",
-      "authors": [
-        "Yuanbo Zhao",
-        "Ruochen Liu",
-        "Senzhang Wang",
-        "Jun Yin",
-        "Yuxin Dong",
-        "Huan Gong",
-        "Hao Chen",
-        "Shirui Pan",
-        "Chengqi Zhang"
-      ],
-      "affiliations": [],
-      "abstract": "A core objective in recommender systems is to accurately model the distribution of user preferences over items to enable personalized recommendations. Recently, driven by the strong generative capabilities of large language models (LLMs), LLM-based generative recommendation has become increasingly popular. However, we observe that existing methods inevitably introduce systematic bias when estimating item-level preference distributions. Specifically, autoregressive generation suffers from incomplete coverage due to beam search pruning, while parallel generation distorts probabilities by assuming token independence. We attribute this issue to a fundamental modeling mismatch: these methods approximate item-level distributions via token-level generation, which inherently induces approximation errors. Through both theoretical analysis and empirical validation, we demonstrate that token-level generation cannot faithfully substitute item-level generation, leading to biased item distributions. To address this, we propose \\textbf{Sim}ply \\textbf{G}enerative \\textbf{R}ecommendation (\\textbf{SimGR}), a framework that directly models item-level preference distributions in a shared latent space and ranks items by similarity, thereby aligning the modeling objective with recommendation and mitigating distributional distortion. Extensive experiments across multiple datasets and LLM backbones show that SimGR consistently outperforms existing generative recommenders. Our code is available at https://anonymous.4open.science/r/SimGR-C408/",
-      "published": "2026-02-08T07:26:52Z",
-      "updated": "2026-02-08T07:26:52Z",
-      "categories": [
-        "cs.IR"
-      ],
-      "pdfUrl": "https://arxiv.org/pdf/2602.07847v1",
-      "absUrl": "https://arxiv.org/abs/2602.07847v1",
-      "industrySource": ""
-    },
-    {
-      "id": "http://arxiv.org/abs/2602.06409v1",
-      "title": "VENOMREC: Cross-Modal Interactive Poisoning for Targeted Promotion in Multimodal LLM Recommender Systems",
-      "authors": [
-        "Guowei Guan",
-        "Yurong Hao",
-        "Jiaming Zhang",
-        "Tiantong Wu",
-        "Fuyao Zhang",
-        "Tianxiang Chen",
-        "Longtao Huang",
-        "Cyril Leung",
-        "Wei Yang Bryan Lim"
-      ],
-      "affiliations": [],
-      "abstract": "Multimodal large language models (MLLMs) are pushing recommender systems (RecSys) toward content-grounded retrieval and ranking via cross-modal fusion. We find that while cross-modal consensus often mitigates conventional poisoning that manipulates interaction logs or perturbs a single modality, it also introduces a new attack surface where synchronised multimodal poisoning can reliably steer fused representations along stable semantic directions during fine-tuning. To characterise this threat, we formalise cross-modal interactive poisoning and propose VENOMREC, which performs Exposure Alignment to identify high-exposure regions in the joint embedding space and Cross-modal Interactive Perturbation to craft attention-guided coupled token-patch edits. Experiments on three real-world multimodal datasets demonstrate that VENOMREC consistently outperforms strong baselines, achieving 0.73 mean ER@20 and improving over the strongest baseline by +0.52 absolute ER points on average, while maintaining comparable recommendation utility.",
-      "published": "2026-02-06T06:02:57Z",
-      "updated": "2026-02-06T06:02:57Z",
-      "categories": [
-        "cs.CR"
-      ],
-      "pdfUrl": "https://arxiv.org/pdf/2602.06409v1",
-      "absUrl": "https://arxiv.org/abs/2602.06409v1",
       "industrySource": ""
     }
   ]
