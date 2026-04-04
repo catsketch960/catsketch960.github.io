@@ -1,6 +1,6 @@
 {
-  "lastUpdated": "2026-03-28T05:37:19Z",
-  "totalResults": 556,
+  "lastUpdated": "2026-04-04T03:36:52Z",
+  "totalResults": 560,
   "papers": [
     {
       "id": "http://arxiv.org/abs/2603.20131v2",
@@ -170,7 +170,7 @@
       "industrySource": "Kuaishou"
     },
     {
-      "id": "http://arxiv.org/abs/2602.22732v2",
+      "id": "http://arxiv.org/abs/2602.22732v3",
       "title": "Generative Recommendation for Large-Scale Advertising",
       "authors": [
         "Ben Xue",
@@ -201,18 +201,19 @@
         "Han Li",
         "Guorui Zhou",
         "Changcheng Li",
-        "Peng Jiang"
+        "Peng Jiang",
+        "Kun Gai"
       ],
       "affiliations": [],
       "abstract": "Generative recommendation has recently attracted widespread attention in industry due to its potential for scaling and stronger model capacity. However, deploying real-time generative recommendation in large-scale advertising requires designs beyond large-language-model (LLM)-style training and serving recipes. We present a production-oriented generative recommender co-designed across architecture, learning, and serving, named GR4AD (Generative Recommendation for ADdvertising). As for tokenization, GR4AD proposes UA-SID (Unified Advertisement Semantic ID) to capture complicated business information. Furthermore, GR4AD introduces LazyAR, a lazy autoregressive decoder that relaxes layer-wise dependencies for short, multi-candidate generation, preserving effectiveness while reducing inference cost, which facilitates scaling under fixed serving budgets. To align optimization with business value, GR4AD employs VSL (Value-Aware Supervised Learning) and proposes RSPO (Ranking-Guided Softmax Preference Optimization), a ranking-aware, list-wise reinforcement learning algorithm that optimizes value-based rewards under list-level metrics for continual online updates. For online inference, we further propose dynamic beam serving, which adapts beam width across generation levels and online load to control compute. Large-scale online A/B tests show up to 4.2% ad revenue improvement over an existing DLRM-based stack, with consistent gains from both model scaling and inference-time scaling. GR4AD has been fully deployed in Kuaishou advertising system with over 400 million users and achieves high-throughput real-time serving.",
       "published": "2026-02-26T08:15:26Z",
-      "updated": "2026-03-04T09:28:17Z",
+      "updated": "2026-04-02T02:38:13Z",
       "categories": [
         "cs.IR",
         "cs.LG"
       ],
-      "pdfUrl": "https://arxiv.org/pdf/2602.22732v2",
-      "absUrl": "https://arxiv.org/abs/2602.22732v2",
+      "pdfUrl": "https://arxiv.org/pdf/2602.22732v3",
+      "absUrl": "https://arxiv.org/abs/2602.22732v3",
       "industrySource": "Kuaishou"
     },
     {
@@ -355,6 +356,109 @@
       "pdfUrl": "https://arxiv.org/pdf/2602.11410v1",
       "absUrl": "https://arxiv.org/abs/2602.11410v1",
       "industrySource": "Microsoft"
+    },
+    {
+      "id": "http://arxiv.org/abs/2604.02324v1",
+      "title": "Grounded Token Initialization for New Vocabulary in LMs for Generative Recommendation",
+      "authors": [
+        "Daiwei Chen",
+        "Zhoutong Fu",
+        "Chengming Jiang",
+        "Haichao Zhang",
+        "Ran Zhou",
+        "Tan Wang",
+        "Chunnan Yao",
+        "Guoyao Li",
+        "Rui Cai",
+        "Yihan Cao",
+        "Ruijie Jiang",
+        "Fedor Borisyuk",
+        "Jianqiang Shen",
+        "Jingwei Wu",
+        "Ramya Korlakai Vinayak"
+      ],
+      "affiliations": [],
+      "abstract": "Language models (LMs) are increasingly extended with new learnable vocabulary tokens for domain-specific tasks, such as Semantic-ID tokens in generative recommendation. The standard practice initializes these new tokens as the mean of existing vocabulary embeddings, then relies on supervised fine-tuning to learn their representations. We present a systematic analysis of this strategy: through spectral and geometric diagnostics, we show that mean initialization collapses all new tokens into a degenerate subspace, erasing inter-token distinctions that subsequent fine-tuning struggles to fully recover. These findings suggest that \\emph{token initialization} is a key bottleneck when extending LMs with new vocabularies. Motivated by this diagnosis, we propose the \\emph{Grounded Token Initialization Hypothesis}: linguistically grounding novel tokens in the pretrained embedding space before fine-tuning better enables the model to leverage its general-purpose knowledge for novel-token domains. We operationalize this hypothesis as GTI (Grounded Token Initialization), a lightweight grounding stage that, prior to fine-tuning, maps new tokens to distinct, semantically meaningful locations in the pretrained embedding space using only paired linguistic supervision. Despite its simplicity, GTI outperforms both mean initialization and existing auxiliary-task adaptation methods in the majority of evaluation settings across multiple generative recommendation benchmarks, including industry-scale and public datasets. Further analyses show that grounded embeddings produce richer inter-token structure that persists through fine-tuning, corroborating the hypothesis that initialization quality is a key bottleneck in vocabulary extension.",
+      "published": "2026-04-02T17:59:19Z",
+      "updated": "2026-04-02T17:59:19Z",
+      "categories": [
+        "cs.CL",
+        "cs.AI",
+        "cs.LG"
+      ],
+      "pdfUrl": "https://arxiv.org/pdf/2604.02324v1",
+      "absUrl": "https://arxiv.org/abs/2604.02324v1",
+      "industrySource": ""
+    },
+    {
+      "id": "http://arxiv.org/abs/2603.29845v1",
+      "title": "Cold-Starts in Generative Recommendation: A Reproducibility Study",
+      "authors": [
+        "Zhen Zhang",
+        "Jujia Zhao",
+        "Xinyu Ma",
+        "Xin Xin",
+        "Maarten de Rijke",
+        "Zhaochun Ren"
+      ],
+      "affiliations": [],
+      "abstract": "Cold-start recommendation remains a central challenge in dynamic, open-world platforms, requiring models to recommend for newly registered users (user cold-start) and to recommend newly introduced items to existing users (item cold-start) under sparse or missing interaction signals. Recent generative recommenders built on pre-trained language models (PLMs) are often expected to mitigate cold-start by using item semantic information (e.g., titles and descriptions) and test-time conditioning on limited user context. However, cold-start is rarely treated as a primary evaluation setting in existing studies, and reported gains are difficult to interpret because key design choices, such as model scale, identifier design, and training strategy, are frequently changed together. In this work, we present a systematic reproducibility study of generative recommendation under a unified suite of cold-start protocols.",
+      "published": "2026-03-31T15:06:31Z",
+      "updated": "2026-03-31T15:06:31Z",
+      "categories": [
+        "cs.IR"
+      ],
+      "pdfUrl": "https://arxiv.org/pdf/2603.29845v1",
+      "absUrl": "https://arxiv.org/abs/2603.29845v1",
+      "industrySource": ""
+    },
+    {
+      "id": "http://arxiv.org/abs/2603.29705v1",
+      "title": "Drift-Aware Continual Tokenization for Generative Recommendation",
+      "authors": [
+        "Yuebo Feng",
+        "Jiahao Liu",
+        "Mingzhe Han",
+        "Dongsheng Li",
+        "Hansu Gu",
+        "Peng Zhang",
+        "Tun Lu",
+        "Ning Gu"
+      ],
+      "affiliations": [],
+      "abstract": "Generative recommendation commonly adopts a two-stage pipeline in which a learnable tokenizer maps items to discrete token sequences (i.e. identifiers) and an autoregressive generative recommender model (GRM) performs prediction based on these identifiers. Recent tokenizers further incorporate collaborative signals so that items with similar user-behavior patterns receive similar codes, substantially improving recommendation quality. However, real-world environments evolve continuously: new items cause identifier collision and shifts, while new interactions induce collaborative drift in existing items (e.g., changing co-occurrence patterns and popularity). Fully retraining both tokenizer and GRM is often prohibitively expensive, yet naively fine-tuning the tokenizer can alter token sequences for the majority of existing items, undermining the GRM's learned token-embedding alignment. To balance plasticity and stability for collaborative tokenizers, we propose DACT, a Drift-Aware Continual Tokenization framework with two stages: (i) tokenizer fine-tuning, augmented with a jointly trained Collaborative Drift Identification Module (CDIM) that outputs item-level drift confidence and enables differentiated optimization for drifting and stationary items; and (ii) hierarchical code reassignment using a relaxed-to-strict strategy to update token sequences while limiting unnecessary changes. Experiments on three real-world datasets with two representative GRMs show that DACT consistently achieves better performance than baselines, demonstrating effective adaptation to collaborative evolution with reduced disruption to prior knowledge. Our implementation is publicly available at https://github.com/HomesAmaranta/DACT for reproducibility.",
+      "published": "2026-03-31T13:02:47Z",
+      "updated": "2026-03-31T13:02:47Z",
+      "categories": [
+        "cs.IR"
+      ],
+      "pdfUrl": "https://arxiv.org/pdf/2603.29705v1",
+      "absUrl": "https://arxiv.org/abs/2603.29705v1",
+      "industrySource": ""
+    },
+    {
+      "id": "http://arxiv.org/abs/2603.28124v1",
+      "title": "RCLRec: Reverse Curriculum Learning for Modeling Sparse Conversions in Generative Recommendation",
+      "authors": [
+        "Yulei Huang",
+        "Hao Deng",
+        "Haibo Xing",
+        "Jinxin Hu",
+        "Chuanfei Xu",
+        "Zulong Chen",
+        "Yu Zhang",
+        "Xiaoyi Zeng"
+      ],
+      "affiliations": [],
+      "abstract": "Conversion objectives in large-scale recommender systems are sparse, making them difficult to optimize. Generative recommendation (GR) partially alleviates data sparsity by organizing multi-type behaviors into a unified token sequence with shared representations, but conversion signals remain insufficiently modeled. While recent behavior-aware GR models encode behavior types and employ behavior-aware attention to highlight decision-related intermediate behaviors, they still rely on standard attention over the full history and provide no additional supervision for conversions, leaving conversion sparsity largely unresolved. To address these challenges, we propose RCLRec, a reverse curriculum learning-based GR framework for sparse conversion supervision. For each conversion target, RCLRec constructs a short curriculum by selecting a subsequence of conversion-related items from the history in reverse. Their semantic tokens are fed to the decoder as a prefix, together with the target conversion tokens, under a joint generation objective. This design provides additional instance-specific intermediate supervision, alleviating conversion sparsity and focusing the model on the user's critical decision process. We further introduce a curriculum quality-aware loss to ensure that the selected curricula are informative for conversion prediction. Experiments on offline datasets and an online A/B test show that RCLRec achieves superior performance, with +2.09% advertising revenue and +1.86% orders in online deployment.",
+      "published": "2026-03-30T07:41:33Z",
+      "updated": "2026-03-30T07:41:33Z",
+      "categories": [
+        "cs.IR"
+      ],
+      "pdfUrl": "https://arxiv.org/pdf/2603.28124v1",
+      "absUrl": "https://arxiv.org/abs/2603.28124v1",
+      "industrySource": ""
     },
     {
       "id": "http://arxiv.org/abs/2603.23183v1",
@@ -1158,105 +1262,6 @@
       ],
       "pdfUrl": "https://arxiv.org/pdf/2602.11605v2",
       "absUrl": "https://arxiv.org/abs/2602.11605v2",
-      "industrySource": ""
-    },
-    {
-      "id": "http://arxiv.org/abs/2602.10699v2",
-      "title": "Spend Search Where It Pays: Value-Guided Structured Sampling and Optimization for Generative Recommendation",
-      "authors": [
-        "Jie Jiang",
-        "Yangru Huang",
-        "Zeyu Wang",
-        "Changping Wang",
-        "Yuling Xiong",
-        "Jun Zhang",
-        "Huan Yu"
-      ],
-      "affiliations": [],
-      "abstract": "Generative recommendation via autoregressive models has unified retrieval and ranking into a single conditional generation framework. However, fine-tuning these models with Reinforcement Learning (RL) often suffers from a fundamental probability-reward mismatch. Conventional likelihood-dominated decoding (e.g., beam search) exhibits a myopic bias toward locally probable prefixes, which causes two critical failures: (1) insufficient exploration, where high-reward items in low-probability branches are prematurely pruned and rarely sampled, and (2) advantage compression, where trajectories sharing high-probability prefixes receive highly correlated rewards with low within-group variance, yielding a weak comparative signal for RL. To address these challenges, we propose V-STAR, a Value-guided Sampling and Tree-structured Advantage Reinforcement framework. V-STAR forms a self-evolving loop via two synergistic components. First, a Value-Guided Efficient Decoding (VED) is developed to identify decisive nodes and selectively deepen high-potential prefixes. This improves exploration efficiency without exhaustive tree search. Second, we propose Sibling-GRPO, which exploits the induced tree topology to compute sibling-relative advantages and concentrates learning signals on decisive branching decisions. Extensive experiments on both offline and online datasets demonstrate that V-STAR outperforms state-of-the-art baselines, delivering superior accuracy and candidate-set diversity under strict latency constraints.",
-      "published": "2026-02-11T09:57:36Z",
-      "updated": "2026-02-12T07:29:37Z",
-      "categories": [
-        "cs.AI",
-        "cs.LG"
-      ],
-      "pdfUrl": "https://arxiv.org/pdf/2602.10699v2",
-      "absUrl": "https://arxiv.org/abs/2602.10699v2",
-      "industrySource": ""
-    },
-    {
-      "id": "http://arxiv.org/abs/2602.10606v3",
-      "title": "S-GRec: Personalized Semantic-Aware Generative Recommendation with Asymmetric Advantage",
-      "authors": [
-        "Jie Jiang",
-        "Hongbo Tang",
-        "Wenjie Wu",
-        "Yangru Huang",
-        "Zhenmao Li",
-        "Qian Li",
-        "Changping Wang",
-        "Jun Zhang",
-        "Huan Yu"
-      ],
-      "affiliations": [],
-      "abstract": "Generative recommendation models sequence generation to produce items end-to-end, but training from behavioral logs often provides weak supervision on underlying user intent. Although Large Language Models (LLMs) offer rich semantic priors that could supply such supervision, direct adoption in industrial recommendation is hindered by two obstacles: semantic signals can conflict with platform business objectives, and LLM inference is prohibitively expensive at scale. This paper presents S-GRec, a semantic-aware framework that decouples an online lightweight generator from an offline LLM-based semantic judge for train-time supervision. S-GRec introduces a two-stage Personalized Semantic Judge (PSJ) that produces interpretable aspect evidence and learns user-conditional aggregation from pairwise feedback, yielding stable semantic rewards. To prevent semantic supervision from deviating from business goals, Asymmetric Advantage Policy Optimization (A2PO) anchors optimization on business rewards (e.g., eCPM) and injects semantic advantages only when they are consistent. Extensive experiments on public benchmarks and a large-scale production system validate both effectiveness and scalability, including statistically significant gains in CTR and a 1.19\\% lift in GMV in online A/B tests, without requiring real-time LLM inference.",
-      "published": "2026-02-11T07:54:26Z",
-      "updated": "2026-02-25T10:05:15Z",
-      "categories": [
-        "cs.IR"
-      ],
-      "pdfUrl": "https://arxiv.org/pdf/2602.10606v3",
-      "absUrl": "https://arxiv.org/abs/2602.10606v3",
-      "industrySource": ""
-    },
-    {
-      "id": "http://arxiv.org/abs/2602.10445v2",
-      "title": "End-to-End Semantic ID Generation for Generative Advertisement Recommendation",
-      "authors": [
-        "Jie Jiang",
-        "Xinxun Zhang",
-        "Enming Zhang",
-        "Yuling Xiong",
-        "Jun Zhang",
-        "Jingwen Wang",
-        "Huan Yu",
-        "Yuxiang Wang",
-        "Hao Wang",
-        "Xiao Yan",
-        "Jiawei Jiang"
-      ],
-      "affiliations": [],
-      "abstract": "Generative Recommendation (GR) has excelled by framing recommendation as next-token prediction. This paradigm relies on Semantic IDs (SIDs) to tokenize large-scale items into discrete sequences. Existing GR approaches predominantly generate SIDs via Residual Quantization (RQ), where items are encoded into embeddings and then quantized to discrete SIDs. However, this paradigm suffers from inherent limitations: 1) Objective misalignment and semantic degradation stemming from the two-stage compression; 2) Error accumulation inherent in the structure of RQ. To address these limitations, we propose UniSID, a Unified SID generation framework for generative advertisement recommendation. Specifically, we jointly optimize embeddings and SIDs in an end-to-end manner from raw advertising data, enabling semantic information to flow directly into the SID space and thus addressing the inherent limitations of the two-stage cascading compression paradigm. To capture fine-grained semantics, a multi-granularity contrastive learning strategy is introduced to align distinct items across SID levels. Finally, a summary-based ad reconstruction mechanism is proposed to encourage SIDs to capture high-level semantic information that is not explicitly present in advertising contexts. Experiments demonstrate that UniSID consistently outperforms state-of-the-art SID generation methods, yielding up to a 4.62% improvement in Hit Rate metrics across downstream advertising scenarios compared to the strongest baseline.",
-      "published": "2026-02-11T02:38:26Z",
-      "updated": "2026-02-12T09:56:10Z",
-      "categories": [
-        "cs.IR",
-        "cs.LG"
-      ],
-      "pdfUrl": "https://arxiv.org/pdf/2602.10445v2",
-      "absUrl": "https://arxiv.org/abs/2602.10445v2",
-      "industrySource": ""
-    },
-    {
-      "id": "http://arxiv.org/abs/2602.10430v1",
-      "title": "Breaking the Curse of Repulsion: Optimistic Distributionally Robust Policy Optimization for Off-Policy Generative Recommendation",
-      "authors": [
-        "Jie Jiang",
-        "Yusen Huo",
-        "Xiangxin Zhan",
-        "Changping Wang",
-        "Jun Zhang"
-      ],
-      "affiliations": [],
-      "abstract": "Policy-based Reinforcement Learning (RL) has established itself as the dominant paradigm in generative recommendation for optimizing sequential user interactions. However, when applied to offline historical logs, these methods suffer a critical failure: the dominance of low-quality data induces severe model collapse. We first establish the Divergence Theory of Repulsive Optimization, revealing that negative gradient updates inherently trigger exponential intensity explosion during off-policy training. This theory elucidates the inherent dilemma of existing methods, exposing their inability to reconcile variance reduction and noise imitation. To break this curse, we argue that the solution lies in rigorously identifying the latent high-quality distribution entangled within the noisy behavior policy. Accordingly, we reformulate the objective as an Optimistic Distributionally Robust Optimization (DRO) problem. Guided by this formulation, we propose Distributionally Robust Policy Optimization (DRPO). We prove that hard filtering is the exact solution to this DRO objective, enabling DRPO to optimally recover high-quality behaviors while strictly discarding divergence-inducing noise. Extensive experiments demonstrate that DRPO achieves state-of-the-art performance on mixed-quality recommendation benchmarks.",
-      "published": "2026-02-11T02:18:27Z",
-      "updated": "2026-02-11T02:18:27Z",
-      "categories": [
-        "cs.LG",
-        "cs.AI"
-      ],
-      "pdfUrl": "https://arxiv.org/pdf/2602.10430v1",
-      "absUrl": "https://arxiv.org/abs/2602.10430v1",
       "industrySource": ""
     }
   ]
