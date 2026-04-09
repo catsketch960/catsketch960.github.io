@@ -1,7 +1,67 @@
 {
-  "lastUpdated": "2026-04-07T03:51:46Z",
-  "totalResults": 564,
+  "lastUpdated": "2026-04-09T03:50:48Z",
+  "totalResults": 567,
   "papers": [
+    {
+      "id": "http://arxiv.org/abs/2604.05329v1",
+      "title": "Semantic Trimming and Auxiliary Multi-step Prediction for Generative Recommendation",
+      "authors": [
+        "Tianyu Zhan",
+        "Kairui Fu",
+        "Chengfei Lv",
+        "Zheqi Lv",
+        "Shengyu Zhang"
+      ],
+      "affiliations": [],
+      "abstract": "Generative Recommendation (GR) has recently transitioned from atomic item-indexing to Semantic ID (SID)-based frameworks to capture intrinsic item relationships and enhance generalization. However, the adoption of high-granularity SIDs leads to two critical challenges: prohibitive training overhead due to sequence expansion and unstable performance reliability characterized by non-monotonic accuracy fluctuations. We identify that these disparate issues are fundamentally rooted in the Semantic Dilution Effect, where redundant tokens waste massive computation and dilute the already sparse learning signals in recommendation. To counteract this, we propose STAMP (Semantic Trimming and Auxiliary Multi-step Prediction), a framework utilizing a dual-end optimization strategy. We argue that effective SID learning requires simultaneously addressing low input information density and sparse output supervision. On the input side, Semantic Adaptive Pruning (SAP) dynamically filters redundancy during the forward pass, converting noise-laden sequences into compact, information-rich representations. On the output side, Multi-step Auxiliary Prediction (MAP) employs a multi-token objective to densify feedback, strengthening long-range dependency capture and ensuring robust learning signals despite compressed inputs. Unifying input purification and signal amplification, STAMP enhances both training efficiency and representation capability. Experiments on public Amazon and large-scale industrial datasets show STAMP achieves 1.23--1.38$\\times$ speedup and 17.2\\%--54.7\\% VRAM reduction while maintaining or improving performance across multiple architectures.",
+      "published": "2026-04-07T02:00:23Z",
+      "updated": "2026-04-07T02:00:23Z",
+      "categories": [
+        "cs.IR"
+      ],
+      "pdfUrl": "https://arxiv.org/pdf/2604.05329v1",
+      "absUrl": "https://arxiv.org/abs/2604.05329v1",
+      "industrySource": "Amazon"
+    },
+    {
+      "id": "http://arxiv.org/abs/2604.04976v1",
+      "title": "Tencent Advertising Algorithm Challenge 2025: All-Modality Generative Recommendation",
+      "authors": [
+        "Junwei Pan",
+        "Wei Xue",
+        "Chao Zhou",
+        "Xing Zhou",
+        "Lunan Fan",
+        "Yanbo Wang",
+        "Haoran Xin",
+        "Zhiyu Hu",
+        "Yaozheng Wang",
+        "Fengye Xu",
+        "Yurong Yang",
+        "Xiaotian Li",
+        "Junbang Huo",
+        "Wentao Ning",
+        "Yuliang Sun",
+        "Chengguo Yin",
+        "Jun Zhang",
+        "Shudong Huang",
+        "Lei Xiao",
+        "Huan Yu",
+        "Irwin King",
+        "Haijie Gu",
+        "Jie Jiang"
+      ],
+      "affiliations": [],
+      "abstract": "Generative recommender systems are rapidly emerging as a new paradigm for recommendation, where collaborative identifiers and/or multi-modal content are mapped into discrete token spaces and user behavior is modelled with autoregressive sequence models. Despite progress on multi-modal recommendation datasets, there is still a lack of public benchmarks that jointly offer large-scale, realistic and fully all-modality data designed specifically for generative recommendation (GR) in industrial advertising. To foster research in this direction, we organised the Tencent Advertising Algorithm Challenge 2025, a global competition built on top of two all-modality datasets for GR: TencentGR-1M and TencentGR-10M. Both datasets are constructed from real de-identified Tencent Ads logs and contain rich collaborative IDs and multi-modal representations extracted with state-of-the-art embedding models. The preliminary track (TencentGR-1M) provides 1 million user sequences with up to 100 interacted items each, where each interaction is labeled with exposure and click signals, while the final track (TencentGR-10M) scales this to 10 million users and explicitly distinguishes between click and conversion events at both the sequence and target level. This paper presents the task definition, data construction process, feature schema, baseline GR model, evaluation protocol, and key findings from top-ranked and award-winning solutions. Our datasets focus on multi-modal sequence generation in an advertising setting and introduce weighted evaluation for high-value conversion events. We release our datasets at https://huggingface.co/datasets/TAAC2025 and baseline implementations at https://github.com/TencentAdvertisingAlgorithmCompetition/baseline_2025 to enable future research on all-modality generative recommendation at an industrial scale. The official website is https://algo.qq.com/2025.",
+      "published": "2026-04-04T17:05:15Z",
+      "updated": "2026-04-04T17:05:15Z",
+      "categories": [
+        "cs.IR"
+      ],
+      "pdfUrl": "https://arxiv.org/pdf/2604.04976v1",
+      "absUrl": "https://arxiv.org/abs/2604.04976v1",
+      "industrySource": "Tencent"
+    },
     {
       "id": "http://arxiv.org/abs/2604.02684v1",
       "title": "MBGR: Multi-Business Prediction for Generative Recommendation at Meituan",
@@ -315,33 +375,29 @@
       "industrySource": "NetEase"
     },
     {
-      "id": "http://arxiv.org/abs/2602.13134v1",
-      "title": "Awakening Dormant Users: Generative Recommendation with Counterfactual Functional Role Reasoning",
+      "id": "http://arxiv.org/abs/2604.05113v1",
+      "title": "CRAB: Codebook Rebalancing for Bias Mitigation in Generative Recommendation",
       "authors": [
-        "Huishi Luo",
-        "Shuokai Li",
-        "Hanchen Yang",
-        "Zhongbo Sun",
-        "Haojie Ding",
-        "Boheng Zhang",
-        "Zijia Cai",
-        "Renliang Qian",
-        "Fan Yang",
-        "Tingting Gao",
-        "Chenyi Lei",
-        "Wenwu Ou",
-        "Fuzhen Zhuang"
+        "Zezhong Fan",
+        "Ziheng Chen",
+        "Luyi Ma",
+        "Jin Huang",
+        "Lalitesh Morishetti",
+        "Kaushiki Nag",
+        "Sushant Kumar",
+        "Kannan Achan"
       ],
       "affiliations": [],
-      "abstract": "Awakening dormant users, who remain engaged but exhibit low conversion, is a pivotal driver for incremental GMV growth in large-scale e-commerce platforms. However, existing approaches often yield suboptimal results since they typically rely on single-step estimation of an item's intrinsic value (e.g., immediate click probability). This mechanism overlooks the instrumental effect of items, where specific interactions act as triggers to shape latent intent and drive subsequent decisions along a conversion trajectory. To bridge this gap, we propose RoleGen, a novel framework that synergizes a Conversion Trajectory Reasoner with a Generative Behavioral Backbone. Specifically, the LLM-based Reasoner explicitly models the context-dependent Functional Role of items to reconstruct intent evolution. It further employs counterfactual inference to simulate diverse conversion paths, effectively mitigating interest collapse. These reasoned candidate items are integrated into the generative backbone, which is optimized via a collaborative \"Reasoning-Execution-Feedback-Reflection\" closed-loop strategy to ensure grounded execution. Extensive offline experiments and online A/B testing on the Kuaishou e-commerce platform demonstrate that RoleGen achieves a 6.2% gain in Recall@1 and a 7.3% increase in online order volume, confirming its effectiveness in activating the dormant user base.",
-      "published": "2026-02-13T17:33:48Z",
-      "updated": "2026-02-13T17:33:48Z",
+      "abstract": "Generative recommendation (GeneRec) has introduced a new paradigm that represents items as discrete semantic tokens and predicts items in a generative manner. Despite its strong performance across multiple recommendation tasks, existing GeneRec approaches still suffer from severe popularity bias and may even exacerbate it. In this work, we conduct a comprehensive empirical analysis to uncover the root causes of this phenomenon, yielding two core insights: 1) imbalanced tokenization inherits and can further amplify popularity bias from historical item interactions; 2) current training procedures disproportionately favor popular tokens while neglecting semantic relationships among tokens, thereby intensifying popularity bias. Building on these insights, we propose CRAB, a post-hoc debiasing strategy for GeneRec that alleviates popularity bias by mitigating frequency imbalance among semantic tokens. Specifically, given a well-trained model, we first rebalance the codebook by splitting over-popular tokens while preserving their hierarchical semantic structure. Based on the adjusted codebook, we further introduce a tree-structured regularizer to enhance semantic consistency, encouraging more informative representations for unpopular tokens during training. Experiments on real-world datasets demonstrate that CRAB significantly improves recommendation performance by effectively alleviating popularity bias.",
+      "published": "2026-04-06T19:18:24Z",
+      "updated": "2026-04-06T19:18:24Z",
       "categories": [
-        "cs.IR"
+        "cs.IR",
+        "cs.AI"
       ],
-      "pdfUrl": "https://arxiv.org/pdf/2602.13134v1",
-      "absUrl": "https://arxiv.org/abs/2602.13134v1",
-      "industrySource": "Kuaishou"
+      "pdfUrl": "https://arxiv.org/pdf/2604.05113v1",
+      "absUrl": "https://arxiv.org/abs/2604.05113v1",
+      "industrySource": ""
     },
     {
       "id": "http://arxiv.org/abs/2604.04427v1",
@@ -1197,48 +1253,6 @@
       ],
       "pdfUrl": "https://arxiv.org/pdf/2602.13631v1",
       "absUrl": "https://arxiv.org/abs/2602.13631v1",
-      "industrySource": ""
-    },
-    {
-      "id": "http://arxiv.org/abs/2602.13573v1",
-      "title": "Unleash the Potential of Long Semantic IDs for Generative Recommendation",
-      "authors": [
-        "Ming Xia",
-        "Zhiqin Zhou",
-        "Guoxin Ma",
-        "Dongmin Huang"
-      ],
-      "affiliations": [],
-      "abstract": "Semantic ID-based generative recommendation represents items as sequences of discrete tokens, but it inherently faces a trade-off between representational expressiveness and computational efficiency. Residual Quantization (RQ)-based approaches restrict semantic IDs to be short to enable tractable sequential modeling, while Optimized Product Quantization (OPQ)-based methods compress long semantic IDs through naive rigid aggregation, inevitably discarding fine-grained semantic information. To resolve this dilemma, we propose ACERec, a novel framework that decouples the granularity gap between fine-grained tokenization and efficient sequential modeling. It employs an Attentive Token Merger to distill long expressive semantic tokens into compact latents and introduces a dedicated Intent Token serving as a dynamic prediction anchor. To capture cohesive user intents, we guide the learning process via a dual-granularity objective, harmonizing fine-grained token prediction with global item-level semantic alignment. Extensive experiments on six real-world benchmarks demonstrate that ACERec consistently outperforms state-of-the-art baselines, achieving an average improvement of 14.40\\% in NDCG@10, effectively reconciling semantic expressiveness and computational efficiency.",
-      "published": "2026-02-14T03:15:31Z",
-      "updated": "2026-02-14T03:15:31Z",
-      "categories": [
-        "cs.IR"
-      ],
-      "pdfUrl": "https://arxiv.org/pdf/2602.13573v1",
-      "absUrl": "https://arxiv.org/abs/2602.13573v1",
-      "industrySource": ""
-    },
-    {
-      "id": "http://arxiv.org/abs/2602.12631v1",
-      "title": "AI Agents for Inventory Control: Human-LLM-OR Complementarity",
-      "authors": [
-        "Jackie Baek",
-        "Yaopeng Fu",
-        "Will Ma",
-        "Tianyi Peng"
-      ],
-      "affiliations": [],
-      "abstract": "Inventory control is a fundamental operations problem in which ordering decisions are traditionally guided by theoretically grounded operations research (OR) algorithms. However, such algorithms often rely on rigid modeling assumptions and can perform poorly when demand distributions shift or relevant contextual information is unavailable. Recent advances in large language models (LLMs) have generated interest in AI agents that can reason flexibly and incorporate rich contextual signals, but it remains unclear how best to incorporate LLM-based methods into traditional decision-making pipelines. We study how OR algorithms, LLMs, and humans can interact and complement each other in a multi-period inventory control setting. We construct InventoryBench, a benchmark of over 1,000 inventory instances spanning both synthetic and real-world demand data, designed to stress-test decision rules under demand shifts, seasonality, and uncertain lead times. Through this benchmark, we find that OR-augmented LLM methods outperform either method in isolation, suggesting that these methods are complementary rather than substitutes. We further investigate the role of humans through a controlled classroom experiment that embeds LLM recommendations into a human-in-the-loop decision pipeline. Contrary to prior findings that human-AI collaboration can degrade performance, we show that, on average, human-AI teams achieve higher profits than either humans or AI agents operating alone. Beyond this population-level finding, we formalize an individual-level complementarity effect and derive a distribution-free lower bound on the fraction of individuals who benefit from AI collaboration; empirically, we find this fraction to be substantial.",
-      "published": "2026-02-13T05:23:46Z",
-      "updated": "2026-02-13T05:23:46Z",
-      "categories": [
-        "cs.AI",
-        "cs.HC",
-        "cs.LG"
-      ],
-      "pdfUrl": "https://arxiv.org/pdf/2602.12631v1",
-      "absUrl": "https://arxiv.org/abs/2602.12631v1",
       "industrySource": ""
     }
   ]
