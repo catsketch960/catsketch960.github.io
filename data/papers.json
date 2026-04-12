@@ -1,7 +1,28 @@
 {
-  "lastUpdated": "2026-04-09T03:50:48Z",
-  "totalResults": 567,
+  "lastUpdated": "2026-04-12T04:13:39Z",
+  "totalResults": 571,
   "papers": [
+    {
+      "id": "http://arxiv.org/abs/2604.07825v1",
+      "title": "Filling the Gaps: Selective Knowledge Augmentation for LLM Recommenders",
+      "authors": [
+        "Jaehyun Lee",
+        "Sanghwan Jang",
+        "SeongKu Kang",
+        "Hwanjo Yu"
+      ],
+      "affiliations": [],
+      "abstract": "Large language models (LLMs) have recently emerged as powerful training-free recommenders. However, their knowledge of individual items is inevitably uneven due to imbalanced information exposure during pretraining, a phenomenon we refer to as knowledge gap problem. To address this, most prior methods have employed a naive uniform augmentation that appends external information for every item in the input prompt. However, this approach not only wastes limited context budget on redundant augmentation for well-known items but can also hinder the model's effective reasoning. To this end, we propose KnowSA_CKP (Knowledge-aware Selective Augmentation with Comparative Knowledge Probing) to mitigate the knowledge gap problem. KnowSA_CKP estimates the LLM's internal knowledge by evaluating its capability to capture collaborative relationships and selectively injects additional information only where it is most needed. By avoiding unnecessary augmentation for well-known items, KnowSA_CKP focuses on items that benefit most from knowledge supplementation, thereby making more effective use of the context budget. KnowSA_CKP requires no fine-tuning step, and consistently improves both recommendation accuracy and context efficiency across four real-world datasets.",
+      "published": "2026-04-09T05:27:04Z",
+      "updated": "2026-04-09T05:27:04Z",
+      "categories": [
+        "cs.IR",
+        "cs.AI"
+      ],
+      "pdfUrl": "https://arxiv.org/pdf/2604.07825v1",
+      "absUrl": "https://arxiv.org/abs/2604.07825v1",
+      "industrySource": "Microsoft"
+    },
     {
       "id": "http://arxiv.org/abs/2604.05329v1",
       "title": "Semantic Trimming and Auxiliary Multi-step Prediction for Generative Recommendation",
@@ -349,30 +370,73 @@
       "industrySource": "Amazon"
     },
     {
-      "id": "http://arxiv.org/abs/2602.13581v1",
-      "title": "Climber-Pilot: A Non-Myopic Generative Recommendation Model Towards Better Instruction-Following",
+      "id": "http://arxiv.org/abs/2604.08525v1",
+      "title": "Ads in AI Chatbots? An Analysis of How Large Language Models Navigate Conflicts of Interest",
       "authors": [
-        "Da Guo",
-        "Shijia Wang",
-        "Qiang Xiao",
-        "Yintao Ren",
-        "Weisheng Li",
-        "Songpei Xu",
-        "Ming Yue",
-        "Bin Huang",
-        "Guanlin Wu",
-        "Chuanjiang Luo"
+        "Addison J. Wu",
+        "Ryan Liu",
+        "Shuyue Stella Li",
+        "Yulia Tsvetkov",
+        "Thomas L. Griffiths"
       ],
       "affiliations": [],
-      "abstract": "Generative retrieval has emerged as a promising paradigm in recommender systems, offering superior sequence modeling capabilities over traditional dual-tower architectures. However, in large-scale industrial scenarios, such models often suffer from inherent myopia: due to single-step inference and strict latency constraints, they tend to collapse diverse user intents into locally optimal predictions, failing to capture long-horizon and multi-item consumption patterns. Moreover, real-world retrieval systems must follow explicit retrieval instructions, such as category-level control and policy constraints. Incorporating such instruction-following behavior into generative retrieval remains challenging, as existing conditioning or post-hoc filtering approaches often compromise relevance or efficiency. In this work, we present Climber-Pilot, a unified generative retrieval framework to address both limitations. First, we introduce Time-Aware Multi-Item Prediction (TAMIP), a novel training paradigm designed to mitigate inherent myopia in generative retrieval. By distilling long-horizon, multi-item foresight into model parameters through time-aware masking, TAMIP alleviates locally optimal predictions while preserving efficient single-step inference. Second, to support flexible instruction-following retrieval, we propose Condition-Guided Sparse Attention (CGSA), which incorporates business constraints directly into the generative process via sparse attention, without introducing additional inference steps. Extensive offline experiments and online A/B testing at NetEase Cloud Music, one of the largest music streaming platforms, demonstrate that Climber-Pilot significantly outperforms state-of-the-art baselines, achieving a 4.24\\% lift of the core business metric.",
-      "published": "2026-02-14T03:46:06Z",
-      "updated": "2026-02-14T03:46:06Z",
+      "abstract": "Today's large language models (LLMs) are trained to align with user preferences through methods such as reinforcement learning. Yet models are beginning to be deployed not merely to satisfy users, but also to generate revenue for the companies that created them through advertisements. This creates the potential for LLMs to face conflicts of interest, where the most beneficial response to a user may not be aligned with the company's incentives. For instance, a sponsored product may be more expensive but otherwise equal to another; in this case, what does (and should) the LLM recommend to the user? In this paper, we provide a framework for categorizing the ways in which conflicting incentives might lead LLMs to change the way they interact with users, inspired by literature from linguistics and advertising regulation. We then present a suite of evaluations to examine how current models handle these tradeoffs. We find that a majority of LLMs forsake user welfare for company incentives in a multitude of conflict of interest situations, including recommending a sponsored product almost twice as expensive (Grok 4.1 Fast, 83%), surfacing sponsored options to disrupt the purchasing process (GPT 5.1, 94%), and concealing prices in unfavorable comparisons (Qwen 3 Next, 24%). Behaviors also vary strongly with levels of reasoning and users' inferred socio-economic status. Our results highlight some of the hidden risks to users that can emerge when companies begin to subtly incentivize advertisements in chatbots.",
+      "published": "2026-04-09T17:57:50Z",
+      "updated": "2026-04-09T17:57:50Z",
       "categories": [
-        "cs.IR"
+        "cs.AI",
+        "cs.CL",
+        "cs.CY"
       ],
-      "pdfUrl": "https://arxiv.org/pdf/2602.13581v1",
-      "absUrl": "https://arxiv.org/abs/2602.13581v1",
-      "industrySource": "NetEase"
+      "pdfUrl": "https://arxiv.org/pdf/2604.08525v1",
+      "absUrl": "https://arxiv.org/abs/2604.08525v1",
+      "industrySource": ""
+    },
+    {
+      "id": "http://arxiv.org/abs/2604.07813v1",
+      "title": "Agentivism: a learning theory for the age of artificial intelligence",
+      "authors": [
+        "Lixiang Yan",
+        "Dragan Gašević"
+      ],
+      "affiliations": [],
+      "abstract": "Learning theories have historically changed when the conditions of learning evolved. Generative and agentic AI create a new condition by allowing learners to delegate explanation, writing, problem solving, and other cognitive work to systems that can generate, recommend, and sometimes act on the learner's behalf. This creates a fundamental challenge for learning theory: successful performance can no longer be assumed to indicate learning. Learners may complete tasks effectively with AI support while developing less understanding, weaker judgment, and limited transferable capability. We argue that this problem is not fully captured by existing learning theories. Behaviourism, cognitivism, constructivism, and connectivism remain important, but they do not directly explain when AI-assisted performance becomes durable human capability. We propose Agentivism, a learning theory for human-AI interaction. Agentivism defines learning as durable growth in human capability through selective delegation to AI, epistemic monitoring and verification of AI contributions, reconstructive internalization of AI-assisted outputs, and transfer under reduced support. The importance of Agentivism lies in explaining how learning remains possible when intelligent delegation is easy and human-AI interaction is becoming a persistent and expanding part of human learning.",
+      "published": "2026-04-09T05:09:48Z",
+      "updated": "2026-04-09T05:09:48Z",
+      "categories": [
+        "cs.AI",
+        "cs.HC"
+      ],
+      "pdfUrl": "https://arxiv.org/pdf/2604.07813v1",
+      "absUrl": "https://arxiv.org/abs/2604.07813v1",
+      "industrySource": ""
+    },
+    {
+      "id": "http://arxiv.org/abs/2604.07739v1",
+      "title": "Efficient Dataset Selection for Continual Adaptation of Generative Recommenders",
+      "authors": [
+        "Cathy Jiao",
+        "Juan Elenter",
+        "Praveen Ravichandran",
+        "Bernd Huber",
+        "Joseph Cauteruccio",
+        "Todd Wasson",
+        "Timothy Heath",
+        "Chenyan Xiong",
+        "Mounia Lalmas",
+        "Paul Bennett"
+      ],
+      "affiliations": [],
+      "abstract": "Recommendation systems must continuously adapt to evolving user behavior, yet the volume of data generated in large-scale streaming environments makes frequent full retraining impractical. This work investigates how targeted data selection can mitigate performance degradation caused by temporal distributional drift while maintaining scalability. We evaluate a range of representation choices and sampling strategies for curating small but informative subsets of user interaction data. Our results demonstrate that gradient-based representations, coupled with distribution-matching, improve downstream model performance, achieving training efficiency gains while preserving robustness to drift. These findings highlight data curation as a practical mechanism for scalable monitoring and adaptive model updates in production-scale recommendation systems.",
+      "published": "2026-04-09T02:48:52Z",
+      "updated": "2026-04-09T02:48:52Z",
+      "categories": [
+        "cs.IR",
+        "cs.LG"
+      ],
+      "pdfUrl": "https://arxiv.org/pdf/2604.07739v1",
+      "absUrl": "https://arxiv.org/abs/2604.07739v1",
+      "industrySource": ""
     },
     {
       "id": "http://arxiv.org/abs/2604.05113v1",
@@ -1184,75 +1248,6 @@
       ],
       "pdfUrl": "https://arxiv.org/pdf/2602.20704v1",
       "absUrl": "https://arxiv.org/abs/2602.20704v1",
-      "industrySource": ""
-    },
-    {
-      "id": "http://arxiv.org/abs/2602.18283v1",
-      "title": "HyTRec: A Hybrid Temporal-Aware Attention Architecture for Long Behavior Sequential Recommendation",
-      "authors": [
-        "Lei Xin",
-        "Yuhao Zheng",
-        "Ke Cheng",
-        "Changjiang Jiang",
-        "Zifan Zhang",
-        "Fanhu Zeng"
-      ],
-      "affiliations": [],
-      "abstract": "Modeling long sequences of user behaviors has emerged as a critical frontier in generative recommendation. However, existing solutions face a dilemma: linear attention mechanisms achieve efficiency at the cost of retrieval precision due to limited state capacity, while softmax attention suffers from prohibitive computational overhead. To address this challenge, we propose HyTRec, a model featuring a Hybrid Attention architecture that explicitly decouples long-term stable preferences from short-term intent spikes. By assigning massive historical sequences to a linear attention branch and reserving a specialized softmax attention branch for recent interactions, our approach restores precise retrieval capabilities within industrial-scale contexts involving ten thousand interactions. To mitigate the lag in capturing rapid interest drifts within the linear layers, we furthermore design Temporal-Aware Delta Network (TADN) to dynamically upweight fresh behavioral signals while effectively suppressing historical noise. Empirical results on industrial-scale datasets confirm the superiority that our model maintains linear inference speed and outperforms strong baselines, notably delivering over 8% improvement in Hit Rate for users with ultra-long sequences with great efficiency.",
-      "published": "2026-02-20T15:11:40Z",
-      "updated": "2026-02-20T15:11:40Z",
-      "categories": [
-        "cs.IR",
-        "cs.AI"
-      ],
-      "pdfUrl": "https://arxiv.org/pdf/2602.18283v1",
-      "absUrl": "https://arxiv.org/abs/2602.18283v1",
-      "industrySource": ""
-    },
-    {
-      "id": "http://arxiv.org/abs/2602.14706v1",
-      "title": "Adaptive Autoguidance for Item-Side Fairness in Diffusion Recommender Systems",
-      "authors": [
-        "Zihan Li",
-        "Gustavo Escobedo",
-        "Marta Moscati",
-        "Oleg Lesota",
-        "Markus Schedl"
-      ],
-      "affiliations": [],
-      "abstract": "Diffusion recommender systems achieve strong recommendation accuracy but often suffer from popularity bias, resulting in unequal item exposure. To address this shortcoming, we introduce A2G-DiffRec, a diffusion recommender that incorporates adaptive autoguidance, where the main model is guided by a less-trained version of itself. Instead of using a fixed guidance weight, A2G-DiffRec learns to adaptively weigh the outputs of the main and weak models during training, supervised by a popularity regularization that promotes balanced exposure across items with different popularity levels. Experimental results on the MovieLens-1M, Foursquare-Tokyo, and Music4All-Onion datasets show that A2G-DiffRec is effective in enhancing item-side fairness at a marginal cost of accuracy reduction compared to existing guided diffusion recommenders and other non-diffusion baselines.",
-      "published": "2026-02-16T12:52:31Z",
-      "updated": "2026-02-16T12:52:31Z",
-      "categories": [
-        "cs.IR"
-      ],
-      "pdfUrl": "https://arxiv.org/pdf/2602.14706v1",
-      "absUrl": "https://arxiv.org/abs/2602.14706v1",
-      "industrySource": ""
-    },
-    {
-      "id": "http://arxiv.org/abs/2602.13631v1",
-      "title": "GEMs: Breaking the Long-Sequence Barrier in Generative Recommendation with a Multi-Stream Decoder",
-      "authors": [
-        "Yu Zhou",
-        "Chengcheng Guo",
-        "Kuo Cai",
-        "Ji Liu",
-        "Qiang Luo",
-        "Ruiming Tang",
-        "Han Li",
-        "Kun Gai",
-        "Guorui Zhou"
-      ],
-      "affiliations": [],
-      "abstract": "While generative recommendations (GR) possess strong sequential reasoning capabilities, they face significant challenges when processing extremely long user behavior sequences: the high computational cost forces practical sequence lengths to be limited, preventing models from capturing users' lifelong interests; meanwhile, the inherent \"recency bias\" of attention mechanisms further weakens learning from long-term history. To overcome this bottleneck, we propose GEMs (Generative rEcommendation with a Multi-stream decoder), a novel and unified framework designed to break the long-sequence barrier by capturing users' lifelong interaction sequences through a multi-stream perspective. Specifically, GEMs partitions user behaviors into three temporal streams$\\unicode{x2014}$Recent, Mid-term, and Lifecycle$\\unicode{x2014}$and employs tailored inference schemes for each: a one-stage real-time extractor for immediate dynamics, a lightweight indexer for cross attention to balance accuracy and cost for mid-term sequences, and a two-stage offline-online compression module for lifelong modeling. These streams are integrated via a parameter-free fusion strategy to enable holistic interest representation. Extensive experiments on large-scale industrial datasets demonstrate that GEMs significantly outperforms state-of-the-art methods in recommendation accuracy. Notably, GEMs is the first lifelong GR framework successfully deployed in a high-concurrency industrial environment, achieving superior inference efficiency while processing user sequences of over 100,000 interactions.",
-      "published": "2026-02-14T06:42:56Z",
-      "updated": "2026-02-14T06:42:56Z",
-      "categories": [
-        "cs.IR"
-      ],
-      "pdfUrl": "https://arxiv.org/pdf/2602.13631v1",
-      "absUrl": "https://arxiv.org/abs/2602.13631v1",
       "industrySource": ""
     }
   ]
