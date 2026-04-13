@@ -1,6 +1,6 @@
 {
-  "lastUpdated": "2026-04-12T04:13:39Z",
-  "totalResults": 571,
+  "lastUpdated": "2026-04-13T04:23:31Z",
+  "totalResults": 572,
   "papers": [
     {
       "id": "http://arxiv.org/abs/2604.07825v1",
@@ -351,23 +351,24 @@
       "industrySource": "Meta"
     },
     {
-      "id": "http://arxiv.org/abs/2602.18907v1",
-      "title": "DeepInterestGR: Mining Deep Multi-Interest Using Multi-Modal LLMs for Generative Recommendation",
+      "id": "http://arxiv.org/abs/2604.09087v1",
+      "title": "DIAURec: Dual-Intent Space Representation Optimization for Recommendation",
       "authors": [
-        "Yangchen Zeng"
+        "Yu Zhang",
+        "Yiwen Zhang",
+        "Yi Zhang",
+        "Lei Sang"
       ],
       "affiliations": [],
-      "abstract": "Recent generative recommendation frameworks have demonstrated remarkable scaling potential by reformulating item prediction as autoregressive Semantic ID (SID) generation. However, existing methods primarily rely on shallow behavioral signals, encoding items solely through surface-level textual features such as titles and descriptions. This reliance results in a critical Shallow Interest problem: the model fails to capture the latent, semantically rich interests underlying user interactions, limiting both personalization depth and recommendation interpretability. DeepInterestGR introduces three key innovations: (1) Multi-LLM Interest Mining (MLIM): We leverage multiple frontier LLMs along with their multi-modal variants to extract deep textual and visual interest representations through Chain-of-Thought prompting. (2) Reward-Labeled Deep Interest (RLDI): We employ a lightweight binary classifier to assign reward labels to mined interests, enabling effective supervision signals for reinforcement learning. (3) Interest-Enhanced Item Discretization (IEID): The curated deep interests are encoded into semantic embeddings and quantized into SID tokens via RQ-VAE. We adopt a two-stage training pipeline: supervised fine-tuning aligns the generative model with deep interest signals and collaborative filtering patterns, followed by reinforcement learning with GRPO optimized by our Interest-Aware Reward. Experiments on three Amazon Review benchmarks demonstrate that DeepInterestGR consistently outperforms state-of-the-art baselines across HR@K and NDCG@K metrics.",
-      "published": "2026-02-21T17:03:06Z",
-      "updated": "2026-02-21T17:03:06Z",
+      "abstract": "General recommender systems deliver personalized services by learning user and item representations, with the central challenge being how to capture latent user preferences. However, representations derived from sparse interactions often fail to comprehensively characterize user behaviors, thereby limiting recommendation effectiveness. Recent studies attempt to enhance user representations through sophisticated modeling strategies ($e.g.,$ intent or language modeling). Nevertheless, most works primarily concentrate on model interpretability instead of representation optimization. This imbalance has led to limited progress, as representation optimization is crucial for recommendation quality by promoting the affinity between users and their interacted items in the feature space, yet remains largely overlooked. To overcome these limitations, we propose DIAURec, a novel representation learning framework that unifies intent and language modeling for recommendation. DIAURec reconstructs representations based on the prototype and distribution intent spaces formed by collaborative and language signals. Furthermore, we design a comprehensive representation optimization strategy. Specifically, we adopts alignment and uniformity as the primary optimization objectives, and incorporates both coarse- and fine-grained matching to achieve effective alignment across different spaces, thereby enhancing representational consistency. Additionally, we further introduce intra-space and interaction regularization to enhance model robustness and prevent representation collapse in reconstructed space representation. Experiments on three public datasets against fifteen baseline methods show that DIAURec consistently outperforms state-of-the-art baselines, fully validating its effectiveness and superiority.",
+      "published": "2026-04-10T08:16:55Z",
+      "updated": "2026-04-10T08:16:55Z",
       "categories": [
-        "cs.LG",
-        "cs.CV",
-        "cs.CY"
+        "cs.IR"
       ],
-      "pdfUrl": "https://arxiv.org/pdf/2602.18907v1",
-      "absUrl": "https://arxiv.org/abs/2602.18907v1",
-      "industrySource": "Amazon"
+      "pdfUrl": "https://arxiv.org/pdf/2604.09087v1",
+      "absUrl": "https://arxiv.org/abs/2604.09087v1",
+      "industrySource": ""
     },
     {
       "id": "http://arxiv.org/abs/2604.08525v1",
