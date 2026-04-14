@@ -1,7 +1,29 @@
 {
-  "lastUpdated": "2026-04-13T04:23:31Z",
-  "totalResults": 572,
+  "lastUpdated": "2026-04-14T04:12:10Z",
+  "totalResults": 574,
   "papers": [
+    {
+      "id": "http://arxiv.org/abs/2604.11440v1",
+      "title": "R3-VAE: Reference Vector-Guided Rating Residual Quantization VAE for Generative Recommendation",
+      "authors": [
+        "Qiang Wan",
+        "Ze Yang",
+        "Dawei Yang",
+        "Ying Fan",
+        "Xin Yan",
+        "Siyang Liu"
+      ],
+      "affiliations": [],
+      "abstract": "Generative Recommendation (GR) has gained traction for its merits of superior performance and cold-start capability. As the vital role in GR, Semantic Identifiers (SIDs) represent item semantics through discrete tokens. However, current techniques for SID generation based on vector quantization face two main challenges: (i) training instability, stemming from insufficient gradient propagation through the straight-through estimator and sensitivity to initialization; and (ii) inefficient SID quality assessment, where industrial practice still depends on costly GR training and A/B testing. To address these challenges, we propose Reference Vector-Guided Rating Residual Quantization VAE (R3-VAE). This framework incorporates three key innovations: (i) a reference vector that functions as a semantic anchor for the initial features, thereby mitigating sensitivity to initialization; (ii) a dot product-based rating mechanism designed to stabilize the training process and prevent codebook collapse; and (iii) two SID evaluation metrics, Semantic Cohesion and Preference Discrimination, serving as regularization terms during training. Empirical results on six benchmarks demonstrate that R3-VAE outperforms state-of-the-art methods, achieving an average improvement of 14.2% in Recall@10 and 15.5% in NDCG@10 across three Amazon datasets. Furthermore, we perform GR training and online A/B tests on a prominent news recommendation platform. Our method achieves a 1.62% improvement in MRR and a 0.83% gain in StayTime/U versus baselines. Additionally, we employ R3-VAE to replace the item ID of CTR model, resulting in significant improvements in content cold start by 15.36%, corroborating the strong applicability and business value in industry-scale recommendation scenarios.",
+      "published": "2026-04-13T13:23:29Z",
+      "updated": "2026-04-13T13:23:29Z",
+      "categories": [
+        "cs.IR"
+      ],
+      "pdfUrl": "https://arxiv.org/pdf/2604.11440v1",
+      "absUrl": "https://arxiv.org/abs/2604.11440v1",
+      "industrySource": "Amazon"
+    },
     {
       "id": "http://arxiv.org/abs/2604.07825v1",
       "title": "Filling the Gaps: Selective Knowledge Augmentation for LLM Recommenders",
@@ -323,35 +345,24 @@
       "industrySource": "Kuaishou"
     },
     {
-      "id": "http://arxiv.org/abs/2602.20558v2",
-      "title": "From Logs to Language: Learning Optimal Verbalization for LLM-Based Recommendation at Industry Scale",
+      "id": "http://arxiv.org/abs/2604.11581v1",
+      "title": "Decomposing and Reducing Hidden Measurement Error in LLM Evaluation Pipelines",
       "authors": [
-        "Yucheng Shi",
-        "Ying Li",
-        "Yu Wang",
-        "Yesu Feng",
-        "Arjun Rao",
-        "Rein Houthooft",
-        "Shradha Sehgal",
-        "Jin Wang",
-        "Hao Zhen",
-        "Ninghao Liu",
-        "Linas Baltrunas"
+        "Solomon Messing"
       ],
       "affiliations": [],
-      "abstract": "Large language models (LLMs) are promising backbones for generative recommender systems, yet a key challenge remains underexplored: verbalization, i.e., converting structured user interaction logs into effective natural language inputs. Existing methods rely on rigid templates that simply concatenate fields, yielding suboptimal representations for recommendation. We propose a data-centric framework that learns verbalization for LLM-based recommendation. Using reinforcement learning, a verbalization agent transforms raw interaction histories into optimized textual contexts, with recommendation accuracy as the training signal. This agent learns to filter noise, incorporate relevant metadata, and reorganize information to improve downstream predictions. Experiments on a large-scale industrial streaming dataset from Netflix show that learned verbalization delivers up to 93% relative improvement in discovery item recommendation accuracy over template-based baselines. Further analysis reveals emergent strategies such as user interest summarization, noise removal, and syntax normalization, offering insights into effective context construction for LLM-based recommender systems.",
-      "published": "2026-02-24T05:15:24Z",
-      "updated": "2026-03-19T02:21:57Z",
+      "abstract": "LLM evaluations drive which models get deployed, which safety standards get adopted, and which research conclusions get published. Yet these scores carry hidden uncertainty: rephrasing the prompt, switching the judge model, or changing the temperature can shift results enough to flip rankings and reverse conclusions. Standard confidence intervals ignore this variance, producing under-coverage that worsens with more data. The unmeasured variance also creates an exploitable surface: model developers can optimize against measurement noise rather than genuine capability. This paper decomposes LLM pipeline uncertainty into its sources, distinguishes variance that shrinks with more data from sensitivity to researcher design choices, and projects the most efficient path to reducing total error. For benchmark builders, the same decomposition identifies which design choices contribute exploitable surface for gaming and prescribes designs that minimize it. Across ideology annotation, safety classification, MMLU benchmarking, and a human-validated propaganda audit, projection-optimized pipelines outperform 73\\% of possible naive pipelines against a human baseline. On MMLU, optimized budget allocation halves estimation error compared to standard single-prompt evaluation at equivalent cost. A small-sample variance estimation exercise is sufficient to derive confidence intervals that approach nominal coverage when the model includes the relevant pipeline facets, and to generate recommendations for reducing measurement error and improving benchmark robustness.",
+      "published": "2026-04-13T14:58:15Z",
+      "updated": "2026-04-13T14:58:15Z",
       "categories": [
-        "cs.AI",
-        "cs.IR"
+        "cs.CL"
       ],
-      "pdfUrl": "https://arxiv.org/pdf/2602.20558v2",
-      "absUrl": "https://arxiv.org/abs/2602.20558v2",
-      "industrySource": "Meta"
+      "pdfUrl": "https://arxiv.org/pdf/2604.11581v1",
+      "absUrl": "https://arxiv.org/abs/2604.11581v1",
+      "industrySource": ""
     },
     {
-      "id": "http://arxiv.org/abs/2604.09087v1",
+      "id": "http://arxiv.org/abs/2604.09087v2",
       "title": "DIAURec: Dual-Intent Space Representation Optimization for Recommendation",
       "authors": [
         "Yu Zhang",
@@ -362,12 +373,12 @@
       "affiliations": [],
       "abstract": "General recommender systems deliver personalized services by learning user and item representations, with the central challenge being how to capture latent user preferences. However, representations derived from sparse interactions often fail to comprehensively characterize user behaviors, thereby limiting recommendation effectiveness. Recent studies attempt to enhance user representations through sophisticated modeling strategies ($e.g.,$ intent or language modeling). Nevertheless, most works primarily concentrate on model interpretability instead of representation optimization. This imbalance has led to limited progress, as representation optimization is crucial for recommendation quality by promoting the affinity between users and their interacted items in the feature space, yet remains largely overlooked. To overcome these limitations, we propose DIAURec, a novel representation learning framework that unifies intent and language modeling for recommendation. DIAURec reconstructs representations based on the prototype and distribution intent spaces formed by collaborative and language signals. Furthermore, we design a comprehensive representation optimization strategy. Specifically, we adopts alignment and uniformity as the primary optimization objectives, and incorporates both coarse- and fine-grained matching to achieve effective alignment across different spaces, thereby enhancing representational consistency. Additionally, we further introduce intra-space and interaction regularization to enhance model robustness and prevent representation collapse in reconstructed space representation. Experiments on three public datasets against fifteen baseline methods show that DIAURec consistently outperforms state-of-the-art baselines, fully validating its effectiveness and superiority.",
       "published": "2026-04-10T08:16:55Z",
-      "updated": "2026-04-10T08:16:55Z",
+      "updated": "2026-04-13T01:23:30Z",
       "categories": [
         "cs.IR"
       ],
-      "pdfUrl": "https://arxiv.org/pdf/2604.09087v1",
-      "absUrl": "https://arxiv.org/abs/2604.09087v1",
+      "pdfUrl": "https://arxiv.org/pdf/2604.09087v2",
+      "absUrl": "https://arxiv.org/abs/2604.09087v2",
       "industrySource": ""
     },
     {
@@ -1227,28 +1238,6 @@
       ],
       "pdfUrl": "https://arxiv.org/pdf/2602.21677v1",
       "absUrl": "https://arxiv.org/abs/2602.21677v1",
-      "industrySource": ""
-    },
-    {
-      "id": "http://arxiv.org/abs/2602.20704v1",
-      "title": "IntRR: A Framework for Integrating SID Redistribution and Length Reduction",
-      "authors": [
-        "Zesheng Wang",
-        "Longfei Xu",
-        "Weidong Deng",
-        "Huimin Yan",
-        "Kaikui Liu",
-        "Xiangxiang Chu"
-      ],
-      "affiliations": [],
-      "abstract": "Generative Recommendation (GR) has emerged as a transformative paradigm that reformulates the traditional cascade ranking system into a sequence-to-item generation task, facilitated by the use of discrete Semantic IDs (SIDs). However, current SIDs are suboptimal as the indexing objectives (Stage 1) are misaligned with the actual recommendation goals (Stage 2). Since these identifiers remain static (Stage 2), the backbone model lacks the flexibility to adapt them to the evolving complexities of user interactions. Furthermore, the prevailing strategy of flattening hierarchical SIDs into token sequences leads to sequence length inflation, resulting in prohibitive computational overhead and inference latency. To address these challenges, we propose IntRR, a novel framework that integrates objective-aligned SID Redistribution and structural Length Reduction. By leveraging item-specific Unique IDs (UIDs) as collaborative anchors, this approach dynamically redistributes semantic weights across hierarchical codebook layers. Concurrently, IntRR handles the SID hierarchy recursively, eliminating the need to flatten sequences. This ensures a fixed cost of one token per item. Extensive experiments on benchmark datasets demonstrate that IntRR yields substantial improvements over representative generative baselines, achieving superior performance in both recommendation accuracy and efficiency.",
-      "published": "2026-02-24T09:09:40Z",
-      "updated": "2026-02-24T09:09:40Z",
-      "categories": [
-        "cs.IR"
-      ],
-      "pdfUrl": "https://arxiv.org/pdf/2602.20704v1",
-      "absUrl": "https://arxiv.org/abs/2602.20704v1",
       "industrySource": ""
     }
   ]
