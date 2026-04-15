@@ -1,9 +1,9 @@
 {
-  "lastUpdated": "2026-04-14T04:12:10Z",
-  "totalResults": 574,
+  "lastUpdated": "2026-04-15T04:11:20Z",
+  "totalResults": 575,
   "papers": [
     {
-      "id": "http://arxiv.org/abs/2604.11440v1",
+      "id": "http://arxiv.org/abs/2604.11440v2",
       "title": "R3-VAE: Reference Vector-Guided Rating Residual Quantization VAE for Generative Recommendation",
       "authors": [
         "Qiang Wan",
@@ -14,14 +14,14 @@
         "Siyang Liu"
       ],
       "affiliations": [],
-      "abstract": "Generative Recommendation (GR) has gained traction for its merits of superior performance and cold-start capability. As the vital role in GR, Semantic Identifiers (SIDs) represent item semantics through discrete tokens. However, current techniques for SID generation based on vector quantization face two main challenges: (i) training instability, stemming from insufficient gradient propagation through the straight-through estimator and sensitivity to initialization; and (ii) inefficient SID quality assessment, where industrial practice still depends on costly GR training and A/B testing. To address these challenges, we propose Reference Vector-Guided Rating Residual Quantization VAE (R3-VAE). This framework incorporates three key innovations: (i) a reference vector that functions as a semantic anchor for the initial features, thereby mitigating sensitivity to initialization; (ii) a dot product-based rating mechanism designed to stabilize the training process and prevent codebook collapse; and (iii) two SID evaluation metrics, Semantic Cohesion and Preference Discrimination, serving as regularization terms during training. Empirical results on six benchmarks demonstrate that R3-VAE outperforms state-of-the-art methods, achieving an average improvement of 14.2% in Recall@10 and 15.5% in NDCG@10 across three Amazon datasets. Furthermore, we perform GR training and online A/B tests on a prominent news recommendation platform. Our method achieves a 1.62% improvement in MRR and a 0.83% gain in StayTime/U versus baselines. Additionally, we employ R3-VAE to replace the item ID of CTR model, resulting in significant improvements in content cold start by 15.36%, corroborating the strong applicability and business value in industry-scale recommendation scenarios.",
+      "abstract": "Generative Recommendation (GR) has gained traction for its merits of superior performance and cold-start capability. As the vital role in GR, Semantic Identifiers (SIDs) represent item semantics through discrete tokens. However, current techniques for SID generation based on vector quantization face two main challenges: (i) training instability, stemming from insufficient gradient propagation through the straight-through estimator and sensitivity to initialization; and (ii) inefficient SID quality assessment, where industrial practice still depends on costly GR training and A/B testing. To address these challenges, we propose Reference Vector-Guided Rating Residual Quantization VAE (R3-VAE). This framework incorporates three key innovations: (i) a reference vector that functions as a semantic anchor for the initial features, thereby mitigating sensitivity to initialization; (ii) a dot product-based rating mechanism designed to stabilize the training process and prevent codebook collapse; and (iii) two SID evaluation metrics, Semantic Cohesion and Preference Discrimination, serving as regularization terms during training. Empirical results on six benchmarks demonstrate that R3-VAE outperforms state-of-the-art methods, achieving an average improvement of 14.2% in Recall@10 and 15.5% in NDCG@10 across three Amazon datasets. Furthermore, we perform GR training and online A/B tests on Toutiao. Our method achieves a 1.62% improvement in MRR and a 0.83% gain in StayTime/U versus baselines. Additionally, we employ R3-VAE to replace the item ID of CTR model, resulting in significant improvements in content cold start by 15.36%, corroborating the strong applicability and business value in industry-scale recommendation scenarios.",
       "published": "2026-04-13T13:23:29Z",
-      "updated": "2026-04-13T13:23:29Z",
+      "updated": "2026-04-14T06:46:15Z",
       "categories": [
         "cs.IR"
       ],
-      "pdfUrl": "https://arxiv.org/pdf/2604.11440v1",
-      "absUrl": "https://arxiv.org/abs/2604.11440v1",
+      "pdfUrl": "https://arxiv.org/pdf/2604.11440v2",
+      "absUrl": "https://arxiv.org/abs/2604.11440v2",
       "industrySource": "Amazon"
     },
     {
@@ -343,6 +343,28 @@
       "pdfUrl": "https://arxiv.org/pdf/2602.22732v3",
       "absUrl": "https://arxiv.org/abs/2602.22732v3",
       "industrySource": "Kuaishou"
+    },
+    {
+      "id": "http://arxiv.org/abs/2604.12234v1",
+      "title": "UniRec: Bridging the Expressive Gap between Generative and Discriminative Recommendation via Chain-of-Attribute",
+      "authors": [
+        "Ziliang Wang",
+        "Gaoyun Lin",
+        "Xuesi Wang",
+        "Shaoqiang Liang",
+        "Yili Huang",
+        "Weijie Bian"
+      ],
+      "affiliations": [],
+      "abstract": "Generative Recommendation (GR) reframes retrieval and ranking as autoregressive decoding over Semantic IDs (SIDs), unifying the multi-stage pipeline into a single model. Yet a fundamental expressive gap persists: discriminative models score items with direct feature access, enabling explicit user-item crossing, whereas GR decodes over compact SID tokens without item-side signal. We formalize this via Bayes' theorem, showing ranking by p(y|f,u) is equivalent to ranking by p(f|y,u), which factorizes autoregressively over item features. This establishes that a generative model with full feature access is as expressive as its discriminative counterpart; any practical gap stems solely from incomplete feature coverage. We propose UniRec with Chain-of-Attribute (CoA) as its core mechanism. CoA prefixes each SID sequence with structured attribute tokens--category, seller, brand--before decoding the SID itself, recovering the item-side feature crossing that discriminative models exploit. Because items sharing identical attributes cluster in adjacent SID regions, attribute conditioning yields a measurable per-step entropy reduction H(s_k|s_{<k},a) < H(s_k|s_{<k}), narrowing the search space and stabilizing beam search trajectories. We further address two deployment challenges: Capacity-constrained SID introduces exposure-weighted capacity penalties into residual quantization to suppress token collapse and the Matthew effect across SID layers; Conditional Decoding Context (CDC) combines Task-Conditioned BOS with hash-based Content Summaries, injecting scenario-conditioned signals at each decoding step. A joint RFT and DPO framework aligns the model with business objectives beyond distribution matching. Experiments show UniRec outperforms the strongest baseline by +22.6% HR@50 overall and +15.5% on high-value orders, with online A/B tests confirming significant business metric gains.",
+      "published": "2026-04-14T03:13:50Z",
+      "updated": "2026-04-14T03:13:50Z",
+      "categories": [
+        "cs.IR"
+      ],
+      "pdfUrl": "https://arxiv.org/pdf/2604.12234v1",
+      "absUrl": "https://arxiv.org/abs/2604.12234v1",
+      "industrySource": ""
     },
     {
       "id": "http://arxiv.org/abs/2604.11581v1",
@@ -737,8 +759,8 @@
       "industrySource": ""
     },
     {
-      "id": "http://arxiv.org/abs/2603.19693v1",
-      "title": "From Token to Item: Enhancing Large Language Models for Recommendation via Item-aware Attention Mechanism",
+      "id": "http://arxiv.org/abs/2603.19693v2",
+      "title": "Beyong Tokens: Item-aware Attention for LLM-based Recommendation",
       "authors": [
         "Xiaokun Zhang",
         "Bowei He",
@@ -749,12 +771,12 @@
       "affiliations": [],
       "abstract": "Large Language Models (LLMs) have recently gained increasing attention in the field of recommendation. Existing LLM-based methods typically represent items as token sequences, and apply attention layers on these tokens to generate recommendations. However, by inheriting the standard attention mechanism, these methods focus on modeling token-level relations. This token-centric focus overlooks the item as the fundamental unit of recommendation, preventing existing methods from effectively capturing collaborative relations at the item level. In this work, we revisit the role of tokens in LLM-driven recommendation and categorize their relations into two types: (1) intra-item token relations, which present the content semantics of an item, e.g., name, color, and size; and (2) inter-item token relations, which encode collaborative relations across items. Building on these insights, we propose a novel framework with an item-aware attention mechanism (IAM) to enhance LLMs for recommendation. Specifically, IAM devises two complementary attention layers: (1) an intra-item attention layer, which restricts attention to tokens within the same item, modeling item content semantics; and (2) an inter-item attention layer, which attends exclusively to token relations across items, capturing item collaborative relations. Through this stacked design, IAM explicitly emphasizes items as the fundamental units in recommendation, enabling LLMs to effectively exploit item-level collaborative relations. Extensive experiments on several public datasets demonstrate the effectiveness of IAM in enhancing LLMs for personalized recommendation.",
       "published": "2026-03-20T06:56:59Z",
-      "updated": "2026-03-20T06:56:59Z",
+      "updated": "2026-04-14T01:35:12Z",
       "categories": [
         "cs.IR"
       ],
-      "pdfUrl": "https://arxiv.org/pdf/2603.19693v1",
-      "absUrl": "https://arxiv.org/abs/2603.19693v1",
+      "pdfUrl": "https://arxiv.org/pdf/2603.19693v2",
+      "absUrl": "https://arxiv.org/abs/2603.19693v2",
       "industrySource": ""
     },
     {
@@ -1213,31 +1235,6 @@
       ],
       "pdfUrl": "https://arxiv.org/pdf/2602.21756v1",
       "absUrl": "https://arxiv.org/abs/2602.21756v1",
-      "industrySource": ""
-    },
-    {
-      "id": "http://arxiv.org/abs/2602.21677v1",
-      "title": "Trie-Aware Transformers for Generative Recommendation",
-      "authors": [
-        "Zhenxiang Xu",
-        "Jiawei Chen",
-        "Sirui Chen",
-        "Yong He",
-        "Jieyu Yang",
-        "Chuan Yuan",
-        "Ke Ding",
-        "Can Wang"
-      ],
-      "affiliations": [],
-      "abstract": "Generative recommendation (GR) aligns with advances in generative AI by casting next-item prediction as token-level generation rather than score-based ranking. Most GR methods adopt a two-stage pipeline: (i) \\textit{item tokenization}, which maps each item to a sequence of discrete, hierarchically organized tokens; and (ii) \\textit{autoregressive generation}, which predicts the next item's tokens conditioned on the tokens of user's interaction history. Although hierarchical tokenization induces a prefix tree (trie) over items, standard autoregressive modeling with conventional Transformers often flattens item tokens into a linear stream and overlooks the underlying topology. To address this, we propose TrieRec, a trie-aware generative recommendation method that augments Transformers with structural inductive biases via two positional encodings. First, a \\textit{trie-aware absolute positional encoding} aggregates a token's (node's) local structural context (\\eg depth, ancestors, and descendants) into the token representation. Second, a \\textit{topology-aware relative positional encoding} injects pairwise structural relations into self-attention to capture topology-induced semantic relatedness. TrieRec is also model-agnostic, efficient, and hyperparameter-free. In our experiments, we implement TrieRec within three representative GR backbones, achieving notably improvements of 8.83\\% on average across four real-world datasets.",
-      "published": "2026-02-25T08:25:16Z",
-      "updated": "2026-02-25T08:25:16Z",
-      "categories": [
-        "cs.IR",
-        "cs.LG"
-      ],
-      "pdfUrl": "https://arxiv.org/pdf/2602.21677v1",
-      "absUrl": "https://arxiv.org/abs/2602.21677v1",
       "industrySource": ""
     }
   ]
