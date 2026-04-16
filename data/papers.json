@@ -1,6 +1,6 @@
 {
-  "lastUpdated": "2026-04-15T04:11:20Z",
-  "totalResults": 575,
+  "lastUpdated": "2026-04-16T04:17:55Z",
+  "totalResults": 577,
   "papers": [
     {
       "id": "http://arxiv.org/abs/2604.11440v2",
@@ -247,6 +247,27 @@
       "industrySource": "Meta"
     },
     {
+      "id": "http://arxiv.org/abs/2603.12564v7",
+      "title": "Sell Me This Stock: Unsafe Recommendation Drift in LLM Agents",
+      "authors": [
+        "Zekun Wu",
+        "Adriano Koshiyama",
+        "Sahan Bulathwela",
+        "Maria Perez-Ortiz"
+      ],
+      "affiliations": [],
+      "abstract": "When a multi-turn LLM recommendation agent consumes incorrect tool data, it recommends unsuitable products while standard quality metrics stay near-perfect, a pattern we call evaluation blindness. We replay 23-turn financial advisory conversations across eight language models and find three counterintuitive failure modes. First, stronger models are not safer: the best-performing model has the highest quality score yet the worst suitability violations (99.1% of turns). This points to an alignment-grounding tension: the same property that makes it an effective agent, faithfully grounding its reasoning in tool data, makes it the most reliable executor of bad data. Across all models, 80% of risk-score citations repeat the manipulated value verbatim, and not a single turn out of 1,840 questions the tool outputs. Second, the failures are not cumulative: 95% of violations stem from the current turn's data rather than contamination building up in memory, meaning a single bad turn is enough to compromise safety. Third, while the model internally detects the manipulation (sparse autoencoder probing distinguishes adversarial from random perturbations), this awareness does not translate into safer output. Both representation-level interventions (recovering less than 6% of the gap) and prompt-level self-verification fail, as the agent ultimately relies on the same manipulated data. While incorporating suitability constraints into ranking metrics makes the gap visible, our findings suggest that safe deployment requires independent monitoring against a data source the agent cannot influence.",
+      "published": "2026-03-13T01:54:00Z",
+      "updated": "2026-04-14T19:21:26Z",
+      "categories": [
+        "cs.CL",
+        "cs.AI"
+      ],
+      "pdfUrl": "https://arxiv.org/pdf/2603.12564v7",
+      "absUrl": "https://arxiv.org/abs/2603.12564v7",
+      "industrySource": "Microsoft"
+    },
+    {
       "id": "http://arxiv.org/abs/2603.02709v1",
       "title": "Sensory-Aware Sequential Recommendation via Review-Distilled Representations",
       "authors": [
@@ -343,6 +364,29 @@
       "pdfUrl": "https://arxiv.org/pdf/2602.22732v3",
       "absUrl": "https://arxiv.org/abs/2602.22732v3",
       "industrySource": "Kuaishou"
+    },
+    {
+      "id": "http://arxiv.org/abs/2604.14051v1",
+      "title": "Enhancing Local Life Service Recommendation with Agentic Reasoning in Large Language Model",
+      "authors": [
+        "Shiteng Cao",
+        "Xiaochong Lan",
+        "Yuwei Du",
+        "Jie Feng",
+        "Yinxing Liu",
+        "Xinlei Shi",
+        "Yong Li"
+      ],
+      "affiliations": [],
+      "abstract": "Local life service recommendation is distinct from general recommendation scenarios due to its strong living need-driven nature. Fundamentally, accurately identifying a user's immediate living need and recommending the corresponding service are inextricably linked tasks. However, prior works typically treat them in isolation, failing to achieve a unified modeling of need prediction and service recommendation. In this paper, we propose a novel large language model based framework that jointly performs living need prediction and service recommendation. To address the challenge of noise in raw consumption data, we introduce a behavioral clustering approach that filters out accidental factors and selectively preserves typical patterns. This enables the model to learn a robust logical basis for need generation and spontaneously generalize to long-tail scenarios. To navigate the vast search space stemming from diverse needs, merchants, and complex mapping paths, we employ a curriculum learning strategy combined with reinforcement learning with verifiable rewards. This approach guides the model to sequentially learn the logic from need generation to category mapping and specific service selection. Extensive experiments demonstrate that our unified framework significantly enhances both living need prediction performance and recommendation accuracy, validating the effectiveness of jointly modeling living needs and user behaviors.",
+      "published": "2026-04-15T16:29:37Z",
+      "updated": "2026-04-15T16:29:37Z",
+      "categories": [
+        "cs.IR"
+      ],
+      "pdfUrl": "https://arxiv.org/pdf/2604.14051v1",
+      "absUrl": "https://arxiv.org/abs/2604.14051v1",
+      "industrySource": ""
     },
     {
       "id": "http://arxiv.org/abs/2604.12234v1",
@@ -1193,48 +1237,6 @@
       ],
       "pdfUrl": "https://arxiv.org/pdf/2602.22632v2",
       "absUrl": "https://arxiv.org/abs/2602.22632v2",
-      "industrySource": ""
-    },
-    {
-      "id": "http://arxiv.org/abs/2602.23396v1",
-      "title": "Complex Networks and the Drug Repositioning Problem",
-      "authors": [
-        "Felipe Bivort Haiek"
-      ],
-      "affiliations": [],
-      "abstract": "In this Master's thesis, the graph properties of a multi-level drug-protein network are studied, as well as how the network's shape has informed discoveries over the years, identifying primarily crawling discoveries and a smaller number of hopping discoveries. Finally, the network structure is used to inform a network diffusion recommendation system and to prioritize existing drugs for repurposing against proteins in organisms that cause Neglected Tropical Diseases.",
-      "published": "2026-02-26T04:16:51Z",
-      "updated": "2026-02-26T04:16:51Z",
-      "categories": [
-        "q-bio.MN",
-        "cs.LG"
-      ],
-      "pdfUrl": "https://arxiv.org/pdf/2602.23396v1",
-      "absUrl": "https://arxiv.org/abs/2602.23396v1",
-      "industrySource": ""
-    },
-    {
-      "id": "http://arxiv.org/abs/2602.21756v1",
-      "title": "Offline Reasoning for Efficient Recommendation: LLM-Empowered Persona-Profiled Item Indexing",
-      "authors": [
-        "Deogyong Kim",
-        "Junseong Lee",
-        "Jeongeun Lee",
-        "Changhoe Kim",
-        "Junguel Lee",
-        "Jungseok Lee",
-        "Dongha Lee"
-      ],
-      "affiliations": [],
-      "abstract": "Recent advances in large language models (LLMs) offer new opportunities for recommender systems by capturing the nuanced semantics of user interests and item characteristics through rich semantic understanding and contextual reasoning. In particular, LLMs have been employed as rerankers that reorder candidate items based on inferred user-item relevance. However, these approaches often require expensive online inference-time reasoning, leading to high latency that hampers real-world deployment. In this work, we introduce Persona4Rec, a recommendation framework that performs offline reasoning to construct interpretable persona representations of items, enabling lightweight and scalable real-time inference. In the offline stage, Persona4Rec leverages LLMs to reason over item reviews, inferring diverse user motivations that explain why different types of users may engage with an item; these inferred motivations are materialized as persona representations, providing multiple, human-interpretable views of each item. Unlike conventional approaches that rely on a single item representation, Persona4Rec learns to align user profiles with the most plausible item-side persona through a dedicated encoder, effectively transforming user-item relevance into user-persona relevance. At the online stage, this persona-profiled item index allows fast relevance computation without invoking expensive LLM reasoning. Extensive experiments show that Persona4Rec achieves performance comparable to recent LLM-based rerankers while substantially reducing inference time. Moreover, qualitative analysis confirms that persona representations not only drive efficient scoring but also provide intuitive, review-grounded explanations. These results demonstrate that Persona4Rec offers a practical and interpretable solution for next-generation recommender systems.",
-      "published": "2026-02-25T10:14:30Z",
-      "updated": "2026-02-25T10:14:30Z",
-      "categories": [
-        "cs.IR",
-        "cs.LG"
-      ],
-      "pdfUrl": "https://arxiv.org/pdf/2602.21756v1",
-      "absUrl": "https://arxiv.org/abs/2602.21756v1",
       "industrySource": ""
     }
   ]
