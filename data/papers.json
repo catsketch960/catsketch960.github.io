@@ -1,7 +1,28 @@
 {
-  "lastUpdated": "2026-04-16T04:17:55Z",
-  "totalResults": 577,
+  "lastUpdated": "2026-04-17T04:14:49Z",
+  "totalResults": 578,
   "papers": [
+    {
+      "id": "http://arxiv.org/abs/2604.14223v1",
+      "title": "TRACE: A Conversational Framework for Sustainable Tourism Recommendation with Agentic Counterfactual Explanations",
+      "authors": [
+        "Ashmi Banerjee",
+        "Adithi Satish",
+        "Wolfgang Wörndl",
+        "Yashar Deldjoo"
+      ],
+      "affiliations": [],
+      "abstract": "Traditional conversational travel recommender systems primarily optimize for user relevance and convenience, often reinforcing popular, overcrowded destinations and carbon-intensive travel choices. To address this, we present TRACE (Tourism Recommendation with Agentic Counterfactual Explanations), a multi-agent, LLM-based framework that promotes sustainable tourism through interactive nudging. TRACE uses a modular orchestrator-worker architecture where specialized agents elicit latent sustainability preferences, construct structured user personas, and generate recommendations that balance relevance with environmental impact. A key innovation lies in its use of agentic counterfactual explanations and LLM-driven clarifying questions, which together surface greener alternatives and refine understanding of intent, fostering user reflection without coercion. User studies and semantic alignment analyses demonstrate that TRACE effectively supports sustainable decision-making while preserving recommendation quality and interactive responsiveness. TRACE is implemented on Google's Agent Development Kit, with full code, Docker setup, prompts, and a publicly available demo video to ensure reproducibility. A project summary, including all resources, prompts, and demo access, is available at https://ashmibanerjee.github.io/trace-chatbot.",
+      "published": "2026-04-14T12:35:21Z",
+      "updated": "2026-04-14T12:35:21Z",
+      "categories": [
+        "cs.IR",
+        "cs.AI"
+      ],
+      "pdfUrl": "https://arxiv.org/pdf/2604.14223v1",
+      "absUrl": "https://arxiv.org/abs/2604.14223v1",
+      "industrySource": "Google"
+    },
     {
       "id": "http://arxiv.org/abs/2604.11440v2",
       "title": "R3-VAE: Reference Vector-Guided Rating Residual Quantization VAE for Generative Recommendation",
@@ -366,6 +387,28 @@
       "industrySource": "Kuaishou"
     },
     {
+      "id": "http://arxiv.org/abs/2604.14833v1",
+      "title": "Federated User Behavior Modeling for Privacy-Preserving LLM Recommendation",
+      "authors": [
+        "Lei Guo",
+        "Hongyun Yang",
+        "Pengjie Ren",
+        "Tong Chen",
+        "Hui Liu",
+        "Zhumin Chen"
+      ],
+      "affiliations": [],
+      "abstract": "Large Language Models have shown great success in recommender systems. However, the limited and sparse nature of user data often restricts the LLM's ability to effectively model behavior patterns. To address this, existing studies have explored cross-domain solutions by conducting Cross-Domain Recommendation tasks. But previous methods typically assume domains are overlapped and can be accessed readily. None of the LLM methods address the privacy-preserving issues in the CDR settings, that is, Privacy-Preserving Cross-Domain Recommendation. Conducting non-overlapping PPCDR with LLM is challenging since: 1)The inability to share user identity or behavioral data across domains impedes effective cross-domain alignment. 2)The heterogeneity of data modalities across domains complicates knowledge integration. 3)Fusing collaborative filtering signals from traditional recommendation models with LLMs is difficult, as they operate within distinct feature spaces. To address the above issues, we propose SF-UBM, a Semantic-enhanced Federated User Behavior Modeling method. Specifically, to deal with Challenge 1, we leverage natural language as a universal bridge to connect disjoint domains via a semantic-enhanced federated architecture. Here, text-based item representations are encrypted and shared, while user-specific data remains local. To handle Challenge 2, we design a Fact-counter Knowledge Distillation module to integrate domain-agnostic knowledge with domain-specific knowledge, across different data modalities. To tackle Challenge 3, we project pre-learned user preferences and cross-domain item representations into the soft prompt space, aligning behavioral and semantic spaces for effective LLM learning. We conduct extensive experiments on three pairs of real-world domains, and the experimental results demonstrate the effectiveness of SF-UBM compared to the recent SOTA methods.",
+      "published": "2026-04-16T10:10:16Z",
+      "updated": "2026-04-16T10:10:16Z",
+      "categories": [
+        "cs.IR"
+      ],
+      "pdfUrl": "https://arxiv.org/pdf/2604.14833v1",
+      "absUrl": "https://arxiv.org/abs/2604.14833v1",
+      "industrySource": ""
+    },
+    {
       "id": "http://arxiv.org/abs/2604.14051v1",
       "title": "Enhancing Local Life Service Recommendation with Agentic Reasoning in Large Language Model",
       "authors": [
@@ -408,23 +451,6 @@
       ],
       "pdfUrl": "https://arxiv.org/pdf/2604.12234v1",
       "absUrl": "https://arxiv.org/abs/2604.12234v1",
-      "industrySource": ""
-    },
-    {
-      "id": "http://arxiv.org/abs/2604.11581v1",
-      "title": "Decomposing and Reducing Hidden Measurement Error in LLM Evaluation Pipelines",
-      "authors": [
-        "Solomon Messing"
-      ],
-      "affiliations": [],
-      "abstract": "LLM evaluations drive which models get deployed, which safety standards get adopted, and which research conclusions get published. Yet these scores carry hidden uncertainty: rephrasing the prompt, switching the judge model, or changing the temperature can shift results enough to flip rankings and reverse conclusions. Standard confidence intervals ignore this variance, producing under-coverage that worsens with more data. The unmeasured variance also creates an exploitable surface: model developers can optimize against measurement noise rather than genuine capability. This paper decomposes LLM pipeline uncertainty into its sources, distinguishes variance that shrinks with more data from sensitivity to researcher design choices, and projects the most efficient path to reducing total error. For benchmark builders, the same decomposition identifies which design choices contribute exploitable surface for gaming and prescribes designs that minimize it. Across ideology annotation, safety classification, MMLU benchmarking, and a human-validated propaganda audit, projection-optimized pipelines outperform 73\\% of possible naive pipelines against a human baseline. On MMLU, optimized budget allocation halves estimation error compared to standard single-prompt evaluation at equivalent cost. A small-sample variance estimation exercise is sufficient to derive confidence intervals that approach nominal coverage when the model includes the relevant pipeline facets, and to generate recommendations for reducing measurement error and improving benchmark robustness.",
-      "published": "2026-04-13T14:58:15Z",
-      "updated": "2026-04-13T14:58:15Z",
-      "categories": [
-        "cs.CL"
-      ],
-      "pdfUrl": "https://arxiv.org/pdf/2604.11581v1",
-      "absUrl": "https://arxiv.org/abs/2604.11581v1",
       "industrySource": ""
     },
     {
@@ -1210,33 +1236,6 @@
       ],
       "pdfUrl": "https://arxiv.org/pdf/2602.23400v1",
       "absUrl": "https://arxiv.org/abs/2602.23400v1",
-      "industrySource": ""
-    },
-    {
-      "id": "http://arxiv.org/abs/2602.22632v2",
-      "title": "Fine-grained Semantics Integration for Large Language Model-based Recommendation",
-      "authors": [
-        "Jiawei Feng",
-        "Xiaoyu Kong",
-        "Leheng Sheng",
-        "Bin Wu",
-        "Chao Yi",
-        "Feifang Yang",
-        "Xiang-Rong Sheng",
-        "Han Zhu",
-        "Xiang Wang",
-        "Jiancan Wu",
-        "Xiangnan He"
-      ],
-      "affiliations": [],
-      "abstract": "Recent advances in Large Language Models (LLMs) have shifted in recommendation systems from the discriminative paradigm to the LLM-based generative paradigm, where the recommender autoregressively generates sequences of semantic identifiers (SIDs) for target items conditioned on historical interaction. While prevalent LLM-based recommenders have demonstrated performance gains by aligning pretrained LLMs between the language space and the SID space, modeling the SID space still faces two fundamental challenges: (1) Semantically Meaningless Initialization: SID tokens are randomly initialized, severing the semantic linkage between the SID space and the pretrained language space at start point, and (2) Coarse-grained Alignment: existing SFT-based alignment tasks primarily focus on item-level optimization, while overlooking the semantics of individual tokens within SID sequences. To address these challenges, we propose TS-Rec, which can integrate Token-level Semantics into LLM-based Recommenders. Specifically, TS-Rec comprises two key components: (1) Semantic-Aware embedding Initialization (SA-Init), which initializes SID token embeddings by applying mean pooling to the pretrained embeddings of keywords extracted by a teacher model; and (2) Token-level Semantic Alignment (TS-Align), which aligns individual tokens within the SID sequence with the shared semantics of the corresponding item clusters. Extensive experiments on two real-world benchmarks demonstrate that TS-Rec consistently outperforms traditional and generative baselines across all standard metrics. The results demonstrate that integrating fine-grained semantic information significantly enhances the performance of LLM-based generative recommenders.",
-      "published": "2026-02-26T05:17:24Z",
-      "updated": "2026-02-28T11:32:44Z",
-      "categories": [
-        "cs.IR"
-      ],
-      "pdfUrl": "https://arxiv.org/pdf/2602.22632v2",
-      "absUrl": "https://arxiv.org/abs/2602.22632v2",
       "industrySource": ""
     }
   ]
