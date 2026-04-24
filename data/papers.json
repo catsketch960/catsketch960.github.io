@@ -1,6 +1,6 @@
 {
-  "lastUpdated": "2026-04-17T04:14:49Z",
-  "totalResults": 578,
+  "lastUpdated": "2026-04-24T04:20:18Z",
+  "totalResults": 581,
   "papers": [
     {
       "id": "http://arxiv.org/abs/2604.14223v1",
@@ -22,6 +22,32 @@
       "pdfUrl": "https://arxiv.org/pdf/2604.14223v1",
       "absUrl": "https://arxiv.org/abs/2604.14223v1",
       "industrySource": "Google"
+    },
+    {
+      "id": "http://arxiv.org/abs/2604.12234v3",
+      "title": "UniRec: Bridging the Expressive Gap between Generative and Discriminative Recommendation via Chain-of-Attribute",
+      "authors": [
+        "Ziliang Wang",
+        "Gaoyun Lin",
+        "Xuesi Wang",
+        "Shaoqiang Liang",
+        "Yili Huang",
+        "Weijie Bian",
+        "Li Zhang",
+        "Mingchen Cai",
+        "Jian Dong",
+        "Guanxing Zhang"
+      ],
+      "affiliations": [],
+      "abstract": "Generative Recommendation (GR) reframes retrieval and ranking as autoregressive decoding over Semantic IDs (SIDs), unifying the multi-stage pipeline into a single model. Yet a fundamental expressive gap persists: discriminative models score items with direct feature access enabling explicit user-item crossing, whereas GR decodes over compact SID tokens without item-side signal. We formalize this via Bayes' theorem: ranking by p(y|f,u) is equivalent to ranking by p(f|y,u), which factorizes autoregressively over item features, showing that a generative model with full feature access matches its discriminative counterpart, with any practical gap stemming solely from incomplete feature coverage. We propose UniRec with Chain-of-Attribute (CoA) as its core mechanism. CoA prefixes each SID sequence with structured attribute tokens:category, seller, brand, before decoding the SID, recovering the item-side feature crossing that discriminative models exploit. Since items sharing identical attributes cluster in adjacent SID regions, attribute conditioning yields a measurable per-step entropy reduction H(s_k|s<k,a) < H(s_k|s<k), narrowing the search space and stabilizing beam search. We further address two deployment challenges: Capacity-constrained SID introduces exposure-weighted capacity penalties into residual quantization to suppress token collapse and the Matthew effect; Conditional Decoding Context (CDC) combines Task-Conditioned BOS with hash-based Content Summaries to inject scenario signals at each decoding step. A joint RFT and DPO framework aligns the model with business objectives beyond distribution matching. Experiments show UniRec outperforms the strongest baseline by +22.6% HR@50 overall and +15.5% on high-value orders. Deployed on Shopee's e-commerce platform, online A/B tests confirm significant gains in PVCTR (+5.37%), orders (+4.76%), and GMV (+5.60%).",
+      "published": "2026-04-14T03:13:50Z",
+      "updated": "2026-04-22T02:49:34Z",
+      "categories": [
+        "cs.IR"
+      ],
+      "pdfUrl": "https://arxiv.org/pdf/2604.12234v3",
+      "absUrl": "https://arxiv.org/abs/2604.12234v3",
+      "industrySource": "Shopee"
     },
     {
       "id": "http://arxiv.org/abs/2604.11440v2",
@@ -46,7 +72,7 @@
       "industrySource": "Amazon"
     },
     {
-      "id": "http://arxiv.org/abs/2604.07825v1",
+      "id": "http://arxiv.org/abs/2604.07825v2",
       "title": "Filling the Gaps: Selective Knowledge Augmentation for LLM Recommenders",
       "authors": [
         "Jaehyun Lee",
@@ -55,15 +81,15 @@
         "Hwanjo Yu"
       ],
       "affiliations": [],
-      "abstract": "Large language models (LLMs) have recently emerged as powerful training-free recommenders. However, their knowledge of individual items is inevitably uneven due to imbalanced information exposure during pretraining, a phenomenon we refer to as knowledge gap problem. To address this, most prior methods have employed a naive uniform augmentation that appends external information for every item in the input prompt. However, this approach not only wastes limited context budget on redundant augmentation for well-known items but can also hinder the model's effective reasoning. To this end, we propose KnowSA_CKP (Knowledge-aware Selective Augmentation with Comparative Knowledge Probing) to mitigate the knowledge gap problem. KnowSA_CKP estimates the LLM's internal knowledge by evaluating its capability to capture collaborative relationships and selectively injects additional information only where it is most needed. By avoiding unnecessary augmentation for well-known items, KnowSA_CKP focuses on items that benefit most from knowledge supplementation, thereby making more effective use of the context budget. KnowSA_CKP requires no fine-tuning step, and consistently improves both recommendation accuracy and context efficiency across four real-world datasets.",
+      "abstract": "Large language models (LLMs) have recently emerged as powerful training-free recommenders. However, their knowledge of individual items is inevitably uneven due to imbalanced information exposure during pretraining, a phenomenon we refer to as knowledge gap problem. To address this, most prior methods have employed a naive uniform augmentation that appends external information for every item in the input prompt. However, this approach not only wastes limited context budget on redundant augmentation for well-known items but can also hinder the model's effective reasoning. To this end, we propose KnowSA_CKP (Knowledge-aware Selective Augmentation with Comparative Knowledge Probing) to mitigate the knowledge gap problem. KnowSA_CKP estimates the LLM's internal knowledge by evaluating its capability to capture collaborative relationships and selectively injects additional information only where it is most needed. By avoiding unnecessary augmentation for well-known items, KnowSA_CKP focuses on items that benefit most from knowledge supplementation, thereby making more effective use of the context budget. KnowSA_CKP requires no fine-tuning step, and consistently improves both recommendation accuracy and context efficiency across four real-world datasets. Our code is available at https://github.com/nowhyun/KnowSA\\_CKP.",
       "published": "2026-04-09T05:27:04Z",
-      "updated": "2026-04-09T05:27:04Z",
+      "updated": "2026-04-19T15:48:27Z",
       "categories": [
         "cs.IR",
         "cs.AI"
       ],
-      "pdfUrl": "https://arxiv.org/pdf/2604.07825v1",
-      "absUrl": "https://arxiv.org/abs/2604.07825v1",
+      "pdfUrl": "https://arxiv.org/pdf/2604.07825v2",
+      "absUrl": "https://arxiv.org/abs/2604.07825v2",
       "industrySource": "Microsoft"
     },
     {
@@ -340,51 +366,46 @@
       "industrySource": "Kuaishou"
     },
     {
-      "id": "http://arxiv.org/abs/2602.22732v3",
-      "title": "Generative Recommendation for Large-Scale Advertising",
+      "id": "http://arxiv.org/abs/2604.15951v2",
+      "title": "Integrating Graphs, Large Language Models, and Agents: Reasoning and Retrieval",
       "authors": [
-        "Ben Xue",
-        "Dan Liu",
-        "Lixiang Wang",
-        "Mingjie Sun",
-        "Peng Wang",
-        "Pengfei Zhang",
-        "Shaoyun Shi",
-        "Tianyu Xu",
-        "Yunhao Sha",
-        "Zhiqiang Liu",
-        "Bo Kong",
-        "Bo Wang",
-        "Hang Yang",
-        "Jieting Xue",
-        "Junhao Wang",
-        "Shengyu Wang",
-        "Shuping Hui",
-        "Wencai Ye",
-        "Xiao Lin",
-        "Yongzhi Li",
-        "Yuhang Chen",
-        "Zhihui Yin",
-        "Quan Chen",
-        "Shiyang Wen",
-        "Wenjin Wu",
-        "Han Li",
-        "Guorui Zhou",
-        "Changcheng Li",
-        "Peng Jiang",
-        "Kun Gai"
+        "Hamed Jelodar",
+        "Samita Bai",
+        "Mohammad Meymani",
+        "Parisa Hamedi",
+        "Roozbeh Razavi-Far",
+        "Ali Ghorbani"
       ],
       "affiliations": [],
-      "abstract": "Generative recommendation has recently attracted widespread attention in industry due to its potential for scaling and stronger model capacity. However, deploying real-time generative recommendation in large-scale advertising requires designs beyond large-language-model (LLM)-style training and serving recipes. We present a production-oriented generative recommender co-designed across architecture, learning, and serving, named GR4AD (Generative Recommendation for ADdvertising). As for tokenization, GR4AD proposes UA-SID (Unified Advertisement Semantic ID) to capture complicated business information. Furthermore, GR4AD introduces LazyAR, a lazy autoregressive decoder that relaxes layer-wise dependencies for short, multi-candidate generation, preserving effectiveness while reducing inference cost, which facilitates scaling under fixed serving budgets. To align optimization with business value, GR4AD employs VSL (Value-Aware Supervised Learning) and proposes RSPO (Ranking-Guided Softmax Preference Optimization), a ranking-aware, list-wise reinforcement learning algorithm that optimizes value-based rewards under list-level metrics for continual online updates. For online inference, we further propose dynamic beam serving, which adapts beam width across generation levels and online load to control compute. Large-scale online A/B tests show up to 4.2% ad revenue improvement over an existing DLRM-based stack, with consistent gains from both model scaling and inference-time scaling. GR4AD has been fully deployed in Kuaishou advertising system with over 400 million users and achieves high-throughput real-time serving.",
-      "published": "2026-02-26T08:15:26Z",
-      "updated": "2026-04-02T02:38:13Z",
+      "abstract": "Generative AI, particularly Large Language Models, increasingly integrates graph-based representations to enhance reasoning, retrieval, and structured decision-making. Despite rapid advances, there remains limited clarity regarding when, why, where, and what types of graph-LLM integrations are most appropriate across applications. This survey provides a concise, structured overview of the design choices underlying the integration of graphs with LLMs. We categorize existing methods based on their purpose (reasoning, retrieval, generation, recommendation), graph modality (knowledge graphs, scene graphs, interaction graphs, causal graphs, dependency graphs), and integration strategies (prompting, augmentation, training, or agent-based use). By mapping representative works across domains such as cybersecurity, healthcare, materials science, finance, robotics, and multimodal environments, we highlight the strengths, limitations, and best-fit scenarios for each technique. This survey aims to offer researchers a practical guide for selecting the most suitable graph-LLM approach depending on task requirements, data characteristics, and reasoning complexity.",
+      "published": "2026-04-17T11:12:55Z",
+      "updated": "2026-04-20T11:32:15Z",
       "categories": [
-        "cs.IR",
-        "cs.LG"
+        "cs.AI"
       ],
-      "pdfUrl": "https://arxiv.org/pdf/2602.22732v3",
-      "absUrl": "https://arxiv.org/abs/2602.22732v3",
-      "industrySource": "Kuaishou"
+      "pdfUrl": "https://arxiv.org/pdf/2604.15951v2",
+      "absUrl": "https://arxiv.org/abs/2604.15951v2",
+      "industrySource": ""
+    },
+    {
+      "id": "http://arxiv.org/abs/2604.15739v1",
+      "title": "On the Equivalence Between Auto-Regressive Next Token Prediction and Full-Item-Vocabulary Maximum Likelihood Estimation in Generative Recommendation--A Short Note",
+      "authors": [
+        "Yusheng Huang",
+        "Shuang Yang",
+        "Zhaojie Liu",
+        "Han Li"
+      ],
+      "affiliations": [],
+      "abstract": "Generative recommendation (GR) has emerged as a widely adopted paradigm in industrial sequential recommendation. Current GR systems follow a similar pipeline: tokenization for item indexing, next-token prediction as the training objective and auto-regressive decoding for next-item generation. However, existing GR research mainly focuses on architecture design and empirical performance optimization, with few rigorous theoretical explanations for the working mechanism of auto-regressive next-token prediction in recommendation scenarios. In this work, we formally prove that \\textbf{the k-token auto-regressive next-token prediction (AR-NTP) paradigm is strictly mathematically equivalent to full-item-vocabulary maximum likelihood estimation (FV-MLE)}, under the core premise of a bijective mapping between items and their corresponding k-token sequences. We further show that this equivalence holds for both cascaded and parallel tokenizations, the two most widely used schemes in industrial GR systems. Our result provides the first formal theoretical foundation for the dominant industrial GR paradigm, and offers principled guidance for future GR system optimization.",
+      "published": "2026-04-17T06:27:42Z",
+      "updated": "2026-04-17T06:27:42Z",
+      "categories": [
+        "cs.IR"
+      ],
+      "pdfUrl": "https://arxiv.org/pdf/2604.15739v1",
+      "absUrl": "https://arxiv.org/abs/2604.15739v1",
+      "industrySource": ""
     },
     {
       "id": "http://arxiv.org/abs/2604.14833v1",
@@ -429,28 +450,6 @@
       ],
       "pdfUrl": "https://arxiv.org/pdf/2604.14051v1",
       "absUrl": "https://arxiv.org/abs/2604.14051v1",
-      "industrySource": ""
-    },
-    {
-      "id": "http://arxiv.org/abs/2604.12234v1",
-      "title": "UniRec: Bridging the Expressive Gap between Generative and Discriminative Recommendation via Chain-of-Attribute",
-      "authors": [
-        "Ziliang Wang",
-        "Gaoyun Lin",
-        "Xuesi Wang",
-        "Shaoqiang Liang",
-        "Yili Huang",
-        "Weijie Bian"
-      ],
-      "affiliations": [],
-      "abstract": "Generative Recommendation (GR) reframes retrieval and ranking as autoregressive decoding over Semantic IDs (SIDs), unifying the multi-stage pipeline into a single model. Yet a fundamental expressive gap persists: discriminative models score items with direct feature access, enabling explicit user-item crossing, whereas GR decodes over compact SID tokens without item-side signal. We formalize this via Bayes' theorem, showing ranking by p(y|f,u) is equivalent to ranking by p(f|y,u), which factorizes autoregressively over item features. This establishes that a generative model with full feature access is as expressive as its discriminative counterpart; any practical gap stems solely from incomplete feature coverage. We propose UniRec with Chain-of-Attribute (CoA) as its core mechanism. CoA prefixes each SID sequence with structured attribute tokens--category, seller, brand--before decoding the SID itself, recovering the item-side feature crossing that discriminative models exploit. Because items sharing identical attributes cluster in adjacent SID regions, attribute conditioning yields a measurable per-step entropy reduction H(s_k|s_{<k},a) < H(s_k|s_{<k}), narrowing the search space and stabilizing beam search trajectories. We further address two deployment challenges: Capacity-constrained SID introduces exposure-weighted capacity penalties into residual quantization to suppress token collapse and the Matthew effect across SID layers; Conditional Decoding Context (CDC) combines Task-Conditioned BOS with hash-based Content Summaries, injecting scenario-conditioned signals at each decoding step. A joint RFT and DPO framework aligns the model with business objectives beyond distribution matching. Experiments show UniRec outperforms the strongest baseline by +22.6% HR@50 overall and +15.5% on high-value orders, with online A/B tests confirming significant business metric gains.",
-      "published": "2026-04-14T03:13:50Z",
-      "updated": "2026-04-14T03:13:50Z",
-      "categories": [
-        "cs.IR"
-      ],
-      "pdfUrl": "https://arxiv.org/pdf/2604.12234v1",
-      "absUrl": "https://arxiv.org/abs/2604.12234v1",
       "industrySource": ""
     },
     {
@@ -783,7 +782,7 @@
       "industrySource": ""
     },
     {
-      "id": "http://arxiv.org/abs/2603.19944v1",
+      "id": "http://arxiv.org/abs/2603.19944v2",
       "title": "Large Language Models and Stock Investing: Is the Human Factor Required?",
       "authors": [
         "Ricardo Crisostomo",
@@ -792,13 +791,13 @@
       "affiliations": [],
       "abstract": "This paper investigates whether large language models (LLMs) can generate reliable stock market predictions. We evaluate four state-of-the-art models - ChatGPT, Gemini, DeepSeek, and Perplexity - across three prompting strategies: a naive query, a structured approach, and chain-of-thought reasoning. Our results show that LLM-generated recommendations are hindered by recurring reasoning failures, including financial misconceptions, carryover errors, and reliance on outdated or hallucinated information. When appropriately guided and supervised, LLMs demonstrate the capacity to outperform the market, but realizing LLMs' full potential requires substantial human oversight. We also find that grounding stock recommendations in official regulatory filings increases their forecasting accuracy. Overall, our findings underscore the need for robust safeguards and validation when deploying LLMs in financial markets.",
       "published": "2026-03-20T13:47:13Z",
-      "updated": "2026-03-20T13:47:13Z",
+      "updated": "2026-04-20T14:40:05Z",
       "categories": [
         "q-fin.TR",
         "q-fin.ST"
       ],
-      "pdfUrl": "https://arxiv.org/pdf/2603.19944v1",
-      "absUrl": "https://arxiv.org/abs/2603.19944v1",
+      "pdfUrl": "https://arxiv.org/pdf/2603.19944v2",
+      "absUrl": "https://arxiv.org/abs/2603.19944v2",
       "industrySource": ""
     },
     {
@@ -1069,6 +1068,24 @@
       "industrySource": ""
     },
     {
+      "id": "http://arxiv.org/abs/2604.20861v1",
+      "title": "Deep Interest Mining with Cross-Modal Alignment for SemanticID Generation in Generative Recommendation",
+      "authors": [
+        "Yagchen Zeng"
+      ],
+      "affiliations": [],
+      "abstract": "Generative Recommendation (GR) has demonstrated remarkable performance in next-token prediction paradigms, which relies on Semantic IDs (SIDs) to compress trillion-scale data into learnable vocabulary sequences. However, existing methods suffer from three critical limitations: (1) Information Degradation: the two-stage compression pipeline causes semantic loss and information degradation, with no posterior mechanism to distinguish high-quality from low-quality SIDs; (2) Semantic Degradation: cascaded quantization discards key semantic information from original multimodal features, as the embedding generation and quantization stages are not jointly optimized toward a unified objective; (3) Modality Distortion: quantizers fail to properly align text and image modalities, causing feature misalignment even when upstream networks have aligned them. To address these challenges, we propose a novel framework integrating three key innovations: Deep Contextual Interest Mining (DCIM), Cross-Modal Semantic Alignment (CMSA), and Quality-Aware Reinforcement Mechanism (QARM). First, we leverage Vision-Language Models (VLMs) to align non-textual modalities into a unified text-based semantic space, mitigating modality distortion. Second, we introduce a deep interest mining mechanism that captures high-level semantic information implicitly present in advertising contexts, encouraging SIDs to preserve critical contextual information through reconstruction-based supervision. Third, we employ a reinforcement learning framework with quality-aware rewards to encourage semantically rich SIDs while suppressing low-quality ones in the posterior stage. Extensive experiments demonstrate that our approach consistently outperforms state-of-the-art SID generation methods, achieving superior performance on multiple benchmarks. Ablation studies further validate the effectiveness of each proposed component",
+      "published": "2026-03-03T13:36:22Z",
+      "updated": "2026-03-03T13:36:22Z",
+      "categories": [
+        "cs.IR",
+        "cs.AI"
+      ],
+      "pdfUrl": "https://arxiv.org/pdf/2604.20861v1",
+      "absUrl": "https://arxiv.org/abs/2604.20861v1",
+      "industrySource": ""
+    },
+    {
       "id": "http://arxiv.org/abs/2603.02730v1",
       "title": "APAO: Adaptive Prefix-Aware Optimization for Generative Recommendation",
       "authors": [
@@ -1187,55 +1204,6 @@
       ],
       "pdfUrl": "https://arxiv.org/pdf/2602.23639v1",
       "absUrl": "https://arxiv.org/abs/2602.23639v1",
-      "industrySource": ""
-    },
-    {
-      "id": "http://arxiv.org/abs/2602.22913v1",
-      "title": "SIGMA: A Semantic-Grounded Instruction-Driven Generative Multi-Task Recommender at AliExpress",
-      "authors": [
-        "Yang Yu",
-        "Lei Kou",
-        "Huaikuan Yi",
-        "Bin Chen",
-        "Yayu Cao",
-        "Lei Shen",
-        "Chao Zhang",
-        "Bing Wang",
-        "Xiaoyi Zeng"
-      ],
-      "affiliations": [],
-      "abstract": "With the rapid evolution of Large Language Models, generative recommendation is gradually reshaping the paradigm of recommender systems. However, most existing methods are still confined to the interaction-driven next-item prediction paradigm, failing to rapidly adapt to evolving trends or address diverse recommendation tasks along with business-specific requirements in real-world scenarios. To this end, we present SIGMA, a Semantic-Grounded Instruction-Driven Generative Multi-Task Recommender at AliExpress. Specifically, we first ground item entities in general semantics via a unified latent space capturing both semantic and collaborative relations. Building upon this, we develop a hybrid item tokenization method for precise modeling and efficient generation. Moreover, we construct a large-scale multi-task SFT dataset to empower SIGMA to fulfill various recommendation demands via instruction-following. Finally, we design a three-step item generation procedure integrated with an adaptive probabilistic fusion mechanism to calibrate the output distributions based on task-specific requirements for recommendation accuracy and diversity. Extensive offline experiments and online A/B tests demonstrate the effectiveness of SIGMA.",
-      "published": "2026-02-26T12:00:46Z",
-      "updated": "2026-02-26T12:00:46Z",
-      "categories": [
-        "cs.IR",
-        "cs.LG"
-      ],
-      "pdfUrl": "https://arxiv.org/pdf/2602.22913v1",
-      "absUrl": "https://arxiv.org/abs/2602.22913v1",
-      "industrySource": ""
-    },
-    {
-      "id": "http://arxiv.org/abs/2602.23400v1",
-      "title": "U-CAN: Utility-Aware Contrastive Attenuation for Efficient Unlearning in Generative Recommendation",
-      "authors": [
-        "Zezheng Wu",
-        "Rui Wang",
-        "Xinghe Cheng",
-        "Yang Shao",
-        "Qing Yang",
-        "Jiapu Wang",
-        "Jingwei Zhang"
-      ],
-      "affiliations": [],
-      "abstract": "Generative Recommendation (GenRec) typically leverages Large Language Models (LLMs) to redefine personalization as an instruction-driven sequence generation task. However, fine-tuning on user logs inadvertently encodes sensitive attributes into model parameters, raising critical privacy concerns. Existing Machine Unlearning (MU) techniques struggle to navigate this tension due to the Polysemy Dilemma, where neurons superimpose sensitive data with general reasoning patterns, leading to catastrophic utility loss under traditional gradient or pruning methods. To address this, we propose Utility-aware Contrastive AttenuatioN (U-CAN), a precision unlearning framework that operates on low-rank adapters. U-CAN quantifies risk by contrasting activations and focuses on neurons with asymmetric responses that are highly sensitive to the forgetting set but suppressed on the retention set. To safeguard performance, we introduce a utility-aware calibration mechanism that combines weight magnitudes with retention-set activation norms, assigning higher utility scores to dimensions that contribute strongly to retention performance. Unlike binary pruning, which often fragments network structure, U-CAN develop adaptive soft attenuation with a differentiable decay function to selectively down-scale high-risk parameters on LoRA adapters, suppressing sensitive retrieval pathways and preserving the topological connectivity of reasoning circuits. Experiments on two public datasets across seven metrics demonstrate that U-CAN achieves strong privacy forgetting, utility retention, and computational efficiency.",
-      "published": "2026-02-26T07:36:11Z",
-      "updated": "2026-02-26T07:36:11Z",
-      "categories": [
-        "cs.LG"
-      ],
-      "pdfUrl": "https://arxiv.org/pdf/2602.23400v1",
-      "absUrl": "https://arxiv.org/abs/2602.23400v1",
       "industrySource": ""
     }
   ]
