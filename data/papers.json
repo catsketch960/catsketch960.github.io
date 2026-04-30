@@ -1,7 +1,78 @@
 {
-  "lastUpdated": "2026-04-26T04:26:04Z",
-  "totalResults": 581,
+  "lastUpdated": "2026-04-30T04:36:02Z",
+  "totalResults": 591,
   "papers": [
+    {
+      "id": "http://arxiv.org/abs/2604.24717v1",
+      "title": "Learning to Rotate: Temporal and Semantic Rotary Encoding for Sequential Modeling",
+      "authors": [
+        "Hailing Cheng",
+        "Daqi Sun",
+        "Xinyu Lu"
+      ],
+      "affiliations": [],
+      "abstract": "Every Transformer architecture dedicates enormous capacity to learning rich representations in semantic embedding space -- yet the rotation manifold acted upon by Rotary Positional Embeddings (RoPE) has been treated as a fixed, hand-crafted structure, populated only by discrete ordinal indices. We argue that this rotation space is a largely overlooked second dimension of expressivity in the attention mechanism, one whose systematic exploration may open a new door for attention-based architectures. The analogy to complex numbers is instructive: just as introducing the imaginary axis -- orthogonal to and independent of the real line -- unlocked new algebraic structure once believed impossible, treating the rotation manifold as a learnable, signal-conditioned space opens an orthogonal degree of freedom in attention. In this framing, the token embedding encodes the semantic (real) component of a representation -- what a token means -- while the rotation encodes its dynamic (imaginary) component -- how it relates to every other token across time, position, and context. We introduce SIREN-RoPE, a concrete instantiation of this idea, which populates the rotation dimension with heterogeneous signals -- continuous timestamps, cyclical temporal patterns, and categorical metadata -- via a dual-branch Sinusoidal Representation Network (SIREN). As a proof of concept, we evaluate on a production-scale news feed dataset from a major social network using a generative recommender as the ranking model, demonstrating that activating this hidden dimension yields consistent improvements across calibration and ranking objectives with negligible computational overhead. We invite the community to view the rotation space not as a solved positional-encoding detail, but as an untapped axis whose rich structure may prove as consequential for attention as the imaginary unit proved for algebra.",
+      "published": "2026-04-27T17:26:15Z",
+      "updated": "2026-04-27T17:26:15Z",
+      "categories": [
+        "cs.AI"
+      ],
+      "pdfUrl": "https://arxiv.org/pdf/2604.24717v1",
+      "absUrl": "https://arxiv.org/abs/2604.24717v1",
+      "industrySource": "Meta"
+    },
+    {
+      "id": "http://arxiv.org/abs/2604.24472v1",
+      "title": "Modeling Behavioral Intensity and Transitions for Generative Recommendation",
+      "authors": [
+        "Wenxuan Yang",
+        "Xiaoyang Xu",
+        "Hanyu Zhang",
+        "Zhexuan Xu",
+        "Wanqiang Xiong",
+        "Zhaoqun Chen"
+      ],
+      "affiliations": [],
+      "abstract": "Multi-behavior recommendation aims to predict user conversions by modeling various interaction types that carry distinct intent signals. Recently, generative sequence modeling methods have emerged as an important paradigm for multi-behavior recommendation by achieving flexible sequence generation. However, existing generative methods typically treat behaviors as auxiliary token features and feed them into unified attention mechanisms. These models implicitly assume uniform activation of dependencies among historical behaviors, thereby failing to discern differences in intensity or capture transition patterns. To address these limitations, we propose BITRec, a novel generative multi-behavior recommendation framework that introduces structured behavioral modeling through selective dependency activation. BITRec incorporates (i) Hierarchical Behavior Aggregation (HBA), which explicitly models behavioral intensity differences through separated exploration and commitment pathways, and (ii) Transition Relation Encoding (TRE), which encodes transition structures through explicit learnable relation matrices. Experiments on four large-scale datasets (RetailRocket, Taobao, Tmall, Insurance Dataset) with millions of interactions achieve consistent improvements of 15-23% across multiple metrics, with peak gains of 22.79% MRR on Tmall and 17.83% HR@10, 17.55% NDCG@10 on Taobao.",
+      "published": "2026-04-27T13:40:35Z",
+      "updated": "2026-04-27T13:40:35Z",
+      "categories": [
+        "cs.IR",
+        "cs.AI",
+        "cs.LG"
+      ],
+      "pdfUrl": "https://arxiv.org/pdf/2604.24472v1",
+      "absUrl": "https://arxiv.org/abs/2604.24472v1",
+      "industrySource": "Alibaba"
+    },
+    {
+      "id": "http://arxiv.org/abs/2604.23522v1",
+      "title": "Beyond Static Collision Handling: Adaptive Semantic ID Learning for Multimodal Recommendation at Industrial Scale",
+      "authors": [
+        "Yongsen Pan",
+        "Yuxin Chen",
+        "Zheng Hu",
+        "Xu Yuan",
+        "Daoyuan Wang",
+        "Yuting Yin",
+        "Songhao Ni",
+        "Hongyang Wang",
+        "Jun Wang",
+        "Fuji Ren",
+        "Wenwu Ou"
+      ],
+      "affiliations": [],
+      "abstract": "Modern recommendation systems involve massive catalogs of multimodal items, where scalable item identification must balance compactness, semantic fidelity, and downstream effectiveness. Semantic IDs (SIDs) address this need by representing items as short discrete token sequences derived from multimodal signals, providing a compact interface for retrieval, ranking, and generative recommendation. However, effective SID learning is hindered by collisions, where different items are assigned identical or highly confusable codes. Existing methods mainly rely on improved quantization or fixed overlap regularization, but they do not adaptively distinguish whether an overlap should be suppressed or preserved. We propose AdaSID, an adaptive semantic ID learning framework for recommendation. AdaSID regulates SID overlaps through a two-stage process. First, it relaxes repulsion for observed overlaps when the involved items are semantically compatible, preserving admissible sharing rather than uniformly separating all collisions. Second, it allocates the remaining regulation pressure according to local collision load and training progress, strengthening control in congested regions while gradually rebalancing optimization toward recommendation alignment. This design adaptively decides which overlaps to penalize, how strongly to regulate them, and when to shift the learning focus. Extensive offline and online experiments validate AdaSID. On two public benchmarks, AdaSID improves Recall and NDCG by about 4.5% on average over strong baselines, while improving codebook utilization and SID diversity. In Kuaishou e-commerce, an online A/B test on short-video retrieval covering tens of millions of users achieves statistically significant gains, including a 0.98% GMV improvement, and industrial ranking evaluation shows consistent AUC improvements.",
+      "published": "2026-04-26T03:59:35Z",
+      "updated": "2026-04-26T03:59:35Z",
+      "categories": [
+        "cs.IR",
+        "cs.MM"
+      ],
+      "pdfUrl": "https://arxiv.org/pdf/2604.23522v1",
+      "absUrl": "https://arxiv.org/abs/2604.23522v1",
+      "industrySource": "Kuaishou"
+    },
     {
       "id": "http://arxiv.org/abs/2604.14223v1",
       "title": "TRACE: A Conversational Framework for Sustainable Tourism Recommendation with Agentic Counterfactual Explanations",
@@ -315,55 +386,211 @@
       "industrySource": "Microsoft"
     },
     {
-      "id": "http://arxiv.org/abs/2603.02709v1",
-      "title": "Sensory-Aware Sequential Recommendation via Review-Distilled Representations",
+      "id": "http://arxiv.org/abs/2604.26427v1",
+      "title": "CARD: Non-Uniform Quantization of Visual Semantic Unit for Generative Recommendation",
       "authors": [
-        "Yeo Chan Yoon"
+        "Yibiao Wei",
+        "Jie Zou",
+        "Pengfei Zhang",
+        "Xiao Ao",
+        "Weikang Guo",
+        "Zeyu Ma",
+        "Yang Yang"
       ],
       "affiliations": [],
-      "abstract": "We propose a novel framework for sensory-aware sequential recommendation that enriches item representations with linguistically extracted sensory attributes from product reviews. Our approach, \\textsc{ASEGR} (Attribute-based Sensory Enhanced Generative Recommendation), introduces a two-stage pipeline in which a large language model is first fine-tuned as a teacher to extract structured sensory attribute--value pairs, such as \\textit{color: matte black} and \\textit{scent: vanilla}, from unstructured review text. The extracted structures are then distilled into a compact student transformer that produces fixed-dimensional sensory embeddings for each item. These embeddings encode experiential semantics in a reusable form and are incorporated into standard sequential recommender architectures as additional item-level representations. We evaluate our method on four Amazon domains and integrate the learned sensory embeddings into representative sequential recommendation models, including SASRec, BERT4Rec, and BSARec. Across domains, sensory-enhanced models consistently outperform their identifier-based counterparts, indicating that linguistically grounded sensory representations provide complementary signals to behavioral interaction patterns. Qualitative analysis further shows that the extracted attributes align closely with human perceptions of products, enabling interpretable connections between natural language descriptions and recommendation behavior. Overall, this work demonstrates that sensory attribute distillation offers a principled and scalable way to bridge information extraction and sequential recommendation through structured semantic representation learning.",
-      "published": "2026-03-03T08:00:34Z",
-      "updated": "2026-03-03T08:00:34Z",
+      "abstract": "Generative recommendation frameworks typically represent items as discrete Semantic IDs (SIDs). While existing studies have sought to enhance SID construction by incorporating multimodal content, collaborative signals, or more advanced quantization techniques, learning high-quality SIDs still faces two key challenges: (1) The two-stage generative recommendation paradigm (SID construction and autoregressive generation) provides insufficient supervision for heterogeneous fusion, which hinders learning high-quality SIDs, and (2) non-uniform embeddings lead to codeword imbalance and generation bias. To address these challenges, we propose a novel generative recommendation framework, called CARD. CARD introduces a visual semantic unit that unifies textual, visual, and collaborative signals into a structured visual representation prior to encoding, enabling holistic semantic modeling and effectively alleviating the semantic gap, thereby reducing the reliance on supervision signals during SID learning. Furthermore, to deal with the highly non-uniform distribution of item semantic embeddings in recommendation scenarios, we develop a non-uniform quantization framework (NU-RQ-VAE), which incorporates a learnable and invertible non-uniform transformation into the quantization process to map skewed semantic distributions into a more balanced latent space, thereby significantly improving codebook utilization and quantization accuracy. Experiments on multiple datasets show that CARD consistently outperforms baseline methods under various settings; meanwhile, the proposed non-uniform transformation module is plug-and-play and remains robust across different quantization schemes. Code is available at https://github.com/HAI-UESTC/CARD.",
+      "published": "2026-04-29T08:38:14Z",
+      "updated": "2026-04-29T08:38:14Z",
       "categories": [
-        "cs.CL",
-        "cs.AI"
+        "cs.IR"
       ],
-      "pdfUrl": "https://arxiv.org/pdf/2603.02709v1",
-      "absUrl": "https://arxiv.org/abs/2603.02709v1",
-      "industrySource": "Amazon"
+      "pdfUrl": "https://arxiv.org/pdf/2604.26427v1",
+      "absUrl": "https://arxiv.org/abs/2604.26427v1",
+      "industrySource": ""
     },
     {
-      "id": "http://arxiv.org/abs/2603.00632v1",
-      "title": "Stop Treating Collisions Equally: Qualification-Aware Semantic ID Learning for Recommendation at Industrial Scale",
+      "id": "http://arxiv.org/abs/2604.26231v1",
+      "title": "ProMax: Exploring the Potential of LLM-derived Profiles with Distribution Shaping for Recommender Systems",
       "authors": [
-        "Zheng Hu",
-        "Yuxin Chen",
-        "Yongsen Pan",
-        "Xu Yuan",
-        "Yuting Yin",
-        "Daoyuan Wang",
-        "Boyang Xia",
-        "Zefei Luo",
-        "Hongyang Wang",
-        "Songhao Ni",
-        "Dongxu Liang",
-        "Jun Wang",
-        "Shimin Cai",
-        "Tao Zhou",
-        "Fuji Ren",
-        "Wenwu Ou"
+        "Yi Zhang",
+        "Yiwen Zhang",
+        "Kai Zheng",
+        "Tong Chen",
+        "Hongzhi Yin"
       ],
       "affiliations": [],
-      "abstract": "Semantic IDs (SIDs) are compact discrete representations derived from multimodal item features, serving as a unified abstraction for ID-based and generative recommendation. However, learning high-quality SIDs remains challenging due to two issues. (1) Collision problem: the quantized token space is prone to collisions, in which semantically distinct items are assigned identical or overly similar SID compositions, resulting in semantic entanglement. (2) Collision-signal heterogeneity: collisions are not uniformly harmful. Some reflect genuine conflicts between semantically unrelated items, while others stem from benign redundancy or systematic data effects. To address these challenges, we propose Qualification-Aware Semantic ID Learning (QuaSID), an end-to-end framework that learns collision-qualified SIDs by selectively repelling qualified conflict pairs and scaling the repulsion strength by collision severity. QuaSID consists of two mechanisms: Hamming-guided Margin Repulsion, which translates low-Hamming SID overlaps into explicit, severity-scaled geometric constraints on the encoder space; and Conflict-Aware Valid Pair Masking, which masks protocol-induced benign overlaps to denoise repulsion supervision. In addition, QuaSID incorporates a dual-tower contrastive objective to inject collaborative signals into tokenization. Experiments on public benchmarks and industrial data validate QuaSID. On public datasets, QuaSID consistently outperforms strong baselines, improving top-K ranking quality by 5.9% over the best baseline while increasing SID composition diversity. In an online A/B test on Kuaishou e-commerce with a 5% traffic split, QuaSID increases ranking GMV-S2 by 2.38% and improves completed orders on cold-start retrieval by up to 6.42%. Finally, we show that the proposed repulsion loss is plug-and-play and enhances a range of SID learning frameworks across datasets.",
-      "published": "2026-02-28T12:55:49Z",
-      "updated": "2026-02-28T12:55:49Z",
+      "abstract": "The remarkable text understanding and generation capabilities of large language models (LLMs) have revitalized the field of general recommendation based on implicit user feedback. Rather than deploying LLMs directly as recommendation models, a more flexible paradigm leverages their ability to interpret users' historical interactions and semantic contexts to extract structured profiles that characterize user preferences. These profiles can be further transformed into actionable high-dimensional representations, serving as powerful signals to augment and strengthen recommendation models. However, the mechanism by which such profiles enhance recommendation performance within the feature space remains insufficiently understood. Moreover, existing studies predominantly rely on nonlinear alignment and fusion strategies to incorporate these profiles, which often lead to semantic loss and fail to fully exploit their potential. To address these limitations, we revisit profiles from a retrieval perspective and propose a simple yet effective recommendation framework built upon distribution shaping (ProMax) in this paper. We begin by employing dense retrieval to uncover the collaborative relationships between user and item profiles within the feature space. Based on this insight, we introduce a dual distribution-reshaping process, in which the profile distribution acts as a guiding signal to steer the recommendation model toward learning user preferences for unseen items beyond the scope of observed interactions. We apply ProMax to four classic recommendation methods on three public datasets. The results indicate that ProMax substantially improves base model performance and outperforms existing LLM-based recommendation approaches.",
+      "published": "2026-04-29T02:18:55Z",
+      "updated": "2026-04-29T02:18:55Z",
       "categories": [
-        "cs.IR",
-        "cs.LG"
+        "cs.IR"
       ],
-      "pdfUrl": "https://arxiv.org/pdf/2603.00632v1",
-      "absUrl": "https://arxiv.org/abs/2603.00632v1",
-      "industrySource": "Kuaishou"
+      "pdfUrl": "https://arxiv.org/pdf/2604.26231v1",
+      "absUrl": "https://arxiv.org/abs/2604.26231v1",
+      "industrySource": ""
+    },
+    {
+      "id": "http://arxiv.org/abs/2604.25787v1",
+      "title": "Harmonizing Generative Retrieval and Ranking in Chain-of-Recommendation",
+      "authors": [
+        "Yu Liu",
+        "Jiangxia Cao"
+      ],
+      "affiliations": [],
+      "abstract": "Generative recommender systems have recently emerged as a promising paradigm by formulating next-item prediction as an auto-regressive semantic IDs generation, such as OneRec series works. However, with the next-item-agnostic prediction paradigm, its could beam out some next potential items via Semantic IDs but hard to estimate which items are better from them, e.g., select the top-10 from beam-256 items, leading to a gap between generation and ranking performance. To fulfill this gap, we propose RecoChain, a unified generative retrieval and ranking framework that integrates candidate generation and ranking within a single Transformer backbone. Specifically, in inference, the model first generates candidate items via hierarchical semantic ID prediction, then performs the SIM-based ranking process to estimate the click possibility of corresponding item candidate continuously. Extensive experiments on large-scale real-world datasets demonstrate that our approach effectively bridges the gap between generative retrieval and ranking, achieving improved Top-K recommendation performance while maintaining strong generative capability.",
+      "published": "2026-04-28T15:56:11Z",
+      "updated": "2026-04-28T15:56:11Z",
+      "categories": [
+        "cs.IR"
+      ],
+      "pdfUrl": "https://arxiv.org/pdf/2604.25787v1",
+      "absUrl": "https://arxiv.org/abs/2604.25787v1",
+      "industrySource": ""
+    },
+    {
+      "id": "http://arxiv.org/abs/2604.25420v1",
+      "title": "Recommending Usability Improvements with Multimodal Large Language Models",
+      "authors": [
+        "Sebastian Lubos",
+        "Alexander Felfernig",
+        "Damian Garber",
+        "Viet-Man Le",
+        "Manuel Henrich"
+      ],
+      "affiliations": [],
+      "abstract": "Usability describes quality attributes of application user interfaces that determine how effectively users can interact with them. Traditional usability evaluation methods require considerable expertise and resources, which can be challenging, especially for small teams and organizations. Automating usability evaluation could make it more accessible and help to improve the user experience. The recent emergence of powerful multimodal large language models (MLLMs) has opened new opportunities for automating usability evaluation and recommendation of improvements. These models can process visual inputs such as images and videos alongside textual context, which enables the identification of usability issues and the generation of actionable suggestions to resolve these issues. In this paper, we present a novel automated approach that uses limited application context and screen recordings of user interactions as input to an MLLM. The model automatically identifies and describes usability issues based on Nielsens usability heuristics, and provides corresponding explanations and improvement recommendations. To reduce the developer effort of manual prioritization, the recommendations are ranked by severity. The quality and practical usefulness of the generated recommendations were evaluated based on a user study that involved software engineers as participants. The evaluation focused on the highest-ranked suggestions provided by the model. The results demonstrate the potential of our approach to provide low-effort usability improvement recommendations. This makes it a promising complement to traditional evaluation methods, especially in settings with limited access to usability experts. In this sense, the approach serves as a basis for future integration into development tools to enable automated usability evaluation within software engineering workflows.",
+      "published": "2026-04-28T09:29:13Z",
+      "updated": "2026-04-28T09:29:13Z",
+      "categories": [
+        "cs.SE",
+        "cs.HC"
+      ],
+      "pdfUrl": "https://arxiv.org/pdf/2604.25420v1",
+      "absUrl": "https://arxiv.org/abs/2604.25420v1",
+      "industrySource": ""
+    },
+    {
+      "id": "http://arxiv.org/abs/2604.23902v1",
+      "title": "LLM-Augmented Traffic Signal Control with LSTM-Based Traffic State Prediction and Safety-Constrained Decision Support",
+      "authors": [
+        "Jiazhao Shi"
+      ],
+      "affiliations": [],
+      "abstract": "Traffic signal control is a critical task in intelligent transportation systems, yet conventional fixed-time and rule-based methods often struggle to adapt to dynamic traffic demand and provide limited decision interpretability. This study proposes an LLM-augmented traffic signal control framework that integrates LSTM-based short-term traffic state prediction, predictive phase selection, structured large language model reasoning, and safety-constrained action filtering. The LSTM module forecasts future queue length, waiting time, vehicle count, and lane occupancy based on recent intersection-level observations. A predictive controller then generates candidate signal actions, while the LLM module evaluates these actions using structured traffic-state inputs and produces congestion diagnoses, phase adjustment recommendations, and natural-language explanations. To ensure operational reliability, all LLM-generated recommendations are validated by a safety filter before execution. Simulation-based experiments in SUMO compare the proposed method with fixed-time control, rule-based control, and an LSTM-based predictive baseline under balanced demand, directional peak demand, and sudden surge scenarios. The results indicate that the proposed framework improves traffic efficiency, especially under dynamic and non-recurrent traffic conditions, while maintaining zero constraint violations after safety filtering. Overall, this study demonstrates that LLMs can enhance traffic signal control when used as constrained reasoning and decision-support modules rather than direct low-level controllers. Keywords: Intelligent Transportation Systems; Traffic Signal Control; Large Language Models; LSTM; Traffic State Prediction; Decision Support; Safety-Constrained Control; SUMO Simulation.",
+      "published": "2026-04-26T22:26:20Z",
+      "updated": "2026-04-26T22:26:20Z",
+      "categories": [
+        "cs.AI"
+      ],
+      "pdfUrl": "https://arxiv.org/pdf/2604.23902v1",
+      "absUrl": "https://arxiv.org/abs/2604.23902v1",
+      "industrySource": ""
+    },
+    {
+      "id": "http://arxiv.org/abs/2604.23156v1",
+      "title": "Birds of a Feather Cluster Nearby: a Proximity-Aware Geo-Codebook for Local Service Recommendation",
+      "authors": [
+        "Tian He",
+        "Chen Yang",
+        "Jiawei Zhang",
+        "Lin Guo",
+        "Wei Lin",
+        "Zhuqing Jiang"
+      ],
+      "affiliations": [],
+      "abstract": "Generative recommendation systems are increasingly adopted in local service platforms, where semantic relevance alone is insufficient without strict geographic feasibility. A key technical challenge lies in semantic ID (SID) tokenization, which directly impacts the recommendation performance. However, existing semantic codebooks neglect geographic constraints, often resulting in recommendations that are semantically relevant yet geographically unreachable. To address this limitation, we propose Pro-GEO, a Proximity-aware GEO-codebook. Pro-GEO establishes a geo-centroid local coordinate system to capture intra-cluster spatial relationships and a geo-rotary position encoding mechanism that models geographic proximity as orthogonal rotational transformations in the high-dimensional embedding. This design enables semantic and spatial signals to be jointly modeled in a balanced manner, without reducing geographic information to a weak auxiliary feature. Extensive experiments conducted on a large-scale industrial dataset reveal that Pro-GEO significantly outperforms state-of-the-art methods. In particular, Pro-GEO reduces the average geographic clustering distance by 45.60% and achieves a 1.87% improvement in Hit@50, highlighting its effectiveness for real-world local service recommendation.",
+      "published": "2026-04-25T06:05:41Z",
+      "updated": "2026-04-25T06:05:41Z",
+      "categories": [
+        "cs.IR"
+      ],
+      "pdfUrl": "https://arxiv.org/pdf/2604.23156v1",
+      "absUrl": "https://arxiv.org/abs/2604.23156v1",
+      "industrySource": ""
+    },
+    {
+      "id": "http://arxiv.org/abs/2604.22504v1",
+      "title": "Objective Shaping with Hard Negatives: Windowed Partial AUC Optimization for RL-based LLM Recommenders",
+      "authors": [
+        "Wentao Shi",
+        "Qifan Wang",
+        "Chen Chen",
+        "Fei Liu",
+        "Dongfang Liu",
+        "Xu Liu",
+        "Wanli Ma",
+        "Junfeng Pan",
+        "Linhong Zhu",
+        "Fuli Feng"
+      ],
+      "affiliations": [],
+      "abstract": "Reinforcement learning (RL) effectively optimizes Large Language Model (LLM)-based recommenders by contrasting positive and negative items. Empirically, training with beam-search negatives consistently outperforms random negatives, yet the mechanism is not well understood. We address this gap by analyzing the induced optimization objective and show that: (i) Under binary reward feedback, optimizing LLM recommenders with Group Relative Policy Optimization (GRPO) is theoretically equivalent to maximizing the Area Under the ROC Curve (AUC), which is often misaligned with Top-$K$ recommendation; and (ii) Replacing random negatives with beam-search negatives reshapes the objective toward partial AUC, improving alignment with Top-$K$ metrics. Motivated by this perspective, we introduce Windowed Partial AUC (WPAUC), which constrains the false positive rate (FPR) to a window [$α,α+d$] to more directly align with Top-$K$ metrics. We further propose an efficient Threshold-Adjusted Windowed reweighting (TAWin) RL method for its optimization, enabling explicit control over the targeted Top-$K$ performance. Experiments on four real-world datasets validate the theory and deliver consistent state-of-the-art performance.",
+      "published": "2026-04-24T12:31:57Z",
+      "updated": "2026-04-24T12:31:57Z",
+      "categories": [
+        "cs.IR"
+      ],
+      "pdfUrl": "https://arxiv.org/pdf/2604.22504v1",
+      "absUrl": "https://arxiv.org/abs/2604.22504v1",
+      "industrySource": ""
+    },
+    {
+      "id": "http://arxiv.org/abs/2604.22881v1",
+      "title": "MTServe: Efficient Serving for Generative Recommendation Models with Hierarchical Caches",
+      "authors": [
+        "Xin Wang",
+        "Chi Ma",
+        "Shaobin Chen",
+        "Pu Wang",
+        "Menglei Zhou",
+        "Junyi Qiu",
+        "Qiaorui Chen",
+        "Jiayu Sun",
+        "Shijie Liu",
+        "Zehuan Wang",
+        "Lei Yu",
+        "Chuan Liu",
+        "Fei Jiang",
+        "Wei Lin",
+        "Hao Wang",
+        "Jiawei Jiang",
+        "Xiao Yan"
+      ],
+      "affiliations": [],
+      "abstract": "Generative recommendation (GR) offers superior modeling capabilities but suffers from prohibitive inference costs due to the repeated encoding of long user histories. While cross-request Key-Value (KV) cache reuse presents a significant optimization opportunity, the massive scale of individual user states creates a storage explosion that far exceeds physical GPU limits. We propose MTServe, a hierarchical cache management system that virtualizes GPU memory by leveraging host RAM as a scalable backup store. To bridge the I/O gap between tiers, MTServe introduces a suite of system-level optimizations, including a hybrid storage layout, an asynchronous data transfer pipeline, and a locality-driven replacement policy. On both public and production datasets, MTServe delivers up to 3.1* speedup while maintaining near-perfect hit ratios (>98.5%).",
+      "published": "2026-04-24T03:44:35Z",
+      "updated": "2026-04-24T03:44:35Z",
+      "categories": [
+        "cs.LG",
+        "cs.AI"
+      ],
+      "pdfUrl": "https://arxiv.org/pdf/2604.22881v1",
+      "absUrl": "https://arxiv.org/abs/2604.22881v1",
+      "industrySource": ""
+    },
+    {
+      "id": "http://arxiv.org/abs/2604.22169v1",
+      "title": "ReCast: Recasting Learning Signals for Reinforcement Learning in Generative Recommendation",
+      "authors": [
+        "Peiyan Zhang",
+        "Hanmo Liu",
+        "Chengxuan Tong",
+        "Yuxia Wu",
+        "Wei Guo",
+        "Yong Liu"
+      ],
+      "affiliations": [],
+      "abstract": "Generic group-based RL assumes that sampled rollout groups are already usable learning signals. We show that this assumption breaks down in sparse-hit generative recommendation, where many sampled groups never become learnable at all. We propose ReCast, a repair-then-contrast learning-signal framework that first restores minimal learnability for all-zero groups and then replaces full-group reward normalization with a boundary-focused contrastive update on the strongest positive and the hardest negative. ReCast leaves the outer RL framework unchanged, modifies only within-group signal construction, and partially decouples rollout search width from actor-side update width. Across multiple generative recommendation tasks, ReCast consistently outperforms OpenOneRec-RL, achieving up to 36.6% relative improvement in Pass@1. Its matched-budget advantage is substantially larger: ReCast reaches the baseline's target performance with only 4.1% of the rollout budget, and this advantage widens with model scale. The same design also yields direct system-level gains, reducing actor-side update time by 16.60x, lowering peak allocated memory by 16.5%, and improving actor MFU by 14.2%. Mechanism analysis shows that ReCast mitigates the persistent all-zero / single-hit regime, restores learnability when natural positives are scarce, and converts otherwise wasted rollout budget into more stable policy updates. These results suggest that, for generative recommendation, the decisive RL problem is not only how to assign rewards, but how to construct learnable optimization events from sparse, structured supervision.",
+      "published": "2026-04-24T02:44:36Z",
+      "updated": "2026-04-24T02:44:36Z",
+      "categories": [
+        "cs.LG",
+        "cs.AI",
+        "cs.IR"
+      ],
+      "pdfUrl": "https://arxiv.org/pdf/2604.22169v1",
+      "absUrl": "https://arxiv.org/abs/2604.22169v1",
+      "industrySource": ""
     },
     {
       "id": "http://arxiv.org/abs/2604.15951v2",
@@ -977,233 +1204,6 @@
       ],
       "pdfUrl": "https://arxiv.org/pdf/2603.11486v1",
       "absUrl": "https://arxiv.org/abs/2603.11486v1",
-      "industrySource": ""
-    },
-    {
-      "id": "http://arxiv.org/abs/2603.10369v1",
-      "title": "Beyond Interleaving: Causal Attention Reformulations for Generative Recommender Systems",
-      "authors": [
-        "Hailing Cheng"
-      ],
-      "affiliations": [],
-      "abstract": "Generative Recommender Systems (GR) increasingly model user behavior as a sequence generation task by interleaving item and action tokens. While effective, this formulation introduces significant structural and computational inefficiencies: it doubles sequence length, incurs quadratic overhead, and relies on implicit attention to recover the causal relationship between an item and its associated action. Furthermore, interleaving heterogeneous tokens forces the Transformer to disentangle semantically incompatible signals, leading to increased attention noise and reduced representation efficiency.In this work, we propose a principled reformulation of generative recommendation that aligns sequence modeling with underlying causal structures and attention theory. We demonstrate that current interleaving mechanisms act as inefficient proxies for similarity-weighted action pooling. To address this, we introduce two novel architectures that eliminate interleaved dependencies to reduce sequence complexity by 50%: Attention-based Late Fusion for Actions (AttnLFA) and Attention-based Mixed Value Pooling (AttnMVP). These models explicitly encode the $i_n \\rightarrow a_n$ causal dependency while preserving the expressive power of Transformer-based sequence modeling.We evaluate our framework on large-scale product recommendation data from a major social network. Experimental results show that AttnLFA and AttnMVP consistently outperform interleaved baselines, achieving evaluation loss improvements of 0.29% and 0.80%, and significant gains in Normalized Entropy (NE). Crucially, these performance gains are accompanied by training time reductions of 23% and 12%, respectively. Our findings suggest that explicitly modeling item-action causality provides a superior design paradigm for scalable and efficient generative ranking.",
-      "published": "2026-03-11T03:30:49Z",
-      "updated": "2026-03-11T03:30:49Z",
-      "categories": [
-        "cs.IR",
-        "cs.AI"
-      ],
-      "pdfUrl": "https://arxiv.org/pdf/2603.10369v1",
-      "absUrl": "https://arxiv.org/abs/2603.10369v1",
-      "industrySource": ""
-    },
-    {
-      "id": "http://arxiv.org/abs/2603.10279v1",
-      "title": "Robust Post-Training for Generative Recommenders: Why Exponential Reward-Weighted SFT Outperforms RLHF",
-      "authors": [
-        "Keertana Chidambaram",
-        "Sanath Kumar Krishnamurthy",
-        "Qiuling Xu",
-        "Ko-Jen Hsiao",
-        "Moumita Bhattacharya"
-      ],
-      "affiliations": [],
-      "abstract": "Aligning generative recommender systems to user preferences via post-training is critical for closing the gap between next-item prediction and actual recommendation quality. Existing post-training methods are ill-suited for production-scale systems: RLHF methods reward hack due to noisy user feedback and unreliable reward models, offline RL alternatives require propensity scores that are unavailable, and online interaction is infeasible. We identify exponential reward-weighted SFT with weights $w = \\exp(r/λ)$ as uniquely suited to this setting, and provide the theoretical and empirical foundations that explain why. By optimizing directly on observed rewards without querying a learned reward model, the method is immune to reward hacking, requires no propensity scores, and is fully offline. We prove the first policy improvement guarantees for this setting under noisy rewards, showing that the gap scales only logarithmically with catalog size and remains informative even for large item catalogs. Crucially, we show that temperature $λ$ explicitly and quantifiably controls the robustness-improvement tradeoff, providing practitioners with a single interpretable regularization hyperparameter with theoretical grounding. Experiments on three open-source and one proprietary dataset against four baselines confirm that exponential reward weighting is simple, scalable, and consistently outperforms RLHF-based alternatives.",
-      "published": "2026-03-10T23:48:25Z",
-      "updated": "2026-03-10T23:48:25Z",
-      "categories": [
-        "cs.LG"
-      ],
-      "pdfUrl": "https://arxiv.org/pdf/2603.10279v1",
-      "absUrl": "https://arxiv.org/abs/2603.10279v1",
-      "industrySource": ""
-    },
-    {
-      "id": "http://arxiv.org/abs/2603.07725v1",
-      "title": "Verifiable Reasoning for LLM-based Generative Recommendation",
-      "authors": [
-        "Xinyu Lin",
-        "Hanqing Zeng",
-        "Hanchao Yu",
-        "Yinglong Xia",
-        "Jiang Zhang",
-        "Aashu Singh",
-        "Fei Liu",
-        "Wenjie Wang",
-        "Fuli Feng",
-        "Tat-Seng Chua",
-        "Qifan Wang"
-      ],
-      "affiliations": [],
-      "abstract": "Reasoning in Large Language Models (LLMs) has recently shown strong potential in enhancing generative recommendation through deep understanding of complex user preference. Existing approaches follow a {reason-then-recommend} paradigm, where LLMs perform step-by-step reasoning before item generation. However, this paradigm inevitably suffers from reasoning degradation (i.e., homogeneous or error-accumulated reasoning) due to the lack of intermediate verification, thus undermining the recommendation. To bridge this gap, we propose a novel \\textbf{\\textit{reason-verify-recommend}} paradigm, which interleaves reasoning with verification to provide reliable feedback, guiding the reasoning process toward more faithful user preference understanding. To enable effective verification, we establish two key principles for verifier design: 1) reliability ensures accurate evaluation of reasoning correctness and informative guidance generation; and 2) multi-dimensionality emphasizes comprehensive verification across multi-dimensional user preferences. Accordingly, we propose an effective implementation called VRec. It employs a mixture of verifiers to ensure multi-dimensionality, while leveraging a proxy prediction objective to pursue reliability. Experiments on four real-world datasets demonstrate that VRec substantially enhances recommendation effectiveness and scalability without compromising efficiency. The codes can be found at https://github.com/Linxyhaha/Verifiable-Rec.",
-      "published": "2026-03-08T16:55:45Z",
-      "updated": "2026-03-08T16:55:45Z",
-      "categories": [
-        "cs.IR"
-      ],
-      "pdfUrl": "https://arxiv.org/pdf/2603.07725v1",
-      "absUrl": "https://arxiv.org/abs/2603.07725v1",
-      "industrySource": ""
-    },
-    {
-      "id": "http://arxiv.org/abs/2603.04986v1",
-      "title": "Debiasing Sequential Recommendation with Time-aware Inverse Propensity Scoring",
-      "authors": [
-        "Sirui Huang",
-        "Jing Long",
-        "Qian Li",
-        "Guandong Xu",
-        "Qing Li"
-      ],
-      "affiliations": [],
-      "abstract": "Sequential Recommendation (SR) predicts users next interactions by modeling the temporal order of their historical behaviors. Existing approaches, including traditional sequential models and generative recommenders, achieve strong performance but primarily rely on explicit interactions such as clicks or purchases while overlooking item exposures. This ignorance introduces selection bias, where exposed but unclicked items are misinterpreted as disinterest, and exposure bias, where unexposed items are treated as irrelevant. Effectively addressing these biases requires distinguishing between items that were \"not exposed\" and those that were \"not of interest\", which cannot be reliably inferred from correlations in historical data. Counterfactual reasoning provides a natural solution by estimating user preferences under hypothetical exposure, and Inverse Propensity Scoring (IPS) is a common tool for such estimation. However, conventional IPS methods are static and fail to capture the sequential dependencies and temporal dynamics of user behavior. To overcome these limitations, we propose Time aware Inverse Propensity Scoring (TIPS). Unlike traditional static IPS, TIPS effectively accounts for sequential dependencies and temporal dynamics, thereby capturing user preferences more accurately. Extensive experiments show that TIPS consistently enhances recommendation performance as a plug-in for various sequential recommenders. Our code will be publicly available upon acceptance.",
-      "published": "2026-03-05T09:25:19Z",
-      "updated": "2026-03-05T09:25:19Z",
-      "categories": [
-        "cs.IR",
-        "cs.AI"
-      ],
-      "pdfUrl": "https://arxiv.org/pdf/2603.04986v1",
-      "absUrl": "https://arxiv.org/abs/2603.04986v1",
-      "industrySource": ""
-    },
-    {
-      "id": "http://arxiv.org/abs/2604.20861v1",
-      "title": "Deep Interest Mining with Cross-Modal Alignment for SemanticID Generation in Generative Recommendation",
-      "authors": [
-        "Yagchen Zeng"
-      ],
-      "affiliations": [],
-      "abstract": "Generative Recommendation (GR) has demonstrated remarkable performance in next-token prediction paradigms, which relies on Semantic IDs (SIDs) to compress trillion-scale data into learnable vocabulary sequences. However, existing methods suffer from three critical limitations: (1) Information Degradation: the two-stage compression pipeline causes semantic loss and information degradation, with no posterior mechanism to distinguish high-quality from low-quality SIDs; (2) Semantic Degradation: cascaded quantization discards key semantic information from original multimodal features, as the embedding generation and quantization stages are not jointly optimized toward a unified objective; (3) Modality Distortion: quantizers fail to properly align text and image modalities, causing feature misalignment even when upstream networks have aligned them. To address these challenges, we propose a novel framework integrating three key innovations: Deep Contextual Interest Mining (DCIM), Cross-Modal Semantic Alignment (CMSA), and Quality-Aware Reinforcement Mechanism (QARM). First, we leverage Vision-Language Models (VLMs) to align non-textual modalities into a unified text-based semantic space, mitigating modality distortion. Second, we introduce a deep interest mining mechanism that captures high-level semantic information implicitly present in advertising contexts, encouraging SIDs to preserve critical contextual information through reconstruction-based supervision. Third, we employ a reinforcement learning framework with quality-aware rewards to encourage semantically rich SIDs while suppressing low-quality ones in the posterior stage. Extensive experiments demonstrate that our approach consistently outperforms state-of-the-art SID generation methods, achieving superior performance on multiple benchmarks. Ablation studies further validate the effectiveness of each proposed component",
-      "published": "2026-03-03T13:36:22Z",
-      "updated": "2026-03-03T13:36:22Z",
-      "categories": [
-        "cs.IR",
-        "cs.AI"
-      ],
-      "pdfUrl": "https://arxiv.org/pdf/2604.20861v1",
-      "absUrl": "https://arxiv.org/abs/2604.20861v1",
-      "industrySource": ""
-    },
-    {
-      "id": "http://arxiv.org/abs/2603.02730v1",
-      "title": "APAO: Adaptive Prefix-Aware Optimization for Generative Recommendation",
-      "authors": [
-        "Yuanqing Yu",
-        "Yifan Wang",
-        "Weizhi Ma",
-        "Zhiqiang Guo",
-        "Min Zhang"
-      ],
-      "affiliations": [],
-      "abstract": "Generative recommendation has recently emerged as a promising paradigm in sequential recommendation. It formulates the task as an autoregressive generation process, predicting discrete tokens of the next item conditioned on user interaction histories. Existing generative recommendation models are typically trained with token-level likelihood objectives, such as cross-entropy loss, while employing multi-step beam search during inference to generate ranked item candidates. However, this leads to a fundamental training-inference inconsistency: standard training assumes ground-truth history is always available, ignoring the fact that beam search prunes low-probability branches during inference. Consequently, the correct item may be prematurely discarded simply because its initial tokens (prefixes) have low scores. To address this issue, we propose the Adaptive Prefix-Aware Optimization (APAO) framework, which introduces prefix-level optimization losses to better align the training objective with the inference setting. Furthermore, we design an adaptive worst-prefix optimization strategy that dynamically focuses on the most vulnerable prefixes during training, thereby enhancing the model's ability to retain correct candidates under beam search constraints. We provide theoretical analyses to demonstrate the effectiveness and efficiency of our framework. Extensive experiments on multiple datasets further show that APAO consistently alleviates the training-inference inconsistency and improves performance across various generative recommendation backbones. Our codes are publicly available at https://github.com/yuyq18/APAO.",
-      "published": "2026-03-03T08:29:15Z",
-      "updated": "2026-03-03T08:29:15Z",
-      "categories": [
-        "cs.IR"
-      ],
-      "pdfUrl": "https://arxiv.org/pdf/2603.02730v1",
-      "absUrl": "https://arxiv.org/abs/2603.02730v1",
-      "industrySource": ""
-    },
-    {
-      "id": "http://arxiv.org/abs/2603.00980v1",
-      "title": "Beyond the Flat Sequence: Hierarchical and Preference-Aware Generative Recommendations",
-      "authors": [
-        "Zerui Chen",
-        "Heng Chang",
-        "Tianying Liu",
-        "Chuantian Zhou",
-        "Yi Cao",
-        "Jiandong Ding",
-        "Ming Liu",
-        "Bing Qin"
-      ],
-      "affiliations": [],
-      "abstract": "Generative Recommenders (GRs), exemplified by the Hierarchical Sequential Transduction Unit (HSTU), have emerged as a powerful paradigm for modeling long user interaction sequences. However, we observe that their \"flat-sequence\" assumption overlooks the rich, intrinsic structure of user behavior. This leads to two key limitations: a failure to capture the temporal hierarchy of session-based engagement, and computational inefficiency, as dense attention introduces significant noise that obscures true preference signals within semantically sparse histories, which deteriorates the quality of the learned representations. To this end, we propose a novel framework named HPGR (Hierarchical and Preference-aware Generative Recommender), built upon a two-stage paradigm that injects these crucial structural priors into the model to handle the drawback. Specifically, HPGR comprises two synergistic stages. First, a structure-aware pre-training stage employs a session-based Masked Item Modeling (MIM) objective to learn a hierarchically-informed and semantically rich item representation space. Second, a preference-aware fine-tuning stage leverages these powerful representations to implement a Preference-Guided Sparse Attention mechanism, which dynamically constrains computation to only the most relevant historical items, enhancing both efficiency and signal-to-noise ratio. Empirical experiments on a large-scale proprietary industrial dataset from APPGallery and an online A/B test verify that HPGR achieves state-of-the-art performance over multiple strong baselines, including HSTU and MTGR.",
-      "published": "2026-03-01T08:15:34Z",
-      "updated": "2026-03-01T08:15:34Z",
-      "categories": [
-        "cs.IR"
-      ],
-      "pdfUrl": "https://arxiv.org/pdf/2603.00980v1",
-      "absUrl": "https://arxiv.org/abs/2603.00980v1",
-      "industrySource": ""
-    },
-    {
-      "id": "http://arxiv.org/abs/2603.00700v1",
-      "title": "SODA: Semantic-Oriented Distributional Alignment for Generative Recommendation",
-      "authors": [
-        "Ziqi Xue",
-        "Dingxian Wang",
-        "Yimeng Bai",
-        "Shuai Zhu",
-        "Jialei Li",
-        "Xiaoyan Zhao",
-        "Frank Yang",
-        "Andrew Rabinovich",
-        "Yang Zhang",
-        "Pablo N. Mendes"
-      ],
-      "affiliations": [],
-      "abstract": "Generative recommendation has emerged as a scalable alternative to traditional retrieve-and-rank pipelines by operating in a compact token space. However, existing methods mainly rely on discrete code-level supervision, which leads to information loss and limits the joint optimization between the tokenizer and the generative recommender. In this work, we propose a distribution-level supervision paradigm that leverages probability distributions over multi-layer codebooks as soft and information-rich representations. Building on this idea, we introduce Semantic-Oriented Distributional Alignment (SODA), a plug-and-play contrastive supervision framework based on Bayesian Personalized Ranking, which aligns semantically rich distributions via negative KL divergence while enabling end-to-end differentiable training. Extensive experiments on multiple real-world datasets demonstrate that SODA consistently improves the performance of various generative recommender backbones, validating its effectiveness and generality. Codes will be available upon acceptance.",
-      "published": "2026-02-28T15:18:28Z",
-      "updated": "2026-02-28T15:18:28Z",
-      "categories": [
-        "cs.IR"
-      ],
-      "pdfUrl": "https://arxiv.org/pdf/2603.00700v1",
-      "absUrl": "https://arxiv.org/abs/2603.00700v1",
-      "industrySource": ""
-    },
-    {
-      "id": "http://arxiv.org/abs/2603.00416v1",
-      "title": "MuonRec: Shifting the Optimizer Paradigm Beyond Adam in Scalable Generative Recommendation",
-      "authors": [
-        "Rong Shan",
-        "Aofan Yu",
-        "Bo Chen",
-        "Kuo Cai",
-        "Qiang Luo",
-        "Ruiming Tang",
-        "Han Li",
-        "Weiwen Liu",
-        "Weinan Zhang",
-        "Jianghao Lin"
-      ],
-      "affiliations": [],
-      "abstract": "Recommender systems (RecSys) are increasingly emphasizing scaling, leveraging larger architectures and more interaction data to improve personalization. Yet, despite the optimizer's pivotal role in training, modern RecSys pipelines almost universally default to Adam/AdamW, with limited scrutiny of whether these choices are truly optimal for recommendation. In this work, we revisit optimizer design for scalable recommendation and introduce MuonRec, the first framework that brings the recently proposed Muon optimizer to RecSys training. Muon performs orthogonalized momentum updates for 2D weight matrices via Newton-Schulz iteration, promoting diverse update directions and improving optimization efficiency. We develop an open-source training recipe for recommendation models and evaluate it across both traditional sequential recommenders and modern generative recommenders. Extensive experiments demonstrate that MuonRec reduces converged training steps by an average of 32.4\\% while simultaneously improving final ranking quality. Specifically, MuonRec yields consistent relative gains in NDCG@10, averaging 12.6\\% across all settings, with particularly pronounced improvements in generative recommendation models. These results consistently outperform strong Adam/AdamW baselines, positioning Muon as a promising new optimizer standard for RecSys training. Our code is available.",
-      "published": "2026-02-28T02:32:44Z",
-      "updated": "2026-02-28T02:32:44Z",
-      "categories": [
-        "cs.IR",
-        "cs.AI"
-      ],
-      "pdfUrl": "https://arxiv.org/pdf/2603.00416v1",
-      "absUrl": "https://arxiv.org/abs/2603.00416v1",
-      "industrySource": ""
-    },
-    {
-      "id": "http://arxiv.org/abs/2602.23639v1",
-      "title": "Learning to Reflect and Correct: Towards Better Decoding Trajectories for Large-Scale Generative Recommendation",
-      "authors": [
-        "Haibo Xing",
-        "Hao Deng",
-        "Lingyu Mu",
-        "Jinxin Hu",
-        "Yu Zhang",
-        "Xiaoyi Zeng",
-        "Jing Zhang"
-      ],
-      "affiliations": [],
-      "abstract": "Generative Recommendation (GR) has become a promising paradigm for large-scale recommendation systems. However, existing GR models typically perform single-pass decoding without explicit refinement, causing early deviations to accumulate and ultimately degrade recommendation quality. To tackle this problem, we propose GRC, which is, to our knowledge, the first structured reflection-correction framework for GR that extends standard decoding into a Generation-Reflection-Correction (GRC) process. Concretely, GRC introduces a supervised reflection-correction template that decomposes the decoding process into initial draft generation, multi-granular reflection, and reflection-guided correction, thereby enabling structured reflection and correction in the semantic token space. To further explore the enlarged refinement space introduced by the GRC process, we optimize the entire GRC trajectory with GRPO-based reinforcement learning, under a carefully designed reward function with token-level and trajectory-level signals. For efficient online serving, we propose an Entropy-Guided Reflection Scheduling (EGRS) strategy that dynamically allocates more correction budget to high-uncertainty decoding trajectories during beam search. Extensive experiments on real-world datasets show that GRC consistently outperforms six state-of-the-art baselines by up to 15.74%, and online A/B tests demonstrate its substantial practical value in large-scale industrial recommendation, delivering a 1.79% lift in advertising revenue with only modest latency overhead.",
-      "published": "2026-02-27T03:22:58Z",
-      "updated": "2026-02-27T03:22:58Z",
-      "categories": [
-        "cs.IR"
-      ],
-      "pdfUrl": "https://arxiv.org/pdf/2602.23639v1",
-      "absUrl": "https://arxiv.org/abs/2602.23639v1",
       "industrySource": ""
     }
   ]
