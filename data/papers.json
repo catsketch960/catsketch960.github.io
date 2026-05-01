@@ -1,6 +1,6 @@
 {
-  "lastUpdated": "2026-04-30T04:36:02Z",
-  "totalResults": 591,
+  "lastUpdated": "2026-05-01T04:53:11Z",
+  "totalResults": 594,
   "papers": [
     {
       "id": "http://arxiv.org/abs/2604.24717v1",
@@ -95,7 +95,7 @@
       "industrySource": "Google"
     },
     {
-      "id": "http://arxiv.org/abs/2604.12234v3",
+      "id": "http://arxiv.org/abs/2604.12234v4",
       "title": "UniRec: Bridging the Expressive Gap between Generative and Discriminative Recommendation via Chain-of-Attribute",
       "authors": [
         "Ziliang Wang",
@@ -112,12 +112,12 @@
       "affiliations": [],
       "abstract": "Generative Recommendation (GR) reframes retrieval and ranking as autoregressive decoding over Semantic IDs (SIDs), unifying the multi-stage pipeline into a single model. Yet a fundamental expressive gap persists: discriminative models score items with direct feature access enabling explicit user-item crossing, whereas GR decodes over compact SID tokens without item-side signal. We formalize this via Bayes' theorem: ranking by p(y|f,u) is equivalent to ranking by p(f|y,u), which factorizes autoregressively over item features, showing that a generative model with full feature access matches its discriminative counterpart, with any practical gap stemming solely from incomplete feature coverage. We propose UniRec with Chain-of-Attribute (CoA) as its core mechanism. CoA prefixes each SID sequence with structured attribute tokens:category, seller, brand, before decoding the SID, recovering the item-side feature crossing that discriminative models exploit. Since items sharing identical attributes cluster in adjacent SID regions, attribute conditioning yields a measurable per-step entropy reduction H(s_k|s<k,a) < H(s_k|s<k), narrowing the search space and stabilizing beam search. We further address two deployment challenges: Capacity-constrained SID introduces exposure-weighted capacity penalties into residual quantization to suppress token collapse and the Matthew effect; Conditional Decoding Context (CDC) combines Task-Conditioned BOS with hash-based Content Summaries to inject scenario signals at each decoding step. A joint RFT and DPO framework aligns the model with business objectives beyond distribution matching. Experiments show UniRec outperforms the strongest baseline by +22.6% HR@50 overall and +15.5% on high-value orders. Deployed on Shopee's e-commerce platform, online A/B tests confirm significant gains in PVCTR (+5.37%), orders (+4.76%), and GMV (+5.60%).",
       "published": "2026-04-14T03:13:50Z",
-      "updated": "2026-04-22T02:49:34Z",
+      "updated": "2026-04-30T06:08:06Z",
       "categories": [
         "cs.IR"
       ],
-      "pdfUrl": "https://arxiv.org/pdf/2604.12234v3",
-      "absUrl": "https://arxiv.org/abs/2604.12234v3",
+      "pdfUrl": "https://arxiv.org/pdf/2604.12234v4",
+      "absUrl": "https://arxiv.org/abs/2604.12234v4",
       "industrySource": "Shopee"
     },
     {
@@ -365,25 +365,28 @@
       "industrySource": "Meta"
     },
     {
-      "id": "http://arxiv.org/abs/2603.12564v7",
-      "title": "Sell Me This Stock: Unsafe Recommendation Drift in LLM Agents",
+      "id": "http://arxiv.org/abs/2604.27747v1",
+      "title": "Position-Aware Drafting for Inference Acceleration in LLM-Based Generative List-Wise Recommendation",
       "authors": [
-        "Zekun Wu",
-        "Adriano Koshiyama",
-        "Sahan Bulathwela",
-        "Maria Perez-Ortiz"
+        "Jiaju Chen",
+        "Chongming Gao",
+        "Chenxiao Fan",
+        "Haoyan Liu",
+        "Qingpeng Cai",
+        "Peng Jiang",
+        "Xiangnan He"
       ],
       "affiliations": [],
-      "abstract": "When a multi-turn LLM recommendation agent consumes incorrect tool data, it recommends unsuitable products while standard quality metrics stay near-perfect, a pattern we call evaluation blindness. We replay 23-turn financial advisory conversations across eight language models and find three counterintuitive failure modes. First, stronger models are not safer: the best-performing model has the highest quality score yet the worst suitability violations (99.1% of turns). This points to an alignment-grounding tension: the same property that makes it an effective agent, faithfully grounding its reasoning in tool data, makes it the most reliable executor of bad data. Across all models, 80% of risk-score citations repeat the manipulated value verbatim, and not a single turn out of 1,840 questions the tool outputs. Second, the failures are not cumulative: 95% of violations stem from the current turn's data rather than contamination building up in memory, meaning a single bad turn is enough to compromise safety. Third, while the model internally detects the manipulation (sparse autoencoder probing distinguishes adversarial from random perturbations), this awareness does not translate into safer output. Both representation-level interventions (recovering less than 6% of the gap) and prompt-level self-verification fail, as the agent ultimately relies on the same manipulated data. While incorporating suitability constraints into ranking metrics makes the gap visible, our findings suggest that safe deployment requires independent monitoring against a data source the agent cannot influence.",
-      "published": "2026-03-13T01:54:00Z",
-      "updated": "2026-04-14T19:21:26Z",
+      "abstract": "Large language model (LLM)-based generative list-wise recommendation has advanced rapidly, but decoding remains sequential and thus latency-prone. To accelerate inference without changing the target distribution, speculative decoding (SD) uses a small draft model to propose several next tokens at once and a target LLM to verify and accept the longest prefix, skipping multiple steps per round. In generative recommendation, however, each item is represented by multiple semantic-ID tokens, often with separators, and current drafts typically treat these tokens uniformly. This overlooks two practical facts: (i) a token's semantics depend on its within-item slot, and (ii) uncertainty tends to increase with speculation depth. Without modeling these effects, SD's speedups can be limited. We introduce PAD-Rec, Position-Aware Drafting for generative Recommendation, a lightweight module that augments the draft model with two complementary signals. Item position embeddings explicitly encode the within-item slot of each token, strengthening structural awareness. Step position embeddings encode the draft step, allowing the model to adapt to depth-dependent uncertainty and improve proposal quality. To harmonize these signals with base features, we add simple gates: a learnable coefficient for item slots and a context-driven gate for draft steps. The module is trainable, easy to integrate with standard draft models, and adds negligible inference overhead. Extensive experiments on four real-world datasets show up to 3.1x wall-clock speedup and about 5% average wall-clock speedup gain over strong SD baselines, while largely preserving recommendation quality.",
+      "published": "2026-04-30T11:37:08Z",
+      "updated": "2026-04-30T11:37:08Z",
       "categories": [
-        "cs.CL",
+        "cs.IR",
         "cs.AI"
       ],
-      "pdfUrl": "https://arxiv.org/pdf/2603.12564v7",
-      "absUrl": "https://arxiv.org/abs/2603.12564v7",
-      "industrySource": "Microsoft"
+      "pdfUrl": "https://arxiv.org/pdf/2604.27747v1",
+      "absUrl": "https://arxiv.org/abs/2604.27747v1",
+      "industrySource": ""
     },
     {
       "id": "http://arxiv.org/abs/2604.26427v1",
@@ -769,6 +772,26 @@
       "industrySource": ""
     },
     {
+      "id": "http://arxiv.org/abs/2604.26960v1",
+      "title": "LLM Biases",
+      "authors": [
+        "Jinhui Han",
+        "Ming Hu",
+        "Xilin Zhang"
+      ],
+      "affiliations": [],
+      "abstract": "Transformer-based agentic AI is rapidly being deployed on major platforms to help users shop, watch, and navigate content with less effort. While these systems can deliver impressive performance, a key concern is whether they may be less reliable than they appear. We ask a simple but fundamental question: whether the mechanisms that make transformer-based agents effective can also induce systematic biases or distortions? We study this question through a theoretical analysis of transformer-based generative recommenders, in which the next user interaction is generated sequentially from the user history. Focusing on how the model allocates attention across historical evidence, we identify four bias channels: (i) Positional bias: stronger positional encoding shifts influence toward recent history, improving responsiveness but potentially reducing stability and long-term diversity; (ii) Popularity amplification: small frequency differences in data can be magnified into disproportionate exposure, contributing to Matthew effects and echo chambers; (iii) Latent driver bias: when important drivers of user choices are not directly observed, the model can place overly concentrated weight on a small subset of past events, creating overconfident attributions. (iv) Synthetic data bias: when users increasingly follow AI suggestions and platforms retrain on model-shaped synthetic logs, outputs can concentrate over time, and long-tail alternatives can disappear first. Our analysis highlights mechanism-level reliability risks that may not be visible in offline performance metrics. The four bias channels indicate that large-scale deployment may systematically distort exposure and choice. For managers, the immediate implication is to treat these as operational risk factors and to monitor concentration and drift over time, rather than assuming that performance gains alone guarantee reliability.",
+      "published": "2026-04-07T14:08:38Z",
+      "updated": "2026-04-07T14:08:38Z",
+      "categories": [
+        "cs.CY",
+        "cs.AI"
+      ],
+      "pdfUrl": "https://arxiv.org/pdf/2604.26960v1",
+      "absUrl": "https://arxiv.org/abs/2604.26960v1",
+      "industrySource": ""
+    },
+    {
       "id": "http://arxiv.org/abs/2604.05113v1",
       "title": "CRAB: Codebook Rebalancing for Bias Mitigation in Generative Recommendation",
       "authors": [
@@ -865,6 +888,24 @@
       ],
       "pdfUrl": "https://arxiv.org/pdf/2604.02324v1",
       "absUrl": "https://arxiv.org/abs/2604.02324v1",
+      "industrySource": ""
+    },
+    {
+      "id": "http://arxiv.org/abs/2604.01911v2",
+      "title": "On the uncertainty from the first-stage estimation of prognostic covariate adjustment in randomized controlled trials",
+      "authors": [
+        "Nodoka Seya",
+        "Masataka Taguri"
+      ],
+      "affiliations": [],
+      "abstract": "Prognostic covariate adjustment (PROCOVA) is a two-sample two-stage estimation method used in randomized controlled trials. In the first stage, a prognostic score, defined as the conditional expectation of an outcome given covariates under the control treatment, is estimated using historical data. In the second stage, analysis of covariance with the estimated prognostic score and treatment assignment as explanatory variables is performed, and the average treatment effect is estimated. Although the prognostic score is estimated in this procedure, the variance estimator, which treats the prognostic score as known, has been used. Furthermore, the difference in the asymptotic variance between cases where the prognostic score is known versus where it is estimated has not been previously clarified. In this study, we derived these two asymptotic variances and showed that they are equal. We also constructed two variance estimator: one that treats the prognostic score as known, and another that accounts for its estimation, and compared their performance through simulation studies and data applications. For PROCOVA, since both variance estimators are asymptotically valid, it is generally recommended to use a variance estimator that treats the prognostic score as known, as it is simpler to derive and implement. However, when historical data is small, a variance estimator that explicitly accounts for prognostic score estimation is recommended if conservative inference is preferred.",
+      "published": "2026-04-02T11:29:02Z",
+      "updated": "2026-04-30T12:04:11Z",
+      "categories": [
+        "stat.ME"
+      ],
+      "pdfUrl": "https://arxiv.org/pdf/2604.01911v2",
+      "absUrl": "https://arxiv.org/abs/2604.01911v2",
       "industrySource": ""
     },
     {
@@ -1159,51 +1200,6 @@
       ],
       "pdfUrl": "https://arxiv.org/pdf/2603.13934v1",
       "absUrl": "https://arxiv.org/abs/2603.13934v1",
-      "industrySource": ""
-    },
-    {
-      "id": "http://arxiv.org/abs/2603.12935v1",
-      "title": "Can Fairness Be Prompted? Prompt-Based Debiasing Strategies in High-Stakes Recommendations",
-      "authors": [
-        "Mihaela Rotar",
-        "Theresia Veronika Rampisela",
-        "Maria Maistro"
-      ],
-      "affiliations": [],
-      "abstract": "Large Language Models (LLMs) can infer sensitive attributes such as gender or age from indirect cues like names and pronouns, potentially biasing recommendations. While several debiasing methods exist, they require access to the LLMs' weights, are computationally costly, and cannot be used by lay users. To address this gap, we investigate implicit biases in LLM Recommenders (LLMRecs) and explore whether prompt-based strategies can serve as a lightweight and easy-to-use debiasing approach. We contribute three bias-aware prompting strategies for LLMRecs. To our knowledge, this is the first study on prompt-based debiasing approaches in LLMRecs that focuses on group fairness for users. Our experiments with 3 LLMs, 4 prompt templates, 9 sensitive attribute values, and 2 datasets show that our proposed debiasing approach, which instructs an LLM to be fair, can improve fairness by up to 74% while retaining comparable effectiveness, but might overpromote specific demographic groups in some cases.",
-      "published": "2026-03-13T12:30:42Z",
-      "updated": "2026-03-13T12:30:42Z",
-      "categories": [
-        "cs.IR"
-      ],
-      "pdfUrl": "https://arxiv.org/pdf/2603.12935v1",
-      "absUrl": "https://arxiv.org/abs/2603.12935v1",
-      "industrySource": ""
-    },
-    {
-      "id": "http://arxiv.org/abs/2603.11486v1",
-      "title": "Quantized Inference for OneRec-V2",
-      "authors": [
-        "Yi Su",
-        "Xinchen Luo",
-        "Hongtao Cheng",
-        "Ziteng Shu",
-        "Yunfeng Zhao",
-        "Fangyu Zhang",
-        "Jiaqiang Liu",
-        "Xiao Liang",
-        "Yiwu Liu",
-        "Ruiming Tang"
-      ],
-      "affiliations": [],
-      "abstract": "Quantized inference has demonstrated substantial system-level benefits in large language models while preserving model quality. In contrast, reliably applying low-precision quantization to recommender systems remains challenging in industrial settings. This difficulty arises from differences in training paradigms, architectural patterns, and computational characteristics, which lead to distinct numerical behaviors in weights and activations. Traditional recommender models often exhibit high-magnitude and high-variance weights and activations, making them more sensitive to quantization-induced perturbations. In addition, recommendation workloads frequently suffer from limited hardware utilization, limiting the practical gains of low-precision computation. In this work, we revisit low-precision inference in the context of generative recommendation. Through empirical distribution analysis, we show that the weight and activation statistics of OneRec-V2 are significantly more controlled and closer to those of large language models than traditional recommendation models. Moreover, OneRec-V2 exhibits a more compute-intensive inference pattern with substantially higher hardware utilization, enabling more end-to-end throughput gains with low-precision computation. Leveraging this property, we develop a FP8 post training quantization framework and integrate it into an optimized inference infrastructure. The proposed joint optimization achieves a 49\\% reduction in end-to-end inference latency and a 92\\% increase in throughput. Extensive online A/B testing further confirms that FP8 inference introduces no degradation in core metrics. These results suggest that as recommender systems evolve toward the paradigms of large language models, algorithm-level and system-level optimization techniques established in the LLM domain can be effectively adapted to large-scale recommendation workloads.",
-      "published": "2026-03-12T03:13:08Z",
-      "updated": "2026-03-12T03:13:08Z",
-      "categories": [
-        "cs.IR"
-      ],
-      "pdfUrl": "https://arxiv.org/pdf/2603.11486v1",
-      "absUrl": "https://arxiv.org/abs/2603.11486v1",
       "industrySource": ""
     }
   ]
