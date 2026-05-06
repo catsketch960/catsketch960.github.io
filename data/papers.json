@@ -1,6 +1,6 @@
 {
-  "lastUpdated": "2026-05-02T04:20:51Z",
-  "totalResults": 594,
+  "lastUpdated": "2026-05-06T04:36:17Z",
+  "totalResults": 595,
   "papers": [
     {
       "id": "http://arxiv.org/abs/2604.24717v1",
@@ -363,6 +363,34 @@
       "pdfUrl": "https://arxiv.org/pdf/2603.16088v1",
       "absUrl": "https://arxiv.org/abs/2603.16088v1",
       "industrySource": "Meta"
+    },
+    {
+      "id": "http://arxiv.org/abs/2605.03916v1",
+      "title": "Atomic Fact-Checking Increases Clinician Trust in Large Language Model Recommendations for Oncology Decision Support: A Randomized Controlled Trial",
+      "authors": [
+        "Lisa C. Adams",
+        "Linus Marx",
+        "Erik Thiele Orberg",
+        "Keno Bressem",
+        "Sebastian Ziegelmayer",
+        "Denise Bernhardt",
+        "Markus Graf",
+        "Marcus R. Makowski",
+        "Stephanie E. Combs",
+        "Florian Matthes",
+        "Jan C. Peeken"
+      ],
+      "affiliations": [],
+      "abstract": "Question: Does atomic fact-checking, which decomposes AI treatment recommendations into individually verifiable claims linked to source guideline documents, increase clinician trust compared to traditional explainability approaches? Findings: In this randomized trial of 356 clinicians generating 7,476 trust ratings, atomic fact-checking produced a large effect on trust (Cohen's d = 0.94), increasing the proportion of clinicians expressing trust from 26.9% to 66.5%. Traditional transparency mechanisms showed a dose-response gradient of improvement over baseline (d = 0.25 to 0.50). Meaning: Decomposing AI recommendations into individually verifiable claims linked to source guidelines produces substantially higher clinician trust than traditional explainability approaches in high-stakes clinical decisions.",
+      "published": "2026-05-05T16:12:30Z",
+      "updated": "2026-05-05T16:12:30Z",
+      "categories": [
+        "cs.CL",
+        "cs.AI"
+      ],
+      "pdfUrl": "https://arxiv.org/pdf/2605.03916v1",
+      "absUrl": "https://arxiv.org/abs/2605.03916v1",
+      "industrySource": ""
     },
     {
       "id": "http://arxiv.org/abs/2604.27747v1",
@@ -1160,8 +1188,8 @@
       "industrySource": ""
     },
     {
-      "id": "http://arxiv.org/abs/2603.14259v1",
-      "title": "Bringing Model Editing to Generative Recommendation in Cold-Start Scenarios",
+      "id": "http://arxiv.org/abs/2603.14259v2",
+      "title": "GenRecEdit: Adapting Model Editing for Generative Recommendation with Cold-Start Items",
       "authors": [
         "Chenglei Shen",
         "Teng Shi",
@@ -1172,34 +1200,13 @@
       "affiliations": [],
       "abstract": "Generative recommendation (GR) has shown strong potential for sequential recommendation in an end-to-end generation paradigm. However, existing GR models suffer from severe cold-start collapse: their recommendation accuracy on cold-start items can drop to near zero. Current solutions typically rely on retraining with cold-start interactions, which is hindered by sparse feedback, high computational cost, and delayed updates, limiting practical utility in rapidly evolving recommendation catalogs. Inspired by model editing in NLP, which enables training-free knowledge injection into large language models, we explore how to bring this paradigm to generative recommendation. This, however, faces two key challenges: GR lacks the explicit subject-object binding common in natural language, making targeted edits difficult; and GR does not exhibit stable token co-occurrence patterns, making the injection of multi-token item representations unreliable. To address these challenges, we propose GenRecEdit, a model editing framework tailored for generative recommendation. GenRecEdit explicitly models the relationship between the full sequence context and next-token generation, adopts iterative token-level editing to inject multi-token item representations, and introduces a one-to-one trigger mechanism to reduce interference among multiple edits during inference. Extensive experiments on multiple datasets show that GenRecEdit substantially improves recommendation performance on cold-start items while preserving the model's original recommendation quality. Moreover, it achieves these gains using only about 9.5% of the training time required for retraining, enabling more efficient and frequent model updates.",
       "published": "2026-03-15T07:31:28Z",
-      "updated": "2026-03-15T07:31:28Z",
+      "updated": "2026-05-01T09:55:23Z",
       "categories": [
         "cs.IR",
         "cs.AI"
       ],
-      "pdfUrl": "https://arxiv.org/pdf/2603.14259v1",
-      "absUrl": "https://arxiv.org/abs/2603.14259v1",
-      "industrySource": ""
-    },
-    {
-      "id": "http://arxiv.org/abs/2603.13934v1",
-      "title": "Iterative Semantic Reasoning from Individual to Group Interests for Generative Recommendation with LLMs",
-      "authors": [
-        "Xiaofei Zhu",
-        "Jinfei Chen",
-        "Feiyang Yuan",
-        "Zhou Yang"
-      ],
-      "affiliations": [],
-      "abstract": "Recommendation systems aim to learn user interests from historical behaviors and deliver relevant items. Recent methods leverage large language models (LLMs) to construct and integrate semantic representations of users and items for capturing user interests. However, user behavior theories suggest that truly understanding user interests requires not only semantic integration but also semantic reasoning from explicit individual interests to implicit group interests. To this end, we propose an Iterative Semantic Reasoning Framework (ISRF) for generative recommendation. ISRF leverages LLMs to bridge explicit individual interests and implicit group interests in three steps. First, we perform multi-step bidirectional reasoning over item attributes to infer semantic item features and build a semantic interaction graph capturing users' explicit interests. Second, we generate semantic user features based on the semantic item features and construct a similarity-based user graph to infer the implicit interests of similar user groups. Third, we adopt an iterative batch optimization strategy, where individual explicit interests directly guide the refinement of group implicit interests, while group implicit interests indirectly enhance individual modeling. This iterative process ensures consistent and progressive interest reasoning, enabling more accurate and comprehensive user interest learning. Extensive experiments on the Sports, Beauty, and Toys datasets demonstrate that ISRF outperforms state-of-the-art baselines. The code is available at https://github.com/htired/ISRF.",
-      "published": "2026-03-14T13:05:49Z",
-      "updated": "2026-03-14T13:05:49Z",
-      "categories": [
-        "cs.IR",
-        "cs.AI"
-      ],
-      "pdfUrl": "https://arxiv.org/pdf/2603.13934v1",
-      "absUrl": "https://arxiv.org/abs/2603.13934v1",
+      "pdfUrl": "https://arxiv.org/pdf/2603.14259v2",
+      "absUrl": "https://arxiv.org/abs/2603.14259v2",
       "industrySource": ""
     }
   ]
