@@ -1,7 +1,30 @@
 {
-  "lastUpdated": "2026-05-06T04:36:17Z",
-  "totalResults": 595,
+  "lastUpdated": "2026-05-07T04:37:37Z",
+  "totalResults": 597,
   "papers": [
+    {
+      "id": "http://arxiv.org/abs/2605.05096v1",
+      "title": "CapsID: Soft-Routed Variable-Length Semantic IDs for Generative Recommendation",
+      "authors": [
+        "Wenzhuo Cheng",
+        "Menghang Gong",
+        "Qixin Guo",
+        "Hang Zheng",
+        "Zhaobin Yang",
+        "Jianguo Lou",
+        "Zhengwei Zheng"
+      ],
+      "affiliations": [],
+      "abstract": "Generative recommendation maps each item to a sequence of Semantic IDs (SIDs) and recasts retrieval as autoregressive token generation. In this paradigm the main bottleneck is the tokenizer rather than the Transformer: residual vector quantization with a hard nearest-neighbor assignment at every layer collapses multi-faceted item semantics at cluster boundaries and propagates early errors to later SID positions. A common workaround is to append a dense vector or attribute prefix to the SID, but this dual-representation design inflates inference cost and gives up the simplicity of a generative interface. We address the bottleneck at the tokenizer itself. CAPSID replaces hard residual quantization with capsule routing: at each layer an item probabilistically routes to several semantic capsules, the residual is updated by the routed reconstruction rather than by a single winning code, and the SID terminates once the active capsule's confidence is high enough. On top of CAPSID, SEMANTICBPE composes adjacent SID tokens into reusable subwords by combining their co-occurrence with their embedding compatibility. On Amazon Beauty, Sports, Toys, and a 35M-item proprietary industrial catalog, CAPSID+SEMANTICBPE improves Recall at 10 by 9.6% on average over ReSID, the strongest single-representation baseline, and matches or exceeds a COBRA-style sparse-dense system on every public benchmark while running at 51% of its inference latency. Ablations show that soft routing, iterative agreement, and confidence-driven length each contribute independently, and the gains are largest on tail items where boundary semantics dominate.",
+      "published": "2026-05-06T16:33:13Z",
+      "updated": "2026-05-06T16:33:13Z",
+      "categories": [
+        "cs.IR"
+      ],
+      "pdfUrl": "https://arxiv.org/pdf/2605.05096v1",
+      "absUrl": "https://arxiv.org/abs/2605.05096v1",
+      "industrySource": "Amazon"
+    },
     {
       "id": "http://arxiv.org/abs/2604.24717v1",
       "title": "Learning to Rotate: Temporal and Semantic Rotary Encoding for Sequential Modeling",
@@ -119,28 +142,6 @@
       "pdfUrl": "https://arxiv.org/pdf/2604.12234v4",
       "absUrl": "https://arxiv.org/abs/2604.12234v4",
       "industrySource": "Shopee"
-    },
-    {
-      "id": "http://arxiv.org/abs/2604.11440v2",
-      "title": "R3-VAE: Reference Vector-Guided Rating Residual Quantization VAE for Generative Recommendation",
-      "authors": [
-        "Qiang Wan",
-        "Ze Yang",
-        "Dawei Yang",
-        "Ying Fan",
-        "Xin Yan",
-        "Siyang Liu"
-      ],
-      "affiliations": [],
-      "abstract": "Generative Recommendation (GR) has gained traction for its merits of superior performance and cold-start capability. As the vital role in GR, Semantic Identifiers (SIDs) represent item semantics through discrete tokens. However, current techniques for SID generation based on vector quantization face two main challenges: (i) training instability, stemming from insufficient gradient propagation through the straight-through estimator and sensitivity to initialization; and (ii) inefficient SID quality assessment, where industrial practice still depends on costly GR training and A/B testing. To address these challenges, we propose Reference Vector-Guided Rating Residual Quantization VAE (R3-VAE). This framework incorporates three key innovations: (i) a reference vector that functions as a semantic anchor for the initial features, thereby mitigating sensitivity to initialization; (ii) a dot product-based rating mechanism designed to stabilize the training process and prevent codebook collapse; and (iii) two SID evaluation metrics, Semantic Cohesion and Preference Discrimination, serving as regularization terms during training. Empirical results on six benchmarks demonstrate that R3-VAE outperforms state-of-the-art methods, achieving an average improvement of 14.2% in Recall@10 and 15.5% in NDCG@10 across three Amazon datasets. Furthermore, we perform GR training and online A/B tests on Toutiao. Our method achieves a 1.62% improvement in MRR and a 0.83% gain in StayTime/U versus baselines. Additionally, we employ R3-VAE to replace the item ID of CTR model, resulting in significant improvements in content cold start by 15.36%, corroborating the strong applicability and business value in industry-scale recommendation scenarios.",
-      "published": "2026-04-13T13:23:29Z",
-      "updated": "2026-04-14T06:46:15Z",
-      "categories": [
-        "cs.IR"
-      ],
-      "pdfUrl": "https://arxiv.org/pdf/2604.11440v2",
-      "absUrl": "https://arxiv.org/abs/2604.11440v2",
-      "industrySource": "Amazon"
     },
     {
       "id": "http://arxiv.org/abs/2604.07825v2",
@@ -339,30 +340,25 @@
       "industrySource": "Spotify"
     },
     {
-      "id": "http://arxiv.org/abs/2603.16088v1",
-      "title": "RecBundle: A Next-Generation Geometric Paradigm for Explainable Recommender Systems",
+      "id": "http://arxiv.org/abs/2605.04450v1",
+      "title": "One Pool, Two Caches: Adaptive HBM Partitioning for Accelerating Generative Recommender Serving",
       "authors": [
-        "Hui Wang",
-        "Tianzhu Hu",
-        "Mingming Li",
-        "Xi Zhou",
-        "Chun Gan",
-        "Jiao Dai",
-        "Jizhong Han",
-        "Songlin Hu",
-        "Tao Guo"
+        "Wenjun Yu",
+        "Shuguang Han",
+        "Amelie Chi Zhou"
       ],
       "affiliations": [],
-      "abstract": "Recommender systems are inherently dynamic feedback loops where prolonged local interactions accumulate into macroscopic structural degradation such as information cocoons. Existing representation learning paradigms are universally constrained by the assumption of a single flat space, forcing topologically grounded user associations and semantically driven historical interactions to be fitted within the same vector space. This excessive coupling of heterogeneous information renders it impossible for researchers to mechanistically distinguish and identify the sources of systemic bias. To overcome this theoretical bottleneck, we introduce Fiber Bundle from modern differential geometry and propose a novel geometric analysis paradigm for recommender systems. This theory naturally decouples the system space into two hierarchical layers: the base manifold formed by user interaction networks, and the fibers attached to individual user nodes that carry their dynamic preferences. Building upon this, we construct RecBundle, a framework oriented toward next-generation recommender systems that formalizes user collaboration as geometric connection and parallel transport on the base manifold, while mapping content evolution to holonomy transformations on fibers. From this foundation, we identify future application directions encompassing quantitative mechanisms for information cocoons and evolutionary bias, geometric meta-theory for adaptive recommendation, and novel inference architectures integrating large language models (LLMs). Empirical analysis on real-world MovieLens and Amazon Beauty datasets validates the effectiveness of this geometric framework.",
-      "published": "2026-03-17T03:25:05Z",
-      "updated": "2026-03-17T03:25:05Z",
+      "abstract": "Generative Recommender (GR) inference places embedding hot caches (EMB) and KV caches in direct competition for limited GPU HBM: allocating more memory to one improves its efficiency but degrades the other. Existing systems optimize them in isolation, overlooking that the optimal EMB-KV allocation ratio can shift by up to 0.35 across workload regimes, leaving 20-30\\% latency improvement unrealized. While online reallocation is required to close this gap, naive approaches introduce H2D refill traffic on the critical path, causing P99 SLO violations. To address this, we present HELM, which jointly manages HBM allocation and request routing at runtime through two key components: (1) Adaptive Memory Allocation, a three-layer PPO-based controller (frozen base policy, online residual adapter, and burst-aware recovery controller) that achieves $32\\,\\mathrm{μs}$ decision latency while staying within 0.024-0.029 of the offline-optimal ratio; and (2) EMB-KV-Aware Scheduling, which routes requests by jointly considering KV residency, embedding locality, and node load to avoid routing inefficiencies under heterogeneous allocations. Evaluations on three production-scale datasets over a 32-node A100 cluster show that HELM reduces P99 latency by 24-38\\% over the best static policy and achieves 93.5-99.6\\% SLO satisfaction across Steady, Trend, and Burst workloads, significantly outperforming state-of-the-art baselines without sacrificing throughput.",
+      "published": "2026-05-06T03:25:22Z",
+      "updated": "2026-05-06T03:25:22Z",
       "categories": [
+        "cs.DC",
         "cs.IR",
-        "cs.AI"
+        "cs.LG"
       ],
-      "pdfUrl": "https://arxiv.org/pdf/2603.16088v1",
-      "absUrl": "https://arxiv.org/abs/2603.16088v1",
-      "industrySource": "Meta"
+      "pdfUrl": "https://arxiv.org/pdf/2605.04450v1",
+      "absUrl": "https://arxiv.org/abs/2605.04450v1",
+      "industrySource": ""
     },
     {
       "id": "http://arxiv.org/abs/2605.03916v1",
@@ -708,6 +704,33 @@
       ],
       "pdfUrl": "https://arxiv.org/pdf/2604.14051v1",
       "absUrl": "https://arxiv.org/abs/2604.14051v1",
+      "industrySource": ""
+    },
+    {
+      "id": "http://arxiv.org/abs/2604.11440v3",
+      "title": "R3-VAE: Reference Vector-Guided Rating Residual Quantization VAE for Generative Recommendation",
+      "authors": [
+        "Qiang Wan",
+        "Ze Yang",
+        "Dawei Yang",
+        "Ying Fan",
+        "Xin Yan",
+        "Siyang Liu",
+        "Yicong Liu",
+        "Chenwei Zhang",
+        "Wei Xu",
+        "Jiahao Qin",
+        "Ke Wang"
+      ],
+      "affiliations": [],
+      "abstract": "Generative Recommendation (GR) has gained traction for its merits of superior performance and cold-start capability. As the vital role in GR, Semantic Identifiers (SIDs) represent item semantics through discrete tokens. However, current techniques for SID generation based on vector quantization face two main challenges: (i) training instability, stemming from insufficient gradient propagation through the straight-through estimator and sensitivity to initialization; and (ii) inefficient SID quality assessment, where industrial practice still depends on costly GR training and A/B testing. To address these challenges, we propose Reference Vector-Guided Rating Residual Quantization VAE (R3-VAE). This framework incorporates three key innovations: (i) a reference vector that functions as a semantic anchor for the initial features, thereby mitigating sensitivity to initialization; (ii) a dot product-based rating mechanism designed to stabilize the training process and prevent codebook collapse; and (iii) two SID evaluation metrics, Semantic Cohesion and Preference Discrimination, serving as regularization terms during training. Empirical results on six benchmarks demonstrate that R3-VAE outperforms state-of-the-art methods, achieving an average improvement of 14.5% in Recall@10 and 15.5% in NDCG@10 across three public datasets (Beauty, Sports, and Toys). Furthermore, we perform GR training and online A/B tests on Toutiao. Our method achieves a 1.62% improvement in MRR and a 0.83% gain in StayTime/U versus baselines. Additionally, we employ R3-VAE to replace the item ID of CTR model, resulting in significant improvements in content cold start by 15.36%, corroborating the strong applicability and business value in industry-scale recommendation scenarios.",
+      "published": "2026-04-13T13:23:29Z",
+      "updated": "2026-05-06T03:57:37Z",
+      "categories": [
+        "cs.IR"
+      ],
+      "pdfUrl": "https://arxiv.org/pdf/2604.11440v3",
+      "absUrl": "https://arxiv.org/abs/2604.11440v3",
       "industrySource": ""
     },
     {
@@ -1185,28 +1208,6 @@
       ],
       "pdfUrl": "https://arxiv.org/pdf/2603.17417v2",
       "absUrl": "https://arxiv.org/abs/2603.17417v2",
-      "industrySource": ""
-    },
-    {
-      "id": "http://arxiv.org/abs/2603.14259v2",
-      "title": "GenRecEdit: Adapting Model Editing for Generative Recommendation with Cold-Start Items",
-      "authors": [
-        "Chenglei Shen",
-        "Teng Shi",
-        "Weijie Yu",
-        "Xiao Zhang",
-        "Jun Xu"
-      ],
-      "affiliations": [],
-      "abstract": "Generative recommendation (GR) has shown strong potential for sequential recommendation in an end-to-end generation paradigm. However, existing GR models suffer from severe cold-start collapse: their recommendation accuracy on cold-start items can drop to near zero. Current solutions typically rely on retraining with cold-start interactions, which is hindered by sparse feedback, high computational cost, and delayed updates, limiting practical utility in rapidly evolving recommendation catalogs. Inspired by model editing in NLP, which enables training-free knowledge injection into large language models, we explore how to bring this paradigm to generative recommendation. This, however, faces two key challenges: GR lacks the explicit subject-object binding common in natural language, making targeted edits difficult; and GR does not exhibit stable token co-occurrence patterns, making the injection of multi-token item representations unreliable. To address these challenges, we propose GenRecEdit, a model editing framework tailored for generative recommendation. GenRecEdit explicitly models the relationship between the full sequence context and next-token generation, adopts iterative token-level editing to inject multi-token item representations, and introduces a one-to-one trigger mechanism to reduce interference among multiple edits during inference. Extensive experiments on multiple datasets show that GenRecEdit substantially improves recommendation performance on cold-start items while preserving the model's original recommendation quality. Moreover, it achieves these gains using only about 9.5% of the training time required for retraining, enabling more efficient and frequent model updates.",
-      "published": "2026-03-15T07:31:28Z",
-      "updated": "2026-05-01T09:55:23Z",
-      "categories": [
-        "cs.IR",
-        "cs.AI"
-      ],
-      "pdfUrl": "https://arxiv.org/pdf/2603.14259v2",
-      "absUrl": "https://arxiv.org/abs/2603.14259v2",
       "industrySource": ""
     }
   ]
