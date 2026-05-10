@@ -1,7 +1,39 @@
 {
-  "lastUpdated": "2026-05-07T04:37:37Z",
-  "totalResults": 597,
+  "lastUpdated": "2026-05-10T04:49:34Z",
+  "totalResults": 600,
   "papers": [
+    {
+      "id": "http://arxiv.org/abs/2605.05803v1",
+      "title": "Unified Value Alignment for Generative Recommendation in Industrial Advertising",
+      "authors": [
+        "Xinxun Zhang",
+        "Yuling Xiong",
+        "Jiale Zhou",
+        "Zhengkai Guo",
+        "Zhennan Pang",
+        "Junbang Huo",
+        "Jingwen Wang",
+        "Xuyang Sun",
+        "Enming Zhang",
+        "Jiaguang Jin",
+        "Changping Wang",
+        "Yi Li",
+        "Jun Zhang",
+        "Xiao Yan",
+        "Jiawei Jiang",
+        "Jie Jiang"
+      ],
+      "affiliations": [],
+      "abstract": "Generative Recommendation (GR) reformulates recommendation as a next-token generation problem and has shown promise in industrial applications. However, extending GR to industrial advertising is non-trivial because the system must optimize not only user interest but also commercial value. Existing GR pipelines remain largely semantics-centric, making it difficult to align value signals across tokenization, decoding, and online serving. To address this issue, we propose UniVA, a Unified Value Alignment framework for advertising recommendation. We first introduce a Commercial SID tokenizer that injects value-related attributes into SID construction, yielding value-discriminative item representations. We then develop a Generation-as-Ranking SID Decoder jointly optimized by supervised learning and eCPM-aware reinforcement learning, which fuses value scores into next-item SID generation to perform generation and ranking in one decoding process. Finally, we design a value-guided personalized beam search that reuses generation-as-ranking logits as online value guidance and applies a personalized trie tree to constrain decoding to request-valid SID paths. Experiments on the Tencent WeChat Channels advertising platform show that UniVA achieves a 37.04\\% improvement in offline Hit Rate@100 over the baseline and a 1.5\\% GMV lift in online A/B tests.",
+      "published": "2026-05-07T07:41:19Z",
+      "updated": "2026-05-07T07:41:19Z",
+      "categories": [
+        "cs.IR"
+      ],
+      "pdfUrl": "https://arxiv.org/pdf/2605.05803v1",
+      "absUrl": "https://arxiv.org/abs/2605.05803v1",
+      "industrySource": "Tencent"
+    },
     {
       "id": "http://arxiv.org/abs/2605.05096v1",
       "title": "CapsID: Soft-Routed Variable-Length Semantic IDs for Generative Recommendation",
@@ -279,65 +311,26 @@
       "industrySource": "Amazon"
     },
     {
-      "id": "http://arxiv.org/abs/2603.17540v1",
-      "title": "Deploying Semantic ID-based Generative Retrieval for Large-Scale Podcast Discovery at Spotify",
+      "id": "http://arxiv.org/abs/2605.06331v1",
+      "title": "Expressiveness Limits of Autoregressive Semantic ID Generation in Generative Recommendation",
       "authors": [
-        "Edoardo D'Amico",
-        "Marco De Nadai",
-        "Praveen Chandar",
-        "Divita Vohra",
-        "Shawn Lin",
-        "Max Lefarov",
-        "Paul Gigioli",
-        "Gustavo Penha",
-        "Ilya Kopysitsky",
-        "Ivo Joel Senese",
-        "Darren Mei",
-        "Francesco Fabbri",
-        "Oguz Semerci",
-        "Yu Zhao",
-        "Vincent Tang",
-        "Brian St. Thomas",
-        "Alexandra Ranieri",
-        "Matthew N. K. Smith",
-        "Aaron Bernkopf",
-        "Bryan Leung",
-        "Ghazal Fazelnia",
-        "Mark VanMiddlesworth",
-        "Timothy Christopher Heath",
-        "Petter Pehrson Skiden",
-        "Alice Y. Wang",
-        "Doug J. Cole",
-        "Andreas Damianou",
-        "Maya Hristakeva",
-        "Reid Wilbur",
-        "Tarun Chillara",
-        "Vladan Radosavljevic",
-        "Pooja Chitkara",
-        "Sainath Adapa",
-        "Juan Elenter",
-        "Bernd Huber",
-        "Jacqueline Wood",
-        "Saaketh Vedantam",
-        "Jan Stypka",
-        "Sandeep Ghael",
-        "Martin D. Gould",
-        "David Murgatroyd",
-        "Yves Raimond",
-        "Mounia Lalmas",
-        "Paul N. Bennett"
+        "Yupeng Hou",
+        "Haven Kim",
+        "Clark Mingxuan Ju",
+        "Eduardo Escoto",
+        "Neil Shah",
+        "Julian McAuley"
       ],
       "affiliations": [],
-      "abstract": "Podcast listening is often grounded in a set of favorite shows, while listener intent can evolve over time. This combination of stable preferences and changing intent motivates recommendation approaches that support both familiarity and exploration. Traditional recommender systems typically emphasize long-term interaction patterns, and are less explicitly designed to incorporate rich contextual signals or flexible, intent-aware discovery objectives. In this setting, models that can jointly reason over semantics, context, and user state offer a promising direction. Large Language Models (LLMs) provide strong semantic reasoning and contextual conditioning for discovery-oriented recommendation, but deploying them in production introduces challenges in catalog grounding, user-level personalization, and latency-critical serving. We address these challenges with GLIDE, a production-scale generative recommender for podcast discovery at Spotify. GLIDE formulates recommendation as an instruction-following task over a discretized catalog using Semantic IDs, enabling grounded generation over a large inventory. The model conditions on recent listening history and lightweight user context, while injecting long-term user embeddings as soft prompts to capture stable preferences under strict inference constraints. We evaluate GLIDE using offline retrieval metrics, human judgments, and LLM-based evaluation, and validate its impact through large-scale online A/B testing. Across experiments involving millions of users, GLIDE increases non-habitual podcast streaming on Spotify home surface by up to 5.4% and new-show discovery by up to 14.3%, while meeting production cost and latency constraints.",
-      "published": "2026-03-18T09:46:10Z",
-      "updated": "2026-03-18T09:46:10Z",
+      "abstract": "Generative recommendation (GR) models generate items by autoregressively producing a sequence of discrete tokens that jointly index the target item. However, this autoregressive generation process also induces a structured decoding space whose impact on model expressiveness remains underexplored. Specifically, token-by-token generation can be viewed as traversing a decoding tree induced by semantic ID tokens, where leaf nodes correspond to candidate items. We observe that the item probabilities produced by GR models are strongly correlated with this tree structure: items that are close in the tree tend to receive similar probabilities for any given user, making it difficult to distinguish among them based on user-specific preferences. We further show theoretically that such structural correlations prevent GR models from representing even simple patterns that can be well captured by conventional collaborative filtering models. To mitigate this issue, we propose Latte, a simple modification that injects a latent token before each semantic ID, reshaping the decoding space from a single tree into multiple latent-token-conditioned trees. This design creates multiple paths with varying tree distances between items, relaxing tree-induced probability coupling and yielding an average of 3.45% relative improvement on NDCG@10. Our code is available at https://github.com/hyp1231/Latte.",
+      "published": "2026-05-07T14:25:10Z",
+      "updated": "2026-05-07T14:25:10Z",
       "categories": [
-        "cs.IR",
-        "cs.LG"
+        "cs.IR"
       ],
-      "pdfUrl": "https://arxiv.org/pdf/2603.17540v1",
-      "absUrl": "https://arxiv.org/abs/2603.17540v1",
-      "industrySource": "Spotify"
+      "pdfUrl": "https://arxiv.org/pdf/2605.06331v1",
+      "absUrl": "https://arxiv.org/abs/2605.06331v1",
+      "industrySource": ""
     },
     {
       "id": "http://arxiv.org/abs/2605.04450v1",
@@ -386,6 +379,28 @@
       ],
       "pdfUrl": "https://arxiv.org/pdf/2605.03916v1",
       "absUrl": "https://arxiv.org/abs/2605.03916v1",
+      "industrySource": ""
+    },
+    {
+      "id": "http://arxiv.org/abs/2605.05249v1",
+      "title": "TriAlignGR: Triangular Multitask Alignment with Multimodal Deep Interest Mining for Generative Recommendation",
+      "authors": [
+        "Yangchen Zeng",
+        "Hao Peng",
+        "Rongfeng Guo",
+        "Zhenyu Yu",
+        "Zhiyuan Hu",
+        "Jinze Wang"
+      ],
+      "affiliations": [],
+      "abstract": "We introduce TriAlignGR, a unified multitask-multimodal framework for generative recommendation that establishes two-stage multimodal semantic propagation: (i) encoding visual semantics directly into SIDs via multimodal embeddings, and (ii) enabling the model to decode these semantics through visual description tasks. Existing Semantic ID (SID) pipelines suffer from two fundamental but underexplored problems: \\textbf{SID Content Degradation (SCD)}, where cascaded encoding and residual quantization discard critical multimodal and interest-level semantics; and \\textbf{SID Semantic Opacity (SSO)}, where models autoregressively generate SID sequences without truly comprehending their underlying meaning, leading to hallucination and poor generalization. Prior work addresses at most text-SID alignment, leaving visual semantics and latent user interests entirely unexploited. TriAlignGR resolves both problems through three tightly integrated components: (1)~\\textbf{Cross-Modal Semantic Alignment (CMSA)} integrates visual content into SID construction through both VLM-generated textual descriptions and a multimodal embedding model that directly encodes image features alongside text, ensuring that SIDs inherently carry multimodal semantics; (2)~\\textbf{Multimodal Deep Interest Mining (MDIM)} leverages LLM Chain-of-Thought reasoning to extract latent user intents (\\eg ``productivity-focused lifestyle'' from noise-canceling headphones) beyond surface attributes, enriching SID semantics before discretization; and (3)~\\textbf{Triangular Multitask (TMT)} jointly trains on eight complementary generation tasks under a single autoregressive loss -- including two novel visual-semantic tasks (VisDesc$\\to$SID, VisDesc$\\to$Title) that map VLM-generated image descriptions to SIDs and titles, completing the SID-Text-Image triangle -- without requiring task-specific towers or complex loss weighting.",
+      "published": "2026-05-05T11:42:14Z",
+      "updated": "2026-05-05T11:42:14Z",
+      "categories": [
+        "cs.IR"
+      ],
+      "pdfUrl": "https://arxiv.org/pdf/2605.05249v1",
+      "absUrl": "https://arxiv.org/abs/2605.05249v1",
       "industrySource": ""
     },
     {
@@ -1165,49 +1180,6 @@
       ],
       "pdfUrl": "https://arxiv.org/pdf/2603.19693v2",
       "absUrl": "https://arxiv.org/abs/2603.19693v2",
-      "industrySource": ""
-    },
-    {
-      "id": "http://arxiv.org/abs/2603.20287v1",
-      "title": "Report-based Recommendations for Policy Making and Agency Operations: Dataset and LLM Evaluation",
-      "authors": [
-        "Aleksandra Edwards",
-        "Thomas Edwards",
-        "Jose Camacho-Collados",
-        "Alun Preece"
-      ],
-      "affiliations": [],
-      "abstract": "Large Language Models (LLMs) are extensively used in text generation tasks. These generative capabilities bring us to a point where LLMs could potentially provide useful insights in policy making or agency operations. In this paper, we introduce a new task consisting of generating recommendations which can be used to inform future actions and improvements of agencies work within private and public organisations. In particular, we present the first benchmark and coherent evaluation for developing recommendation systems to inform organisation policies. This task is clearly different from usual product or user recommendation systems, but rather aims at providing a basis to suggest policy improvements based on the conclusions drawn from reports. Our results demonstrate that state-of-the-art LLMs have the potential to emphasize and reflect on key issues and learning points within generated recommendations.",
-      "published": "2026-03-18T09:15:33Z",
-      "updated": "2026-03-18T09:15:33Z",
-      "categories": [
-        "cs.IR"
-      ],
-      "pdfUrl": "https://arxiv.org/pdf/2603.20287v1",
-      "absUrl": "https://arxiv.org/abs/2603.20287v1",
-      "industrySource": ""
-    },
-    {
-      "id": "http://arxiv.org/abs/2603.17417v2",
-      "title": "Is Your LLM-as-a-Recommender Agent Trustable? LLMs' Recommendation is Easily Hacked by Biases (Preferences)",
-      "authors": [
-        "Zichen Tang",
-        "Zirui Zhang",
-        "Qian Wang",
-        "Zhenheng Tang",
-        "Bo Li",
-        "Xiaowen Chu"
-      ],
-      "affiliations": [],
-      "abstract": "Current Large Language Models (LLMs) are gradually exploited in practically valuable agentic workflows such as Deep Research, E-commerce recommendation, and job recruitment. In these applications, LLMs need to select some optimal solutions from massive candidates, which we term as \\textit{LLM-as-a-Recommender} paradigm. However, the reliability of using LLM agents for recommendations is underexplored. In this work, we introduce a \\textbf{Bias} \\textbf{Rec}ommendation \\textbf{Bench}mark (\\textbf{BiasRecBench}) to highlight the critical vulnerability of such agents to biases in high-value real-world tasks. The benchmark includes three practical domains: paper review, e-commerce, and job recruitment. We construct a \\textsc{Bias Synthesis Pipeline with Calibrated Quality Margins} that 1) synthesizes evaluation data by controlling the quality gap between optimal and sub-optimal options to provide a calibrated testbed to elicit the vulnerability to biases; 2) injects contextual biases that are logical and suitable for option contexts. Extensive experiments on both SOTA (Gemini-{2.5,3}-pro, GPT-4o, DeepSeek-R1) and small-scale LLMs reveal that agents frequently succumb to injected biases despite having sufficient reasoning capabilities to identify the ground truth. These findings expose a significant reliability bottleneck in current agentic workflows, calling for specialized alignment strategies for LLM-as-a-Recommender. The complete code and evaluation datasets will be made publicly available shortly.",
-      "published": "2026-03-18T06:50:48Z",
-      "updated": "2026-03-20T13:11:53Z",
-      "categories": [
-        "cs.CY",
-        "cs.MA"
-      ],
-      "pdfUrl": "https://arxiv.org/pdf/2603.17417v2",
-      "absUrl": "https://arxiv.org/abs/2603.17417v2",
       "industrySource": ""
     }
   ]
