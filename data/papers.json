@@ -1,6 +1,6 @@
 {
-  "lastUpdated": "2026-05-14T04:51:49Z",
-  "totalResults": 609,
+  "lastUpdated": "2026-05-16T04:32:42Z",
+  "totalResults": 611,
   "papers": [
     {
       "id": "http://arxiv.org/abs/2605.12772v1",
@@ -353,6 +353,57 @@
       "pdfUrl": "https://arxiv.org/pdf/2604.02684v1",
       "absUrl": "https://arxiv.org/abs/2604.02684v1",
       "industrySource": "Meituan"
+    },
+    {
+      "id": "http://arxiv.org/abs/2605.14853v1",
+      "title": "Discrimination Is Generation: Unifying Ranking and Retrieval from a Tokenizer Perspective",
+      "authors": [
+        "Shuli Wang",
+        "Junwei Yin",
+        "Changhao Li",
+        "Senjie Kou",
+        "Chi Wang",
+        "Yinqiu Huang",
+        "Yinhua Zhu",
+        "Haitao Wang",
+        "Xingxing Wang"
+      ],
+      "affiliations": [],
+      "abstract": "Semantic IDs (SIDs) define the generation space of generative recommendation and directly determine its personalization ceiling. However, existing tokenizers are trained independently with retrieval objectives, leaving personalization signals fully decoupled from the SID construction process -- a fundamental gap that causes generative retrieval to persistently lag behind discriminative ranking. In this paper, we rethink the essence of SIDs: \\emph{ranking seeks argmax in item space while retrieval seeks argmax in token space; both are the same problem solved at different granularities.} Based on this insight, we propose \\DIG (\\textbf{D}iscrimination \\textbf{I}s \\textbf{G}eneration), which embeds the tokenizer inside a discriminative ranking model for end-to-end training -- the ranker naturally becomes a retrieval model, yielding two models from a single training run. \\DIG is organized around a \\emph{feature assignment taxonomy}: item-intrinsic static features are encoded into SIDs, user-item cross features (u2i) implicitly drive codebook boundaries toward recommendation decision boundaries during training, and an MLP$_\\mathrm{u2t}$ distillation module approximates u2i at the token level for inference. Experiments on three public benchmarks and two industrial datasets demonstrate that \\DIG simultaneously improves ranking, retrieval, and unified retrieval-ranking quality.",
+      "published": "2026-05-14T13:59:29Z",
+      "updated": "2026-05-14T13:59:29Z",
+      "categories": [
+        "cs.IR"
+      ],
+      "pdfUrl": "https://arxiv.org/pdf/2605.14853v1",
+      "absUrl": "https://arxiv.org/abs/2605.14853v1",
+      "industrySource": ""
+    },
+    {
+      "id": "http://arxiv.org/abs/2605.14512v1",
+      "title": "Asymmetric Generative Recommendation via Multi-Expert Projection and Multi-Faceted Hierarchical Quantization",
+      "authors": [
+        "Bin Huang",
+        "Xin Wang",
+        "Junwei Pan",
+        "Yongqi Zhou",
+        "Yifeng Zhou",
+        "Zhixiang Feng",
+        "Shudong Huang",
+        "Haijie Gu",
+        "Wenwu Zhu"
+      ],
+      "affiliations": [],
+      "abstract": "Generative Recommendation (GenRec) models reformulate recommendation as a sequence generation task, representing items as discrete Semantic IDs used symmetrically as both inputs and prediction targets. We identify a critical dual-stage information bottleneck in this design: (1) the Input Bottleneck, where lossy quantization degrades fine-grained semantics, while popularity bias skews the learned representations toward frequent items, and (2) the Output Bottleneck, where imprecise discrete targets limit supervision quality. To address these issues, we propose AsymRec, an asymmetric continuous-discrete framework that decouples input and output representations. Specifically, Multi-expert Semantic Projection (MSP) maps continuous embeddings into the Transformer's hidden space via expert-specialized projections, preserving semantic richness and improving generalization to infrequent items. Multi-faceted Hierarchical Quantization (MHQ) constructs high-capacity, structured discrete targets through multi-view and multi-level quantization with semantic regularization, preventing dimensional collapse while retaining fine-grained distinctions. Extensive experiments demonstrate that AsymRec consistently outperforms state-of-the-art generative recommenders by an average of 15.8 %. The code will be released.",
+      "published": "2026-05-14T07:55:43Z",
+      "updated": "2026-05-14T07:55:43Z",
+      "categories": [
+        "cs.IR",
+        "cs.AI"
+      ],
+      "pdfUrl": "https://arxiv.org/pdf/2605.14512v1",
+      "absUrl": "https://arxiv.org/abs/2605.14512v1",
+      "industrySource": ""
     },
     {
       "id": "http://arxiv.org/abs/2605.13433v1",
@@ -1135,46 +1186,6 @@
       ],
       "pdfUrl": "https://arxiv.org/pdf/2604.02324v1",
       "absUrl": "https://arxiv.org/abs/2604.02324v1",
-      "industrySource": ""
-    },
-    {
-      "id": "http://arxiv.org/abs/2604.01911v2",
-      "title": "On the uncertainty from the first-stage estimation of prognostic covariate adjustment in randomized controlled trials",
-      "authors": [
-        "Nodoka Seya",
-        "Masataka Taguri"
-      ],
-      "affiliations": [],
-      "abstract": "Prognostic covariate adjustment (PROCOVA) is a two-sample two-stage estimation method used in randomized controlled trials. In the first stage, a prognostic score, defined as the conditional expectation of an outcome given covariates under the control treatment, is estimated using historical data. In the second stage, analysis of covariance with the estimated prognostic score and treatment assignment as explanatory variables is performed, and the average treatment effect is estimated. Although the prognostic score is estimated in this procedure, the variance estimator, which treats the prognostic score as known, has been used. Furthermore, the difference in the asymptotic variance between cases where the prognostic score is known versus where it is estimated has not been previously clarified. In this study, we derived these two asymptotic variances and showed that they are equal. We also constructed two variance estimator: one that treats the prognostic score as known, and another that accounts for its estimation, and compared their performance through simulation studies and data applications. For PROCOVA, since both variance estimators are asymptotically valid, it is generally recommended to use a variance estimator that treats the prognostic score as known, as it is simpler to derive and implement. However, when historical data is small, a variance estimator that explicitly accounts for prognostic score estimation is recommended if conservative inference is preferred.",
-      "published": "2026-04-02T11:29:02Z",
-      "updated": "2026-04-30T12:04:11Z",
-      "categories": [
-        "stat.ME"
-      ],
-      "pdfUrl": "https://arxiv.org/pdf/2604.01911v2",
-      "absUrl": "https://arxiv.org/abs/2604.01911v2",
-      "industrySource": ""
-    },
-    {
-      "id": "http://arxiv.org/abs/2603.29845v2",
-      "title": "Cold-Starts in Generative Recommendation: A Reproducibility Study",
-      "authors": [
-        "Zhen Zhang",
-        "Jujia Zhao",
-        "Xinyu Ma",
-        "Xin Xin",
-        "Maarten de Rijke",
-        "Zhaochun Ren"
-      ],
-      "affiliations": [],
-      "abstract": "Cold-start recommendation remains a central challenge in dynamic, open-world platforms, requiring models to recommend for newly registered users (user cold-start) and to recommend newly introduced items to existing users (item cold-start) under sparse or missing interaction signals. Recent generative recommenders built on pre-trained language models (PLMs) are often expected to mitigate cold-start by using item semantic information (e.g., titles and descriptions) and test-time conditioning on limited user context. However, cold-start is rarely treated as a primary evaluation setting in existing studies, and reported gains are difficult to interpret because key design choices, such as model scale, identifier design, and training strategy, are frequently changed together. In this work, we present a systematic reproducibility study of generative recommendation under a unified suite of cold-start protocols.",
-      "published": "2026-03-31T15:06:31Z",
-      "updated": "2026-04-06T13:22:37Z",
-      "categories": [
-        "cs.IR"
-      ],
-      "pdfUrl": "https://arxiv.org/pdf/2603.29845v2",
-      "absUrl": "https://arxiv.org/abs/2603.29845v2",
       "industrySource": ""
     }
   ]
