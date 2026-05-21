@@ -1,7 +1,28 @@
 {
-  "lastUpdated": "2026-05-16T04:32:42Z",
-  "totalResults": 611,
+  "lastUpdated": "2026-05-21T05:13:14Z",
+  "totalResults": 621,
   "papers": [
+    {
+      "id": "http://arxiv.org/abs/2605.18899v1",
+      "title": "Don't Let Bandit Feedback Pull Continual LLM-Recommender Updates Off Target",
+      "authors": [
+        "Taesan Kim",
+        "Hyeongjun Yun",
+        "Jaegul Choo",
+        "Chung Park"
+      ],
+      "affiliations": [],
+      "abstract": "Generative LLM-based recommenders (LLM-Rec) require continual post-deployment updates, yet deployment logs provide only policy-shaped contextual bandit feedback: outcomes are observed solely for items exposed by a prior serving policy, inducing exposure bias and yielding partial, asymmetric signals consisting of relatively reliable positive responses and ambiguous no-responses. We propose an Anchored Bandit Policy Optimization (ABPO) framework for continual LLM-Rec updates that combines group-relative policy optimization (GRPO) with explicit treatment of exposure bias and feedback ambiguity. Specifically, we insert the exposed recommendation as a logged anchor into each GRPO rollout group, so that group-relative normalization is calibrated against the action actually exposed by the prior policy rather than against newly sampled rollouts alone. Because both positive- and no-responses are observed only through prior-policy exposure, we apply self-normalized inverse propensity scoring to the fixed anchor for both feedback types to correct for policy mismatch. At the same time, we treat the two feedback types asymmetrically in reliability: positive responses provide relatively direct endorsement signals, whereas no-responses remain ambiguous because they may reflect either true disinterest or unobserved external factors. To avoid overly aggressive updates from ambiguous no-responses, we temper their penalties with self-certainty, using the model's output-token confidence as a verifier-free reliability signal. Across five domains from Amazon Reviews and MovieLens, our method yields consistent post-update gains in recommendation accuracy while mitigating prior-policy-induced exposure bias more effectively than prior baselines.",
+      "published": "2026-05-17T11:10:44Z",
+      "updated": "2026-05-17T11:10:44Z",
+      "categories": [
+        "cs.LG",
+        "cs.AI"
+      ],
+      "pdfUrl": "https://arxiv.org/pdf/2605.18899v1",
+      "absUrl": "https://arxiv.org/abs/2605.18899v1",
+      "industrySource": "Amazon"
+    },
     {
       "id": "http://arxiv.org/abs/2605.12772v1",
       "title": "Just Ask for a Table: A Thirty-Token User Prompt Defeats Sponsored Recommendations in Twelve LLMs",
@@ -270,89 +291,164 @@
       "industrySource": "Microsoft"
     },
     {
-      "id": "http://arxiv.org/abs/2604.05329v1",
-      "title": "Semantic Trimming and Auxiliary Multi-step Prediction for Generative Recommendation",
+      "id": "http://arxiv.org/abs/2605.20742v1",
+      "title": "VBFDD-Agent for Electric Vehicle Battery Fault Detection and Diagnosis: Descriptive Text Modeling of Battery Digital Signals",
       "authors": [
-        "Tianyu Zhan",
-        "Kairui Fu",
-        "Chengfei Lv",
-        "Zheqi Lv",
-        "Shengyu Zhang"
+        "Joey Chan",
+        "Zhen Chen",
+        "Ershun Pan"
       ],
       "affiliations": [],
-      "abstract": "Generative Recommendation (GR) has recently transitioned from atomic item-indexing to Semantic ID (SID)-based frameworks to capture intrinsic item relationships and enhance generalization. However, the adoption of high-granularity SIDs leads to two critical challenges: prohibitive training overhead due to sequence expansion and unstable performance reliability characterized by non-monotonic accuracy fluctuations. We identify that these disparate issues are fundamentally rooted in the Semantic Dilution Effect, where redundant tokens waste massive computation and dilute the already sparse learning signals in recommendation. To counteract this, we propose STAMP (Semantic Trimming and Auxiliary Multi-step Prediction), a framework utilizing a dual-end optimization strategy. We argue that effective SID learning requires simultaneously addressing low input information density and sparse output supervision. On the input side, Semantic Adaptive Pruning (SAP) dynamically filters redundancy during the forward pass, converting noise-laden sequences into compact, information-rich representations. On the output side, Multi-step Auxiliary Prediction (MAP) employs a multi-token objective to densify feedback, strengthening long-range dependency capture and ensuring robust learning signals despite compressed inputs. Unifying input purification and signal amplification, STAMP enhances both training efficiency and representation capability. Experiments on public Amazon and large-scale industrial datasets show STAMP achieves 1.23--1.38$\\times$ speedup and 17.2\\%--54.7\\% VRAM reduction while maintaining or improving performance across multiple architectures.",
-      "published": "2026-04-07T02:00:23Z",
-      "updated": "2026-04-07T02:00:23Z",
+      "abstract": "With the rapid proliferation of electric vehicles, the safety and reliability of lithium-ion batteries have become critical concerns. Effective anomaly detection is essential for ensuring safe battery operation. However, as battery systems and operating scenarios become increasingly complex, battery fault diagnosis and maintenance require stronger cross-domain adaptability and human-AI collaboration. Traditional fault detection and diagnosis methods are usually designed for specific scenarios and predefined workflows, making them less effective in complex real-world applications. To address the scarcity of open-source battery fault report corpora and the lack of unified maintenance knowledge representation, this study proposes a descriptive text modeling approach for battery signal reports. Monitoring signals, statistical features, anomaly records, and state assessment results are transformed into structured and readable natural language descriptions, forming a language corpus for battery health diagnosis and maintenance. Based on this corpus, we propose VBFDD-Agent, a vehicle battery fault detection and diagnosis agent for automotive-grade battery systems. VBFDD-Agent integrates descriptive battery-state texts, historical case retrieval, local maintenance manuals, and large language model reasoning to generate structured diagnostic results and maintenance recommendations. Experiments show that the proposed framework can accurately perform anomaly monitoring based on descriptive textual representations and provide flexible, efficient, and actionable maintenance suggestions. Expert evaluation further confirms the practical value of the generated recommendations. Overall, VBFDD-Agent extends traditional battery diagnosis from label prediction to interpretable and maintenance-oriented decision support.",
+      "published": "2026-05-20T05:44:52Z",
+      "updated": "2026-05-20T05:44:52Z",
       "categories": [
-        "cs.IR"
+        "cs.AI"
       ],
-      "pdfUrl": "https://arxiv.org/pdf/2604.05329v1",
-      "absUrl": "https://arxiv.org/abs/2604.05329v1",
-      "industrySource": "Amazon"
+      "pdfUrl": "https://arxiv.org/pdf/2605.20742v1",
+      "absUrl": "https://arxiv.org/abs/2605.20742v1",
+      "industrySource": ""
     },
     {
-      "id": "http://arxiv.org/abs/2604.04976v1",
-      "title": "Tencent Advertising Algorithm Challenge 2025: All-Modality Generative Recommendation",
+      "id": "http://arxiv.org/abs/2605.18920v1",
+      "title": "SynGR: Unleashing the Potential of Cross-Modal Synergy for Generative Recommendation",
       "authors": [
-        "Junwei Pan",
-        "Wei Xue",
-        "Chao Zhou",
-        "Xing Zhou",
-        "Lunan Fan",
-        "Yanbo Wang",
-        "Haoran Xin",
-        "Zhiyu Hu",
-        "Yaozheng Wang",
-        "Fengye Xu",
-        "Yurong Yang",
-        "Xiaotian Li",
-        "Junbang Huo",
-        "Wentao Ning",
-        "Yuliang Sun",
-        "Chengguo Yin",
-        "Jun Zhang",
-        "Shudong Huang",
-        "Lei Xiao",
-        "Huan Yu",
-        "Irwin King",
-        "Haijie Gu",
-        "Jie Jiang"
+        "Wei Chen",
+        "Xingyu Guo",
+        "Shuang Li",
+        "Fuwei Zhang",
+        "Meng Yuan",
+        "Jing Fan",
+        "Zhao Zhang",
+        "Deqing Wang",
+        "Fuzhen Zhuang"
       ],
       "affiliations": [],
-      "abstract": "Generative recommender systems are rapidly emerging as a new paradigm for recommendation, where collaborative identifiers and/or multi-modal content are mapped into discrete token spaces and user behavior is modelled with autoregressive sequence models. Despite progress on multi-modal recommendation datasets, there is still a lack of public benchmarks that jointly offer large-scale, realistic and fully all-modality data designed specifically for generative recommendation (GR) in industrial advertising. To foster research in this direction, we organised the Tencent Advertising Algorithm Challenge 2025, a global competition built on top of two all-modality datasets for GR: TencentGR-1M and TencentGR-10M. Both datasets are constructed from real de-identified Tencent Ads logs and contain rich collaborative IDs and multi-modal representations extracted with state-of-the-art embedding models. The preliminary track (TencentGR-1M) provides 1 million user sequences with up to 100 interacted items each, where each interaction is labeled with exposure and click signals, while the final track (TencentGR-10M) scales this to 10 million users and explicitly distinguishes between click and conversion events at both the sequence and target level. This paper presents the task definition, data construction process, feature schema, baseline GR model, evaluation protocol, and key findings from top-ranked and award-winning solutions. Our datasets focus on multi-modal sequence generation in an advertising setting and introduce weighted evaluation for high-value conversion events. We release our datasets at https://huggingface.co/datasets/TAAC2025 and baseline implementations at https://github.com/TencentAdvertisingAlgorithmCompetition/baseline_2025 to enable future research on all-modality generative recommendation at an industrial scale. The official website is https://algo.qq.com/2025.",
-      "published": "2026-04-04T17:05:15Z",
-      "updated": "2026-04-04T17:05:15Z",
+      "abstract": "Generative Recommendation (GR) has emerged as a promising paradigm by formulating item recommendation as a sequence-to-sequence generation task over item identifiers. Recent studies have incorporated multimodal signals to provide richer token-level evidence for generation. However, existing approaches largely rely on alignment-centric fusion and underexplore synergistic information across modalities. In practice, synergistic information plays a critical role in capturing emergent item properties that cannot be inferred from any single modality alone. Such properties encode intrinsic item semantics and guide user preferences, enabling models to move beyond surface-level feature matching. To address this limitation, we propose \\textbf{SynGR}, a synergistic generative recommendation framework that explicitly encourages the exploitation of cross-modal dependencies during generation. By constraining overreliance on dominant modalities, SynGR enables the model to capture emergent item semantics beyond shared or modality-specific signals. Extensive experiments across three benchmark datasets demonstrate that SynGR achieves superior performance.",
+      "published": "2026-05-18T09:03:23Z",
+      "updated": "2026-05-18T09:03:23Z",
       "categories": [
-        "cs.IR"
+        "cs.IR",
+        "cs.AI"
       ],
-      "pdfUrl": "https://arxiv.org/pdf/2604.04976v1",
-      "absUrl": "https://arxiv.org/abs/2604.04976v1",
-      "industrySource": "Tencent"
+      "pdfUrl": "https://arxiv.org/pdf/2605.18920v1",
+      "absUrl": "https://arxiv.org/abs/2605.18920v1",
+      "industrySource": ""
     },
     {
-      "id": "http://arxiv.org/abs/2604.02684v1",
-      "title": "MBGR: Multi-Business Prediction for Generative Recommendation at Meituan",
+      "id": "http://arxiv.org/abs/2605.17779v1",
+      "title": "Learning Variable-Length Tokenization for Generative Recommendation",
       "authors": [
-        "Changhao Li",
-        "Junwei Yin",
-        "Zhilin Zeng",
-        "Senjie Kou",
-        "Shuli Wang",
-        "Wenshuai Chen",
-        "Yinhua Zhu",
-        "Haitao Wang",
-        "Xingxing Wang"
+        "Minhao Wang",
+        "Bowen Wu",
+        "Wei Zhang"
       ],
       "affiliations": [],
-      "abstract": "Generative recommendation (GR) has recently emerged as a promising paradigm for industrial recommendations. GR leverages Semantic IDs (SIDs) to reduce the encoding-decoding space and employs the Next Token Prediction (NTP) framework to explore scaling laws. However, existing GR methods suffer from two critical issues: (1) a \\textbf{seesaw phenomenon} in multi-business scenarios arises due to NTP's inability to capture complex cross-business behavioral patterns; and (2) a unified SID space causes \\textbf{representation confusion} by failing to distinguish distinct semantic information across businesses. To address these issues, we propose Multi-Business Generative Recommendation (MBGR), the first GR framework tailored for multi-business scenarios. Our framework comprises three key components. First, we design a Business-aware semantic ID (BID) module that preserves semantic integrity via domain-aware tokenization. Then, we introduce a Multi-Business Prediction (MBP) structure to provide business-specific prediction capabilities. Furthermore, we develop a Label Dynamic Routing (LDR) module that transforms sparse multi-business labels into dense labels to further enhance the multi-business generation capability. Extensive offline and online experiments on Meituan's food delivery platform validate MBGR's effectiveness, and we have successfully deployed it in production.",
-      "published": "2026-04-03T03:26:36Z",
-      "updated": "2026-04-03T03:26:36Z",
+      "abstract": "Generative recommendation reformulates recommendation as next-token prediction over discrete semantic identifiers (IDs). A fundamental yet unexplored design choice is that existing methods employ fixed-length tokenization for all items, implicitly assuming uniform encoding capacity regardless of item characteristics. Through systematic experiments across four datasets, we discover the Popularity-Length Paradox: popular items achieve optimal performance with short IDs, while tail items require substantially longer codes to capture discriminative semantics. This reveals a critical mismatch where popular items benefit from abundant collaborative signals and require minimal semantic detail, whereas tail items must rely on fine-grained content features due to sparse interaction data. To address this, we propose VarLenRec, a framework for learning variable-length tokenization. We develop Popularity-Weighted Information Budget Allocation (PIBA), an information-theoretic framework proving that optimal ID length should scale as a negative power of popularity. Directly implementing variable-length allocation faces two technical challenges: standard Euclidean residual quantization lacks geometric capacity to support diverse code lengths without distortion, and discrete length decisions are non-differentiable. We address these through Hyperbolic Residual Quantization, which leverages the exponential volume growth of the Poincaré ball to naturally stratify encoding capacity, and a Soft Length Controller, which enables differentiable length prediction via continuous layer retention probabilities regularized by PIBA-derived priors. Extensive experiments demonstrate that VarLenRec achieves significant improvements over state-of-the-art methods in recommendation accuracy and training/inference efficiency, revealing the importance of adaptive encoding capacity in generative recommendation.",
+      "published": "2026-05-18T02:57:19Z",
+      "updated": "2026-05-18T02:57:19Z",
+      "categories": [
+        "cs.LG"
+      ],
+      "pdfUrl": "https://arxiv.org/pdf/2605.17779v1",
+      "absUrl": "https://arxiv.org/abs/2605.17779v1",
+      "industrySource": ""
+    },
+    {
+      "id": "http://arxiv.org/abs/2605.17648v1",
+      "title": "SAPO: Step-Aligned Policy Optimization for Reasoning-Based Generative Recommendation",
+      "authors": [
+        "Zaiyi Zheng",
+        "Guanghui Min",
+        "Yaochen Zhu",
+        "Liang Wu",
+        "Liangjie Hong",
+        "Chen Chen",
+        "Jundong Li"
+      ],
+      "affiliations": [],
+      "abstract": "Generative recommendation treats next-item prediction as autoregressive item-identifier generation. Specifically, items are encoded as semantic identifiers (SIDs), which are short coarse-to-fine token sequences whose early tokens capture broad semantics and later tokens refine them. Recent work augments this paradigm with reasoning traces and optimizes them via reinforcement learning with verifiable rewards, typically outcome-reward algorithm with exact-match feedback on the generated SID. However, in large-catalog recommendation, exact-match feedback on the generated SID only reports whether the final item is correct; when a generated SID mismatches, outcome-reward cannot identify which SID-token prediction caused the mismatch and may penalize matched SID-token positions together with the mismatched position. We identify that the natural unit of credit assignment in this setting is a single reasoning step (one thinking block paired with one SID token). We instantiate this idea in SAPO (Step-Aligned Policy Optimization): rather than broadcasting one advantage to the whole response, SAPO computes a separate group-relative advantage for each reasoning step and applies it only to the corresponding thinking block and SID token. Across three real-world recommendation datasets, SAPO stabilizes reinforcement-learning training and consistently improves over existing generative recommendation baselines, with the largest gains where sparse exact-match feedback makes reasoning-step credit assignment important. Our results suggest that reinforcement-learning objectives for structured generation should mirror the decoder's own decomposition of the output.",
+      "published": "2026-05-17T20:53:08Z",
+      "updated": "2026-05-17T20:53:08Z",
+      "categories": [
+        "cs.AI"
+      ],
+      "pdfUrl": "https://arxiv.org/pdf/2605.17648v1",
+      "absUrl": "https://arxiv.org/abs/2605.17648v1",
+      "industrySource": ""
+    },
+    {
+      "id": "http://arxiv.org/abs/2605.17357v1",
+      "title": "Dual-Diffusional Generative Fashion Recommendation",
+      "authors": [
+        "Mingzhe Yu",
+        "Lei Wu",
+        "Qianru Sun",
+        "Yunshan Ma"
+      ],
+      "affiliations": [],
+      "abstract": "Personalized generative recommender systems have emerged as a promising solution for fashion recommendation. However, existing methods primarily rely on implicit visual embeddings from historical interactions, which often contain preference-irrelevant information and result in insufficient user behavior modeling. Moreover, these models typically generate only item images, providing limited interpretability. To address these limitations, we propose DualFashion, a Dual-Diffusional Generative Fashion Recommendation Architecture that jointly models image and text modalities for personalized and explainable recommendation. DualFashion adopts a dual-diffusion Transformer with image and text branches, where structured attribute-level captions and visual outfit information are jointly used as conditioning signals to model user behavior. The proposed architecture produces both fashion item images and textual descriptions, ensuring visual compatibility while providing explicit semantic interpretability. Furthermore, we introduce a text-augmented fine-tuning strategy that enhances generation diversity and enables effective cross-modal knowledge transfer without incurring heavy computational costs. Extensive experiments on iFashion and Polyvore-U across Personalized Fill-in-the-Blank and Generative Outfit Recommendation tasks demonstrate that DualFashion achieves strong performance in behavior modeling, interpretability, and efficiency compared to state-of-the-art methods. Our code and model checkpoints are available at https://github.com/LinkMingzhe/DualFashion.",
+      "published": "2026-05-17T09:52:18Z",
+      "updated": "2026-05-17T09:52:18Z",
+      "categories": [
+        "cs.IR",
+        "cs.MM"
+      ],
+      "pdfUrl": "https://arxiv.org/pdf/2605.17357v1",
+      "absUrl": "https://arxiv.org/abs/2605.17357v1",
+      "industrySource": ""
+    },
+    {
+      "id": "http://arxiv.org/abs/2605.17267v1",
+      "title": "RAGR: Review-Augmented Generative Recommendation",
+      "authors": [
+        "Yingyi Zhang",
+        "Junyi Li",
+        "Yejing Wang",
+        "Wenlin Zhang",
+        "Xiaowei Qian",
+        "Sheng Zhang",
+        "Yue Feng",
+        "Yichao Wang",
+        "Yong Liu",
+        "Xiangyu Zhao",
+        "Xianneng Li"
+      ],
+      "affiliations": [],
+      "abstract": "Sequential recommendation (SR) is traditionally formulated as next-item prediction over a chronological sequence of interacted items. Although recent generative recommendation (GR) methods introduce new machinery, such as semantic IDs, autoregressive decoding, and unified token spaces, they largely inherit the same item-only modeling assumption. We argue that this design constitutes a structural bottleneck, because user decision-making is not purely behavioral: while item interactions reveal what users choose, review feedback often explain why they choose it by exposing latent evaluative factors. Motivated by this observation, we propose Review-Augmented Generative Recommendation (RAGR), a novel GR framework that incorporates review feedback directly into the generative user sequence rather than treating reviews as auxiliary side information. Specifically, RAGR introduces a Review-Augmented User Sequence Modeling mechanism that interleaves item semantic IDs and review semantic IDs in chronological order to construct a mixed behavioral-semantic sequence, enabling review signals to participate directly in autoregressive next-token generation. To preserve the recommendation objective, we further introduce an Item-Centric Task Generation Alignment strategy based on direct preference optimization (DPO), which encourages the model to favor item tokens over review tokens at prediction positions. Experiments on three real-world datasets show that RAGR yields consistent and significant gains over strong GR backbones across all metrics. Our code and data are available at \\url{https://github.com/Zhang-Yingyi/TKDE_RAGR}.",
+      "published": "2026-05-17T05:21:23Z",
+      "updated": "2026-05-17T05:21:23Z",
       "categories": [
         "cs.IR"
       ],
-      "pdfUrl": "https://arxiv.org/pdf/2604.02684v1",
-      "absUrl": "https://arxiv.org/abs/2604.02684v1",
-      "industrySource": "Meituan"
+      "pdfUrl": "https://arxiv.org/pdf/2605.17267v1",
+      "absUrl": "https://arxiv.org/abs/2605.17267v1",
+      "industrySource": ""
+    },
+    {
+      "id": "http://arxiv.org/abs/2605.16825v1",
+      "title": "Echoes in Filter Bubble: Diagnosing and Curing Popularity Bias in Generative Recommenders",
+      "authors": [
+        "Jun Yin",
+        "Bangguo Zhu",
+        "Peng Huo",
+        "Ruochen Liu",
+        "Hao Chen",
+        "Senzhang Wang",
+        "Shirui Pan",
+        "Chengqi Zhang"
+      ],
+      "affiliations": [],
+      "abstract": "Recently, Generative Recommenders (GRs), characterized by a unified end-to-end framework, have exhibited astonishing potential in transforming the recommendation paradigm. Despite their effectiveness, we recognize that GRs are still susceptible to the long-standing issue of popularity bias that has pervaded the recommendation community. Although a few studies have attempted to extend traditional debiasing methods to GRs, their effectiveness is marginal, and the fundamental reason why GRs suffer from popularity bias remains under-explored. To bridge this gap, this study focuses on two core aspects in GRs: the optimization of generative framework and the item tokenization based on semantic index. Based on theoretical analyses, we identify that the severe popularity bias emerges from the confluence of a token-level optimization flaw and the undifferentiated property of item tokenization. Accordingly, this study develops a novel generative recommender system, called Ghost, by designing the asymmetric unlikelihood optimization and the skeleton-founded tokenization. Extensive empirical evaluations across three datasets, alongside multiple SOTA baselines, reveal that Ghost substantially alleviates popularity bias and promotes fairer recommendations, while incurring slight degradation to the overall recommendation utility.",
+      "published": "2026-05-16T06:02:40Z",
+      "updated": "2026-05-16T06:02:40Z",
+      "categories": [
+        "cs.IR",
+        "cs.AI"
+      ],
+      "pdfUrl": "https://arxiv.org/pdf/2605.16825v1",
+      "absUrl": "https://arxiv.org/abs/2605.16825v1",
+      "industrySource": ""
     },
     {
       "id": "http://arxiv.org/abs/2605.14853v1",
@@ -497,6 +593,29 @@
       "industrySource": ""
     },
     {
+      "id": "http://arxiv.org/abs/2605.18805v1",
+      "title": "RecoAtlas: From Semantic Plausibility to Set-Level Utility in LLM Recommendation Agents",
+      "authors": [
+        "Imad Aouali",
+        "Flavian Vasile",
+        "Otmane Sakhi",
+        "Alexandre Gilotte",
+        "Benjamin Heymann"
+      ],
+      "affiliations": [],
+      "abstract": "LLM recommendation agents increasingly produce structured recommendation reports: sets of items accompanied by natural-language justifications. Yet existing evaluations often reduce this setting to reranking small shortlisted candidate sets or judge reports mainly by semantic plausibility. We introduce Recommendation Atlas (Agentic Tool-Level Assessment for Shopping), or RecoAtlas, a benchmark and toolkit for evaluating shopping agents with behavior-grounded metrics. RecoAtlas complements held-out interaction metrics with learned utility proxies for relevance, complementarity, and diversity derived from interaction data, while separately measuring semantic coherence and explanation quality. Its controlled tool environment exposes agents to either semantic, behavior-aligned, or faulty tools, enabling diagnosis of whether performance gains arise from stronger reasoning, better signals, or more effective tool-use policies. Across controlled experiments, we show that RecoAtlas exhibits key properties of a meaningful benchmark for agentic systems: performance scales with model capacity and test-time compute, improves with stronger and better-aligned tools, degrades under noisy or misaligned signals, and reveals that semantic plausibility does not necessarily capture behavior-grounded utility. RecoAtlas provides a foundation for developing and evaluating shopping assistants that optimize not only for plausible recommendations, but also for coherent, behaviorally grounded recommendation sets.",
+      "published": "2026-05-11T18:55:32Z",
+      "updated": "2026-05-11T18:55:32Z",
+      "categories": [
+        "cs.IR",
+        "cs.AI",
+        "cs.LG"
+      ],
+      "pdfUrl": "https://arxiv.org/pdf/2605.18805v1",
+      "absUrl": "https://arxiv.org/abs/2605.18805v1",
+      "industrySource": ""
+    },
+    {
       "id": "http://arxiv.org/abs/2605.10207v1",
       "title": "LASAR: Latent Adaptive Semantic Aligned Reasoning for Generative Recommendation",
       "authors": [
@@ -614,7 +733,7 @@
       "industrySource": ""
     },
     {
-      "id": "http://arxiv.org/abs/2605.05249v1",
+      "id": "http://arxiv.org/abs/2605.05249v2",
       "title": "TriAlignGR: Triangular Multitask Alignment with Multimodal Deep Interest Mining for Generative Recommendation",
       "authors": [
         "Yangchen Zeng",
@@ -627,12 +746,12 @@
       "affiliations": [],
       "abstract": "We introduce TriAlignGR, a unified multitask-multimodal framework for generative recommendation that establishes two-stage multimodal semantic propagation: (i) encoding visual semantics directly into SIDs via multimodal embeddings, and (ii) enabling the model to decode these semantics through visual description tasks. Existing Semantic ID (SID) pipelines suffer from two fundamental but underexplored problems: \\textbf{SID Content Degradation (SCD)}, where cascaded encoding and residual quantization discard critical multimodal and interest-level semantics; and \\textbf{SID Semantic Opacity (SSO)}, where models autoregressively generate SID sequences without truly comprehending their underlying meaning, leading to hallucination and poor generalization. Prior work addresses at most text-SID alignment, leaving visual semantics and latent user interests entirely unexploited. TriAlignGR resolves both problems through three tightly integrated components: (1)~\\textbf{Cross-Modal Semantic Alignment (CMSA)} integrates visual content into SID construction through both VLM-generated textual descriptions and a multimodal embedding model that directly encodes image features alongside text, ensuring that SIDs inherently carry multimodal semantics; (2)~\\textbf{Multimodal Deep Interest Mining (MDIM)} leverages LLM Chain-of-Thought reasoning to extract latent user intents (\\eg ``productivity-focused lifestyle'' from noise-canceling headphones) beyond surface attributes, enriching SID semantics before discretization; and (3)~\\textbf{Triangular Multitask (TMT)} jointly trains on eight complementary generation tasks under a single autoregressive loss -- including two novel visual-semantic tasks (VisDesc$\\to$SID, VisDesc$\\to$Title) that map VLM-generated image descriptions to SIDs and titles, completing the SID-Text-Image triangle -- without requiring task-specific towers or complex loss weighting.",
       "published": "2026-05-05T11:42:14Z",
-      "updated": "2026-05-05T11:42:14Z",
+      "updated": "2026-05-17T05:13:43Z",
       "categories": [
         "cs.IR"
       ],
-      "pdfUrl": "https://arxiv.org/pdf/2605.05249v1",
-      "absUrl": "https://arxiv.org/abs/2605.05249v1",
+      "pdfUrl": "https://arxiv.org/pdf/2605.05249v2",
+      "absUrl": "https://arxiv.org/abs/2605.05249v2",
       "industrySource": ""
     },
     {
@@ -931,6 +1050,32 @@
       "industrySource": ""
     },
     {
+      "id": "http://arxiv.org/abs/2605.18771v1",
+      "title": "LWGR: Lagrangian-Constrained Personalized World Knowledge for Generative Recommendation",
+      "authors": [
+        "Lingyu Mu",
+        "Hao Deng",
+        "Haibo Xing",
+        "Kaican Lin",
+        "Zhitong Zhu",
+        "Yu Zhang",
+        "Xiaoyi Zeng",
+        "Zhengxiao Liu",
+        "Zheng Lin",
+        "Jinxin Hu"
+      ],
+      "affiliations": [],
+      "abstract": "Recent progress in large language model (LLM) based generative recommendation (GR) shows that leveraging LLM world knowledge can substantially improve performance. However, existing methods rely on fixed, manually designed instructions to generate semantic knowledge and directly incorporate it into GR, which has two limitations. First, fixed instructions cannot capture the multidimensional heterogeneity of user interests. Second, uncontrollable knowledge fusion may conflict with behavioral signals and harm recommendations. To address these limitations, we propose LWGR, a framework that leverages Lagrangian constraints to transfer users' personalized world knowledge from LLMs into generative recommendation. LWGR enhances GR along two axes: knowledge extraction and fusion. It builds personalized soft instructions to extract behavior-relevant LLM world knowledge, and formulates knowledge fusion as an optimization problem with explicitly bounded performance degradation, which is solved by a Lagrangian primal-dual method to selectively incorporate beneficial knowledge. We further design two training strategies for different LLM scales and a deployment scheme that combines nearline precomputation with lightweight online serving. Experiments on multiple public datasets and one industrial dataset show that LWGR outperforms eight state-of-the-art baselines by up to 11.23% and brings a 1.35% revenue lift on a large-scale advertising platform, demonstrating its effectiveness and practicality.",
+      "published": "2026-04-16T08:14:33Z",
+      "updated": "2026-04-16T08:14:33Z",
+      "categories": [
+        "cs.IR"
+      ],
+      "pdfUrl": "https://arxiv.org/pdf/2605.18771v1",
+      "absUrl": "https://arxiv.org/abs/2605.18771v1",
+      "industrySource": ""
+    },
+    {
       "id": "http://arxiv.org/abs/2604.14051v1",
       "title": "Enhancing Local Life Service Recommendation with Agentic Reasoning in Large Language Model",
       "authors": [
@@ -1021,171 +1166,6 @@
       ],
       "pdfUrl": "https://arxiv.org/pdf/2604.08525v1",
       "absUrl": "https://arxiv.org/abs/2604.08525v1",
-      "industrySource": ""
-    },
-    {
-      "id": "http://arxiv.org/abs/2604.07813v1",
-      "title": "Agentivism: a learning theory for the age of artificial intelligence",
-      "authors": [
-        "Lixiang Yan",
-        "Dragan Gašević"
-      ],
-      "affiliations": [],
-      "abstract": "Learning theories have historically changed when the conditions of learning evolved. Generative and agentic AI create a new condition by allowing learners to delegate explanation, writing, problem solving, and other cognitive work to systems that can generate, recommend, and sometimes act on the learner's behalf. This creates a fundamental challenge for learning theory: successful performance can no longer be assumed to indicate learning. Learners may complete tasks effectively with AI support while developing less understanding, weaker judgment, and limited transferable capability. We argue that this problem is not fully captured by existing learning theories. Behaviourism, cognitivism, constructivism, and connectivism remain important, but they do not directly explain when AI-assisted performance becomes durable human capability. We propose Agentivism, a learning theory for human-AI interaction. Agentivism defines learning as durable growth in human capability through selective delegation to AI, epistemic monitoring and verification of AI contributions, reconstructive internalization of AI-assisted outputs, and transfer under reduced support. The importance of Agentivism lies in explaining how learning remains possible when intelligent delegation is easy and human-AI interaction is becoming a persistent and expanding part of human learning.",
-      "published": "2026-04-09T05:09:48Z",
-      "updated": "2026-04-09T05:09:48Z",
-      "categories": [
-        "cs.AI",
-        "cs.HC"
-      ],
-      "pdfUrl": "https://arxiv.org/pdf/2604.07813v1",
-      "absUrl": "https://arxiv.org/abs/2604.07813v1",
-      "industrySource": ""
-    },
-    {
-      "id": "http://arxiv.org/abs/2604.07739v1",
-      "title": "Efficient Dataset Selection for Continual Adaptation of Generative Recommenders",
-      "authors": [
-        "Cathy Jiao",
-        "Juan Elenter",
-        "Praveen Ravichandran",
-        "Bernd Huber",
-        "Joseph Cauteruccio",
-        "Todd Wasson",
-        "Timothy Heath",
-        "Chenyan Xiong",
-        "Mounia Lalmas",
-        "Paul Bennett"
-      ],
-      "affiliations": [],
-      "abstract": "Recommendation systems must continuously adapt to evolving user behavior, yet the volume of data generated in large-scale streaming environments makes frequent full retraining impractical. This work investigates how targeted data selection can mitigate performance degradation caused by temporal distributional drift while maintaining scalability. We evaluate a range of representation choices and sampling strategies for curating small but informative subsets of user interaction data. Our results demonstrate that gradient-based representations, coupled with distribution-matching, improve downstream model performance, achieving training efficiency gains while preserving robustness to drift. These findings highlight data curation as a practical mechanism for scalable monitoring and adaptive model updates in production-scale recommendation systems.",
-      "published": "2026-04-09T02:48:52Z",
-      "updated": "2026-04-09T02:48:52Z",
-      "categories": [
-        "cs.IR",
-        "cs.LG"
-      ],
-      "pdfUrl": "https://arxiv.org/pdf/2604.07739v1",
-      "absUrl": "https://arxiv.org/abs/2604.07739v1",
-      "industrySource": ""
-    },
-    {
-      "id": "http://arxiv.org/abs/2604.26960v1",
-      "title": "LLM Biases",
-      "authors": [
-        "Jinhui Han",
-        "Ming Hu",
-        "Xilin Zhang"
-      ],
-      "affiliations": [],
-      "abstract": "Transformer-based agentic AI is rapidly being deployed on major platforms to help users shop, watch, and navigate content with less effort. While these systems can deliver impressive performance, a key concern is whether they may be less reliable than they appear. We ask a simple but fundamental question: whether the mechanisms that make transformer-based agents effective can also induce systematic biases or distortions? We study this question through a theoretical analysis of transformer-based generative recommenders, in which the next user interaction is generated sequentially from the user history. Focusing on how the model allocates attention across historical evidence, we identify four bias channels: (i) Positional bias: stronger positional encoding shifts influence toward recent history, improving responsiveness but potentially reducing stability and long-term diversity; (ii) Popularity amplification: small frequency differences in data can be magnified into disproportionate exposure, contributing to Matthew effects and echo chambers; (iii) Latent driver bias: when important drivers of user choices are not directly observed, the model can place overly concentrated weight on a small subset of past events, creating overconfident attributions. (iv) Synthetic data bias: when users increasingly follow AI suggestions and platforms retrain on model-shaped synthetic logs, outputs can concentrate over time, and long-tail alternatives can disappear first. Our analysis highlights mechanism-level reliability risks that may not be visible in offline performance metrics. The four bias channels indicate that large-scale deployment may systematically distort exposure and choice. For managers, the immediate implication is to treat these as operational risk factors and to monitor concentration and drift over time, rather than assuming that performance gains alone guarantee reliability.",
-      "published": "2026-04-07T14:08:38Z",
-      "updated": "2026-04-07T14:08:38Z",
-      "categories": [
-        "cs.CY",
-        "cs.AI"
-      ],
-      "pdfUrl": "https://arxiv.org/pdf/2604.26960v1",
-      "absUrl": "https://arxiv.org/abs/2604.26960v1",
-      "industrySource": ""
-    },
-    {
-      "id": "http://arxiv.org/abs/2604.05113v1",
-      "title": "CRAB: Codebook Rebalancing for Bias Mitigation in Generative Recommendation",
-      "authors": [
-        "Zezhong Fan",
-        "Ziheng Chen",
-        "Luyi Ma",
-        "Jin Huang",
-        "Lalitesh Morishetti",
-        "Kaushiki Nag",
-        "Sushant Kumar",
-        "Kannan Achan"
-      ],
-      "affiliations": [],
-      "abstract": "Generative recommendation (GeneRec) has introduced a new paradigm that represents items as discrete semantic tokens and predicts items in a generative manner. Despite its strong performance across multiple recommendation tasks, existing GeneRec approaches still suffer from severe popularity bias and may even exacerbate it. In this work, we conduct a comprehensive empirical analysis to uncover the root causes of this phenomenon, yielding two core insights: 1) imbalanced tokenization inherits and can further amplify popularity bias from historical item interactions; 2) current training procedures disproportionately favor popular tokens while neglecting semantic relationships among tokens, thereby intensifying popularity bias. Building on these insights, we propose CRAB, a post-hoc debiasing strategy for GeneRec that alleviates popularity bias by mitigating frequency imbalance among semantic tokens. Specifically, given a well-trained model, we first rebalance the codebook by splitting over-popular tokens while preserving their hierarchical semantic structure. Based on the adjusted codebook, we further introduce a tree-structured regularizer to enhance semantic consistency, encouraging more informative representations for unpopular tokens during training. Experiments on real-world datasets demonstrate that CRAB significantly improves recommendation performance by effectively alleviating popularity bias.",
-      "published": "2026-04-06T19:18:24Z",
-      "updated": "2026-04-06T19:18:24Z",
-      "categories": [
-        "cs.IR",
-        "cs.AI"
-      ],
-      "pdfUrl": "https://arxiv.org/pdf/2604.05113v1",
-      "absUrl": "https://arxiv.org/abs/2604.05113v1",
-      "industrySource": ""
-    },
-    {
-      "id": "http://arxiv.org/abs/2604.04427v1",
-      "title": "FAVE: Flow-based Average Velocity Establishment for Sequential Recommendation",
-      "authors": [
-        "Ke Shi",
-        "Yao Zhang",
-        "Feng Guo",
-        "Jinyuan Zhang",
-        "JunShuo Zhang",
-        "Shen Gao",
-        "Shuo Shang"
-      ],
-      "affiliations": [],
-      "abstract": "Generative recommendation has emerged as a transformative paradigm for capturing the dynamic evolution of user intents in sequential recommendation. While flow-based methods improve the efficiency of diffusion models, they remain hindered by the ``Noise-to-Data'' paradigm, which introduces two critical inefficiencies: prior mismatch, where generation starts from uninformative noise, forcing a lengthy recovery trajectory; and linear redundancy, where iterative solvers waste computation on modeling deterministic preference transitions. To address these limitations, we propose a Flow-based Average Velocity Establishment (Fave) framework for one-step generation recommendation that learns a direct trajectory from an informative prior to the target distribution. Fave is structured via a progressive two-stage training strategy. In Stage 1, we establish a stable preference space through dual-end semantic alignment, applying constraints at both the source (user history) and target (next item) to prevent representation collapse. In Stage 2, we directly resolve the efficiency bottlenecks by introducing a semantic anchor prior, which initializes the flow with a masked embedding from the user's interaction history, providing an informative starting point. Then we learn a global average velocity, consolidating the multi-step trajectory into a single displacement vector, and enforce trajectory straightness via a JVP-based consistency constraint to ensure one-step generation. Extensive experiments on three benchmarks demonstrate that Fave not only achieves state-of-the-art recommendation performance but also delivers an order-of-magnitude improvement in inference efficiency, making it practical for latency-sensitive scenarios.",
-      "published": "2026-04-06T05:17:43Z",
-      "updated": "2026-04-06T05:17:43Z",
-      "categories": [
-        "cs.IR",
-        "cs.CL"
-      ],
-      "pdfUrl": "https://arxiv.org/pdf/2604.04427v1",
-      "absUrl": "https://arxiv.org/abs/2604.04427v1",
-      "industrySource": ""
-    },
-    {
-      "id": "http://arxiv.org/abs/2604.04103v1",
-      "title": "Compliance-by-Construction Argument Graphs: Using Generative AI to Produce Evidence-Linked Formal Arguments for Certification-Grade Accountability",
-      "authors": [
-        "Mahyar T. Moghaddam"
-      ],
-      "affiliations": [],
-      "abstract": "High-stakes decision systems increasingly require structured justification, traceability, and auditability to ensure accountability and regulatory compliance. Formal arguments commonly used in the certification of safety-critical systems provide a mechanism for structuring claims, reasoning, and evidence in a verifiable manner. At the same time, generative artificial intelligence systems are increasingly integrated into decision-support workflows, assisting with drafting explanations, summarizing evidence, and generating recommendations. However, current deployments often rely on language models as loosely constrained assistants, which introduces risks such as hallucinated reasoning, unsupported claims, and weak traceability. This paper proposes a compliance-by-construction architecture that integrates Generative AI (GenAI) with structured formal argument representations. The approach treats each AI-assisted step as a claim that must be supported by verifiable evidence and validated against explicit reasoning constraints before it becomes part of an official decision record. The architecture combines four components: i) a typed Argument Graph representation inspired by assurance-case methods, ii) retrieval-augmented generation (RAG) to draft argument fragments grounded in authoritative evidence, iii) a reasoning and validation kernel enforcing completeness and admissibility constraints, and iv) a provenance ledger aligned with the W3C PROV standard to support auditability. We present a system design and an evaluation strategy based on enforceable invariants and worked examples. The analysis suggests that deterministic validation rules can prevent unsupported claims from entering the decision record while allowing GenAI to accelerate argument construction.",
-      "published": "2026-04-05T12:55:16Z",
-      "updated": "2026-04-05T12:55:16Z",
-      "categories": [
-        "cs.AI"
-      ],
-      "pdfUrl": "https://arxiv.org/pdf/2604.04103v1",
-      "absUrl": "https://arxiv.org/abs/2604.04103v1",
-      "industrySource": ""
-    },
-    {
-      "id": "http://arxiv.org/abs/2604.02324v1",
-      "title": "Grounded Token Initialization for New Vocabulary in LMs for Generative Recommendation",
-      "authors": [
-        "Daiwei Chen",
-        "Zhoutong Fu",
-        "Chengming Jiang",
-        "Haichao Zhang",
-        "Ran Zhou",
-        "Tan Wang",
-        "Chunnan Yao",
-        "Guoyao Li",
-        "Rui Cai",
-        "Yihan Cao",
-        "Ruijie Jiang",
-        "Fedor Borisyuk",
-        "Jianqiang Shen",
-        "Jingwei Wu",
-        "Ramya Korlakai Vinayak"
-      ],
-      "affiliations": [],
-      "abstract": "Language models (LMs) are increasingly extended with new learnable vocabulary tokens for domain-specific tasks, such as Semantic-ID tokens in generative recommendation. The standard practice initializes these new tokens as the mean of existing vocabulary embeddings, then relies on supervised fine-tuning to learn their representations. We present a systematic analysis of this strategy: through spectral and geometric diagnostics, we show that mean initialization collapses all new tokens into a degenerate subspace, erasing inter-token distinctions that subsequent fine-tuning struggles to fully recover. These findings suggest that \\emph{token initialization} is a key bottleneck when extending LMs with new vocabularies. Motivated by this diagnosis, we propose the \\emph{Grounded Token Initialization Hypothesis}: linguistically grounding novel tokens in the pretrained embedding space before fine-tuning better enables the model to leverage its general-purpose knowledge for novel-token domains. We operationalize this hypothesis as GTI (Grounded Token Initialization), a lightweight grounding stage that, prior to fine-tuning, maps new tokens to distinct, semantically meaningful locations in the pretrained embedding space using only paired linguistic supervision. Despite its simplicity, GTI outperforms both mean initialization and existing auxiliary-task adaptation methods in the majority of evaluation settings across multiple generative recommendation benchmarks, including industry-scale and public datasets. Further analyses show that grounded embeddings produce richer inter-token structure that persists through fine-tuning, corroborating the hypothesis that initialization quality is a key bottleneck in vocabulary extension.",
-      "published": "2026-04-02T17:59:19Z",
-      "updated": "2026-04-02T17:59:19Z",
-      "categories": [
-        "cs.CL",
-        "cs.AI",
-        "cs.LG"
-      ],
-      "pdfUrl": "https://arxiv.org/pdf/2604.02324v1",
-      "absUrl": "https://arxiv.org/abs/2604.02324v1",
       "industrySource": ""
     }
   ]
