@@ -1,7 +1,26 @@
 {
-  "lastUpdated": "2026-05-23T04:47:15Z",
-  "totalResults": 621,
+  "lastUpdated": "2026-05-25T05:24:43Z",
+  "totalResults": 623,
   "papers": [
+    {
+      "id": "http://arxiv.org/abs/2605.23312v1",
+      "title": "Towards Generalizable and Efficient Large-Scale Generative Recommenders",
+      "authors": [
+        "Qiuling Xu",
+        "Ko-Jen Hsiao",
+        "Moumita Bhattacharya"
+      ],
+      "affiliations": [],
+      "abstract": "Generative recommendation models can model user behavior as sequences of events and provide a shared backbone for multiple recommendation tasks. In production, however, pre-training gains do not automatically translate into downstream application improvements: task headroom, repeated-training cost, serving latency, and item freshness all affect transfer. We describe our experience scaling a generative recommender from 2M to 1B backbone parameters, excluding embedding and decoding layers, in a production-scale title recommendation setting. Across multiple downstream tasks, we observe task-dependent scaling behavior: some tasks approach an empirical ceiling within the observed scale range, while others continue to benefit from additional capacity. This motivates using offset scaling-law fits as a diagnostic for where additional model scale may be more or less useful. We then study production constraints that arise when applying the model in practice. Frequent retraining over trillions of behavior tokens makes training and decoding efficiency important; cached serving can make the immediate next-token target stale; and newly launched titles may need to be scored from semantic metadata before collaborative ID embeddings are reliable. We address these issues with multi-token prediction for serving-latency alignment, sampled softmax and a projected decoding head for efficient repeated training, and semantic item towers with collaborative-embedding masking for cold-start adaptation. In a one-week production-shadow evaluation over 1M users, the 1B-backbone model achieves higher MRR than the 2M-backbone baseline across all reported tasks. Overall, the results support treating model scale as one component of a production transfer problem, alongside task headroom, decoding cost, serving-latency alignment, and item generalization.",
+      "published": "2026-05-22T07:31:00Z",
+      "updated": "2026-05-22T07:31:00Z",
+      "categories": [
+        "cs.IR"
+      ],
+      "pdfUrl": "https://arxiv.org/pdf/2605.23312v1",
+      "absUrl": "https://arxiv.org/abs/2605.23312v1",
+      "industrySource": "Meta"
+    },
     {
       "id": "http://arxiv.org/abs/2605.18899v1",
       "title": "Don't Let Bandit Feedback Pull Continual LLM-Recommender Updates Off Target",
@@ -270,25 +289,24 @@
       "industrySource": "Shopee"
     },
     {
-      "id": "http://arxiv.org/abs/2604.07825v2",
-      "title": "Filling the Gaps: Selective Knowledge Augmentation for LLM Recommenders",
+      "id": "http://arxiv.org/abs/2605.23246v1",
+      "title": "Regulatory Considerations for Using Artificial Intelligence Models to Reduce Sample Sizes in Registrational Studies",
       "authors": [
-        "Jaehyun Lee",
-        "Sanghwan Jang",
-        "SeongKu Kang",
-        "Hwanjo Yu"
+        "Aaron M. Smith",
+        "Tala Fakhouri",
+        "Run Zhuang",
+        "Jonathan R. Walsh"
       ],
       "affiliations": [],
-      "abstract": "Large language models (LLMs) have recently emerged as powerful training-free recommenders. However, their knowledge of individual items is inevitably uneven due to imbalanced information exposure during pretraining, a phenomenon we refer to as knowledge gap problem. To address this, most prior methods have employed a naive uniform augmentation that appends external information for every item in the input prompt. However, this approach not only wastes limited context budget on redundant augmentation for well-known items but can also hinder the model's effective reasoning. To this end, we propose KnowSA_CKP (Knowledge-aware Selective Augmentation with Comparative Knowledge Probing) to mitigate the knowledge gap problem. KnowSA_CKP estimates the LLM's internal knowledge by evaluating its capability to capture collaborative relationships and selectively injects additional information only where it is most needed. By avoiding unnecessary augmentation for well-known items, KnowSA_CKP focuses on items that benefit most from knowledge supplementation, thereby making more effective use of the context budget. KnowSA_CKP requires no fine-tuning step, and consistently improves both recommendation accuracy and context efficiency across four real-world datasets. Our code is available at https://github.com/nowhyun/KnowSA\\_CKP.",
-      "published": "2026-04-09T05:27:04Z",
-      "updated": "2026-04-19T15:48:27Z",
+      "abstract": "Applications of artificial intelligence (AI) in drug development continue to increase at a rapid pace. Regulatory authorities have provided increasingly clear perspectives on the use of AI in regulated applications, including recent draft guidance from FDA that provides a 7-step risk-based framework to assess AI model credibility for these cases. We present an application of AI models to prospectively reduce the planned sample size in a randomized controlled trial, using model-derived prognostic covariates. This can shorten trial timelines, enable faster decision making, and lower costs. When treatments are effective and tolerable they can be accessible to patients sooner, which is a compelling use case for the FDA guidance. We walk through each of the steps in the guidance, providing general recommendations for model development, evaluation, and approaches for sample size determination, with the intent of providing a clear set of guidelines on how to engage with the FDA guidance and advance responsible use of AI in drug development. We demonstrate the application with an example in Alzheimerś Disease.",
+      "published": "2026-05-22T05:30:06Z",
+      "updated": "2026-05-22T05:30:06Z",
       "categories": [
-        "cs.IR",
-        "cs.AI"
+        "stat.AP"
       ],
-      "pdfUrl": "https://arxiv.org/pdf/2604.07825v2",
-      "absUrl": "https://arxiv.org/abs/2604.07825v2",
-      "industrySource": "Microsoft"
+      "pdfUrl": "https://arxiv.org/pdf/2605.23246v1",
+      "absUrl": "https://arxiv.org/abs/2605.23246v1",
+      "industrySource": ""
     },
     {
       "id": "http://arxiv.org/abs/2605.20742v1",
@@ -451,28 +469,20 @@
       "industrySource": ""
     },
     {
-      "id": "http://arxiv.org/abs/2605.14853v1",
+      "id": "http://arxiv.org/abs/2605.14853v2",
       "title": "Discrimination Is Generation: Unifying Ranking and Retrieval from a Tokenizer Perspective",
       "authors": [
-        "Shuli Wang",
-        "Junwei Yin",
-        "Changhao Li",
-        "Senjie Kou",
-        "Chi Wang",
-        "Yinqiu Huang",
-        "Yinhua Zhu",
-        "Haitao Wang",
-        "Xingxing Wang"
+        "Shuli Wang"
       ],
       "affiliations": [],
       "abstract": "Semantic IDs (SIDs) define the generation space of generative recommendation and directly determine its personalization ceiling. However, existing tokenizers are trained independently with retrieval objectives, leaving personalization signals fully decoupled from the SID construction process -- a fundamental gap that causes generative retrieval to persistently lag behind discriminative ranking. In this paper, we rethink the essence of SIDs: \\emph{ranking seeks argmax in item space while retrieval seeks argmax in token space; both are the same problem solved at different granularities.} Based on this insight, we propose \\DIG (\\textbf{D}iscrimination \\textbf{I}s \\textbf{G}eneration), which embeds the tokenizer inside a discriminative ranking model for end-to-end training -- the ranker naturally becomes a retrieval model, yielding two models from a single training run. \\DIG is organized around a \\emph{feature assignment taxonomy}: item-intrinsic static features are encoded into SIDs, user-item cross features (u2i) implicitly drive codebook boundaries toward recommendation decision boundaries during training, and an MLP$_\\mathrm{u2t}$ distillation module approximates u2i at the token level for inference. Experiments on three public benchmarks and two industrial datasets demonstrate that \\DIG simultaneously improves ranking, retrieval, and unified retrieval-ranking quality.",
       "published": "2026-05-14T13:59:29Z",
-      "updated": "2026-05-14T13:59:29Z",
+      "updated": "2026-05-21T23:48:52Z",
       "categories": [
         "cs.IR"
       ],
-      "pdfUrl": "https://arxiv.org/pdf/2605.14853v1",
-      "absUrl": "https://arxiv.org/abs/2605.14853v1",
+      "pdfUrl": "https://arxiv.org/pdf/2605.14853v2",
+      "absUrl": "https://arxiv.org/abs/2605.14853v2",
       "industrySource": ""
     },
     {
@@ -1143,29 +1153,6 @@
       ],
       "pdfUrl": "https://arxiv.org/pdf/2604.09087v2",
       "absUrl": "https://arxiv.org/abs/2604.09087v2",
-      "industrySource": ""
-    },
-    {
-      "id": "http://arxiv.org/abs/2604.08525v1",
-      "title": "Ads in AI Chatbots? An Analysis of How Large Language Models Navigate Conflicts of Interest",
-      "authors": [
-        "Addison J. Wu",
-        "Ryan Liu",
-        "Shuyue Stella Li",
-        "Yulia Tsvetkov",
-        "Thomas L. Griffiths"
-      ],
-      "affiliations": [],
-      "abstract": "Today's large language models (LLMs) are trained to align with user preferences through methods such as reinforcement learning. Yet models are beginning to be deployed not merely to satisfy users, but also to generate revenue for the companies that created them through advertisements. This creates the potential for LLMs to face conflicts of interest, where the most beneficial response to a user may not be aligned with the company's incentives. For instance, a sponsored product may be more expensive but otherwise equal to another; in this case, what does (and should) the LLM recommend to the user? In this paper, we provide a framework for categorizing the ways in which conflicting incentives might lead LLMs to change the way they interact with users, inspired by literature from linguistics and advertising regulation. We then present a suite of evaluations to examine how current models handle these tradeoffs. We find that a majority of LLMs forsake user welfare for company incentives in a multitude of conflict of interest situations, including recommending a sponsored product almost twice as expensive (Grok 4.1 Fast, 83%), surfacing sponsored options to disrupt the purchasing process (GPT 5.1, 94%), and concealing prices in unfavorable comparisons (Qwen 3 Next, 24%). Behaviors also vary strongly with levels of reasoning and users' inferred socio-economic status. Our results highlight some of the hidden risks to users that can emerge when companies begin to subtly incentivize advertisements in chatbots.",
-      "published": "2026-04-09T17:57:50Z",
-      "updated": "2026-04-09T17:57:50Z",
-      "categories": [
-        "cs.AI",
-        "cs.CL",
-        "cs.CY"
-      ],
-      "pdfUrl": "https://arxiv.org/pdf/2604.08525v1",
-      "absUrl": "https://arxiv.org/abs/2604.08525v1",
       "industrySource": ""
     }
   ]
