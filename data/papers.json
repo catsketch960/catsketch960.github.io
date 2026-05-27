@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-05-25T05:24:43Z",
+  "lastUpdated": "2026-05-27T05:22:25Z",
   "totalResults": 623,
   "papers": [
     {
@@ -289,6 +289,26 @@
       "industrySource": "Shopee"
     },
     {
+      "id": "http://arxiv.org/abs/2605.25330v1",
+      "title": "How Reliable Are Semantic-ID Tokenizer Comparisons in Generative Recommendation?",
+      "authors": [
+        "Qian Zhang",
+        "Lech Szymanski",
+        "Haibo Zhang",
+        "Jeremiah D. Deng"
+      ],
+      "affiliations": [],
+      "abstract": "In Semantic-ID (SID) based generative recommendation, each item is represented as a sequence of discrete codes, and an autoregressive model is trained to generate the SID sequence of the next item; top-K performance is then measured by checking whether the SID sequence of the target item appears among the generated sequences. This evaluation protocol equates SID-level matching with item-level recommendation, an equivalence that holds only when every SID sequence maps to a single item. We show this assumption breaks down in practice: because tokenizers compress item features into a code space, semantically similar but collaboratively distinct items are frequently assigned the same SID sequence. Across four datasets and five representative tokenizers, the fraction of items involved in such collisions reaches 30.5%, so matching a shared SID sequence identifies only a collision group rather than the target item. Consequently, SID-level metrics overestimate item-level performance (Hit@10 is inflated by up to 103.36%), and the inflation grows with the collision rate. To support faithful comparison, we develop collision-aware item-level metrics computed directly from generated SID sequences, together with a post-tokenizer procedure that reassigns last-level SIDs at minimum cost to obtain a collision-free assignment for any existing tokenizer. Our results indicate that SID-level rankings in prior work should be interpreted with caution, and that reliable tokenizer evaluation requires either item-level correction or collision-free SID assignments.",
+      "published": "2026-05-25T01:22:45Z",
+      "updated": "2026-05-25T01:22:45Z",
+      "categories": [
+        "cs.IR"
+      ],
+      "pdfUrl": "https://arxiv.org/pdf/2605.25330v1",
+      "absUrl": "https://arxiv.org/abs/2605.25330v1",
+      "industrySource": ""
+    },
+    {
       "id": "http://arxiv.org/abs/2605.23246v1",
       "title": "Regulatory Considerations for Using Artificial Intelligence Models to Reduce Sample Sizes in Registrational Studies",
       "authors": [
@@ -444,7 +464,7 @@
       "industrySource": ""
     },
     {
-      "id": "http://arxiv.org/abs/2605.16825v1",
+      "id": "http://arxiv.org/abs/2605.16825v2",
       "title": "Echoes in Filter Bubble: Diagnosing and Curing Popularity Bias in Generative Recommenders",
       "authors": [
         "Jun Yin",
@@ -459,13 +479,13 @@
       "affiliations": [],
       "abstract": "Recently, Generative Recommenders (GRs), characterized by a unified end-to-end framework, have exhibited astonishing potential in transforming the recommendation paradigm. Despite their effectiveness, we recognize that GRs are still susceptible to the long-standing issue of popularity bias that has pervaded the recommendation community. Although a few studies have attempted to extend traditional debiasing methods to GRs, their effectiveness is marginal, and the fundamental reason why GRs suffer from popularity bias remains under-explored. To bridge this gap, this study focuses on two core aspects in GRs: the optimization of generative framework and the item tokenization based on semantic index. Based on theoretical analyses, we identify that the severe popularity bias emerges from the confluence of a token-level optimization flaw and the undifferentiated property of item tokenization. Accordingly, this study develops a novel generative recommender system, called Ghost, by designing the asymmetric unlikelihood optimization and the skeleton-founded tokenization. Extensive empirical evaluations across three datasets, alongside multiple SOTA baselines, reveal that Ghost substantially alleviates popularity bias and promotes fairer recommendations, while incurring slight degradation to the overall recommendation utility.",
       "published": "2026-05-16T06:02:40Z",
-      "updated": "2026-05-16T06:02:40Z",
+      "updated": "2026-05-26T02:58:09Z",
       "categories": [
         "cs.IR",
         "cs.AI"
       ],
-      "pdfUrl": "https://arxiv.org/pdf/2605.16825v1",
-      "absUrl": "https://arxiv.org/abs/2605.16825v1",
+      "pdfUrl": "https://arxiv.org/pdf/2605.16825v2",
+      "absUrl": "https://arxiv.org/abs/2605.16825v2",
       "industrySource": ""
     },
     {
@@ -1133,26 +1153,6 @@
       ],
       "pdfUrl": "https://arxiv.org/pdf/2604.11440v3",
       "absUrl": "https://arxiv.org/abs/2604.11440v3",
-      "industrySource": ""
-    },
-    {
-      "id": "http://arxiv.org/abs/2604.09087v2",
-      "title": "DIAURec: Dual-Intent Space Representation Optimization for Recommendation",
-      "authors": [
-        "Yu Zhang",
-        "Yiwen Zhang",
-        "Yi Zhang",
-        "Lei Sang"
-      ],
-      "affiliations": [],
-      "abstract": "General recommender systems deliver personalized services by learning user and item representations, with the central challenge being how to capture latent user preferences. However, representations derived from sparse interactions often fail to comprehensively characterize user behaviors, thereby limiting recommendation effectiveness. Recent studies attempt to enhance user representations through sophisticated modeling strategies ($e.g.,$ intent or language modeling). Nevertheless, most works primarily concentrate on model interpretability instead of representation optimization. This imbalance has led to limited progress, as representation optimization is crucial for recommendation quality by promoting the affinity between users and their interacted items in the feature space, yet remains largely overlooked. To overcome these limitations, we propose DIAURec, a novel representation learning framework that unifies intent and language modeling for recommendation. DIAURec reconstructs representations based on the prototype and distribution intent spaces formed by collaborative and language signals. Furthermore, we design a comprehensive representation optimization strategy. Specifically, we adopts alignment and uniformity as the primary optimization objectives, and incorporates both coarse- and fine-grained matching to achieve effective alignment across different spaces, thereby enhancing representational consistency. Additionally, we further introduce intra-space and interaction regularization to enhance model robustness and prevent representation collapse in reconstructed space representation. Experiments on three public datasets against fifteen baseline methods show that DIAURec consistently outperforms state-of-the-art baselines, fully validating its effectiveness and superiority.",
-      "published": "2026-04-10T08:16:55Z",
-      "updated": "2026-04-13T01:23:30Z",
-      "categories": [
-        "cs.IR"
-      ],
-      "pdfUrl": "https://arxiv.org/pdf/2604.09087v2",
-      "absUrl": "https://arxiv.org/abs/2604.09087v2",
       "industrySource": ""
     }
   ]
