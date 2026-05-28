@@ -1,6 +1,6 @@
 {
-  "lastUpdated": "2026-05-27T05:22:25Z",
-  "totalResults": 623,
+  "lastUpdated": "2026-05-28T05:14:11Z",
+  "totalResults": 624,
   "papers": [
     {
       "id": "http://arxiv.org/abs/2605.23312v1",
@@ -287,6 +287,27 @@
       "pdfUrl": "https://arxiv.org/pdf/2604.12234v4",
       "absUrl": "https://arxiv.org/abs/2604.12234v4",
       "industrySource": "Shopee"
+    },
+    {
+      "id": "http://arxiv.org/abs/2605.28017v1",
+      "title": "Can It Reach the Generator? Investigating the Survival of Prompt-Injection Attacks in Realistic RAG Settings",
+      "authors": [
+        "Yu Yin",
+        "Shuai Wang",
+        "Bevan Koopman",
+        "Guido Zuccon"
+      ],
+      "affiliations": [],
+      "abstract": "Recent generative engine optimisation (GEO) research has shown that prompt-injection attacks can push a target product to the top of an LLM's recommendation list, with the strongest attacks reporting around $80\\%$ success and raising serious security concerns about RAG-based recommendation. However, these results assume the attacked document is always fed directly to the generator, bypassing the retriever and reranker. This is unrealistic: in deployed RAG systems, the attack modifies the document content, which can in turn change whether the document is retrieved and reranked highly enough to reach the generator at all. In this paper, we re-evaluate seven GEO attacks under a realistic three-stage pipeline (retriever\\,$\\to$\\,LLM reranker\\,$\\to$\\,LLM generator). We find that prior protocols substantially overstate attack effectiveness: gradient-based and instruction override attacks largely collapse before reaching the generator, and only LLM-driven prompt injections remain effective end-to-end. Our analysis further reveals that current GEO attacks are easily detectable: a lightweight prompt-injection guard finetuned on a small attack dataset already detects every attack. Our code and data are available at https://anonymous.4open.science/r/geo_injection_rag_survival_anonymizations-8C12.",
+      "published": "2026-05-27T06:16:11Z",
+      "updated": "2026-05-27T06:16:11Z",
+      "categories": [
+        "cs.CR",
+        "cs.IR"
+      ],
+      "pdfUrl": "https://arxiv.org/pdf/2605.28017v1",
+      "absUrl": "https://arxiv.org/abs/2605.28017v1",
+      "industrySource": ""
     },
     {
       "id": "http://arxiv.org/abs/2605.25330v1",
@@ -1126,33 +1147,6 @@
       ],
       "pdfUrl": "https://arxiv.org/pdf/2604.14051v1",
       "absUrl": "https://arxiv.org/abs/2604.14051v1",
-      "industrySource": ""
-    },
-    {
-      "id": "http://arxiv.org/abs/2604.11440v3",
-      "title": "R3-VAE: Reference Vector-Guided Rating Residual Quantization VAE for Generative Recommendation",
-      "authors": [
-        "Qiang Wan",
-        "Ze Yang",
-        "Dawei Yang",
-        "Ying Fan",
-        "Xin Yan",
-        "Siyang Liu",
-        "Yicong Liu",
-        "Chenwei Zhang",
-        "Wei Xu",
-        "Jiahao Qin",
-        "Ke Wang"
-      ],
-      "affiliations": [],
-      "abstract": "Generative Recommendation (GR) has gained traction for its merits of superior performance and cold-start capability. As the vital role in GR, Semantic Identifiers (SIDs) represent item semantics through discrete tokens. However, current techniques for SID generation based on vector quantization face two main challenges: (i) training instability, stemming from insufficient gradient propagation through the straight-through estimator and sensitivity to initialization; and (ii) inefficient SID quality assessment, where industrial practice still depends on costly GR training and A/B testing. To address these challenges, we propose Reference Vector-Guided Rating Residual Quantization VAE (R3-VAE). This framework incorporates three key innovations: (i) a reference vector that functions as a semantic anchor for the initial features, thereby mitigating sensitivity to initialization; (ii) a dot product-based rating mechanism designed to stabilize the training process and prevent codebook collapse; and (iii) two SID evaluation metrics, Semantic Cohesion and Preference Discrimination, serving as regularization terms during training. Empirical results on six benchmarks demonstrate that R3-VAE outperforms state-of-the-art methods, achieving an average improvement of 14.5% in Recall@10 and 15.5% in NDCG@10 across three public datasets (Beauty, Sports, and Toys). Furthermore, we perform GR training and online A/B tests on Toutiao. Our method achieves a 1.62% improvement in MRR and a 0.83% gain in StayTime/U versus baselines. Additionally, we employ R3-VAE to replace the item ID of CTR model, resulting in significant improvements in content cold start by 15.36%, corroborating the strong applicability and business value in industry-scale recommendation scenarios.",
-      "published": "2026-04-13T13:23:29Z",
-      "updated": "2026-05-06T03:57:37Z",
-      "categories": [
-        "cs.IR"
-      ],
-      "pdfUrl": "https://arxiv.org/pdf/2604.11440v3",
-      "absUrl": "https://arxiv.org/abs/2604.11440v3",
       "industrySource": ""
     }
   ]
