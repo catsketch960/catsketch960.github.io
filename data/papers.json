@@ -1,7 +1,36 @@
 {
-  "lastUpdated": "2026-05-28T05:14:11Z",
-  "totalResults": 624,
+  "lastUpdated": "2026-05-30T04:55:36Z",
+  "totalResults": 625,
   "papers": [
+    {
+      "id": "http://arxiv.org/abs/2605.29141v1",
+      "title": "Toward User Preference Alignment in LLM Recommendation via Explicit Context Feedback",
+      "authors": [
+        "Weizhi Zhang",
+        "Wooseong Yang",
+        "Yuxin Cui",
+        "Zhaohui Guo",
+        "Hins Hu",
+        "Liangwei Yang",
+        "Henry Peng Zou",
+        "Qifei Wang",
+        "Hanqing Zeng",
+        "Jiayi Liu",
+        "Yinglong Xia",
+        "Philip S. Yu"
+      ],
+      "affiliations": [],
+      "abstract": "Traditional recommender systems (RecSys) primarily infer user preferences from implicit signals (such as clicks, watches, and purchases), often neglecting the rich explicit contextual feedback users provide through verbal text, like comments and reviews. This explicit context feedback captures the nuanced reasons behind user decisions regarding their preferences. In addition, it offers critical heterogeneous information for user preference alignment and more explainable recommendations. Overlooking such signals can lead to misaligned user preferences and further reinforce filter bubbles, as algorithms fail to understand the \"semantic context\" behind user choices. Recent advances in Large Language Models (LLMs) present new opportunities to harness user-generated content for more accurate and diverse recommendations, yet current LLM-based recommendations still focus on using item meta-data and underutilize this resource. In this paper, we advocate for prioritizing explicit context feedback in the next generation of LLM-based RecSys. We review the evolution of recommendation paradigms, highlight the value of context-rich feedback, call for new benchmarks and metrics, and introduce frameworks for integrating explicit user signals into scalable LLM-driven RecSys. Centering on user-preference modeling, we aim to foster more personalized, transparent, and explainable RecSys online platforms.",
+      "published": "2026-05-27T22:10:33Z",
+      "updated": "2026-05-27T22:10:33Z",
+      "categories": [
+        "cs.IR",
+        "cs.AI"
+      ],
+      "pdfUrl": "https://arxiv.org/pdf/2605.29141v1",
+      "absUrl": "https://arxiv.org/abs/2605.29141v1",
+      "industrySource": "Meta"
+    },
     {
       "id": "http://arxiv.org/abs/2605.23312v1",
       "title": "Towards Generalizable and Efficient Large-Scale Generative Recommenders",
@@ -263,33 +292,7 @@
       "industrySource": "Google"
     },
     {
-      "id": "http://arxiv.org/abs/2604.12234v4",
-      "title": "UniRec: Bridging the Expressive Gap between Generative and Discriminative Recommendation via Chain-of-Attribute",
-      "authors": [
-        "Ziliang Wang",
-        "Gaoyun Lin",
-        "Xuesi Wang",
-        "Shaoqiang Liang",
-        "Yili Huang",
-        "Weijie Bian",
-        "Li Zhang",
-        "Mingchen Cai",
-        "Jian Dong",
-        "Guanxing Zhang"
-      ],
-      "affiliations": [],
-      "abstract": "Generative Recommendation (GR) reframes retrieval and ranking as autoregressive decoding over Semantic IDs (SIDs), unifying the multi-stage pipeline into a single model. Yet a fundamental expressive gap persists: discriminative models score items with direct feature access enabling explicit user-item crossing, whereas GR decodes over compact SID tokens without item-side signal. We formalize this via Bayes' theorem: ranking by p(y|f,u) is equivalent to ranking by p(f|y,u), which factorizes autoregressively over item features, showing that a generative model with full feature access matches its discriminative counterpart, with any practical gap stemming solely from incomplete feature coverage. We propose UniRec with Chain-of-Attribute (CoA) as its core mechanism. CoA prefixes each SID sequence with structured attribute tokens:category, seller, brand, before decoding the SID, recovering the item-side feature crossing that discriminative models exploit. Since items sharing identical attributes cluster in adjacent SID regions, attribute conditioning yields a measurable per-step entropy reduction H(s_k|s<k,a) < H(s_k|s<k), narrowing the search space and stabilizing beam search. We further address two deployment challenges: Capacity-constrained SID introduces exposure-weighted capacity penalties into residual quantization to suppress token collapse and the Matthew effect; Conditional Decoding Context (CDC) combines Task-Conditioned BOS with hash-based Content Summaries to inject scenario signals at each decoding step. A joint RFT and DPO framework aligns the model with business objectives beyond distribution matching. Experiments show UniRec outperforms the strongest baseline by +22.6% HR@50 overall and +15.5% on high-value orders. Deployed on Shopee's e-commerce platform, online A/B tests confirm significant gains in PVCTR (+5.37%), orders (+4.76%), and GMV (+5.60%).",
-      "published": "2026-04-14T03:13:50Z",
-      "updated": "2026-04-30T06:08:06Z",
-      "categories": [
-        "cs.IR"
-      ],
-      "pdfUrl": "https://arxiv.org/pdf/2604.12234v4",
-      "absUrl": "https://arxiv.org/abs/2604.12234v4",
-      "industrySource": "Shopee"
-    },
-    {
-      "id": "http://arxiv.org/abs/2605.28017v1",
+      "id": "http://arxiv.org/abs/2605.28017v2",
       "title": "Can It Reach the Generator? Investigating the Survival of Prompt-Injection Attacks in Realistic RAG Settings",
       "authors": [
         "Yu Yin",
@@ -298,15 +301,15 @@
         "Guido Zuccon"
       ],
       "affiliations": [],
-      "abstract": "Recent generative engine optimisation (GEO) research has shown that prompt-injection attacks can push a target product to the top of an LLM's recommendation list, with the strongest attacks reporting around $80\\%$ success and raising serious security concerns about RAG-based recommendation. However, these results assume the attacked document is always fed directly to the generator, bypassing the retriever and reranker. This is unrealistic: in deployed RAG systems, the attack modifies the document content, which can in turn change whether the document is retrieved and reranked highly enough to reach the generator at all. In this paper, we re-evaluate seven GEO attacks under a realistic three-stage pipeline (retriever\\,$\\to$\\,LLM reranker\\,$\\to$\\,LLM generator). We find that prior protocols substantially overstate attack effectiveness: gradient-based and instruction override attacks largely collapse before reaching the generator, and only LLM-driven prompt injections remain effective end-to-end. Our analysis further reveals that current GEO attacks are easily detectable: a lightweight prompt-injection guard finetuned on a small attack dataset already detects every attack. Our code and data are available at https://anonymous.4open.science/r/geo_injection_rag_survival_anonymizations-8C12.",
+      "abstract": "Recent generative engine optimisation (GEO) research has shown that prompt-injection attacks can push a target product to the top of an LLM's recommendation list, with the strongest attacks reporting around $80\\%$ success and raising serious security concerns about RAG-based recommendation. However, these results assume the attacked document is always fed directly to the generator, bypassing the retriever and reranker. This is unrealistic: in deployed RAG systems, the attack modifies the document content, which can in turn change whether the document is retrieved and reranked highly enough to reach the generator at all. In this paper, we re-evaluate seven GEO attacks under a realistic three-stage pipeline (retriever\\,$\\to$\\,LLM reranker\\,$\\to$\\,LLM generator). We find that prior protocols substantially overstate attack effectiveness: gradient-based and instruction override attacks largely collapse before reaching the generator, and only LLM-driven prompt injections remain effective end-to-end. Our analysis further reveals that current GEO attacks are easily detectable: a lightweight prompt-injection guard finetuned on a small attack dataset already detects every attack. Our code and data are available at https://github.com/ielab/geo_injection_rag_survival.",
       "published": "2026-05-27T06:16:11Z",
-      "updated": "2026-05-27T06:16:11Z",
+      "updated": "2026-05-28T01:52:56Z",
       "categories": [
         "cs.CR",
         "cs.IR"
       ],
-      "pdfUrl": "https://arxiv.org/pdf/2605.28017v1",
-      "absUrl": "https://arxiv.org/abs/2605.28017v1",
+      "pdfUrl": "https://arxiv.org/pdf/2605.28017v2",
+      "absUrl": "https://arxiv.org/abs/2605.28017v2",
       "industrySource": ""
     },
     {
@@ -485,7 +488,7 @@
       "industrySource": ""
     },
     {
-      "id": "http://arxiv.org/abs/2605.16825v2",
+      "id": "http://arxiv.org/abs/2605.16825v3",
       "title": "Echoes in Filter Bubble: Diagnosing and Curing Popularity Bias in Generative Recommenders",
       "authors": [
         "Jun Yin",
@@ -500,13 +503,13 @@
       "affiliations": [],
       "abstract": "Recently, Generative Recommenders (GRs), characterized by a unified end-to-end framework, have exhibited astonishing potential in transforming the recommendation paradigm. Despite their effectiveness, we recognize that GRs are still susceptible to the long-standing issue of popularity bias that has pervaded the recommendation community. Although a few studies have attempted to extend traditional debiasing methods to GRs, their effectiveness is marginal, and the fundamental reason why GRs suffer from popularity bias remains under-explored. To bridge this gap, this study focuses on two core aspects in GRs: the optimization of generative framework and the item tokenization based on semantic index. Based on theoretical analyses, we identify that the severe popularity bias emerges from the confluence of a token-level optimization flaw and the undifferentiated property of item tokenization. Accordingly, this study develops a novel generative recommender system, called Ghost, by designing the asymmetric unlikelihood optimization and the skeleton-founded tokenization. Extensive empirical evaluations across three datasets, alongside multiple SOTA baselines, reveal that Ghost substantially alleviates popularity bias and promotes fairer recommendations, while incurring slight degradation to the overall recommendation utility.",
       "published": "2026-05-16T06:02:40Z",
-      "updated": "2026-05-26T02:58:09Z",
+      "updated": "2026-05-28T13:58:37Z",
       "categories": [
         "cs.IR",
         "cs.AI"
       ],
-      "pdfUrl": "https://arxiv.org/pdf/2605.16825v2",
-      "absUrl": "https://arxiv.org/abs/2605.16825v2",
+      "pdfUrl": "https://arxiv.org/pdf/2605.16825v3",
+      "absUrl": "https://arxiv.org/abs/2605.16825v3",
       "industrySource": ""
     },
     {
