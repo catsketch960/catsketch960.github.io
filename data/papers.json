@@ -1,7 +1,30 @@
 {
-  "lastUpdated": "2026-05-31T05:22:49Z",
-  "totalResults": 625,
+  "lastUpdated": "2026-06-06T04:58:41Z",
+  "totalResults": 630,
   "papers": [
+    {
+      "id": "http://arxiv.org/abs/2606.00324v1",
+      "title": "LLMs Need Encoders for Semantic IDs Too",
+      "authors": [
+        "Xiangyi Chen",
+        "Zelun Wang",
+        "Xinyi Li",
+        "Yi-Ping Hsu",
+        "Jaewon Yang",
+        "Jiajing Xu"
+      ],
+      "affiliations": [],
+      "abstract": "Multimodal LLMs use dedicated encoders to bridge non-language modalities (vision encoders for images, depth models for audio codec tokens) because raw token embeddings alone cannot capture modality-specific structure. We argue that Semantic IDs (SIDs), the hierarchical codes used in generative recommendation, constitute another such modality: a SID level token's meaning depends on its prefix context, yet current systems simply add SID tokens to the vocabulary and rely on training to learn these context-dependent meanings from scratch. We propose PrefixMem, a lightweight SID encoder based on prefix n-gram memory tables that provides the LLM with structured, prefix-conditioned representations at SID token positions. Like vision encoders in multimodal LLMs, PrefixMem can be pre-trained independently and then attached to any LLM for joint training. We evaluate on large-scale data from Pinterest across multiple LLM families and show that PrefixMem improves deepest-level SID accuracy by up to 46% relative and full-SID retrieval recall by up to 22% relative at matched training compute. The encoder's benefit concentrates on hard examples where greedy decoding fails, with up to 77% relative accuracy gains, confirming that SID tokens benefit from a dedicated encoder just as other non-language modalities do.",
+      "published": "2026-05-29T20:01:06Z",
+      "updated": "2026-05-29T20:01:06Z",
+      "categories": [
+        "cs.IR",
+        "cs.AI"
+      ],
+      "pdfUrl": "https://arxiv.org/pdf/2606.00324v1",
+      "absUrl": "https://arxiv.org/abs/2606.00324v1",
+      "industrySource": "Pinterest"
+    },
     {
       "id": "http://arxiv.org/abs/2605.29141v1",
       "title": "Toward User Preference Alignment in LLM Recommendation via Explicit Context Feedback",
@@ -271,25 +294,169 @@
       "industrySource": "Kuaishou"
     },
     {
-      "id": "http://arxiv.org/abs/2604.14223v1",
-      "title": "TRACE: A Conversational Framework for Sustainable Tourism Recommendation with Agentic Counterfactual Explanations",
+      "id": "http://arxiv.org/abs/2606.06260v1",
+      "title": "OneReason Technical Report",
       "authors": [
-        "Ashmi Banerjee",
-        "Adithi Satish",
-        "Wolfgang Wörndl",
-        "Yashar Deldjoo"
+        "OneRec Team",
+        "Biao Yang",
+        "Boyang Ding",
+        "Chenglong Chu",
+        "Dunju Zang",
+        "Fei Pan",
+        "Han Li",
+        "Hao Jiang",
+        "Honghui Bao",
+        "Huanjie Wang",
+        "Jian Liang",
+        "Jiangxia Cao",
+        "Jiao Ou",
+        "Jiaxin Deng",
+        "Jinghao Zhang",
+        "Kun Gai",
+        "Lu Ren",
+        "Peiru Du",
+        "Pengfei Zheng",
+        "Rongzhou Zhang",
+        "Ruiming Tang",
+        "Shiyao Wang",
+        "Siyang Mao",
+        "Siyuan Lou",
+        "Teng Shi",
+        "Wei Yuan",
+        "Wenlong Xu",
+        "Xingchen Liu",
+        "Xingmei Wang",
+        "Xinqi Jin",
+        "Yan Sun",
+        "Yan Wang",
+        "Yifei Hu",
+        "Yingzhi He",
+        "Yufei Ye",
+        "Yuhao Wang",
+        "Yunhao Zhou",
+        "Yuqin Dai",
+        "Zhao Liu",
+        "Zhipeng Wei",
+        "Zhixin Ling",
+        "Ziming Li",
+        "Zixing Zhang",
+        "Ziyuan Liu",
+        "An Zhang",
+        "Changxin Lao",
+        "Chaoyi Ma",
+        "Chengru Song",
+        "Defu Lian",
+        "Fan Yang",
+        "Guowang Zhang",
+        "Hao Peng",
+        "Jiayao Shen",
+        "Jie Chen",
+        "Jun Xu",
+        "Junmin Chen",
+        "Kun Zhang",
+        "Kuo Cai",
+        "Mingxing Wen",
+        "Minmao Wang",
+        "Minxuan Lv",
+        "Qi Zhang",
+        "Qiang Luo",
+        "Sheng Yu",
+        "Shijie Li",
+        "Shijie Yi",
+        "Shuang Yang",
+        "Shugui Liu",
+        "Shuni Chen",
+        "Tinghai Zhang",
+        "Tingting Gao",
+        "Xiang Wang",
+        "Xiangyu Wu",
+        "Xiangyu Zhao",
+        "Xiao Lv",
+        "Xiaoyou Zhou",
+        "Xuming Wang",
+        "Yong Du",
+        "Zejian Zhang",
+        "Zhaojie Liu",
+        "Zhiyang Zhang",
+        "Zhuang Zhuang",
+        "Ziqi Wang",
+        "Ziyi Zhao"
       ],
       "affiliations": [],
-      "abstract": "Traditional conversational travel recommender systems primarily optimize for user relevance and convenience, often reinforcing popular, overcrowded destinations and carbon-intensive travel choices. To address this, we present TRACE (Tourism Recommendation with Agentic Counterfactual Explanations), a multi-agent, LLM-based framework that promotes sustainable tourism through interactive nudging. TRACE uses a modular orchestrator-worker architecture where specialized agents elicit latent sustainability preferences, construct structured user personas, and generate recommendations that balance relevance with environmental impact. A key innovation lies in its use of agentic counterfactual explanations and LLM-driven clarifying questions, which together surface greener alternatives and refine understanding of intent, fostering user reflection without coercion. User studies and semantic alignment analyses demonstrate that TRACE effectively supports sustainable decision-making while preserving recommendation quality and interactive responsiveness. TRACE is implemented on Google's Agent Development Kit, with full code, Docker setup, prompts, and a publicly available demo video to ensure reproducibility. A project summary, including all resources, prompts, and demo access, is available at https://ashmibanerjee.github.io/trace-chatbot.",
-      "published": "2026-04-14T12:35:21Z",
-      "updated": "2026-04-14T12:35:21Z",
+      "abstract": "Generative recommendation models in the OneRec family have been widely deployed in many real-world services, such as short-video, live-streaming, advertising, and e-commerce. However, these generative models can only benefit from the scaling advantage, while their reasoning ability is hard to activate, since we cannot construct meaningful Chain-of-Thought (CoT) sequences consisting of itemic tokens only. Inspired by the success of the reasoning-style ``think before answer'' paradigm in the LLM field, we conduct preliminary studies (i.e., OneRec-Think, OpenOneRec) to explore reasoning capability in generative recommendation. Nevertheless, we notice an unexpected phenomenon: the thinking mode does not show advantages over the non-thinking mode. Drawing insights from recent findings on CoT robustness in multi-modal language models, we argue that effective reasoning in recommendation rests on two factors: perception, the ability to ground itemic tokens in their underlying language semantics, and cognition, the ability to reorganize a user's behavior sequence into coherent latent interest points. We therefore propose OneReason, which includes: (1) strong itemic token perception in pre-training, (2) a three-level cognition-enhanced CoT format for recommendation tasks in SFT, and (3) a specialize-then-unify training recipe in RL to enhance the thinking ability.",
+      "published": "2026-06-04T15:04:34Z",
+      "updated": "2026-06-04T15:04:34Z",
+      "categories": [
+        "cs.IR",
+        "cs.AI",
+        "cs.CL"
+      ],
+      "pdfUrl": "https://arxiv.org/pdf/2606.06260v1",
+      "absUrl": "https://arxiv.org/abs/2606.06260v1",
+      "industrySource": ""
+    },
+    {
+      "id": "http://arxiv.org/abs/2606.03151v1",
+      "title": "ACRONYM: Accelerated Approximate Nearest Neighbor Search in Memory for Dynamic Vector Databases",
+      "authors": [
+        "Md Mizanur Rahaman Nayan",
+        "Tianqi Zhang",
+        "Flavio Ponzina",
+        "Tajana Rosing",
+        "Azad J Naeemi"
+      ],
+      "affiliations": [],
+      "abstract": "Vector database search with frequent updates is increasingly critical in applications such as retrieval augmented generation, recommendation systems, and large-scale embedding retrieval. Existing solutions, such as graph-based and partition-based approximate nearest neighbor search (ANNS), suffer from frequent index rebuilding due to data distribution-dependent indexing that impacts continuous deployment and causes long rebuilding latency. This paper proposes an algorithm-hardware co-designed platform, ACRONYM, that addresses key problems with state of the art database search. Algorithmically, it leverages efficient encoding independent of data distribution and Hamming-distance based search for efficient hardware acceleration. Architecturally, we propose CAM-based in-memory parallel distance computation followed by time multiplexed approximated top-k selection to enable the exhaustive search. We propose two-stage search that includes coarse search followed by binary refinement to achieve high recall in CAM based search which is heavily limited to small vector dimension due to capacity and wordline parasitic. ACRONYM supports continuous update without stalling and integrates novel XOR-and-Accumulate (XAC) based systolic-array encoder for efficient on chip encoding during search. Across million-scale datasets, while serving dynamic database ACRONYM achieves >90% recall at a throughput of 8e6 queries per second, with a memory footprint of only 32MB and an average energy consumption of 2.56uJ per query, speedup over HNSW (CPU) of about 400x and FAISS-IVF (GPU) of about 80x.",
+      "published": "2026-06-02T04:50:26Z",
+      "updated": "2026-06-02T04:50:26Z",
+      "categories": [
+        "cs.AR",
+        "cs.DB",
+        "cs.ET"
+      ],
+      "pdfUrl": "https://arxiv.org/pdf/2606.03151v1",
+      "absUrl": "https://arxiv.org/abs/2606.03151v1",
+      "industrySource": ""
+    },
+    {
+      "id": "http://arxiv.org/abs/2606.02209v1",
+      "title": "Conditional Graph Diffusion for Negotiation Support: Overcoming Discrete Infeasibility and Preference Elicitation Gaps",
+      "authors": [
+        "Moirangthem Tiken Singh"
+      ],
+      "affiliations": [],
+      "abstract": "Traditional bilateral negotiation support systems search over discrete allocation spaces. This approach encounters structural infeasibility when no discrete outcome satisfies individual rationality. It fails to incorporate preference signals embedded in natural language dialogue. This study introduces the Conditional Graph Diffusion (CGD) framework to generate recommendations in a continuous bilateral utility space. A GATv2 encoder captures comparative bilateral preference structure through dynamic attention. A cross-attention mechanism fuses strategic embeddings with transformer-based dialogue representations into a unified conditioning context for a denoising diffusion probabilistic model. An analytically derived normative guidance gradient applies at inference time. It injects per-step monotonic corrections at each reverse diffusion step, steering generation toward individual rationality, security proximity, and equitability without retraining. Evaluation across synthetic, CaSiNo, and Deal or No Deal corpora confirms accumulated corrections achieve an individual rationality rate of at least 0.997, a security gap of at most 0.009, and a symmetry gap within 0.15. Relative to the Nash Bargaining Solution, CGD reduces security gaps by up to 70-fold at a maximum welfare cost of 3%. An ablation study demonstrates naive constraint minimization without a learned generative prior fails normative compliance across heterogeneous corpora. A controlled misrepresentation experiment establishes the architectural capacity of cross-attention fusion to exploit dialogue signals. An inference-time welfare guidance mechanism decouples normative compliance from welfare maximization, recovering Pareto efficiency on CaSiNo without retraining while preserving individual rationality.",
+      "published": "2026-06-01T13:10:16Z",
+      "updated": "2026-06-01T13:10:16Z",
+      "categories": [
+        "cs.GT"
+      ],
+      "pdfUrl": "https://arxiv.org/pdf/2606.02209v1",
+      "absUrl": "https://arxiv.org/abs/2606.02209v1",
+      "industrySource": ""
+    },
+    {
+      "id": "http://arxiv.org/abs/2606.01670v1",
+      "title": "Time-Aware Diffusion based on Preference Disentanglement for Generative Recommendation",
+      "authors": [
+        "Bangguo Zhu",
+        "Peng Huo",
+        "Yuanbo Zhao",
+        "Zhicheng Du",
+        "Jun Yin",
+        "Senzhang Wang"
+      ],
+      "affiliations": [],
+      "abstract": "Recently, Generative Recommenders (GRs) have emerged as a transformative recommendation paradigm by replacing traditional item IDs with semantic indices (SIDs). Owing to the exceptional generative capabilities of diffusion models, a few pioneering works explore developing GRs with diffusion architectures as the backbone. However, a fatal limitation of existing diffusion-based GRs is that the diffusion process applies uniformly to all items within the historical interactions. In contrast, the user preference is shaped by multifaceted time-evolving factors and thus exhibits a non-stationary distribution in the temporal aspect. To bridge this gap, this study proposes a novel GR framework, named TDPM, by designing the time-aware diffusion on SID tokens. Specifically, TDPM explicitly integrates the impact of time-evolving user preferences into the diffusion process. In detail, the user preference is disentangled into (i) the period preference, which remains consistent over a long time-span, and (ii) the point preference, which is triggered by recent focal events. Extensive experiments on three public real-world datasets demonstrate the significant superiority of TDPM over the state-of-the-art baselines. TDPM achieves average improvements of up to 29.21% and 25.45% in terms of HR@20 and NDCG@20, respectively. The ablation study further underscores the necessity of time-aware token diffusion in diffusion-based GRs.",
+      "published": "2026-06-01T04:27:49Z",
+      "updated": "2026-06-01T04:27:49Z",
       "categories": [
         "cs.IR",
         "cs.AI"
       ],
-      "pdfUrl": "https://arxiv.org/pdf/2604.14223v1",
-      "absUrl": "https://arxiv.org/abs/2604.14223v1",
-      "industrySource": "Google"
+      "pdfUrl": "https://arxiv.org/pdf/2606.01670v1",
+      "absUrl": "https://arxiv.org/abs/2606.01670v1",
+      "industrySource": ""
     },
     {
       "id": "http://arxiv.org/abs/2605.28017v2",
@@ -787,7 +954,7 @@
       "industrySource": ""
     },
     {
-      "id": "http://arxiv.org/abs/2605.05249v2",
+      "id": "http://arxiv.org/abs/2605.05249v3",
       "title": "TriAlignGR: Triangular Multitask Alignment with Multimodal Deep Interest Mining for Generative Recommendation",
       "authors": [
         "Yangchen Zeng",
@@ -800,12 +967,12 @@
       "affiliations": [],
       "abstract": "We introduce TriAlignGR, a unified multitask-multimodal framework for generative recommendation that establishes two-stage multimodal semantic propagation: (i) encoding visual semantics directly into SIDs via multimodal embeddings, and (ii) enabling the model to decode these semantics through visual description tasks. Existing Semantic ID (SID) pipelines suffer from two fundamental but underexplored problems: \\textbf{SID Content Degradation (SCD)}, where cascaded encoding and residual quantization discard critical multimodal and interest-level semantics; and \\textbf{SID Semantic Opacity (SSO)}, where models autoregressively generate SID sequences without truly comprehending their underlying meaning, leading to hallucination and poor generalization. Prior work addresses at most text-SID alignment, leaving visual semantics and latent user interests entirely unexploited. TriAlignGR resolves both problems through three tightly integrated components: (1)~\\textbf{Cross-Modal Semantic Alignment (CMSA)} integrates visual content into SID construction through both VLM-generated textual descriptions and a multimodal embedding model that directly encodes image features alongside text, ensuring that SIDs inherently carry multimodal semantics; (2)~\\textbf{Multimodal Deep Interest Mining (MDIM)} leverages LLM Chain-of-Thought reasoning to extract latent user intents (\\eg ``productivity-focused lifestyle'' from noise-canceling headphones) beyond surface attributes, enriching SID semantics before discretization; and (3)~\\textbf{Triangular Multitask (TMT)} jointly trains on eight complementary generation tasks under a single autoregressive loss -- including two novel visual-semantic tasks (VisDesc$\\to$SID, VisDesc$\\to$Title) that map VLM-generated image descriptions to SIDs and titles, completing the SID-Text-Image triangle -- without requiring task-specific towers or complex loss weighting.",
       "published": "2026-05-05T11:42:14Z",
-      "updated": "2026-05-17T05:13:43Z",
+      "updated": "2026-06-02T17:05:24Z",
       "categories": [
         "cs.IR"
       ],
-      "pdfUrl": "https://arxiv.org/pdf/2605.05249v2",
-      "absUrl": "https://arxiv.org/abs/2605.05249v2",
+      "pdfUrl": "https://arxiv.org/pdf/2605.05249v3",
+      "absUrl": "https://arxiv.org/abs/2605.05249v3",
       "industrySource": ""
     },
     {
@@ -1059,97 +1226,6 @@
       ],
       "pdfUrl": "https://arxiv.org/pdf/2604.15951v2",
       "absUrl": "https://arxiv.org/abs/2604.15951v2",
-      "industrySource": ""
-    },
-    {
-      "id": "http://arxiv.org/abs/2604.15739v1",
-      "title": "On the Equivalence Between Auto-Regressive Next Token Prediction and Full-Item-Vocabulary Maximum Likelihood Estimation in Generative Recommendation--A Short Note",
-      "authors": [
-        "Yusheng Huang",
-        "Shuang Yang",
-        "Zhaojie Liu",
-        "Han Li"
-      ],
-      "affiliations": [],
-      "abstract": "Generative recommendation (GR) has emerged as a widely adopted paradigm in industrial sequential recommendation. Current GR systems follow a similar pipeline: tokenization for item indexing, next-token prediction as the training objective and auto-regressive decoding for next-item generation. However, existing GR research mainly focuses on architecture design and empirical performance optimization, with few rigorous theoretical explanations for the working mechanism of auto-regressive next-token prediction in recommendation scenarios. In this work, we formally prove that \\textbf{the k-token auto-regressive next-token prediction (AR-NTP) paradigm is strictly mathematically equivalent to full-item-vocabulary maximum likelihood estimation (FV-MLE)}, under the core premise of a bijective mapping between items and their corresponding k-token sequences. We further show that this equivalence holds for both cascaded and parallel tokenizations, the two most widely used schemes in industrial GR systems. Our result provides the first formal theoretical foundation for the dominant industrial GR paradigm, and offers principled guidance for future GR system optimization.",
-      "published": "2026-04-17T06:27:42Z",
-      "updated": "2026-04-17T06:27:42Z",
-      "categories": [
-        "cs.IR"
-      ],
-      "pdfUrl": "https://arxiv.org/pdf/2604.15739v1",
-      "absUrl": "https://arxiv.org/abs/2604.15739v1",
-      "industrySource": ""
-    },
-    {
-      "id": "http://arxiv.org/abs/2604.14833v1",
-      "title": "Federated User Behavior Modeling for Privacy-Preserving LLM Recommendation",
-      "authors": [
-        "Lei Guo",
-        "Hongyun Yang",
-        "Pengjie Ren",
-        "Tong Chen",
-        "Hui Liu",
-        "Zhumin Chen"
-      ],
-      "affiliations": [],
-      "abstract": "Large Language Models have shown great success in recommender systems. However, the limited and sparse nature of user data often restricts the LLM's ability to effectively model behavior patterns. To address this, existing studies have explored cross-domain solutions by conducting Cross-Domain Recommendation tasks. But previous methods typically assume domains are overlapped and can be accessed readily. None of the LLM methods address the privacy-preserving issues in the CDR settings, that is, Privacy-Preserving Cross-Domain Recommendation. Conducting non-overlapping PPCDR with LLM is challenging since: 1)The inability to share user identity or behavioral data across domains impedes effective cross-domain alignment. 2)The heterogeneity of data modalities across domains complicates knowledge integration. 3)Fusing collaborative filtering signals from traditional recommendation models with LLMs is difficult, as they operate within distinct feature spaces. To address the above issues, we propose SF-UBM, a Semantic-enhanced Federated User Behavior Modeling method. Specifically, to deal with Challenge 1, we leverage natural language as a universal bridge to connect disjoint domains via a semantic-enhanced federated architecture. Here, text-based item representations are encrypted and shared, while user-specific data remains local. To handle Challenge 2, we design a Fact-counter Knowledge Distillation module to integrate domain-agnostic knowledge with domain-specific knowledge, across different data modalities. To tackle Challenge 3, we project pre-learned user preferences and cross-domain item representations into the soft prompt space, aligning behavioral and semantic spaces for effective LLM learning. We conduct extensive experiments on three pairs of real-world domains, and the experimental results demonstrate the effectiveness of SF-UBM compared to the recent SOTA methods.",
-      "published": "2026-04-16T10:10:16Z",
-      "updated": "2026-04-16T10:10:16Z",
-      "categories": [
-        "cs.IR"
-      ],
-      "pdfUrl": "https://arxiv.org/pdf/2604.14833v1",
-      "absUrl": "https://arxiv.org/abs/2604.14833v1",
-      "industrySource": ""
-    },
-    {
-      "id": "http://arxiv.org/abs/2605.18771v1",
-      "title": "LWGR: Lagrangian-Constrained Personalized World Knowledge for Generative Recommendation",
-      "authors": [
-        "Lingyu Mu",
-        "Hao Deng",
-        "Haibo Xing",
-        "Kaican Lin",
-        "Zhitong Zhu",
-        "Yu Zhang",
-        "Xiaoyi Zeng",
-        "Zhengxiao Liu",
-        "Zheng Lin",
-        "Jinxin Hu"
-      ],
-      "affiliations": [],
-      "abstract": "Recent progress in large language model (LLM) based generative recommendation (GR) shows that leveraging LLM world knowledge can substantially improve performance. However, existing methods rely on fixed, manually designed instructions to generate semantic knowledge and directly incorporate it into GR, which has two limitations. First, fixed instructions cannot capture the multidimensional heterogeneity of user interests. Second, uncontrollable knowledge fusion may conflict with behavioral signals and harm recommendations. To address these limitations, we propose LWGR, a framework that leverages Lagrangian constraints to transfer users' personalized world knowledge from LLMs into generative recommendation. LWGR enhances GR along two axes: knowledge extraction and fusion. It builds personalized soft instructions to extract behavior-relevant LLM world knowledge, and formulates knowledge fusion as an optimization problem with explicitly bounded performance degradation, which is solved by a Lagrangian primal-dual method to selectively incorporate beneficial knowledge. We further design two training strategies for different LLM scales and a deployment scheme that combines nearline precomputation with lightweight online serving. Experiments on multiple public datasets and one industrial dataset show that LWGR outperforms eight state-of-the-art baselines by up to 11.23% and brings a 1.35% revenue lift on a large-scale advertising platform, demonstrating its effectiveness and practicality.",
-      "published": "2026-04-16T08:14:33Z",
-      "updated": "2026-04-16T08:14:33Z",
-      "categories": [
-        "cs.IR"
-      ],
-      "pdfUrl": "https://arxiv.org/pdf/2605.18771v1",
-      "absUrl": "https://arxiv.org/abs/2605.18771v1",
-      "industrySource": ""
-    },
-    {
-      "id": "http://arxiv.org/abs/2604.14051v1",
-      "title": "Enhancing Local Life Service Recommendation with Agentic Reasoning in Large Language Model",
-      "authors": [
-        "Shiteng Cao",
-        "Xiaochong Lan",
-        "Yuwei Du",
-        "Jie Feng",
-        "Yinxing Liu",
-        "Xinlei Shi",
-        "Yong Li"
-      ],
-      "affiliations": [],
-      "abstract": "Local life service recommendation is distinct from general recommendation scenarios due to its strong living need-driven nature. Fundamentally, accurately identifying a user's immediate living need and recommending the corresponding service are inextricably linked tasks. However, prior works typically treat them in isolation, failing to achieve a unified modeling of need prediction and service recommendation. In this paper, we propose a novel large language model based framework that jointly performs living need prediction and service recommendation. To address the challenge of noise in raw consumption data, we introduce a behavioral clustering approach that filters out accidental factors and selectively preserves typical patterns. This enables the model to learn a robust logical basis for need generation and spontaneously generalize to long-tail scenarios. To navigate the vast search space stemming from diverse needs, merchants, and complex mapping paths, we employ a curriculum learning strategy combined with reinforcement learning with verifiable rewards. This approach guides the model to sequentially learn the logic from need generation to category mapping and specific service selection. Extensive experiments demonstrate that our unified framework significantly enhances both living need prediction performance and recommendation accuracy, validating the effectiveness of jointly modeling living needs and user behaviors.",
-      "published": "2026-04-15T16:29:37Z",
-      "updated": "2026-04-15T16:29:37Z",
-      "categories": [
-        "cs.IR"
-      ],
-      "pdfUrl": "https://arxiv.org/pdf/2604.14051v1",
-      "absUrl": "https://arxiv.org/abs/2604.14051v1",
       "industrySource": ""
     }
   ]
