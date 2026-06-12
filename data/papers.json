@@ -1,9 +1,29 @@
 {
-  "lastUpdated": "2026-06-08T05:58:02Z",
-  "totalResults": 633,
+  "lastUpdated": "2026-06-12T05:54:12Z",
+  "totalResults": 641,
   "papers": [
     {
-      "id": "http://arxiv.org/abs/2606.07317v1",
+      "id": "http://arxiv.org/abs/2606.10375v1",
+      "title": "SIDInspector: A Mapping-First Diagnostic Resource for Semantic-ID Tokenizers",
+      "authors": [
+        "Jiandong Ding",
+        "Heng Chang",
+        "Huijie Qin",
+        "Tianying Liu"
+      ],
+      "affiliations": [],
+      "abstract": "Semantic-ID (\\sid) tokenizers are increasingly reused as standalone artifacts in generative recommendation: an exported item-to-code mapping becomes the address space that a later sequence generator must use. These mappings rarely come with a common inspection interface, so coverage gaps, full-code aliasing, behaviorally weak prefixes, tail compression, and prefix fan-out are often found only after downstream training. We present \\tool, a mapping-first diagnostic resource for \\sid tokenizer artifacts. \\tool defines a small adapter contract over item mappings, metadata, interactions, and optional generator traces; validates the contract; and reports mapping-level probes for utilization, aliasing, neighborhood alignment, popularity allocation, and structural cost, with hooks for temporal churn and generator traces. \\tool reports inspectable artifact profiles before downstream leaderboard scores. The released resource covers four tokenizer artifact lines: a same-item GRID/RQ-KMeans-style and ReSID/GAOQ contrast on 23,742 Musical items, plus released LETTER and LC-Rec item-index artifacts. In the Musical contrast, the GRID-style feature-text export has 3,749 unique full codes and a 0.977 full-code aliasing rate, while ReSID/GAOQ is aliasing-free in its exported mapping. Yet the strongest prefix--co-occurrence alignment comes from a deterministic category-prefix control, not from either learned export row (0.447 versus 0.154 and 0.055--0.080), showing that addressability and behaviorally meaningful prefixes should be inspected separately. Cross-domain, fixed-reranker, and mechanism-probe checks support the same diagnostic direction: prefix alignment is a candidate-exposure signal, while final ranking quality remains a downstream model question.",
+      "published": "2026-06-09T03:36:31Z",
+      "updated": "2026-06-09T03:36:31Z",
+      "categories": [
+        "cs.IR"
+      ],
+      "pdfUrl": "https://arxiv.org/pdf/2606.10375v1",
+      "absUrl": "https://arxiv.org/abs/2606.10375v1",
+      "industrySource": "Meta"
+    },
+    {
+      "id": "http://arxiv.org/abs/2606.07317v2",
       "title": "Gated Bidirectional Linear Attention for Generative Retrieval",
       "authors": [
         "Artem Matveev",
@@ -14,12 +34,12 @@
       "affiliations": [],
       "abstract": "In recommender systems, generative retrieval typically uses an encoder-decoder setup: an encoder processes a user interaction history, and an autoregressive decoder then generates recommended items. In large-scale streaming services, active users accumulate very long histories over time. As histories grow, the encoder becomes a major latency bottleneck because softmax attention scales quadratically with sequence length. In our experiments, using bidirectional attention in the encoder substantially improves quality. However, most sub-quadratic attention methods focus on causal attention. We propose Gated Bidirectional Linear Attention (GBLA), a linear-time bidirectional attention layer that extends kernelized linear attention with three lightweight components: local causal mixing (Conv1D), sequence-level key gating for soft forgetting, and a gated RMSNorm output. On a large-scale Yandex Music dataset, a hybrid encoder that interleaves self-attention (SA) and GBLA in a 1:2 ratio (one SA block followed by two GBLA blocks) matches bidirectional self-attention quality. On H100 GPUs, GBLA reaches up to an $8.2\\times$ single-layer speedup at a history length of 32768, compared to FlashAttention-v3. Finally, we show that the same hybrid design generalizes beyond our proprietary setting, consistently preserving self-attention retrieval quality on public Amazon benchmarks.",
       "published": "2026-06-05T14:37:02Z",
-      "updated": "2026-06-05T14:37:02Z",
+      "updated": "2026-06-08T08:58:58Z",
       "categories": [
         "cs.IR"
       ],
-      "pdfUrl": "https://arxiv.org/pdf/2606.07317v1",
-      "absUrl": "https://arxiv.org/abs/2606.07317v1",
+      "pdfUrl": "https://arxiv.org/pdf/2606.07317v2",
+      "absUrl": "https://arxiv.org/abs/2606.07317v2",
       "industrySource": "Amazon"
     },
     {
@@ -264,75 +284,87 @@
       "industrySource": "Amazon"
     },
     {
-      "id": "http://arxiv.org/abs/2604.24717v1",
-      "title": "Learning to Rotate: Temporal and Semantic Rotary Encoding for Sequential Modeling",
+      "id": "http://arxiv.org/abs/2606.13610v1",
+      "title": "One Polluted Page Is Enough: Evaluating Web Content Pollution in Generative Recommenders",
       "authors": [
-        "Hailing Cheng",
-        "Daqi Sun",
-        "Xinyu Lu"
+        "Minghao Luo",
+        "Liang Chen"
       ],
       "affiliations": [],
-      "abstract": "Every Transformer architecture dedicates enormous capacity to learning rich representations in semantic embedding space -- yet the rotation manifold acted upon by Rotary Positional Embeddings (RoPE) has been treated as a fixed, hand-crafted structure, populated only by discrete ordinal indices. We argue that this rotation space is a largely overlooked second dimension of expressivity in the attention mechanism, one whose systematic exploration may open a new door for attention-based architectures. The analogy to complex numbers is instructive: just as introducing the imaginary axis -- orthogonal to and independent of the real line -- unlocked new algebraic structure once believed impossible, treating the rotation manifold as a learnable, signal-conditioned space opens an orthogonal degree of freedom in attention. In this framing, the token embedding encodes the semantic (real) component of a representation -- what a token means -- while the rotation encodes its dynamic (imaginary) component -- how it relates to every other token across time, position, and context. We introduce SIREN-RoPE, a concrete instantiation of this idea, which populates the rotation dimension with heterogeneous signals -- continuous timestamps, cyclical temporal patterns, and categorical metadata -- via a dual-branch Sinusoidal Representation Network (SIREN). As a proof of concept, we evaluate on a production-scale news feed dataset from a major social network using a generative recommender as the ranking model, demonstrating that activating this hidden dimension yields consistent improvements across calibration and ranking objectives with negligible computational overhead. We invite the community to view the rotation space not as a solved positional-encoding detail, but as an untapped axis whose rich structure may prove as consequential for attention as the imaginary unit proved for algebra.",
-      "published": "2026-04-27T17:26:15Z",
-      "updated": "2026-04-27T17:26:15Z",
+      "abstract": "Search-augmented LLMs increasingly mediate everyday consumer recommendations by retrieving live web content. This creates a new risk: generative recommenders may consume polluted web content, such as fake reviews and promotional pages crafted to mislead recommendations. We ask: to what extent do search-augmented LLMs become unwitting promoters of fake products when consuming polluted retrieval results? To answer this, we introduce FORGE (Fake Online Recommendations in Generative Environments), a benchmark for measuring fake-product promotion under controlled web-content pollution. Given an upstream search result, FORGE locally rewrites real products in retrieved web pages into fake ones to simulate web-content pollution, and measures how often the LLM recommends the fake product. FORGE covers 225 real-world products across 15 categories and 5 consumer scenarios. Across 12 commercial and open-weights LLMs, all models are vulnerable: a single polluted page yields fooled rates of up to 27%, while the full top-3 replacement raises this to 73.8%. Vulnerability varies substantially across categories, increasing when models lack stable prior knowledge of the relevant products. Reasoning does not mitigate this vulnerability; instead, it often generates spurious social proof to justify false recommendations. We evaluate three defenses: skepticism prompting and consensus filtering (over model priors or cross-document evidence). Skepticism can exacerbate vulnerability, much like reasoning, while filtering risks suppressing legitimate products. We release FORGE at https://github.com/leoluolol/forge-benchmark.",
+      "published": "2026-06-11T17:24:14Z",
+      "updated": "2026-06-11T17:24:14Z",
       "categories": [
+        "cs.CL",
         "cs.AI"
       ],
-      "pdfUrl": "https://arxiv.org/pdf/2604.24717v1",
-      "absUrl": "https://arxiv.org/abs/2604.24717v1",
-      "industrySource": "Meta"
+      "pdfUrl": "https://arxiv.org/pdf/2606.13610v1",
+      "absUrl": "https://arxiv.org/abs/2606.13610v1",
+      "industrySource": ""
     },
     {
-      "id": "http://arxiv.org/abs/2604.24472v1",
-      "title": "Modeling Behavioral Intensity and Transitions for Generative Recommendation",
+      "id": "http://arxiv.org/abs/2606.09204v1",
+      "title": "The Injection Paradox: Brand-Level Suppression in Safety-Trained LLM Recommendations via RAG Context Injection",
       "authors": [
-        "Wenxuan Yang",
-        "Xiaoyang Xu",
-        "Hanyu Zhang",
-        "Zhexuan Xu",
-        "Wanqiang Xiong",
-        "Zhaoqun Chen"
+        "Hyunseok Paeng"
       ],
       "affiliations": [],
-      "abstract": "Multi-behavior recommendation aims to predict user conversions by modeling various interaction types that carry distinct intent signals. Recently, generative sequence modeling methods have emerged as an important paradigm for multi-behavior recommendation by achieving flexible sequence generation. However, existing generative methods typically treat behaviors as auxiliary token features and feed them into unified attention mechanisms. These models implicitly assume uniform activation of dependencies among historical behaviors, thereby failing to discern differences in intensity or capture transition patterns. To address these limitations, we propose BITRec, a novel generative multi-behavior recommendation framework that introduces structured behavioral modeling through selective dependency activation. BITRec incorporates (i) Hierarchical Behavior Aggregation (HBA), which explicitly models behavioral intensity differences through separated exploration and commitment pathways, and (ii) Transition Relation Encoding (TRE), which encodes transition structures through explicit learnable relation matrices. Experiments on four large-scale datasets (RetailRocket, Taobao, Tmall, Insurance Dataset) with millions of interactions achieve consistent improvements of 15-23% across multiple metrics, with peak gains of 22.79% MRR on Tmall and 17.83% HR@10, 17.55% NDCG@10 on Taobao.",
-      "published": "2026-04-27T13:40:35Z",
-      "updated": "2026-04-27T13:40:35Z",
+      "abstract": "We present a reproducible failure mode of safety training in RAG-based LLM recommendation -- the Injection Paradox -- in which prompt injections embedded in retrieved documents backfire against the attacker, suppressing the target brand below the injection-free baseline. In safety-trained Claude models, documents containing prompt injections suffer a sharp drop in recommendation rate, and this suppression propagates beyond the injected document to unmodified documents of the same brand. In Claude Opus 4.6, the target brand drops from a 54% baseline to zero top-2 recommendations across all 50 trials, even though only 1 of 4 brand documents in the corpus contains an injection. The directional pattern is reproduced in counterfactual experiments and across three brands. A contrasting result across the GPT models tested, where the same injection instead increases recommendations, suggests model-family differences in how injection-like context affects recommendation behavior. These findings raise the technical possibility of a reverse-attack scenario in which an adversary embeds injections in a competitor's documents to suppress the competitor's brand via safety-sensitive model behavior.",
+      "published": "2026-06-08T08:38:33Z",
+      "updated": "2026-06-08T08:38:33Z",
       "categories": [
-        "cs.IR",
+        "cs.LG",
+        "cs.CL",
+        "cs.CR"
+      ],
+      "pdfUrl": "https://arxiv.org/pdf/2606.09204v1",
+      "absUrl": "https://arxiv.org/abs/2606.09204v1",
+      "industrySource": ""
+    },
+    {
+      "id": "http://arxiv.org/abs/2606.08604v2",
+      "title": "Gryphon: A Unified Architecture for Semantic-ID Generation and Item-Level Scoring in Industrial Recommendations",
+      "authors": [
+        "Daria Tikhonovich",
+        "Oleg Sorokin",
+        "Vladislav Dodonov",
+        "Mariia Ulianova",
+        "Ilya Murzin"
+      ],
+      "affiliations": [],
+      "abstract": "Generative retrieval (GR) has become a scalable approach to candidate generation: each item is assigned a short hierarchical token sequence called a Semantic ID (SID), and the next item's SID is decoded autoregressively. A practical limitation is that the decoder's beam search optimizes the likelihood of token sequences, not the relevance of the underlying items. These objectives diverge when sequence likelihood is poorly calibrated due to beam search error accumulation, and when several items collapse onto a single SID and receive identical scores. We introduce Gryphon, an encoder-decoder generative recommendation architecture that adds a jointly trained item-level scoring component alongside SID generation, reusing the encoder's user representation computed in a single forward pass. Instead of ranking SIDs by accumulated token likelihood, Gryphon resolves each generated SID to its concrete items and re-scores those items directly, which sidesteps miscalibrated sequence scores and separates items that collide on the same identifier. On an industrial music service, with item-level scoring trained under a next-item-prediction objective, Gryphon attains the highest item-level Recall@1000, above the strongest baselines (+3.7% over vanilla GR and +2.5% over collision-resolved GR) at comparable parameter count and latency. Gryphon's item-level ranking also surpasses its beam-likelihood ranking of the same candidates (+4.2% gain), demonstrating the benefit of item-level scoring in GR. Deployed as the sole candidate source in a 7-day A/B test, Gryphon produced no statistically significant change in total listening time (+0.25%) while replacing a pipeline of more than 15 candidate generators and a separate preranking stage, substantially simplifying the candidate-generation system.",
+      "published": "2026-06-07T12:31:26Z",
+      "updated": "2026-06-09T13:50:48Z",
+      "categories": [
+        "cs.IR"
+      ],
+      "pdfUrl": "https://arxiv.org/pdf/2606.08604v2",
+      "absUrl": "https://arxiv.org/abs/2606.08604v2",
+      "industrySource": ""
+    },
+    {
+      "id": "http://arxiv.org/abs/2606.08480v1",
+      "title": "Adaptive Loss Balancing for Noise-Robust GRPO in Generative Recommendation",
+      "authors": [
+        "Kewei Xu",
+        "Junbo Qi",
+        "Yanyan Zou",
+        "Pengfei Zhang",
+        "Xingzhi Yao",
+        "Shengjie Li"
+      ],
+      "affiliations": [],
+      "abstract": "Reinforcement learning (RL) presents a promising avenue for enhancing generative recommendation beyond supervised imitation, leveraging reward signals to guide policy improvement. However, its efficacy is critically contingent on the trustworthiness of the reward model for the samples it evaluates. In practice, production rankers, the widely adopted reward models, are trained on exposure-biased logs, leading to sample-dependent inaccuracies that violate this assumption. Our stratified analysis uncovers a consistent pattern: reward guidance is most beneficial when the policy exhibits uncertainty and the ranker can effectively discriminate the ground-truth item from rollout negatives. On other samples, the reward signal is either negligible or detrimental, highlighting the risk of uniform RL application. To address such an issue, we introduce AdaGRPO, a novel framework that treats reward-guided optimization as selective admission rather than uniform pressure. Training is anchored in supervised negative log-likelihood, while the GRPO objective is gated by a binary, per-sample clip determined by two rollout diagnostics: policy-side difficulty and reward discriminability. Instances failing either diagnostic default to pure supervision, ensuring stability and mitigating the amplification of noisy gradients. We validate AdaGRPO on a large-scale e-commerce dataset. At the best intermediate checkpoint, it elevates HR@10 from 11.01% to 12.18% while constraining hallucination below 0.22%, and maintains robustness at the final checkpoint (HR@10 11.63%, hallucination 0.27%), outperforming fixed NLL--GRPO mixtures across the retrieval--validity frontier. In production A/B tests, AdaGRPO achieves statistically significant gains in click-through rate and dwell time, confirming its practical utility.",
+      "published": "2026-06-07T06:51:18Z",
+      "updated": "2026-06-07T06:51:18Z",
+      "categories": [
+        "cs.LG",
         "cs.AI",
-        "cs.LG"
+        "cs.IR"
       ],
-      "pdfUrl": "https://arxiv.org/pdf/2604.24472v1",
-      "absUrl": "https://arxiv.org/abs/2604.24472v1",
-      "industrySource": "Alibaba"
-    },
-    {
-      "id": "http://arxiv.org/abs/2604.23522v1",
-      "title": "Beyond Static Collision Handling: Adaptive Semantic ID Learning for Multimodal Recommendation at Industrial Scale",
-      "authors": [
-        "Yongsen Pan",
-        "Yuxin Chen",
-        "Zheng Hu",
-        "Xu Yuan",
-        "Daoyuan Wang",
-        "Yuting Yin",
-        "Songhao Ni",
-        "Hongyang Wang",
-        "Jun Wang",
-        "Fuji Ren",
-        "Wenwu Ou"
-      ],
-      "affiliations": [],
-      "abstract": "Modern recommendation systems involve massive catalogs of multimodal items, where scalable item identification must balance compactness, semantic fidelity, and downstream effectiveness. Semantic IDs (SIDs) address this need by representing items as short discrete token sequences derived from multimodal signals, providing a compact interface for retrieval, ranking, and generative recommendation. However, effective SID learning is hindered by collisions, where different items are assigned identical or highly confusable codes. Existing methods mainly rely on improved quantization or fixed overlap regularization, but they do not adaptively distinguish whether an overlap should be suppressed or preserved. We propose AdaSID, an adaptive semantic ID learning framework for recommendation. AdaSID regulates SID overlaps through a two-stage process. First, it relaxes repulsion for observed overlaps when the involved items are semantically compatible, preserving admissible sharing rather than uniformly separating all collisions. Second, it allocates the remaining regulation pressure according to local collision load and training progress, strengthening control in congested regions while gradually rebalancing optimization toward recommendation alignment. This design adaptively decides which overlaps to penalize, how strongly to regulate them, and when to shift the learning focus. Extensive offline and online experiments validate AdaSID. On two public benchmarks, AdaSID improves Recall and NDCG by about 4.5% on average over strong baselines, while improving codebook utilization and SID diversity. In Kuaishou e-commerce, an online A/B test on short-video retrieval covering tens of millions of users achieves statistically significant gains, including a 0.98% GMV improvement, and industrial ranking evaluation shows consistent AUC improvements.",
-      "published": "2026-04-26T03:59:35Z",
-      "updated": "2026-04-26T03:59:35Z",
-      "categories": [
-        "cs.IR",
-        "cs.MM"
-      ],
-      "pdfUrl": "https://arxiv.org/pdf/2604.23522v1",
-      "absUrl": "https://arxiv.org/abs/2604.23522v1",
-      "industrySource": "Kuaishou"
+      "pdfUrl": "https://arxiv.org/pdf/2606.08480v1",
+      "absUrl": "https://arxiv.org/abs/2606.08480v1",
+      "industrySource": ""
     },
     {
       "id": "http://arxiv.org/abs/2606.06970v1",
@@ -354,6 +386,32 @@
       ],
       "pdfUrl": "https://arxiv.org/pdf/2606.06970v1",
       "absUrl": "https://arxiv.org/abs/2606.06970v1",
+      "industrySource": ""
+    },
+    {
+      "id": "http://arxiv.org/abs/2606.07688v1",
+      "title": "TRACER: Token ReAssignment for Concept ERasure in Generative Recommendation",
+      "authors": [
+        "Ziheng Chen",
+        "Jiali Cheng",
+        "Zezhong Fan",
+        "Hadi Amiri",
+        "Diyuan Wu",
+        "Gabriele Tolomei",
+        "Yang Zhang"
+      ],
+      "affiliations": [],
+      "abstract": "Generative recommendation formulates next-item prediction as autoregressive generation over semantic ID (SID) sequences derived from users' historical interactions, making modern recommender systems structurally similar to large language models (LLMs). As privacy and safety concerns grow, these systems increasingly require concept unlearning to remove sensitive or harmful concepts associated with items. However, existing LLM unlearning methods cannot be directly applied to generative recommendation. Unlike word tokens with explicit semantics, SIDs are abstract identifiers that are often shared by both forget and retain items, leading to severe conflicts between concept removal and recommendation utility preservation. To address this challenge, we propose TRACER, an end-to-end concept unlearning framework based on token reassignment. Rather than directly suppressing shared SIDs, TRACER reassigns concept-related items to alternative tokens that better facilitate forgetting while minimizing side effects on retained items. We further introduce a coherence regularizer to preserve semantic consistency among retain items during unlearning. Experiments on real-world recommendation datasets demonstrate that TRACER effectively removes target concepts while substantially better preserving recommendation utility than existing unlearning baselines.",
+      "published": "2026-06-05T05:19:31Z",
+      "updated": "2026-06-05T05:19:31Z",
+      "categories": [
+        "cs.IR",
+        "cs.AI",
+        "cs.CL",
+        "cs.LG"
+      ],
+      "pdfUrl": "https://arxiv.org/pdf/2606.07688v1",
+      "absUrl": "https://arxiv.org/abs/2606.07688v1",
       "industrySource": ""
     },
     {
@@ -1144,71 +1202,6 @@
       ],
       "pdfUrl": "https://arxiv.org/pdf/2604.25420v1",
       "absUrl": "https://arxiv.org/abs/2604.25420v1",
-      "industrySource": ""
-    },
-    {
-      "id": "http://arxiv.org/abs/2604.23902v1",
-      "title": "LLM-Augmented Traffic Signal Control with LSTM-Based Traffic State Prediction and Safety-Constrained Decision Support",
-      "authors": [
-        "Jiazhao Shi"
-      ],
-      "affiliations": [],
-      "abstract": "Traffic signal control is a critical task in intelligent transportation systems, yet conventional fixed-time and rule-based methods often struggle to adapt to dynamic traffic demand and provide limited decision interpretability. This study proposes an LLM-augmented traffic signal control framework that integrates LSTM-based short-term traffic state prediction, predictive phase selection, structured large language model reasoning, and safety-constrained action filtering. The LSTM module forecasts future queue length, waiting time, vehicle count, and lane occupancy based on recent intersection-level observations. A predictive controller then generates candidate signal actions, while the LLM module evaluates these actions using structured traffic-state inputs and produces congestion diagnoses, phase adjustment recommendations, and natural-language explanations. To ensure operational reliability, all LLM-generated recommendations are validated by a safety filter before execution. Simulation-based experiments in SUMO compare the proposed method with fixed-time control, rule-based control, and an LSTM-based predictive baseline under balanced demand, directional peak demand, and sudden surge scenarios. The results indicate that the proposed framework improves traffic efficiency, especially under dynamic and non-recurrent traffic conditions, while maintaining zero constraint violations after safety filtering. Overall, this study demonstrates that LLMs can enhance traffic signal control when used as constrained reasoning and decision-support modules rather than direct low-level controllers. Keywords: Intelligent Transportation Systems; Traffic Signal Control; Large Language Models; LSTM; Traffic State Prediction; Decision Support; Safety-Constrained Control; SUMO Simulation.",
-      "published": "2026-04-26T22:26:20Z",
-      "updated": "2026-04-26T22:26:20Z",
-      "categories": [
-        "cs.AI"
-      ],
-      "pdfUrl": "https://arxiv.org/pdf/2604.23902v1",
-      "absUrl": "https://arxiv.org/abs/2604.23902v1",
-      "industrySource": ""
-    },
-    {
-      "id": "http://arxiv.org/abs/2604.23156v1",
-      "title": "Birds of a Feather Cluster Nearby: a Proximity-Aware Geo-Codebook for Local Service Recommendation",
-      "authors": [
-        "Tian He",
-        "Chen Yang",
-        "Jiawei Zhang",
-        "Lin Guo",
-        "Wei Lin",
-        "Zhuqing Jiang"
-      ],
-      "affiliations": [],
-      "abstract": "Generative recommendation systems are increasingly adopted in local service platforms, where semantic relevance alone is insufficient without strict geographic feasibility. A key technical challenge lies in semantic ID (SID) tokenization, which directly impacts the recommendation performance. However, existing semantic codebooks neglect geographic constraints, often resulting in recommendations that are semantically relevant yet geographically unreachable. To address this limitation, we propose Pro-GEO, a Proximity-aware GEO-codebook. Pro-GEO establishes a geo-centroid local coordinate system to capture intra-cluster spatial relationships and a geo-rotary position encoding mechanism that models geographic proximity as orthogonal rotational transformations in the high-dimensional embedding. This design enables semantic and spatial signals to be jointly modeled in a balanced manner, without reducing geographic information to a weak auxiliary feature. Extensive experiments conducted on a large-scale industrial dataset reveal that Pro-GEO significantly outperforms state-of-the-art methods. In particular, Pro-GEO reduces the average geographic clustering distance by 45.60% and achieves a 1.87% improvement in Hit@50, highlighting its effectiveness for real-world local service recommendation.",
-      "published": "2026-04-25T06:05:41Z",
-      "updated": "2026-04-25T06:05:41Z",
-      "categories": [
-        "cs.IR"
-      ],
-      "pdfUrl": "https://arxiv.org/pdf/2604.23156v1",
-      "absUrl": "https://arxiv.org/abs/2604.23156v1",
-      "industrySource": ""
-    },
-    {
-      "id": "http://arxiv.org/abs/2604.22504v1",
-      "title": "Objective Shaping with Hard Negatives: Windowed Partial AUC Optimization for RL-based LLM Recommenders",
-      "authors": [
-        "Wentao Shi",
-        "Qifan Wang",
-        "Chen Chen",
-        "Fei Liu",
-        "Dongfang Liu",
-        "Xu Liu",
-        "Wanli Ma",
-        "Junfeng Pan",
-        "Linhong Zhu",
-        "Fuli Feng"
-      ],
-      "affiliations": [],
-      "abstract": "Reinforcement learning (RL) effectively optimizes Large Language Model (LLM)-based recommenders by contrasting positive and negative items. Empirically, training with beam-search negatives consistently outperforms random negatives, yet the mechanism is not well understood. We address this gap by analyzing the induced optimization objective and show that: (i) Under binary reward feedback, optimizing LLM recommenders with Group Relative Policy Optimization (GRPO) is theoretically equivalent to maximizing the Area Under the ROC Curve (AUC), which is often misaligned with Top-$K$ recommendation; and (ii) Replacing random negatives with beam-search negatives reshapes the objective toward partial AUC, improving alignment with Top-$K$ metrics. Motivated by this perspective, we introduce Windowed Partial AUC (WPAUC), which constrains the false positive rate (FPR) to a window [$α,α+d$] to more directly align with Top-$K$ metrics. We further propose an efficient Threshold-Adjusted Windowed reweighting (TAWin) RL method for its optimization, enabling explicit control over the targeted Top-$K$ performance. Experiments on four real-world datasets validate the theory and deliver consistent state-of-the-art performance.",
-      "published": "2026-04-24T12:31:57Z",
-      "updated": "2026-04-24T12:31:57Z",
-      "categories": [
-        "cs.IR"
-      ],
-      "pdfUrl": "https://arxiv.org/pdf/2604.22504v1",
-      "absUrl": "https://arxiv.org/abs/2604.22504v1",
       "industrySource": ""
     }
   ]
