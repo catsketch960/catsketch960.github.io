@@ -1,7 +1,27 @@
 {
-  "lastUpdated": "2026-06-21T06:09:14Z",
-  "totalResults": 652,
+  "lastUpdated": "2026-06-23T05:08:31Z",
+  "totalResults": 653,
   "papers": [
+    {
+      "id": "http://arxiv.org/abs/2606.23057v1",
+      "title": "Who Owns the AI Recommendation? A Multi-Industry Empirical Map of Brand Category Ownership Across Large Language Models",
+      "authors": [
+        "Dmitrij Żatuchin"
+      ],
+      "affiliations": [],
+      "abstract": "Large language models now mediate how buyers discover products and services, making the competitive structure of AI-generated recommendations a strategic concern for brands. A basic question has lacked large-scale empirical answers: in a given category, which brand does a model recommend, and how concentrated is that ownership? Across 3,750 responses spanning 50 brands, five industries, and 250 brand-free category queries on three models (GPT-5.2, Google Gemini 3 Flash, and Perplexity sonar-pro), each query repeated five times under a dice-roll stability protocol, we propose three exploratory metrics: the Category Ownership Index (COI), a brand's share of mentions within a category; the Competitive Vacuum Index (CVI), flagging categories with no single leader; and the Displacement Score (DS), quantifying asymmetric substitution between brand pairs. In this sample, recommendation concentration was moderate: the mean Gini coefficient was 0.28 (95% CI [0.16, 0.41]), below the 0.60 power-law threshold we set. Competitive vacuums were rare, appearing in 8.0% of queries, so the models named at least one sampled brand in most cases. Cross-model agreement on the top-recommended brand was 41.6%: a top position on one model did not reliably hold on another. Displacement was industry-dependent, from co-recommendation in consulting (0.4:1) to one-directional substitution up to 4.3:1, with an unweighted mean of 2.4:1 across the five industries. A BERTopic check placed only 4.2% of discovered topic clusters outside the original categories. Within the scope studied, these results sit in tension with a strong winner-takes-all narrative around AI recommendation, and the three metrics offer a candidate, reproducible procedure for competitive-intelligence analysis that future work can validate.",
+      "published": "2026-06-22T09:10:54Z",
+      "updated": "2026-06-22T09:10:54Z",
+      "categories": [
+        "cs.IR",
+        "cs.CL",
+        "cs.CY",
+        "cs.LG"
+      ],
+      "pdfUrl": "https://arxiv.org/pdf/2606.23057v1",
+      "absUrl": "https://arxiv.org/abs/2606.23057v1",
+      "industrySource": "Google"
+    },
     {
       "id": "http://arxiv.org/abs/2606.17707v1",
       "title": "Do Generative Recommenders Deepen the Information Cocoon? A Closed-Loop Simulation with LLM-powered User Simulators",
@@ -224,35 +244,6 @@
       "industrySource": "Meta"
     },
     {
-      "id": "http://arxiv.org/abs/2605.07125v1",
-      "title": "An Embarrassingly Simple Graph Heuristic Reveals Shortcut-Solvable Benchmarks for Sequential Recommendation",
-      "authors": [
-        "Haoyu Han",
-        "Li Ma",
-        "Hanbing Wang",
-        "Bingheng Li",
-        "Daochen Zha",
-        "Chun How Tan",
-        "Huiji Gao",
-        "Xin Liu",
-        "Stephanie Moyerman",
-        "Sanjeev Katariya",
-        "Hui Liu",
-        "Jiliang Tang"
-      ],
-      "affiliations": [],
-      "abstract": "Sequential recommendation has increasingly shifted toward generative recommenders that combine sequential patterns with semantic item information. Yet these methods are often evaluated on a small set of widely used benchmarks, raising a key question: do these benchmarks actually require the advanced modeling capabilities that modern generative recommenders claim to provide? We conduct a benchmark audit with an intentionally simple graph heuristic. Starting from only the last one or two interacted items, it retrieves candidates from a few-hop item-transition graph and ranks them by item-feature similarity. Despite using no sequence encoder, generative objective, or training, this heuristic matches or outperforms many modern baselines, with relative NDCG@10 improvements of 38.10% and 44.18% over the best competing baseline on Amazon Review Sports and CDs. We show that this behavior reflects shortcut solvability rather than an artifact of one heuristic. We identify three shortcut structures that can make next-item prediction easier than expected: low-branching local transitions, feature-smooth transitions, and limited dependence on long user histories. These shortcuts need not appear together; even one or two strong signals can make simple local retrieval highly competitive, while weakening them makes the benefits of more sophisticated models clearer. Across 14 datasets, model rankings vary substantially with dataset properties, yet the heuristic remains competitive on 10 of them. Our findings suggest that strong performance on standard benchmarks does not always demonstrate advanced sequential, semantic, or generative modeling ability. We call for more careful dataset selection and dataset-level diagnostic analysis when using benchmarks to support claims about new recommendation models.",
-      "published": "2026-05-08T02:00:11Z",
-      "updated": "2026-05-08T02:00:11Z",
-      "categories": [
-        "cs.IR",
-        "cs.AI"
-      ],
-      "pdfUrl": "https://arxiv.org/pdf/2605.07125v1",
-      "absUrl": "https://arxiv.org/abs/2605.07125v1",
-      "industrySource": "Amazon"
-    },
-    {
       "id": "http://arxiv.org/abs/2606.20554v1",
       "title": "Structuring and Tokenizing Distributed User Interest Context for Generative Recommendation",
       "authors": [
@@ -320,7 +311,7 @@
       "industrySource": ""
     },
     {
-      "id": "http://arxiv.org/abs/2606.17276v2",
+      "id": "http://arxiv.org/abs/2606.17276v3",
       "title": "On the Memorization Behavior of LLMs in Generative Recommendation: Observations, Implications, and Training Strategies",
       "authors": [
         "Sunwoo Kim",
@@ -335,13 +326,13 @@
       "affiliations": [],
       "abstract": "Generative recommendation (GR) has emerged as a promising direction for recommender systems. Recently, large language models (LLMs) have been increasingly adopted for GR, as their rich pretrained knowledge is expected to help them generalize beyond common user behavior patterns that traditional memorization-oriented baselines can capture. However, existing LLM-based GR works largely ignore LLMs' well-known tendency to memorize, which, if present in LLMs fine-tuned for GR, would restrict their utilization of pretrained knowledge. In this work, we investigate this concern by examining one-hop memorization, where a model recommends items that are direct successors of items in the training data. We show that LLMs do this more than non-LLM-based GR models-in fact, the vast majority of their gains over GR baselines are actually on users whose target items can be predicted through one-hop memorization. We intuit that improving performance on the remaining users requires LLMs to learn richer item-item relations beyond one-hop transitions. To achieve this, we propose IIRG, a novel training strategy that teaches LLMs to capture: (1) collaborative relations derived from item co-occurrences across multiple hops in user sequences, and (2) semantic relations among items with similar themes, both of which can serve as useful recommendation signals. We show that IIRG significantly improves over LLMs trained solely with standard next-item prediction, with especially large gains for users whose test items are not covered by train-time one-hop transitions.",
       "published": "2026-06-15T20:34:49Z",
-      "updated": "2026-06-17T17:24:56Z",
+      "updated": "2026-06-18T21:04:52Z",
       "categories": [
         "cs.IR",
         "cs.LG"
       ],
-      "pdfUrl": "https://arxiv.org/pdf/2606.17276v2",
-      "absUrl": "https://arxiv.org/abs/2606.17276v2",
+      "pdfUrl": "https://arxiv.org/pdf/2606.17276v3",
+      "absUrl": "https://arxiv.org/abs/2606.17276v3",
       "industrySource": ""
     },
     {
