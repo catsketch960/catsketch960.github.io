@@ -1,7 +1,43 @@
 {
-  "lastUpdated": "2026-06-24T05:05:56Z",
-  "totalResults": 653,
+  "lastUpdated": "2026-06-25T05:10:08Z",
+  "totalResults": 655,
   "papers": [
+    {
+      "id": "http://arxiv.org/abs/2606.25147v1",
+      "title": "TokenMinds: Pretrained User Tokens and Embeddings for User Understanding in Large Recommender Systems",
+      "authors": [
+        "Qingyun Liu",
+        "Bo Yan",
+        "Yang Liu",
+        "Yuji Roh",
+        "Ekansh Sharma",
+        "Likang Yin",
+        "Emma Olowo",
+        "Min-hsuan Tsai",
+        "Yuxuan Li",
+        "Diego Uribe",
+        "Saksham Aggarwal",
+        "Siqi Wu",
+        "Yuan Hao",
+        "Vikas Kedigehalli",
+        "Lukasz Heldt",
+        "Lichan Hong",
+        "Li Wei",
+        "Xinyang Yi"
+      ],
+      "affiliations": [],
+      "abstract": "User modeling in industrial recommender systems typically produces dense embeddings, which suffer from representational constraints inherent to fixed-dimensional vectors. An emerging alternative for discrete user representation -- using LLMs to generate text-based user tokens -- captures topical co-occurrences rather than deep sequential behavior dynamics and produces outputs that are difficult to ground to item attributes. Meanwhile, Semantic ID (SID) based item tokenization has proven effective for improving generalization in generative recommendation, yet discrete SID-based representations for users remain largely unexplored. We propose TokenMinds, an industrial-scale system that extends the PLUM framework from item retrieval to user modeling, generating both discrete SID-based user tokens and dense user embeddings via an encoder-decoder architecture adapted from pre-trained LLMs. This dual-output design provides the complementary benefits of discrete, semantically grounded user representations while maintaining compatibility with existing downstream models that rely on dense embeddings. Additionally, the shared SID vocabulary naturally extends to cross-scenario modeling: by unifying long-form and short-form video behaviors into a single model, we substantially reduce training and serving costs. We validate TokenMinds through extensive offline experiments and live launches on multiple YouTube surfaces, served on full user traffic (billions of users) via an asynchronous infrastructure that decouples representation generation from downstream scoring. Focusing on ranking as the primary downstream use case, our results confirm the practical viability of SID-based user tokens at industrial scale and demonstrate that tokens and dense embeddings provide complementary value across different production ranking systems.",
+      "published": "2026-06-23T20:20:37Z",
+      "updated": "2026-06-23T20:20:37Z",
+      "categories": [
+        "cs.IR",
+        "cs.AI",
+        "cs.LG"
+      ],
+      "pdfUrl": "https://arxiv.org/pdf/2606.25147v1",
+      "absUrl": "https://arxiv.org/abs/2606.25147v1",
+      "industrySource": "Google"
+    },
     {
       "id": "http://arxiv.org/abs/2606.23057v1",
       "title": "Who Owns the AI Recommendation? A Multi-Industry Empirical Map of Brand Category Ownership Across Large Language Models",
@@ -221,27 +257,40 @@
       "industrySource": "OpenAI"
     },
     {
-      "id": "http://arxiv.org/abs/2605.07129v1",
-      "title": "RRCM: Ranking-Driven Retrieval over Collaborative and Meta Memories for LLM Recommendation",
+      "id": "http://arxiv.org/abs/2606.25496v1",
+      "title": "Recommendation as Generation: Unifying Personalized Video Generation and Recommendation at Industrial Scale",
       "authors": [
-        "Shijun Li",
-        "Wooseong Yang",
-        "Yu Wang",
-        "Tianxin Wei",
-        "Joydeep Ghosh"
+        "Yanhua Cheng",
+        "Bo Wang",
+        "Haotian Zhang",
+        "Xinyuan Gao",
+        "Zhihui Yin",
+        "Ben Xue",
+        "Yongzhi Li",
+        "Jieting Xue",
+        "Ye Ma",
+        "Minquan Wang",
+        "Jiahui Li",
+        "Tianyu Xu",
+        "Zhiqiang Liu",
+        "Xiao Lin",
+        "Shiyang Wen",
+        "Changcheng Li",
+        "Liu Liu",
+        "Quan Chen",
+        "Peng Jiang",
+        "Kun Gai"
       ],
       "affiliations": [],
-      "abstract": "Large Language Models (LLMs) have emerged as a promising paradigm for next-generation recommender systems, offering strong semantic understanding and natural-language reasoning abilities. Despite recent progress, current LLM-based recommenders still face key challenges in constructing decision-relevant contexts from heterogeneous evidence. First, existing methods often rely on fixed context construction strategies: collaborative behavioral evidence and item-side metadata are typically incorporated through predefined prompts, static retrieval pipelines, or handcrafted injection mechanisms, making it difficult to determine what information is truly beneficial for each instance. Second, heterogeneous evidence introduces a severe context-efficiency bottleneck. Rich metadata and collaborative interaction records can quickly overwhelm the context window, while aggressive compression or heuristic filtering may discard fine-grained evidence critical for accurate recommendation. To address these challenges, we propose RRCM, a ranking-driven retrieval-and-reasoning framework over collaborative and metadata memories for LLM-based agentic recommendation. RRCM starts from a lightweight user-history context and learns whether to recommend directly, retrieve collaborative evidence, retrieve item metadata, or interleave both through reasoning. Both memories are represented in natural language and accessed through a unified retrieval interface, enabling flexible evidence acquisition without handcrafted CF injection or fixed retrieval rules. We optimize this memory-reading policy with an outcome-only ranking reward, instantiated using group relative policy optimization, so that retrieval decisions are directly driven by final top-k recommendation quality. Extensive experiments show that RRCM significantly outperforms traditional baselines and diverse LLM-based recommendation approaches.",
-      "published": "2026-05-08T02:07:30Z",
-      "updated": "2026-05-08T02:07:30Z",
+      "abstract": "Traditional short-video recommendation systems match user interest to a fixed pool of pre-produced videos, which limits their ability to capture fine-grained and dynamic preferences. We propose Recommendation-as-Generation (RaG), a new paradigm that generates personalized videos on demand from inferred user interest. Our framework unifies generative recommendation and video generation through shared semantic IDs (SIDs), which disentangle video representation into content semantics and creative style semantics, enabling both fine-grained modeling of user interest and controllable generation of interest-aligned videos. We further develop Video Generation Agents (VGAs) that are conditioned on inferred SIDs to drive hierarchical planning and refinement for video creation, including visual composition, audio alignment, and artistic effect enhancement. To optimize the framework, we effectively introduce a synergistic cross-domain reward learning mechanism that jointly enforces interest alignment, user feedback, and video quality assessment. We deploy RaG on an industrial-scale platform with over 400 million daily active users and evaluate it in a revenue-critical advertising scenario. Online A/B tests show up to 1.87% ad revenue improvement compared to a strong production GRM baseline, demonstrating its effectiveness in driving further revenue gains beyond generative recommendation. Our results highlight a closed-loop generative system as a promising paradigm for integrating personalized video generation into recommendation.",
+      "published": "2026-06-24T07:23:20Z",
+      "updated": "2026-06-24T07:23:20Z",
       "categories": [
-        "cs.IR",
-        "cs.AI",
-        "cs.LG"
+        "cs.IR"
       ],
-      "pdfUrl": "https://arxiv.org/pdf/2605.07129v1",
-      "absUrl": "https://arxiv.org/abs/2605.07129v1",
-      "industrySource": "Meta"
+      "pdfUrl": "https://arxiv.org/pdf/2606.25496v1",
+      "absUrl": "https://arxiv.org/abs/2606.25496v1",
+      "industrySource": ""
     },
     {
       "id": "http://arxiv.org/abs/2606.20554v1",
@@ -1172,25 +1221,6 @@
       ],
       "pdfUrl": "https://arxiv.org/pdf/2605.10207v1",
       "absUrl": "https://arxiv.org/abs/2605.10207v1",
-      "industrySource": ""
-    },
-    {
-      "id": "http://arxiv.org/abs/2605.07443v1",
-      "title": "RcLLM: Accelerating Generative Recommendation via Beyond-Prefix KV Caching",
-      "authors": [
-        "Zhan Zhao",
-        "Yuxin Wang",
-        "Amelie Chi Zhou"
-      ],
-      "affiliations": [],
-      "abstract": "Large Language Models (LLMs) are transforming recommendation from ranking into a generative task, but industrial deployment remains limited by the high latency of processing long, personalized prompts. Standard prefix caching provides limited benefit because reuse in recommendation workloads is often non-contiguous across user histories and item contexts. We present RcLLM, a distributed inference system for generative recommendation with Beyond-Prefix KV Caching. RcLLM decomposes prompts into reusable blocks and supports large item catalogs with a stratified distributed storage design: compact user-history caches are replicated for zero-latency retrieval, while massive item caches are sharded using similarity-aware placement. To reduce redundant quadratic attention computation, RcLLM combines an affinity-based global scheduler that improves data locality with a selective attention mechanism that corrects approximation errors. Experiments on real-world datasets show that RcLLM reduces Time-To-First-Token (TTFT) by 1.31x-9.51x compared with state-of-the-art prefix caching systems, enabling real-time serving with negligible impact on recommendation accuracy.",
-      "published": "2026-05-08T08:47:50Z",
-      "updated": "2026-05-08T08:47:50Z",
-      "categories": [
-        "cs.DC"
-      ],
-      "pdfUrl": "https://arxiv.org/pdf/2605.07443v1",
-      "absUrl": "https://arxiv.org/abs/2605.07443v1",
       "industrySource": ""
     }
   ]
