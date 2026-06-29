@@ -1,6 +1,6 @@
 {
-  "lastUpdated": "2026-06-28T05:21:57Z",
-  "totalResults": 655,
+  "lastUpdated": "2026-06-29T05:56:26Z",
+  "totalResults": 656,
   "papers": [
     {
       "id": "http://arxiv.org/abs/2606.25147v1",
@@ -255,6 +255,25 @@
       "pdfUrl": "https://arxiv.org/pdf/2605.12772v1",
       "absUrl": "https://arxiv.org/abs/2605.12772v1",
       "industrySource": "OpenAI"
+    },
+    {
+      "id": "http://arxiv.org/abs/2606.27570v1",
+      "title": "Auditing AI Investment Recommendations as Executable Actions",
+      "authors": [
+        "Sidnei Barbieri",
+        "Wellington Vargas",
+        "Ágney Lopes Roth Ferraz"
+      ],
+      "affiliations": [],
+      "abstract": "AI systems increasingly produce investment recommendations, yet the usual evaluations ask the wrong question. Realized return is noisy and easy to overfit, and agreement with a reference portfolio can reward advice that cannot be executed. We argue that an AI-generated recommendation should first be audited as an executable financial action, and only then judged on return. We make this concrete with a deterministic, replayable baseline and a protocol that scores any advisor on three properties a single number conflates: validity under portfolio and fee constraints, stability across repeated runs, and agreement with the baseline. These properties separate cleanly, and agreement is the most misleading in isolation: across a 120-scenario bank, the control that agrees most with the baseline (0.94) is admissible in only 0.58 of its runs, so agreement certifies an invalid action in 42% of them. On an adversarial set, two frontier models are admissible in barely half of their bare-prompt runs and fail on order arithmetic, not judgment; supplying the fee arithmetic deterministically lifts both to near-perfect validity. We make no alpha claim: the baseline is a transparent verifier whose guardrails follow from the fee schedule and whose decisions replay from frozen inputs, and every figure and table regenerates offline from the artifact.",
+      "published": "2026-06-25T21:56:33Z",
+      "updated": "2026-06-25T21:56:33Z",
+      "categories": [
+        "cs.LO"
+      ],
+      "pdfUrl": "https://arxiv.org/pdf/2606.27570v1",
+      "absUrl": "https://arxiv.org/abs/2606.27570v1",
+      "industrySource": ""
     },
     {
       "id": "http://arxiv.org/abs/2606.25496v1",
@@ -1194,33 +1213,6 @@
       ],
       "pdfUrl": "https://arxiv.org/pdf/2605.18805v1",
       "absUrl": "https://arxiv.org/abs/2605.18805v1",
-      "industrySource": ""
-    },
-    {
-      "id": "http://arxiv.org/abs/2605.10207v1",
-      "title": "LASAR: Latent Adaptive Semantic Aligned Reasoning for Generative Recommendation",
-      "authors": [
-        "Yiwen Chen",
-        "Fuwei Zhang",
-        "Zehao Chen",
-        "Deqing Wang",
-        "Hehan Li",
-        "Peizhi Xu",
-        "Hanmeng Liu",
-        "Shuanglong Li",
-        "Xin Pei",
-        "Fuzhen Zhuang",
-        "Zhao Zhang"
-      ],
-      "affiliations": [],
-      "abstract": "Large Language Models (LLMs) have demonstrated powerful reasoning capabilities through Chain-of-Thought (CoT) in various tasks, yet the inefficiency of token-by-token generation hinders real-world deployment in latency-sensitive recommender systems. Latent reasoning has emerged as an effective paradigm in LLMs, performing multi-step inference in a continuous hidden-state space to achieve stronger reasoning at lower cost. However, this paradigm remains underexplored in mainstream generative recommendation. Adapting it reveals three unique challenges: (1) the gap between prior-less Semantic ID (SID) symbols and continuous latent reasoning - SIDs lack pre-trained semantics, hindering joint optimization; (2) representation drift due to a lack of reasoning chain supervision; and (3) the suboptimality of applying a globally fixed reasoning depth. To address these, we propose LASAR (Latent Adaptive Semantic Aligned Reasoning), an SFT-then-RL framework. First, we bridge this gap via two-stage training: Stage 1 grounds SID semantics before Stage 2 introduces latent reasoning, ensuring efficient convergence. Second, we mitigate representation drift through explicit CoT semantic alignment. Step-wise bidirectional KL divergence constrains the latent reasoning trajectory using hidden-state anchors extracted from CoT text, while a Policy Head predicts per-sample reasoning depth. Third, during the GRPO-based RL phase, terminal-only KL alignment accommodates variable-length reasoning, and REINFORCE optimizes the Policy Head to dynamically allocate steps. This nearly halves the average latent step count while simultaneously improving recommendation quality. Experiments on three real-world datasets demonstrate that LASAR outperforms all baselines. It adds marginal inference latency and is roughly 20 times faster than generating explicit CoT text.",
-      "published": "2026-05-11T08:52:53Z",
-      "updated": "2026-05-11T08:52:53Z",
-      "categories": [
-        "cs.IR"
-      ],
-      "pdfUrl": "https://arxiv.org/pdf/2605.10207v1",
-      "absUrl": "https://arxiv.org/abs/2605.10207v1",
       "industrySource": ""
     }
   ]
