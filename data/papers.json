@@ -1,6 +1,6 @@
 {
-  "lastUpdated": "2026-06-29T05:56:26Z",
-  "totalResults": 656,
+  "lastUpdated": "2026-06-30T05:10:43Z",
+  "totalResults": 658,
   "papers": [
     {
       "id": "http://arxiv.org/abs/2606.25147v1",
@@ -255,6 +255,49 @@
       "pdfUrl": "https://arxiv.org/pdf/2605.12772v1",
       "absUrl": "https://arxiv.org/abs/2605.12772v1",
       "industrySource": "OpenAI"
+    },
+    {
+      "id": "http://arxiv.org/abs/2606.29793v1",
+      "title": "Fund2Persona: A Framework for Building and Refining Financial Advisor Personas from Fund Disclosure Data",
+      "authors": [
+        "Suhwan Park",
+        "Hoyoung Lee",
+        "Zhangyang Wang",
+        "Alejandro Lopez-Lira",
+        "Young Cha",
+        "Chanyeol Choi",
+        "Jaewon Choi",
+        "Yongjae Lee"
+      ],
+      "affiliations": [],
+      "abstract": "Demand for personalized financial advising is growing, but consistent advisor expertise is difficult to obtain, scale, and encode in LLM systems. Simple persona prompts rarely specify how a financial advisor should reason and often drift toward generic recommendations. We propose Fund2Persona, a framework that grounds financial-advisor personas in fund disclosures, holdings transitions, market context, and manager commentary, then refines them through an agentic actor--scorer--patcher loop. We evaluate the resulting personas on held-out holdings-transition reconstruction and manager-commentary alignment, where they better recover portfolio decisions and grounded manager interpretation than generic baselines. We further study two downstream diagnostics: market-scenario generation, where persona retrieval broadens plausible investment views beyond repeated generic rollouts, and advisory dialogues grounded in investor profiles, where matched personas give more specific and useful advice than a generic advisor. These results suggest that fund-data-grounded financial-advisor personas can make manager-specific investment expertise portable rather than merely changing an LLM's surface style.",
+      "published": "2026-06-29T05:14:43Z",
+      "updated": "2026-06-29T05:14:43Z",
+      "categories": [
+        "cs.CL",
+        "q-fin.GN"
+      ],
+      "pdfUrl": "https://arxiv.org/pdf/2606.29793v1",
+      "absUrl": "https://arxiv.org/abs/2606.29793v1",
+      "industrySource": ""
+    },
+    {
+      "id": "http://arxiv.org/abs/2606.29406v1",
+      "title": "Adaptive AI Delegation under Uncertainty: A Bayesian Governance Policy for Sequential Decision Authority",
+      "authors": [
+        "Matthew Francis Dixon"
+      ],
+      "affiliations": [],
+      "abstract": "Organizations increasingly use large language models and agentic AI systems to generate probabilistic assessments and candidate actions in high-consequence settings. This creates a managerial problem distinct from prediction: how should organizations allocate decision authority to AI-generated recommendations as evidence quality, uncertainty, and organizational objectives evolve over time? Existing AI governance frameworks emphasize transparency, documentation, oversight, and regulatory compliance, but provide limited quantitative guidance for dynamically allocating decision authority under uncertainty. To address this challenge, we formulate adaptive AI delegation as a Governance-Aware Partially Observable Markov Decision Process (POMDP) in which Bayesian inference estimates the informational state and sequential optimization determines delegated AI authority. The paper also develops a quantitative validation and benchmarking framework for governance policies. Synthetic stress tests, reported LLM-confidence robustness, forecast-accuracy validation, governance-appetite sensitivity, and fragile-AI early-warning experiments evaluate whether the proposed policy exhibits graceful degradation, robustness to confidence-only perturbations, adaptive delegation under improving evidence quality, and interpretable calibration of institutional conservatism. The Governance-Aware POMDP is further benchmarked against five representative governance strategies operating under identical Bayesian beliefs, information, and governance objectives. The results show that while specialized heuristics perform well in stationary settings, sequential Bayesian governance provides the strongest general-purpose governance policy across heterogeneous AI-quality regimes by adaptively allocating organizational decision authority under uncertainty.",
+      "published": "2026-06-28T14:01:42Z",
+      "updated": "2026-06-28T14:01:42Z",
+      "categories": [
+        "q-fin.RM",
+        "math.OC"
+      ],
+      "pdfUrl": "https://arxiv.org/pdf/2606.29406v1",
+      "absUrl": "https://arxiv.org/abs/2606.29406v1",
+      "industrySource": ""
     },
     {
       "id": "http://arxiv.org/abs/2606.27570v1",
@@ -1168,51 +1211,6 @@
       ],
       "pdfUrl": "https://arxiv.org/pdf/2605.11553v1",
       "absUrl": "https://arxiv.org/abs/2605.11553v1",
-      "industrySource": ""
-    },
-    {
-      "id": "http://arxiv.org/abs/2605.11447v1",
-      "title": "Conditional Memory Enhanced Item Representation for Generative Recommendation",
-      "authors": [
-        "Ziwei Liu",
-        "Yejing Wang",
-        "Shengyu Zhou",
-        "Xinhang Li",
-        "Xiangyu Zhao"
-      ],
-      "affiliations": [],
-      "abstract": "Generative recommendation (GR) has emerged as a promising paradigm that predicts target items by autoregressively generating their semantic identifiers (SID). Most GR methods follow a quantization-representation-generation pipeline, first assigning each item a SID, then constructing input representations from SID-token embeddings, and finally predicting the target SID through autoregressive generation. Existing item-level representation constructions mainly take two forms: directly merging SID-token embeddings into a compact vector, or enriching item-level representations with external inputs through additional networks. However, these item-level constructors still expose two practical challenges: direct merging may amplify the information loss caused by quantization and ID collision while obscuring SID code relations, whereas external-input-based methods can strengthen item semantics but cannot reliably preserve the SID-structured evidence required for token-level generation. These limitations make representation construction an underexplored bottleneck, leading to two severe problems, \\ie{} the Identity-Structure Preservation Conflict and Input-Output Granularity Mismatch. To this end, we propose ComeIR, a Conditional Memory enhanced Item Representation framework that reconstructs SID-token embeddings into item-aware inputs and restores the token granularity during SID decoding. Specifically, MM-guided token scoring adaptively estimates the contribution of each code within the SID, dual-level Engram memory captures intra-item code composition and inter-item transition patterns, and a memory-restoring prediction head reuses the memories during SID decoding. Extensive experiments demonstrate the effectiveness and flexibility of ComeIR, and further reveal scalable gains from enlarging conditional memory.",
-      "published": "2026-05-12T02:56:59Z",
-      "updated": "2026-05-12T02:56:59Z",
-      "categories": [
-        "cs.IR",
-        "cs.AI"
-      ],
-      "pdfUrl": "https://arxiv.org/pdf/2605.11447v1",
-      "absUrl": "https://arxiv.org/abs/2605.11447v1",
-      "industrySource": ""
-    },
-    {
-      "id": "http://arxiv.org/abs/2605.18805v1",
-      "title": "RecoAtlas: From Semantic Plausibility to Set-Level Utility in LLM Recommendation Agents",
-      "authors": [
-        "Imad Aouali",
-        "Flavian Vasile",
-        "Otmane Sakhi",
-        "Alexandre Gilotte",
-        "Benjamin Heymann"
-      ],
-      "affiliations": [],
-      "abstract": "LLM recommendation agents increasingly produce structured recommendation reports: sets of items accompanied by natural-language justifications. Yet existing evaluations often reduce this setting to reranking small shortlisted candidate sets or judge reports mainly by semantic plausibility. We introduce Recommendation Atlas (Agentic Tool-Level Assessment for Shopping), or RecoAtlas, a benchmark and toolkit for evaluating shopping agents with behavior-grounded metrics. RecoAtlas complements held-out interaction metrics with learned utility proxies for relevance, complementarity, and diversity derived from interaction data, while separately measuring semantic coherence and explanation quality. Its controlled tool environment exposes agents to either semantic, behavior-aligned, or faulty tools, enabling diagnosis of whether performance gains arise from stronger reasoning, better signals, or more effective tool-use policies. Across controlled experiments, we show that RecoAtlas exhibits key properties of a meaningful benchmark for agentic systems: performance scales with model capacity and test-time compute, improves with stronger and better-aligned tools, degrades under noisy or misaligned signals, and reveals that semantic plausibility does not necessarily capture behavior-grounded utility. RecoAtlas provides a foundation for developing and evaluating shopping assistants that optimize not only for plausible recommendations, but also for coherent, behaviorally grounded recommendation sets.",
-      "published": "2026-05-11T18:55:32Z",
-      "updated": "2026-05-11T18:55:32Z",
-      "categories": [
-        "cs.IR",
-        "cs.AI",
-        "cs.LG"
-      ],
-      "pdfUrl": "https://arxiv.org/pdf/2605.18805v1",
-      "absUrl": "https://arxiv.org/abs/2605.18805v1",
       "industrySource": ""
     }
   ]
