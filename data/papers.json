@@ -1,7 +1,51 @@
 {
-  "lastUpdated": "2026-06-30T05:10:43Z",
-  "totalResults": 658,
+  "lastUpdated": "2026-07-01T05:45:43Z",
+  "totalResults": 659,
   "papers": [
+    {
+      "id": "http://arxiv.org/abs/2606.31693v1",
+      "title": "ShopX: A Foundation Model for Intent-to-Item Fulfillment in Agentic Shopping",
+      "authors": [
+        "Jiacheng Chen",
+        "Tao Zhang",
+        "Manxi Lin",
+        "Dunxian Huang",
+        "Teng Shi",
+        "Honghao Fu",
+        "Mengyan Li",
+        "Xinming Zhang",
+        "Chenchi Zhang",
+        "Xuan Lu",
+        "Xiaoxiong Du",
+        "Haibin Chen",
+        "Shaolin Ye",
+        "Hao Chang",
+        "Xiaoqi Li",
+        "Shuwen Xiao",
+        "Yujin Yuan",
+        "Jingxuan Feng",
+        "Shaopan Xiong",
+        "Huimin Yi",
+        "Ju Huang",
+        "Qiu Shen",
+        "Ying Chen",
+        "Junjun Zheng",
+        "Xiangheng Kong",
+        "Yuning Jiang"
+      ],
+      "affiliations": [],
+      "abstract": "The wave of AI-native applications is moving shopping beyond page- and feed-based browsing toward intent-driven experiences orchestrated by LLM agents. A common design wraps an LLM around existing search and recommendation pipelines, forcing complex intents through low-bandwidth retrieval or ranking interfaces and leaving a gap between language understanding and item-space fulfillment. Generative recommendation gives LLMs a direct item-space interface through semantic IDs (SIDs), but existing models mainly generate candidates for retrieval rather than translate flexible intents into item-space outcomes. We propose ShopX to address this bottleneck by unifying intent understanding, execution planning, and flexible SID-native item-space operations into a single foundation model. We deploy ShopX in agentic shopping workflows through a model-native item-fulfillment framework with a serving harness that defines a model-facing action protocol and exposes support surfaces for context access, catalog grounding, and state management. Within this framework, ShopX plans and composes SID-based item-space operations such as SID beam-search retrieval, listwise ranking, or product bundling. This model-centric design reduces lossy hand-offs between agent orchestration and item-space execution. To build ShopX, we design semantically recoverable, LLM-operable SIDs and a training recipe that equips a general LLM for flexible multi-turn item-space fulfillment while retaining the knowledge and instruction-following abilities needed by a shopping agent. We evaluate the ShopX framework against tool-mediated agentic systems on single- and multi-turn fulfillment tasks derived from anonymized Taobao production logs, showing that model-native fulfillment improves overall framework behavior, especially on complex or ambiguous requests.",
+      "published": "2026-06-30T14:05:28Z",
+      "updated": "2026-06-30T14:05:28Z",
+      "categories": [
+        "cs.IR",
+        "cs.AI",
+        "cs.CL"
+      ],
+      "pdfUrl": "https://arxiv.org/pdf/2606.31693v1",
+      "absUrl": "https://arxiv.org/abs/2606.31693v1",
+      "industrySource": "Alibaba"
+    },
     {
       "id": "http://arxiv.org/abs/2606.25147v1",
       "title": "TokenMinds: Pretrained User Tokens and Embeddings for User Understanding in Large Recommender Systems",
@@ -257,7 +301,7 @@
       "industrySource": "OpenAI"
     },
     {
-      "id": "http://arxiv.org/abs/2606.29793v1",
+      "id": "http://arxiv.org/abs/2606.29793v2",
       "title": "Fund2Persona: A Framework for Building and Refining Financial Advisor Personas from Fund Disclosure Data",
       "authors": [
         "Suhwan Park",
@@ -272,13 +316,13 @@
       "affiliations": [],
       "abstract": "Demand for personalized financial advising is growing, but consistent advisor expertise is difficult to obtain, scale, and encode in LLM systems. Simple persona prompts rarely specify how a financial advisor should reason and often drift toward generic recommendations. We propose Fund2Persona, a framework that grounds financial-advisor personas in fund disclosures, holdings transitions, market context, and manager commentary, then refines them through an agentic actor--scorer--patcher loop. We evaluate the resulting personas on held-out holdings-transition reconstruction and manager-commentary alignment, where they better recover portfolio decisions and grounded manager interpretation than generic baselines. We further study two downstream diagnostics: market-scenario generation, where persona retrieval broadens plausible investment views beyond repeated generic rollouts, and advisory dialogues grounded in investor profiles, where matched personas give more specific and useful advice than a generic advisor. These results suggest that fund-data-grounded financial-advisor personas can make manager-specific investment expertise portable rather than merely changing an LLM's surface style.",
       "published": "2026-06-29T05:14:43Z",
-      "updated": "2026-06-29T05:14:43Z",
+      "updated": "2026-06-30T06:50:50Z",
       "categories": [
         "cs.CL",
         "q-fin.GN"
       ],
-      "pdfUrl": "https://arxiv.org/pdf/2606.29793v1",
-      "absUrl": "https://arxiv.org/abs/2606.29793v1",
+      "pdfUrl": "https://arxiv.org/pdf/2606.29793v2",
+      "absUrl": "https://arxiv.org/abs/2606.29793v2",
       "industrySource": ""
     },
     {
@@ -1191,26 +1235,6 @@
       ],
       "pdfUrl": "https://arxiv.org/pdf/2605.12617v1",
       "absUrl": "https://arxiv.org/abs/2605.12617v1",
-      "industrySource": ""
-    },
-    {
-      "id": "http://arxiv.org/abs/2605.11553v1",
-      "title": "TwiSTAR:Think Fast, Think Slow, Then Act,Generative Recommendation with Adaptive Reasoning",
-      "authors": [
-        "Shiteng Cao",
-        "Kaian Jiang",
-        "Yunlong Gong",
-        "Zhiheng Li"
-      ],
-      "affiliations": [],
-      "abstract": "Generative recommendation with Semantic IDs (SIDs) has emerged as a promising paradigm, yet existing methods apply a fixed inference strategy, either fast direct generation or slow chain-of-thought reasoning, uniformly across all user histories. This approach creates a trade-off: fast recommendation model produces suboptimal accuracy on hard samples, while always invoking slow reasoning incurs prohibitive latency and wastes computation on easy cases. To address this, we propose Think Fast, Think Slow, Then Act, a framework that learns to adaptively allocate reasoning effort per user sequence. Our system equips an LLM with three complementary tools: a fast SID-based retriever, a lightweight candidate ranker, and a slow reasoning model that generates explicit rationales before recommending. Crucially, we inject collaborative commonsense into the slow model by transforming item-to-item knowledge into natural language explanations. A planner, trained through supervised warm-up followed by agentic reinforcement learning, dynamically decides which tool to invoke. Experiments on three datasets demonstrate that our method outperforms strong baselines, achieving consistent accuracy gains while reducing inference latency compared to uniform slow reasoning.",
-      "published": "2026-05-12T05:35:00Z",
-      "updated": "2026-05-12T05:35:00Z",
-      "categories": [
-        "cs.IR"
-      ],
-      "pdfUrl": "https://arxiv.org/pdf/2605.11553v1",
-      "absUrl": "https://arxiv.org/abs/2605.11553v1",
       "industrySource": ""
     }
   ]
