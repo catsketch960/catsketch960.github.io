@@ -1,7 +1,57 @@
 {
-  "lastUpdated": "2026-07-02T05:03:44Z",
-  "totalResults": 660,
+  "lastUpdated": "2026-07-09T04:59:28Z",
+  "totalResults": 665,
   "papers": [
+    {
+      "id": "http://arxiv.org/abs/2607.03918v1",
+      "title": "Beyond Item Order: Temporal Gap Tokenization for Generative Recommendation with Semantic IDs",
+      "authors": [
+        "Chengkai Huang",
+        "Tianqi Gao",
+        "Hongtao Huang",
+        "Quan Z. Sheng",
+        "Lina Yao"
+      ],
+      "affiliations": [],
+      "abstract": "Semantic-ID-based generative recommendation has recently emerged as a scalable paradigm for sequential recommendation, where each item is represented by a compact sequence of discrete codes and next-item prediction is formulated as code generation. Existing methods, however, typically construct user histories as sequences of static item identifiers, leaving the elapsed time between consecutive interactions outside the generative input. This temporal blindness is problematic because inter-interaction gaps provide useful cues about interest continuity and preference drift. In this paper, we propose ChronoSID, a lightweight temporal augmentation framework for semantic-ID-based generative recommendation. ChronoSID injects temporal signals into the standard three-stage semantic-ID pipeline from two complementary perspectives. First, we introduce Time-Aware Field-Aware Masked Auto-Encoding (TA-FAMAE), which regularizes item representation learning with an auxiliary time-gap prediction objective. Second, we discretize historical interaction intervals into fixed log-scale gap tokens and interleave them with semantic ID tuples as the encoder input of the sequence-to sequence generator. This design preserves the compact SID generation paradigm while enabling the model to capture time-aware transition patterns. Experiments on Amazon review benchmarks show that ChronoSID consistently improves over ReSID and other competitive generative recommendation baselines. Ablation studies further verify the contribution of both temporal components, and diagnostic analyses show clearer gains under long-gap scenarios where user interests are more likely to drift.",
+      "published": "2026-07-04T15:22:30Z",
+      "updated": "2026-07-04T15:22:30Z",
+      "categories": [
+        "cs.IR"
+      ],
+      "pdfUrl": "https://arxiv.org/pdf/2607.03918v1",
+      "absUrl": "https://arxiv.org/abs/2607.03918v1",
+      "industrySource": "Amazon"
+    },
+    {
+      "id": "http://arxiv.org/abs/2607.03362v1",
+      "title": "HGenPush: A Heterogeneous Generative Recommendation Architecture for Industrial Push Notification Systems",
+      "authors": [
+        "Xiao Liang",
+        "Jiali Feng",
+        "Xin Feng",
+        "Yiqing Wang",
+        "Baolin Ye",
+        "Siyao Feng",
+        "Zhihui Deng",
+        "Cunyi Zhang",
+        "Huajin Sun",
+        "Xuanping Li",
+        "Kaiqiao Zhan",
+        "Yanan Niu",
+        "Kun Gai"
+      ],
+      "affiliations": [],
+      "abstract": "With the explosive growth of content platforms, recommendation systems need to better satisfy user demands to enhance user satisfaction and retention. Taking short-video platforms as an example, users not only seek high-quality content but also trusted authors. Although generative recommendation systems have achieved breakthroughs in recent years, existing methods primarily generate single-type recommendation content and typically employ the inefficient autoregressive paradigm to generate semantic IDs. In this paper, we propose an end-to-end heterogeneous generative recommendation architecture called HGenPush. First, we design a hybrid user behavior understanding module that integrates multi-scenario and multi-perspective behaviors to capture precise user interest. Then, we design a dual-branch heterogeneous generative recommendation module that integrates video recommendation and author recommendation within a unified framework. In addition, to improve generation efficiency, we design a lightweight multi-token prediction method that discards the autoregressive paradigm. Finally, we design a user consumption preference alignment module, which leverages user feedback as reward signals to guide the model toward generating higher-quality content, thereby enhancing user experience and engagement. Through these designs, HGenPush simultaneously fulfills users' demands for high-quality content and trusted authors. We have deployed HGenPush on the push notification system of Kuaishou, a large-scale short-video platform, achieving a significant 0.181% increase in daily active users.",
+      "published": "2026-07-03T14:18:19Z",
+      "updated": "2026-07-03T14:18:19Z",
+      "categories": [
+        "cs.IR"
+      ],
+      "pdfUrl": "https://arxiv.org/pdf/2607.03362v1",
+      "absUrl": "https://arxiv.org/abs/2607.03362v1",
+      "industrySource": "Kuaishou"
+    },
     {
       "id": "http://arxiv.org/abs/2606.31693v1",
       "title": "ShopX: A Foundation Model for Intent-to-Item Fulfillment in Agentic Shopping",
@@ -280,25 +330,64 @@
       "industrySource": "Amazon"
     },
     {
-      "id": "http://arxiv.org/abs/2605.12772v1",
-      "title": "Just Ask for a Table: A Thirty-Token User Prompt Defeats Sponsored Recommendations in Twelve LLMs",
+      "id": "http://arxiv.org/abs/2607.06260v1",
+      "title": "Large language models create an uneven informational layer over cities",
       "authors": [
-        "Andreas Maier",
-        "Jeta Sopa",
-        "Gozde Gul Sahin",
-        "Paula Perez-Toro",
-        "Siming Bayer"
+        "Lin Chen",
+        "Guangyuan Weng",
+        "Esteban Moro"
       ],
       "affiliations": [],
-      "abstract": "Wu et al. (2026) showed that most frontier large language models (LLMs) recommend a sponsored, roughly twice-as-expensive flight when their system prompt contains a soft sponsorship cue. We reproduce their evaluation on ten open-weight chat models plus the two of their twenty-three models that are still reachable today (gpt-3.5-turbo, gpt-4o). All reported rates in this paper are produced under the same judge the original paper used (gpt-4o); we additionally store every label under an open-weight (gpt-oss-120b) and a smaller proprietary (gpt-4o-mini) judge for an ablation. Three findings emerge. First, a prose description of an LLM evaluation pipeline is not, on its own, sufficient for accurate reproduction: we surfaced three silent implementation failures that each shifted a reported rate by tens of percentage points. Second, the central claims do generalise - the gpt-3.5-turbo logistic-regression intercept of alpha = 0.81 is within four points of the original alpha = 0.86, and 200 of 200 trials on gpt-3.5-turbo and gpt-4o promote a payday lender to a financially distressed user. Third, a thirty-token user prompt that asks the assistant for a neutral comparison table first cuts sponsored recommendation from 46.9% to 1.0% averaged across our ten open-source models, and from 53.0% to 0% averaged across the two OpenAI models. AI literacy and price-comparison portals are likely market-level mitigations; the harmful-product cell is bounded by neither. Raw data, labels and analysis scripts are at https://github.com/akmaier/Paper-LLM-Ads .",
-      "published": "2026-05-12T21:34:33Z",
-      "updated": "2026-05-12T21:34:33Z",
+      "abstract": "Large language models (LLMs) are emerging as a new informational layer over cities, shaping which places people discover, consider, and ultimately visit. Yet little is known about which places they surface, which they ignore, and whether these patterns vary across communities and users and translate into real-world economic consequences. Here, we audit restaurant recommendations from three major LLMs across 304 neighborhoods in five U.S. cities using 320 synthetic user profiles spanning income, age, sex, and residential status. We find that LLMs both fabricate venues and systematically overlook real ones. Fabrication is concentrated in neighborhoods with weaker digital and physical footprints and disappears when models are provided with verified venue lists. In contrast, invisibility persists: even when choosing from a fixed set of real venues, 47.5% of establishments are never recommended, and 31.9% of these blind spots are shared across all three model families, indicating that uneven visibility reflects not only missing knowledge but also stable patterns of selective attention rooted in shared patterns of visibility rather than model-specific errors. The same selectivity extends to users. Within identical venue pools, higher-income users receive more expensive and less popular venues, while tourists are directed toward costlier but more socially diverse establishments than local residents. Simulating the resulting shifts in consumer demand suggests that widespread reliance on LLM recommendations would redirect visits and revenue away from chain and quick-service restaurants toward independent and full-service dining. Together, our findings show that LLMs act as a selective layer of urban information that unevenly distributes visibility across places and people, with potential consequences for local economies and urban inequality.",
+      "published": "2026-07-07T13:26:38Z",
+      "updated": "2026-07-07T13:26:38Z",
       "categories": [
-        "cs.CV"
+        "cs.CY",
+        "cs.SI"
       ],
-      "pdfUrl": "https://arxiv.org/pdf/2605.12772v1",
-      "absUrl": "https://arxiv.org/abs/2605.12772v1",
-      "industrySource": "OpenAI"
+      "pdfUrl": "https://arxiv.org/pdf/2607.06260v1",
+      "absUrl": "https://arxiv.org/abs/2607.06260v1",
+      "industrySource": ""
+    },
+    {
+      "id": "http://arxiv.org/abs/2607.05761v1",
+      "title": "Synthetic Consumer Insight Generation with Large Language Models",
+      "authors": [
+        "Stephen L. France",
+        "Pia. A. Albinsson"
+      ],
+      "affiliations": [],
+      "abstract": "Modern data-driven marketing relies on large amounts of consumer data, yet collecting such data can be costly, time-consuming, and difficult to scale. This research examines whether large language models (LLMs) can be used to generate synthetic consumer data for projective techniques, a set of methods designed to elicit consumer associations, emotions, wants, and needs. We test LLM-generated responses across multiple projective tasks, LLMs, prompting strategies, and temperature settings, and compare them with human responses from a primary research study on perceptions of city tourism destinations. Human and LLM responses were analyzed using linguistic measures, diversity and concentration metrics, topic models, and top-term analyses. The results show substantial overlap between human and LLM responses in broad topics and associations, but also important differences in style, linguistic structure, and the way diversity is generated. Recommendations are given on how to best utilize LLMs for generating synthetic consumer data, how model and prompt choices shape response quality, and on recognizing the limitations of LLM synthetic consumer data generation.",
+      "published": "2026-07-07T02:38:41Z",
+      "updated": "2026-07-07T02:38:41Z",
+      "categories": [
+        "cs.AI"
+      ],
+      "pdfUrl": "https://arxiv.org/pdf/2607.05761v1",
+      "absUrl": "https://arxiv.org/abs/2607.05761v1",
+      "industrySource": ""
+    },
+    {
+      "id": "http://arxiv.org/abs/2607.02818v1",
+      "title": "Long-Term Optimization for Large-Scale Generative Retrieval with Off-Policy REINFORCE",
+      "authors": [
+        "Artem Matveev",
+        "Sergei Makeev",
+        "Aleksei Krasilnikov",
+        "Vladimir Baikalov",
+        "Sergei Liamaev",
+        "Kirill Khrylchenko"
+      ],
+      "affiliations": [],
+      "abstract": "Generative retrieval has become a popular paradigm for large-scale recommendation. However, it is typically trained with supervised next-item prediction objectives that do not directly optimize long-term user satisfaction. In this work, we formulate recommendation as a session-level sequential decision-making problem and introduce an autoregressive approach for training generative retrievers with off-policy REINFORCE on pre-collected data. Unlike the one-step off-policy correction used in prior work, we propose a multi-step approximation of importance weights enabled by the autoregressive formulation. To support offline evaluation, we train a user feedback model that simulates user responses to generated recommendations. This lets us adapt doubly robust off-policy evaluation for sequential decision-making to recommendation, a setting that has received limited attention. We further introduce a feedback-model-based test-time scaling procedure that simulates future responses and selects recommendations with the highest predicted long-term returns. Experiments on the public large-scale Yambda-5B dataset show that our RL agent improves offline estimates of cumulative session reward over next-item and next-positive prediction baselines, while largely preserving retrieval quality. Moreover, allocating more inference-time compute to simulating future responses improves model-based long-term return estimates without updating the policy.",
+      "published": "2026-07-02T23:13:36Z",
+      "updated": "2026-07-02T23:13:36Z",
+      "categories": [
+        "cs.IR"
+      ],
+      "pdfUrl": "https://arxiv.org/pdf/2607.02818v1",
+      "absUrl": "https://arxiv.org/abs/2607.02818v1",
+      "industrySource": ""
     },
     {
       "id": "http://arxiv.org/abs/2607.00454v1",
@@ -1142,102 +1231,6 @@
       ],
       "pdfUrl": "https://arxiv.org/pdf/2605.17267v2",
       "absUrl": "https://arxiv.org/abs/2605.17267v2",
-      "industrySource": ""
-    },
-    {
-      "id": "http://arxiv.org/abs/2605.16825v3",
-      "title": "Echoes in Filter Bubble: Diagnosing and Curing Popularity Bias in Generative Recommenders",
-      "authors": [
-        "Jun Yin",
-        "Bangguo Zhu",
-        "Peng Huo",
-        "Ruochen Liu",
-        "Hao Chen",
-        "Senzhang Wang",
-        "Shirui Pan",
-        "Chengqi Zhang"
-      ],
-      "affiliations": [],
-      "abstract": "Recently, Generative Recommenders (GRs), characterized by a unified end-to-end framework, have exhibited astonishing potential in transforming the recommendation paradigm. Despite their effectiveness, we recognize that GRs are still susceptible to the long-standing issue of popularity bias that has pervaded the recommendation community. Although a few studies have attempted to extend traditional debiasing methods to GRs, their effectiveness is marginal, and the fundamental reason why GRs suffer from popularity bias remains under-explored. To bridge this gap, this study focuses on two core aspects in GRs: the optimization of generative framework and the item tokenization based on semantic index. Based on theoretical analyses, we identify that the severe popularity bias emerges from the confluence of a token-level optimization flaw and the undifferentiated property of item tokenization. Accordingly, this study develops a novel generative recommender system, called Ghost, by designing the asymmetric unlikelihood optimization and the skeleton-founded tokenization. Extensive empirical evaluations across three datasets, alongside multiple SOTA baselines, reveal that Ghost substantially alleviates popularity bias and promotes fairer recommendations, while incurring slight degradation to the overall recommendation utility.",
-      "published": "2026-05-16T06:02:40Z",
-      "updated": "2026-05-28T13:58:37Z",
-      "categories": [
-        "cs.IR",
-        "cs.AI"
-      ],
-      "pdfUrl": "https://arxiv.org/pdf/2605.16825v3",
-      "absUrl": "https://arxiv.org/abs/2605.16825v3",
-      "industrySource": ""
-    },
-    {
-      "id": "http://arxiv.org/abs/2605.14853v2",
-      "title": "Discrimination Is Generation: Unifying Ranking and Retrieval from a Tokenizer Perspective",
-      "authors": [
-        "Shuli Wang"
-      ],
-      "affiliations": [],
-      "abstract": "Semantic IDs (SIDs) define the generation space of generative recommendation and directly determine its personalization ceiling. However, existing tokenizers are trained independently with retrieval objectives, leaving personalization signals fully decoupled from the SID construction process -- a fundamental gap that causes generative retrieval to persistently lag behind discriminative ranking. In this paper, we rethink the essence of SIDs: \\emph{ranking seeks argmax in item space while retrieval seeks argmax in token space; both are the same problem solved at different granularities.} Based on this insight, we propose \\DIG (\\textbf{D}iscrimination \\textbf{I}s \\textbf{G}eneration), which embeds the tokenizer inside a discriminative ranking model for end-to-end training -- the ranker naturally becomes a retrieval model, yielding two models from a single training run. \\DIG is organized around a \\emph{feature assignment taxonomy}: item-intrinsic static features are encoded into SIDs, user-item cross features (u2i) implicitly drive codebook boundaries toward recommendation decision boundaries during training, and an MLP$_\\mathrm{u2t}$ distillation module approximates u2i at the token level for inference. Experiments on three public benchmarks and two industrial datasets demonstrate that \\DIG simultaneously improves ranking, retrieval, and unified retrieval-ranking quality.",
-      "published": "2026-05-14T13:59:29Z",
-      "updated": "2026-05-21T23:48:52Z",
-      "categories": [
-        "cs.IR"
-      ],
-      "pdfUrl": "https://arxiv.org/pdf/2605.14853v2",
-      "absUrl": "https://arxiv.org/abs/2605.14853v2",
-      "industrySource": ""
-    },
-    {
-      "id": "http://arxiv.org/abs/2605.14512v1",
-      "title": "Asymmetric Generative Recommendation via Multi-Expert Projection and Multi-Faceted Hierarchical Quantization",
-      "authors": [
-        "Bin Huang",
-        "Xin Wang",
-        "Junwei Pan",
-        "Yongqi Zhou",
-        "Yifeng Zhou",
-        "Zhixiang Feng",
-        "Shudong Huang",
-        "Haijie Gu",
-        "Wenwu Zhu"
-      ],
-      "affiliations": [],
-      "abstract": "Generative Recommendation (GenRec) models reformulate recommendation as a sequence generation task, representing items as discrete Semantic IDs used symmetrically as both inputs and prediction targets. We identify a critical dual-stage information bottleneck in this design: (1) the Input Bottleneck, where lossy quantization degrades fine-grained semantics, while popularity bias skews the learned representations toward frequent items, and (2) the Output Bottleneck, where imprecise discrete targets limit supervision quality. To address these issues, we propose AsymRec, an asymmetric continuous-discrete framework that decouples input and output representations. Specifically, Multi-expert Semantic Projection (MSP) maps continuous embeddings into the Transformer's hidden space via expert-specialized projections, preserving semantic richness and improving generalization to infrequent items. Multi-faceted Hierarchical Quantization (MHQ) constructs high-capacity, structured discrete targets through multi-view and multi-level quantization with semantic regularization, preventing dimensional collapse while retaining fine-grained distinctions. Extensive experiments demonstrate that AsymRec consistently outperforms state-of-the-art generative recommenders by an average of 15.8 %. The code will be released.",
-      "published": "2026-05-14T07:55:43Z",
-      "updated": "2026-05-14T07:55:43Z",
-      "categories": [
-        "cs.IR",
-        "cs.AI"
-      ],
-      "pdfUrl": "https://arxiv.org/pdf/2605.14512v1",
-      "absUrl": "https://arxiv.org/abs/2605.14512v1",
-      "industrySource": ""
-    },
-    {
-      "id": "http://arxiv.org/abs/2605.13433v1",
-      "title": "TurboGR: An Accelerated Training System for Large-Scale Generative Recommendation",
-      "authors": [
-        "Huichao Chai",
-        "Zhixin Wu",
-        "Xuemiao Li",
-        "Shiqing Fan",
-        "Hengfeng Wang",
-        "Maojun Peng",
-        "Lu Xu",
-        "Yaoyuan Wang",
-        "Yibo Jin",
-        "Wei Guo",
-        "Yongxiang Feng"
-      ],
-      "affiliations": [],
-      "abstract": "Generative recommendation (GR) has emerged as a promising paradigm that replaces fragmented, scenario-specific architectures with unified Transformer-based models, exhibiting scaling-law behavior where recommendation quality improves systematically with increased model capacity and training data. However, deploying GR at scale on Ascend NPUs faces fundamental system-level challenges. These challenges are further exacerbated on Ascend NPUs due to the absence of high-performance implementations for jagged operators and the architectural mismatch between irregular sparse primitives and NPU's dense-computation-optimized design. In this paper, we present \\model, an Ascend-affinity training system for generative recommendation that systematically addresses these bottlenecks through three core innovations: (i) Ascend-affinity jagged acceleration, including fusion operators that eliminate padding redundancy and dynamic load balancing that reduces inter-device imbalance from 47\\% to 2.4\\%; (ii) distributed communication optimization, comprising hierarchical sparse parallelism, semi-asynchronous training with proven convergence guarantees, and fine-grained pipeline orchestration that sustains 94\\% NPU utilization; and (iii) negative sampling optimization via asynchronous offloading, jaggedness-aware FP16 quantization, and intra-batch logit sharing that expand the effective negative space without additional embedding lookups. Evaluated on the KuaiRand-27K dataset, \\model supports training at up to 0.2B parameters and achieves 54.71\\% MFU with near-linear scalability (0.97).",
-      "published": "2026-05-13T12:26:29Z",
-      "updated": "2026-05-13T12:26:29Z",
-      "categories": [
-        "cs.DC",
-        "cs.LG"
-      ],
-      "pdfUrl": "https://arxiv.org/pdf/2605.13433v1",
-      "absUrl": "https://arxiv.org/abs/2605.13433v1",
       "industrySource": ""
     }
   ]
