@@ -1,6 +1,6 @@
 {
-  "lastUpdated": "2026-07-11T04:18:10Z",
-  "totalResults": 665,
+  "lastUpdated": "2026-07-14T04:07:51Z",
+  "totalResults": 666,
   "papers": [
     {
       "id": "http://arxiv.org/abs/2607.03918v1",
@@ -328,6 +328,33 @@
       "pdfUrl": "https://arxiv.org/pdf/2605.18899v1",
       "absUrl": "https://arxiv.org/abs/2605.18899v1",
       "industrySource": "Amazon"
+    },
+    {
+      "id": "http://arxiv.org/abs/2607.09540v2",
+      "title": "From Raw IDs to Semantic Planning: How Recommender Systems Utilize Information at Scale",
+      "authors": [
+        "Changhong Jin",
+        "Shiqiu Yang",
+        "Roger Zhe Li",
+        "Yingjie Niu",
+        "Aghiles Salah",
+        "Mete Sertkan",
+        "Zheng Ju",
+        "Xingsheng Guo",
+        "Huifeng Guo",
+        "Ruihai Dong",
+        "Barry Smyth"
+      ],
+      "affiliations": [],
+      "abstract": "The evolution of recommender systems can be explored by asking how they utilize information at scale. Throughout most of the historical period under consideration during the past two decades, industrial systems have relied on raw IDs, which are discrete, globally unique, and semantically opaque identifiers that enable exact lookup, logging, and item-specific memorization at scale. Over time, however, recommender systems have sought to utilize richer sources of information, including item content, context, multimodal signals, and cross-domain structure. This development has led to a new stage in which part of such information is no longer used solely as auxiliary features around item identity, but is increasingly encapsulated in semantic IDs that provide a more structured, model-facing form of identity. We argue that this shift goes beyond the rise of generative recommendation over traditional methods. Indeed, it reflects a broader evolution in how recommender systems utilize information under industrial-scale constraints. This paper looks at the past, present, and future to examine three connected questions: why raw IDs dominated the early development of recommender systems, why semantic information is increasingly being encapsulated in IDs today, and what may come next once recommendations move beyond semantic retrieval. In particular, we introduce semantic planning as a possible future direction in which the system first predicts the semantic target of the next exposure, and only then instantiates that target as a specific item or generated creative. We further argue that such a shift may require changes not only in model design but also in evaluation and in the way recommender systems coordinate the objectives of users, platforms, and providers.",
+      "published": "2026-07-10T15:46:12Z",
+      "updated": "2026-07-13T10:35:40Z",
+      "categories": [
+        "cs.IR"
+      ],
+      "pdfUrl": "https://arxiv.org/pdf/2607.09540v2",
+      "absUrl": "https://arxiv.org/abs/2607.09540v2",
+      "industrySource": ""
     },
     {
       "id": "http://arxiv.org/abs/2607.06260v1",
@@ -761,22 +788,22 @@
       "industrySource": ""
     },
     {
-      "id": "http://arxiv.org/abs/2606.09204v1",
+      "id": "http://arxiv.org/abs/2606.09204v2",
       "title": "The Injection Paradox: Brand-Level Suppression in Safety-Trained LLM Recommendations via RAG Context Injection",
       "authors": [
         "Hyunseok Paeng"
       ],
       "affiliations": [],
-      "abstract": "We present a reproducible failure mode of safety training in RAG-based LLM recommendation -- the Injection Paradox -- in which prompt injections embedded in retrieved documents backfire against the attacker, suppressing the target brand below the injection-free baseline. In safety-trained Claude models, documents containing prompt injections suffer a sharp drop in recommendation rate, and this suppression propagates beyond the injected document to unmodified documents of the same brand. In Claude Opus 4.6, the target brand drops from a 54% baseline to zero top-2 recommendations across all 50 trials, even though only 1 of 4 brand documents in the corpus contains an injection. The directional pattern is reproduced in counterfactual experiments and across three brands. A contrasting result across the GPT models tested, where the same injection instead increases recommendations, suggests model-family differences in how injection-like context affects recommendation behavior. These findings raise the technical possibility of a reverse-attack scenario in which an adversary embeds injections in a competitor's documents to suppress the competitor's brand via safety-sensitive model behavior.",
+      "abstract": "We present a reproducible failure mode of safety training in RAG-based LLM recommendation, the Injection Paradox, in which prompt injections embedded in retrieved documents backfire against the attacker, suppressing the target brand below the injection-free baseline. In safety-trained Claude models, documents containing prompt injections suffer a sharp drop in recommendation rate, and this suppression propagates beyond the injected document to unmodified documents of the same brand. In Claude Opus 4.6, the target brand drops from a 54% baseline to zero top-2 recommendations across all 50 trials, even though only 1 of 4 brand documents in the corpus contains an injection. The directional pattern is reproduced in counterfactual experiments and across three brands. A contrasting result across the GPT models tested, where the same injection instead increases recommendations, suggests model-family differences in how injection-like context affects recommendation behavior. These findings raise the technical possibility of a reverse-attack scenario in which an adversary embeds injections in a competitor's documents to suppress the competitor's brand via safety-sensitive model behavior. Code, prompts, privacy-preserving per-trial outcome records, and aggregate results are released.",
       "published": "2026-06-08T08:38:33Z",
-      "updated": "2026-06-08T08:38:33Z",
+      "updated": "2026-07-11T19:50:00Z",
       "categories": [
         "cs.LG",
         "cs.CL",
         "cs.CR"
       ],
-      "pdfUrl": "https://arxiv.org/pdf/2606.09204v1",
-      "absUrl": "https://arxiv.org/abs/2606.09204v1",
+      "pdfUrl": "https://arxiv.org/pdf/2606.09204v2",
+      "absUrl": "https://arxiv.org/abs/2606.09204v2",
       "industrySource": ""
     },
     {
@@ -1204,33 +1231,6 @@
       ],
       "pdfUrl": "https://arxiv.org/pdf/2605.17357v1",
       "absUrl": "https://arxiv.org/abs/2605.17357v1",
-      "industrySource": ""
-    },
-    {
-      "id": "http://arxiv.org/abs/2605.17267v2",
-      "title": "RAGR: Review-Augmented Generative Recommendation",
-      "authors": [
-        "Yingyi Zhang",
-        "Junyi Li",
-        "Yejing Wang",
-        "Wenlin Zhang",
-        "Xiaowei Qian",
-        "Sheng Zhang",
-        "Yue Feng",
-        "Yichao Wang",
-        "Yong Liu",
-        "Xiangyu Zhao",
-        "Xianneng Li"
-      ],
-      "affiliations": [],
-      "abstract": "Sequential recommendation (SR) is traditionally formulated as next-item prediction over chronological item interactions. Although recent generative recommendation (GR) methods introduce new machinery, such as semantic IDs, autoregressive decoding, and unified token spaces, they largely inherit the same item-only modeling assumption. We argue that this design constitutes a structural bottleneck, because user decision-making is not purely behavioral: while item interactions reveal what users choose, review feedback often explains why they choose it by exposing latent evaluative factors. Motivated by this observation, we propose Review-Augmented Generative Recommendation (RAGR), a novel GR framework that incorporates review feedback into the generative user sequence rather than treating reviews as auxiliary side information. Specifically, RAGR introduces a Review-Augmented User Sequence Modeling mechanism that interleaves item semantic IDs and review semantic IDs in chronological order to construct a mixed behavioral-semantic sequence, enabling review signals to participate directly in autoregressive next-token generation. To preserve the recommendation objective, we further introduce an Item-Centric Task Generation Alignment strategy based on direct preference optimization (DPO), encouraging the model to favor item tokens over review tokens at prediction positions. Experiments on three real-world datasets show that RAGR yields consistent and significant gains over strong GR backbones. Our code is available at https://github.com/Zhang-Yingyi/RAGR.",
-      "published": "2026-05-17T05:21:23Z",
-      "updated": "2026-06-15T03:19:41Z",
-      "categories": [
-        "cs.IR"
-      ],
-      "pdfUrl": "https://arxiv.org/pdf/2605.17267v2",
-      "absUrl": "https://arxiv.org/abs/2605.17267v2",
       "industrySource": ""
     }
   ]
