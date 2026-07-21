@@ -1,7 +1,55 @@
 {
-  "lastUpdated": "2026-07-14T04:07:51Z",
-  "totalResults": 666,
+  "lastUpdated": "2026-07-21T04:19:19Z",
+  "totalResults": 670,
   "papers": [
+    {
+      "id": "http://arxiv.org/abs/2607.16633v1",
+      "title": "Beyond Fixed Depths and Widths: Optimizing Textual Decoding Tries in LLM-based Generative Recommendation",
+      "authors": [
+        "Jingzhe Liu",
+        "Hanbing Wang",
+        "Jiliang Tang",
+        "Liam Collins",
+        "Tong Zhao",
+        "Neil Shah",
+        "Mingxuan Ju"
+      ],
+      "affiliations": [],
+      "abstract": "Generative recommendation (GR) is an increasingly popular paradigm in recommender systems, with a prominent line of work using LLMs as autoregressive backbones to predict the next item's term IDs (e.g., titles or keywords). The success of autoregressive generation hinges on constrained beam search over a decoding trie to ensure that generated outputs correspond to valid items. However, current research predominantly focuses on generating more comprehensive term IDs to describe items, while largely neglecting the structural design of the decoding trie formed by these terms. This can lead to a trie that is poorly suited to beam search, which degrades performance. To address this, we examine the effectiveness of term IDs from the perspective of decoding trie optimization. Through empirical and theoretical analyses, we identify two desirable properties for a highly performant trie: (1) adaptive and variable ID length, enabling items with varying semantic richness to be represented by IDs of appropriate lengths, and (2) constrained branching factors, especially at shallow levels, which drastically improves the success rate of constrained beam search. Motivated by these properties, we introduce BONSAI: Branching-Optimized Node Structure for Adaptive Identifiers, a novel framework that co-designs textual term IDs and their underlying decoding trie. BONSAI extracts recommendation-informative words from item metadata and employs a minimum set cover formulation to recursively build a trie that satisfies the above properties. Experiments reveal that BONSAI achieves up to a 21.6% relative improvement over state-of-the-art baselines. Further analyses confirm the crucial role of our proposed properties, and demonstrate their generalizability to be applied to enhance the performance of other term ID methods.",
+      "published": "2026-07-18T04:31:02Z",
+      "updated": "2026-07-18T04:31:02Z",
+      "categories": [
+        "cs.IR"
+      ],
+      "pdfUrl": "https://arxiv.org/pdf/2607.16633v1",
+      "absUrl": "https://arxiv.org/abs/2607.16633v1",
+      "industrySource": "Meta"
+    },
+    {
+      "id": "http://arxiv.org/abs/2607.12277v1",
+      "title": "Not Only NTP: Extending Training Signal Coverage for Generative Recommendation",
+      "authors": [
+        "Changhao Li",
+        "Shuli Wang",
+        "Junwei Yin",
+        "Senjie Kou",
+        "Yinqiu Huang",
+        "Chi Wang",
+        "Yinhua Zhu",
+        "Haitao Wang",
+        "Xingxing Wang"
+      ],
+      "affiliations": [],
+      "abstract": "Next-Token Prediction (NTP) carries two structural training signal limitations. First, NTP optimizes for single-step prediction only, placing no supervised pressure on learning longer-range behavioral structure -- we term this \\textbf{temporal locality}. Second, in multi-domain sequences, each target item embedding receives gradient updates exclusively from the immediately preceding hidden state, with no explicit gradient pathway from cross-domain context -- we term this \\textbf{spatial locality}. We propose \\textbf{NONTP}, extending NTP's signal coverage along both dimensions through two auxiliary objectives. \\textbf{TCL (Temporal Contrastive Learning)} uses a BYOL-style EMA teacher with InfoNCE to align hidden states against a $K$-step future trajectory in representation space. \\textbf{TDL (Trans-Domain Learning)} mean-pools cross-domain hidden states and predicts through the shared prediction head, opening a second gradient pathway with no additional parameters. Both are discarded at inference: zero overhead. On a four-domain Meituan industrial dataset (full ranking), NONTP achieves HR@10 +34.3\\% over NTP and +18.3\\% over MBGR. On the public Amazon Movie-Book-CDs benchmark, HR@10 +2.8\\% and NDCG@10 +3.7\\%. Online A/B tests confirm CTR +1.8\\% and GMV +2.1\\% (both $p < 0.01$). Ablation studies confirm each component contributes independently, with gradient conflict analyzed as a direction for future work.",
+      "published": "2026-07-14T02:28:23Z",
+      "updated": "2026-07-14T02:28:23Z",
+      "categories": [
+        "cs.IR"
+      ],
+      "pdfUrl": "https://arxiv.org/pdf/2607.12277v1",
+      "absUrl": "https://arxiv.org/abs/2607.12277v1",
+      "industrySource": "Meituan"
+    },
     {
       "id": "http://arxiv.org/abs/2607.03918v1",
       "title": "Beyond Item Order: Temporal Gap Tokenization for Generative Recommendation with Semantic IDs",
@@ -53,7 +101,7 @@
       "industrySource": "Kuaishou"
     },
     {
-      "id": "http://arxiv.org/abs/2606.31693v1",
+      "id": "http://arxiv.org/abs/2606.31693v2",
       "title": "ShopX: A Foundation Model for Intent-to-Item Fulfillment in Agentic Shopping",
       "authors": [
         "Jiacheng Chen",
@@ -81,19 +129,22 @@
         "Ying Chen",
         "Junjun Zheng",
         "Xiangheng Kong",
-        "Yuning Jiang"
+        "Dan Ou",
+        "Haihong Tang",
+        "Yuning Jiang",
+        "Bo Zheng"
       ],
       "affiliations": [],
       "abstract": "The wave of AI-native applications is moving shopping beyond page- and feed-based browsing toward intent-driven experiences orchestrated by LLM agents. A common design wraps an LLM around existing search and recommendation pipelines, forcing complex intents through low-bandwidth retrieval or ranking interfaces and leaving a gap between language understanding and item-space fulfillment. Generative recommendation gives LLMs a direct item-space interface through semantic IDs (SIDs), but existing models mainly generate candidates for retrieval rather than translate flexible intents into item-space outcomes. We propose ShopX to address this bottleneck by unifying intent understanding, execution planning, and flexible SID-native item-space operations into a single foundation model. We deploy ShopX in agentic shopping workflows through a model-native item-fulfillment framework with a serving harness that defines a model-facing action protocol and exposes support surfaces for context access, catalog grounding, and state management. Within this framework, ShopX plans and composes SID-based item-space operations such as SID beam-search retrieval, listwise ranking, or product bundling. This model-centric design reduces lossy hand-offs between agent orchestration and item-space execution. To build ShopX, we design semantically recoverable, LLM-operable SIDs and a training recipe that equips a general LLM for flexible multi-turn item-space fulfillment while retaining the knowledge and instruction-following abilities needed by a shopping agent. We evaluate the ShopX framework against tool-mediated agentic systems on single- and multi-turn fulfillment tasks derived from anonymized Taobao production logs, showing that model-native fulfillment improves overall framework behavior, especially on complex or ambiguous requests.",
       "published": "2026-06-30T14:05:28Z",
-      "updated": "2026-06-30T14:05:28Z",
+      "updated": "2026-07-15T17:49:58Z",
       "categories": [
         "cs.IR",
         "cs.AI",
         "cs.CL"
       ],
-      "pdfUrl": "https://arxiv.org/pdf/2606.31693v1",
-      "absUrl": "https://arxiv.org/abs/2606.31693v1",
+      "pdfUrl": "https://arxiv.org/pdf/2606.31693v2",
+      "absUrl": "https://arxiv.org/abs/2606.31693v2",
       "industrySource": "Alibaba"
     },
     {
@@ -309,28 +360,45 @@
       "industrySource": "Meta"
     },
     {
-      "id": "http://arxiv.org/abs/2605.18899v1",
-      "title": "Don't Let Bandit Feedback Pull Continual LLM-Recommender Updates Off Target",
+      "id": "http://arxiv.org/abs/2607.13304v1",
+      "title": "Where Does the Noise Come From? A Variance-Components Decomposition of Non-Determinism in LLM Brand Answers",
       "authors": [
-        "Taesan Kim",
-        "Hyeongjun Yun",
-        "Jaegul Choo",
-        "Chung Park"
+        "Dmitrij Żatuchin"
       ],
       "affiliations": [],
-      "abstract": "Generative LLM-based recommenders (LLM-Rec) require continual post-deployment updates, yet deployment logs provide only policy-shaped contextual bandit feedback: outcomes are observed solely for items exposed by a prior serving policy, inducing exposure bias and yielding partial, asymmetric signals consisting of relatively reliable positive responses and ambiguous no-responses. We propose an Anchored Bandit Policy Optimization (ABPO) framework for continual LLM-Rec updates that combines group-relative policy optimization (GRPO) with explicit treatment of exposure bias and feedback ambiguity. Specifically, we insert the exposed recommendation as a logged anchor into each GRPO rollout group, so that group-relative normalization is calibrated against the action actually exposed by the prior policy rather than against newly sampled rollouts alone. Because both positive- and no-responses are observed only through prior-policy exposure, we apply self-normalized inverse propensity scoring to the fixed anchor for both feedback types to correct for policy mismatch. At the same time, we treat the two feedback types asymmetrically in reliability: positive responses provide relatively direct endorsement signals, whereas no-responses remain ambiguous because they may reflect either true disinterest or unobserved external factors. To avoid overly aggressive updates from ambiguous no-responses, we temper their penalties with self-certainty, using the model's output-token confidence as a verifier-free reliability signal. Across five domains from Amazon Reviews and MovieLens, our method yields consistent post-update gains in recommendation accuracy while mitigating prior-policy-induced exposure bias more effectively than prior baselines.",
-      "published": "2026-05-17T11:10:44Z",
-      "updated": "2026-05-17T11:10:44Z",
+      "abstract": "Teams measuring whether large language models (LLMs) recommend a brand face a reproducibility problem: ask the same question twice and the answer moves. Practice resamples each prompt a few times (commonly five) and averages, treating within-prompt resampling as the source of the noise. But a measured brand score moves for at least four separable reasons: within-prompt resampling, prompt paraphrase, model identity, and query language. We specify a crossed random-effects (generalizability-theory) decomposition that partitions the total variance of a response-level brand outcome into these four sources, and embed the components in a decision-study allocation that returns how many repeats, paraphrases, models, and languages to buy for a target reliability. We apply it to a fully crossed corpus of 12,933 LLM responses on 20 Central and Eastern European brands, 8 languages, and 3 models (GPT-5.2 and Gemini 3 Flash in parametric mode, Perplexity in grounded retrieval), with a stability subset of 1,435 cells resampled about five times. The outcome is per-response multilingual sentiment polarity. Query language is the largest systematic facet (26.5% of the variance of one response) against 1.5% for brand identity (ICC 0.0146), so a single AI answer carries almost no brand-discriminating signal. Once a cell term isolates pure resampling, resampling is 34.8% of variance and the brand-in-context interaction 29.6%; brand-by-language is 8.6% (a bilingual penalty) while brand-by-model and brand-by-prompt are near zero. Per unit of query budget, adding languages and models reduces relative-error variance far more than adding repeats: a repeat past the fifth reduces it by only 0.0003. Brand-ranking reliability stays low, near 0.01 for a single answer and about 0.36 at the full crossed design, so reliability is bought by spreading across languages and models, not by repeating one prompt.",
+      "published": "2026-07-14T22:12:52Z",
+      "updated": "2026-07-14T22:12:52Z",
       "categories": [
-        "cs.LG",
-        "cs.AI"
+        "cs.IR",
+        "cs.CL"
       ],
-      "pdfUrl": "https://arxiv.org/pdf/2605.18899v1",
-      "absUrl": "https://arxiv.org/abs/2605.18899v1",
-      "industrySource": "Amazon"
+      "pdfUrl": "https://arxiv.org/pdf/2607.13304v1",
+      "absUrl": "https://arxiv.org/abs/2607.13304v1",
+      "industrySource": ""
     },
     {
-      "id": "http://arxiv.org/abs/2607.09540v2",
+      "id": "http://arxiv.org/abs/2607.12425v1",
+      "title": "Where Reasoning Matters: Rethinking Latent Reasoning in Semantic ID-based Generative Recommendation",
+      "authors": [
+        "Shangxin Yang",
+        "Min Gao",
+        "Zongwei Wang",
+        "Junliang Yu"
+      ],
+      "affiliations": [],
+      "abstract": "Semantic ID-based generative recommendation predicts an item by generating a short sequence of semantic ID tokens, where each token is produced autoregressively. Latent reasoning has recently been introduced to improve this process through additional hidden-state computation before each token decision. This raises a practical question: when one item is represented by a sequence of semantic ID tokens, should each token receive the same fixed number of latent refinement steps, or should these steps be allocated more effectively across positions? We study this question through position-wise information-gain (IG), which measures how much each semantic ID position reduces the uncertainty of the target item. We observe that earlier semantic ID positions usually provide higher information-gain, while later positions contribute less additional information. We further analyze that applying more refinement to high-IG positions tends to bring larger expected benefits. Based on this observation, we propose IBA, an Information-Gain Budget Allocation framework for semantic ID-based generative recommendation. IBA treats latent refinement steps as a limited computational resource and learns how to allocate them across semantic ID positions, assigning more refinement to informative positions and less to positions with smaller contribution. Experiments on multiple public datasets show that IBA consistently improves strong generative recommendation baselines and achieves a better accuracy--computation trade-off than fixed or poorly matched step allocations.",
+      "published": "2026-07-14T06:55:12Z",
+      "updated": "2026-07-14T06:55:12Z",
+      "categories": [
+        "cs.IR"
+      ],
+      "pdfUrl": "https://arxiv.org/pdf/2607.12425v1",
+      "absUrl": "https://arxiv.org/abs/2607.12425v1",
+      "industrySource": ""
+    },
+    {
+      "id": "http://arxiv.org/abs/2607.09540v4",
       "title": "From Raw IDs to Semantic Planning: How Recommender Systems Utilize Information at Scale",
       "authors": [
         "Changhong Jin",
@@ -348,12 +416,12 @@
       "affiliations": [],
       "abstract": "The evolution of recommender systems can be explored by asking how they utilize information at scale. Throughout most of the historical period under consideration during the past two decades, industrial systems have relied on raw IDs, which are discrete, globally unique, and semantically opaque identifiers that enable exact lookup, logging, and item-specific memorization at scale. Over time, however, recommender systems have sought to utilize richer sources of information, including item content, context, multimodal signals, and cross-domain structure. This development has led to a new stage in which part of such information is no longer used solely as auxiliary features around item identity, but is increasingly encapsulated in semantic IDs that provide a more structured, model-facing form of identity. We argue that this shift goes beyond the rise of generative recommendation over traditional methods. Indeed, it reflects a broader evolution in how recommender systems utilize information under industrial-scale constraints. This paper looks at the past, present, and future to examine three connected questions: why raw IDs dominated the early development of recommender systems, why semantic information is increasingly being encapsulated in IDs today, and what may come next once recommendations move beyond semantic retrieval. In particular, we introduce semantic planning as a possible future direction in which the system first predicts the semantic target of the next exposure, and only then instantiates that target as a specific item or generated creative. We further argue that such a shift may require changes not only in model design but also in evaluation and in the way recommender systems coordinate the objectives of users, platforms, and providers.",
       "published": "2026-07-10T15:46:12Z",
-      "updated": "2026-07-13T10:35:40Z",
+      "updated": "2026-07-20T02:16:32Z",
       "categories": [
         "cs.IR"
       ],
-      "pdfUrl": "https://arxiv.org/pdf/2607.09540v2",
-      "absUrl": "https://arxiv.org/abs/2607.09540v2",
+      "pdfUrl": "https://arxiv.org/pdf/2607.09540v4",
+      "absUrl": "https://arxiv.org/abs/2607.09540v4",
       "industrySource": ""
     },
     {
@@ -1145,7 +1213,7 @@
       "industrySource": ""
     },
     {
-      "id": "http://arxiv.org/abs/2605.18920v1",
+      "id": "http://arxiv.org/abs/2605.18920v2",
       "title": "SynGR: Unleashing the Potential of Cross-Modal Synergy for Generative Recommendation",
       "authors": [
         "Wei Chen",
@@ -1161,76 +1229,13 @@
       "affiliations": [],
       "abstract": "Generative Recommendation (GR) has emerged as a promising paradigm by formulating item recommendation as a sequence-to-sequence generation task over item identifiers. Recent studies have incorporated multimodal signals to provide richer token-level evidence for generation. However, existing approaches largely rely on alignment-centric fusion and underexplore synergistic information across modalities. In practice, synergistic information plays a critical role in capturing emergent item properties that cannot be inferred from any single modality alone. Such properties encode intrinsic item semantics and guide user preferences, enabling models to move beyond surface-level feature matching. To address this limitation, we propose \\textbf{SynGR}, a synergistic generative recommendation framework that explicitly encourages the exploitation of cross-modal dependencies during generation. By constraining overreliance on dominant modalities, SynGR enables the model to capture emergent item semantics beyond shared or modality-specific signals. Extensive experiments across three benchmark datasets demonstrate that SynGR achieves superior performance.",
       "published": "2026-05-18T09:03:23Z",
-      "updated": "2026-05-18T09:03:23Z",
+      "updated": "2026-07-19T06:50:45Z",
       "categories": [
         "cs.IR",
         "cs.AI"
       ],
-      "pdfUrl": "https://arxiv.org/pdf/2605.18920v1",
-      "absUrl": "https://arxiv.org/abs/2605.18920v1",
-      "industrySource": ""
-    },
-    {
-      "id": "http://arxiv.org/abs/2605.17779v2",
-      "title": "Learning Variable-Length Tokenization for Generative Recommendation",
-      "authors": [
-        "Minhao Wang",
-        "Bowen Wu",
-        "Wei Zhang"
-      ],
-      "affiliations": [],
-      "abstract": "Generative recommendation reformulates recommendation as next-token prediction over discrete semantic identifiers (IDs). A fundamental yet unexplored design choice is that existing methods employ fixed-length tokenization for all items, implicitly assuming uniform encoding capacity regardless of item characteristics. Through systematic experiments across four datasets, we discover the Popularity-Length Paradox: popular items achieve optimal performance with short IDs, while tail items require substantially longer codes to capture discriminative semantics. This reveals a critical mismatch where popular items benefit from abundant collaborative signals and require minimal semantic detail, whereas tail items must rely on fine-grained content features due to sparse interaction data. To address this, we propose VarLenRec, a framework for learning variable-length tokenization. We develop Popularity-Weighted Information Budget Allocation (PIBA), an information-theoretic framework proving that optimal ID length should scale as a negative power of popularity. Directly implementing variable-length allocation faces two technical challenges: standard Euclidean residual quantization lacks geometric capacity to support diverse code lengths without distortion, and discrete length decisions are non-differentiable. We address these through Hyperbolic Residual Quantization, which leverages the exponential volume growth of the Poincaré ball to naturally stratify encoding capacity, and a Soft Length Controller, which enables differentiable length prediction via continuous layer retention probabilities regularized by PIBA-derived priors. Extensive experiments demonstrate that VarLenRec achieves significant improvements over state-of-the-art methods in recommendation accuracy and training/inference efficiency, revealing the importance of adaptive encoding capacity in generative recommendation.",
-      "published": "2026-05-18T02:57:19Z",
-      "updated": "2026-06-12T15:10:40Z",
-      "categories": [
-        "cs.LG"
-      ],
-      "pdfUrl": "https://arxiv.org/pdf/2605.17779v2",
-      "absUrl": "https://arxiv.org/abs/2605.17779v2",
-      "industrySource": ""
-    },
-    {
-      "id": "http://arxiv.org/abs/2605.17648v1",
-      "title": "SAPO: Step-Aligned Policy Optimization for Reasoning-Based Generative Recommendation",
-      "authors": [
-        "Zaiyi Zheng",
-        "Guanghui Min",
-        "Yaochen Zhu",
-        "Liang Wu",
-        "Liangjie Hong",
-        "Chen Chen",
-        "Jundong Li"
-      ],
-      "affiliations": [],
-      "abstract": "Generative recommendation treats next-item prediction as autoregressive item-identifier generation. Specifically, items are encoded as semantic identifiers (SIDs), which are short coarse-to-fine token sequences whose early tokens capture broad semantics and later tokens refine them. Recent work augments this paradigm with reasoning traces and optimizes them via reinforcement learning with verifiable rewards, typically outcome-reward algorithm with exact-match feedback on the generated SID. However, in large-catalog recommendation, exact-match feedback on the generated SID only reports whether the final item is correct; when a generated SID mismatches, outcome-reward cannot identify which SID-token prediction caused the mismatch and may penalize matched SID-token positions together with the mismatched position. We identify that the natural unit of credit assignment in this setting is a single reasoning step (one thinking block paired with one SID token). We instantiate this idea in SAPO (Step-Aligned Policy Optimization): rather than broadcasting one advantage to the whole response, SAPO computes a separate group-relative advantage for each reasoning step and applies it only to the corresponding thinking block and SID token. Across three real-world recommendation datasets, SAPO stabilizes reinforcement-learning training and consistently improves over existing generative recommendation baselines, with the largest gains where sparse exact-match feedback makes reasoning-step credit assignment important. Our results suggest that reinforcement-learning objectives for structured generation should mirror the decoder's own decomposition of the output.",
-      "published": "2026-05-17T20:53:08Z",
-      "updated": "2026-05-17T20:53:08Z",
-      "categories": [
-        "cs.AI"
-      ],
-      "pdfUrl": "https://arxiv.org/pdf/2605.17648v1",
-      "absUrl": "https://arxiv.org/abs/2605.17648v1",
-      "industrySource": ""
-    },
-    {
-      "id": "http://arxiv.org/abs/2605.17357v1",
-      "title": "Dual-Diffusional Generative Fashion Recommendation",
-      "authors": [
-        "Mingzhe Yu",
-        "Lei Wu",
-        "Qianru Sun",
-        "Yunshan Ma"
-      ],
-      "affiliations": [],
-      "abstract": "Personalized generative recommender systems have emerged as a promising solution for fashion recommendation. However, existing methods primarily rely on implicit visual embeddings from historical interactions, which often contain preference-irrelevant information and result in insufficient user behavior modeling. Moreover, these models typically generate only item images, providing limited interpretability. To address these limitations, we propose DualFashion, a Dual-Diffusional Generative Fashion Recommendation Architecture that jointly models image and text modalities for personalized and explainable recommendation. DualFashion adopts a dual-diffusion Transformer with image and text branches, where structured attribute-level captions and visual outfit information are jointly used as conditioning signals to model user behavior. The proposed architecture produces both fashion item images and textual descriptions, ensuring visual compatibility while providing explicit semantic interpretability. Furthermore, we introduce a text-augmented fine-tuning strategy that enhances generation diversity and enables effective cross-modal knowledge transfer without incurring heavy computational costs. Extensive experiments on iFashion and Polyvore-U across Personalized Fill-in-the-Blank and Generative Outfit Recommendation tasks demonstrate that DualFashion achieves strong performance in behavior modeling, interpretability, and efficiency compared to state-of-the-art methods. Our code and model checkpoints are available at https://github.com/LinkMingzhe/DualFashion.",
-      "published": "2026-05-17T09:52:18Z",
-      "updated": "2026-05-17T09:52:18Z",
-      "categories": [
-        "cs.IR",
-        "cs.MM"
-      ],
-      "pdfUrl": "https://arxiv.org/pdf/2605.17357v1",
-      "absUrl": "https://arxiv.org/abs/2605.17357v1",
+      "pdfUrl": "https://arxiv.org/pdf/2605.18920v2",
+      "absUrl": "https://arxiv.org/abs/2605.18920v2",
       "industrySource": ""
     }
   ]
