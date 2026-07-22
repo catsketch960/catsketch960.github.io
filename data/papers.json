@@ -1,6 +1,6 @@
 {
-  "lastUpdated": "2026-07-21T04:19:19Z",
-  "totalResults": 670,
+  "lastUpdated": "2026-07-22T04:20:57Z",
+  "totalResults": 671,
   "papers": [
     {
       "id": "http://arxiv.org/abs/2607.16633v1",
@@ -358,6 +358,29 @@
       "pdfUrl": "https://arxiv.org/pdf/2605.23312v1",
       "absUrl": "https://arxiv.org/abs/2605.23312v1",
       "industrySource": "Meta"
+    },
+    {
+      "id": "http://arxiv.org/abs/2607.18600v1",
+      "title": "Topology-Aware Tokenization for Generative Recommendation",
+      "authors": [
+        "Yaokun Liu",
+        "Yifan Liu",
+        "Zhenrui Yue",
+        "Gyuseok Lee",
+        "Zelin Li",
+        "Ruichen Yao",
+        "Dong Wang"
+      ],
+      "affiliations": [],
+      "abstract": "Generative recommendation reformulates sequential recommendation as an autoregressive generation task, yet a critical issue in this paradigm remains overlooked: topology distortion in item tokenization. In particular, we observe that the intrinsic adjacency relationships of items in the pretrained semantic embedding space are significantly disrupted after quantization. This topology distortion misleads the model's perception of item similarity, ultimately bottlenecking the accuracy of generative recommendations. To address this issue, we propose Topology-Aware Tokenization (TopoTok), an item tokenization framework that preserves item relational structure throughout the quantization hierarchy. Different from the prior monolithic supervision in tokenization, TopoTok introduces a multi-level distillation scheme to progressively recover the topology from coarse to fine granularity: 1) Inter-Group Distillation to capture global cluster-wise relations; 2) Intra-Group Distillation to refine local structures within semantic clusters; and 3) Inter-Item Distillation to enforce fine-grained alignment at the individual item level. Extensive experiments on three benchmark datasets demonstrate that TopoTok effectively alleviates topology distortion and consistently outperforms state-of-the-art tokenizers, achieving significant performance gains of up to 9.42% in Recall@5.",
+      "published": "2026-07-21T00:27:30Z",
+      "updated": "2026-07-21T00:27:30Z",
+      "categories": [
+        "cs.IR"
+      ],
+      "pdfUrl": "https://arxiv.org/pdf/2607.18600v1",
+      "absUrl": "https://arxiv.org/abs/2607.18600v1",
+      "industrySource": ""
     },
     {
       "id": "http://arxiv.org/abs/2607.13304v1",
@@ -1210,32 +1233,6 @@
       ],
       "pdfUrl": "https://arxiv.org/pdf/2605.20742v1",
       "absUrl": "https://arxiv.org/abs/2605.20742v1",
-      "industrySource": ""
-    },
-    {
-      "id": "http://arxiv.org/abs/2605.18920v2",
-      "title": "SynGR: Unleashing the Potential of Cross-Modal Synergy for Generative Recommendation",
-      "authors": [
-        "Wei Chen",
-        "Xingyu Guo",
-        "Shuang Li",
-        "Fuwei Zhang",
-        "Meng Yuan",
-        "Jing Fan",
-        "Zhao Zhang",
-        "Deqing Wang",
-        "Fuzhen Zhuang"
-      ],
-      "affiliations": [],
-      "abstract": "Generative Recommendation (GR) has emerged as a promising paradigm by formulating item recommendation as a sequence-to-sequence generation task over item identifiers. Recent studies have incorporated multimodal signals to provide richer token-level evidence for generation. However, existing approaches largely rely on alignment-centric fusion and underexplore synergistic information across modalities. In practice, synergistic information plays a critical role in capturing emergent item properties that cannot be inferred from any single modality alone. Such properties encode intrinsic item semantics and guide user preferences, enabling models to move beyond surface-level feature matching. To address this limitation, we propose \\textbf{SynGR}, a synergistic generative recommendation framework that explicitly encourages the exploitation of cross-modal dependencies during generation. By constraining overreliance on dominant modalities, SynGR enables the model to capture emergent item semantics beyond shared or modality-specific signals. Extensive experiments across three benchmark datasets demonstrate that SynGR achieves superior performance.",
-      "published": "2026-05-18T09:03:23Z",
-      "updated": "2026-07-19T06:50:45Z",
-      "categories": [
-        "cs.IR",
-        "cs.AI"
-      ],
-      "pdfUrl": "https://arxiv.org/pdf/2605.18920v2",
-      "absUrl": "https://arxiv.org/abs/2605.18920v2",
       "industrySource": ""
     }
   ]
