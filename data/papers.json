@@ -1,6 +1,6 @@
 {
-  "lastUpdated": "2026-07-22T04:20:57Z",
-  "totalResults": 671,
+  "lastUpdated": "2026-07-23T04:20:15Z",
+  "totalResults": 672,
   "papers": [
     {
       "id": "http://arxiv.org/abs/2607.16633v1",
@@ -1177,6 +1177,31 @@
       "industrySource": ""
     },
     {
+      "id": "http://arxiv.org/abs/2607.19357v1",
+      "title": "Stochastic Primal-Dual Decoding for Multiobjective Generative Recommender Systems",
+      "authors": [
+        "Dmitrii Moor",
+        "Ben Carterette",
+        "Senthilkumar Krishnamoorthy",
+        "Kyle Kretschman",
+        "Denis Beslic",
+        "Melissa Yalla",
+        "Alice Y Wang",
+        "Mounia Lalmas"
+      ],
+      "affiliations": [],
+      "abstract": "Recent advances in recommender systems (RS) have shown substantial performance gains through generative modelling. In practice, recommendation often involves constructing slates -- ordered lists of items -- that must satisfy multiple objectives beyond relevance, such as constraints defined over item attributes or fairness constraints. Existing multiobjective approaches either rely on post-processing techniques designed for non-generative settings, or incorporate auxiliary objectives directly into model training. The former does not explicitly account for the sequential nature of generative RS, while the latter is often impractical in large-scale systems. We propose a lightweight, inference-time decoding layer that augments autoregressive generative RS to support multiobjective slate generation without modifying or retraining the underlying model. We formulate decoding as an online constrained optimisation problem, where items are selected sequentially, and trade-offs between relevance and auxiliary objectives are adjusted dynamically based on the remaining constraint slack, i.e., how much of each objective remains to be satisfied. This is implemented via a stochastic primal-dual approximation scheme that balances relevance and auxiliary objectives during generation. We provide theoretical guarantees on constraint violation and regret, and evaluate the proposed approach through extensive offline experiments and a large-scale online A/B experiment in a real-world recommender system. Our results show consistent improvements in multiobjective trade-offs, including a +1.8\\% gain in the auxiliary objectives achieved at zero cost to user satisfaction.",
+      "published": "2026-05-26T15:05:06Z",
+      "updated": "2026-05-26T15:05:06Z",
+      "categories": [
+        "cs.AI",
+        "cs.LG"
+      ],
+      "pdfUrl": "https://arxiv.org/pdf/2607.19357v1",
+      "absUrl": "https://arxiv.org/abs/2607.19357v1",
+      "industrySource": ""
+    },
+    {
       "id": "http://arxiv.org/abs/2605.25330v1",
       "title": "How Reliable Are Semantic-ID Tokenizer Comparisons in Generative Recommendation?",
       "authors": [
@@ -1214,25 +1239,6 @@
       ],
       "pdfUrl": "https://arxiv.org/pdf/2605.23246v1",
       "absUrl": "https://arxiv.org/abs/2605.23246v1",
-      "industrySource": ""
-    },
-    {
-      "id": "http://arxiv.org/abs/2605.20742v1",
-      "title": "VBFDD-Agent for Electric Vehicle Battery Fault Detection and Diagnosis: Descriptive Text Modeling of Battery Digital Signals",
-      "authors": [
-        "Joey Chan",
-        "Zhen Chen",
-        "Ershun Pan"
-      ],
-      "affiliations": [],
-      "abstract": "With the rapid proliferation of electric vehicles, the safety and reliability of lithium-ion batteries have become critical concerns. Effective anomaly detection is essential for ensuring safe battery operation. However, as battery systems and operating scenarios become increasingly complex, battery fault diagnosis and maintenance require stronger cross-domain adaptability and human-AI collaboration. Traditional fault detection and diagnosis methods are usually designed for specific scenarios and predefined workflows, making them less effective in complex real-world applications. To address the scarcity of open-source battery fault report corpora and the lack of unified maintenance knowledge representation, this study proposes a descriptive text modeling approach for battery signal reports. Monitoring signals, statistical features, anomaly records, and state assessment results are transformed into structured and readable natural language descriptions, forming a language corpus for battery health diagnosis and maintenance. Based on this corpus, we propose VBFDD-Agent, a vehicle battery fault detection and diagnosis agent for automotive-grade battery systems. VBFDD-Agent integrates descriptive battery-state texts, historical case retrieval, local maintenance manuals, and large language model reasoning to generate structured diagnostic results and maintenance recommendations. Experiments show that the proposed framework can accurately perform anomaly monitoring based on descriptive textual representations and provide flexible, efficient, and actionable maintenance suggestions. Expert evaluation further confirms the practical value of the generated recommendations. Overall, VBFDD-Agent extends traditional battery diagnosis from label prediction to interpretable and maintenance-oriented decision support.",
-      "published": "2026-05-20T05:44:52Z",
-      "updated": "2026-05-20T05:44:52Z",
-      "categories": [
-        "cs.AI"
-      ],
-      "pdfUrl": "https://arxiv.org/pdf/2605.20742v1",
-      "absUrl": "https://arxiv.org/abs/2605.20742v1",
       "industrySource": ""
     }
   ]
