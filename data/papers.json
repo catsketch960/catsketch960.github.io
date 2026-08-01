@@ -1,7 +1,53 @@
 {
-  "lastUpdated": "2026-07-29T04:17:44Z",
-  "totalResults": 690,
+  "lastUpdated": "2026-08-01T04:24:20Z",
+  "totalResults": 694,
   "papers": [
+    {
+      "id": "http://arxiv.org/abs/2607.27647v1",
+      "title": "LoopMemGR: From Behavior Logs to Evolving Memory for Generative Recommendation",
+      "authors": [
+        "Hui Qian",
+        "Changfa Wu",
+        "Chang Liu",
+        "Binbin Cao",
+        "Jian Wu",
+        "Yuliang Yan",
+        "Han Zhu",
+        "Bo Zheng"
+      ],
+      "affiliations": [],
+      "abstract": "Generative recommendation formulates next-item prediction as conditional autoregressive generation over discrete Semantic IDs, enabling end-to-end recommendation over large-scale item spaces. However, most existing methods follow a history-as-context paradigm that repeatedly reconstructs user preference from behavior history while discarding system-side recommendation decisions after each request. This creates an asymmetric memory: the system remembers what the user has done, but not what it has previously recommended or learned from the resulting feedback. Consequently, useful preference-validation signals, potential negative evidence, and historical exploration information cannot be directly reused across requests. To address these limitations, we propose LoopMemGR, a closed-loop recommendation experience memory framework for generative recommendation. In addition to the conventional behavior log, LoopMemGR maintains a recommendation experience log that records past recommendation--feedback trajectories. It extracts request-relevant evidence through three complementary views: the recency view captures short-term interaction dynamics, the frequency view summarizes recurring recommendation patterns, and the global view distills transferable regularities shared across users. These signals are compressed into a fixed number of experience tokens to condition the generative backbone under a bounded input budget. Extensive experiments on an industrial Taobao dataset demonstrate the effectiveness of closed-loop experience accumulation and multi-view experience extraction.",
+      "published": "2026-07-30T03:59:00Z",
+      "updated": "2026-07-30T03:59:00Z",
+      "categories": [
+        "cs.IR"
+      ],
+      "pdfUrl": "https://arxiv.org/pdf/2607.27647v1",
+      "absUrl": "https://arxiv.org/abs/2607.27647v1",
+      "industrySource": "Alibaba"
+    },
+    {
+      "id": "http://arxiv.org/abs/2607.26427v1",
+      "title": "PSG: Pair-Space Generation for Efficient Generative Reranking",
+      "authors": [
+        "Chao Feng",
+        "Li Ma",
+        "Xiancheng Gao",
+        "Chenghao Zhang",
+        "Yuanhao Pu",
+        "Xiang Li"
+      ],
+      "affiliations": [],
+      "abstract": "Modern recommender systems adopt Generator-Evaluator (G-E) for list-wise reranking: a generator produces sequences from candidates and an evaluator scores them at sequence-level to filter out the optimal one for exposure. Auto-Regressive(AR), working as the backbone for generative recommendation, suffers two limitations. First, its complexity grows linearly with list length, forcing the system to generate fewer lists under rigorous latency constraints and thus limiting exploration. Second, teacher-forcing creates a train-test mismatch; cumulative errors worsen with length and degrade quality. To address these problems, we propose Pair-Space Generation (PSG), a reformulation that elevates the generation atom from individual items to ordered item pairs. Given $n$ candidate items, PSG operates over pair vocabulary of size $n(n-1)$ per request, generates only $L/2$ tokens. Pair token representations are produced on-the-fly by a pretrained pair-token representation module optimized over large scale exposure logs, eliminating the data sparsity that would otherwise plague a quadratic sized vocabulary. We establish three theoretical guarantees: (i) PSG is bijective with item-space generation and induces an equivalent family of sequence distributions, thus incurring no loss of expressiveness; (ii) generation in pair-token space achieves approximately a $2\\times$ to $4\\times$ speedup theoretically under moderate settings and $1.83\\times$ in the real industrial environmental settings; and (iii) under outcome-only rewards, the worst-case suboptimality of PSG is bounded by $O((L/2)^2 \\barε)$, representing a nearly $4\\times$ improvement over item-space generation. Beyond benchmark-based validation, PSG has also been deployed on Kuaishou, delivering a 0.178\\% lift in per-user stay time on the platform, which serves over 400 million daily active users.",
+      "published": "2026-07-29T03:14:09Z",
+      "updated": "2026-07-29T03:14:09Z",
+      "categories": [
+        "cs.IR"
+      ],
+      "pdfUrl": "https://arxiv.org/pdf/2607.26427v1",
+      "absUrl": "https://arxiv.org/abs/2607.26427v1",
+      "industrySource": "Kuaishou"
+    },
     {
       "id": "http://arxiv.org/abs/2607.25344v1",
       "title": "Reward Guided Decoding for Generative Recommendation",
@@ -375,7 +421,57 @@
       "industrySource": "Amazon"
     },
     {
-      "id": "http://arxiv.org/abs/2607.25726v1",
+      "id": "http://arxiv.org/abs/2607.27789v1",
+      "title": "From Understanding to Action: Feedback-Grounded Policy Discovery for Generative Recommendation",
+      "authors": [
+        "Zhi Chen",
+        "Minmao Wang",
+        "Xingchen Liu",
+        "Haoqiang Liang",
+        "Huihuang Lin",
+        "Likang Wu",
+        "Hongke Zhao",
+        "Yulong Wang",
+        "Shijie Yi",
+        "Fei Pan",
+        "Peng Jiang"
+      ],
+      "affiliations": [],
+      "abstract": "Semantic-ID-based generative recommenders enable efficient next-item generation, but their item-level supervision mainly captures behavioral co-occurrence and local transitions. Large language models (LLMs) can complement these models by reasoning over heterogeneous interaction histories to understand the user's current demand. However, LLMs are not inherently trained with recommendation-specific outcome feedback, and linguistically plausible reasoning therefore does not necessarily lead to effective recommendation decisions. We term this mismatch the Understanding-Action Gap. Accordingly, we distinguish intent knowledge, which captures the user's current demand, from policy knowledge, which specifies the recommendation direction and rejection boundary under that demand. To bridge this gap, we propose a feedback-driven agent framework that first induces task-oriented intent and then discovers recommendation policies according to their incremental utility over an intent-only baseline. Candidate policies are evaluated and refined using outcome-derived feedback rather than linguistic plausibility. We further transfer the resulting intent and policy knowledge into two latent tokens of a lightweight Semantic-ID generator through dual-space relational distillation, enabling LLM-free online inference. Experiments on public benchmarks show consistent improvements over baselines, while large-scale online A/B tests achieve gains of 4.506% in Revenue and 4.621% in ADVV.",
+      "published": "2026-07-30T07:23:07Z",
+      "updated": "2026-07-30T07:23:07Z",
+      "categories": [
+        "cs.IR"
+      ],
+      "pdfUrl": "https://arxiv.org/pdf/2607.27789v1",
+      "absUrl": "https://arxiv.org/abs/2607.27789v1",
+      "industrySource": ""
+    },
+    {
+      "id": "http://arxiv.org/abs/2607.27682v1",
+      "title": "Restoring Collaborative Signals in Semantic-ID Generative Recommendation via Personalized Natural Language",
+      "authors": [
+        "Changjiang Han",
+        "Qingyang Li",
+        "Yaqiang Zang",
+        "Jikun Kang",
+        "Pinghua Gong",
+        "Xue Liu",
+        "Bowei He"
+      ],
+      "affiliations": [],
+      "abstract": "Making LLM-based generative recommendation models stronger and more personalized through natural language and explicit reasoning is a widely anticipated yet still unsolved goal. Such models cast recommendation as autoregressively generating an item's semantic-ID (SID), a short tuple of discrete codes, so that recommending well reduces to emitting the right SID. In this setting the model verbalizes its knowledge poorly, and text and SID tokens live in misaligned embedding spaces. Deep reasoning therefore rarely turns into a correct SID, and enabling explicit \"thinking\" often gives no gain or even hurts. The deeper cause is that a compact SID cannot hold content and collaborative signal at once: the two compete, and collaboration loses. Because a mis-predicted SID is a wrong recommendation, this caps accuracy directly. Costly multi-round training barely helps, and few methods try to supply the missing signal at inference time. What is missing is a reliable channel that carries collaborative signal into SID generation. We therefore propose a framework, guided by personalized natural language, that adds hierarchical collaborative cues as the model generates, without altering the backbone or retraining the SIDs. Rather than mapping language onto SIDs directly, it uses language to attach analyzable links between collaborative patterns and their audiences, restoring the collaborative signal that SIDs miss. The result is consistent gains in recommendation accuracy, grounding generation in collaborative structure at inference time rather than relying on explicit reasoning or retraining.",
+      "published": "2026-07-30T04:58:22Z",
+      "updated": "2026-07-30T04:58:22Z",
+      "categories": [
+        "cs.IR"
+      ],
+      "pdfUrl": "https://arxiv.org/pdf/2607.27682v1",
+      "absUrl": "https://arxiv.org/abs/2607.27682v1",
+      "industrySource": ""
+    },
+    {
+      "id": "http://arxiv.org/abs/2607.25726v2",
       "title": "Nudging Sustainable Choices through LLM-Generated Recommendation Explanations",
       "authors": [
         "Haya Halimeh",
@@ -383,14 +479,14 @@
         "Oliver Müller"
       ],
       "affiliations": [],
-      "abstract": "Recommender systems mediate everyday consumption, offering a promising channel for encouraging sustainable choices. Prior research shows that explanations influence users' perceptions of recommendations and can support more informed decisions. We argue that explanations can also serve as behavioral nudges by foregrounding sustainability information at the moment of choice. This study investigates how different behavioral framings of sustainability information in recommendation explanations affect user choices and perceptions. Using generative AI, we generate sustainability-aware explanations by drawing on nudge theory and validate them through human evaluation and LLM-as-a-judge audits. Building on this foundation, we conduct two randomized studies ($N = 529$) in a low involvement domain (instant coffee) and a high involvement domain (hotel bookings), in which participants choose among preference matched recommendations accompanied by these explanations. Our results show that, across both domains, merely disclosing sustainability information in explanations does not change choices, whereas framing that information or invoking a descriptive social norm significantly increases sustainable selections and eases decision-making. Notably, perception and behavior diverge, as plain disclosure improves explanation evaluations without translating into more sustainable selection behavior. Our work demonstrates how LLMs can generate theory-grounded explanations at scale, pointing toward practical explanation-based interventions for social good. We conclude by discussing implications for adaptive explanation design with generative AI.",
+      "abstract": "Recommender systems mediate everyday consumption, offering a promising channel for encouraging sustainable choices. Prior research shows that explanations influence users' perceptions of recommendations and can support more informed decisions. We argue that explanations can also serve as behavioral nudges by foregrounding sustainability information at the moment of choice. This study investigates how different behavioral framings of sustainability information in recommendation explanations affect user choices and perceptions. Using generative AI, we generate sustainability-aware explanations by drawing on nudge theory and validate them through human evaluation and LLM-as-a-judge audits. Building on this foundation, we conduct two randomized studies (N = 529) in a low involvement domain (instant coffee) and a high involvement domain (hotel bookings), in which participants choose among preference matched recommendations accompanied by these explanations. Our results show that, across both domains, merely disclosing sustainability information in explanations does not change choices, whereas framing that information or invoking a descriptive social norm significantly increases sustainable selections and eases decision-making. Notably, perception and behavior diverge, as plain disclosure improves explanation evaluations without translating into more sustainable selection behavior. Our work demonstrates how LLMs can generate theory-grounded explanations at scale, pointing toward practical explanation-based interventions for social good. We conclude by discussing implications for adaptive explanation design with generative AI.",
       "published": "2026-07-28T13:49:51Z",
-      "updated": "2026-07-28T13:49:51Z",
+      "updated": "2026-07-30T07:43:16Z",
       "categories": [
         "cs.AI"
       ],
-      "pdfUrl": "https://arxiv.org/pdf/2607.25726v1",
-      "absUrl": "https://arxiv.org/abs/2607.25726v1",
+      "pdfUrl": "https://arxiv.org/pdf/2607.25726v2",
+      "absUrl": "https://arxiv.org/abs/2607.25726v2",
       "industrySource": ""
     },
     {
@@ -1120,89 +1216,6 @@
       ],
       "pdfUrl": "https://arxiv.org/pdf/2606.14260v1",
       "absUrl": "https://arxiv.org/abs/2606.14260v1",
-      "industrySource": ""
-    },
-    {
-      "id": "http://arxiv.org/abs/2606.14209v1",
-      "title": "Detecting undisclosed LLM-generated content in parliamentary texts",
-      "authors": [
-        "Minerva Suvanto",
-        "Andrea McGlinchey",
-        "Peter J. Barclay",
-        "Mattias Wahde"
-      ],
-      "affiliations": [],
-      "abstract": "In this paper, we evaluate the extent of undisclosed LLM-generated content in texts from the parliaments of the United Kingdom and Sweden. In many areas, such as in journalism or in academic writing, there are often requirements to clearly disclose whether AI tools, such as LLMs, have been used. In the case of parliamentary texts, the guidelines on disclosure of AI use are more vague. However, in order to maintain transparency and retain public trust, it is generally recommended that parliamentarians should state whether or not they have used AI when writing texts, such as parliamentary motions. Here, we train an interpretable (glass-box) text classifier using pre-LLM parliamentary texts and LLM-generated versions of such texts. We then apply the classifier to a test set containing recent parliamentary texts, finding a steady increase in undisclosed LLM use, in both parliaments, from 2022 onwards.",
-      "published": "2026-06-12T07:46:50Z",
-      "updated": "2026-06-12T07:46:50Z",
-      "categories": [
-        "cs.CL"
-      ],
-      "pdfUrl": "https://arxiv.org/pdf/2606.14209v1",
-      "absUrl": "https://arxiv.org/abs/2606.14209v1",
-      "industrySource": ""
-    },
-    {
-      "id": "http://arxiv.org/abs/2606.14149v1",
-      "title": "Trust but Verify: Mitigating Medical Hallucinations via Post-Hoc Adversarial Auditing and Multi-Agent Feedback Loops",
-      "authors": [
-        "Muhammad Osama",
-        "Maheera Amjad",
-        "Zartasha Mustansar",
-        "Arslan Shaukat",
-        "Muhammad U. S. Khan"
-      ],
-      "affiliations": [],
-      "abstract": "Large Language Models (LLMs) are increasingly deployed in healthcare settings, yet their tendency to hallucinate poses risks when clinical decisions are involved. This study examine whether LLMs recommend recently banned or withdrawn pharmaceuticals when answering clinical questions and tests an agent-based method for reducing such errors. We developed a five-agent \"Trust but Verify\" system using a single LLM backbone. To measure regulatory knowledge obsolescence, we created an adversarial dataset of 103 clinical MCQs where historically correct answers now refer to banned substances. This scale ensures statistical significance across various therapeutic classes. We evaluated three open-access model families (GPT-OSS, Llama-3, Falcon-3) under vanilla and agentic conditions. Performance was measured via pointwise score, label accuracy, Hallucination Error Rate (HER), and Component Fidelity (CF) score. We also observed clinical safety regression in proprietary models. In default configurations, all models showed high hallucination rates, consistently selecting banned drugs that matched training data patterns. Our proposed agentic architecture reduced HER by approximately 53% across models. Pointwise scores shifted from -0.25 (unsafe recommendation) toward 0.0 (appropriate refusal). The safety audit intercepted dangerous outputs even when models' parametric knowledge favored the banned substance. The proposed multi-agent framework offers a model-agnostic method for enforcing regulatory compliance that prioritizes patient safety over fluent text generation. Our work demonstrates a practical approach for deploying autonomous AI systems in safety-critical healthcare settings. It shows how real-time regulatory data can be integrated into LLM pipelines to support clinical decision-making.",
-      "published": "2026-06-12T06:21:19Z",
-      "updated": "2026-06-12T06:21:19Z",
-      "categories": [
-        "cs.LG"
-      ],
-      "pdfUrl": "https://arxiv.org/pdf/2606.14149v1",
-      "absUrl": "https://arxiv.org/abs/2606.14149v1",
-      "industrySource": ""
-    },
-    {
-      "id": "http://arxiv.org/abs/2606.14142v2",
-      "title": "Implicit Reasoning for Large Language Model-based Generative Recommendation",
-      "authors": [
-        "Yinhan He",
-        "Liam Collins",
-        "Bhuvesh Kumar",
-        "Jundong Li",
-        "Neil Shah",
-        "Donald Loveland"
-      ],
-      "affiliations": [],
-      "abstract": "Large Language Models (LLMs) are increasingly adopted as backbones for Generative Recommendation (GR), promising access to pretrained world knowledge. Yet reliably invoking this knowledge for GR remains poorly understood. A key obstacle is that LLM-based GR typically represents items with Semantic IDs (SIDs), disrupting LLMs' natural-language reasoning interface because these tokens are unseen by the LLM during pretraining. Existing approaches address this with expensive multi-stage pipelines that ground SIDs and elicit explicit rationales, but offer limited insight into when and why each stage is necessary. In this work, we systematically decompose explicit reasoning training pipelines for LLM-based GR, revealing three key limitations: weakened world-knowledge verbalization, misalignment between SID and natural-language token embedding spaces, and sensitivity to rationale quality, all of which hurt explicit reasoning performance. To circumvent these issues, we propose PauseRec, a lightweight implicit reasoning paradigm tailored for GR. PauseRec is exceptionally practical, avoiding costly reasoning trace acquisition and reasoning alignment training, leading to a multitude of benefits: (1) it outperforms standard explicit CoT methods by up to 6.22%, (2) it reduces training cost by up to 65% GPU hours, and (3) it speeds up inference by up to 71.3%. These results position PauseRec as a lightweight alternative to explicit rationale generation, enabling more effective and efficient LLM-based GR.",
-      "published": "2026-06-12T06:04:05Z",
-      "updated": "2026-06-15T15:02:00Z",
-      "categories": [
-        "cs.CL",
-        "cs.AI"
-      ],
-      "pdfUrl": "https://arxiv.org/pdf/2606.14142v2",
-      "absUrl": "https://arxiv.org/abs/2606.14142v2",
-      "industrySource": ""
-    },
-    {
-      "id": "http://arxiv.org/abs/2606.13610v1",
-      "title": "One Polluted Page Is Enough: Evaluating Web Content Pollution in Generative Recommenders",
-      "authors": [
-        "Minghao Luo",
-        "Liang Chen"
-      ],
-      "affiliations": [],
-      "abstract": "Search-augmented LLMs increasingly mediate everyday consumer recommendations by retrieving live web content. This creates a new risk: generative recommenders may consume polluted web content, such as fake reviews and promotional pages crafted to mislead recommendations. We ask: to what extent do search-augmented LLMs become unwitting promoters of fake products when consuming polluted retrieval results? To answer this, we introduce FORGE (Fake Online Recommendations in Generative Environments), a benchmark for measuring fake-product promotion under controlled web-content pollution. Given an upstream search result, FORGE locally rewrites real products in retrieved web pages into fake ones to simulate web-content pollution, and measures how often the LLM recommends the fake product. FORGE covers 225 real-world products across 15 categories and 5 consumer scenarios. Across 12 commercial and open-weights LLMs, all models are vulnerable: a single polluted page yields fooled rates of up to 27%, while the full top-3 replacement raises this to 73.8%. Vulnerability varies substantially across categories, increasing when models lack stable prior knowledge of the relevant products. Reasoning does not mitigate this vulnerability; instead, it often generates spurious social proof to justify false recommendations. We evaluate three defenses: skepticism prompting and consensus filtering (over model priors or cross-document evidence). Skepticism can exacerbate vulnerability, much like reasoning, while filtering risks suppressing legitimate products. We release FORGE at https://github.com/leoluolol/forge-benchmark.",
-      "published": "2026-06-11T17:24:14Z",
-      "updated": "2026-06-11T17:24:14Z",
-      "categories": [
-        "cs.CL",
-        "cs.AI"
-      ],
-      "pdfUrl": "https://arxiv.org/pdf/2606.13610v1",
-      "absUrl": "https://arxiv.org/abs/2606.13610v1",
       "industrySource": ""
     }
   ]
