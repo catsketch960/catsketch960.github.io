@@ -1,7 +1,96 @@
 {
-  "lastUpdated": "2026-08-09T03:03:47Z",
-  "totalResults": 706,
+  "lastUpdated": "2026-08-14T03:26:07Z",
+  "totalResults": 719,
   "papers": [
+    {
+      "id": "http://arxiv.org/abs/2608.10929v1",
+      "title": "FedCGR: Federated Cross-Domain Generative Recommendation",
+      "authors": [
+        "Zhuodong Liu",
+        "Hugen Lv",
+        "Xiangyu Li",
+        "Bohan Guo",
+        "Peiyu Hu"
+      ],
+      "affiliations": [],
+      "abstract": "Cross-domain recommendation (CDR) transfers preference knowledge across related domains, but federated deployment makes cross-domain alignment difficult because the behavioral anchors that align item spaces, such as overlapping users and shared interaction signals, are often sparse, unavailable, or privacy-sensitive across clients. To address this tension, we revisit federated CDR as generation over a stable semantic item language. By representing items as discrete semantic ID (SID) sequences derived from public item-side metadata, cross-domain item alignment is induced by a shared vocabulary rather than by exchanging private interactions or aligning domain-specific embeddings. Directly federating SID-based generators, however, introduces two design constraints: the SID tokenizer must remain fixed to preserve cross-client token consistency, which creates a semantic-only bottleneck because local collaborative filtering (CF) signals cannot be globally shared or aligned; meanwhile, standard federated averaging can cause negative transfer under domain heterogeneity. To overcome these constraints, we propose FedCGR, a federated generative CDR framework that keeps the item language stable and makes adaptation explicit. FedCGR injects local CF evidence through a reliability-aware semantic interface and trains a prototype-personalized generator that selectively aggregates shared parameters according to domain relatedness while keeping domain-specific quantities local. Experiments on six Amazon cross-domain scenarios show that FedCGR consistently outperforms federated generative baselines and achieves competitive performance against strong sequential and federated CDR methods under both full-ranking and sampled evaluation protocols.",
+      "published": "2026-08-11T13:58:55Z",
+      "updated": "2026-08-11T13:58:55Z",
+      "categories": [
+        "cs.AI"
+      ],
+      "pdfUrl": "https://arxiv.org/pdf/2608.10929v1",
+      "absUrl": "https://arxiv.org/abs/2608.10929v1",
+      "industrySource": "Meta"
+    },
+    {
+      "id": "http://arxiv.org/abs/2608.07989v1",
+      "title": "PushDualGen: Enabling LLMs to Generate Semantic IDs with Interpretable Copy for Industrial Push Recommendation",
+      "authors": [
+        "Manjia Lin",
+        "Da Li",
+        "Yan Wang",
+        "Yong Jin",
+        "Zheming Ding",
+        "Wei Yuan",
+        "Lei Yan",
+        "Yanan Xia",
+        "Lu Zhang",
+        "Fan Yang",
+        "Xuanping Li",
+        "Yanan Niu"
+      ],
+      "affiliations": [],
+      "abstract": "Push recommendation in KuaiShou proactively delivers personalized content to nearly one billion users to facilitate their engagement. Recently, generative recommendation has achieved end-to-end user personalization through semantic ID. However, their black- box characteristics make recommendation logics difficult to trace, hindering their deployment. OneRec-Thinking addresses this by incorporating CoT before generating SIDs, but this significantly increases inference cost. To support large-scale industrial applications, we propose PushDualGen, a lightweight generator, which first generates the SID and then produces a copy as a skippable explanation. PushDualGen has been deployed in Kuaishou's push recommendation system. Online A/B tests demonstrate the effectiveness of PushDualGen, delivering significant improvements in both user attraction and satisfaction. The effective play rate for videos recommended to users has relatively increased by 8.50%, while the dissatisfaction rate has relatively fallen by 37.70%. In the long term, PushDualGen optimises the content ecosystem, providing more exposure for long-tail videos.",
+      "published": "2026-08-08T07:56:55Z",
+      "updated": "2026-08-08T07:56:55Z",
+      "categories": [
+        "cs.IR"
+      ],
+      "pdfUrl": "https://arxiv.org/pdf/2608.07989v1",
+      "absUrl": "https://arxiv.org/abs/2608.07989v1",
+      "industrySource": "Kuaishou"
+    },
+    {
+      "id": "http://arxiv.org/abs/2608.10008v2",
+      "title": "Do LLM Recommenders Know When They're Hallucinating? Auditing Confidence Calibration in Catalog Faithfulness",
+      "authors": [
+        "Srijith Ravikumar"
+      ],
+      "affiliations": [],
+      "abstract": "LLM recommenders for top-K item suggestion regularly emit titles outside the target catalog. Prior audits report a binary out-of-domain rate; none ask whether the model knew. We jointly audit hallucination rate (OOD@10) and verbalized-confidence calibration (ECE, Brier, reliability) for four zero-shot LLM recommenders from four independent vendors (Mistral Large, Llama-3.3-70B, GPT-OSS-120B, Claude Sonnet 4.6), not grounded or fine-tuned systems, across three catalogs (MovieLens-25M, Amazon Reviews 2023 Toys, Yelp Open Dataset), stratified by item popularity. Measuring catalog membership is itself the hard part: on identical outputs the reported rate moves by an order of magnitude with the string matcher used, and F1 cannot separate the candidates. We validate the instrument against 201 human judgments and select on net bias, where the adopted one is off by -0.040 against +0.144 for the common fuzzy rule. Hallucination is then strongly catalog-dependent (0.6-2.7% on MovieLens, 11.6-38.7% on Yelp, 49.3-61.0% on Amazon Toys). Each model holds a near-constant confidence level barely responsive to the catalog, while the catalog-hit rate swings 60 points, so the sign of the error is set by where a model's constant lands against a catalog's accuracy: 7 of the twelve cells are under-confident and 5 over-confident, all four under-confident on MovieLens, all four over-confident on Amazon Toys. We read this as an elicitation mismatch: \"Just Ask\" elicits a generic quality rating, not a catalog-membership probability. A conformal abstention threshold over verbalized confidence changes hallucination by at most 1.65 pp across four alpha levels, because the channel cannot separate correct items from hallucinations. We recommend that audits report calibration alongside OOD, validate the matcher producing the OOD number, and use catalog-anchored elicitation.",
+      "published": "2026-08-07T21:41:16Z",
+      "updated": "2026-08-12T21:55:00Z",
+      "categories": [
+        "cs.IR",
+        "cs.CL",
+        "cs.LG"
+      ],
+      "pdfUrl": "https://arxiv.org/pdf/2608.10008v2",
+      "absUrl": "https://arxiv.org/abs/2608.10008v2",
+      "industrySource": "Amazon"
+    },
+    {
+      "id": "http://arxiv.org/abs/2608.06928v2",
+      "title": "From Classification to Recommendation: Empirical Analysis of Audio Embedding Models Application for Content-Based Music Recommendation",
+      "authors": [
+        "Qingrui Li",
+        "Haowei Lou",
+        "Chengkai Huang",
+        "Quan Z. Sheng",
+        "Lina Yao"
+      ],
+      "affiliations": [],
+      "abstract": "Pretrained audio representation models learned from large-scale corpora have achieved strong performance in audio classification and understanding. However, most existing models are optimized for objectives such as masked prediction, contrastive learning, or audio-text alignment, which do not necessarily produce representation spaces well-suited to recommender systems. Unlike classification, music recommender systems must capture item relationships shaped by subjective and behavior-dependent listener preferences. Although pretrained audio embeddings have been explored in conventional recommender systems, their effectiveness in the rapidly emerging paradigm of generative recommender systems remains underexplored. To address this gap, we systematically evaluate six representative audio encoders across three types of music recommender systems: content-based, sequential, and Semantic-ID-based generative recommender systems. We further investigate how residual-quantization design, including codebook width, quantization depth, and retained Semantic-ID prefixes, affects the preservation of recommendation-relevant information. Experiments on two music recommendation datasets show that audio-text-aligned and music-domain representations are generally more effective when pretrained embedding geometry is used directly, whereas interaction-based sequential training substantially reduces performance differences among encoders. We also find that increasing Semantic-ID capacity does not consistently improve generative recommender systems and may introduce substantial instability. These findings provide practical guidance for selecting audio encoders and designing audio-derived Semantic IDs for modern music recommender systems.",
+      "published": "2026-08-07T08:03:29Z",
+      "updated": "2026-08-10T05:16:34Z",
+      "categories": [
+        "cs.IR"
+      ],
+      "pdfUrl": "https://arxiv.org/pdf/2608.06928v2",
+      "absUrl": "https://arxiv.org/abs/2608.06928v2",
+      "industrySource": "Meta"
+    },
     {
       "id": "http://arxiv.org/abs/2608.01260v1",
       "title": "Auditing Semantic Gains in Sequential Recommendation: A Lightweight Recovery Test",
@@ -274,126 +363,243 @@
       "industrySource": "Meta"
     },
     {
-      "id": "http://arxiv.org/abs/2607.12277v1",
-      "title": "Not Only NTP: Extending Training Signal Coverage for Generative Recommendation",
+      "id": "http://arxiv.org/abs/2608.12845v1",
+      "title": "FSGR: Mitigating Token Frequency Bias for Fair SID-Based Generative Recommendation",
       "authors": [
-        "Changhao Li",
-        "Shuli Wang",
-        "Junwei Yin",
-        "Senjie Kou",
-        "Yinqiu Huang",
-        "Chi Wang",
-        "Yinhua Zhu",
-        "Haitao Wang",
-        "Xingxing Wang"
+        "Yuchen Zheng",
+        "Sihan Xu",
+        "Jingwen Yang",
+        "Xiangrui Cai",
+        "Haiwei Zhang",
+        "Xiaojie Yuan"
       ],
       "affiliations": [],
-      "abstract": "Next-Token Prediction (NTP) carries two structural training signal limitations. First, NTP optimizes for single-step prediction only, placing no supervised pressure on learning longer-range behavioral structure -- we term this \\textbf{temporal locality}. Second, in multi-domain sequences, each target item embedding receives gradient updates exclusively from the immediately preceding hidden state, with no explicit gradient pathway from cross-domain context -- we term this \\textbf{spatial locality}. We propose \\textbf{NONTP}, extending NTP's signal coverage along both dimensions through two auxiliary objectives. \\textbf{TCL (Temporal Contrastive Learning)} uses a BYOL-style EMA teacher with InfoNCE to align hidden states against a $K$-step future trajectory in representation space. \\textbf{TDL (Trans-Domain Learning)} mean-pools cross-domain hidden states and predicts through the shared prediction head, opening a second gradient pathway with no additional parameters. Both are discarded at inference: zero overhead. On a four-domain Meituan industrial dataset (full ranking), NONTP achieves HR@10 +34.3\\% over NTP and +18.3\\% over MBGR. On the public Amazon Movie-Book-CDs benchmark, HR@10 +2.8\\% and NDCG@10 +3.7\\%. Online A/B tests confirm CTR +1.8\\% and GMV +2.1\\% (both $p < 0.01$). Ablation studies confirm each component contributes independently, with gradient conflict analyzed as a direction for future work.",
-      "published": "2026-07-14T02:28:23Z",
-      "updated": "2026-07-14T02:28:23Z",
-      "categories": [
-        "cs.IR"
-      ],
-      "pdfUrl": "https://arxiv.org/pdf/2607.12277v1",
-      "absUrl": "https://arxiv.org/abs/2607.12277v1",
-      "industrySource": "Meituan"
-    },
-    {
-      "id": "http://arxiv.org/abs/2607.03918v1",
-      "title": "Beyond Item Order: Temporal Gap Tokenization for Generative Recommendation with Semantic IDs",
-      "authors": [
-        "Chengkai Huang",
-        "Tianqi Gao",
-        "Hongtao Huang",
-        "Quan Z. Sheng",
-        "Lina Yao"
-      ],
-      "affiliations": [],
-      "abstract": "Semantic-ID-based generative recommendation has recently emerged as a scalable paradigm for sequential recommendation, where each item is represented by a compact sequence of discrete codes and next-item prediction is formulated as code generation. Existing methods, however, typically construct user histories as sequences of static item identifiers, leaving the elapsed time between consecutive interactions outside the generative input. This temporal blindness is problematic because inter-interaction gaps provide useful cues about interest continuity and preference drift. In this paper, we propose ChronoSID, a lightweight temporal augmentation framework for semantic-ID-based generative recommendation. ChronoSID injects temporal signals into the standard three-stage semantic-ID pipeline from two complementary perspectives. First, we introduce Time-Aware Field-Aware Masked Auto-Encoding (TA-FAMAE), which regularizes item representation learning with an auxiliary time-gap prediction objective. Second, we discretize historical interaction intervals into fixed log-scale gap tokens and interleave them with semantic ID tuples as the encoder input of the sequence-to sequence generator. This design preserves the compact SID generation paradigm while enabling the model to capture time-aware transition patterns. Experiments on Amazon review benchmarks show that ChronoSID consistently improves over ReSID and other competitive generative recommendation baselines. Ablation studies further verify the contribution of both temporal components, and diagnostic analyses show clearer gains under long-gap scenarios where user interests are more likely to drift.",
-      "published": "2026-07-04T15:22:30Z",
-      "updated": "2026-07-04T15:22:30Z",
-      "categories": [
-        "cs.IR"
-      ],
-      "pdfUrl": "https://arxiv.org/pdf/2607.03918v1",
-      "absUrl": "https://arxiv.org/abs/2607.03918v1",
-      "industrySource": "Amazon"
-    },
-    {
-      "id": "http://arxiv.org/abs/2607.03362v1",
-      "title": "HGenPush: A Heterogeneous Generative Recommendation Architecture for Industrial Push Notification Systems",
-      "authors": [
-        "Xiao Liang",
-        "Jiali Feng",
-        "Xin Feng",
-        "Yiqing Wang",
-        "Baolin Ye",
-        "Siyao Feng",
-        "Zhihui Deng",
-        "Cunyi Zhang",
-        "Huajin Sun",
-        "Xuanping Li",
-        "Kaiqiao Zhan",
-        "Yanan Niu",
-        "Kun Gai"
-      ],
-      "affiliations": [],
-      "abstract": "With the explosive growth of content platforms, recommendation systems need to better satisfy user demands to enhance user satisfaction and retention. Taking short-video platforms as an example, users not only seek high-quality content but also trusted authors. Although generative recommendation systems have achieved breakthroughs in recent years, existing methods primarily generate single-type recommendation content and typically employ the inefficient autoregressive paradigm to generate semantic IDs. In this paper, we propose an end-to-end heterogeneous generative recommendation architecture called HGenPush. First, we design a hybrid user behavior understanding module that integrates multi-scenario and multi-perspective behaviors to capture precise user interest. Then, we design a dual-branch heterogeneous generative recommendation module that integrates video recommendation and author recommendation within a unified framework. In addition, to improve generation efficiency, we design a lightweight multi-token prediction method that discards the autoregressive paradigm. Finally, we design a user consumption preference alignment module, which leverages user feedback as reward signals to guide the model toward generating higher-quality content, thereby enhancing user experience and engagement. Through these designs, HGenPush simultaneously fulfills users' demands for high-quality content and trusted authors. We have deployed HGenPush on the push notification system of Kuaishou, a large-scale short-video platform, achieving a significant 0.181% increase in daily active users.",
-      "published": "2026-07-03T14:18:19Z",
-      "updated": "2026-07-03T14:18:19Z",
-      "categories": [
-        "cs.IR"
-      ],
-      "pdfUrl": "https://arxiv.org/pdf/2607.03362v1",
-      "absUrl": "https://arxiv.org/abs/2607.03362v1",
-      "industrySource": "Kuaishou"
-    },
-    {
-      "id": "http://arxiv.org/abs/2606.31693v2",
-      "title": "ShopX: A Foundation Model for Intent-to-Item Fulfillment in Agentic Shopping",
-      "authors": [
-        "Jiacheng Chen",
-        "Tao Zhang",
-        "Manxi Lin",
-        "Dunxian Huang",
-        "Teng Shi",
-        "Honghao Fu",
-        "Mengyan Li",
-        "Xinming Zhang",
-        "Chenchi Zhang",
-        "Xuan Lu",
-        "Xiaoxiong Du",
-        "Haibin Chen",
-        "Shaolin Ye",
-        "Hao Chang",
-        "Xiaoqi Li",
-        "Shuwen Xiao",
-        "Yujin Yuan",
-        "Jingxuan Feng",
-        "Shaopan Xiong",
-        "Huimin Yi",
-        "Ju Huang",
-        "Qiu Shen",
-        "Ying Chen",
-        "Junjun Zheng",
-        "Xiangheng Kong",
-        "Dan Ou",
-        "Haihong Tang",
-        "Yuning Jiang",
-        "Bo Zheng"
-      ],
-      "affiliations": [],
-      "abstract": "The wave of AI-native applications is moving shopping beyond page- and feed-based browsing toward intent-driven experiences orchestrated by LLM agents. A common design wraps an LLM around existing search and recommendation pipelines, forcing complex intents through low-bandwidth retrieval or ranking interfaces and leaving a gap between language understanding and item-space fulfillment. Generative recommendation gives LLMs a direct item-space interface through semantic IDs (SIDs), but existing models mainly generate candidates for retrieval rather than translate flexible intents into item-space outcomes. We propose ShopX to address this bottleneck by unifying intent understanding, execution planning, and flexible SID-native item-space operations into a single foundation model. We deploy ShopX in agentic shopping workflows through a model-native item-fulfillment framework with a serving harness that defines a model-facing action protocol and exposes support surfaces for context access, catalog grounding, and state management. Within this framework, ShopX plans and composes SID-based item-space operations such as SID beam-search retrieval, listwise ranking, or product bundling. This model-centric design reduces lossy hand-offs between agent orchestration and item-space execution. To build ShopX, we design semantically recoverable, LLM-operable SIDs and a training recipe that equips a general LLM for flexible multi-turn item-space fulfillment while retaining the knowledge and instruction-following abilities needed by a shopping agent. We evaluate the ShopX framework against tool-mediated agentic systems on single- and multi-turn fulfillment tasks derived from anonymized Taobao production logs, showing that model-native fulfillment improves overall framework behavior, especially on complex or ambiguous requests.",
-      "published": "2026-06-30T14:05:28Z",
-      "updated": "2026-07-15T17:49:58Z",
+      "abstract": "Semantic ID (SID)-based generative recommendation has recently achieved remarkable success. However, existing methods suffer from a previously overlooked fairness issue, which we term \\textbf{Token Frequency Bias}, where high-frequency SID tokens are systematically over-predicted while low-frequency SID tokens are under-predicted. This bias originates from the combined effects of imbalanced semantic codebooks during SID construction, and popularity bias together with the maximum likelihood estimation objective during recommendation training, resulting in unfair exposure across item categories. Existing SID methods mainly focus on improving codebook quality and overlook the impact of token frequency imbalance on downstream recommendation fairness, while LLM debiasing methods often yield suboptimal results when directly applied to SID-based recommendation, due to the hierarchical semantics of SID tokens. To address this issue, we propose \\textbf{FSGR}, a fairness optimization framework for SID-based generative recommendation. During SID construction, FSGR employs OT-based Assignment Optimization and Dual-Criteria Re-anchor mechanism to form a more balanced SID representation space. During recommendation training, it adopts a two-stage training strategy and introduces Hierarchical Frequency Calibration for layer-specific fairness fine-tuning. Experiments on three public datasets with three backbone models demonstrate that FSGR mitigates token frequency bias and delivers an average Gini fairness improvement of over 20\\% while maintaining competitive recommendation accuracy.",
+      "published": "2026-08-13T05:34:51Z",
+      "updated": "2026-08-13T05:34:51Z",
       "categories": [
         "cs.IR",
         "cs.AI",
-        "cs.CL"
+        "cs.LG"
       ],
-      "pdfUrl": "https://arxiv.org/pdf/2606.31693v2",
-      "absUrl": "https://arxiv.org/abs/2606.31693v2",
-      "industrySource": "Alibaba"
+      "pdfUrl": "https://arxiv.org/pdf/2608.12845v1",
+      "absUrl": "https://arxiv.org/abs/2608.12845v1",
+      "industrySource": ""
+    },
+    {
+      "id": "http://arxiv.org/abs/2608.11980v1",
+      "title": "HCGRec: Hint-Conditioned Generative Recommendation with Semantic IDs",
+      "authors": [
+        "Kangning Zhang",
+        "Haotian Fang",
+        "Xukun Luo",
+        "Hao Yin",
+        "Yang Gao",
+        "Peng Yan",
+        "Weiwen Liu",
+        "Weinan Zhang",
+        "Yong Yu"
+      ],
+      "affiliations": [],
+      "abstract": "Semantic-ID generative recommenders represent each item as a short sequence of discrete semantic tokens and predict the next item by autoregressively generating this token sequence. This paradigm enables a unified generation interface for item IDs, histories, and item text, but it also creates a structured optimization bottleneck during reward-based post-training: when an early semantic token enters the wrong branch of the item-token space, finite rollout groups rarely reach the ground-truth item, so group-relative optimization receives identical zero rewards and produces no useful advantage. We propose Hint-Conditioned Generative Recommendation (HCGRec), a semantic-ID generative recommendation framework that recovers learning signal for such hard training instances. HCGRec diagnoses each instance with checkpoint rollouts and supplies a minimal target-prefix hint only when the current generator cannot reach the correct item. The model then generates the unhinted suffix under the hinted semantic branch, turning zero-reward groups into informative comparisons over item-token completions. Hinting also changes token identity: hinted prefix tokens are oracle-provided item context, while unhinted suffix tokens are sampled generation actions. We therefore introduce hint-aware credit decomposition, using supervised learning to preserve item-semantic and prefix-structure alignment for hinted tokens and GRPO to optimize the sampled suffix. Experiments on sequential recommendation benchmarks show that HCGRec substantially improves over supervised fine-tuning and vanilla reward-based post-training, while reducing zero-advantage training samples from over 70% to below 20%. The code is accessible at https://github.com/WncFht/GRec.",
+      "published": "2026-08-12T12:13:08Z",
+      "updated": "2026-08-12T12:13:08Z",
+      "categories": [
+        "cs.IR",
+        "cs.AI"
+      ],
+      "pdfUrl": "https://arxiv.org/pdf/2608.11980v1",
+      "absUrl": "https://arxiv.org/abs/2608.11980v1",
+      "industrySource": ""
+    },
+    {
+      "id": "http://arxiv.org/abs/2608.11371v1",
+      "title": "Do People Follow AI Advice? Evidence from a Pension Portfolio Choice Experiment",
+      "authors": [
+        "Hongseok Choi",
+        "Jeongbin Kim",
+        "Matthew Kovach",
+        "Kyu-Min Lee",
+        "Euncheol Shin",
+        "Hector Tzavellas"
+      ],
+      "affiliations": [],
+      "abstract": "We study how differences in AI-generated financial recommendations are transmitted into individual portfolio choices. In an experiment with 400 employed adults enrolled in workplace defined contribution pension plans in South Korea, participants allocate a hypothetical pension balance across eleven products and may revise it after receiving one of two fixed AI-generated recommendations. A $2 \\times 2$ design randomizes recommendation content and whether the recommendation includes a short rationale. Approximately 37$\\%$ of the experimentally induced difference between the aggressive and conservative recommendations passes through to final portfolios. This causal contrast changes expected portfolio return, volatility, allocations across risk grades, and the number of products held, but produces no detectable difference in computed Sharpe ratios. 81$\\%$ of participants revise. Among revisers, 95$\\%$ move toward the assigned recommendation and implement about half of the suggested adjustment. Rationales do not detectably alter pass-through. These results show that users partially and selectively transmit recommendation content into economically meaningful differences in risk exposure while retaining substantial weight on their initial choices.",
+      "published": "2026-08-11T19:27:41Z",
+      "updated": "2026-08-11T19:27:41Z",
+      "categories": [
+        "econ.GN"
+      ],
+      "pdfUrl": "https://arxiv.org/pdf/2608.11371v1",
+      "absUrl": "https://arxiv.org/abs/2608.11371v1",
+      "industrySource": ""
+    },
+    {
+      "id": "http://arxiv.org/abs/2608.11015v2",
+      "title": "Sona Technical Report",
+      "authors": [
+        "Sona Team",
+        "Alexandr Udeneev",
+        "Aleksei Krasilnikov",
+        "Alexey Nadtochiy",
+        "Andrey Semenov",
+        "Andrey Tsyrkunov",
+        "Anna Krivonos",
+        "Anna Lipkina",
+        "Artem Matveev",
+        "Daniil Burlakov",
+        "Daniil Leshchev",
+        "Daria Tikhonovich",
+        "Denis Burshtein",
+        "Ekaterina Dmitrieva",
+        "Eugene Krofto",
+        "Grigorii Khlystov",
+        "Ilya Murzin",
+        "Kirill Golovko",
+        "Ksenia Sycheva",
+        "Leonid Dmitriev",
+        "Mariia Rozaeva",
+        "Mariia Ulianova",
+        "Mikhail Sandul",
+        "Nikolai Savushkin",
+        "Oleg Sorokin",
+        "Roman Odobesku",
+        "Semyon Panenko",
+        "Sergei Liamaev",
+        "Sergei Makeev",
+        "Vadim Shilov",
+        "Veronika Ivanova",
+        "Viktor Yanush",
+        "Vladimir Baikalov",
+        "Vladislav Dodonov",
+        "Vladislav Tytskiy"
+      ],
+      "affiliations": [],
+      "abstract": "We introduce Sona, a single-model generative recommender for Yandex Music. In an online A/B test, Sona replaced the entire production cascade, comprising more than 15 candidate generators followed by pre-ranking and ranking models that consume hundreds of features, including signals from large transformer models such as Argus and target-attention scorers, while significantly improving key engagement metrics. The architecture of Sona unifies candidate generation and ranking around a shared user representation. Its encoder transforms the user's chronological sequence of logged engagement events into hidden states consumed by both the autoregressive decoder and the Ranking Module. The next-token-prediction and distillation objectives jointly update the encoder, coupling generation and ranking through the same user state. Neither Sona nor its Teacher Ranker uses hand-engineered features; both operate on logged event fields and learned item representations. In the final Sona configuration, the larger teacher supplies ranking targets during training but is absent from serving, leaving the encoder, decoder, and Ranking Module as a single deployed model. We evaluate Sona in an online A/B experiment using live traffic from My Vibe on smart speakers, one of Yandex Music's largest recommendation surfaces. Relative to the production control, Sona produced statistically significant uplifts of 4.53% in Active Users, the primary metric, 6.30% in Total Listening Time, and 11.42% in Likes. These effects were incremental to improvements retained from preceding deployments. The Active Users uplift was 2.35 times the increment previously delivered by Argus, the strongest model deployed on this surface before Sona. These results show that a single jointly trained model can replace a mature multi-stage recommendation cascade while improving recommendation quality on live traffic.",
+      "published": "2026-08-11T14:58:26Z",
+      "updated": "2026-08-12T13:04:32Z",
+      "categories": [
+        "cs.IR"
+      ],
+      "pdfUrl": "https://arxiv.org/pdf/2608.11015v2",
+      "absUrl": "https://arxiv.org/abs/2608.11015v2",
+      "industrySource": ""
+    },
+    {
+      "id": "http://arxiv.org/abs/2608.09685v1",
+      "title": "Adaptive Semantic Capacity Allocation for Parallel Generative Recommendation",
+      "authors": [
+        "Chenxi Li",
+        "Yuchen Lu",
+        "Xu Yang"
+      ],
+      "affiliations": [],
+      "abstract": "Autoregressive semantic ID recommenders are constrained by expensive beam-search decoding, which limits the practical length of item identifiers. Parallel generation methods alleviate this bottleneck by predicting all semantic ID tokens simultaneously, enabling longer IDs. However, existing semantic ID methods still rely on manually predefined and homogeneous ID structures, where both the number of semantic slots and the codebook size of each slot are treated as fixed hyperparameters. This ignores the heterogeneous capacity demands of different semantic subspaces and may allocate prediction capacity to slots with limited utility. We show that uniformly expanding semantic slots can provide limited gains, indicating redundant capacity in homogeneous semantic IDs. We propose InforID, a lightweight adaptive semantic target construction framework for parallel generative recommendation. InforID allocates a fixed capacity budget across candidate semantic slots, thereby jointly determining the effective ID length and slot-specific codebook sizes. Experiments demonstrate improved recommendation accuracy under comparable capacity budgets while preserving one-step parallel prediction.",
+      "published": "2026-08-10T14:53:18Z",
+      "updated": "2026-08-10T14:53:18Z",
+      "categories": [
+        "cs.AI"
+      ],
+      "pdfUrl": "https://arxiv.org/pdf/2608.09685v1",
+      "absUrl": "https://arxiv.org/abs/2608.09685v1",
+      "industrySource": ""
+    },
+    {
+      "id": "http://arxiv.org/abs/2608.09634v1",
+      "title": "IntHQ: Task-Interactive Hierarchical Query on Dual-Stream Representations for Generative Recommendation",
+      "authors": [
+        "Junjie Sun",
+        "Longfei Xu",
+        "Huimin Yan",
+        "Wei Luo",
+        "Kaikui Liu",
+        "Xiangxiang Chu"
+      ],
+      "affiliations": [],
+      "abstract": "Multi-task learning over heterogeneous data is fundamental to modern recommendation, while generative models are emerging as the backbone of next-generation recommenders. However, the integration of multi-task learning into the generative paradigm remains largely unexplored. Existing multi-task recommenders, in both discriminative and generative paradigms, extract task-relevant features from a single task-agnostic representation and wire tasks into a predefined conversion funnel. We show that this scheme is inherently prone to a threefold collapse. Source collapse, where task-specific signals are injected late and diluted in the shared latent space. Relational collapse, where task dependencies are either implicitly absorbed by the backbone or statically fixed by predefined funnels. Hierarchical collapse, where tasks depend on features at different scales and shift across training stages. We propose IntHQ, a multi-task generative recommender with three components, each alleviating one collapse. Dual-Stream Decoupling (DSD) injects task identity into computation stream early and separates the shared context stream from the task-specific stream, alleviating signal dilution. Task-Interactive Modeling (TIM) replaces the predefined funnel with explicit cross-task interaction, letting each task condition on the realized outcomes of its predecessors with learned, input-adaptive strength. Hierarchical Querying (HQ) lets each task gather multi-scale information across different layers at different training stages. In offline evaluations, IntHQ consistently outperforms competitive encoder backbones under four representative task-head configurations. Deployed in production on Amap, serving hundreds of millions of users for travel recommendation, IntHQ yields a 1.60\\% relative UVCTR lift.",
+      "published": "2026-08-10T14:13:47Z",
+      "updated": "2026-08-10T14:13:47Z",
+      "categories": [
+        "cs.IR"
+      ],
+      "pdfUrl": "https://arxiv.org/pdf/2608.09634v1",
+      "absUrl": "https://arxiv.org/abs/2608.09634v1",
+      "industrySource": ""
+    },
+    {
+      "id": "http://arxiv.org/abs/2608.08284v1",
+      "title": "Fair on the Surface? Benchmarking Hidden-Output Fairness Gaps in LLM Recommenders",
+      "authors": [
+        "Chan Aristella Lu",
+        "Arya Fayyazi",
+        "Junhao Zhang",
+        "Saeid Shokoufa",
+        "Yue Xing",
+        "Zhen Xiang",
+        "Kyu Hyung Lee",
+        "Mehdi Kamal",
+        "Massoud Pedram"
+      ],
+      "affiliations": [],
+      "abstract": "Fairness audits for LLM-based recommenders have largely focused on observable outputs, implicitly assuming that stable recommendations reflect stable internal processing. We challenge this assumption with FairGap, the first benchmark to jointly evaluate recommendation fairness at two levels: observable output shift (OBS) and hidden representation shift (IBS), measured through controlled counterfactual identity probes across gender, age, and race. Their relationship is summarized via Representation-Output Alignment (ROA), with quadrant diagnostics for identifying user-level hidden-output mismatch. Applied to six open-weight LLM families across three domains, FairGap reveals pervasive hidden-output decoupling: ROA rarely exceeds 0.22, and a non-negligible user population shows stable outputs despite substantial internal shifts, a mode that output-only audits cannot detect by design. Further, activation steering that reduces IBS by up to 8x simultaneously worsens OBS, demonstrating a fundamental tension between internal and output-level fairness that existing frameworks are unequipped to diagnose.",
+      "published": "2026-08-08T18:32:34Z",
+      "updated": "2026-08-08T18:32:34Z",
+      "categories": [
+        "cs.AI"
+      ],
+      "pdfUrl": "https://arxiv.org/pdf/2608.08284v1",
+      "absUrl": "https://arxiv.org/abs/2608.08284v1",
+      "industrySource": ""
+    },
+    {
+      "id": "http://arxiv.org/abs/2608.07816v1",
+      "title": "Preserving Item Semantics for Free: Rethinking Token Initialization in LLM-Based Generative Recommendation",
+      "authors": [
+        "Donald Loveland",
+        "Liam Collins",
+        "Bhuvesh Kumar",
+        "Danai Koutra",
+        "Neil Shah"
+      ],
+      "affiliations": [],
+      "abstract": "Recent advances in generative recommendation (GR) leverage large language models (LLMs) as recommender backbones, enabling LLMs to directly generate recommendations conditioned on item-interaction histories. In these systems, items are often represented through semantic IDs (SIDs) added to the LLM vocabulary as special tokens. Ideally, SIDs imbue item token representations with semantic priors, thereby improving model generalization. However, standard vocabulary expansion typically initializes these tokens as random Gaussian vectors, discarding the SIDs' underlying continuous geometry and forcing the LLM to relearn token relationships from interaction data. To demonstrate the consequences of this design, we first show that training from this initialization tends to organize SID embeddings around item popularity rather than semantics. We further show that, despite partially reducing the reliance on popularity and improving cold item performance, the computationally expensive process of continual pretraining (CPT) fails to reliably recover the original semantic geometry. To address these findings, we propose a simple, parameter-free intervention that initializes SID token embeddings directly from their corresponding centroids in the semantic embedding space. Requiring only a few lines of code and no additional training or inference overhead, this drop-in approach improves pure-SFT Recall@5 by up to 16%, reaches peak performance with up to 40% fewer SFT steps, and improves cold-item Recall@5 by up to 60%. Moreover, on datasets that benefit from additional CPT, centroid initialization reaches comparable performance while requiring half as many CPT epochs. Together, our findings show that preserving SID geometry, beyond shared-prefix structure, provides a simple and effective semantic prior for LLM-based GR.",
+      "published": "2026-08-07T23:33:08Z",
+      "updated": "2026-08-07T23:33:08Z",
+      "categories": [
+        "cs.IR",
+        "cs.LG"
+      ],
+      "pdfUrl": "https://arxiv.org/pdf/2608.07816v1",
+      "absUrl": "https://arxiv.org/abs/2608.07816v1",
+      "industrySource": ""
+    },
+    {
+      "id": "http://arxiv.org/abs/2608.06997v1",
+      "title": "Hierarchical Quantization with Domain-Adaptive Sparse Routing for Generative Cross-Domain Recommendation",
+      "authors": [
+        "Haiying He",
+        "Xiaopeng Li",
+        "Yuchen Gu",
+        "Kuo Cai",
+        "Bo Chen",
+        "Jingtong Gao",
+        "Yejing Wang",
+        "Derong Xu",
+        "Ruiming Tang",
+        "Guorui Zhou",
+        "Han Li",
+        "Xiangyu Zhao"
+      ],
+      "affiliations": [],
+      "abstract": "Generative Recommendation (GenRec) represents a promising paradigm that achieves remarkable empirical success by encoding items as compact Semantic IDs (SIDs) and modeling user behavior via next-token prediction across diverse recommendation scenarios. Extending this paradigm to cross-domain recommendation is challenging because a unified model must accommodate heterogeneous item semantics and behavioral patterns across domains. Existing methods commonly rely on globally shared representations or lightweight domain adaptation, which may provide insufficient capacity for modeling heterogeneous patterns at different semantic granularities. To address these challenges, we propose HD-Rec, a unified generative framework for cross-domain recommendation. HD-Rec employs a hierarchical domain-aware quantizer that constructs semantic identifiers using globally shared coarse-level codebooks and adaptively routed fine-level codebooks. It further introduces a domain-adaptive sparse mixture-of-experts module that combines a continuously activated shared expert with a dynamically selected specialized expert. To improve the coherence of multi-token item representations, we develop a cross-granularity routing consistency objective that regularizes token-level routing decisions toward their item-level consensus. Experiments on three public cross-domain recommendation benchmarks show that HD-Rec consistently improves over competitive sequential, generative, and cross-domain recommendation baselines.",
+      "published": "2026-08-07T09:15:19Z",
+      "updated": "2026-08-07T09:15:19Z",
+      "categories": [
+        "cs.IR"
+      ],
+      "pdfUrl": "https://arxiv.org/pdf/2608.06997v1",
+      "absUrl": "https://arxiv.org/abs/2608.06997v1",
+      "industrySource": ""
     },
     {
       "id": "http://arxiv.org/abs/2608.03272v1",
@@ -998,211 +1204,6 @@
       ],
       "pdfUrl": "https://arxiv.org/pdf/2607.13304v1",
       "absUrl": "https://arxiv.org/abs/2607.13304v1",
-      "industrySource": ""
-    },
-    {
-      "id": "http://arxiv.org/abs/2607.12425v1",
-      "title": "Where Reasoning Matters: Rethinking Latent Reasoning in Semantic ID-based Generative Recommendation",
-      "authors": [
-        "Shangxin Yang",
-        "Min Gao",
-        "Zongwei Wang",
-        "Junliang Yu"
-      ],
-      "affiliations": [],
-      "abstract": "Semantic ID-based generative recommendation predicts an item by generating a short sequence of semantic ID tokens, where each token is produced autoregressively. Latent reasoning has recently been introduced to improve this process through additional hidden-state computation before each token decision. This raises a practical question: when one item is represented by a sequence of semantic ID tokens, should each token receive the same fixed number of latent refinement steps, or should these steps be allocated more effectively across positions? We study this question through position-wise information-gain (IG), which measures how much each semantic ID position reduces the uncertainty of the target item. We observe that earlier semantic ID positions usually provide higher information-gain, while later positions contribute less additional information. We further analyze that applying more refinement to high-IG positions tends to bring larger expected benefits. Based on this observation, we propose IBA, an Information-Gain Budget Allocation framework for semantic ID-based generative recommendation. IBA treats latent refinement steps as a limited computational resource and learns how to allocate them across semantic ID positions, assigning more refinement to informative positions and less to positions with smaller contribution. Experiments on multiple public datasets show that IBA consistently improves strong generative recommendation baselines and achieves a better accuracy--computation trade-off than fixed or poorly matched step allocations.",
-      "published": "2026-07-14T06:55:12Z",
-      "updated": "2026-07-14T06:55:12Z",
-      "categories": [
-        "cs.IR"
-      ],
-      "pdfUrl": "https://arxiv.org/pdf/2607.12425v1",
-      "absUrl": "https://arxiv.org/abs/2607.12425v1",
-      "industrySource": ""
-    },
-    {
-      "id": "http://arxiv.org/abs/2607.09540v4",
-      "title": "From Raw IDs to Semantic Planning: How Recommender Systems Utilize Information at Scale",
-      "authors": [
-        "Changhong Jin",
-        "Shiqiu Yang",
-        "Roger Zhe Li",
-        "Yingjie Niu",
-        "Aghiles Salah",
-        "Mete Sertkan",
-        "Zheng Ju",
-        "Xingsheng Guo",
-        "Huifeng Guo",
-        "Ruihai Dong",
-        "Barry Smyth"
-      ],
-      "affiliations": [],
-      "abstract": "The evolution of recommender systems can be explored by asking how they utilize information at scale. Throughout most of the historical period under consideration during the past two decades, industrial systems have relied on raw IDs, which are discrete, globally unique, and semantically opaque identifiers that enable exact lookup, logging, and item-specific memorization at scale. Over time, however, recommender systems have sought to utilize richer sources of information, including item content, context, multimodal signals, and cross-domain structure. This development has led to a new stage in which part of such information is no longer used solely as auxiliary features around item identity, but is increasingly encapsulated in semantic IDs that provide a more structured, model-facing form of identity. We argue that this shift goes beyond the rise of generative recommendation over traditional methods. Indeed, it reflects a broader evolution in how recommender systems utilize information under industrial-scale constraints. This paper looks at the past, present, and future to examine three connected questions: why raw IDs dominated the early development of recommender systems, why semantic information is increasingly being encapsulated in IDs today, and what may come next once recommendations move beyond semantic retrieval. In particular, we introduce semantic planning as a possible future direction in which the system first predicts the semantic target of the next exposure, and only then instantiates that target as a specific item or generated creative. We further argue that such a shift may require changes not only in model design but also in evaluation and in the way recommender systems coordinate the objectives of users, platforms, and providers.",
-      "published": "2026-07-10T15:46:12Z",
-      "updated": "2026-07-20T02:16:32Z",
-      "categories": [
-        "cs.IR"
-      ],
-      "pdfUrl": "https://arxiv.org/pdf/2607.09540v4",
-      "absUrl": "https://arxiv.org/abs/2607.09540v4",
-      "industrySource": ""
-    },
-    {
-      "id": "http://arxiv.org/abs/2607.06260v2",
-      "title": "Large language models create an uneven informational layer over cities",
-      "authors": [
-        "Lin Chen",
-        "Guangyuan Weng",
-        "Esteban Moro"
-      ],
-      "affiliations": [],
-      "abstract": "Large language models (LLMs) are emerging as a new informational layer over cities, shaping which places people discover, consider, and ultimately visit. Yet little is known about which places they surface, which they ignore, and whether these patterns vary across communities and users and translate into real-world economic consequences. Here, we audit restaurant recommendations from three major LLMs across 304 neighborhoods in five U.S. cities using 320 synthetic user profiles spanning income, age, sex, and residential status. We find that LLMs both fabricate venues and systematically overlook real ones. Fabrication is concentrated in neighborhoods with weaker digital and physical footprints and disappears when models are provided with verified venue lists. In contrast, invisibility persists: even when choosing from a fixed set of real venues, 47.5% of establishments are never recommended, and 31.9% of these blind spots are shared across all three model families, indicating that uneven visibility reflects not only missing knowledge but also stable patterns of selective attention rooted in shared patterns of visibility rather than model-specific errors. The same selectivity extends to users. Within identical venue pools, higher-income users receive more expensive and less popular venues, while tourists are directed toward costlier but more socially diverse establishments than local residents. Simulating the resulting shifts in consumer demand suggests that widespread reliance on LLM recommendations would redirect visits and revenue away from chain and quick-service restaurants toward independent and full-service dining. Together, our findings show that LLMs act as a selective layer of urban information that unevenly distributes visibility across places and people, with potential consequences for local economies and urban inequality.",
-      "published": "2026-07-07T13:26:38Z",
-      "updated": "2026-07-23T19:32:45Z",
-      "categories": [
-        "cs.CY",
-        "cs.SI"
-      ],
-      "pdfUrl": "https://arxiv.org/pdf/2607.06260v2",
-      "absUrl": "https://arxiv.org/abs/2607.06260v2",
-      "industrySource": ""
-    },
-    {
-      "id": "http://arxiv.org/abs/2607.05761v1",
-      "title": "Synthetic Consumer Insight Generation with Large Language Models",
-      "authors": [
-        "Stephen L. France",
-        "Pia. A. Albinsson"
-      ],
-      "affiliations": [],
-      "abstract": "Modern data-driven marketing relies on large amounts of consumer data, yet collecting such data can be costly, time-consuming, and difficult to scale. This research examines whether large language models (LLMs) can be used to generate synthetic consumer data for projective techniques, a set of methods designed to elicit consumer associations, emotions, wants, and needs. We test LLM-generated responses across multiple projective tasks, LLMs, prompting strategies, and temperature settings, and compare them with human responses from a primary research study on perceptions of city tourism destinations. Human and LLM responses were analyzed using linguistic measures, diversity and concentration metrics, topic models, and top-term analyses. The results show substantial overlap between human and LLM responses in broad topics and associations, but also important differences in style, linguistic structure, and the way diversity is generated. Recommendations are given on how to best utilize LLMs for generating synthetic consumer data, how model and prompt choices shape response quality, and on recognizing the limitations of LLM synthetic consumer data generation.",
-      "published": "2026-07-07T02:38:41Z",
-      "updated": "2026-07-07T02:38:41Z",
-      "categories": [
-        "cs.AI"
-      ],
-      "pdfUrl": "https://arxiv.org/pdf/2607.05761v1",
-      "absUrl": "https://arxiv.org/abs/2607.05761v1",
-      "industrySource": ""
-    },
-    {
-      "id": "http://arxiv.org/abs/2607.24804v2",
-      "title": "Bumblebee: Interleaved Mixed-Layer Building Blocks for Large-Scale Recommendation Systems",
-      "authors": [
-        "David Bauer",
-        "Cancan Zhang",
-        "Wenshun Liu",
-        "Xiaoyi Zhang",
-        "Weijia Liu",
-        "Wanli Ma",
-        "Yue Weng",
-        "Wei Li",
-        "Rui Li",
-        "Jing Qian",
-        "Huayu Li",
-        "Xiaoyi Liu",
-        "Linhong Zhu",
-        "Jerry Fu"
-      ],
-      "affiliations": [],
-      "abstract": "Recommendation systems have undergone significant transformations in the past years. The transition from traditional feature interaction modules to generative next-action prediction has pushed the boundaries of personalized content. Developments have largely evolved along two separate tracks. Sequence modeling approaches on the one hand and feature interaction methods on the other. In this paper, we introduce Bumblebee, a recommendation architecture that addresses the lack of interaction between the two directions through an interleaved, stackable block design. Each block implements a micro-pipeline of layers combining sequence personalization, attention-based encoding, and feature crossing into a self-contained unit. Every block produces a joint representation of both feature modalities which is consumed by the next block in the sequence. This mechanism encourages early and repeated mixture of modalities and enriches downstream features with additional contextual information. Residual connections between blocks create cross-modal information pathways and yield additional predictive performance without adding additional parameters. Blocks can be specialized by selectively dropping components, enabling flexible trade-offs between quality and throughput. We evaluate our approach on large-scale industrial data and show consistent improvements over comparable baseline models across several classification and regression tasks. Furthermore, we conduct ablation studies to confirm that the interleaved composition itself is the primary driver of these improvements. Our results suggest that interleaving heterogeneous functional units, rather than composing deep stacks, is a promising paradigm for future-generation recommendation architectures.",
-      "published": "2026-07-06T20:31:38Z",
-      "updated": "2026-08-03T18:37:22Z",
-      "categories": [
-        "cs.IR",
-        "cs.LG"
-      ],
-      "pdfUrl": "https://arxiv.org/pdf/2607.24804v2",
-      "absUrl": "https://arxiv.org/abs/2607.24804v2",
-      "industrySource": ""
-    },
-    {
-      "id": "http://arxiv.org/abs/2607.02818v2",
-      "title": "Session-Level Optimization for Large-Scale Retrieval using REINFORCE with Multi-Step Off-Policy Correction",
-      "authors": [
-        "Artem Matveev",
-        "Sergei Makeev",
-        "Aleksei Krasilnikov",
-        "Vladimir Baikalov",
-        "Sergei Liamaev",
-        "Kirill Khrylchenko"
-      ],
-      "affiliations": [],
-      "abstract": "Two-tower models are a widely used paradigm for large-scale retrieval in recommendation. However, they are typically trained with myopic supervised objectives, such as next-item prediction, that do not directly optimize long-term user satisfaction. In this work, we formulate recommendation as a session-level sequential decision-making problem and train a two-tower retriever autoregressively with off-policy REINFORCE on pre-collected data. Unlike the one-step off-policy correction used in prior work, we propose a multi-step approximation of importance weights enabled by the autoregressive formulation. To support offline evaluation, we train a user feedback model that simulates user responses to generated recommendations. This lets us adapt doubly robust off-policy evaluation for sequential decision-making to recommendation, a setting that has received limited attention. We further introduce a feedback-model-based test-time scaling procedure that simulates future responses and selects the recommendation with the highest predicted long-term return. Experiments on the public large-scale Yambda-5B dataset show that our RL agent achieves higher off-policy estimates of cumulative session reward than next-item and next-positive prediction baselines, while remaining competitive on conventional retrieval metrics. Moreover, allocating more inference-time compute to simulating future responses yields higher model-based long-term returns without updating the policy.",
-      "published": "2026-07-02T23:13:36Z",
-      "updated": "2026-07-27T07:35:55Z",
-      "categories": [
-        "cs.IR"
-      ],
-      "pdfUrl": "https://arxiv.org/pdf/2607.02818v2",
-      "absUrl": "https://arxiv.org/abs/2607.02818v2",
-      "industrySource": ""
-    },
-    {
-      "id": "http://arxiv.org/abs/2607.00454v1",
-      "title": "Agri-SAGE: Simulation-Grounded Multi-Agent LLM for Context-Aware Agricultural Advisory Generation",
-      "authors": [
-        "Vedant Balasubramaniam",
-        "Geetha Charan",
-        "Manojkumar Patil",
-        "Rohit P Suresh",
-        "V Priyanka",
-        "Kodur Sai Vinay Sathvik",
-        "Y. Narahari"
-      ],
-      "affiliations": [],
-      "abstract": "Agricultural advisory systems face a fundamental tension: static agronomic guidelines offer consistent, evidence-based recommendations, yet remain blind to in-season variability and dynamic uncertainties. Recent advisory systems powered by LLMs are liable for a different risk of generating recommendations that are agronomically credible but physiologically unconvincing. Agri-SAGE is a closed-loop framework designed to resolve the above two limitations by integrating retrieval-grounded multi-agent LLM reasoning with APSIM-based biophysical simulation, to generate and validate agronomic advisories. To assess this framework, we evaluate three reasoning approaches, namely Plan-and-Solve, Tree of Thoughts, and Reflexion, over a 10-year retrospective analysis. All three significantly outperform static PoP (Package-of-Practice) baselines, with Tree of Thoughts achieving impressive peak yields. At the same time, Reflexion achieves comparable agronomic outcomes at substantially lower computational cost by leveraging cross-seasonal episodic memory.",
-      "published": "2026-07-01T05:18:20Z",
-      "updated": "2026-07-01T05:18:20Z",
-      "categories": [
-        "cs.AI",
-        "cs.MA"
-      ],
-      "pdfUrl": "https://arxiv.org/pdf/2607.00454v1",
-      "absUrl": "https://arxiv.org/abs/2607.00454v1",
-      "industrySource": ""
-    },
-    {
-      "id": "http://arxiv.org/abs/2606.29793v2",
-      "title": "Fund2Persona: A Framework for Building and Refining Financial Advisor Personas from Fund Disclosure Data",
-      "authors": [
-        "Suhwan Park",
-        "Hoyoung Lee",
-        "Zhangyang Wang",
-        "Alejandro Lopez-Lira",
-        "Young Cha",
-        "Chanyeol Choi",
-        "Jaewon Choi",
-        "Yongjae Lee"
-      ],
-      "affiliations": [],
-      "abstract": "Demand for personalized financial advising is growing, but consistent advisor expertise is difficult to obtain, scale, and encode in LLM systems. Simple persona prompts rarely specify how a financial advisor should reason and often drift toward generic recommendations. We propose Fund2Persona, a framework that grounds financial-advisor personas in fund disclosures, holdings transitions, market context, and manager commentary, then refines them through an agentic actor--scorer--patcher loop. We evaluate the resulting personas on held-out holdings-transition reconstruction and manager-commentary alignment, where they better recover portfolio decisions and grounded manager interpretation than generic baselines. We further study two downstream diagnostics: market-scenario generation, where persona retrieval broadens plausible investment views beyond repeated generic rollouts, and advisory dialogues grounded in investor profiles, where matched personas give more specific and useful advice than a generic advisor. These results suggest that fund-data-grounded financial-advisor personas can make manager-specific investment expertise portable rather than merely changing an LLM's surface style.",
-      "published": "2026-06-29T05:14:43Z",
-      "updated": "2026-06-30T06:50:50Z",
-      "categories": [
-        "cs.CL",
-        "q-fin.GN"
-      ],
-      "pdfUrl": "https://arxiv.org/pdf/2606.29793v2",
-      "absUrl": "https://arxiv.org/abs/2606.29793v2",
-      "industrySource": ""
-    },
-    {
-      "id": "http://arxiv.org/abs/2606.29406v1",
-      "title": "Adaptive AI Delegation under Uncertainty: A Bayesian Governance Policy for Sequential Decision Authority",
-      "authors": [
-        "Matthew Francis Dixon"
-      ],
-      "affiliations": [],
-      "abstract": "Organizations increasingly use large language models and agentic AI systems to generate probabilistic assessments and candidate actions in high-consequence settings. This creates a managerial problem distinct from prediction: how should organizations allocate decision authority to AI-generated recommendations as evidence quality, uncertainty, and organizational objectives evolve over time? Existing AI governance frameworks emphasize transparency, documentation, oversight, and regulatory compliance, but provide limited quantitative guidance for dynamically allocating decision authority under uncertainty. To address this challenge, we formulate adaptive AI delegation as a Governance-Aware Partially Observable Markov Decision Process (POMDP) in which Bayesian inference estimates the informational state and sequential optimization determines delegated AI authority. The paper also develops a quantitative validation and benchmarking framework for governance policies. Synthetic stress tests, reported LLM-confidence robustness, forecast-accuracy validation, governance-appetite sensitivity, and fragile-AI early-warning experiments evaluate whether the proposed policy exhibits graceful degradation, robustness to confidence-only perturbations, adaptive delegation under improving evidence quality, and interpretable calibration of institutional conservatism. The Governance-Aware POMDP is further benchmarked against five representative governance strategies operating under identical Bayesian beliefs, information, and governance objectives. The results show that while specialized heuristics perform well in stationary settings, sequential Bayesian governance provides the strongest general-purpose governance policy across heterogeneous AI-quality regimes by adaptively allocating organizational decision authority under uncertainty.",
-      "published": "2026-06-28T14:01:42Z",
-      "updated": "2026-06-28T14:01:42Z",
-      "categories": [
-        "q-fin.RM",
-        "math.OC"
-      ],
-      "pdfUrl": "https://arxiv.org/pdf/2606.29406v1",
-      "absUrl": "https://arxiv.org/abs/2606.29406v1",
       "industrySource": ""
     }
   ]
