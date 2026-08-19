@@ -1,7 +1,33 @@
 {
-  "lastUpdated": "2026-08-15T02:15:32Z",
-  "totalResults": 719,
+  "lastUpdated": "2026-08-19T02:20:06Z",
+  "totalResults": 722,
   "papers": [
+    {
+      "id": "http://arxiv.org/abs/2608.17613v1",
+      "title": "Once Generated, Ranked: End-to-End Generative Slate Recommendation with Unified Semantic-Collaborative IDs",
+      "authors": [
+        "Yang Hu",
+        "Jiayi Guo",
+        "Jingui Ma",
+        "Ning Li",
+        "Jiangling Qin",
+        "Yanming Li",
+        "Yang Deng",
+        "Xiaoshuang Chen",
+        "Kaiqiao Zhan"
+      ],
+      "affiliations": [],
+      "abstract": "Slate recommendation treats a slate rather than an individual item as the recommendation unit, requiring joint optimization of item interactions and slate utility. Existing approaches typically separate candidate generation from ranking and restrict optimization to retrieved candidates. Generative recommendation with Semantic IDs (SIDs) offers a path to end-to-end recommendation, but existing SID construction often lacks recommendation-aware semantics and effective local collaborative signals, while next-token prediction is misaligned with slate-level objectives. We propose OGR, an end-to-end framework that directly generates ordered slates-\"Once Generated, Ranked.\" OGR first introduces TUSID, which adaptively fuses item-specific semantic and local collaborative information into hierarchical SIDs. It then uses list-wise preference planning and pipelined position-wise SID decoding to model global preferences and inter-item dependencies while generating ordered slates. We further propose SPA, a reward-guided conservative policy optimization method that aligns generated slates with user preferences beyond likelihood imitation. Offline experiments show that OGR outperforms representative baselines, with 48.2% and 27.2% relative NDCG@5 gains on industrial and public datasets, respectively. Online A/B testing on Kuaishou further yields a 1.120% improvement in Effective Views.",
+      "published": "2026-08-18T10:24:09Z",
+      "updated": "2026-08-18T10:24:09Z",
+      "categories": [
+        "cs.IR",
+        "cs.SI"
+      ],
+      "pdfUrl": "https://arxiv.org/pdf/2608.17613v1",
+      "absUrl": "https://arxiv.org/abs/2608.17613v1",
+      "industrySource": "Kuaishou"
+    },
     {
       "id": "http://arxiv.org/abs/2608.10929v1",
       "title": "FedCGR: Federated Cross-Domain Generative Recommendation",
@@ -340,27 +366,79 @@
       "industrySource": "Tencent"
     },
     {
-      "id": "http://arxiv.org/abs/2607.16633v1",
-      "title": "Beyond Fixed Depths and Widths: Optimizing Textual Decoding Tries in LLM-based Generative Recommendation",
+      "id": "http://arxiv.org/abs/2608.16274v1",
+      "title": "Decoupled Temporal Encoding for Generative Recommendation",
       "authors": [
-        "Jingzhe Liu",
-        "Hanbing Wang",
-        "Jiliang Tang",
-        "Liam Collins",
-        "Tong Zhao",
-        "Neil Shah",
-        "Mingxuan Ju"
+        "Pengfei Jia",
+        "Jingjian Wang",
+        "Jingmao Li",
+        "Ge Zhang",
+        "Feng Shi"
       ],
       "affiliations": [],
-      "abstract": "Generative recommendation (GR) is an increasingly popular paradigm in recommender systems, with a prominent line of work using LLMs as autoregressive backbones to predict the next item's term IDs (e.g., titles or keywords). The success of autoregressive generation hinges on constrained beam search over a decoding trie to ensure that generated outputs correspond to valid items. However, current research predominantly focuses on generating more comprehensive term IDs to describe items, while largely neglecting the structural design of the decoding trie formed by these terms. This can lead to a trie that is poorly suited to beam search, which degrades performance. To address this, we examine the effectiveness of term IDs from the perspective of decoding trie optimization. Through empirical and theoretical analyses, we identify two desirable properties for a highly performant trie: (1) adaptive and variable ID length, enabling items with varying semantic richness to be represented by IDs of appropriate lengths, and (2) constrained branching factors, especially at shallow levels, which drastically improves the success rate of constrained beam search. Motivated by these properties, we introduce BONSAI: Branching-Optimized Node Structure for Adaptive Identifiers, a novel framework that co-designs textual term IDs and their underlying decoding trie. BONSAI extracts recommendation-informative words from item metadata and employs a minimum set cover formulation to recursively build a trie that satisfies the above properties. Experiments reveal that BONSAI achieves up to a 21.6% relative improvement over state-of-the-art baselines. Further analyses confirm the crucial role of our proposed properties, and demonstrate their generalizability to be applied to enhance the performance of other term ID methods.",
-      "published": "2026-07-18T04:31:02Z",
-      "updated": "2026-07-18T04:31:02Z",
+      "abstract": "Positional encoding is a fundamental component of Transformer-based generative recommendation models, where user histories are modeled as autoregressive item sequences. Most positional encoding methods are inherited from natural language processing and mainly represent discrete item order. However, recommendation sequences go beyond ordered lists, as timestamps and temporal effects also shape item relations. Our work is motivated by a real-world food delivery and instant retail recommendation system, where user behavior exhibits multi-level temporal regularities, including recency effects, meal-time peaks, weekday-weekend shifts, and promotion-driven traffic bursts. Existing methods partially address this issue through timestamp features, interval embeddings, decay functions, or attention biases, but they usually inject heterogeneous temporal signals through a unified representation or a single modeling pathway, making it difficult to distinguish broad temporal dynamics from local order cues. To address this limitation, we propose Decoupled Temporal Encoding, a lightweight framework for generative recommendation. DTE separates temporal dynamics from order information through two complementary modules: a personalized macro-temporal module that injects compact temporal primitives into item embeddings, and a time-gated micro-sequential module that introduces relative-order bias only when interactions are temporally dense. DTE is also parameter-efficient and deployment-friendly, allowing easy integration into existing systems.",
+      "published": "2026-08-17T08:47:21Z",
+      "updated": "2026-08-17T08:47:21Z",
       "categories": [
-        "cs.IR"
+        "cs.IR",
+        "cs.AI"
       ],
-      "pdfUrl": "https://arxiv.org/pdf/2607.16633v1",
-      "absUrl": "https://arxiv.org/abs/2607.16633v1",
-      "industrySource": "Meta"
+      "pdfUrl": "https://arxiv.org/pdf/2608.16274v1",
+      "absUrl": "https://arxiv.org/abs/2608.16274v1",
+      "industrySource": ""
+    },
+    {
+      "id": "http://arxiv.org/abs/2608.15949v1",
+      "title": "Ask to Be Sure: Informative Interactions for Confident Multi-Turn LLM Recommendation",
+      "authors": [
+        "Cedar Site Bai",
+        "Duanshun Li",
+        "Zhenyu Liao",
+        "Sheikh Sarwar",
+        "Huiyuan Chen",
+        "Yuan Chen",
+        "Changhe Yuan",
+        "Haiyang Zhang",
+        "Qilin Qi"
+      ],
+      "affiliations": [],
+      "abstract": "Recent advances in large language models (LLMs) have enabled their use as conversational recommender systems (CRS), demonstrating strong recommendation accuracy and natural dialogue. However, guiding multi-turn interactions to elicit user preferences effectively remains challenging. Existing approaches either use separate reinforcement learning agents with templated interactions or optimize for interactivity judged by another LLM, without measuring how much useful information is actually gained. We propose a new approach that quantifies the effectiveness of each interaction by the reduction in the assistant's uncertainty, measured via entropy over recommendations. We apply this entropy reduction as a reward---without relying on ground-truth recommendations, which are often unavailable in real-world scenarios---to fine-tune the LLM, enabling strategic interaction generation. Empirical results with supervised fine-tuning (SFT) and direct preference optimization (DPO) on the INSPIRED and ReDial datasets show that our method improves both recommendation quality and conversational efficiency.",
+      "published": "2026-08-16T22:14:12Z",
+      "updated": "2026-08-16T22:14:12Z",
+      "categories": [
+        "cs.IR",
+        "cs.AI",
+        "cs.CL",
+        "cs.LG"
+      ],
+      "pdfUrl": "https://arxiv.org/pdf/2608.15949v1",
+      "absUrl": "https://arxiv.org/abs/2608.15949v1",
+      "industrySource": ""
+    },
+    {
+      "id": "http://arxiv.org/abs/2608.14011v1",
+      "title": "EchoRec: Multi-Item Prediction-Empowered Generative Recommendation via Cycle-Consistent Preference Alignment",
+      "authors": [
+        "Haokai Ma",
+        "Aoqi Hu",
+        "Yueao Xing",
+        "Ruobing Xie",
+        "Yonghui Yang",
+        "Teng Tu",
+        "Lei Meng",
+        "Tat-Seng Chua"
+      ],
+      "affiliations": [],
+      "abstract": "Generative recommendation autoregressively generates the semantic IDs of the target item, unifying preference modeling and index retrieval within the shared token space. Recent attempts have introduced Multi-Token Prediction (MTP) into this field, yet they primarily inherit its efficiency merit, leaving its potential as dense supervision unexplored. Unlocking this potential hinges on whether future behaviors qualify as informative supervision. Our analysis reveals that future behaviors carry a semantic echo of the current one far above that of random pairs, which nevertheless decays along horizons under intent transitions, making them informative yet order-dependent signals. Motivated by this, we propose EchoRec, which empowers MTP with cycle-consistent holistic preference alignment across multi-horizon for generative recommendation. It comprises two synergistic modules. Horizon-aware Preference Generation (HPG) sequentially chains lightweight auxiliary branches upon the base recommender, where each branch conditions on its predecessor to respect preference evolution. Verifiable Holistic-Preference Alignment (VHA) further consolidates them into the holistic preference and echoes it back through cycle-consistent projectors to suppress spurious alignment, with theoretical guarantees that exclude the rank-collapse form of spurious alignment under an invertible transport, enabling the holistic preference to be retained in the decoding representation. All auxiliary components serve as disposable scaffolding discarded at inference, introducing negligible online serving overhead. Extensive experiments on three datasets demonstrate the superiority of our EchoRec, together with its naturally acquired multi-item generation ability. Our code and datasets will be available upon acceptance.",
+      "published": "2026-08-14T06:59:12Z",
+      "updated": "2026-08-14T06:59:12Z",
+      "categories": [
+        "cs.IR",
+        "cs.AI"
+      ],
+      "pdfUrl": "https://arxiv.org/pdf/2608.14011v1",
+      "absUrl": "https://arxiv.org/abs/2608.14011v1",
+      "industrySource": ""
     },
     {
       "id": "http://arxiv.org/abs/2608.12845v1",
@@ -387,8 +465,8 @@
       "industrySource": ""
     },
     {
-      "id": "http://arxiv.org/abs/2608.11980v1",
-      "title": "HCGRec: Hint-Conditioned Generative Recommendation with Semantic IDs",
+      "id": "http://arxiv.org/abs/2608.11980v2",
+      "title": "Learning from Unreachable Rewards: Hint-Conditioned Reinforcement Learning for Generative Recommendation",
       "authors": [
         "Kangning Zhang",
         "Haotian Fang",
@@ -403,13 +481,13 @@
       "affiliations": [],
       "abstract": "Semantic-ID generative recommenders represent each item as a short sequence of discrete semantic tokens and predict the next item by autoregressively generating this token sequence. This paradigm enables a unified generation interface for item IDs, histories, and item text, but it also creates a structured optimization bottleneck during reward-based post-training: when an early semantic token enters the wrong branch of the item-token space, finite rollout groups rarely reach the ground-truth item, so group-relative optimization receives identical zero rewards and produces no useful advantage. We propose Hint-Conditioned Generative Recommendation (HCGRec), a semantic-ID generative recommendation framework that recovers learning signal for such hard training instances. HCGRec diagnoses each instance with checkpoint rollouts and supplies a minimal target-prefix hint only when the current generator cannot reach the correct item. The model then generates the unhinted suffix under the hinted semantic branch, turning zero-reward groups into informative comparisons over item-token completions. Hinting also changes token identity: hinted prefix tokens are oracle-provided item context, while unhinted suffix tokens are sampled generation actions. We therefore introduce hint-aware credit decomposition, using supervised learning to preserve item-semantic and prefix-structure alignment for hinted tokens and GRPO to optimize the sampled suffix. Experiments on sequential recommendation benchmarks show that HCGRec substantially improves over supervised fine-tuning and vanilla reward-based post-training, while reducing zero-advantage training samples from over 70% to below 20%. The code is accessible at https://github.com/WncFht/GRec.",
       "published": "2026-08-12T12:13:08Z",
-      "updated": "2026-08-12T12:13:08Z",
+      "updated": "2026-08-15T11:55:30Z",
       "categories": [
         "cs.IR",
         "cs.AI"
       ],
-      "pdfUrl": "https://arxiv.org/pdf/2608.11980v1",
-      "absUrl": "https://arxiv.org/abs/2608.11980v1",
+      "pdfUrl": "https://arxiv.org/pdf/2608.11980v2",
+      "absUrl": "https://arxiv.org/abs/2608.11980v2",
       "industrySource": ""
     },
     {
@@ -1140,70 +1218,6 @@
       ],
       "pdfUrl": "https://arxiv.org/pdf/2607.21519v1",
       "absUrl": "https://arxiv.org/abs/2607.21519v1",
-      "industrySource": ""
-    },
-    {
-      "id": "http://arxiv.org/abs/2607.28659v1",
-      "title": "Empowering Cross-Domain Sequential Recommendation with Hybrid Tokenization and Serial-Parallel Decoding",
-      "authors": [
-        "Yuxuan Hu",
-        "Yuhao Wang",
-        "Tianbo Huang",
-        "Chao Zhang",
-        "Ziwei Liu",
-        "Lihua Zhang",
-        "Xiangyu Zhao"
-      ],
-      "affiliations": [],
-      "abstract": "Cross-domain sequential recommendation (CDSR) aims to model users' dynamic interest transitions and sequential patterns across multiple domains. Recently, generative recommendation (GR) has emerged. It first learns semantic identifiers (SIDs) from item semantics and formulates recommendation as autoregressive generation. However, existing methods face two critical issues: (1) they ignore collaborative correlations across domains during tokenization, and (2) they adopt inefficient decoding strategies, such as beam search, during generation, which hinders real-time deployment. To address these limitations, we propose GenCDSR, an effective and efficient generative framework for CDSR. Specifically, we design a cross-domain hybrid tokenization mechanism with a multi-tower architecture to jointly capture cross-domain commonalities and domain-specific distinctions through hierarchical shared-specific and fine-grained codebooks. Furthermore, we develop a cross-domain serial-parallel decoding strategy that leverages the hierarchical SID structure to partially parallelize generation, significantly reducing inference latency while preserving generation consistency. Experiments on three public datasets show that GenCDSR achieves an average accuracy improvement of 1.5 percent and an average inference latency reduction of 85.1 percent compared with state-of-the-art baselines. The implementation code and datasets are available online: https://github.com/Applied-Machine-Learning-Lab/RecSys2026_GenCDSR.",
-      "published": "2026-07-21T08:01:15Z",
-      "updated": "2026-07-21T08:01:15Z",
-      "categories": [
-        "cs.AI"
-      ],
-      "pdfUrl": "https://arxiv.org/pdf/2607.28659v1",
-      "absUrl": "https://arxiv.org/abs/2607.28659v1",
-      "industrySource": ""
-    },
-    {
-      "id": "http://arxiv.org/abs/2607.18600v1",
-      "title": "Topology-Aware Tokenization for Generative Recommendation",
-      "authors": [
-        "Yaokun Liu",
-        "Yifan Liu",
-        "Zhenrui Yue",
-        "Gyuseok Lee",
-        "Zelin Li",
-        "Ruichen Yao",
-        "Dong Wang"
-      ],
-      "affiliations": [],
-      "abstract": "Generative recommendation reformulates sequential recommendation as an autoregressive generation task, yet a critical issue in this paradigm remains overlooked: topology distortion in item tokenization. In particular, we observe that the intrinsic adjacency relationships of items in the pretrained semantic embedding space are significantly disrupted after quantization. This topology distortion misleads the model's perception of item similarity, ultimately bottlenecking the accuracy of generative recommendations. To address this issue, we propose Topology-Aware Tokenization (TopoTok), an item tokenization framework that preserves item relational structure throughout the quantization hierarchy. Different from the prior monolithic supervision in tokenization, TopoTok introduces a multi-level distillation scheme to progressively recover the topology from coarse to fine granularity: 1) Inter-Group Distillation to capture global cluster-wise relations; 2) Intra-Group Distillation to refine local structures within semantic clusters; and 3) Inter-Item Distillation to enforce fine-grained alignment at the individual item level. Extensive experiments on three benchmark datasets demonstrate that TopoTok effectively alleviates topology distortion and consistently outperforms state-of-the-art tokenizers, achieving significant performance gains of up to 9.42% in Recall@5.",
-      "published": "2026-07-21T00:27:30Z",
-      "updated": "2026-07-21T00:27:30Z",
-      "categories": [
-        "cs.IR"
-      ],
-      "pdfUrl": "https://arxiv.org/pdf/2607.18600v1",
-      "absUrl": "https://arxiv.org/abs/2607.18600v1",
-      "industrySource": ""
-    },
-    {
-      "id": "http://arxiv.org/abs/2607.13304v1",
-      "title": "Where Does the Noise Come From? A Variance-Components Decomposition of Non-Determinism in LLM Brand Answers",
-      "authors": [
-        "Dmitrij Żatuchin"
-      ],
-      "affiliations": [],
-      "abstract": "Teams measuring whether large language models (LLMs) recommend a brand face a reproducibility problem: ask the same question twice and the answer moves. Practice resamples each prompt a few times (commonly five) and averages, treating within-prompt resampling as the source of the noise. But a measured brand score moves for at least four separable reasons: within-prompt resampling, prompt paraphrase, model identity, and query language. We specify a crossed random-effects (generalizability-theory) decomposition that partitions the total variance of a response-level brand outcome into these four sources, and embed the components in a decision-study allocation that returns how many repeats, paraphrases, models, and languages to buy for a target reliability. We apply it to a fully crossed corpus of 12,933 LLM responses on 20 Central and Eastern European brands, 8 languages, and 3 models (GPT-5.2 and Gemini 3 Flash in parametric mode, Perplexity in grounded retrieval), with a stability subset of 1,435 cells resampled about five times. The outcome is per-response multilingual sentiment polarity. Query language is the largest systematic facet (26.5% of the variance of one response) against 1.5% for brand identity (ICC 0.0146), so a single AI answer carries almost no brand-discriminating signal. Once a cell term isolates pure resampling, resampling is 34.8% of variance and the brand-in-context interaction 29.6%; brand-by-language is 8.6% (a bilingual penalty) while brand-by-model and brand-by-prompt are near zero. Per unit of query budget, adding languages and models reduces relative-error variance far more than adding repeats: a repeat past the fifth reduces it by only 0.0003. Brand-ranking reliability stays low, near 0.01 for a single answer and about 0.36 at the full crossed design, so reliability is bought by spreading across languages and models, not by repeating one prompt.",
-      "published": "2026-07-14T22:12:52Z",
-      "updated": "2026-07-14T22:12:52Z",
-      "categories": [
-        "cs.IR",
-        "cs.CL"
-      ],
-      "pdfUrl": "https://arxiv.org/pdf/2607.13304v1",
-      "absUrl": "https://arxiv.org/abs/2607.13304v1",
       "industrySource": ""
     }
   ]
