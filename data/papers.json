@@ -1,7 +1,60 @@
 {
-  "lastUpdated": "2026-08-24T02:24:16Z",
-  "totalResults": 727,
+  "lastUpdated": "2026-08-28T12:37:58Z",
+  "totalResults": 734,
   "papers": [
+    {
+      "id": "http://arxiv.org/abs/2608.25546v1",
+      "title": "An Event is Worth One Token: Event Tokenization for Industrial-scale LLM Recommendation",
+      "authors": [
+        "Fan Xia",
+        "Zhaoheng Zheng",
+        "Iman Setayesh",
+        "Ruogu Lin",
+        "Yiqin Pan",
+        "Samarth Mittal",
+        "Wentao Bao",
+        "Vinti Pandey",
+        "Sachin Patil",
+        "Jianpeng Cheng",
+        "Jun Xiao",
+        "Zhuang Wang",
+        "Xiangjun Fan",
+        "Sri Reddy",
+        "Minghai Chen"
+      ],
+      "affiliations": [],
+      "abstract": "LLM-based recommendation has scaled along model capacity and sequence length, yet each position encodes only text, semantic IDs, or a few categorical features, discarding rich user, item, context, and outcome signals available at each event. Under autoregressive modeling, this yields weak queries at each position and, since each position becomes context for the next, the degradation compounds across the sequence. We propose an event-centric paradigm that represents each interaction by its full temporal snapshot, and identify a new scaling dimension we term snapshot resolution: the amount of information encoded per event. To efficiently scale snapshot resolution, we introduce AMBER (Autoregressive Modeling via Bottlenecked Event Representation), which compresses each temporal snapshot into a compact Event Token, a new LLM input modality. The representation is learned end-to-end, while Event Tokens are pre-computed and cached for serving, decoupling snapshot resolution from real-time serving compute. On industrial-scale ranking and retrieval benchmarks, AMBER advances the compute-quality Pareto frontier relative to alternative recommendation paradigms. At sufficient capacity, a single unified tokenizer even outperforms dedicated per-entity tokenizers, demonstrating positive transfer across structurally different entity types. AMBER's Event Tokens also transfer across model architectures: when integrated into a heavily optimized non-LLM ranker as serving-time historical features, they yield statistically significant improvements. Further scaling Event Tokenizer capacity provides additional improvements.",
+      "published": "2026-08-26T08:59:17Z",
+      "updated": "2026-08-26T08:59:17Z",
+      "categories": [
+        "cs.IR"
+      ],
+      "pdfUrl": "https://arxiv.org/pdf/2608.25546v1",
+      "absUrl": "https://arxiv.org/abs/2608.25546v1",
+      "industrySource": "Snap"
+    },
+    {
+      "id": "http://arxiv.org/abs/2608.23154v1",
+      "title": "The Disconnect Between Better Descriptive Reasoning Trace Quality and Recommendation Effectiveness",
+      "authors": [
+        "Gustavo Penha",
+        "Juan Elenter",
+        "Claudia Hauff",
+        "Hugues Bouchard",
+        "Paul Bennett",
+        "Mounia Lalmas"
+      ],
+      "affiliations": [],
+      "abstract": "Recent work has focused on improving explicit natural-language descriptive reasoning traces for generative recommendation. This includes systems that augment semantic ID (SID) prediction with chain-of-thought reasoning. However, because SIDs are opaque learned identifiers rather than natural language, they require costly alignment before an LLM can reason over them. This provides a controlled experimental setting in which both item representation (Title vs. SID) and semantic grounding (minimal vs. extensive SID alignment) can be varied independently. We therefore present the first controlled comparison of descriptive reasoning trace quality across semantic IDs and natural-language titles in a 2 x 2 factorial study on three Amazon product domains using a shared Qwen3-1.7B backbone. We find that introducing explicit descriptive reasoning traces reduces traditional offline recommendation effectiveness under standard SFT and RL training, even though natural language titles produce substantially more grounded and interpretable traces. Extensive SID alignment improves descriptive trace quality but not traditional offline recommendation effectiveness, while a richer reward signal partially recovers performance. Overall, our results show that improving descriptive reasoning trace quality is not, by itself, sufficient to consistently improve traditional offline recommendation effectiveness under the training objectives and evaluation protocols studied here.",
+      "published": "2026-08-24T11:58:31Z",
+      "updated": "2026-08-24T11:58:31Z",
+      "categories": [
+        "cs.IR"
+      ],
+      "pdfUrl": "https://arxiv.org/pdf/2608.23154v1",
+      "absUrl": "https://arxiv.org/abs/2608.23154v1",
+      "industrySource": "Amazon"
+    },
     {
       "id": "http://arxiv.org/abs/2608.21274v1",
       "title": "Recommendation Quality and the Concentration of Consumption: Experimental Evidence from Netflix",
@@ -145,7 +198,7 @@
       "industrySource": "Kuaishou"
     },
     {
-      "id": "http://arxiv.org/abs/2608.10008v2",
+      "id": "http://arxiv.org/abs/2608.10008v3",
       "title": "Do LLM Recommenders Know When They're Hallucinating? Auditing Confidence Calibration in Catalog Faithfulness",
       "authors": [
         "Srijith Ravikumar"
@@ -153,14 +206,14 @@
       "affiliations": [],
       "abstract": "LLM recommenders for top-K item suggestion regularly emit titles outside the target catalog. Prior audits report a binary out-of-domain rate; none ask whether the model knew. We jointly audit hallucination rate (OOD@10) and verbalized-confidence calibration (ECE, Brier, reliability) for four zero-shot LLM recommenders from four independent vendors (Mistral Large, Llama-3.3-70B, GPT-OSS-120B, Claude Sonnet 4.6), not grounded or fine-tuned systems, across three catalogs (MovieLens-25M, Amazon Reviews 2023 Toys, Yelp Open Dataset), stratified by item popularity. Measuring catalog membership is itself the hard part: on identical outputs the reported rate moves by an order of magnitude with the string matcher used, and F1 cannot separate the candidates. We validate the instrument against 201 human judgments and select on net bias, where the adopted one is off by -0.040 against +0.144 for the common fuzzy rule. Hallucination is then strongly catalog-dependent (0.6-2.7% on MovieLens, 11.6-38.7% on Yelp, 49.3-61.0% on Amazon Toys). Each model holds a near-constant confidence level barely responsive to the catalog, while the catalog-hit rate swings 60 points, so the sign of the error is set by where a model's constant lands against a catalog's accuracy: 7 of the twelve cells are under-confident and 5 over-confident, all four under-confident on MovieLens, all four over-confident on Amazon Toys. We read this as an elicitation mismatch: \"Just Ask\" elicits a generic quality rating, not a catalog-membership probability. A conformal abstention threshold over verbalized confidence changes hallucination by at most 1.65 pp across four alpha levels, because the channel cannot separate correct items from hallucinations. We recommend that audits report calibration alongside OOD, validate the matcher producing the OOD number, and use catalog-anchored elicitation.",
       "published": "2026-08-07T21:41:16Z",
-      "updated": "2026-08-12T21:55:00Z",
+      "updated": "2026-08-22T19:28:21Z",
       "categories": [
         "cs.IR",
         "cs.CL",
         "cs.LG"
       ],
-      "pdfUrl": "https://arxiv.org/pdf/2608.10008v2",
-      "absUrl": "https://arxiv.org/abs/2608.10008v2",
+      "pdfUrl": "https://arxiv.org/pdf/2608.10008v3",
+      "absUrl": "https://arxiv.org/abs/2608.10008v3",
       "industrySource": "Amazon"
     },
     {
@@ -340,52 +393,123 @@
       "industrySource": "Alibaba"
     },
     {
-      "id": "http://arxiv.org/abs/2607.24995v1",
-      "title": "Understanding Semantic IDs: From Item Representation to Item Selection in Generative Recommendation",
+      "id": "http://arxiv.org/abs/2608.24534v1",
+      "title": "Neurosymbolic Alignment for Physiologically-Safe Clinical Language Models",
       "authors": [
-        "Junting Wang",
-        "Xinrui He",
-        "Yunzhe Li",
-        "Hari Sundaram"
+        "Abdulhady Abas Abdullah",
+        "Erik Cambria",
+        "Milena Zivkovic"
       ],
       "affiliations": [],
-      "abstract": "Semantic IDs (SIDs) are now a central component of generative recommendation. Current SID-based systems assign three roles to the same token sequence. Shared prefixes are intended to organize related items, the complete SID identifies an individual item, and each generated token narrows the items that can still be returned. We systematically investigate SIDs from item encoding and SID construction to autoregressive generation and final recommendation. We examine how SID construction changes item representations and how those changes affect generation. Across three Amazon domains and eight SID constructions, SID neighborhoods recover only 32.2% of the encoder's ten nearest neighbors on average. Alternative item descriptions still retrieve the corresponding item first in 99.57% of controlled cases, yet change 38.4% of exact SIDs. These results show that SIDs retain broad organization but lose much of the encoder's fine local structure, while their exact tokens are not determined by item meaning alone. This loss becomes consequential during generation. After the final semantic token, TIGER retains only 29.9% of held-out targets that were plausible recommendations before SID filtering. Motivated by these findings, we propose Item-Supported Decoding (ISD), a lightweight inference-time method that allows a user-specific item ranking to support corresponding SID prefixes before beam search discards them. The same ranking then orders the generated items. ISD requires no additional parameters or retraining of the SID constructor or decoder. We empirically show that ISD improves NDCG@10 over the corresponding SID backbone in every evaluated setting, with relative gains of up to 31.2%. Our results show that SIDs provide useful coarse item organization, but their fine boundaries should not alone determine which items remain available during generation.",
-      "published": "2026-07-27T18:52:39Z",
-      "updated": "2026-07-27T18:52:39Z",
+      "abstract": "Clinical LLMs can generate recommendations that are factually plausible yet physiologically unsafe. We investigate whether safety alignment can be improved by grounding preference optimization in structured physiological knowledge rather than text-only supervision. Methods: We propose Neurosymbolic Alignment, a training-time framework that couples a 7B clinical LLM with an HGNN-based Physiological World Model over an 847K-node biomedical knowledge graph. Candidate responses are scored using homeostatic constraints, multi-hop path plausibility, and drug-interaction penalties, and the resulting rankings drive iterative on-policy ORPO updates. Evaluation is performed on the Clinical Safety Benchmark (CSB), a 2,500-scenario benchmark for physiological constraint violations in generative clinical reasoning. Results: Relative to ORPO, the proposed method improves CSS from 69.5% to 90.8% (+21.3 pp), reduces physician-evaluated HR from 14.1% to 5.1% on the blinded subset, and improves DID from 72.8% to 91.6%. These gains are corroborated by an HGNN-independent Rule-Engine Safety Score (RSS: 86.4%, +21.2 pp over ORPO; r=0.97 concordance with CSS). The method also exceeds GPT-4 (5-shot) on all safety metrics despite a 10x parameter disadvantage, and outperforms an inference-time self-correction pipeline (SFT+SelfCorrect) by 11.4 pp CSS. Under synthetic EHR-style noise, 84.2% CSS is retained. Ablation analysis shows that HGNN scoring (-16.2 pp) and iterative training (-11.5 pp) are the dominant contributors. PhysioScore calibration against 200 clinician labels yielded ECE = 0.038 and kappa = 0.91. Conclusion: Training-time physiological grounding produces measurable and independently verifiable safety improvements in open-weight clinical LLMs under controlled evaluation. External validation on real clinical data is required to determine whether these gains transfer to deployment settings",
+      "published": "2026-08-25T13:20:03Z",
+      "updated": "2026-08-25T13:20:03Z",
       "categories": [
         "cs.AI"
       ],
-      "pdfUrl": "https://arxiv.org/pdf/2607.24995v1",
-      "absUrl": "https://arxiv.org/abs/2607.24995v1",
-      "industrySource": "Amazon"
+      "pdfUrl": "https://arxiv.org/pdf/2608.24534v1",
+      "absUrl": "https://arxiv.org/abs/2608.24534v1",
+      "industrySource": ""
     },
     {
-      "id": "http://arxiv.org/abs/2607.24255v1",
-      "title": "OxygenREC-v2: Internalizing Discrimination into Generative Recommendation",
+      "id": "http://arxiv.org/abs/2608.24034v1",
+      "title": "TAGR: Temporally Adaptive Generative Recommendation for Industrial Live-Streaming Advertising",
       "authors": [
-        "Guo Tang",
-        "Hanye Wu",
-        "Changjiang Han",
-        "Qingyang Li",
-        "Ming Zhang",
-        "Xiangyu Qian",
-        "Yanchen Qiao",
-        "Huanjie Wang",
-        "Zhi Ma",
-        "Zhen Li",
-        "Yaqiang Zang",
-        "Pinghua Gong"
+        "Wencai Ye",
+        "Guangyi Liu",
+        "Chaoyi Wang",
+        "Wenbin Luo",
+        "Shengyu Wang",
+        "Mingjie Sun",
+        "Peng Wang",
+        "Quanming Yao",
+        "Wenjin Wu",
+        "Peng Jiang"
       ],
       "affiliations": [],
-      "abstract": "Generative recommendation unifies retrieval and ranking within a single model by autoregressively decoding semantic identifier (SID) sequences. Yet reliably incorporating behavior signals from clicks, cart additions, and orders remains challenging. Existing approaches either jointly optimize generative and discriminative objectives, requiring delicate trade-offs, or use a separate ranker as a post-hoc reinforcement-learning reward, risking out-of-distribution scoring and reward misalignment. We propose OxygenREC-v2, a generative recommender that Internalizes Discrimination into Generative Recommendation (IDGR). Rather than adding a separate discriminative objective, OxygenREC-v2 uses logged behavior to condition generation and supervise training. During pre-training, a behavior instruction conditions generation on the target behavior. During post-training, future interaction behaviors are exploited as privileged knowledge in our entropy-aware trajectory optimization self-distillation framework, enabling reward-model-free policy optimization. Throughout both training stages, OxygenREC-v2 maintains a single unified backbone. We implement OxygenREC-v2 as a 3B-parameter, 1B-activated MoE and deploy it on JD.com's large-scale e-commerce platform. Across multiple online A/B tests, OxygenREC-v2 improves user click-through conversion rate (UCTCVR) by 1.6--4.4% and GMV by 2.8--6.8% over OxygenREC-v1.",
-      "published": "2026-07-27T10:45:48Z",
-      "updated": "2026-07-27T10:45:48Z",
+      "abstract": "Live-streaming advertising is an important monetization channel on short-video and e-commerce platforms, where rapidly changing live content, promoted products, and user feedback impose strong freshness requirements on recommendation models. Existing generative recommenders designed for static domains fail at three levels: static semantic IDs (SID) cannot track evolving live ads; single-scale behavior modeling misses shifting intent; preference optimization conflicts between fresh on-policy feedback and training stability. We propose TAGR, a generative recommendation framework with temporal adaptation at three levels: live-ad tokenization, user intent modeling, and preference alignment. At the token level, Live Semantic-Collaborative ID (LSID) periodically refreshes each active ad's SID based on its current live scene and promoted products, while retaining a stable hierarchical token vocabulary for autoregressive generation. At the intent level, Intent-Aware Generation (IAG) models live-room entry histories at multiple temporal granularities as the primary intent sequence, keeps auxiliary behaviors as separate inputs, and weights next-token prediction (NTP) using post-request intent evidence and business value. At the alignment level, Intermittent On-Policy Preference Optimization (IOPO) periodically samples fresh candidate groups from the current policy and performs behavior- and value-aligned preference updates interleaved with supervised NTP maintenance to preserve learned behavior distribution. Deployed on a large-scale e-commerce live-stream advertising platform, TAGR improves live-room entry and shopping-cart click rates by 8.5% and 7.4%, respectively, and achieves a 16.1% revenue lift over the production baseline. These results demonstrate the effectiveness and industrial viability of temporally adaptive generative recommendation for live-stream advertising.",
+      "published": "2026-08-25T03:47:52Z",
+      "updated": "2026-08-25T03:47:52Z",
       "categories": [
         "cs.IR"
       ],
-      "pdfUrl": "https://arxiv.org/pdf/2607.24255v1",
-      "absUrl": "https://arxiv.org/abs/2607.24255v1",
-      "industrySource": "JD.com"
+      "pdfUrl": "https://arxiv.org/pdf/2608.24034v1",
+      "absUrl": "https://arxiv.org/abs/2608.24034v1",
+      "industrySource": ""
+    },
+    {
+      "id": "http://arxiv.org/abs/2608.23400v1",
+      "title": "Adaptive Item-based Collaborative Structures via Noise Rescheduling in Diffusion for Generative Recommendation",
+      "authors": [
+        "Jiaqi Wang",
+        "Tianying Liu",
+        "Heng Chang",
+        "Jihong Guan",
+        "Wengen Li",
+        "Shuigeng Zhou"
+      ],
+      "affiliations": [],
+      "abstract": "Discrete Diffusion Models (DDMs) have recently been introduced to recommendation systems, modeling user history as a token generation process via iterative denoising. However, while effective at capturing user-level sequential patterns, these methods often fail to explicitly integrate item-based collaborative filtering information, a critical component for accurate recommendation. This deficiency manifests in two key aspects: (1) the item representation is often semantic-focused, lacking collaborative priors for diffusion training; and (2) the denoising process employs a uniform noise schedule, treating all tokens indiscriminately and ignoring item-level adaptive structural dependencies. To bridge this gap, we propose ANR-DiffRec, a unified framework designed to encode item-based collaborative structures into discrete diffusion for generative recommendation. First, we explicitly incorporate an item co-occurrence matrix to guide semantic ID generation, providing a structured collaborative prior for discrete diffusion training. Second, we introduce an item-based adaptive noise rescheduling mechanism that dynamically adjusts denoising weights according to both local contextual recoverability and behavior-aware item dependencies. Specifically, the proposed strategy jointly models intra-item structural context and inter-item collaborative signals, enabling structure-aware denoising during diffusion training. Extensive experiments on multiple benchmarks demonstrate that our method consistently outperforms state-of-the-art generative recommendation models. Code: https://github.com/CalmaQi/ANR-DiffRec.",
+      "published": "2026-08-24T15:47:35Z",
+      "updated": "2026-08-24T15:47:35Z",
+      "categories": [
+        "cs.IR",
+        "cs.AI"
+      ],
+      "pdfUrl": "https://arxiv.org/pdf/2608.23400v1",
+      "absUrl": "https://arxiv.org/abs/2608.23400v1",
+      "industrySource": ""
+    },
+    {
+      "id": "http://arxiv.org/abs/2608.22734v1",
+      "title": "Rethinking Item Tokenization in Generative Recommenders: From Fixed Atoms to Semantic Subwords",
+      "authors": [
+        "Xinrui Miao",
+        "Mingjia Yin",
+        "Jiaqing Zhang",
+        "Wei Guo",
+        "Yong Liu",
+        "Yuyang Ye",
+        "Hao Wang",
+        "Enhong Chen"
+      ],
+      "affiliations": [],
+      "abstract": "In generative recommender systems, items are typically tokenized into fixed-length semantic ID sequences for autoregressive next-item prediction. However, for user-context modeling, this fine-grained representation triggers Intra-item Attention Overload: excessive attention is spent on low-level intra-item dependencies rather than high-level inter-item behavioral transitions. To address this, we propose Semantic Subword Tokenization (SST), which represents historical items as variable-length semantic subwords while preserving fixed-length target decoding. SST first applies Item-level Subword Tokenization (IST) to merge stable adjacent atom tokens into compact semantic subword tokens, thereby reducing intra-item reassembly in the encoder. It then introduces Behavior-induced Co-occurrence Augmentation (BCA) to inject coarse-grained semantic prefix transition signals, guiding the freed modeling capacity toward inter-item behavioral regularities. Extensive experiments on three public datasets and three generative recommender backbones show empirical improvements of SST over fixed-length and transferable variable-length SID baselines. Code is available at https://github.com/mxrcandy/Semantic-Subword-Tokenization.",
+      "published": "2026-08-24T02:42:51Z",
+      "updated": "2026-08-24T02:42:51Z",
+      "categories": [
+        "cs.IR"
+      ],
+      "pdfUrl": "https://arxiv.org/pdf/2608.22734v1",
+      "absUrl": "https://arxiv.org/abs/2608.22734v1",
+      "industrySource": ""
+    },
+    {
+      "id": "http://arxiv.org/abs/2608.21563v1",
+      "title": "Explainable AI-based Decision Support for Nocturnal Hypoglycemia Prevention in Type 1 Diabetes",
+      "authors": [
+        "Valentina Roquemen-Echeverri",
+        "Peter G. Jacobs",
+        "Leah M. Wilson",
+        "Joseph Pinsonault",
+        "Deborah Branigan",
+        "Jae Eom",
+        "Daisy Chen",
+        "Hantao Ling",
+        "Diana Aby-Daniel",
+        "Kyle Chen",
+        "Clara Mosquera-Lopez"
+      ],
+      "affiliations": [],
+      "abstract": "Purpose: Nocturnal hypoglycemia (NH) remains a challenge for individuals with type 1 diabetes (T1D), particularly those who are physically active or on multiple daily injections (MDI). We leveraged an explainable evidential neural network model that forecasts minimum overnight glucose to identify NH risk factors and generate recommendations for NH prevention. Methods: We analyzed the impact of glucose and physical activity (PA) factors on predicted NH probability using SHapley Additive exPlanations (SHAP). Data were from 20 adults with T1D on MDI (10 females; mean age 39 years; HbA1c 7\\%) who participated in a cross-over study (NCT05967260). Results: A total of 502 nights were analyzed. Bedtime glucose was the strongest predictor of NH. Other relevant factors included recent exposure to high or low glucose, glucose variability before bedtime, and timing of PA. Some associations appeared physiologically counterintuitive, possibly reflecting behavioral adjustments. Based on the identified risk factors and their SHAP values, we determined key decision points and developed recommendations that may help prevent NH, such as consuming a bedtime snack or discussing potential adjustments to insulin therapy with a healthcare provider. Conclusion: Identifying predictors of NH offers insights for managing NH risk in clinical decision support.",
+      "published": "2026-08-21T19:01:25Z",
+      "updated": "2026-08-21T19:01:25Z",
+      "categories": [
+        "q-bio.QM"
+      ],
+      "pdfUrl": "https://arxiv.org/pdf/2608.21563v1",
+      "absUrl": "https://arxiv.org/abs/2608.21563v1",
+      "industrySource": ""
     },
     {
       "id": "http://arxiv.org/abs/2608.21012v1",
@@ -1107,125 +1231,6 @@
       ],
       "pdfUrl": "https://arxiv.org/pdf/2607.25329v1",
       "absUrl": "https://arxiv.org/abs/2607.25329v1",
-      "industrySource": ""
-    },
-    {
-      "id": "http://arxiv.org/abs/2607.25216v1",
-      "title": "TopoGR: Revealing and Preserving Latent Structure of Semantic ID in Generative Recommendation",
-      "authors": [
-        "Ziyu Zheng",
-        "Zhengshun Du",
-        "Yaming Yang",
-        "Bin Tong",
-        "Guan Wang",
-        "Meng Yan",
-        "Ziyu Guan",
-        "Wei Zhao"
-      ],
-      "affiliations": [],
-      "abstract": "Semantic ID-based generative recommendation tokenizes each item into a sequence of discrete semantic IDs and predicts the next item by generating semantic IDs. However, existing methods typically regard SIDs as independent discrete symbols, while often overlooking the topology of the learned semantic ID space. We identify a structural mismatch between tokenization and generation: the tokenizer learns a structured code space with semantic neighborhood relations, whereas the generator consumes semantic ID tokens as independent categorical symbols. Consequently, item relatedness is reduced to exact semantic ID overlap, making it difficult to identify semantically similar items whose semantic IDs do not overlap. To address this issue, we propose TopoGR, a topology-preserving generative recommendation framework based on Bit-decomposable Semantic ID(Binary SID). Each Binary SID is learned in a bit-decomposable form and can be deterministically converted to a standard integer SID, while exposing an explicit Hamming geometry. TopoGR exploits this topology at three stages: binary SID features preserve Hamming proximity at the input layer; Hamming soft targets inject topology-aware supervision; and Hamming-consistent reranking aligns candidate items with the predicted binary prototype during inference. We further verify that the Hamming topology can capture item relatedness beyond exact SID matching. Experiments on four benchmark datasets show that TopoGR consistently outperforms existing state-of-the-art baselines in recommendation performance.",
-      "published": "2026-07-28T02:45:33Z",
-      "updated": "2026-07-28T02:45:33Z",
-      "categories": [
-        "cs.IR",
-        "cs.AI"
-      ],
-      "pdfUrl": "https://arxiv.org/pdf/2607.25216v1",
-      "absUrl": "https://arxiv.org/abs/2607.25216v1",
-      "industrySource": ""
-    },
-    {
-      "id": "http://arxiv.org/abs/2607.25209v1",
-      "title": "VaLiDRec: Variable-Length LLM-Aligned Semantic IDs for Generative Recommendation",
-      "authors": [
-        "Shutong Qiao",
-        "Wei Yuan",
-        "Tong Chen",
-        "Hao Wang",
-        "Quoc Viet Hung Nguyen",
-        "Hongzhi Yin"
-      ],
-      "affiliations": [],
-      "abstract": "Generative recommendation commonly represents items using fixed-length semantic identifiers (SIDs) constructed through clustering and quantization. However, these artificial codes may overcompress item semantics, remain misaligned with pretrained LLM vocabularies, and require costly autoregressive decoding. In light of this, we propose VaLiDRec, a generative recommendation framework based on variable-length, LLM-aligned semantic identifiers. VaLiDRec constructs SIDs directly from informative native LLM vocabulary tokens via token importance estimation, semantic-quality-aware pruning, and collision-aware refinement, allowing identifier lengths to adapt to item semantic complexity. To model user preferences, VaLiDRec incorporates graph-aware soft prompts and reformulates recommendation as token-set prediction with token-level item scoring, eliminating autoregressive SID generation and beam search. Experiments on four real-world datasets show that VaLiDRec consistently outperforms strong sequential and generative recommendation baselines across all evaluation metrics. It further achieves superior zero-shot item cold-start performance and 87.49$\\times$ faster inference than LC-Rec. These results demonstrate that LLM-native variable-length semantic identifiers provide a more expressive and efficient paradigm for generative recommendation.",
-      "published": "2026-07-28T02:29:10Z",
-      "updated": "2026-07-28T02:29:10Z",
-      "categories": [
-        "cs.IR",
-        "cs.AI"
-      ],
-      "pdfUrl": "https://arxiv.org/pdf/2607.25209v1",
-      "absUrl": "https://arxiv.org/abs/2607.25209v1",
-      "industrySource": ""
-    },
-    {
-      "id": "http://arxiv.org/abs/2607.24617v1",
-      "title": "LaRec: Unleashing LLM-based Latent Reasoning for Generative Recommendation",
-      "authors": [
-        "Yu Xia",
-        "Zihan Lin",
-        "Wei Yang",
-        "Rui Zhong",
-        "Cheng Chen",
-        "Huan Ren",
-        "Yao Hu"
-      ],
-      "affiliations": [],
-      "abstract": "Large Language Models (LLMs) have shown great promise in recommendation due to superior reasoning abilities. However, existing methods mainly rely on explicit Chain-of-Thought (CoT), resulting in verbose reasoning texts and inefficient response times. latent reasoning aims to balance efficiency by thinking within a continuous latent space, yet it faces two major challenges: (1) Lack of Fine-grained Supervision: Latent reasoning relies solely on feedback from the final labels, providing sparse supervisory signals that struggle to effectively guide the optimization of multiple hidden reasoning steps. (2) Single Reasoning Path: The deterministic nature of latent reasoning impedes the exploration of users' diverse interests and preferences, thereby limiting the recommendation capabilities of LLMs. To address these issues, we propose \\textbf{$LaRec$}, an efficient generative recommendation framework designed to unleash the potential of latent reasoning in LLMs. $LaRec$ consists of two core stages: First, we design Latent Pre-training that empowers LLMs with latent reasoning capabilities by providing rich supervisory signals to the latent space reasoning via step-level alignment and process direction alignment. Second, we introduce Personalized RL-tuning. Specifically, we construct a personalized Gaussian Mixture Distribution for each user based on their historical interests. By randomly sampling distinct reasoning starting points from this distribution during training, we guide the LLMs to traverse diverse reasoning paths within the latent space, enabling efficient exploration of user's multi-faceted interests. Experiments on multiple datasets show that $LaRec$ significantly outperforms existing baselines with comparable efficiency.",
-      "published": "2026-07-27T16:14:57Z",
-      "updated": "2026-07-27T16:14:57Z",
-      "categories": [
-        "cs.IR"
-      ],
-      "pdfUrl": "https://arxiv.org/pdf/2607.24617v1",
-      "absUrl": "https://arxiv.org/abs/2607.24617v1",
-      "industrySource": ""
-    },
-    {
-      "id": "http://arxiv.org/abs/2607.24402v1",
-      "title": "CogRec: Structure-Cognitive Fast-and-Slow Reasoning for Generative Recommendation",
-      "authors": [
-        "Xiang Liu",
-        "Jingsong Su",
-        "Shuqi Zhao",
-        "Pengbo Mo",
-        "Yiming Qiu",
-        "Huimu Wang",
-        "Mingming Li",
-        "Jiao Dai",
-        "Jizhong Han",
-        "Songlin Hu"
-      ],
-      "affiliations": [],
-      "abstract": "Semantic-ID-based generative recommendation represents each item as a hierarchical discrete token sequence and reformulates next-item prediction as constrained sequence generation. Existing methods, however, mainly use Semantic IDs as target sequences to be memorized, leaving the hierarchy, intra-layer relations, and item neighborhoods underused as an explicit reasoning space. Explicit reasoning-enhanced generative methods often produce a natural-language rationale before the item identifier, but this rationale is only weakly coupled with the discrete SID space in which the final prediction is made. We propose CogRec, a structure-cognitive fast-and-slow reasoning framework that grounds intermediate reasoning in the same SID topology used for target generation. CogRec augments the vertical SID hierarchy with intra-layer semantic graphs and item-level neighborhoods, and introduces SID Routing to represent recommendation reasoning through layer-wise Match, LateralJump, and Explore operations. Exact matching implements fast semantic localization, whereas lateral and exploratory operations instantiate slower structural navigation. A supervised multi-stage pipeline aligns the newly introduced SID tokens, establishes direct SID generation, and trains natural-language and SID-routing reasoning branches from a shared checkpoint under the same trie-constrained output space. Experiments on three public sequential-recommendation benchmarks show that SID Routing improves its corresponding direct-generation, indicate that structure-grounded reasoning is most useful when prefix matching is insufficient but learnable SID-space transitions remain available, whereas long or weakly supported routes introduce additional decoding cost and accumulated errors. Code is available at https://github.com/caskcsg/CogRec",
-      "published": "2026-07-27T13:19:55Z",
-      "updated": "2026-07-27T13:19:55Z",
-      "categories": [
-        "cs.IR"
-      ],
-      "pdfUrl": "https://arxiv.org/pdf/2607.24402v1",
-      "absUrl": "https://arxiv.org/abs/2607.24402v1",
-      "industrySource": ""
-    },
-    {
-      "id": "http://arxiv.org/abs/2607.23762v1",
-      "title": "Escaping the Euclidean Void: Manifold-Informed Flow Matching for Sequential Recommendation",
-      "authors": [
-        "Dengzhao Fang",
-        "Jingtong Gao",
-        "Yu Li",
-        "Xiangyu Zhao",
-        "Yi Chang"
-      ],
-      "affiliations": [],
-      "abstract": "Conventional recommenders capture users' preferences by optimizing observed user-item relations, whereas continuous generative recommendation additionally learns the trajectory of synthesizing a target item. Flow matching drives this process by gradually shaping initial noise into a definitive next-item representation through intermediate states in a continuous embedding space. However, item catalogs are discrete and sparsely supported, meaning even a straight Euclidean path can cross continuous regions that contain little evidence of valid item semantics. Formalizing this failure as the Euclidean void, we propose MIRAGE, a Manifold-Informed Rectification framework for Accelerated Generation of Embeddings in sequential recommendation, which rectifies the learned embedding geometry around an unchanged straight probability path. By leveraging an item co-occurrence graph as a proxy for the underlying semantic manifold, MIRAGE aligns interpolated path states with local anchors, reorganizing the embedding space to ground the trajectory in valid item support. MIRAGE retains the original probability path and uses the graph only during training, thereby enabling accurate and efficient one-step inference. Extensive experiments on four real-world datasets reveal that MIRAGE consistently outperforms state-of-the-art baselines, effectively boosting performance on sparsely observed targets while achieving robust overall accuracy. Our code will be made publicly available upon publication.",
-      "published": "2026-07-26T17:17:31Z",
-      "updated": "2026-07-26T17:17:31Z",
-      "categories": [
-        "cs.IR",
-        "cs.AI"
-      ],
-      "pdfUrl": "https://arxiv.org/pdf/2607.23762v1",
-      "absUrl": "https://arxiv.org/abs/2607.23762v1",
       "industrySource": ""
     }
   ]
