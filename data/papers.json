@@ -1,9 +1,30 @@
 {
-  "lastUpdated": "2026-09-18T05:44:27Z",
-  "totalResults": 753,
+  "lastUpdated": "2026-09-24T05:59:40Z",
+  "totalResults": 757,
   "papers": [
     {
-      "id": "http://arxiv.org/abs/2609.18148v1",
+      "id": "http://arxiv.org/abs/2609.21346v1",
+      "title": "IntBMoE: Integrating Block-Level Conditioning into Expert Composition for Full-Participation Mixture-of-Experts",
+      "authors": [
+        "Ran Cheng",
+        "Longfei Xu",
+        "Zheng Liu",
+        "Kaikui Liu",
+        "Xiangxiang Chu"
+      ],
+      "affiliations": [],
+      "abstract": "Mixture-of-Experts (MoE) scales capacity, but existing designs cannot set three quantities independently. For a single token, participation is how many experts contribute knowledge to its output, execution is how many are actually computed (compute cost), and materialization is how many expert-sized parameter sets must be built and stored (memory cost). Sparse routing keeps execution and materialization low, but shrinks participation: for each token, only a few experts contribute. Dense output-mixing restores full participation, but its execution grows with the number of experts. Parameter-merging keeps execution at one expert, but its materialization grows with the number of routing decisions. We propose IntBMoE, a block-conditioned MoE that decouples all three by pairing dense expert composition with sparse block execution. Its blocks come from a small learned codebook, one per entry. At each internal layer, a lightweight hypernetwork merges all expert bases in that layer's pool into one composed expert. Participation is full, because every composed expert draws on the entire pool. Execution stays sparse, because a router sends each token to only a few blocks. Materialization is bounded, because the codebook, not the input, fixes how many blocks exist. Dual-Path Residual Gating (DPRG) further couples two independently composed paths through multiplicative gating. Experiments on image classification show consistent gains over representative sparse and dense MoE baselines. Additional experiments on language modeling and sequential recommendation validate its generalization beyond vision. IntBMoE is fully deployed in AMap's generative recommendation system, serving hundreds of millions of users under a 60ms latency budget, with a 2.4% relative UVCTR gain in online A/B testing. Our code is available at https://github.com/AMAP-ML/DreamX-Rec/.",
+      "published": "2026-09-18T06:01:13Z",
+      "updated": "2026-09-18T06:01:13Z",
+      "categories": [
+        "cs.LG"
+      ],
+      "pdfUrl": "https://arxiv.org/pdf/2609.21346v1",
+      "absUrl": "https://arxiv.org/abs/2609.21346v1",
+      "industrySource": "Amazon"
+    },
+    {
+      "id": "http://arxiv.org/abs/2609.18148v2",
       "title": "LIGE-GR: A Smooth Leap from Ranking to Generative Recommendation in the LLM Era",
       "authors": [
         "Venkat Srinivas",
@@ -26,7 +47,7 @@
         "Zhichen Zhao",
         "Yue Yin",
         "Yue Weng",
-        "Wanlin Ma",
+        "Wanli Ma",
         "Xufeng Cai",
         "Weimiao Wu",
         "Yezhou Huang",
@@ -43,7 +64,11 @@
         "Xialu Li",
         "Matt Ma",
         "Qunshu Zhang",
+        "Andrew Ton",
+        "Nathan Berrebbi",
+        "Neel Pawar",
         "John Joshua Miller",
+        "Jayant Subramanian",
         "Praveen Rathinavelu",
         "Cheng Huang",
         "Aadhar Sachdeva",
@@ -70,15 +95,15 @@
         "Ji Liu"
       ],
       "affiliations": [],
-      "abstract": "The remarkable success of large language models (LLMs) has provided important inspiration for the next generation of recommender systems. Structurally, recommendation and language generation share a similarity: both aim to produce an ordered sequence that optimizes the user's experience. However, how to precisely absorb the essence of the LLM paradigm into mature industrial recommender systems remains an open problem. There are two challenges. First, it is unclear how to incorporate sequence-level generation and optimization from the LLM paradigm into recommendation. Second, real-world recommender systems are mature systems that have been iteratively customized for years around specific products, business constraints, serving infrastructure, and organizational ownership. Replacing such systems wholesale is often technically risky and organizationally disruptive. In this paper, we propose LIGE-GR, a listwise generation and evaluation recommendation framework that upgrades from a traditional ranking system based on itemwise recommendation toward a generative recommendation paradigm. Instead of rebuilding the entire recommendation stack from scratch, LIGE-GR generalizes the existing pointwise recommendation system into a listwise generation system. This allows mature recommender systems to benefit from listwise optimization while preserving compatibility with existing models, value functions, and serving infrastructure. We validate LIGE-GR in short-video recommendation on Instagram Reels and Facebook Video. On these recommendation surfaces, LIGE-GR improves time spent by 1.14 percent on Instagram Reels and 0.72 percent on Facebook Video, while requiring only modest additional inference resources.",
+      "abstract": "The remarkable success of large language models (LLMs) has provided important inspiration for the next generation of recommender systems. Structurally, recommendation and language generation share a similarity: both aim to produce an ordered sequence that optimizes the user's experience. However, how to precisely absorb the essence of the LLM paradigm into mature industrial recommender systems remains an open problem. There are two challenges. First, it is unclear how to incorporate the LLM paradigm -- sequence-level generation and optimization -- into recommendation. Second, real-world recommender systems are mature systems that have been iteratively customized for years around specific products, business constraints, serving infrastructure, and organizational ownership. Replacing such systems wholesale is often technically risky and organizationally disruptive. In this paper, we propose LIGE-GR, a listwise generation and evaluation recommendation framework that upgrades from a traditional ranking system (itemwise recommendation) toward a generative recommendation paradigm. Instead of rebuilding the entire recommendation stack from scratch, LIGE-GR generalizes the existing pointwise recommendation system into a listwise generation system. This allows mature recommender systems to benefit from listwise optimization while preserving compatibility with existing models, value functions, and serving infrastructure. We validate LIGE-GR in short-video recommendation on Instagram Reels and Facebook Video. On these recommendation surfaces, LIGE-GR improves time spent by 1.14 percent on Instagram Reels and 0.72 percent on Facebook Video, while requiring only modest additional inference resources.",
       "published": "2026-09-16T05:28:52Z",
-      "updated": "2026-09-16T05:28:52Z",
+      "updated": "2026-09-20T18:06:34Z",
       "categories": [
         "cs.LG",
         "cs.IR"
       ],
-      "pdfUrl": "https://arxiv.org/pdf/2609.18148v1",
-      "absUrl": "https://arxiv.org/abs/2609.18148v1",
+      "pdfUrl": "https://arxiv.org/pdf/2609.18148v2",
+      "absUrl": "https://arxiv.org/abs/2609.18148v2",
       "industrySource": "Meta"
     },
     {
@@ -153,6 +178,24 @@
       ],
       "pdfUrl": "https://arxiv.org/pdf/2608.29179v1",
       "absUrl": "https://arxiv.org/abs/2608.29179v1",
+      "industrySource": "Amazon"
+    },
+    {
+      "id": "http://arxiv.org/abs/2609.27953v1",
+      "title": "The Recall Ceiling of LLM Recommendation Reranking",
+      "authors": [
+        "Zhaohui Wang"
+      ],
+      "affiliations": [],
+      "abstract": "Some LLM-based recommendation rerankers are evaluated under an oracle protocol that guarantees the ground-truth item is present in the scored set, either by injecting it into the candidate list or by scoring it against sampled negatives. Across three primary Amazon datasets, we show that this protocol overestimates realistic NDCG@10 by 92--95%. The cause is a recall ceiling: realistic retrieval covers only 2--19% of relevant items at $K=100$ across eight datasets in three domains, imposing a deterministic upper bound on any closed-candidate reranker's top-$k$ NDCG. Under leave-one-out evaluation, $\\mathbb{E}[\\mathrm{NDCG}@k] \\leq \\mathrm{Recall}@|W_π|$, where $W_π$ is the reranker's candidate window. Under realistic retrieval, none of the tested optimisation strategies significantly improves over the collaborative-filtering baseline on our primary Amazon datasets. These strategies include prompt engineering, model scaling over a 168$\\times$ parameter range, sequential models, supervised neural rerankers, LoRA fine-tuning, hybrid retrieval, score-aware prompting, and LLM+CF fusion. Text-aware retrieval increases recall on one dataset but does not improve end-to-end NDCG, while providing upstream CF scores mainly makes the LLM reproduce the CF order. We therefore propose the Recall-Aware Evaluation Protocol (RAEP): first classify the retrieval-recall regime, then evaluate reranking where the ceiling permits meaningful differentiation. In the low-recall regimes measured here, improving retrieval is more consequential than increasing reranker sophistication; this ordering need not hold in production systems with higher recall, richer features, or online feedback.",
+      "published": "2026-08-27T13:11:40Z",
+      "updated": "2026-08-27T13:11:40Z",
+      "categories": [
+        "cs.IR",
+        "cs.LG"
+      ],
+      "pdfUrl": "https://arxiv.org/pdf/2609.27953v1",
+      "absUrl": "https://arxiv.org/abs/2609.27953v1",
       "industrySource": "Amazon"
     },
     {
@@ -351,44 +394,25 @@
       "industrySource": "Kuaishou"
     },
     {
-      "id": "http://arxiv.org/abs/2608.10008v3",
-      "title": "Do LLM Recommenders Know When They're Hallucinating? Auditing Confidence Calibration in Catalog Faithfulness",
+      "id": "http://arxiv.org/abs/2609.24430v1",
+      "title": "What Makes a Good Semantic ID for Generative Recommendation? A Reproducibility Study",
       "authors": [
-        "Srijith Ravikumar"
+        "Yufei Chen",
+        "Junchen Fu",
+        "Jujia Zhao",
+        "Yukun Zhao",
+        "Zhaochun Ren"
       ],
       "affiliations": [],
-      "abstract": "LLM recommenders for top-K item suggestion regularly emit titles outside the target catalog. Prior audits report a binary out-of-domain rate; none ask whether the model knew. We jointly audit hallucination rate (OOD@10) and verbalized-confidence calibration (ECE, Brier, reliability) for four zero-shot LLM recommenders from four independent vendors (Mistral Large, Llama-3.3-70B, GPT-OSS-120B, Claude Sonnet 4.6), not grounded or fine-tuned systems, across three catalogs (MovieLens-25M, Amazon Reviews 2023 Toys, Yelp Open Dataset), stratified by item popularity. Measuring catalog membership is itself the hard part: on identical outputs the reported rate moves by an order of magnitude with the string matcher used, and F1 cannot separate the candidates. We validate the instrument against 201 human judgments and select on net bias, where the adopted one is off by -0.040 against +0.144 for the common fuzzy rule. Hallucination is then strongly catalog-dependent (0.6-2.7% on MovieLens, 11.6-38.7% on Yelp, 49.3-61.0% on Amazon Toys). Each model holds a near-constant confidence level barely responsive to the catalog, while the catalog-hit rate swings 60 points, so the sign of the error is set by where a model's constant lands against a catalog's accuracy: 7 of the twelve cells are under-confident and 5 over-confident, all four under-confident on MovieLens, all four over-confident on Amazon Toys. We read this as an elicitation mismatch: \"Just Ask\" elicits a generic quality rating, not a catalog-membership probability. A conformal abstention threshold over verbalized confidence changes hallucination by at most 1.65 pp across four alpha levels, because the channel cannot separate correct items from hallucinations. We recommend that audits report calibration alongside OOD, validate the matcher producing the OOD number, and use catalog-anchored elicitation.",
-      "published": "2026-08-07T21:41:16Z",
-      "updated": "2026-08-22T19:28:21Z",
-      "categories": [
-        "cs.IR",
-        "cs.CL",
-        "cs.LG"
-      ],
-      "pdfUrl": "https://arxiv.org/pdf/2608.10008v3",
-      "absUrl": "https://arxiv.org/abs/2608.10008v3",
-      "industrySource": "Amazon"
-    },
-    {
-      "id": "http://arxiv.org/abs/2608.06928v2",
-      "title": "From Classification to Recommendation: Empirical Analysis of Audio Embedding Models Application for Content-Based Music Recommendation",
-      "authors": [
-        "Qingrui Li",
-        "Haowei Lou",
-        "Chengkai Huang",
-        "Quan Z. Sheng",
-        "Lina Yao"
-      ],
-      "affiliations": [],
-      "abstract": "Pretrained audio representation models learned from large-scale corpora have achieved strong performance in audio classification and understanding. However, most existing models are optimized for objectives such as masked prediction, contrastive learning, or audio-text alignment, which do not necessarily produce representation spaces well-suited to recommender systems. Unlike classification, music recommender systems must capture item relationships shaped by subjective and behavior-dependent listener preferences. Although pretrained audio embeddings have been explored in conventional recommender systems, their effectiveness in the rapidly emerging paradigm of generative recommender systems remains underexplored. To address this gap, we systematically evaluate six representative audio encoders across three types of music recommender systems: content-based, sequential, and Semantic-ID-based generative recommender systems. We further investigate how residual-quantization design, including codebook width, quantization depth, and retained Semantic-ID prefixes, affects the preservation of recommendation-relevant information. Experiments on two music recommendation datasets show that audio-text-aligned and music-domain representations are generally more effective when pretrained embedding geometry is used directly, whereas interaction-based sequential training substantially reduces performance differences among encoders. We also find that increasing Semantic-ID capacity does not consistently improve generative recommender systems and may introduce substantial instability. These findings provide practical guidance for selecting audio encoders and designing audio-derived Semantic IDs for modern music recommender systems.",
-      "published": "2026-08-07T08:03:29Z",
-      "updated": "2026-08-10T05:16:34Z",
+      "abstract": "Generative recommendation has emerged as an active research direction, where items are commonly represented by semantic IDs (SIDs): discrete codes generated token by token. Despite strong empirical results, SID designs vary widely in construction strategy, codebook organization, and code length, making their true impact on recommendation performance unclear. We conduct a large-scale reproducibility study to systematically investigate the impact of semantic ID design on generative recommendation under a unified experimental framework. We focus on a fundamental question: What makes a good semantic ID for generative recommendation? To answer this question, we examine four aspects: the relative effectiveness of different semantic ID designs, the connection between codebook utilization and recommendation quality, the effect of semantic code length, and the influence of semantic ID design on local item semantic preservation. Through a unified evaluation and additional cross-dataset controlled analyses, we find that the effects of SID design are largely non-monotonic: no single SID design is universally best, and commonly used RQ-VAE- and OPQ-based designs can behave inconsistently across datasets. The method with the most balanced first-level codebook is not consistently the best recommender, showing that utilization is diagnostic but insufficient. Scaling either the generative backbone or the SID length is also not always beneficial. Finally, semantic-neighborhood analysis reveals that no single SID design dominates all notions of local semantic preservation; instead, different designs exhibit complementary strengths that remain stable across datasets and neighborhood sizes. Our study provides a controlled and reproducible understanding of semantic ID design and offers practical insights for future generative recommender systems.",
+      "published": "2026-09-21T11:26:49Z",
+      "updated": "2026-09-21T11:26:49Z",
       "categories": [
         "cs.IR"
       ],
-      "pdfUrl": "https://arxiv.org/pdf/2608.06928v2",
-      "absUrl": "https://arxiv.org/abs/2608.06928v2",
-      "industrySource": "Meta"
+      "pdfUrl": "https://arxiv.org/pdf/2609.24430v1",
+      "absUrl": "https://arxiv.org/abs/2609.24430v1",
+      "industrySource": ""
     },
     {
       "id": "http://arxiv.org/abs/2609.17989v1",
@@ -1110,6 +1134,24 @@
       "industrySource": ""
     },
     {
+      "id": "http://arxiv.org/abs/2609.26128v1",
+      "title": "An Exact Noise Floor for Contingency-Table Effect Sizes: A Per-Table Reporting Gate, and How Often It Would Change Reported Magnitudes",
+      "authors": [
+        "William J. Dwyer"
+      ],
+      "affiliations": [],
+      "abstract": "Cramer's V and the other chi-square-family effect sizes are positive under exact independence, so a reported value can be smaller than what the same statistic produces on a table with no association at all. The upward bias is classical (Tschuprow 1925; Bartlett 1937; corrected by Bergsma 2013), and reporting the boundary value, the critical effect size, beside the observed one has been recommended in general form (Perugini et al. 2025); we claim neither. Our contribution is two things a general recommendation does not supply. First, an exact per-table reporting gate: the noise floor V_0.95, the value the effect size reaches by chance 5% of the time under independence, computed from the exact margin-conditional law rather than the asymptotic critical value. The asymptotic floor miscalibrates where reporting is riskiest: on heterogeneous tables its false-alarm rate reaches 0.10 against a 0.05 target, while the exact floor holds nominal. Second, a measurement: across 4,129 real two-way tables from 291 public datasets, 21.8% of labeled effects (cluster-robust 95% CI 17 to 27%) sit on tables with no significant association. We recommend reporting V_0.95, in exact form on sparse or heterogeneous tables, beside every association measure and at the design stage.",
+      "published": "2026-08-11T06:00:18Z",
+      "updated": "2026-08-11T06:00:18Z",
+      "categories": [
+        "stat.ME",
+        "stat.AP"
+      ],
+      "pdfUrl": "https://arxiv.org/pdf/2609.26128v1",
+      "absUrl": "https://arxiv.org/abs/2609.26128v1",
+      "industrySource": ""
+    },
+    {
       "id": "http://arxiv.org/abs/2608.09685v1",
       "title": "Adaptive Semantic Capacity Allocation for Parallel Generative Recommendation",
       "authors": [
@@ -1129,7 +1171,7 @@
       "industrySource": ""
     },
     {
-      "id": "http://arxiv.org/abs/2608.09634v1",
+      "id": "http://arxiv.org/abs/2608.09634v2",
       "title": "IntHQ: Task-Interactive Hierarchical Query on Dual-Stream Representations for Generative Recommendation",
       "authors": [
         "Junjie Sun",
@@ -1142,12 +1184,12 @@
       "affiliations": [],
       "abstract": "Multi-task learning over heterogeneous data is fundamental to modern recommendation, while generative models are emerging as the backbone of next-generation recommenders. However, the integration of multi-task learning into the generative paradigm remains largely unexplored. Existing multi-task recommenders, in both discriminative and generative paradigms, extract task-relevant features from a single task-agnostic representation and wire tasks into a predefined conversion funnel. We show that this scheme is inherently prone to a threefold collapse. Source collapse, where task-specific signals are injected late and diluted in the shared latent space. Relational collapse, where task dependencies are either implicitly absorbed by the backbone or statically fixed by predefined funnels. Hierarchical collapse, where tasks depend on features at different scales and shift across training stages. We propose IntHQ, a multi-task generative recommender with three components, each alleviating one collapse. Dual-Stream Decoupling (DSD) injects task identity into computation stream early and separates the shared context stream from the task-specific stream, alleviating signal dilution. Task-Interactive Modeling (TIM) replaces the predefined funnel with explicit cross-task interaction, letting each task condition on the realized outcomes of its predecessors with learned, input-adaptive strength. Hierarchical Querying (HQ) lets each task gather multi-scale information across different layers at different training stages. In offline evaluations, IntHQ consistently outperforms competitive encoder backbones under four representative task-head configurations. Deployed in production on Amap, serving hundreds of millions of users for travel recommendation, IntHQ yields a 1.60\\% relative UVCTR lift.",
       "published": "2026-08-10T14:13:47Z",
-      "updated": "2026-08-10T14:13:47Z",
+      "updated": "2026-09-18T03:51:41Z",
       "categories": [
         "cs.IR"
       ],
-      "pdfUrl": "https://arxiv.org/pdf/2608.09634v1",
-      "absUrl": "https://arxiv.org/abs/2608.09634v1",
+      "pdfUrl": "https://arxiv.org/pdf/2608.09634v2",
+      "absUrl": "https://arxiv.org/abs/2608.09634v2",
       "industrySource": ""
     },
     {
@@ -1195,58 +1237,6 @@
       ],
       "pdfUrl": "https://arxiv.org/pdf/2608.07816v1",
       "absUrl": "https://arxiv.org/abs/2608.07816v1",
-      "industrySource": ""
-    },
-    {
-      "id": "http://arxiv.org/abs/2608.06997v1",
-      "title": "Hierarchical Quantization with Domain-Adaptive Sparse Routing for Generative Cross-Domain Recommendation",
-      "authors": [
-        "Haiying He",
-        "Xiaopeng Li",
-        "Yuchen Gu",
-        "Kuo Cai",
-        "Bo Chen",
-        "Jingtong Gao",
-        "Yejing Wang",
-        "Derong Xu",
-        "Ruiming Tang",
-        "Guorui Zhou",
-        "Han Li",
-        "Xiangyu Zhao"
-      ],
-      "affiliations": [],
-      "abstract": "Generative Recommendation (GenRec) represents a promising paradigm that achieves remarkable empirical success by encoding items as compact Semantic IDs (SIDs) and modeling user behavior via next-token prediction across diverse recommendation scenarios. Extending this paradigm to cross-domain recommendation is challenging because a unified model must accommodate heterogeneous item semantics and behavioral patterns across domains. Existing methods commonly rely on globally shared representations or lightweight domain adaptation, which may provide insufficient capacity for modeling heterogeneous patterns at different semantic granularities. To address these challenges, we propose HD-Rec, a unified generative framework for cross-domain recommendation. HD-Rec employs a hierarchical domain-aware quantizer that constructs semantic identifiers using globally shared coarse-level codebooks and adaptively routed fine-level codebooks. It further introduces a domain-adaptive sparse mixture-of-experts module that combines a continuously activated shared expert with a dynamically selected specialized expert. To improve the coherence of multi-token item representations, we develop a cross-granularity routing consistency objective that regularizes token-level routing decisions toward their item-level consensus. Experiments on three public cross-domain recommendation benchmarks show that HD-Rec consistently improves over competitive sequential, generative, and cross-domain recommendation baselines.",
-      "published": "2026-08-07T09:15:19Z",
-      "updated": "2026-08-07T09:15:19Z",
-      "categories": [
-        "cs.IR"
-      ],
-      "pdfUrl": "https://arxiv.org/pdf/2608.06997v1",
-      "absUrl": "https://arxiv.org/abs/2608.06997v1",
-      "industrySource": ""
-    },
-    {
-      "id": "http://arxiv.org/abs/2608.03272v1",
-      "title": "Attacking and Defending Multi-Agent Collaborative Filtering Systems Through Connectivity",
-      "authors": [
-        "Anjun Hu",
-        "Hanting Xie",
-        "Saranya Govindan",
-        "Jas Kandola",
-        "Kurt Cutajar"
-      ],
-      "affiliations": [],
-      "abstract": "Multi-agent collaborative filtering (CF) systems coordinate autonomous LLM-powered user and item agents through natural-language interaction to refine preferences and generate recommendations. These systems inherit vulnerabilities from both their data-driven nature and their multi-agent interactions, which manifest in distinct ways. Understanding how connectivity modulates vulnerability in these systems could facilitate the development of more robust recommendation pipelines. In this work, we adapt attacks and defenses from the general multi-agent systems (MAS) literature to the agent-based CF setting, evaluating them under systematically varied connectivity in the AgentCF framework, where CF connectivity is characterized along two axes: (i) candidate count (the number of item candidates per turn per user, measuring user-side interaction density) and (ii) catalog concentration (the degree of item catalog overlap across users). Our contributions include: (1) Adaptation: we reproduce MAS-inspired attacks and defenses in the agentic CF domain, confirming partial transferability of original observations. (2) Characterization: we characterize how the two aspects of connectivity shape attack and defense outcomes, revealing role asymmetries between user and item agents, non-monotonic temporal dynamics in attack efficacy, and divergent patterns across dissemination and extraction attack goals. Additionally, as an exploratory extension, we assess the applicability of epidemic-inspired static metrics in ranking CF configurations by expected attack outcome, potentially enabling cost-efficient robustness assessment. Implementation is available at https://github.com/anjunhu/ConnACF",
-      "published": "2026-08-04T07:49:58Z",
-      "updated": "2026-08-04T07:49:58Z",
-      "categories": [
-        "cs.IR",
-        "cs.CR",
-        "cs.MA",
-        "cs.SI"
-      ],
-      "pdfUrl": "https://arxiv.org/pdf/2608.03272v1",
-      "absUrl": "https://arxiv.org/abs/2608.03272v1",
       "industrySource": ""
     }
   ]
