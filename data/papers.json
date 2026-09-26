@@ -1,7 +1,57 @@
 {
-  "lastUpdated": "2026-09-24T05:59:40Z",
-  "totalResults": 757,
+  "lastUpdated": "2026-09-26T06:00:35Z",
+  "totalResults": 759,
   "papers": [
+    {
+      "id": "http://arxiv.org/abs/2609.29983v1",
+      "title": "From Interests to Semantic IDs: Retrieval-Grounded Credit Assignment for Generative Recommendation",
+      "authors": [
+        "Mengdan Zhu",
+        "Yufan Zhao",
+        "Yao Zhao",
+        "Sophie Di",
+        "Tao Di",
+        "Yulan Yan",
+        "Sridhar Iyer",
+        "Liang Zhao"
+      ],
+      "affiliations": [],
+      "abstract": "Semantic IDs (SIDs) encode each catalog item as a short token sequence, enabling generative recommenders to predict the next item autoregressively. Reasoning-enhanced variants, an increasingly common extension, first generate a textual trace and then decode a next-item SID by beam search. Such recommenders are commonly trained with group-relative policy optimization under an exact-match SID reward, which is sparse in large catalogs. Two failure modes follow. When all rollouts in a group miss the target, the group yields zero advantage and no learning signal. Rollouts sharing the same SID reward receive identical advantages, however much their traces differ. In both cases the reward reflects only the decoded SID, never the reasoning that produced it. This creates a credit-assignment gap. We address this gap with retrieval-grounded query attribution. Each trace is structured into a history summary, a set of interest hypotheses, and a final SID. A frozen retriever executes every hypothesis as a catalog query, so that each hypothesis becomes independently verifiable rather than judged only through the final SID. A rollout is rewarded when any of its queries retrieves the target within the \\mbox{top-$K$}, and per-query hit indicators localize that reward to individual hypotheses. Credit is thus assigned at the span level: only hypotheses that individually hit receive positive retrieval advantage, while the retrieval channel never updates the final SID span. Rollouts that share a SID reward can therefore receive different updates. Across experiments on three Amazon Reviews datasets, this yields consistent improvements in SID recommendation. On Video Games, an oracle analysis further reveals the potential of interest-conditioned SID decoding: selecting the target-relevant query among generated interests improves both recall and ranking.",
+      "published": "2026-09-24T15:34:11Z",
+      "updated": "2026-09-24T15:34:11Z",
+      "categories": [
+        "cs.IR",
+        "cs.AI"
+      ],
+      "pdfUrl": "https://arxiv.org/pdf/2609.29983v1",
+      "absUrl": "https://arxiv.org/abs/2609.29983v1",
+      "industrySource": "Amazon"
+    },
+    {
+      "id": "http://arxiv.org/abs/2609.29973v1",
+      "title": "Learning Better Reasoning for Generative Recommendation with Semantic IDs",
+      "authors": [
+        "Mengdan Zhu",
+        "Yufan Zhao",
+        "Sophie Di",
+        "Yao Zhao",
+        "Tao Di",
+        "Yulan Yan",
+        "Sridhar Iyer",
+        "Liang Zhao"
+      ],
+      "affiliations": [],
+      "abstract": "Generative recommendation reformulates item retrieval as sequence generation, allowing a unified model to directly generate the next item from a user's interaction history. Semantic IDs further make this paradigm effective and scalable by representing each item as discrete codes, enabling knowledge sharing among semantically related items. Recent studies introduce explicit reasoning before Semantic-ID generation, helping models summarize user interests and infer possible preference transitions. However, reasoning is not inherently beneficial: Inaccurate or uninformative reasoning may mislead subsequent item generation and ultimately degrade recommendation performance. This raises a central challenge: how can a recommender select and learn effective reasoning traces and progressively evolve toward better reasoning from its own generations? In this work, we propose Evo-Rec, a three-stage framework for learning better reasoning and further enhancing it through reinforcement learning. First, we align Semantic IDs with their textual and behavioral contexts, enabling the model to understand and generate item identifiers. Second, we sample multiple candidate reasoning traces and retain those that improve the prediction of the ground-truth item, providing a stronger reasoning initialization through supervised fine-tuning. Third, we further optimize the reasoning policy through reinforcement learning with catalog-constrained item generation and ranking-aware recommendation feedback. Experiments on three Amazon Review benchmarks show that Evo-Rec consistently outperforms discriminative, generative, and reasoning-enhanced recommenders across all evaluation metrics. These results demonstrate the effectiveness of our framework in learning better reasoning for SID-based generative recommendation.",
+      "published": "2026-09-24T15:24:54Z",
+      "updated": "2026-09-24T15:24:54Z",
+      "categories": [
+        "cs.IR",
+        "cs.AI"
+      ],
+      "pdfUrl": "https://arxiv.org/pdf/2609.29973v1",
+      "absUrl": "https://arxiv.org/abs/2609.29973v1",
+      "industrySource": "Amazon"
+    },
     {
       "id": "http://arxiv.org/abs/2609.21346v1",
       "title": "IntBMoE: Integrating Block-Level Conditioning into Expert Composition for Full-Participation Mixture-of-Experts",
@@ -366,32 +416,29 @@
       "industrySource": "Meta"
     },
     {
-      "id": "http://arxiv.org/abs/2608.07989v1",
-      "title": "PushDualGen: Enabling LLMs to Generate Semantic IDs with Interpretable Copy for Industrial Push Recommendation",
+      "id": "http://arxiv.org/abs/2609.28972v1",
+      "title": "Cross-Country Code-Mixing for Generative Recommendation",
       "authors": [
-        "Manjia Lin",
-        "Da Li",
-        "Yan Wang",
-        "Yong Jin",
-        "Zheming Ding",
-        "Wei Yuan",
-        "Lei Yan",
-        "Yanan Xia",
-        "Lu Zhang",
-        "Fan Yang",
-        "Xuanping Li",
-        "Yanan Niu"
+        "Yuan Gao",
+        "Hao Deng",
+        "Haibo Xing",
+        "Yi Xu",
+        "Lingyu Mu",
+        "Jinxin Hu",
+        "Yu Zhang",
+        "Xiaoyi Zeng"
       ],
       "affiliations": [],
-      "abstract": "Push recommendation in KuaiShou proactively delivers personalized content to nearly one billion users to facilitate their engagement. Recently, generative recommendation has achieved end-to-end user personalization through semantic ID. However, their black- box characteristics make recommendation logics difficult to trace, hindering their deployment. OneRec-Thinking addresses this by incorporating CoT before generating SIDs, but this significantly increases inference cost. To support large-scale industrial applications, we propose PushDualGen, a lightweight generator, which first generates the SID and then produces a copy as a skippable explanation. PushDualGen has been deployed in Kuaishou's push recommendation system. Online A/B tests demonstrate the effectiveness of PushDualGen, delivering significant improvements in both user attraction and satisfaction. The effective play rate for videos recommended to users has relatively increased by 8.50%, while the dissatisfaction rate has relatively fallen by 37.70%. In the long term, PushDualGen optimises the content ecosystem, providing more exposure for long-tail videos.",
-      "published": "2026-08-08T07:56:55Z",
-      "updated": "2026-08-08T07:56:55Z",
+      "abstract": "Cross-country recommendation on modern e-commerce platforms is typically deployed with disjoint user and item ID spaces across markets, removing the shared anchors that conventional cross-domain methods rely on. Generative recommendation (GR) mitigates this by mapping items into a shared token space and training a unified model, but existing approaches keep behavior sequences strictly country-specific, so knowledge transfer occurs only at the parameter level and remains absent at the data level. Inspired by code-switching corpora in multilingual natural language processing, we propose CMRec, a cross-country GR framework that injects cross-country supervision at the data level via dual-constrained, context-aware code-mixing. CMRec first learns a shared semantic codebook from multi-modal content and behavioral co-occurrence across countries. It then uses this codebook to synthesize mixed-country sequences via token-level substitutions that satisfy both static (content) and dynamic (e.g., price, audience, popularity) constraints. Finally, it introduces a context-aware loss that reweights mixed samples according to their plausibility in the current sequence. Experiments on two real-world multi-country datasets and an online A/B test show that CMRec substantially improves recommendation quality in data-sparse countries while preserving performance in data-rich countries, achieving +1.77% advertising revenue and +2.64% orders on a large-scale e-commerce platform.",
+      "published": "2026-09-24T03:38:51Z",
+      "updated": "2026-09-24T03:38:51Z",
       "categories": [
-        "cs.IR"
+        "cs.IR",
+        "cs.AI"
       ],
-      "pdfUrl": "https://arxiv.org/pdf/2608.07989v1",
-      "absUrl": "https://arxiv.org/abs/2608.07989v1",
-      "industrySource": "Kuaishou"
+      "pdfUrl": "https://arxiv.org/pdf/2609.28972v1",
+      "absUrl": "https://arxiv.org/abs/2609.28972v1",
+      "industrySource": ""
     },
     {
       "id": "http://arxiv.org/abs/2609.24430v1",
@@ -1190,53 +1237,6 @@
       ],
       "pdfUrl": "https://arxiv.org/pdf/2608.09634v2",
       "absUrl": "https://arxiv.org/abs/2608.09634v2",
-      "industrySource": ""
-    },
-    {
-      "id": "http://arxiv.org/abs/2608.08284v1",
-      "title": "Fair on the Surface? Benchmarking Hidden-Output Fairness Gaps in LLM Recommenders",
-      "authors": [
-        "Chan Aristella Lu",
-        "Arya Fayyazi",
-        "Junhao Zhang",
-        "Saeid Shokoufa",
-        "Yue Xing",
-        "Zhen Xiang",
-        "Kyu Hyung Lee",
-        "Mehdi Kamal",
-        "Massoud Pedram"
-      ],
-      "affiliations": [],
-      "abstract": "Fairness audits for LLM-based recommenders have largely focused on observable outputs, implicitly assuming that stable recommendations reflect stable internal processing. We challenge this assumption with FairGap, the first benchmark to jointly evaluate recommendation fairness at two levels: observable output shift (OBS) and hidden representation shift (IBS), measured through controlled counterfactual identity probes across gender, age, and race. Their relationship is summarized via Representation-Output Alignment (ROA), with quadrant diagnostics for identifying user-level hidden-output mismatch. Applied to six open-weight LLM families across three domains, FairGap reveals pervasive hidden-output decoupling: ROA rarely exceeds 0.22, and a non-negligible user population shows stable outputs despite substantial internal shifts, a mode that output-only audits cannot detect by design. Further, activation steering that reduces IBS by up to 8x simultaneously worsens OBS, demonstrating a fundamental tension between internal and output-level fairness that existing frameworks are unequipped to diagnose.",
-      "published": "2026-08-08T18:32:34Z",
-      "updated": "2026-08-08T18:32:34Z",
-      "categories": [
-        "cs.AI"
-      ],
-      "pdfUrl": "https://arxiv.org/pdf/2608.08284v1",
-      "absUrl": "https://arxiv.org/abs/2608.08284v1",
-      "industrySource": ""
-    },
-    {
-      "id": "http://arxiv.org/abs/2608.07816v1",
-      "title": "Preserving Item Semantics for Free: Rethinking Token Initialization in LLM-Based Generative Recommendation",
-      "authors": [
-        "Donald Loveland",
-        "Liam Collins",
-        "Bhuvesh Kumar",
-        "Danai Koutra",
-        "Neil Shah"
-      ],
-      "affiliations": [],
-      "abstract": "Recent advances in generative recommendation (GR) leverage large language models (LLMs) as recommender backbones, enabling LLMs to directly generate recommendations conditioned on item-interaction histories. In these systems, items are often represented through semantic IDs (SIDs) added to the LLM vocabulary as special tokens. Ideally, SIDs imbue item token representations with semantic priors, thereby improving model generalization. However, standard vocabulary expansion typically initializes these tokens as random Gaussian vectors, discarding the SIDs' underlying continuous geometry and forcing the LLM to relearn token relationships from interaction data. To demonstrate the consequences of this design, we first show that training from this initialization tends to organize SID embeddings around item popularity rather than semantics. We further show that, despite partially reducing the reliance on popularity and improving cold item performance, the computationally expensive process of continual pretraining (CPT) fails to reliably recover the original semantic geometry. To address these findings, we propose a simple, parameter-free intervention that initializes SID token embeddings directly from their corresponding centroids in the semantic embedding space. Requiring only a few lines of code and no additional training or inference overhead, this drop-in approach improves pure-SFT Recall@5 by up to 16%, reaches peak performance with up to 40% fewer SFT steps, and improves cold-item Recall@5 by up to 60%. Moreover, on datasets that benefit from additional CPT, centroid initialization reaches comparable performance while requiring half as many CPT epochs. Together, our findings show that preserving SID geometry, beyond shared-prefix structure, provides a simple and effective semantic prior for LLM-based GR.",
-      "published": "2026-08-07T23:33:08Z",
-      "updated": "2026-08-07T23:33:08Z",
-      "categories": [
-        "cs.IR",
-        "cs.LG"
-      ],
-      "pdfUrl": "https://arxiv.org/pdf/2608.07816v1",
-      "absUrl": "https://arxiv.org/abs/2608.07816v1",
       "industrySource": ""
     }
   ]
