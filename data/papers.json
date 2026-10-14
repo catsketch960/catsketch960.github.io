@@ -1,7 +1,85 @@
 {
-  "lastUpdated": "2026-10-13T07:34:23Z",
-  "totalResults": 787,
+  "lastUpdated": "2026-10-14T05:58:51Z",
+  "totalResults": 792,
   "papers": [
+    {
+      "id": "http://arxiv.org/abs/2610.17771v1",
+      "title": "Many Right Answers, One Training Example: Removing Responder Noise from GRPO for LLM Recommenders",
+      "authors": [
+        "Xin Li",
+        "Hao Jiang",
+        "Jinghao Guo",
+        "Weisi Lin",
+        "Chau Yuen"
+      ],
+      "affiliations": [],
+      "abstract": "A recommendation request on Reddit draws several replies, each naming different titles. When an LLM recommender is trained on such threads with reinforcement learning (RL), which replies should a generated list be rewarded against? The state-of-the-art recipe, Rank-GRPO, picks one reply per training example, so the advantage mostly records which reply was drawn (85% of its variance) rather than how good the list is. We argue that RL should train on the request, not on each answer, and propose ReMaRk: it scores every list once against the union of all replies' titles and samples each request equally. This makes RL cheaper. On seven backbones and three datasets, ReMaRk reaches the validation recall of 2,000 per-reply RL steps in 25 to 53% of the steps and leads at that budget; trained until neither improves, it is never significantly behind Rank-GRPO and in four of seven pairs reaches Rank-GRPO's best with fewer GPU-hours. The same reward helps on ProtoQA, where about 100 people answer each question, which points to a simple rule for RL with several valid human answers: reward them jointly.",
+      "published": "2026-10-13T05:57:20Z",
+      "updated": "2026-10-13T05:57:20Z",
+      "categories": [
+        "cs.CL"
+      ],
+      "pdfUrl": "https://arxiv.org/pdf/2610.17771v1",
+      "absUrl": "https://arxiv.org/abs/2610.17771v1",
+      "industrySource": "Amazon"
+    },
+    {
+      "id": "http://arxiv.org/abs/2610.17368v1",
+      "title": "HASTE: Hierarchical and Attribute-aware Supervision for Generative Recommendation",
+      "authors": [
+        "Tripti Shukla",
+        "Shwetha Somasundaram",
+        "Akshat Gupta",
+        "Rohit Garg",
+        "Paul Duff",
+        "Ian Anderson"
+      ],
+      "affiliations": [],
+      "abstract": "Generative recommendation models have shown promising results by representing items as semantic IDs and generating these IDs autoregressively. We introduce an approach showing that explicitly incorporating hierarchical and attribute-level supervision into generative recommendation can simultaneously improve training efficiency and long-tail recommendation performance. Existing approaches typically optimize semantic ID prediction with a standard causal cross-entropy objective, which does not explicitly exploit the hierarchical structure of semantic IDs and can require substantial training to learn effective item representations. Moreover, data-sparse tail items often suffer from poor representations due to limited supervision, resulting in weaker long-tail recommendation performance. We address these challenges with HASTE (Hierarchical and Attribute-aware Supervision for generaTive rEcommendation), a unified training framework that introduces hierarchical and attribute-specific supervision. HASTE's Hierarchical Loss explicitly exploits the multi-level structure of semantic IDs, providing supervision at each level of the item hierarchy and substantially accelerating training convergence. Its Attribute-Specific Losses encourage the model to preserve fine-grained item attributes, leveraging the language model's inherent semantic knowledge to improve representations and recommendations for tail items. We extensively evaluate HASTE on a fashion recommendation benchmark and across multiple domains of the Amazon dataset. HASTE improves recommendation performance across datasets and item-frequency regimes. Notably, the Hierarchical Loss achieves approximately 2x faster convergence than the standard causal cross-entropy objective, substantially improving training efficiency while maintaining strong recommendation quality.",
+      "published": "2026-10-12T20:25:50Z",
+      "updated": "2026-10-12T20:25:50Z",
+      "categories": [
+        "cs.IR",
+        "cs.AI",
+        "cs.LG"
+      ],
+      "pdfUrl": "https://arxiv.org/pdf/2610.17368v1",
+      "absUrl": "https://arxiv.org/abs/2610.17368v1",
+      "industrySource": "Amazon"
+    },
+    {
+      "id": "http://arxiv.org/abs/2610.15864v1",
+      "title": "Personalized LLM Recommendation with Semantic IDs: Autoregressive Beam Search vs. Multi-Token Prediction",
+      "authors": [
+        "Sejoon Oh",
+        "Fernando Amat Gil",
+        "Evan Smothers",
+        "Dan Iter",
+        "Mark Thornburg",
+        "Dawit Mureja Argaw",
+        "Sourabh Medapati",
+        "Thea Wang",
+        "Ria Verma",
+        "Qiuling Xu",
+        "Harshit Syal",
+        "Ehsan Gholami",
+        "Moumita Bhattacharya",
+        "Ashish Rastogi"
+      ],
+      "affiliations": [],
+      "abstract": "Large-scale personalization is shifting from embedding-table retrieval to LLM-based recommenders that generate the Semantic ID (SID) of the item to recommend, where each SID is a short sequence of discrete hierarchical content codes. A single instruction-tuned model can then unify retrieval, content understanding, and language, and recommend brand-new titles from their content alone using SID; then, how should the model generate the SID? Traditionally, models rely on a single language modeling head that generates tokens autoregressively, typically using constrained beam search. In contrast, an emerging body of work explores multi-token prediction (MTP), where dedicated heads predict all tokens in parallel, substantially reducing the decoding latency associated with beam search. We report an industry-scale, apples-to-apples comparison of these two generation paradigms: single-head autoregressive decoding vs. MTP. We introduce a new auxiliary ranking loss, defined over the joint SID score, to train the MTP objective. We evaluate the SID training objectives on both quality and training/inference cost, inside a multi-task LLM that jointly does personalized retrieval, content question-answering (QA), and instruction following over a large streaming-media catalog. Our experiments show single-head beam search consistently beats MTP on most product-critical metrics: ranking and content QA, and trains at roughly 2.6x lower dollar cost on Qwen3-8B scale; MTP wins only on raw inference throughput. Around this finding, we detail an efficient training and inference stack and report end-to-end gains over the previous non-SID baseline equipped with an auxiliary ranking head: +77% item cold-start ranking, +22% content-QA accuracy, +2.8x faster training, with language metric regression traced to SID vocabulary expansion. We address the language regression by reinforcement learning post training.",
+      "published": "2026-10-11T19:33:28Z",
+      "updated": "2026-10-11T19:33:28Z",
+      "categories": [
+        "cs.IR",
+        "cs.AI",
+        "cs.CL",
+        "cs.LG"
+      ],
+      "pdfUrl": "https://arxiv.org/pdf/2610.15864v1",
+      "absUrl": "https://arxiv.org/abs/2610.15864v1",
+      "industrySource": "Apple"
+    },
     {
       "id": "http://arxiv.org/abs/2610.10124v1",
       "title": "Training with Missed Targets in Generative Recommendation: Separating Supervision from Probability Competition",
@@ -442,57 +520,53 @@
       "industrySource": "Meta"
     },
     {
-      "id": "http://arxiv.org/abs/2609.03522v1",
-      "title": "EPIC: Explicit Posterior Item Conditioning for Semantic ID Diffusion Recommendation",
+      "id": "http://arxiv.org/abs/2610.16132v1",
+      "title": "UniSGR-V2: Stepwise Target-Side Feature Anticipation and Crossing for Generative Recommendation",
       "authors": [
-        "Tuan-Binh Tran",
-        "Thanh Tam Nguyen",
-        "Quoc Viet Hung Nguyen",
-        "Dung D. Le",
-        "Tung Kieu",
-        "Thanh Trung Huynh"
+        "Jun Yang",
+        "Jiasi Chen",
+        "Jiawei Sun",
+        "Ziyue Guo",
+        "Jianan Yan",
+        "Tao Luo",
+        "Xiaoyi Zeng"
       ],
       "affiliations": [],
-      "abstract": "Semantic ID (SID) generative recommendation predicts the next item by generating a short tuple of discrete tokens. Recent masked-diffusion methods improve this process through bidirectional context and flexible decoding, yet recommendation ultimately requires selecting among complete catalog items. At each denoising step, a partial SID can correspond to multiple feasible items, while existing methods primarily reason through position-wise token predictions. We propose Explicit Posterior Item Conditioning (EPIC), which introduces explicit item-level competition into SID denoising. EPIC constructs a personalized posterior over feasible candidate items using the current generation context and the user's recent interactions, then projects this distribution back to unresolved SID positions to guide subsequent token decisions. The pretrained backbone remains frozen and requires no additional decoder forward pass. Experiments on four Amazon benchmarks show consistent improvements over strong baselines, while diagnostic analyses indicate that the gains primarily arise from personalized transition evidence that preserves promising item hypotheses during denoising.",
-      "published": "2026-09-03T08:21:50Z",
-      "updated": "2026-09-03T08:21:50Z",
-      "categories": [
-        "cs.IR",
-        "cs.LG"
-      ],
-      "pdfUrl": "https://arxiv.org/pdf/2609.03522v1",
-      "absUrl": "https://arxiv.org/abs/2609.03522v1",
-      "industrySource": "Amazon"
-    },
-    {
-      "id": "http://arxiv.org/abs/2609.00986v1",
-      "title": "TGR: Advancing Industrial Recommendation from Generative-Paradigm Ranking toward Unified Generation and Reasoning",
-      "authors": [
-        "TGR Team",
-        "Lei Cheng",
-        "Haonan Hu",
-        "Beibei Kong",
-        "Yudong Li",
-        "Zang Li",
-        "Yunsheng Pang",
-        "Hongyang Su",
-        "Jianchao Tu",
-        "Yunlong Wang",
-        "Bing Wen",
-        "Junzhang Zhu",
-        "Shaojie Zhu",
-        "Chengxiang Zhuo"
-      ],
-      "affiliations": [],
-      "abstract": "Industrial recommender systems typically rely on cascaded retrieval, pre-ranking, ranking, and reranking stages, whose separately optimized models limit scaling, fragment decision making, and lack semantic knowledge and reasoning. We present TGR (Tencent Generative Recommendation), an industrial framework that advances recommendation toward the generative paradigm along three coupled directions. TGR-GenRank upgrades ranking through CCFormer, which combines unified feature tokenization, a scalable Transformer backbone, feature-field separated cross attention, subspace token mixing, and hierarchical sequence compression while retaining per-item multi-task outputs. TGR-GenRec explores end-to-end generation under two paradigms: BARGE bridges item-boundary loss and semantic drift in hierarchical semantic-ID generation through item context-aware attention, hierarchical path reranking, and orthogonal dual-path decoding; HiGR performs whole-slate generation with prefix-structured semantic IDs, coarse-to-fine decoding, and listwise multi-objective alignment. TGR-Reason injects offline-generated semantic-ID reason tokens into online decoding, providing reasoning without request-time rollout. TGR is deployed across Tencent production surfaces serving hundreds of millions of users. CCFormer delivers significant gains in five A/B-tested scenarios and is fully launched in two, including +3.57% CTR and +1.71% advertising revenue. BARGE improves Hit@5 by 10.2-16.9% and yields +0.60% CTR and +1.70% reading time after full rollout. HiGR improves offline slate quality by 15.9-21.3% with a 5x inference speedup and achieves up to +1.22% watch time and +1.73% video views. TGR-Reason raises cold-start new-user Hit@1 by 477.8% and delivers +1.75% effective consumption and +13.09% new-user exposure-to-conversion online.",
-      "published": "2026-09-01T09:41:26Z",
-      "updated": "2026-09-01T09:41:26Z",
+      "abstract": "Semantic-ID-based generative recommendation unifies retrieval and ranking through autoregressive decoding but differs structurally from discriminative models, which can directly access rich target-item side features. The attributes are compressed into a finite codebook during quantization, while the target item remains undetermined during decoding and its features cannot be looked up. This target-side feature vacuum weakens generation at each semantic-ID level through high conditional entropy and cascading errors, and final ranking through missing target-side feature crossing. Existing methods interact with candidate representations or generate discrete attribute tokens, but none reconstructs a continuous target-side representation inside decoding to support both stepwise generation and ranking. We propose TacGR (Stepwise Target-Side Feature Anticipation and Crossing for Generative Recommendation). Before decoding each codeword, TacGR anticipates a continuous target-side feature vector and crosses it with the semantic prefix and user behavior sequence inside the decoder. The crossed representation conditions current-level generation and is directly used for ranking. Continuous-vector regression risks a learnable target collapsing with its prediction and prediction noise propagating into generation through attention. TacGR addresses these challenges with a semantic-anchoring auxiliary tower and a unidirectional visibility mask, respectively. For extremely long industrial behavior histories, it introduces gated convolutional denoising to suppress noise and adapts the pyramid memory funnel to reduce inference cost. Offline experiments on a large-scale Lazada dataset show significant gains over OneRec, UniRec, and UniSGR. Online A/B testing improves IPV, Order, and GMV by 0.79%, 5.55%, and 3.09%, respectively.",
+      "published": "2026-10-12T03:48:56Z",
+      "updated": "2026-10-12T03:48:56Z",
       "categories": [
         "cs.IR"
       ],
-      "pdfUrl": "https://arxiv.org/pdf/2609.00986v1",
-      "absUrl": "https://arxiv.org/abs/2609.00986v1",
-      "industrySource": "Tencent"
+      "pdfUrl": "https://arxiv.org/pdf/2610.16132v1",
+      "absUrl": "https://arxiv.org/abs/2610.16132v1",
+      "industrySource": ""
+    },
+    {
+      "id": "http://arxiv.org/abs/2610.14487v1",
+      "title": "AlignPoison: Conditional Targeted Poisoning of Generative Recommenders via Decoding-Aligned Prefixes",
+      "authors": [
+        "Zhuoxuan Zhang",
+        "Jinhao Duan",
+        "Xinyu Zhao",
+        "Jinduo Guo",
+        "Shuai Shao",
+        "Rui Li",
+        "Luke Simon",
+        "Zhun Deng",
+        "Tianlong Chen",
+        "Bo Sun"
+      ],
+      "affiliations": [],
+      "abstract": "Generative recommendation models based on autoregressive decoding have been adopted as alternatives to classical ranking-based systems. While their modeling flexibility has been widely studied, their resilience to data poisoning remains largely unexplored. In this work, we ask: how susceptible are generative recommenders to conditional targeted poisoning? Under a realistic setting where an adversary can inject limited malicious interactions and query a recommendation API as a black box, our empirical study shows that generative recommenders are vulnerable: injecting fewer than 1% synthetic interactions significantly increases the likelihood of promoting malicious targets under the trigger. To characterize this vulnerability, we analyze the synthesis of malicious interactions from two perspectives: (i) decoding alignment and (ii) prefix popularity. We observe that short, context-aligned prefixes that are both common under the model's induced transition dynamics and strongly linked to a frequent trigger consistently amplify targeted promotion. Motivated by this analysis, we develop AlignPoison, a black-box framework that discovers and samples context-aligned prefixes from API outputs. We conduct experiments on benchmarks in unimodal and multimodal generative recommendation settings. Results show that these prefixes outperform competitive baselines, improving ASR lift by up to 16.3 percentage points and highlighting a decoding-dependent, context-sensitive poisoning vulnerability in generative recommendation models.",
+      "published": "2026-10-10T02:36:15Z",
+      "updated": "2026-10-10T02:36:15Z",
+      "categories": [
+        "cs.AI"
+      ],
+      "pdfUrl": "https://arxiv.org/pdf/2610.14487v1",
+      "absUrl": "https://arxiv.org/abs/2610.14487v1",
+      "industrySource": ""
     },
     {
       "id": "http://arxiv.org/abs/2610.13504v1",
@@ -606,7 +680,7 @@
       "industrySource": ""
     },
     {
-      "id": "http://arxiv.org/abs/2610.05670v1",
+      "id": "http://arxiv.org/abs/2610.05670v2",
       "title": "Generate What You Can Trust: Content Credibility in Generative Recommenders",
       "authors": [
         "Zhuo Cai",
@@ -618,12 +692,12 @@
       "affiliations": [],
       "abstract": "Generative recommendation (GR) represents items with semantic IDs (i.e., discrete token sequences) and generates target item tokens as recommendations. Despite its promising results, existing methods predominantly optimize for accuracy while neglecting the credibility of the recommendations they generate. This oversight inevitably exposes users to uncredible content (e.g., fake news) with serious societal consequences, including user distrust, reputation harm to platforms, and broader social instability. To address this critical yet underexplored challenge, we propose CreGR, the first credible GR model that jointly tackles content credibility across the two core stages of GR: tokenization and generation. In the tokenization stage, we design a new credibility-aware tokenizer that explicitly encourages the model to learn discriminative tokens respectively for credible and uncredible items, thereby disentangling credibility signals at the token level. Building on this, in the generation stage, we propose a novel accuracy-preserving and credibility-oriented generator grounded in discrete diffusion. Specifically, we introduce an asymmetric masking probability reduction strategy that selectively diminishes the contribution of tokens associated with uncredible content to the generation process, while leaving tokens encoding user preference signals unaffected so as to preserve recommendation accuracy. Experiments on three real-world datasets demonstrate the effectiveness of CreGR.",
       "published": "2026-10-05T01:33:29Z",
-      "updated": "2026-10-05T01:33:29Z",
+      "updated": "2026-10-10T00:22:03Z",
       "categories": [
         "cs.IR"
       ],
-      "pdfUrl": "https://arxiv.org/pdf/2610.05670v1",
-      "absUrl": "https://arxiv.org/abs/2610.05670v1",
+      "pdfUrl": "https://arxiv.org/pdf/2610.05670v2",
+      "absUrl": "https://arxiv.org/abs/2610.05670v2",
       "industrySource": ""
     },
     {
@@ -1230,74 +1304,6 @@
       ],
       "pdfUrl": "https://arxiv.org/pdf/2609.07175v1",
       "absUrl": "https://arxiv.org/abs/2609.07175v1",
-      "industrySource": ""
-    },
-    {
-      "id": "http://arxiv.org/abs/2609.04127v1",
-      "title": "Epistemic Warrant for LLM Recommendations: Characterizing the Basis for Reliance When Ground Truth Is Unavailable",
-      "authors": [
-        "Shai Vardi",
-        "João Sedoc"
-      ],
-      "affiliations": [],
-      "abstract": "Large language models are increasingly used to support organizational decisions, yet users often lack a principled basis for assessing whether to rely on a specific recommendation. Existing approaches typically evaluate broad model properties, such as reliability, uncertainty, or robustness, or focus on user trust, rather than the underlying basis for relying on an individual recommendation. Adapting theoretical foundations from epistemology, we introduce epistemic warrant, a decision-level construct that characterizes the stability of a model's preference and the scope over which that preference holds. We operationalize this construct through a four-tier reliance certificate for pairwise recommendations, distinguishing among unstable, context-dependent, locally supported, and broadly supported recommendations. We validate the construct using contemporary methodologies: known-groups tests successfully recover expert-prespecified warrant orderings, and stronger warrants systematically align with independent consensus from crowd workers. Furthermore, we demonstrate that epistemic warrant provides information distinct from verbalized confidence and is not readily explained by decision difficulty. Ultimately, this framework offers a theoretically grounded, implementable approach for characterizing the warrant of individual LLM recommendations when objective ground truth is unavailable.",
-      "published": "2026-09-03T17:25:20Z",
-      "updated": "2026-09-03T17:25:20Z",
-      "categories": [
-        "cs.AI"
-      ],
-      "pdfUrl": "https://arxiv.org/pdf/2609.04127v1",
-      "absUrl": "https://arxiv.org/abs/2609.04127v1",
-      "industrySource": ""
-    },
-    {
-      "id": "http://arxiv.org/abs/2609.03369v1",
-      "title": "HypRQ-VAE: Hyperbolic Item Indexing for Long-Tail-Aware Generative Recommender Systems",
-      "authors": [
-        "Longfeng Wu",
-        "Tong Zeng",
-        "Giovanni Seni",
-        "Zhimin Peng",
-        "Bhanu Pratap Singh Rawat",
-        "Si Zhang",
-        "Yao Zhou",
-        "Lecheng Zheng",
-        "Bo Ji",
-        "Yujun Yan",
-        "Dawei Zhou"
-      ],
-      "affiliations": [],
-      "abstract": "Sequential recommender systems model user behavior as item ID sequences, while recent generative methods cast recommendation as a language modeling task using large language models (LLMs). While this paradigm incorporates rich textual semantics, it introduces a fundamental mismatch: LLMs operate on text tokens, whereas recommender systems depend on discrete item indices. This misalignment often leads to hallucinations in generative recommendations. Existing methods attempt to bridge this gap by learning item vocabularies in Euclidean space, but they struggle to model the inherent long-tail distribution of real-world catalogs, where a small number of head items dominate, and a vast number of tail items reflect users' niche preferences. To address this issue, we introduce Hyperbolic Residual-Quantized Variational AutoEncoder (HypRQ-VAE), the first framework to learn item indexing in hyperbolic space. HypRQ-VAE leverages the unique properties of hyperbolic geometry, whose exponential volume expansion naturally accommodates the power law structure of user-item interactions. This allows the model to encode rich textual semantics while preserving the representational fidelity of sparse, long-tail items. Experiments on three benchmark datasets show that HypRQ-VAE significantly improves the performance of recommendation, particularly in recommending tail items. Our analysis attributes these gains to the superior capacity of hyperbolic space to model item hierarchies and sparsity in generative recommendation. Our code and data are available at: https://github.com/wulongfeng/HypRQ-VAE.",
-      "published": "2026-09-03T04:56:22Z",
-      "updated": "2026-09-03T04:56:22Z",
-      "categories": [
-        "cs.IR"
-      ],
-      "pdfUrl": "https://arxiv.org/pdf/2609.03369v1",
-      "absUrl": "https://arxiv.org/abs/2609.03369v1",
-      "industrySource": ""
-    },
-    {
-      "id": "http://arxiv.org/abs/2608.29179v2",
-      "title": "History-Conditioned Joint-Prefix Alignment for Generative Recommendation",
-      "authors": [
-        "Hongliang Sun",
-        "Lianjie Li",
-        "Bolin Zhang",
-        "Dianbo Sui",
-        "Dianhui Chu",
-        "Zhiying Tu"
-      ],
-      "affiliations": [],
-      "abstract": "Generative recommendation retrieves items by autoregressively generating semantic identifiers, but beam search may discard a target before its complete identifier is generated. Our preliminary analysis across three benchmarks shows that most missed targets are pruned within the first two decoding steps, highlighting the importance of early prefix retention. However, retaining a target's first-token branch alone is insufficient if its continuation is pruned at the next step: aligning only the first-token distribution improves first-token survival but yields little gain in complete-path retention. This observation motivates joint supervision of early branches and their continuations. We propose Prefix Alignment with Temporal History (PATH), which aggregates transition statistics from the training corpus over recent interactions with exponential decay to construct history-conditioned two-token prefix targets. PATH aligns the model's joint predictions with these targets through forward KL divergence, using a chain-rule decomposition that enables unbiased Monte Carlo estimation. At inference time, PATH reuses the transition statistics for pointwise mutual information (PMI) calibration, reranking completed candidates relative to global prefix frequency. Experiments on Beauty, Instruments, and Yelp demonstrate the effectiveness of PATH, showing consistent improvements in recommendation performance and higher full-SID survival rates.",
-      "published": "2026-08-29T10:11:47Z",
-      "updated": "2026-09-26T12:36:44Z",
-      "categories": [
-        "cs.IR",
-        "cs.AI"
-      ],
-      "pdfUrl": "https://arxiv.org/pdf/2608.29179v2",
-      "absUrl": "https://arxiv.org/abs/2608.29179v2",
       "industrySource": ""
     }
   ]
