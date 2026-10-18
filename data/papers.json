@@ -1,6 +1,6 @@
 {
-  "lastUpdated": "2026-10-14T05:58:51Z",
-  "totalResults": 792,
+  "lastUpdated": "2026-10-18T05:38:39Z",
+  "totalResults": 793,
   "papers": [
     {
       "id": "http://arxiv.org/abs/2610.17771v1",
@@ -520,6 +520,30 @@
       "industrySource": "Meta"
     },
     {
+      "id": "http://arxiv.org/abs/2610.20913v1",
+      "title": "TransX Technical Report: Scaling Sequence Transduction for Recommendation",
+      "authors": [
+        "Da Xu",
+        "Liyan Fang",
+        "Divya Venugopalan",
+        "Sunny Hsu",
+        "Xukai Wang",
+        "Rishav Roy Chowdhury",
+        "Cindy Liang",
+        "Nishant Satya Lakshmikanth"
+      ],
+      "affiliations": [],
+      "abstract": "We present TransX, a sequence-transduction framework and co-designed infrastructure for scaling industrial recommendation with explicit control over model-compute allocation and execution amortization. TransX separates sequence encoding, behavior memory, and candidate-conditioned fusion into independently scalable components. Training amortizes causal trajectory computation across behavioral prefixes and fans out memory states to candidates; serving disaggregates bulk prefill, nearline refresh, and online prediction through compact behavior-memory KV. We observe anisotropic scaling returns: encoder scaling may saturate beyond moderate depth at fixed memory resolution and fusion capacity; increasing supervision shifts the allocation frontier toward candidate-conditioned fusion; and the memory resolution needed to preserve quality remains roughly stable as model capacity grows. We train TransX on click and conversion, post-train its shared behavioral interface for retrieval and preference ranking, and explore generative recommendation offline. In separate production A/B experiments, the core TransX model improves CTR by 6.02% and conversion by 4.45%, while post-trained retrieval and preference-ranking variants improve CTR by 2.96% and conversion by 1.33%, respectively, over corresponding production baselines. Under matched training conditions, the training infrastructure increases supervised-target throughput by 84%. In serving, disaggregation reduces TransX's total serving cost by nearly 80% versus colocated serving at matched traffic and SLO, enabling approximately 5X the per-request model FLOPs of the HSTU-style production baseline at the same total serving cost. At matched per-request model FLOPs, TransX delivers approximately 4X higher request throughput per H200. These results show that online serving cost need not grow proportionally with recommendation model capacity.",
+      "published": "2026-10-14T20:43:40Z",
+      "updated": "2026-10-14T20:43:40Z",
+      "categories": [
+        "cs.IR"
+      ],
+      "pdfUrl": "https://arxiv.org/pdf/2610.20913v1",
+      "absUrl": "https://arxiv.org/abs/2610.20913v1",
+      "industrySource": ""
+    },
+    {
       "id": "http://arxiv.org/abs/2610.16132v1",
       "title": "UniSGR-V2: Stepwise Target-Side Feature Anticipation and Crossing for Generative Recommendation",
       "authors": [
@@ -1020,7 +1044,7 @@
       "industrySource": ""
     },
     {
-      "id": "http://arxiv.org/abs/2609.17989v1",
+      "id": "http://arxiv.org/abs/2609.17989v2",
       "title": "Whom Do AI Agents Work For? Role Assignment Induces Sponsorship Bias in LLM Recommenders",
       "authors": [
         "Davood Wadi",
@@ -1029,13 +1053,13 @@
       "affiliations": [],
       "abstract": "Large language models (LLMs) now serve as conversational shopping assistants on platforms that also sell advertising. These AI agents face a conflict of duty. They advise consumers who rely on their judgment, yet are deployed by platforms that benefit when sponsored listings are chosen. Sponsorship disclosures, designed to allow consumers to penalize paid placements, now reach the AI agent rather than the consumer, and the agent's evaluation of them is hidden from the consumer. Drawing on the fiduciary concept of conflict of duty, we argue that an agent's evaluation of a sponsored listing should not depend on which party deployed it. In controlled choice experiments, we manipulate assigned roles in the system prompt to name either a traveler or a booking platform as the agent's principal. Platform delegation significantly attenuates the penalty that agents apply to sponsored listings and weakens the skepticism that disclosure triggers in their reasoning traces. We replicate out findings across LLMs and reasoning depths. A second study decomposes the disclosure label and shows that the divergence between the two delegates widens significantly when the paid placement is attributed to the platform. Stricter terminology (\"Sponsored\" instead of \"Promoted\") lowers choice of paid listings but does not close this gap when the platform is named. The findings show that disclosure mandates designed for human consumers cannot by themselves protect consumers in AI-mediated commerce.",
       "published": "2026-09-16T01:21:56Z",
-      "updated": "2026-09-16T01:21:56Z",
+      "updated": "2026-10-13T23:55:30Z",
       "categories": [
         "econ.GN",
         "cs.AI"
       ],
-      "pdfUrl": "https://arxiv.org/pdf/2609.17989v1",
-      "absUrl": "https://arxiv.org/abs/2609.17989v1",
+      "pdfUrl": "https://arxiv.org/pdf/2609.17989v2",
+      "absUrl": "https://arxiv.org/abs/2609.17989v2",
       "industrySource": ""
     },
     {
@@ -1283,27 +1307,6 @@
       ],
       "pdfUrl": "https://arxiv.org/pdf/2609.11012v1",
       "absUrl": "https://arxiv.org/abs/2609.11012v1",
-      "industrySource": ""
-    },
-    {
-      "id": "http://arxiv.org/abs/2609.07175v1",
-      "title": "Enabling High-Bandwidth Flash for Generative Recommendation Serving with Write-Aware KV Cache Policy",
-      "authors": [
-        "Danni Peng",
-        "Kai Wu",
-        "Tianyu Zuo",
-        "Pengfei Xia",
-        "Hui Zang"
-      ],
-      "affiliations": [],
-      "abstract": "Generative recommendation (GR) systems increasingly leverage user-level KV cache reuse to avoid recomputing long user histories. However, the growing KV cache capacity and bandwidth requirements introduce new challenges for memory system. High-Bandwidth Flash (HBF) provides a promising solution by offering substantially higher capacity than HBM while approaching HBM-class read bandwidth, enabling larger scale KV cache retention and improved serving throughput. Yet conventional Least-Recently-Used (LRU) KV cache management tightly couples KV cache writes with cache misses, generating excessive write traffic that rapidly exhausts flash endurance. In this work, we evaluate a write-aware KV cache policy based on admission-controlled LRU-K for HBF-based GR serving. By filtering low-reuse users before cache admission, LRU-K decouples KV cache writes from misses and significantly reduces unnecessary writes. We develop an analytical model to characterize GR serving performance, KV cache write traffic, and HBF lifetime, and evaluate performance across diverse memory systems and GR workloads. Our results show that HBF-based systems achieve 3.8 to 4.7 times higher throughput than HBM-only systems. Moreover, LRU-K extends HBF lifetime from about one year under conventional LRU to over six years with a moderate K=10, while maintaining comparable or even slightly improved throughput. These results highlight the importance of write aware KV cache policy for sustainable HBF-based GR serving.",
-      "published": "2026-09-07T08:07:14Z",
-      "updated": "2026-09-07T08:07:14Z",
-      "categories": [
-        "cs.AR"
-      ],
-      "pdfUrl": "https://arxiv.org/pdf/2609.07175v1",
-      "absUrl": "https://arxiv.org/abs/2609.07175v1",
       "industrySource": ""
     }
   ]
