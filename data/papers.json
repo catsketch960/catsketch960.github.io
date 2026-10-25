@@ -1,7 +1,61 @@
 {
-  "lastUpdated": "2026-10-18T05:38:39Z",
-  "totalResults": 793,
+  "lastUpdated": "2026-10-25T05:51:22Z",
+  "totalResults": 799,
   "papers": [
+    {
+      "id": "http://arxiv.org/abs/2610.25093v1",
+      "title": "Structure-Aligned History Learning with Subspace-Structured Semantic IDs for Generative Recommendation",
+      "authors": [
+        "Kaiwen Wei",
+        "Kejun He",
+        "Jie Zhang",
+        "Xiaomian Kang",
+        "Yuming Yang",
+        "Aijia Zhou",
+        "Xie Zhou",
+        "Yining Wang",
+        "Nayu Liu",
+        "Li Jin",
+        "Zhenyang Li",
+        "Jiang Zhong",
+        "He Bai",
+        "Jingxuan Wei",
+        "Junnan Zhu"
+      ],
+      "affiliations": [],
+      "abstract": "Generative recommendation constructs semantic IDs for catalog items and predicts the next ID from user interaction histories. However, existing methods face limitations in both stages. First, conventional quantizers may produce imbalanced code assignments and lack coherent intermediate semantic units between individual tokens and complete items, limiting history reconstruction. Second, recommendation models remain dominated by next-item prediction, treating historical interactions mainly as conditioning context and providing limited supervision for recovering persistent preferences across the historical path, particularly when relevant preference signals are distributed over distant interactions. To address these limitations, Structure-Aligned History Learning (SAHL) reconnects the two stages by using the structure created during quantization directly for history reconstruction. Its Semantic Residual Balanced Quantization (SRBQ) forms a balanced token-subspace-item hierarchy, and SAHL reconstructs history at these same granularities. Predictive entropy prioritizes uncertain transitions, while curriculum optimization progressively shifts training to inference-aligned next-item prediction. On four Amazon Review categories, SAHL improves NDCG@10 by 18.6%-30.0% over RPG and 2.7%-6.0% over strong method MHL. Controlled analyses verify balanced code use, the benefit of following quantizer-defined groups during reconstruction, and dependence on user history. The relevant code is available at https://github.com/CQU-MM-Intelligent-Lab/SAHL.",
+      "published": "2026-10-18T07:58:35Z",
+      "updated": "2026-10-18T07:58:35Z",
+      "categories": [
+        "cs.IR"
+      ],
+      "pdfUrl": "https://arxiv.org/pdf/2610.25093v1",
+      "absUrl": "https://arxiv.org/abs/2610.25093v1",
+      "industrySource": "Amazon"
+    },
+    {
+      "id": "http://arxiv.org/abs/2610.22797v1",
+      "title": "Reasoning Reranking with Semantic IDs as the Sole Item Representation",
+      "authors": [
+        "Zhenwei Tang",
+        "Jintao Liu",
+        "Di Bai",
+        "Xidong Wu",
+        "Xinwu Cheng"
+      ],
+      "affiliations": [],
+      "abstract": "Reasoning rerankers write a rationale before ranking a candidate slate, and existing systems read item metadata to do so, even though generative recommenders increasingly represent items as compact Semantic IDs (SIDs). Ranking from SIDs alone has two appeals: SID prompts are far shorter than the matched item text, and although item codes are fixed from content, the backbone learns their token embeddings in part from user-item interaction sequences, so the tokens can carry behavioral signal that item text lacks. That training targets next-item generation, and whether it supports ranking a supplied slate from SIDs alone is untested. We build ReRankID, a controlled testbed in which models reason and rank from a history and slate shown only as SIDs, varying item rendering, history length, and slate size one at a time. On this testbed, such models often copy the input order instead of reranking, and readable metadata does not repair the failure. We compare supervised fine-tuning, rejection-sampled self-training, on-policy distillation, and verifier-based reinforcement learning as post-training methods and find that they elicit the missing behavior. The strongest post-trained model, the 8B model trained with a graded ranking reward, gives the best SID-only ranking and matches strong text-reading LLMs whose prompts are about 20x longer. It ranks above random with no history at all, where a caption-reading reference does not, and it keeps its gains at long histories, where text prompts pass 50k tokens and the caption-reading reference stops improving. In a paired rationale audit, this model argues trade-offs better than that reference but describes items less accurately. The common post-training methods we test thus elicit ranking from SIDs but not faithful item descriptions, which calls for post-training that improves the reasoning itself, not only the ranking it produces.",
+      "published": "2026-10-16T01:21:47Z",
+      "updated": "2026-10-16T01:21:47Z",
+      "categories": [
+        "cs.IR",
+        "cs.CL",
+        "cs.LG"
+      ],
+      "pdfUrl": "https://arxiv.org/pdf/2610.22797v1",
+      "absUrl": "https://arxiv.org/abs/2610.22797v1",
+      "industrySource": "Meta"
+    },
     {
       "id": "http://arxiv.org/abs/2610.17771v1",
       "title": "Many Right Answers, One Training Example: Removing Responder Noise from GRPO for LLM Recommenders",
@@ -312,35 +366,6 @@
       "industrySource": "Amazon"
     },
     {
-      "id": "http://arxiv.org/abs/2609.31045v1",
-      "title": "KuaFu: Compressing Long User Behavior into Understanding at Billion Scale",
-      "authors": [
-        "Jiahao Hui",
-        "Lin Zhu",
-        "Yishen Hu",
-        "Jingdong Shu",
-        "Zetai Jiang",
-        "Xining Ran",
-        "Ben Tan",
-        "Yeshou Cai",
-        "Gong Chen",
-        "Haijie Gu",
-        "Jie Jiang"
-      ],
-      "affiliations": [],
-      "abstract": "Conversational agents, generative recommenders, and personalized advertising all rest on one capability: understanding each user from raw behavior. Prevailing industrial practice is task-specific: for each task, a relevant subsequence is extracted from the full history and a dedicated model trained on it. In production it hits two bottlenecks. First, even after filtering, a single-task sequence stays extremely long: content-interest summarization reads several hundred items per user, tens of thousands of tokens once serialized as prompt text. Second, profiles are refreshed routinely: a billion users weekly, roughly 100K QPM in aggregate, which under a fixed GPU budget sets a hard throughput floor. Compression is therefore mandatory, yet truncation or coarse compression can silently distort the profile, introducing four hallucination types (fabrication, omission, date misattribution, broken logic) that, with no way to evaluate the compressed representation itself, surface only as diffuse degradation in downstream metrics. We present KuaFu, a unified behavior-compression layer whose minimal unit is one behavior item. A two-axis projector compresses each item into 2-4 tokens of width 128-256 (about 10x along the token axis, 20x along width; per-item cache 10 KB to 0.5 KB), with fidelity-oriented four-stage training and layered intermediate evaluation. Across four production profiling tasks it matches or exceeds uncompressed single-task production models on all five headline metrics, raises per-GPU throughput by 37%-350%, and saves 190 GPUs. On public benchmarks it nearly always beats prior compressors at the same compression ratio (up to +17.7 EM on out-of-domain MRQA); on RecBench, a 4B model surpasses its 8B counterpart by 1.90 points. KuaFu has run on the Tencent advertising and recommendation platform for ten months, lifting overall GMV by 1.37%.",
-      "published": "2026-09-25T09:39:39Z",
-      "updated": "2026-09-25T09:39:39Z",
-      "categories": [
-        "cs.IR",
-        "cs.CL",
-        "cs.LG"
-      ],
-      "pdfUrl": "https://arxiv.org/pdf/2609.31045v1",
-      "absUrl": "https://arxiv.org/abs/2609.31045v1",
-      "industrySource": "Tencent"
-    },
-    {
       "id": "http://arxiv.org/abs/2609.30576v1",
       "title": "T-RoPE: Time-Aware Rotary Position Embedding for Sequential Recommendation",
       "authors": [
@@ -518,6 +543,101 @@
       "pdfUrl": "https://arxiv.org/pdf/2609.18148v2",
       "absUrl": "https://arxiv.org/abs/2609.18148v2",
       "industrySource": "Meta"
+    },
+    {
+      "id": "http://arxiv.org/abs/2610.29298v1",
+      "title": "Generative Recommenders Forget the Long Tail: Restoring Memorization in Retrieval and Ranking",
+      "authors": [
+        "Xu Huang",
+        "Jiancan Wu",
+        "Hongzheng Qin",
+        "Jiawei Feng",
+        "Can Ye",
+        "Wencong Zeng",
+        "Fengze Li",
+        "Xiang Wang"
+      ],
+      "affiliations": [],
+      "abstract": "Generative recommenders replace the retrieve-then-rank cascade with a single model: beam search over semantic item identifiers performs retrieval, and the same likelihood performs ranking. We show that this shared score makes them forget long-tail items twice. In retrieval, beam search keeps identifier prefixes by the probability mass of their subtrees, so tail items are pruned early, and a wider beam admits few more of them. In ranking, the likelihood places tail items below head items even when they are admitted, so expanding retrieval alone brings little or no gain. Both failures reflect missing item-level memorization (i.e., direct recall of which items co-occur), which collaborative filtering provides and shared-prefix generation lacks. To this end, we propose CAPE (Co-occurrence-Aware Pool Expansion), a training-free plug-in that restores memorization at both stages: (i) a memorization channel retrieves co-occurrence-supported tail items outside the beam and scores them with the frozen generator, and (ii) memorization-calibrated ranking fuses the generator likelihood with co-occurrence evidence while keeping the generator's first item. Experiments with two generative backbones on product and music domains show that CAPE significantly improves long-tail accuracy over the backbones and over re-ranking baselines that share its candidates, preserves or improves overall accuracy, and adds a small fraction of the latency.",
+      "published": "2026-10-21T06:49:39Z",
+      "updated": "2026-10-21T06:49:39Z",
+      "categories": [
+        "cs.IR"
+      ],
+      "pdfUrl": "https://arxiv.org/pdf/2610.29298v1",
+      "absUrl": "https://arxiv.org/abs/2610.29298v1",
+      "industrySource": ""
+    },
+    {
+      "id": "http://arxiv.org/abs/2610.27898v1",
+      "title": "SPAR: Stepwise Personalized Autoregressive Recommendation with Prefix-Balanced Semantic IDs",
+      "authors": [
+        "Chunrui Zhang",
+        "Gaoyun Lin",
+        "Chang Zhou",
+        "Zheng Hu",
+        "Qiran Song",
+        "Shimin Cai",
+        "Tao Zhou"
+      ],
+      "affiliations": [],
+      "abstract": "Semantic ID (SID)-based generative recommendation retrieves items through successive token-level decisions, making personalization at each decoding step essential. However, existing methods insufficiently account for prefix-dependent user evidence and imbalanced historical interaction loads among candidate branches. This can cause irreversible branch-selection errors and favor popular paths. We propose SPAR, a generative recommendation framework that jointly improves stepwise personalization and SID construction. Its PATH Decoder retrieves prefix-relevant evidence from compressed long-term user memories and combines it with recent behavior, user profiles, and event context to guide each token decision. Its RQ-PIB module balances historical interaction loads among sibling branches under each parent prefix while preserving semantic structure. Experiments on large-scale Youku production data show an average relative HitRate improvement of 2.66% over the strongest baseline. SPAR also increases target-prefix retention by 5.79 percentage points and reduces the traffic-weighted largest child-branch share by 32.84% across SID levels. In a 7-day online A/B test, SPAR serves 10% of Youku's production traffic and improves average watch time per user by 3.95% and play conversion rate by 3.38%. These results demonstrate more reliable hierarchical decoding, balanced SID branches, and improved user engagement in industrial recommendation.",
+      "published": "2026-10-20T09:17:14Z",
+      "updated": "2026-10-20T09:17:14Z",
+      "categories": [
+        "cs.IR"
+      ],
+      "pdfUrl": "https://arxiv.org/pdf/2610.27898v1",
+      "absUrl": "https://arxiv.org/abs/2610.27898v1",
+      "industrySource": ""
+    },
+    {
+      "id": "http://arxiv.org/abs/2610.27691v1",
+      "title": "EASformer: Environment-Action-State Alignment for Industrial Generative Ranking",
+      "authors": [
+        "Bohao Li",
+        "Dinglun Cao",
+        "Pengcheng Huang",
+        "Yingda Tang",
+        "Zhiting Zhao",
+        "Yi Cao",
+        "Jilei Fu",
+        "Miao Yan",
+        "Tianying Liu",
+        "Heng Chang",
+        "Bowen Du"
+      ],
+      "affiliations": [],
+      "abstract": "Modern industrial ranking systems increasingly adopt generative recommendation (GR) paradigms, in which user behavior sequences and non-sequential (NS) features are tokenized and jointly modeled by Transformer-style backbones. This unified formulation provides a scalable interface for modeling long histories and heterogeneous features. However, sequence and NS representations often carry asymmetric semantics: historical representations may combine environment context with observed-action semantics, whereas candidate-side NS representations contain no observed action but incorporate richer supplementary context, such as user-item interaction features and recent behavior lists. Direct interaction between such representations can make query-key dot products compare different semantic objects, limiting meaningful cross-token interaction. To fill this gap, we propose EASformer, an Environment-Action-State disentangled architecture for industrial app ranking. EASformer constructs an explicitly aligned context environment space shared by historical and non-sequence tokens, while disentangling user actions from historical token and candidate-specific context form non-sequence tokens. Based on this aligned space, EASformer enables complementary historical action retrieval and state-conditioned action prediction. Furthermore, the disentangled design supports a Cloze-style self-supervised objective by masking historical actions and reusing the candidate prediction pathway. On an offline benchmark from a real-world industrial app marketplace, EASformer achieves an AUC of 0.89411, yielding a 0.88% relative improvement over the deployed baseline. Online A/B tests further support this advantage, with relative eCPM lifts of 1.26% and 3.94% across two real-world ranking scenarios.",
+      "published": "2026-10-20T06:08:07Z",
+      "updated": "2026-10-20T06:08:07Z",
+      "categories": [
+        "cs.AI"
+      ],
+      "pdfUrl": "https://arxiv.org/pdf/2610.27691v1",
+      "absUrl": "https://arxiv.org/abs/2610.27691v1",
+      "industrySource": ""
+    },
+    {
+      "id": "http://arxiv.org/abs/2610.27232v1",
+      "title": "Neighborhood-Aware Unlearning for Generative Recommendation",
+      "authors": [
+        "Pierre Lubitzsch",
+        "Yubao Tang",
+        "Maarten de Rijke",
+        "Sebastian Schelter"
+      ],
+      "affiliations": [],
+      "abstract": "Generative recommendation predicts items by autoregressively generating semantic identifiers (SIDs), whose tokens are shared across semantically related items. With this paradigm gaining adoption, the question of how to support unlearning in it has become pressing. If training interactions must later be removed, such as injected spam or interactions with items a user no longer wants, this sharing lets an unlearning update unintentionally affect the predictions for the interactions' neighbors. We show that this effect is locally structured and hidden by global metrics: unlearning can leave recommendation utility on the whole test set nearly unchanged while substantially degrading it on neighborhoods of the forgotten interactions' SIDs. We propose Neighborhood-Aware Unlearning (NAU), which augments interaction-level unlearning with explicit control over the probability mass assigned to the forgotten items' neighborhoods. Across three datasets and four SID tokenizers, NAU restores spam-induced exposure toward the retrained reference while retaining more than 95% of retrained utility, and recovers the neighborhood utility that forget-and-repair unlearning loses at no global cost. We identify local probability redistribution as an important failure mode of unlearning in SID-based generative recommenders and show that explicitly controlling this redistribution can mitigate its effects.",
+      "published": "2026-10-19T20:00:39Z",
+      "updated": "2026-10-19T20:00:39Z",
+      "categories": [
+        "cs.IR",
+        "cs.LG"
+      ],
+      "pdfUrl": "https://arxiv.org/pdf/2610.27232v1",
+      "absUrl": "https://arxiv.org/abs/2610.27232v1",
+      "industrySource": ""
     },
     {
       "id": "http://arxiv.org/abs/2610.20913v1",
@@ -879,7 +999,7 @@
       "industrySource": ""
     },
     {
-      "id": "http://arxiv.org/abs/2609.36671v1",
+      "id": "http://arxiv.org/abs/2609.36671v2",
       "title": "FairDiff: Mitigating the Self-Reinforcing Matthew Effect in Diffusion Recommender Models",
       "authors": [
         "Song-Li Wu",
@@ -891,16 +1011,16 @@
       "affiliations": [],
       "abstract": "While the \"Matthew Effect\" and filter bubbles are widely recognized outcome-level biases in recommender systems, we reveal that Diffusion Recommender Models (DRMs) uniquely compound this issue through their generative dynamics. Rather than merely inheriting data imbalances, DRMs trigger a self-reinforcing amplification of popularity bias. We identify that this phenomenon is driven by two compounding mechanisms. First, while optimization loss is universally dominated by high-frequency items across recommenders, DRMs suffer from a unique structural prior mismatch during generation. Because the forward terminal distribution of long-tailed data deviates significantly from the standard Gaussian prior, reverse sampling trajectories inherently collapse toward high-density popular items, fundamentally suppressing niche item generation. To dismantle this self-reinforcing loop, we propose FairDiff, a plug-and-play fairness-aware diffusion framework. To overcome the popularity-dominated loss, we introduce Popularity Condition Guidance (PCG). Rather than altering the training objective, PCG acts as an inference-time distributional reweighting mechanism, mathematically reshaping the score-based gradient field to penalize high-popularity regions and guide trajectories toward niche semantics. Furthermore, we design a Semantic Calibration (SC) Module to bridge the prior mismatch, aligning the forward and reverse distributions via one-step optimal transport. Comprehensive evaluations demonstrate that FairDiff achieves state-of-the-art performance while effectively mitigating the self-reinforcing Matthew Effect, highlighting its value as a general framework for DRMs.",
       "published": "2026-09-29T04:10:13Z",
-      "updated": "2026-09-29T04:10:13Z",
+      "updated": "2026-10-19T13:08:41Z",
       "categories": [
         "cs.AI"
       ],
-      "pdfUrl": "https://arxiv.org/pdf/2609.36671v1",
-      "absUrl": "https://arxiv.org/abs/2609.36671v1",
+      "pdfUrl": "https://arxiv.org/pdf/2609.36671v2",
+      "absUrl": "https://arxiv.org/abs/2609.36671v2",
       "industrySource": ""
     },
     {
-      "id": "http://arxiv.org/abs/2609.36670v1",
+      "id": "http://arxiv.org/abs/2609.36670v2",
       "title": "FineSID: Scalable and Efficient Semantic Identifier Learning for Generative Recommendation",
       "authors": [
         "Song-Li Wu",
@@ -912,12 +1032,12 @@
       "affiliations": [],
       "abstract": "A critical prerequisite of generative recommendation is designing semantic identifiers (SIDs) that are both scalable to large item sets and efficiently learnable. Existing SID learning methods fundamentally rely on Top-1 hard assignment during vector quantization. While heuristic strategies -- such as clustering-based initialization or forced post-hoc collision resolution -- can artificially inflate codebook coverage, they often disrupt end-to-end semantic alignment and fail to address the underlying optimization bottleneck: sparse gradient propagation. In standard Top-1 assignment, gradients concentrate on a narrow subset of frequently selected codewords, leaving the majority inherently under-trained and causing severe SID collisions. To overcome this limitation natively without relying on complex initialization priors, we propose FineSID, a unified quantization framework that moves beyond Top-1 assignment by enabling fine-grained gradient propagation across the entire codebook. Instead of updating only a single selected codeword, FineSID distributes learning signals to all codewords in a soft, differentiable manner. This design promotes globally balanced codebook optimization while strictly preserving semantic consistency, effectively alleviating SID collisions and stabilizing training in large, high-dimensional codebooks. Extensive experiments on multiple public benchmarks demonstrate that FineSID is robust to initialization configurations and consistently improves both codebook utilization and recommendation accuracy. Our work provides a principled, initialization-agnostic solution for semantic identifier learning, advancing the practicality of generative recommendation.",
       "published": "2026-09-29T04:09:58Z",
-      "updated": "2026-09-29T04:09:58Z",
+      "updated": "2026-10-19T13:14:36Z",
       "categories": [
         "cs.AI"
       ],
-      "pdfUrl": "https://arxiv.org/pdf/2609.36670v1",
-      "absUrl": "https://arxiv.org/abs/2609.36670v1",
+      "pdfUrl": "https://arxiv.org/pdf/2609.36670v2",
+      "absUrl": "https://arxiv.org/abs/2609.36670v2",
       "industrySource": ""
     },
     {
@@ -1195,118 +1315,6 @@
       ],
       "pdfUrl": "https://arxiv.org/pdf/2609.13657v1",
       "absUrl": "https://arxiv.org/abs/2609.13657v1",
-      "industrySource": ""
-    },
-    {
-      "id": "http://arxiv.org/abs/2609.13339v1",
-      "title": "PCGNet: Unifying Shared and Specific Information for Fashion Matching Recommendations",
-      "authors": [
-        "Shuiying Liao",
-        "P. Y. Mok"
-      ],
-      "affiliations": [],
-      "abstract": "In fashion domain, recommending complementary clothing items that match selected pieces is a crucial cross-selling technique that improves customer satisfaction. Nevertheless, fashion matching presents significant challenges, as recommendations must not only align with individual user fashion preferences but also ensure compatibility between garments. These challenges are twofold. First, existing models often assume an overly simplified decoupled relationship between product compatibility and personalized user preferences, overlooking the natural complexity between the two. Second, existing data-driven approaches are not optimized for real-world fashion data, which is typically sparse and characterized by noisy interactions. To address these challenges, we propose Personalized Compatibility Graph Network, a multi-objective graph learning framework that organically unifies the modeling of product compatibility and personal preferences. PCGNet uses contrastive mutual information maximization to extract and align shared and view-specific patterns, thereby capturing the complex interplay between compatibility and personal preferences. Moreover, we introduce a correlation-aware neighbor sampling and a learnable global graph augmentation, which enhance the model by incorporating self-supervised signals mined directly from the graph, ensuring more stable and informative representations. Finally, PCGNet generates recommendation scores through the joint optimization of BPR ranking loss and multi-view mutual information losses. Experimental validation on two benchmark datasets demonstrates that PCGNet significantly outperforming state-of-the-art methods across all four evaluation metrics.",
-      "published": "2026-09-11T11:38:29Z",
-      "updated": "2026-09-11T11:38:29Z",
-      "categories": [
-        "cs.IR",
-        "cs.IT"
-      ],
-      "pdfUrl": "https://arxiv.org/pdf/2609.13339v1",
-      "absUrl": "https://arxiv.org/abs/2609.13339v1",
-      "industrySource": ""
-    },
-    {
-      "id": "http://arxiv.org/abs/2609.12556v1",
-      "title": "Preference-Drift-Aware Subsequence Learning and Hierarchical Context Fusion for Long-Sequence Generative Recommendation",
-      "authors": [
-        "Fei Li",
-        "Qingyun Gao",
-        "Jianzhe Zhao",
-        "Guibing Guo",
-        "Beibei Kong",
-        "Lei Cheng",
-        "Chengxiang Zhuo",
-        "Zang Li"
-      ],
-      "affiliations": [],
-      "abstract": "Long-sequence generative recommendation methods autoregressively model the user's interaction sequence to generate the next-item representation. Existing methods generally fall into two categories: efficient full-sequence modeling and target-aware context retrieval. Our experiments reveal that as the sequence length increases, the former incurs steadily growing computational cost while its accuracy gains quickly saturate and even degrade due to noise; the latter, though shortening the input sequence, is susceptible to noise that is semantically consistent yet preference-inconsistent, as well as to incomplete contexts. Both paradigms ignore the dynamic changes of user preferences and the cross-subsequence dependencies when handling historical information, thereby limiting accuracy and efficiency. To address these issues, we propose a preference-drift-aware subsequence learning and hierarchical context fusion for long-sequence generative recommendation. Specifically, we learn differentiable soft subsequence boundaries using multidimensional preference-drift information and aggregate items within each subsequence into preference-coherent representations via linear attention with soft assignment weights, thereby circumventing the expense of full-sequence attention. A cross-attention mechanism is then employed to capture dependencies between recent interactions and relevant subsequence contexts, mitigating noise in learning recent-item representations. Finally, a gated fusion mechanism adaptively combines the recent-item representation with the global subsequence context, allowing the resulting target representation to encode both recent and long-term preferences. Extensive experiments demonstrate that our method consistently outperforms existing baselines in both recommendation accuracy and computational efficiency.",
-      "published": "2026-09-11T08:01:29Z",
-      "updated": "2026-09-11T08:01:29Z",
-      "categories": [
-        "cs.IR"
-      ],
-      "pdfUrl": "https://arxiv.org/pdf/2609.12556v1",
-      "absUrl": "https://arxiv.org/abs/2609.12556v1",
-      "industrySource": ""
-    },
-    {
-      "id": "http://arxiv.org/abs/2609.12399v1",
-      "title": "OneLA: Scaling Linear-Attention Decoding to Large Beams in Generative Recommendation",
-      "authors": [
-        "Xiangrui Yang",
-        "Cheng Peng",
-        "Yunfeng Zhao",
-        "Liang Zeng",
-        "Ao Hu",
-        "Jiawei Yang",
-        "Shengzhe Wang",
-        "Jingshan Lv",
-        "Xiao Liang",
-        "Chen Yang",
-        "Jiaqiang Liu",
-        "Yiming Qiu"
-      ],
-      "affiliations": [],
-      "abstract": "Generative recommendation (GR) relies on large-beam decoding to generate hundreds of candidate items, creating a new scaling challenge for recurrent linear attention. Existing linear attention serving systems either materialize a full recurrent state for every beam or repeatedly replay shared history, incurring substantial memory and traffic overhead. To address this, we present OneLA, a linear-attention decoding framework that exploits the shared prompt and short divergent suffixes of GR workloads. Specifically, OneLA represents all beam states using a single shared prompt-derived state and compact, append-only records of their divergent transitions. Using this representation, OneLA computes only the state information required at each decoding step, without reconstructing a full recurrent state for every beam. Furthermore, OneLA uses a lightweight ancestry index to track the transition records that make up each beam's history, allowing beams to be updated without moving or copying existing records. A fused GPU kernel further reuses the shared state across beams. Our analysis shows that OneLA achieves 1.54-2.46x end-to-end decode speedups while substantially reducing recurrent-state memory use and data movement.",
-      "published": "2026-09-11T03:41:06Z",
-      "updated": "2026-09-11T03:41:06Z",
-      "categories": [
-        "cs.AI",
-        "cs.DC",
-        "cs.IR"
-      ],
-      "pdfUrl": "https://arxiv.org/pdf/2609.12399v1",
-      "absUrl": "https://arxiv.org/abs/2609.12399v1",
-      "industrySource": ""
-    },
-    {
-      "id": "http://arxiv.org/abs/2609.11198v1",
-      "title": "(Whose defaults?) Is artificial intelligence reorienting archaeological methods?",
-      "authors": [
-        "Lorenzo Cardarelli",
-        "Roberto Ragno"
-      ],
-      "affiliations": [],
-      "abstract": "Generative AI and the practice of \"vibe coding\" are changing how archaeologists carry out computational research, but their effects on the discipline's range of methods is still understudied. In this paper, we evaluate whether large language models (LLMs) are narrowing the variety of methods archaeologists use. We first analysed approximately 119,000 archaeology abstracts from Scopus, covering publications from 2010 to 2025. Using a locally run LLM, we identified the computational methods reported in each abstract and organised them into 25 broad categories (L2) and 241 finer clusters (L3). A Bayesian Dirichlet-multinomial model of method composition within sub-disciplines found a small but credible shift in method use after 2023. However, this shift was smaller than the variation already present across the full study period. No individual technique showed a significant change, and overall methodological diversity increased rather than declined. We then ran a controlled experiment to see whether LLMs recommend a narrower set of methods than archaeologists have used in practice. Two different open-weight models were asked to suggest methods for 28 archaeological research problems, with prompts providing three levels of methodological guidance: novice, intermediate, and expert. Recommendation diversity was much lower than in the published literature, particularly without methodological guidance. The models also tended to favour methods that were widely used before 2023, and their recommendations more closely resembled the post-2023 literature. Taken together, these results are consistent with LLMs pushing methodological choice towards convergence, although our study cannot establish a causal effect. They raise a broader question: how can archaeology retain methodological diversity as LLMs become more involved in research?",
-      "published": "2026-09-10T08:08:15Z",
-      "updated": "2026-09-10T08:08:15Z",
-      "categories": [
-        "cs.CY",
-        "cs.AI",
-        "cs.CL",
-        "cs.HC"
-      ],
-      "pdfUrl": "https://arxiv.org/pdf/2609.11198v1",
-      "absUrl": "https://arxiv.org/abs/2609.11198v1",
-      "industrySource": ""
-    },
-    {
-      "id": "http://arxiv.org/abs/2609.11012v1",
-      "title": "Discretization in covariate-adaptive randomization: gains and losses",
-      "authors": [
-        "Zixuan Zhao",
-        "Feifang Hu"
-      ],
-      "affiliations": [],
-      "abstract": "Covariate-adaptive randomization(CAR) is widely implemented in clinical trials to balance prognostic covariates across treatment arms. Continuous covariates are often discretized into strata in practice, yet their consequences are not clearly understood. This paper provides a comprehensive study of the impact of discretization on both the CAR design process and the inferential results thereafter. We establish the asymptotic properties of both imbalance measures and treatment effect estimators under discretized and non-discretized settings. Practical recommendations are given on when and how discretization should be employed. We show that discretization in design is generally recommended, as it enhances robustness against model misspecification. However, if the true model is known, the most efficient strategy is to balance covariates according to that model in the design. The theoretical results are corroborated by extensive simulation studies and an empirical application to a diabetes trial dataset. Together, the results clarify the gains and losses of discretization in CAR and pave the way for learning impact of discretization to other designs and beyond.",
-      "published": "2026-09-10T02:44:11Z",
-      "updated": "2026-09-10T02:44:11Z",
-      "categories": [
-        "stat.ME"
-      ],
-      "pdfUrl": "https://arxiv.org/pdf/2609.11012v1",
-      "absUrl": "https://arxiv.org/abs/2609.11012v1",
       "industrySource": ""
     }
   ]
