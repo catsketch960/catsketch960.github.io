@@ -1,9 +1,86 @@
 {
-  "lastUpdated": "2026-10-31T06:50:43Z",
-  "totalResults": 817,
+  "lastUpdated": "2026-11-04T07:23:36Z",
+  "totalResults": 829,
   "papers": [
     {
-      "id": "http://arxiv.org/abs/2610.38378v1",
+      "id": "http://arxiv.org/abs/2611.02981v1",
+      "title": "Utility-Aware Generative Recommendation: Utility-Enriched Semantic Codes and Utility-Guided Decoding",
+      "authors": [
+        "Yang Hu",
+        "Duo Wang",
+        "Ning Li",
+        "Kang Li",
+        "Junda She",
+        "Chengcheng Guo",
+        "Kuo Cai",
+        "Bin Liu",
+        "Youhua Liu",
+        "Xiaoshuang Chen"
+      ],
+      "affiliations": [],
+      "abstract": "Generative recommendation has been widely adopted in large-scale industrial recommendation systems, where multimodal item embeddings are quantized into offline semantic identifiers (SIDs) and items are retrieved by autoregressively generating their SIDs. However, conventional SID construction often underrepresents item utility reflected in post-exposure behaviors such as shares, long views, and video completion, making semantically similar items with different utility insufficiently distinguishable while struggling to accommodate rapidly changing utility signals. Moreover, generation likelihood may be misaligned with downstream utility, causing high-utility candidates to be prematurely pruned during beam search before post-generation reranking or training-time reward alignment can effectively compensate. To address these limitations, we propose UAGR, which aligns both SID construction and decoding with downstream multi-objective utility. Our Utility-Enriched Semantic Codes preserve the original semantic information while incorporating item-level utility without increasing SID length or vocabulary size, supporting incremental utility updates with no additional tokenization or sequence-decoding cost. Meanwhile, our Utility-Guided Decoding estimates candidate utility by combining predictions of multiple post-exposure outcomes and incorporates these estimates into beam scoring, reducing the risk of prematurely pruning high-utility paths while enabling flexible utility control without interfering with generative backbone training. Extensive offline experiments and online A/B tests under real-world traffic demonstrate the effectiveness and deployability of UAGR, which has been fully deployed on Kuaishou and increases video watch time by 0.206\\% online.",
+      "published": "2026-11-02T11:48:34Z",
+      "updated": "2026-11-02T11:48:34Z",
+      "categories": [
+        "cs.LG"
+      ],
+      "pdfUrl": "https://arxiv.org/pdf/2611.02981v1",
+      "absUrl": "https://arxiv.org/abs/2611.02981v1",
+      "industrySource": "Kuaishou"
+    },
+    {
+      "id": "http://arxiv.org/abs/2611.02618v1",
+      "title": "USDB: Scaling Storage for Next-Generation Recommender Systems at ByteDance",
+      "authors": [
+        "Xiaoran Zhu",
+        "Jieming Cai",
+        "Weiping Yu",
+        "Xi Chen",
+        "Shu Cai",
+        "Jiahao Li",
+        "Yifan Xiao",
+        "Yan Deng",
+        "Yisha Zhou",
+        "Yu Lin",
+        "Shiru Ren",
+        "Siqiang Luo",
+        "Peng Xu",
+        "Junjun Chai"
+      ],
+      "affiliations": [],
+      "abstract": "Recommendation models consume increasingly long, attribute-rich user histories, making small continuous updates and repeated large reads a central storage asymmetry. We present USDB, ByteDance's unified sequence storage practice for streaming and batch workloads. CascadeLSM time-based compaction stages materialize application-specific histories; differentiated replicas share persistent files; partial dumps reconstruct inference inputs from captured recent state and versioned history; and a hybrid columnar format accelerates projected reads. These designs reuse maintenance results across ingestion, inference, and training. Production migration records show 85.8% lower mean write latency, while normalized deployment accounting shows 42.1% lower infrastructure cost. Controlled comparisons with an Optimized RocksDB sequence baseline show faster long-history reads across projections and client loads. Aggregation pushdown sustains 8.5x the throughput of ordinary reads under a constrained receive budget. Production reconstruction and direct-file training results demonstrate how shared sequence maintenance supports fresh serving and repeated historical access.",
+      "published": "2026-11-02T06:45:03Z",
+      "updated": "2026-11-02T06:45:03Z",
+      "categories": [
+        "cs.DB"
+      ],
+      "pdfUrl": "https://arxiv.org/pdf/2611.02618v1",
+      "absUrl": "https://arxiv.org/abs/2611.02618v1",
+      "industrySource": "ByteDance"
+    },
+    {
+      "id": "http://arxiv.org/abs/2610.41854v1",
+      "title": "LLM Recommenders Produce Demographic Inequality Through Content Preferences",
+      "authors": [
+        "Nicolò Pagan",
+        "Petter Törnberg",
+        "Christopher A. Bail",
+        "Christopher Barrie"
+      ],
+      "affiliations": [],
+      "abstract": "Large language models (LLMs) are increasingly being integrated into systems that rank and recommend online content. We examine how this shift can produce demographic inequality in whose voices are surfaced. Using 10,000 Twitter/X posts written by 1,000 survey respondents and linked to verified self-reported characteristics across nine demographic attributes, we conduct a controlled recommendation experiment across three LLM providers, six recommendation objectives, and five levels of contextual information. By varying whether models receive post text alone, platform metadata, or explicit author demographics, we isolate three pathways to unequal recommendation: preferences for demographically patterned content, reliance on unequal engagement signals, and direct use of disclosed identity. We find that demographic inequality emerges from text alone. Models consistently favour longer, more negative, and more opinionated posts, particularly those concerning news and social issues, producing systematic differences in the demographic composition of recommended authors. Platform metadata generally amplifies these inequalities, while explicitly disclosing authors' demographic characteristics produces little additional change. Recommendation objectives mainly affect the magnitude of these patterns: controversial framing intensifies both content and demographic skew, whereas popularity-oriented framing dampens it, although for some attributes - most notably age - the objective can also reverse which group is favoured. LLM-based recommenders can therefore reproduce demographic inequality by proxy, not through explicit demographic targeting, but through preferences for content and engagement signals already structured by social inequality.",
+      "published": "2026-10-30T15:11:08Z",
+      "updated": "2026-10-30T15:11:08Z",
+      "categories": [
+        "cs.CY",
+        "cs.SI"
+      ],
+      "pdfUrl": "https://arxiv.org/pdf/2610.41854v1",
+      "absUrl": "https://arxiv.org/abs/2610.41854v1",
+      "industrySource": "Meta"
+    },
+    {
+      "id": "http://arxiv.org/abs/2610.38378v2",
       "title": "Towards Reliable, Scalable, and Value-Aligned Generative Recommendation for Large-Scale Advertising",
       "authors": [
         "Yatong Xiao",
@@ -18,15 +95,15 @@
         "Peng Jiang"
       ],
       "affiliations": [],
-      "abstract": "Generative recommendation (GR) reformulates item retrieval as autoregressive generation of discrete semantic identifiers (SIDs), offering a unified paradigm for personalized recommendation. GR4AD, as an industrial generative recommendation framework, has greatly improved advertising revenue while enabling efficient real-time serving in Kuaishou.However, continued deployment has exposed three limitations: deterministic SID assignment remains sensitive to semantic boundaries; conventional backbone scaling provides diminishing revenue gains under strict serving constraints; and sequence-level value optimization provides limited credit assignment to intermediate SID decisions, causing likelihood-based beam search to prematurely prune potentially high-value candidates. We present GR4AD-X, which addresses these limitations through reliable SID construction, serving-efficient capacity scaling, and unified value alignment. Specifically, GR4AD-X improves SID reliability through Multi-Path assignment. It expands model capacity along multiple complementary dimensions rather than relying solely on wider or deeper backbones, achieving a better effectiveness-efficiency trade-off under strict serving constraints. Finally, Unified Value-Guided Generation and Discrimination (UniVGD) aligns generation with commercial value through prefix-level reward optimization, value-guided beam pruning, and discriminative reranking within a unified model. Large-scale online A/B tests on the Kuaishou advertising platform demonstrate that GR4AD-X achieves a cumulative revenue improvement of 3.07% over the deployed GR4AD baseline while satisfying strict latency and throughput constraints.",
+      "abstract": "Generative recommendation (GR) reformulates item retrieval as autoregressive generation of discrete semantic identifiers (SIDs), offering a unified paradigm for personalized recommendation. GR4AD, as an industrial generative recommendation framework, has greatly improved advertising revenue while enabling efficient real-time serving in Kuaishou. However, continued deployment has exposed three limitations: deterministic SID assignment remains sensitive to semantic boundaries; conventional backbone scaling provides diminishing revenue gains under strict serving constraints; and sequence-level value optimization provides limited credit assignment to intermediate SID decisions, causing likelihood-based beam search to prematurely prune potentially high-value candidates. We present GR4AD-X, which addresses these limitations through reliable SID construction, serving-efficient capacity scaling, and unified value alignment. Specifically, GR4AD-X improves SID reliability through Multi-Path assignment. It expands model capacity along multiple complementary dimensions rather than relying solely on wider or deeper backbones, achieving a better effectiveness-efficiency trade-off under strict serving constraints. Finally, Unified Value-Guided Generation and Discrimination (UniVGD) aligns generation with commercial value through prefix-level reward optimization, value-guided beam pruning, and discriminative reranking within a unified model. Large-scale online A/B tests on the Kuaishou advertising platform demonstrate that GR4AD-X achieves a cumulative revenue improvement of 3.07% over the deployed GR4AD baseline while satisfying strict latency and throughput constraints.",
       "published": "2026-10-28T07:17:24Z",
-      "updated": "2026-10-28T07:17:24Z",
+      "updated": "2026-10-30T06:17:19Z",
       "categories": [
         "cs.IR",
         "cs.LG"
       ],
-      "pdfUrl": "https://arxiv.org/pdf/2610.38378v1",
-      "absUrl": "https://arxiv.org/abs/2610.38378v1",
+      "pdfUrl": "https://arxiv.org/pdf/2610.38378v2",
+      "absUrl": "https://arxiv.org/abs/2610.38378v2",
       "industrySource": "Kuaishou"
     },
     {
@@ -252,170 +329,249 @@
       "industrySource": "Amazon"
     },
     {
-      "id": "http://arxiv.org/abs/2609.39828v1",
-      "title": "KUAISHOU Explorer LLM-Rec Challenge 2026: Reasoning Generative Recommendation",
+      "id": "http://arxiv.org/abs/2611.04715v1",
+      "title": "ZeroGR: Filtering-First Constrained Decoding for Generative Recommendation",
       "authors": [
-        "Jiangxia Cao",
-        "Hao Peng",
-        "Wenlong Xu",
-        "Jiaxin Deng",
-        "Zhixin Ling",
-        "Xingmei Wang",
-        "Kun Shang",
-        "Can Tang",
-        "Zhihuai Cai",
-        "Jun Du",
-        "Fang Su",
-        "Xiaojuan Liu",
-        "Yiling Li",
-        "Chenglong Yu",
-        "Chongling Rao",
-        "Haixuan Gao",
-        "Haitao Xu",
-        "Jian Liang",
-        "Ruiming Tang",
-        "Chenglong Chu",
-        "Guohong Mu",
-        "Honghui Bao",
-        "Hui Wang",
-        "Jialong Chen",
-        "Jiao Ou",
-        "Muhao Wei",
-        "Peng Zhang",
-        "Renpu Liu",
-        "Ruochen Yang",
-        "Shugui Liu",
-        "Xinqi Jin",
-        "Yan Sun",
-        "Yifan Wang",
-        "Yingzhi He",
-        "Yufei Ye",
-        "Yusen Huo",
-        "Tingkuo Wang",
-        "Jihong Zhang",
-        "Lanxi Zhu",
-        "Pengyuan Liu",
+        "Xiangrui Yang",
+        "Jiawei Yang",
+        "Liang Zeng",
+        "Daqian Ding",
+        "Ziqian Liu",
+        "Bing Tian",
+        "Cheng Peng",
+        "Yunfeng Zhao",
+        "Fangyu Zhang",
+        "Jiaqiang Liu",
+        "Xiao Liang",
+        "Yiming Qiu"
+      ],
+      "affiliations": [],
+      "abstract": "Generative recommendation is gaining traction in production, retrieving items by generating their identifiers one token at a time. The generated sequences must identify relevant catalog items, so constrained decoding couples relevance scoring with validity filtering. Because most possible sequences are invalid, scoring before filtering wastes computation on candidates that will be discarded. Our evaluation shows that filtering first can avoid this work with negligible impact on recommendation quality. We present ZeroGR, a filtering-first constrained decoding system for generative recommendation. ZeroGR uses a step-sliced filtering index to reduce GPU memory use by tailoring data representations to each decoding step. Its execution engine adopts shared-slot execution to accelerate data exchange across stages and hybrid projection to adapt computation to workload patterns, thereby reducing execution overhead. During index refreshes, ZeroGR applies layout-guided streaming construction to speed up updates and limit serving interference. Extensive evaluation shows that ZeroGR accelerates the filtering and scoring pipeline by up to $9.9\\times$ over representative baselines while reducing GPU index memory use and accelerating index reconstruction.",
+      "published": "2026-11-03T11:36:55Z",
+      "updated": "2026-11-03T11:36:55Z",
+      "categories": [
+        "cs.DB",
+        "cs.IR"
+      ],
+      "pdfUrl": "https://arxiv.org/pdf/2611.04715v1",
+      "absUrl": "https://arxiv.org/abs/2611.04715v1",
+      "industrySource": ""
+    },
+    {
+      "id": "http://arxiv.org/abs/2611.03272v1",
+      "title": "Diverse-Teacher On-Policy Distillation for Generative Recommendation",
+      "authors": [
         "Zhipeng Yi",
-        "Luankang Zhang",
-        "Hang Lv",
-        "Xuyang Zhi",
-        "Tianyu Li",
-        "Bintao Wu",
-        "Chuang Ou",
-        "Siyue Su",
-        "Ziyuan Wang",
-        "Yuliang Sun",
-        "Baiyan Che",
-        "Feiyang Xu",
-        "Shiwen Zhang",
-        "Shiteng Cao",
-        "Chongcong Jiang",
-        "Yuan Fang",
-        "Xiangwu Yang",
-        "Hao Deng",
-        "Zijian Du",
-        "Pengxun Wang",
-        "Xiaoming Wang",
-        "Shun Qin",
-        "Yingqi Song",
-        "Tianyi Li",
-        "Naixiao Peng",
-        "Chenyu Zhou",
-        "Qiliang Jiang",
-        "Quan Zheng",
-        "Cheng Jin",
-        "Siying Zeng",
-        "Hongjia Xu",
-        "Junwu Hu",
-        "Teng Fu",
-        "Zhengkang Mei",
-        "Haijun Yu",
-        "Kai Li",
-        "Shengyang Zhou",
-        "Zhijia Wei",
-        "Siyi Xiong",
-        "Bo Liu",
-        "Zichun Guo",
-        "Zhubin Han",
-        "Jinpeng Fu",
-        "Bingqian Liu",
-        "Yuyi Wang",
-        "Yu Liu",
-        "Qinghai Tan",
-        "Ruijie Zhou",
-        "Zhuohang Li",
-        "Zhijia Zhong",
-        "Xiangnan He",
-        "Jirong Wen",
-        "Min Zhang",
+        "Xinyu Lin",
+        "Minxuan Shan",
+        "Zipeng Chen",
+        "Yujiao Zhao",
+        "Chuanyu Xu",
+        "Wenjie Wang"
+      ],
+      "affiliations": [],
+      "abstract": "Generative recommendation generates the semantic ID (SID) of the next item from a user's interaction history. Existing training objectives mainly supervise target SID tokens, while on-policy distillation (OPD) provides denser supervision through a teacher's probability distribution over all tokens for more effective and efficient training. However, OPD can aggravate popularity bias: teacher feedback favors popular-item tokens, transferring this preference to the student, while student rollout favors popular items, leaving unpopular-item SID paths rarely generated and supervised. These two sources of bias reinforce each other and reduce recommendation diversity. We propose HERO, a diversity-aware OPD framework. Heterogeneous teacher distillation trains two teachers specializing in popular and unpopular items and routes each training sample to the teacher matching the popularity group of its ground-truth item. The student learns from the routed teacher's probability distribution along its own generated SIDs. Diversity-aware item rollout incorporates ground-truth SIDs of unpopular items into training, covering SID paths that the student rarely generates. Only the student is used for inference. Offline experiments on an industrial dataset and three public datasets further demonstrate its effectiveness, diversity, and robustness. Moreover, we deploy HERO in the \"Guess What You Like\" module on the 1688 homepage, where a 15-day online A/B test shows a 3.412% increase in gross merchandise value (GMV).",
+      "published": "2026-11-02T15:14:16Z",
+      "updated": "2026-11-02T15:14:16Z",
+      "categories": [
+        "cs.IR"
+      ],
+      "pdfUrl": "https://arxiv.org/pdf/2611.03272v1",
+      "absUrl": "https://arxiv.org/abs/2611.03272v1",
+      "industrySource": ""
+    },
+    {
+      "id": "http://arxiv.org/abs/2611.02556v1",
+      "title": "OctEx: Billion-Scale Vector Search by Precomputed Lattice Neighbor Lists on GPUs",
+      "authors": [
+        "Dongfang Zhao"
+      ],
+      "affiliations": [],
+      "abstract": "Approximate nearest-neighbor search on GPUs serves retrieval-augmented generation, recommendation, and deduplication over datasets of up to billions of vectors. The fastest GPU indexes at high recall, such as CAGRA, walk proximity graphs in chained rounds, each of which waits for the distances of the previous one. High recall therefore costs many dependent rounds per query. Our insight is to spend the HBM of the GPUs on precomputed neighbor lists, so that a query reads its candidates in one parallel step instead of a chain of rounds. This paper turns the above insight into a GPU vector search system, namely OctEx, which holds hundreds of randomly projected copies of the dataset in GPU memory. Every copy rounds its vectors to the nearest points of a regular grid whose cells are nearly round and stores for every populated cell the list of vectors nearest to its center. A query reads the lists of its cells in all copies at once and then, in a fixed number of waves, the precomputed neighbor lists of its best hits. OctEx ranks the union of all hits by an int8 sketch before one exact rerank. OctEx runs the whole search of a batch as CUDA graphs over all GPUs of a server and places every part of its index in HBM or host memory by its access frequency. On four H100 GPUs at recall 0.95 to 0.995, OctEx outperforms CAGRA by 2.0x to 46.4x on seven datasets of up to one hundred million vectors, and by 1.46x to 2.05x on the one billion vectors of Deep1B and SIFT1B, whose indexes it builds in 44 to 47 minutes. OctEx also outperforms GGNN, PathWeaver, FlowANN, and the cuVS inverted file indexes IVF-PQ and IVF-RaBitQ by 5.4x to 343x.",
+      "published": "2026-11-02T05:30:22Z",
+      "updated": "2026-11-02T05:30:22Z",
+      "categories": [
+        "cs.DC"
+      ],
+      "pdfUrl": "https://arxiv.org/pdf/2611.02556v1",
+      "absUrl": "https://arxiv.org/abs/2611.02556v1",
+      "industrySource": ""
+    },
+    {
+      "id": "http://arxiv.org/abs/2611.02463v1",
+      "title": "Think Globally, Generate Personally: Multi-View Thinking with Adaptive Generation for Generative Recommendation",
+      "authors": [
+        "Yuxuan Hu",
+        "Yingyi Zhang",
+        "Wenlin Zhang",
+        "Chao Zhang",
+        "Haotian Nan",
+        "Ziwei Liu",
+        "Jiancheng Dong",
+        "Tongzhou Wu",
+        "Beibei Kong",
+        "Lei Cheng",
+        "Chengxiang Zhuo",
+        "Zang Li",
+        "Wanyu Wang",
+        "Xiangyu Zhao"
+      ],
+      "affiliations": [],
+      "abstract": "Semantic-ID-based (SID) generative recommendation (GR) represents each item as a sequence of discrete tokens and predicts the next item through autoregressive SID generation. However, existing methods face two challenges. First, insufficient shared context modeling for user sequences: full-history and recent behaviors provide overlapping yet complementary evidence, but modeling them within a single sequence may dilute current cues, whereas processing them through separate streams may fail to coordinate them. Second, insufficient personalized adaptation in progressive SID decisions: although decoder states evolve with generated prefixes, existing models typically use a shared output-side transformation across recommendation instances, without explicitly selecting a transformation suited to the current user need. To address these challenges, we propose Multi-View Thinking with Adaptive Generation (MV-Thinker), a framework that Thinks Globally and Generates Personally. First, Multi-View Temporal Thinking uses view-specific thinking queries and readers over overlapping full-history and recent-history views, coordinating both sources into complementary user-conditioned contexts before SID generation. Second, Hierarchical Residual Adaptation organizes lightweight adapters into nested residual paths before a shared vocabulary projection, adaptively transforming context-bearing decoder states for SID decisions. Extensive experiments on four public datasets demonstrate that MV-Thinker consistently outperforms strong discriminative and generative recommendation baselines across multiple ranking metrics. The implementation code and datasets are available on: https://anonymous.4open.science/r/MV-Thinker",
+      "published": "2026-11-02T03:26:15Z",
+      "updated": "2026-11-02T03:26:15Z",
+      "categories": [
+        "cs.AI"
+      ],
+      "pdfUrl": "https://arxiv.org/pdf/2611.02463v1",
+      "absUrl": "https://arxiv.org/abs/2611.02463v1",
+      "industrySource": ""
+    },
+    {
+      "id": "http://arxiv.org/abs/2611.02457v1",
+      "title": "Multi-Teacher Reasoning Distillation for LLM Recommendation with Self-Exploration",
+      "authors": [
+        "Liangbo Ning",
+        "Siyuan Liang",
+        "Yi Zhou",
+        "Yifeng Zhang",
+        "Qing Li",
+        "Wenqi Fan",
+        "Dacheng Tao"
+      ],
+      "affiliations": [],
+      "abstract": "Reasoning-augmented recommender systems (RecSys) enhance user preference modeling by generating reasoning trajectories over historical interactions before making recommendations. Knowledge distillation provides a practical paradigm for transferring such reasoning capabilities from powerful large language models to lightweight RecSys. However, existing methods typically rely on a single fixed teacher, remain constrained by the teacher knowledge ceiling, and indiscriminately distill teacher-generated trajectories without assessing their actual utility for downstream recommendation. To address these limitations, we propose MUSE (Multi-Teacher Utility-guided Selection with Self-Exploration), an adaptive reasoning distillation framework that jointly improves reasoning generation and reasoning utilization. MUSE first constructs a diverse reasoning pool using multiple teacher LLMs and progressively augments it via student self-exploration, enabling the student to leverage the strengths of different teachers and gradually explore reasoning strategies beyond teacher imitation. We then develop Rank-Gain Utility Assessment (RGUA), which evaluates each candidate according to the normalized full-catalog rank improvement of the ground-truth item and identifies the most and least recommendation-beneficial trajectories. Based on these utility-aware trajectory pairs, we introduce dual-level contrastive learning objectives that guide the student generator to prefer beneficial reasoning while training the recommendation encoder to more effectively exploit recommendation-relevant preference evidence. Extensive experiments on three real-world datasets demonstrate the effectiveness and robustness of the proposed framework.",
+      "published": "2026-11-02T03:20:28Z",
+      "updated": "2026-11-02T03:20:28Z",
+      "categories": [
+        "cs.IR",
+        "cs.AI"
+      ],
+      "pdfUrl": "https://arxiv.org/pdf/2611.02457v1",
+      "absUrl": "https://arxiv.org/abs/2611.02457v1",
+      "industrySource": ""
+    },
+    {
+      "id": "http://arxiv.org/abs/2611.01568v1",
+      "title": "Search-Aware On-Policy Self-Distillation with Sibling Alignment for Generative Recommendation",
+      "authors": [
+        "Rongfeng Guo",
+        "Zhuang Zhuang",
+        "Ji Dai",
+        "Peng Zhao",
+        "Shijie Li",
+        "Jie Chen",
+        "Teng Long",
+        "Vincent Tao Hu",
+        "Fei Pan"
+      ],
+      "affiliations": [],
+      "abstract": "Generative recommendation retrieves items by autoregressively generating semantic IDs, typically via beam search. On-policy self-distillation (OPSD) enhances training supervision by transferring privileged self-teacher knowledge at student-generated states. However, beam-search retention depends on competition among prefixes: visited states differ in importance, and initially reliable decisions may approach the pruning boundary as training evolves. Moreover, conventional distribution matching couples target-token confidence with preferences among competing continuations, potentially weakening relational supervision when the self-teacher strongly favors the target. To address these challenges, we propose Search-Aware On-Policy Self-Distillation (SA-OPSD), a framework that transfers privileged self-teacher knowledge to the states visited during the student's own beam search. Specifically, we introduce Evolving-Boundary Sampling, which prioritizes search-critical states by considering both current pruning-boundary proximity and initial-reference retention-margin decline under a controlled distillation budget. Furthermore, we develop Confidence-Decoupled Branch Distillation, which separates target-probability calibration from informative sibling relations to better preserve the teacher's preferences among competing branches. Experiments on Industrial, Office, and Instruments demonstrate strong performance for SA-OPSD.",
+      "published": "2026-11-01T04:50:25Z",
+      "updated": "2026-11-01T04:50:25Z",
+      "categories": [
+        "cs.LG",
+        "cs.AI"
+      ],
+      "pdfUrl": "https://arxiv.org/pdf/2611.01568v1",
+      "absUrl": "https://arxiv.org/abs/2611.01568v1",
+      "industrySource": ""
+    },
+    {
+      "id": "http://arxiv.org/abs/2611.01129v1",
+      "title": "HiGenTrans: Hierarchical LLM Knowledge Transfer for Generative Recommendation",
+      "authors": [
+        "Zhuohang Jiang",
+        "Yuxin Chen",
+        "Haohao Qu",
+        "ZeFei luo",
+        "Yunlong Wang",
+        "Xu Yuan",
+        "Haojie Ding",
+        "Boheng Zhang",
+        "Fan Yang",
+        "Hongyang Wang",
+        "Jun Wang",
+        "Zhongbo Sun",
+        "Wenqi Fan",
+        "Li Qing",
         "Wenwu Ou",
-        "Peng Jiang",
-        "Han Li",
-        "Kaiqiao Zhan",
-        "Yanan Niu",
-        "Lantao Hu",
-        "Kun Gai"
+        "Peng Jiang"
       ],
       "affiliations": [],
-      "abstract": "Generative recommendation, has been attracted a surge of attentions in industrial and academic research community, towards to build more smart system to build next-generation recommender. Under the significant developing wave of large language model, our team have been developed Semantic ID based OneRec/OneRec-V2. These models have been widely deployed in production and demonstrate the scaling potential of the autoregressive next-item prediction paradigm for industrial recommender systems. Building on the success of OneRec, we further explored a series of models, including OneRec-Think, OpenOneRec, and OneReason, that connect item Semantic IDs with natural language in a unified representation space and seek to unlock the potential of natural-language chain-of-thought (CoT) reasoning for recommendation. However, our preliminary works found that introducing reasoning CoT does not always improve the recommendation performance. To address this issue, OneReason strengthens the semantic alignment between items and language, introduces structured template-based supervision for interest reasoning, and applies advanced reinforcement learning techniques to make reasoning more beneficial to recommendation. As a frontier topic to building recommendation foundation models, we believe this topic has significant research value and hope to encourage more researchers to explore it together. To this end, together with the SIGIR 2026 community, we organized the KUAISHOU Explorer LLM-Rec Challenge 2026: Reasoning Generative Recommendation.",
-      "published": "2026-09-30T14:28:37Z",
-      "updated": "2026-09-30T14:28:37Z",
+      "abstract": "Generative recommendation promises to simplify conventional multi-stage recommender systems by generating item Semantic IDs (SIDs) autoregressively. However, two obstacles limit its effective- ness in industrial settings: interaction-only supervision underuses the semantic knowledge encoded in pretrained language models, while beam-search likelihood ranks token sequences rather than directly estimating item relevance. To address these limitations, we propose HiGenTrans, a three-level framework that introduces LLM knowledge at the input, representation, and decision levels. First, Global Semantic Priming (GSP) adds an LLM-derived user representation to the beginning-of-sequence embedding, provid- ing a semantic prior before SID generation. Second, Hierarchi- cal Representation Transfer (HRT) aligns intermediate LLM representations with depth-matched GenRec layers through mean- centered projections and gated residual connections. Finally, Multi- Signal Decision Calibration (MDC) uses a lightweight mixture- of-experts calibrator to combine semantic relevance, generation confidence, and candidate-set context when reranking beam-search outputs. All semantic features are computed only from the observ- able interaction prefix, preventing target leakage, and can be cached offline. Experiments on three public benchmarks show that HiGen- Trans improves Recall@10 by up to 12.9% and NDCG@10 by up to 33.7% over the strongest baselines. These results demonstrate the value of transferring LLM knowledge at complementary stages of the generative recommendation pipeline.",
+      "published": "2026-10-31T17:19:23Z",
+      "updated": "2026-10-31T17:19:23Z",
       "categories": [
-        "cs.IR"
+        "cs.AI"
       ],
-      "pdfUrl": "https://arxiv.org/pdf/2609.39828v1",
-      "absUrl": "https://arxiv.org/abs/2609.39828v1",
-      "industrySource": "Kuaishou"
+      "pdfUrl": "https://arxiv.org/pdf/2611.01129v1",
+      "absUrl": "https://arxiv.org/abs/2611.01129v1",
+      "industrySource": ""
     },
     {
-      "id": "http://arxiv.org/abs/2609.39696v1",
-      "title": "When the Label Ignores the Request: Auditing Policy-Selected Targets in Synthetic Conversational Music Recommendation",
+      "id": "http://arxiv.org/abs/2611.01072v1",
+      "title": "Where Beam Search Loses Top-Ranked Items:First-Step Coverage in Generative Recommendation",
       "authors": [
-        "Sanjeev Suresh"
+        "Heng Yao",
+        "Hanwei Zhu"
       ],
       "affiliations": [],
-      "abstract": "Synthetic dialogues generated by LLM pipelines now serve as complete conversational-recommendation benchmarks: an LLM listener talks to an LLM recommender, and the track logged next in the conversation becomes the official label for each turn. These policy-selected labels make large-scale evaluation reproducible, but they are proxies for what the simulated user asked. We audit the one place where label and request are directly comparable: turns where the user asks for an exact song by name. In the RecSys Challenge 2026 TalkPlay benchmark, using visible dialogue and catalog metadata alone, we find that the official label contradicts the user's exact-song request in half of the audited development turns. This matters beyond one benchmark: naming the desired item is the dominant intent in real music search, where deployed systems avoid substituting an alternative for an exactly named item, on the premise that it costs satisfaction. A small training-time supplement closes most of the gap: adding catalog-resolved request-satisfying targets to a small fraction of training turns yields a 53.3% relative gain in nDCG@20 on the 43 conflict turns while leaving the official metric intact, verified against a matched control that detects the same requests but trains only on official labels.",
-      "published": "2026-09-30T13:17:59Z",
-      "updated": "2026-09-30T13:17:59Z",
+      "abstract": "Generative recommendation can reproduce a wider beam's ranked output with roughly half the prefix-capacity budget by reallocating retention capacity across semantic-ID positions. We identify a \\emph{first-step coverage bottleneck}: across six full-test settings of the TIGER generative recommender spanning three domains and two identifier constructions, every pruned exact top-10 path is first lost at the initial decoding step. An exact-catalog reference isolates search losses and guides a controlled budget intervention. Moving width to the first step raises Search Recall@10 by 0.96--10.90 percentage points at Beam-50's unchanged budget. Across all 77,373 test users with residual-quantized variational autoencoder (RQ-VAE) tokenization, the reallocated schedule reproduces Beam-100's ordered top-10 at nominal budgets of 151 rather than 301, without retraining or changing identifiers or scores. Matched-output timing saves 6.35--6.39\\% of decoder latency; profiling identifies the execution costs that limit the translation from reduced search work to runtime savings. Larger-candidate experiments reveal how output size changes retention requirements. These findings make budget placement an actionable serving decision: locate ranking loss, redirect search capacity, and preserve downstream inputs before increasing uniform beam width.",
+      "published": "2026-10-31T16:09:48Z",
+      "updated": "2026-10-31T16:09:48Z",
       "categories": [
         "cs.IR"
       ],
-      "pdfUrl": "https://arxiv.org/pdf/2609.39696v1",
-      "absUrl": "https://arxiv.org/abs/2609.39696v1",
-      "industrySource": "Meta"
+      "pdfUrl": "https://arxiv.org/pdf/2611.01072v1",
+      "absUrl": "https://arxiv.org/abs/2611.01072v1",
+      "industrySource": ""
     },
     {
-      "id": "http://arxiv.org/abs/2609.38646v2",
-      "title": "Exploring Forum Post Retrieval with Generative Modeling",
+      "id": "http://arxiv.org/abs/2611.00564v1",
+      "title": "WAR-CRAFT: Refining Web API Recommendations through Requirement Auditing",
       "authors": [
-        "Yang Li",
-        "Yaguang Liu",
-        "Heng Liu",
-        "Samson Komo",
-        "Jane Kou",
-        "Yulian Zhou",
-        "Gang Yang",
-        "Shubhojeet Sarkar",
-        "Gaurav Chakravorty",
-        "Yujie Liu",
-        "Haipeng Chen",
-        "Yonghuan Yang",
-        "Deepti Chheda",
-        "Yamin Wang",
-        "Mike Plumpe",
-        "Rish Tandon",
-        "Shengbo Guo"
+        "Zishuo Xu",
+        "Dezhong Yao",
+        "Zhiqiang Xu"
       ],
       "affiliations": [],
-      "abstract": "Generative recommendation (GR) has emerged as an alternative to embedding-based retrieval, building on the success of generative models in language and vision. We are exploring GR on Facebook Forum, a standalone application for medium-to-heavy users of Facebook Groups. Because Forum is a new surface, its own interaction data are too sparse to train a GR model from scratch. We address this with transfer along two axes: we train on a broader corpus of Facebook Groups engagements rather than Forum sessions alone, and we reuse hierarchical, prefix-based semantic IDs (SIDs) learned from cross-platform Facebook Feed data instead of fitting a Forum-specific tokenizer. A 3B-parameter instruction-tuned language model is then supervised-fine-tuned to generate SIDs directly from user context. We systematically ablate the design choices that matter most in practice, including SID construction, the composition and length of user history, and the inclusion of user-profile features. Our results show that cross-platform SIDs transfer to a new recommendation surface, and offer practical guidance for teams deploying GR on real-world social platforms.",
-      "published": "2026-09-29T23:04:09Z",
-      "updated": "2026-10-01T01:14:33Z",
+      "abstract": "Web API recommenders return a set of APIs for a mashup request but do not check it against provider documentation, the main public evidence of an API's capabilities. The set can therefore contain unsupported or redundant APIs and miss requested capabilities. Filling every apparent gap does not fix this, because a gap may already be served, may not need its own API, or may have no documented provider. We study post-recommendation refinement, which revises a frozen recommender's output using only the request, the catalog, and provider documentation. We propose WAR-CRAFT, which treats refinement as three decisions. An LLM removes unsupported or subsumed APIs by judging candidates jointly, then audits the remaining set against a requirement checklist derived from the request. For each uncovered requirement, a fine-tuned catalog-constrained Resolver proposes a catalog API or abstains, and an independent documentation check admits only supported proposals. On ProgrammableWeb with 7 heterogeneous upstream recommenders, WAR-CRAFT raises mean SetF1 from 0.558 to 0.644, above the strongest of 5 refinement baselines (62.5%), and roughly halves functional redundancy (0.127 to 0.065) without changing mean functional coverage. Gains range from +2.2 points on generative recommenders to +18.2 on fixed-cutoff rankers. At matched set sizes, WAR-CRAFT still outperforms truncating the upstream output, so the gain is not explained by set-size calibration alone. Our code is available at https://github.com/ZsXu-enrico/WAR-CRAFT.",
+      "published": "2026-10-31T02:42:26Z",
+      "updated": "2026-10-31T02:42:26Z",
       "categories": [
-        "cs.IR"
+        "cs.AI"
       ],
-      "pdfUrl": "https://arxiv.org/pdf/2609.38646v2",
-      "absUrl": "https://arxiv.org/abs/2609.38646v2",
-      "industrySource": "Meta"
+      "pdfUrl": "https://arxiv.org/pdf/2611.00564v1",
+      "absUrl": "https://arxiv.org/abs/2611.00564v1",
+      "industrySource": ""
+    },
+    {
+      "id": "http://arxiv.org/abs/2611.00323v1",
+      "title": "Beyond Semantic IDs: Atomic Creator Tokens for Large-Scale Generative Recommendation",
+      "authors": [
+        "Zhuosheng Liu",
+        "Yihan Wu",
+        "Ziyun Xu",
+        "Xiaoxuan Liu",
+        "Longfei Yun",
+        "Kevin Han",
+        "Mingze Gao",
+        "Pengfei Wang",
+        "Junfeng Pan",
+        "Wenjie Fu",
+        "Haoran Liu"
+      ],
+      "affiliations": [],
+      "abstract": "Recommending creators that a user does not yet follow is a cold-start problem: from hundreds of thousands of popular creators and only a short trail of prior engagements, the system must predict the next creator worth surfacing. The prevailing generative recommendation recipe tokenizes each creator into a \\emph{Semantic ID} (SID) by quantizing a frozen embedding and trains a language model to generate SIDs. We show that this SID layer, not the language model, is the binding constraint. The creator-to-SID map is many-to-one, so colliding creators must be resolved by a popularity tie-break that caps creator-level recall and favors already-popular creators, and the frozen quantizer stops the training gradient from reaching the creator representation. We propose Atomic Creator Token (ACT), which gives every creator its own vocabulary token trained end-to-end. The map is bijective, so collisions are impossible and inference is a direct top-$k$ over creator logits. In a controlled comparison on production data in which the token layer is the only variable, ACT improves creator-level Recall@15 by 19.8 points ($1.84\\times$) over a matched SID baseline, still leads when the SID codebook is enlarged $64\\times$, and serves at ${\\sim}2.7\\times$ lower per-user latency. The advantage carries over to the public KuaiRand dataset, where ACT is the only method that beats a global-popularity baseline, provided each creator token sees enough training examples. In a live A/B test, ACT is directionally positive on every reported metric against both the SID-enhanced and the classic production rankers.",
+      "published": "2026-10-30T19:43:04Z",
+      "updated": "2026-10-30T19:43:04Z",
+      "categories": [
+        "cs.AI"
+      ],
+      "pdfUrl": "https://arxiv.org/pdf/2611.00323v1",
+      "absUrl": "https://arxiv.org/abs/2611.00323v1",
+      "industrySource": ""
     },
     {
       "id": "http://arxiv.org/abs/2610.39470v1",
@@ -666,7 +822,7 @@
       "industrySource": ""
     },
     {
-      "id": "http://arxiv.org/abs/2610.35218v1",
+      "id": "http://arxiv.org/abs/2610.35218v2",
       "title": "MuSID-KD: Multigranularity Knowledge Distillation for Generative Recommendation with Semantic IDs",
       "authors": [
         "Fengshi Zhang",
@@ -677,12 +833,12 @@
       "affiliations": [],
       "abstract": "Generative recommendation with semantic IDs (SIDs) represents each item as a sequence of discrete tokens and autoregressively predicts the next item's SID. Despite strong recommendation performance, repeated decoding over multiple SID positions incurs substantial inference cost. Knowledge distillation transfers knowledge from a powerful generative teacher to a lightweight student, yet conventional objectives do not fully account for multi-token SID generation. We identify two limitations: item-level distribution alignment may not adequately preserve the teacher's ranking of candidate groups sharing SID prefixes, while uniform alignment across SID positions may affect final item ranking differently. We propose MuSID-KD, which combines Hierarchical Candidate Distribution Alignment (HCDA) and Ranking Impact Guided Levelwise Distillation (RIGD). HCDA aggregates item probabilities according to shared SID prefixes and aligns candidate distributions at successive levels, from candidate groups to individual items. RIGD evaluates the reduction in pairwise ranking surrogate loss when one student score contribution is replaced with the teacher's contribution, and allocates supervision accordingly. Experiments on real-world recommendation datasets using three lightweight student architectures demonstrate improved recommendation accuracy and better alignment of prefix marginal distributions and pairwise item rankings, without modifying the student's online inference architecture. Code is available at https://anonymous.4open.science/r/m7k2-review-83f9/.",
       "published": "2026-10-26T11:09:39Z",
-      "updated": "2026-10-26T11:09:39Z",
+      "updated": "2026-10-30T14:28:33Z",
       "categories": [
         "cs.AI"
       ],
-      "pdfUrl": "https://arxiv.org/pdf/2610.35218v1",
-      "absUrl": "https://arxiv.org/abs/2610.35218v1",
+      "pdfUrl": "https://arxiv.org/pdf/2610.35218v2",
+      "absUrl": "https://arxiv.org/abs/2610.35218v2",
       "industrySource": ""
     },
     {
@@ -1030,244 +1186,6 @@
       ],
       "pdfUrl": "https://arxiv.org/pdf/2610.11501v1",
       "absUrl": "https://arxiv.org/abs/2610.11501v1",
-      "industrySource": ""
-    },
-    {
-      "id": "http://arxiv.org/abs/2610.07402v1",
-      "title": "Rethinking Semantic ID Construction for Generative Recommendation: SimHash with Parallel Decoding and Semantic Alignment",
-      "authors": [
-        "Yuqing Liu",
-        "Huiyuan Chen",
-        "Yibo Wang",
-        "Wooseong Yang",
-        "Philip S. Yu"
-      ],
-      "affiliations": [],
-      "abstract": "Semantic ID-based generative recommendation represents each item as a sequence of discrete tokens, enabling structured modeling of item semantics. A critical challenge is constructing semantic IDs that are both semantically expressive and computationally efficient. While recent approaches favor complex learned quantization, simple hashing-based methods such as SimHash are widely regarded as fundamentally inferior. In this work, we challenge this consensus by showing that the apparent performance gap does not stem from inherent limitations of hashing, but rather from a structural mismatch with autoregressive decoding, coupled with the inevitable information loss during rigid discretization. Based on this insight, we propose FLASH, a two-stage framework that revitalizes training-free SimHash tokenization through parallel decoding and explicit semantic alignment. Despite its simplicity, FLASH achieves state-of-the-art performance across multiple datasets without requiring any tokenizer training, while exhibiting stronger generalization in cold-start scenarios. Notably, we demonstrate that semantic alignment acts as a universally effective mechanism across diverse paradigms. Our findings suggest that, with compatible decoding and semantic grounding, simple and efficient tokenizers can achieve performance comparable to complex learned counterparts in generative recommendation. Our code is available at https://github.com/KevinC2015/Flash.",
-      "published": "2026-10-05T21:15:13Z",
-      "updated": "2026-10-05T21:15:13Z",
-      "categories": [
-        "cs.IR"
-      ],
-      "pdfUrl": "https://arxiv.org/pdf/2610.07402v1",
-      "absUrl": "https://arxiv.org/abs/2610.07402v1",
-      "industrySource": ""
-    },
-    {
-      "id": "http://arxiv.org/abs/2610.06590v1",
-      "title": "SPRIG: Semantic-ID-enhanced Paths for Knowledge Graph-based Generative Recommendation",
-      "authors": [
-        "Justin Hangoebl",
-        "Marta Moscati",
-        "Alessandro B. Melchiorre",
-        "Shah Nawaz",
-        "Markus Schedl"
-      ],
-      "affiliations": [],
-      "abstract": "Recommender systems leveraging generative models often generate item identifiers directly, rather than ranking catalog items by a recommendation score. Recent work extends beyond pure sequential interaction signals by incorporating item content and structured relationships among items, with two distinct directions emerging. Semantic IDs (SIDs) enrich item representations by replacing opaque, randomly initialized embeddings with hierarchically quantized discrete codes derived from item content. Knowledge-graph (KG) path reasoning instead generates entity-relation paths that ground recommendations in structured relationships between items, attributes, and external entities, thereby enriching the relational context. These two lines have complementary limitations: SID-based models lack relational grounding, while KG-based generative recommenders still represent items as arbitrary, opaque tokens tied to large embedding tables, limiting parameter sharing and generalization. We propose SPRIG, a generative recommender that integrates content-derived SIDs into KG path reasoning. SPRIG is trained on information-rich KG paths that terminate in items represented as discrete, content-derived tokens, combining the advantages of both approaches. We evaluate SPRIG on movie and music recommendation datasets against baselines spanning sequential language models, KG-augmented methods, and SID-based approaches. Our results show that SPRIG achieves competitive performance over prior generative models while using fewer parameters and a lower compute cost. Code: https://github.com/justinhangoebl/semantic-id-knowledge-graph-recommender",
-      "published": "2026-10-05T16:04:55Z",
-      "updated": "2026-10-05T16:04:55Z",
-      "categories": [
-        "cs.IR"
-      ],
-      "pdfUrl": "https://arxiv.org/pdf/2610.06590v1",
-      "absUrl": "https://arxiv.org/abs/2610.06590v1",
-      "industrySource": ""
-    },
-    {
-      "id": "http://arxiv.org/abs/2610.05670v2",
-      "title": "Generate What You Can Trust: Content Credibility in Generative Recommenders",
-      "authors": [
-        "Zhuo Cai",
-        "Guanghao Wu",
-        "Shoujin Wang",
-        "Peilin Zhou",
-        "Victor W. Chu"
-      ],
-      "affiliations": [],
-      "abstract": "Generative recommendation (GR) represents items with semantic IDs (i.e., discrete token sequences) and generates target item tokens as recommendations. Despite its promising results, existing methods predominantly optimize for accuracy while neglecting the credibility of the recommendations they generate. This oversight inevitably exposes users to uncredible content (e.g., fake news) with serious societal consequences, including user distrust, reputation harm to platforms, and broader social instability. To address this critical yet underexplored challenge, we propose CreGR, the first credible GR model that jointly tackles content credibility across the two core stages of GR: tokenization and generation. In the tokenization stage, we design a new credibility-aware tokenizer that explicitly encourages the model to learn discriminative tokens respectively for credible and uncredible items, thereby disentangling credibility signals at the token level. Building on this, in the generation stage, we propose a novel accuracy-preserving and credibility-oriented generator grounded in discrete diffusion. Specifically, we introduce an asymmetric masking probability reduction strategy that selectively diminishes the contribution of tokens associated with uncredible content to the generation process, while leaving tokens encoding user preference signals unaffected so as to preserve recommendation accuracy. Experiments on three real-world datasets demonstrate the effectiveness of CreGR.",
-      "published": "2026-10-05T01:33:29Z",
-      "updated": "2026-10-10T00:22:03Z",
-      "categories": [
-        "cs.IR"
-      ],
-      "pdfUrl": "https://arxiv.org/pdf/2610.05670v2",
-      "absUrl": "https://arxiv.org/abs/2610.05670v2",
-      "industrySource": ""
-    },
-    {
-      "id": "http://arxiv.org/abs/2610.02600v1",
-      "title": "When History Misleads: Asymmetric Margin Supervision for Instruction-Guided LLM Generative Recommendation",
-      "authors": [
-        "Ming Yin",
-        "Yuhan Yang",
-        "Chen Chen",
-        "Xinyu Lin",
-        "Wentao Shi",
-        "Fangcong Yin",
-        "Chaofei Yang",
-        "Chao Yang",
-        "Jiyan Yang",
-        "Hui Zhang",
-        "Ning Jiang",
-        "Yiran Chen",
-        "Qifan Wang"
-      ],
-      "affiliations": [],
-      "abstract": "In instruction-guided generative recommendation, LLM-based recommenders need to balance two goals: responding to the user's current request and aligning with the preferences in their interaction history. When the two conflict, history events can override the request. We show that turning the effect of individual history events into supervision faces two obstacles. First, the events that most influence a recommendation are not necessarily the ones that support the target item. Second, removing a misleading event can raise the target's score but a competing item's score even more, so a higher target score alone does not guarantee a better ranking. We propose Asymmetric Intervention-Guided Margin Supervision (AIMS), which converts the effect of removing individual history events into ranking supervision. For training requests already ranked correctly, a frozen reference model identifies request-specific deletions that improve both the target's score and its margin over a competitor near the recommendation cutoff. These margins serve as training targets, while the complete history is retained as input. Training combines cross-entropy with an asymmetric auxiliary loss that penalizes margin shortfalls and routes its gradient only through the competitor score. Inference is unchanged, requiring no history editing or deletion search. Across six LLM backbones on an industrial dataset and two public benchmarks, AIMS improves Recall and NDCG over strong baselines. Ablations support request-specific margins and asymmetric supervision, and the selected deletions preferentially remove constraint-violating history.",
-      "published": "2026-10-01T23:53:42Z",
-      "updated": "2026-10-01T23:53:42Z",
-      "categories": [
-        "cs.IR"
-      ],
-      "pdfUrl": "https://arxiv.org/pdf/2610.02600v1",
-      "absUrl": "https://arxiv.org/abs/2610.02600v1",
-      "industrySource": ""
-    },
-    {
-      "id": "http://arxiv.org/abs/2610.01533v1",
-      "title": "Neither Black nor White: Balancing Semantic and Collaborative Signals with Graph-Informed Semantic IDs (GrIS)",
-      "authors": [
-        "Aleksei Medvedev",
-        "Alejandro Ariza-Casabona",
-        "Steven Derby",
-        "Gonzalo Fiz Pontiveros",
-        "Xinyang Shao",
-        "Florian Spiess"
-      ],
-      "affiliations": [],
-      "abstract": "Existing work on Semantic IDs (SIDs) for generative recommendation treats SID construction as a representation learning problem: encode items into a quantised latent space and read off codes. We argue this view is incidental. SID construction is, at heart, a recursive clustering problem, and once stated this way the natural object to cluster is a graph whose nodes carry semantic content and whose edges carry collaborative signal; SID assignment becomes a hierarchical graph partition. This reframing yields a unified framework, Graph-Informed Semantic IDs (GrIS), that subsumes prior approaches rather than displacing them. RQ-VAE and RQ-KMeans are recovered as the special case where the graph is empty, exposing content-only quantisation as one corner of a larger design space along two so-far-collapsed axes: graph construction and recursive partition algorithm. We explore two contrasting instantiations: RecDMoN, which performs hierarchical assignment via differentiable graph pooling, and RQ-GAE, which extends RQ-VAE with graph-aware item representations and a graph reconstruction objective. On multiple real-world datasets, GrIS consistently improves over CF-aware SOTA, with gains of up to +52\\% Hit@10. Because graph construction and partition are explicit, separately configurable components, improvements on either axis can be combined and evaluated systematically.",
-      "published": "2026-10-01T12:08:56Z",
-      "updated": "2026-10-01T12:08:56Z",
-      "categories": [
-        "cs.AI",
-        "cs.IR",
-        "cs.LG"
-      ],
-      "pdfUrl": "https://arxiv.org/pdf/2610.01533v1",
-      "absUrl": "https://arxiv.org/abs/2610.01533v1",
-      "industrySource": ""
-    },
-    {
-      "id": "http://arxiv.org/abs/2610.00654v1",
-      "title": "When More Data Is Not Enough: The Context-Sufficiency Frontier in Generative AI Personalization",
-      "authors": [
-        "Merieme Askour",
-        "Ayoub Merimi"
-      ],
-      "affiliations": [],
-      "abstract": "Personalization has long relied on customer data to infer what an individual is likely to value. We call this customer evidence: the customer's historical behavior and preferences. Generative AI extends personalization by allowing providers to supply changing situational information at the moment a response is produced, without encoding every condition in advance. We define this provider-side context as information about what is possible, permitted, or advisable now. This flexibility creates a new problem: once context becomes easy to supply, more is not necessarily better. We develop a theory of context sufficiency in which the relevance of context to the customer's current intent matters more than its volume. The theory identifies four states, insufficiency, sufficiency, saturation, and interference, and introduces the Context-Sufficiency Frontier to locate the minimal relevant set. In a full-factorial experiment with a generative recommender at a large home-furnishing retailer, relevant context improved appropriateness, while irrelevant context reduced it and destabilized retrieval. The framework shifts personalization from supplying more context toward identifying what the current interaction actually requires and enforcing constraints throughout the service process.",
-      "published": "2026-09-30T19:54:26Z",
-      "updated": "2026-09-30T19:54:26Z",
-      "categories": [
-        "cs.AI",
-        "cs.LG"
-      ],
-      "pdfUrl": "https://arxiv.org/pdf/2610.00654v1",
-      "absUrl": "https://arxiv.org/abs/2610.00654v1",
-      "industrySource": ""
-    },
-    {
-      "id": "http://arxiv.org/abs/2609.39319v1",
-      "title": "Residual Trajectory Distillation for Generative Retrieval",
-      "authors": [
-        "Weihao Shen",
-        "Wei Chen",
-        "Fuwei Zhang",
-        "Guojun Liu",
-        "Qingsong Hua",
-        "Wei Lin",
-        "Fuzhen Zhuang"
-      ],
-      "affiliations": [],
-      "abstract": "Generative retrieval has emerged as a general retrieval paradigm, representing items with discrete Semantic IDs (SIDs) and retrieving them through autoregressive identifier generation. When SIDs are constructed with residual quantization (RQ), standard retrieval training supervises only the selected codes and discards the residual trajectories that produce them. The same hard code can nevertheless arise from different preferences over competing codewords, while the residual trajectory also contains information about subsequent quantization decisions. As a result, hard SID supervision collapses distinct quantization behaviors into identical targets and leaves information available during indexing unused in retrieval training. We introduce ResTD, a Residual Trajectory Distillation framework that transfers this discarded indexing information into retrieval training. Treating the frozen RQ indexer as a process teacher, it distills residual-induced codeword preferences into SID-decoding states. This supervision recovers distinctions hidden by hard assignments and allows earlier decoder states to capture information about subsequent quantization decisions before the corresponding SID suffix is generated. In this way, richer information from SID construction is incorporated into retrieval learning while preserving the original retrieval index and inference procedure. Experiments on multilingual e-commerce retrieval show consistent improvements over strong baselines and matched training controls. Controlled comparisons show that residual-derived targets outperform the tested codebook-only soft targets. Representation probes further show that future codebook preferences become more recoverable from earlier decoder states. ResTD can also be readily extended beyond retrieval to generative recommendation. Code is available at: https://github.com/Nevaeh7/iclr2027_ResTD.git.",
-      "published": "2026-09-30T08:59:09Z",
-      "updated": "2026-09-30T08:59:09Z",
-      "categories": [
-        "cs.IR"
-      ],
-      "pdfUrl": "https://arxiv.org/pdf/2609.39319v1",
-      "absUrl": "https://arxiv.org/abs/2609.39319v1",
-      "industrySource": ""
-    },
-    {
-      "id": "http://arxiv.org/abs/2609.38600v1",
-      "title": "Sense and Sensitivity: Benchmarking LLM Clinical Triage Recommendations with Physician Experts",
-      "authors": [
-        "Abinitha Gourabathina",
-        "Haoran Zhang",
-        "Yuexing Hao",
-        "Walter Gerych",
-        "Marzyeh Ghassemi"
-      ],
-      "affiliations": [],
-      "abstract": "As large language models (LLMs) are increasingly used in clinical settings, it is critical to evaluate their reliability under realistic variation in clinical text. We study this question in clinical triage, comparing LLMs to practicing physicians under text perturbations that preserve the underlying clinical setting. We introduce a benchmark of over 6,000 clinical scenarios, 7,000 physician annotations, and 225,000 model responses. Using this benchmark, we make two key observations. First, LLMs are more likely than physicians to recommend unnecessary care at baseline, and this tendency increases under perturbed inputs. Further, we find that LLM recommendations are more sensitive to gender and tone perturbations than human recommendations. Together, these results demonstrate that LLMs can vary under clinically irrelevant textual changes, highlighting the need for deployment-oriented evaluations grounded in expert physician behavior.",
-      "published": "2026-09-29T22:00:16Z",
-      "updated": "2026-09-29T22:00:16Z",
-      "categories": [
-        "cs.AI"
-      ],
-      "pdfUrl": "https://arxiv.org/pdf/2609.38600v1",
-      "absUrl": "https://arxiv.org/abs/2609.38600v1",
-      "industrySource": ""
-    },
-    {
-      "id": "http://arxiv.org/abs/2609.36688v1",
-      "title": "GRP v0.1 Technical Report",
-      "authors": [
-        "Wenfeng Zhuo",
-        "Vincent Xue",
-        "Charles Wei",
-        "Cong Ni",
-        "Ruiming Lu",
-        "Jiwen Ren",
-        "Mo Li",
-        "Peng Yang",
-        "Xufei Wang",
-        "Dongheng Li",
-        "Jiacong He",
-        "Yi Song",
-        "Yufei Fan",
-        "Mikhail Obukhov",
-        "Yiwen Chen",
-        "Yvette Liu",
-        "Yin Ye",
-        "Chengjie Wu",
-        "Mingtao Zhang",
-        "Jinchao Ye",
-        "Lili Zhang",
-        "Chunhui Zhu"
-      ],
-      "affiliations": [],
-      "abstract": "Industrial recommendation systems rely on multi-stage cascades whose retrieval, ranking, and serving components are difficult to replace jointly. We present GRP, a generative recommendation framework that combines retrieval, ranking, and reward modeling in a single encoder-decoder model, and evaluate a progressive path toward end-to-end recommendation. The model generates multimodal Semantic IDs and scores candidates with a jointly trained ranking module. The frozen ranking module then supplies rewards for reinforcement-learning post-training. We introduce mGRPO, which adds a reference-anchored margin to reward optimization to preserve the likelihood of logged targets. Offline experiments examine history encoding, model capacity allocation, event selection, tokenization, and reward discrimination. Serving optimizations reduce end-to-end retrieval latency by 69%. Online experiments evaluate the model as a retrieval source, with early-ranking bypass, and with replacement of weaker sources. In a retrieval-only comparison, view time increases by 0.46% and shares by 0.77% relative to production. A separate comparison combining bypass and source replacement yields increases of 0.82% in view time and 2.56% in shares, with neutral platform-level guardrails. These results support progressive deployment while identifying remaining gaps in ranking quality and performance across recommendation metrics.",
-      "published": "2026-09-29T04:30:34Z",
-      "updated": "2026-09-29T04:30:34Z",
-      "categories": [
-        "cs.IR"
-      ],
-      "pdfUrl": "https://arxiv.org/pdf/2609.36688v1",
-      "absUrl": "https://arxiv.org/abs/2609.36688v1",
-      "industrySource": ""
-    },
-    {
-      "id": "http://arxiv.org/abs/2609.36671v2",
-      "title": "FairDiff: Mitigating the Self-Reinforcing Matthew Effect in Diffusion Recommender Models",
-      "authors": [
-        "Song-Li Wu",
-        "Xianquan Wang",
-        "Zhaocheng Du",
-        "Weinan Gan",
-        "Jingyi Wang"
-      ],
-      "affiliations": [],
-      "abstract": "While the \"Matthew Effect\" and filter bubbles are widely recognized outcome-level biases in recommender systems, we reveal that Diffusion Recommender Models (DRMs) uniquely compound this issue through their generative dynamics. Rather than merely inheriting data imbalances, DRMs trigger a self-reinforcing amplification of popularity bias. We identify that this phenomenon is driven by two compounding mechanisms. First, while optimization loss is universally dominated by high-frequency items across recommenders, DRMs suffer from a unique structural prior mismatch during generation. Because the forward terminal distribution of long-tailed data deviates significantly from the standard Gaussian prior, reverse sampling trajectories inherently collapse toward high-density popular items, fundamentally suppressing niche item generation. To dismantle this self-reinforcing loop, we propose FairDiff, a plug-and-play fairness-aware diffusion framework. To overcome the popularity-dominated loss, we introduce Popularity Condition Guidance (PCG). Rather than altering the training objective, PCG acts as an inference-time distributional reweighting mechanism, mathematically reshaping the score-based gradient field to penalize high-popularity regions and guide trajectories toward niche semantics. Furthermore, we design a Semantic Calibration (SC) Module to bridge the prior mismatch, aligning the forward and reverse distributions via one-step optimal transport. Comprehensive evaluations demonstrate that FairDiff achieves state-of-the-art performance while effectively mitigating the self-reinforcing Matthew Effect, highlighting its value as a general framework for DRMs.",
-      "published": "2026-09-29T04:10:13Z",
-      "updated": "2026-10-19T13:08:41Z",
-      "categories": [
-        "cs.AI"
-      ],
-      "pdfUrl": "https://arxiv.org/pdf/2609.36671v2",
-      "absUrl": "https://arxiv.org/abs/2609.36671v2",
       "industrySource": ""
     }
   ]
