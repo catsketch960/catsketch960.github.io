@@ -1,7 +1,49 @@
 {
-  "lastUpdated": "2026-11-05T07:50:04Z",
-  "totalResults": 829,
+  "lastUpdated": "2026-11-07T06:57:41Z",
+  "totalResults": 833,
   "papers": [
+    {
+      "id": "http://arxiv.org/abs/2611.07866v1",
+      "title": "Do Recommenders Need to Think in Words? Latent Reasoning for Efficient LLM-Based Recommendation",
+      "authors": [
+        "Hongyang Su",
+        "Beibei Kong",
+        "Lei Cheng",
+        "Chengxiang Zhuo",
+        "Zang Li"
+      ],
+      "affiliations": [],
+      "abstract": "LLM-based recommender systems increasingly generate chain-of-thought (CoT) text before each item prediction to activate the LLM's reasoning capacity, costing tens to hundreds of extra tokens per recommendation at inference. We ask whether inference-time reasoning artifacts (textual or latent) can be replaced by training-time supervision alone, without loss of accuracy. We propose LatentRec, a framework for LLM-based generative recommendation that replaces inference-time reasoning artifacts with training-time per-step head supervision. LatentRec has three components. A 2.5M-parameter Continuous Thought Module iterates K latent reasoning steps over the LLM's hidden state during training. Soft Token Selection bridges the ~14x norm gap between hidden states and input embeddings. A Per-step Reasoning Loss (PRL) supervises every intermediate state through the LLM's prediction head against the first token of the target Semantic ID. The trained LLM retains this accuracy without the module at inference, so the module can be discarded at deployment. On three Amazon benchmarks, LatentRec improves HR@10 by 4.0-5.0% (relative) over a CoT-distilled baseline at 18.3x lower latency (batch=1). Per-step training supervision consistently improves accuracy across three datasets, paid once at training rather than at every recommendation.",
+      "published": "2026-11-05T11:43:45Z",
+      "updated": "2026-11-05T11:43:45Z",
+      "categories": [
+        "cs.CL"
+      ],
+      "pdfUrl": "https://arxiv.org/pdf/2611.07866v1",
+      "absUrl": "https://arxiv.org/abs/2611.07866v1",
+      "industrySource": "Amazon"
+    },
+    {
+      "id": "http://arxiv.org/abs/2611.07425v1",
+      "title": "BRIDGE: Bridging the Semantic Quantization Gap for Generative Recommendation",
+      "authors": [
+        "Yatong Xiao",
+        "Mingjie Sun",
+        "Peng Wang",
+        "Wenjin Wu",
+        "Peng Jiang"
+      ],
+      "affiliations": [],
+      "abstract": "Generative recommendation retrieves items by autoregressively generating Semantic IDs(SIDs), where an RQ-VAE quantizes each item into a hierarchical SID sequence that the decoder generates level by level. We identify an overlooked bottleneck in this paradigm: the Semantic Quantization Gap(SQG). Quantization derives SIDs from rich continuous signals, including codebook centroids, local neighborhood geometry, and level-wise entropy. However, the decoder receives only discrete identifiers and loses the semantic structure that shaped them. This mismatch manifests in three ways: a grounding gap, where the decoder lacks semantic anchors when target-side information is limited; a neighborhood gap, where token-level supervision discards inter-item similarity and exacerbates exposure bias; and a difficulty gap, where computation is allocated uniformly despite generation difficulty diminishing with depth. To bridge the SQG, we propose BRIDGE. Codebook-grounded latent reasoning injects frozen quantizer centroids as semantic anchors before SID generation. Privileged EMA self-distillation transfers neighborhood-aware knowledge from a teacher to an on-policy student, preserving inter-item geometry while mitigating exposure bias. Effort-aware recurrence allocates more computation to the challenging early levels and progressively reduces it with depth. Across three Amazon benchmarks, BRIDGE improves Recall@10 and NDCG@10 by 10.9% and 9.7% on average over the strongest baseline (up to 12.6% and 10.7%). In a one-week online A/B experiment on a large-scale e-commerce advertising platform with 5% traffic, BRIDGE improves eCPM by 0.65%.",
+      "published": "2026-11-05T04:20:01Z",
+      "updated": "2026-11-05T04:20:01Z",
+      "categories": [
+        "cs.IR"
+      ],
+      "pdfUrl": "https://arxiv.org/pdf/2611.07425v1",
+      "absUrl": "https://arxiv.org/abs/2611.07425v1",
+      "industrySource": "Amazon"
+    },
     {
       "id": "http://arxiv.org/abs/2611.02981v1",
       "title": "Utility-Aware Generative Recommendation: Utility-Enriched Semantic Codes and Utility-Guided Decoding",
@@ -286,47 +328,29 @@
       "industrySource": "Apple"
     },
     {
-      "id": "http://arxiv.org/abs/2610.10124v1",
-      "title": "Training with Missed Targets in Generative Recommendation: Separating Supervision from Probability Competition",
+      "id": "http://arxiv.org/abs/2611.07588v1",
+      "title": "What Gets Hacked in a Collaborative Reward for LLM Recommenders: The Part That Does Not Depend on the User",
       "authors": [
-        "Xuesi Wang",
-        "Yangbin Shi",
-        "Xiaolin Zheng"
+        "Zhuangsheng Li",
+        "Liang Dong",
+        "Yu Wu",
+        "Dailin Li",
+        "Yu Xia",
+        "Yunhan C. Zhang",
+        "Rui Cai",
+        "Yi Wu",
+        "Julian McAuley"
       ],
       "affiliations": [],
-      "abstract": "Generative recommenders return a limited candidate set and may omit observed targets before reranking. A training strategy appends these missed targets to reranker training lists, although inference still ranks only original candidates. This operation simultaneously changes retrieved-target weight, adds supervision over appended targets, and makes the two groups compete for probability. An append/no-append comparison therefore cannot explain changes in returned-item rankings. We construct three matched losses that hold retrieved-target weight fixed while introducing appended-target supervision and group competition separately. The intermediate loss trains within both groups but normalizes them separately, preventing training-only targets from competing with inference candidates. Experiments with a released OneRec model and locally trained Amazon generators show that this competition can harm returned-item ranking. In four prespecified Amazon Video Games comparisons, removing it improved full-target normalized discounted cumulative gain (FT-NDCG) by 7.8--22.2\\%; 95\\% intervals over users and three of four intervals over training runs excluded zero. A conservative development-set rule selected appended-target training for two of three generators in one held-out category and rejected it for all three in another, avoiding a 1.7\\% loss. Candidate completion should therefore be evaluated for each generator rather than applied automatically.",
-      "published": "2026-10-07T14:07:06Z",
-      "updated": "2026-10-07T14:07:06Z",
-      "categories": [
-        "cs.IR",
-        "cs.LG"
-      ],
-      "pdfUrl": "https://arxiv.org/pdf/2610.10124v1",
-      "absUrl": "https://arxiv.org/abs/2610.10124v1",
-      "industrySource": "Amazon"
-    },
-    {
-      "id": "http://arxiv.org/abs/2610.08136v1",
-      "title": "Adapting Generative Recommenders for Multi-Turn Interaction",
-      "authors": [
-        "Yu-Chen Den",
-        "Zhi Rui Tam",
-        "Yung-Yu Shih",
-        "Shih-Hsin Wang",
-        "Yun-Nung Chen",
-        "Pu-Jen Cheng",
-        "Eugene Yang"
-      ],
-      "affiliations": [],
-      "abstract": "Generative recommenders decode items from a user's interaction history, but offer no way for users to correct a recommendation that misses their current intent. Adding conversation is natural since items and words share same output space, yet training the model to converse may overwrite the history-to-item mapping it relies on. We introduce INTEGER (**INTE**ractive **GE**nerative **R**ecommendation), which extends generative recommendation to multi-turn interaction with a learned routing token that lets the model decide when to recommend, history re-anchoring that conditions each item on both past behavior and the dialogue, and behavioral replay with instruction-data rehearsal that prevents forgetting during adaptation. Users can thus give feedback on recommendations within the dialogue, while recommendations stay grounded in behavioral history and accuracy is not traded for fluency. On Amazon Beauty and Toys, INTEGER matches or exceeds the strongest baselines in accuracy with competitive conversation quality, improving Hit@10 by 13.3% on Amazon Beauty, and significantly outperforms the generative recommender it starts from. Our analyses show that INTEGER learns behaviors that naive adaptation fails to acquire, recommending once the user's intent is clear and staying attentive to behavioral history at the moment of recommendation. INTEGER also learns an intent-agnostic replacement over the item space, which suppresses rejected items but points to attribute-aware feedback as the next step.",
-      "published": "2026-10-06T10:51:53Z",
-      "updated": "2026-10-06T10:51:53Z",
+      "abstract": "Collaborative-filtering (CF) scores provide graded, personalized rewards for training large language model (LLM) recommenders through reinforcement learning. However, these rewards can cause exposure collapse: even though the CF model itself produces diverse top recommendations across users, an LLM optimized with its rewards concentrates on fewer items. We decompose each score into an item-mean component, the item's average CF score across user histories, and a residual component, the current user's score deviation from the average. Through controlled interventions, we identify the item-mean component as a contributor to exposure collapse. Accordingly, we propose two reward corrections: per-item centering removes each item's estimated mean score, while per-item standardization further rescales the residual using its estimated standard deviation. Experiments on two datasets with two identifier schemes show that both corrections substantially improve catalog coverage and exposure evenness. Compared with training on the uncorrected CF reward, our corrections increase the number of distinct items ranked first across users by up to $9.8\\times$, while maintaining comparable ranking accuracy. Code is available at https://anonymous.4open.science/r/LLM4Rec-CF-Bias-27EF/.",
+      "published": "2026-11-05T07:39:28Z",
+      "updated": "2026-11-05T07:39:28Z",
       "categories": [
         "cs.IR"
       ],
-      "pdfUrl": "https://arxiv.org/pdf/2610.08136v1",
-      "absUrl": "https://arxiv.org/abs/2610.08136v1",
-      "industrySource": "Amazon"
+      "pdfUrl": "https://arxiv.org/pdf/2611.07588v1",
+      "absUrl": "https://arxiv.org/abs/2611.07588v1",
+      "industrySource": ""
     },
     {
       "id": "http://arxiv.org/abs/2611.04715v1",
@@ -618,22 +642,27 @@
       "industrySource": ""
     },
     {
-      "id": "http://arxiv.org/abs/2610.37973v1",
+      "id": "http://arxiv.org/abs/2610.37973v2",
       "title": "Merge and Branch: Efficient Tree-Structured Supervised Fine-Tuning of LLMs for Recommendation",
       "authors": [
         "Yunqin Zhu",
-        "Yao Xie"
+        "Liyang Shu",
+        "Yusi Zhang",
+        "Yao Xie",
+        "Tianhao Li",
+        "Xinhang Song",
+        "Tianyu Wen"
       ],
       "affiliations": [],
-      "abstract": "LLM-based generative recommendation reads long, text-rich interaction histories but generates only short semantic identifiers (SIDs). This asymmetry makes supervised fine-tuning inefficient: encoding the history is expensive, yet each history usually provides supervision for only one target. We present Merge and Branch (M&B) to reduce input cost and learn more from each encoded history. Merge compresses each historical item's SID and text into a small number of learned tokens. Branch uses the compressed history to predict multiple target SIDs. To share history computation while keeping these targets independent, M&B organizes each example as a shallow, wide tree. We develop tree FlashAttention to execute this layout efficiently, processing the shared history once and propagating gradients from every branch for end-to-end training. A tree-structured key/value cache extends history sharing to constrained decoding. Experiments on public benchmarks show that M&B outperforms strong recommendation baselines while substantially improving training and decoding efficiency.",
+      "abstract": "LLM-based generative recommendation reads long, text-rich interaction histories but generates only short semantic identifiers (SIDs). This asymmetry makes supervised fine-tuning inefficient: encoding the history is expensive, yet each history usually provides supervision for only one target. We present Merge and Branch (M&B) to reduce input cost and learn more from each encoded history. Merge compresses each historical item's SID and text into a small number of learned tokens. Branch uses the compressed history to predict multiple target SIDs. To share history computation while keeping these targets independent, M&B organizes each example as a shallow, wide tree. We develop tree FlashAttention to execute this layout efficiently, processing the shared history once and propagating gradients from every branch for end-to-end training. A tree-structured key/value cache extends history sharing to constrained decoding. Experiments on public benchmarks show that M&B outperforms strong recommendation baselines while substantially improving training and decoding efficiency. Online A/B tests on a large-scale e-commerce platform suggest that M&B effectively combines item text with multi-target supervision, yielding statistically significant gains in per-user clicks, orders, and GMV.",
       "published": "2026-10-27T21:10:11Z",
-      "updated": "2026-10-27T21:10:11Z",
+      "updated": "2026-11-05T18:05:03Z",
       "categories": [
         "cs.IR",
         "cs.AI"
       ],
-      "pdfUrl": "https://arxiv.org/pdf/2610.37973v1",
-      "absUrl": "https://arxiv.org/abs/2610.37973v1",
+      "pdfUrl": "https://arxiv.org/pdf/2610.37973v2",
+      "absUrl": "https://arxiv.org/abs/2610.37973v2",
       "industrySource": ""
     },
     {
@@ -1163,29 +1192,6 @@
       ],
       "pdfUrl": "https://arxiv.org/pdf/2610.12977v1",
       "absUrl": "https://arxiv.org/abs/2610.12977v1",
-      "industrySource": ""
-    },
-    {
-      "id": "http://arxiv.org/abs/2610.11501v1",
-      "title": "Beyond Sequences: Distilling Structured Decision Memory for LLM Recommendation",
-      "authors": [
-        "Leikun Liang",
-        "Guoshuai Wang",
-        "Xingsheng He",
-        "Yushan Han",
-        "Yunyi Xuan",
-        "Xiaoxiao Xu",
-        "Lin Qu"
-      ],
-      "affiliations": [],
-      "abstract": "Despite the adoption of large language models (LLMs) in recommendation systems, prevailing approaches mostly model single-type behaviors (e.g., views or purchases). Even when incorporating multiple behaviors, existing methods flatten heterogeneous actions into homogeneous token sequences, ignoring their distinct decision-making roles. This flattening fails to capture semantic hierarchies and contextual nuances in complex decision-making, such as trade-offs between price and quality. Consequently, performance degrades in critical ``difficult-choice'' scenarios involving highly similar items. To bridge this gap, we propose MARI (Memory-Augmented Recommendation with Interpretability), which grounds predictions in explicit, structured decision evidence. MARI maintains a Decision Memory Bank (DMB) that archives users' past rationales as Structured Decision Memories (SDMs): concise records of goals, constraints, and trade-offs. These SDMs are generated offline via Post-Hoc Decision Distillation from heterogeneous behaviors and user-generated content. By retrieving relevant SDMs to augment LLM reasoning, MARI achieves interpretability and scalability without the prohibitive cost of processing long raw sequences. Extensive experiments show MARI significantly outperforms state-of-the-art baselines on standard next-item prediction and a newly introduced Difficult Choice Prediction task, incurring low latency overhead by decoupling memory construction from online inference. Qualitative analyses reveal actionable, human-readable insights into user decision-making, marking a concrete step toward reasoning-aware recommendation systems.",
-      "published": "2026-10-08T08:40:35Z",
-      "updated": "2026-10-08T08:40:35Z",
-      "categories": [
-        "cs.CL"
-      ],
-      "pdfUrl": "https://arxiv.org/pdf/2610.11501v1",
-      "absUrl": "https://arxiv.org/abs/2610.11501v1",
       "industrySource": ""
     }
   ]
