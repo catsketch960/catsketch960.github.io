@@ -1,7 +1,29 @@
 {
-  "lastUpdated": "2026-11-22T07:53:58Z",
-  "totalResults": 862,
+  "lastUpdated": "2026-11-25T09:42:53Z",
+  "totalResults": 866,
   "papers": [
+    {
+      "id": "http://arxiv.org/abs/2611.30839v1",
+      "title": "SARA: An Auditor-in-the-Loop LLM Recommender for Sustainability Reports",
+      "authors": [
+        "Lars Hillebrand",
+        "Thiago B. F. de Oliveira",
+        "Tim Dilmaghani",
+        "Mohamed Khaled",
+        "Writwick Das",
+        "Rafet Sifa"
+      ],
+      "affiliations": [],
+      "abstract": "Auditing corporate sustainability reports requires assurance professionals to map a company-specific checklist drawn from roughly 1,700 regulatory requirements onto the relevant passages of lengthy, repeatedly revised draft reports and to judge compliance. We present SARA (Sustainability Reporting Assistant), a human-in-the-loop recommender system delivered as a Microsoft Word add-in that recommends, for each requirement, the passages addressing it and predicts a compliance verdict while keeping the auditor in full control. SARA casts auditing as content-based recommendation over a fixed regulatory taxonomy and makes per-requirement large language model (LLM) matching cheaper, faster, and more accurate through topic-prediction filtering: on expert-annotated reports, it reduces matching cost about sixfold and runtime by 42% versus feeding the full report to the LLM. It is in production use across PwC Germany's sustainability-assurance practice.",
+      "published": "2026-11-23T15:23:50Z",
+      "updated": "2026-11-23T15:23:50Z",
+      "categories": [
+        "cs.CL"
+      ],
+      "pdfUrl": "https://arxiv.org/pdf/2611.30839v1",
+      "absUrl": "https://arxiv.org/abs/2611.30839v1",
+      "industrySource": "Microsoft"
+    },
     {
       "id": "http://arxiv.org/abs/2611.23969v1",
       "title": "ReflectRec: Cycle-Consistency Preference Verification for LLM-based Recommendation",
@@ -268,6 +290,63 @@
       "pdfUrl": "https://arxiv.org/pdf/2610.38378v2",
       "absUrl": "https://arxiv.org/abs/2610.38378v2",
       "industrySource": "Kuaishou"
+    },
+    {
+      "id": "http://arxiv.org/abs/2611.32855v1",
+      "title": "Speculative Decoding for Semantic-ID-Based Generative Recommendations",
+      "authors": [
+        "Harshal A. Chaudhari"
+      ],
+      "affiliations": [],
+      "abstract": "Generative recommender systems with Semantic IDs (SIDs) represent each item as a short sequence of $L$ discrete tokens and use a sequence model to predict the next item's tokens from a user's history. Industry-scale deployments typically use these models to retrieve multiple candidates per request with constrained beam search. However, this incurs a fixed cost of $L$ sequential model calls per request, and accuracy degrades as the SID generator becomes less sharp, without a guarantee on how close the output is to the exact top-$K$. Production systems therefore cannot detect degraded retrieval for individual requests. We propose SIDECAR, which uses approximate draft candidates and a tree-attention pass to score the entire draft in a single model call, memory permitting. This pass bounds the probability of every unexplored SID prefix and certifies the exact top-$K$ if the draft contains them. Otherwise, a branch-and-bound fallback expands only the parts of the trie that can still change the output, reaching certification within at most $L$ calls for any draft. Moreover, under a budget of $M$ tokens per call and $Y$ calls, which for $Y = L$ matches the resources of a beam search of width $M$, SIDECAR announces a factor $1 + δ$ within which its list will be exact at every rank. Depending on model sharpness, SIDECAR returns the exact top-$K$ using a fraction of beam search's calls or memory. Even when the budget is too small to recover the exact top-$K$, SIDECAR, unlike beam search, reports the announced factor, allowing the serving system to stop early once a quality target or latency limit is reached.",
+      "published": "2026-11-24T15:57:21Z",
+      "updated": "2026-11-24T15:57:21Z",
+      "categories": [
+        "cs.IR"
+      ],
+      "pdfUrl": "https://arxiv.org/pdf/2611.32855v1",
+      "absUrl": "https://arxiv.org/abs/2611.32855v1",
+      "industrySource": ""
+    },
+    {
+      "id": "http://arxiv.org/abs/2611.32780v1",
+      "title": "C3H: Compression-to-Consensus Criteria Hijacking in Multimodal LLM Recommender Systems",
+      "authors": [
+        "Guowei Guan",
+        "Yurong Hao",
+        "Jiaming Zhang",
+        "Fuyao Zhang",
+        "Wei Yang Bryan Lim"
+      ],
+      "affiliations": [],
+      "abstract": "Multimodal large language models (MLLMs) are transforming recommender systems into content-aware decision systems. In these systems, multimodal compression and cross-modal fusion are often viewed as robustness-enhancing mechanisms against content manipulation, as compression can filter noisy signals and cross-modal consensus can suppress inconsistent anomalies. We challenge this assumption by showing that the same process can expose a compression-to-consensus (C2C) bias in ranking decisions. Signals that remain salient after compression and receive consistent support across modalities can gain disproportionate influence in candidate comparison, offering an exploitable direction for content manipulation. In this paper, we introduce C3H, a novel inference-time attack that exploits this vulnerability. Rather than relying on noisy perturbations or training-time poisoning, C3H promotes a target item by tailoring its multimodal content to align with the decision criteria implicitly expressed by the recommender. Extensive experiments demonstrate that C3H substantially increases target-item exposure while maintaining overall recommendation utility. Code is available at https://github.com/GuoweiGuan666/C3H.",
+      "published": "2026-11-24T15:10:20Z",
+      "updated": "2026-11-24T15:10:20Z",
+      "categories": [
+        "cs.CR",
+        "cs.AI"
+      ],
+      "pdfUrl": "https://arxiv.org/pdf/2611.32780v1",
+      "absUrl": "https://arxiv.org/abs/2611.32780v1",
+      "industrySource": ""
+    },
+    {
+      "id": "http://arxiv.org/abs/2611.29230v1",
+      "title": "InfoField3D: Differentiable Information Field for Embodied Task-Oriented View Planning",
+      "authors": [
+        "Huan Lyu",
+        "Yawei Luo"
+      ],
+      "affiliations": [],
+      "abstract": "Effective task execution requires embodied agents to select observation positions that provide sufficient task-relevant information. Existing approaches typically predict viewpoints with learned models or score discrete candidates, but they either struggle to incorporate new constraints such as reachability or require extensive candidate evaluation to search. We introduce InfoField3D, which lifts geometry-bound information into a differentiable analytic field, whose value at each 3D observation position represents the task-required information accessible there. It uses low-order spherical harmonics to encode directional information responses and analytic line integrals of Gaussian occupancy functions to model occlusion along lines of sight. This formulation casts task-driven camera placement as a well-studied constrained continuous optimization problem, enabling both flexible incorporation of constraints through the feasible domain and efficient viewpoint search even in the presence of occlusion. Experiments show that InfoField3D compactly preserves the pointwise information landscape with high fidelity and generally recommends higher-quality, more robust viewpoints at lower search cost than the evaluated baselines. Controlled evaluations with a frozen vision-language-action (VLA) policy further suggest that the recommended views can improve downstream task performance under information-limited initial viewpoints.",
+      "published": "2026-11-22T05:03:35Z",
+      "updated": "2026-11-22T05:03:35Z",
+      "categories": [
+        "cs.RO"
+      ],
+      "pdfUrl": "https://arxiv.org/pdf/2611.29230v1",
+      "absUrl": "https://arxiv.org/abs/2611.29230v1",
+      "industrySource": ""
     },
     {
       "id": "http://arxiv.org/abs/2611.25606v1",
@@ -1106,101 +1185,6 @@
       ],
       "pdfUrl": "https://arxiv.org/pdf/2610.39273v1",
       "absUrl": "https://arxiv.org/abs/2610.39273v1",
-      "industrySource": ""
-    },
-    {
-      "id": "http://arxiv.org/abs/2610.37973v2",
-      "title": "Merge and Branch: Efficient Tree-Structured Supervised Fine-Tuning of LLMs for Recommendation",
-      "authors": [
-        "Yunqin Zhu",
-        "Liyang Shu",
-        "Yusi Zhang",
-        "Yao Xie",
-        "Tianhao Li",
-        "Xinhang Song",
-        "Tianyu Wen"
-      ],
-      "affiliations": [],
-      "abstract": "LLM-based generative recommendation reads long, text-rich interaction histories but generates only short semantic identifiers (SIDs). This asymmetry makes supervised fine-tuning inefficient: encoding the history is expensive, yet each history usually provides supervision for only one target. We present Merge and Branch (M&B) to reduce input cost and learn more from each encoded history. Merge compresses each historical item's SID and text into a small number of learned tokens. Branch uses the compressed history to predict multiple target SIDs. To share history computation while keeping these targets independent, M&B organizes each example as a shallow, wide tree. We develop tree FlashAttention to execute this layout efficiently, processing the shared history once and propagating gradients from every branch for end-to-end training. A tree-structured key/value cache extends history sharing to constrained decoding. Experiments on public benchmarks show that M&B outperforms strong recommendation baselines while substantially improving training and decoding efficiency. Online A/B tests on a large-scale e-commerce platform suggest that M&B effectively combines item text with multi-target supervision, yielding statistically significant gains in per-user clicks, orders, and GMV.",
-      "published": "2026-10-27T21:10:11Z",
-      "updated": "2026-11-05T18:05:03Z",
-      "categories": [
-        "cs.IR",
-        "cs.AI"
-      ],
-      "pdfUrl": "https://arxiv.org/pdf/2610.37973v2",
-      "absUrl": "https://arxiv.org/abs/2610.37973v2",
-      "industrySource": ""
-    },
-    {
-      "id": "http://arxiv.org/abs/2610.37584v4",
-      "title": "REGER: Modeling inter-item Relations with Semantic IDs for Generative Recommendation",
-      "authors": [
-        "Yuxi Huang",
-        "Silin Zhou",
-        "Chenhao Wang",
-        "Zihan Li",
-        "Gangming Guo",
-        "Pei Ke",
-        "Lisi Chen",
-        "Shen Gao",
-        "Shuo Shang"
-      ],
-      "affiliations": [],
-      "abstract": "Personalized recommendation depends on learning semantic and collaborative relations among items from online content and user interactions. Generative recommendation (GR) offers a promising paradigm by autoregressively generating discrete semantic IDs (SIDs) of items. However, randomly initialized SID token embeddings and GR models trained from scratch do not directly inherit the semantic relations inherent in items, while inter-item collaborative relations are learned largely implicitly through token-level attention and next-token supervision. To address this limitation, we propose REGER, a unified framework that explicitly incorporates inter-item relations into semantic pretraining, history encoding, and SID generation. We pretrain the GR model through generative semantic retrieval, enabling it to inherit inter-item semantic similarity by learning to generate semantic neighbors' SIDs. We combine global attention with local attention aligned with SID boundaries to capture historical context and directed transitions between adjacent items. We formalize item-level preference distillation on the SID prefix tree, deriving an exact factorization of item preference distributions into prefix conditionals and a weighted decomposition of item-level KL divergence into conditional KL terms. Guided by this decomposition, we renormalize the generator's probabilities over legal next tokens and match the resulting distributions to the teacher's conditional preferences along the ground-truth SID path, jointly optimizing the distillation objective with cross-entropy. Extensive experiments on real-world datasets validate the effectiveness of the proposed preference distillation and demonstrate that REGER consistently outperforms existing GR baselines while retaining efficient inference.",
-      "published": "2026-10-27T17:25:12Z",
-      "updated": "2026-11-17T11:25:41Z",
-      "categories": [
-        "cs.IR",
-        "cs.AI"
-      ],
-      "pdfUrl": "https://arxiv.org/pdf/2610.37584v4",
-      "absUrl": "https://arxiv.org/abs/2610.37584v4",
-      "industrySource": ""
-    },
-    {
-      "id": "http://arxiv.org/abs/2610.37281v1",
-      "title": "RPSD: Retrieval-Privileged On-Policy Self-Distillation with Optimal Transport",
-      "authors": [
-        "Dongyue Li",
-        "Zebang Cheng",
-        "Zhongyi Deng",
-        "Hongboxu",
-        "Yi Bin",
-        "Fei Ma"
-      ],
-      "affiliations": [],
-      "abstract": "Sequential recommendation predicts a user's next interaction from historical behavior. Recent LLM-based methods recast this task as generative recommendation and increasingly adopt reinforcement learning such as GRPO for post-training. However, these methods suffer from two limitations, namely credit-blind optimization, where a sequence-level reward is shared across all generated tokens, and collaborative-blind supervision, where each training signal is derived from a single user and ignores behavioral patterns shared across similar users. To address both issues, we propose Retrieval-Privileged on-policy Self-Distillation (RPSD). For credit-blind optimization, we introduce on-policy self-distillation (OPSD), in which a teacher with privileged knowledge re-evaluates the student's on-policy response, and the token-level confidence difference between the student and teacher reshapes the shared sequence-level advantage into token-specific credit. However, the privileged knowledge in vanilla OPSD is still derived from a single user, leaving collaborative-blind supervision unresolved. We therefore ground the teacher in collaborative behavioral evidence from similar users. Specifically, we use temporally aware optimal transport (OT) to compare interaction trajectories across users by jointly considering item similarity and temporal structure, and further apply diversity-aware selection to retain complementary trajectories as privileged evidence. In this way, on-policy self-distillation provides fine-grained token-level credit, while OT enriches the teacher with structured cross-user evidence. To the best of our knowledge, this is the first work to bring on-policy self-distillation to sequential recommendation and to use cross-user behavior as its privileged signal. Extensive experiments across multiple real-world datasets demonstrate that RPSD achieves state-of-the-art performance.",
-      "published": "2026-10-27T14:08:38Z",
-      "updated": "2026-10-27T14:08:38Z",
-      "categories": [
-        "cs.AI"
-      ],
-      "pdfUrl": "https://arxiv.org/pdf/2610.37281v1",
-      "absUrl": "https://arxiv.org/abs/2610.37281v1",
-      "industrySource": ""
-    },
-    {
-      "id": "http://arxiv.org/abs/2610.36973v1",
-      "title": "KL-MOPD: Discrepancy-Aware Multi-Objective On-Policy Distillation for Generative Recommendation",
-      "authors": [
-        "Weiqin Yang",
-        "Yandong Wang",
-        "Yuan Gao",
-        "Hao Deng",
-        "Jinxin Hu",
-        "Jing Cao",
-        "Jiawei Chen"
-      ],
-      "affiliations": [],
-      "abstract": "Coordinating multiple recommendation objectives (e.g., click and conversion) is critical for real-world generative recommendation (GR). However, since a positive item in GR can be retrieved only when its tokens are successively selected at every decoding step, traditional item-wise methods lack fine-grained token-wise supervision to guide intermediate steps. Motivated by its success in foundation models, we consider introducing multi-objective on-policy distillation (MOPD) into GR to distill two single-objective teachers into a student at each token. Yet, we find that in vanilla MOPD, (i) teachers exhibit unequal distillation difficulty at each token (i.e., token-level imbalance), and (ii) the harder-to-distill teacher varies across tokens (i.e., cross-token inconsistency), leaving each objective poorly learned at certain steps and hindering positive item retrieval for both objectives, leading to suboptimal performance. To address this challenge, we propose KL-MOPD (KL-Weighted Multi-Objective On-Policy Distillation), a simple yet effective distillation method that allocates token-wise teacher weights proportional to the initial student-teacher token-wise KL divergences, thereby strengthening supervision for the harder-to-distill teacher at every decoding step. Despite its simplicity, we theoretically prove that KL-MOPD strictly outperforms vanilla MOPD in the additive joint recommendation objective under mild conditions. Moreover, KL-MOPD is plug-and-play and computationally efficient, requiring only a one-time pre-training weight calibration with negligible training overhead. Extensive experiments on three public benchmarks, a billion-scale industrial dataset, and online A/B tests on our e-commerce advertising platform demonstrate that KL-MOPD significantly improves both individual and joint recommendation performance. The anonymous code is provided for peer review.",
-      "published": "2026-10-27T10:28:05Z",
-      "updated": "2026-10-27T10:28:05Z",
-      "categories": [
-        "cs.IR"
-      ],
-      "pdfUrl": "https://arxiv.org/pdf/2610.36973v1",
-      "absUrl": "https://arxiv.org/abs/2610.36973v1",
       "industrySource": ""
     }
   ]
