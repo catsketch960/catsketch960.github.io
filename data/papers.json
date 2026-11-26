@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-11-25T09:42:53Z",
+  "lastUpdated": "2026-11-26T09:19:06Z",
   "totalResults": 866,
   "papers": [
     {
@@ -309,7 +309,7 @@
       "industrySource": ""
     },
     {
-      "id": "http://arxiv.org/abs/2611.32780v1",
+      "id": "http://arxiv.org/abs/2611.32780v2",
       "title": "C3H: Compression-to-Consensus Criteria Hijacking in Multimodal LLM Recommender Systems",
       "authors": [
         "Guowei Guan",
@@ -321,13 +321,13 @@
       "affiliations": [],
       "abstract": "Multimodal large language models (MLLMs) are transforming recommender systems into content-aware decision systems. In these systems, multimodal compression and cross-modal fusion are often viewed as robustness-enhancing mechanisms against content manipulation, as compression can filter noisy signals and cross-modal consensus can suppress inconsistent anomalies. We challenge this assumption by showing that the same process can expose a compression-to-consensus (C2C) bias in ranking decisions. Signals that remain salient after compression and receive consistent support across modalities can gain disproportionate influence in candidate comparison, offering an exploitable direction for content manipulation. In this paper, we introduce C3H, a novel inference-time attack that exploits this vulnerability. Rather than relying on noisy perturbations or training-time poisoning, C3H promotes a target item by tailoring its multimodal content to align with the decision criteria implicitly expressed by the recommender. Extensive experiments demonstrate that C3H substantially increases target-item exposure while maintaining overall recommendation utility. Code is available at https://github.com/GuoweiGuan666/C3H.",
       "published": "2026-11-24T15:10:20Z",
-      "updated": "2026-11-24T15:10:20Z",
+      "updated": "2026-11-25T16:25:48Z",
       "categories": [
         "cs.CR",
         "cs.AI"
       ],
-      "pdfUrl": "https://arxiv.org/pdf/2611.32780v1",
-      "absUrl": "https://arxiv.org/abs/2611.32780v1",
+      "pdfUrl": "https://arxiv.org/pdf/2611.32780v2",
+      "absUrl": "https://arxiv.org/abs/2611.32780v2",
       "industrySource": ""
     },
     {
